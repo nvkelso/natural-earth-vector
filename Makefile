@@ -1,41 +1,41 @@
-all: 10m_land.zip 50m_land.zip 110m_land.zip \
-	 10m_lakes.zip 50m_lakes.zip 110m_lakes.zip \
-	 10m_admin_0_countries.zip 50m_admin_0_countries.zip 110m_admin_0_countries.zip
+all: land_10m.zip land_50m.zip land_110m.zip \
+	 lakes_10m.zip lakes_50m.zip lakes_110m.zip \
+	 admin_0_countries_10m.zip admin_0_countries_50m.zip admin_0_countries_110m.zip
 
-10m_land.zip: 10m_physical/ne_10m_land.shp
+land_10m.zip: 10m_physical/ne_10m_land.shp
 	./zip-it.sh 10m_physical/ne_10m_land.shp $@ 1>/dev/null 2>&1
 
-50m_land.zip: 50m_physical/ne_50m_land.shp
+land_50m.zip: 50m_physical/ne_50m_land.shp
 	./zip-it.sh 50m_physical/ne_50m_land.shp $@ 1>/dev/null 2>&1
 
-110m_land.zip: 110m_physical/ne_110m_land.shp
+land_110m.zip: 110m_physical/ne_110m_land.shp
 	./zip-it.sh 110m_physical/ne_110m_land.shp $@ 1>/dev/null 2>&1
 
-10m_lakes.zip: 10m_physical/ne_10m_lakes.shp
+lakes_10m.zip: 10m_physical/ne_10m_lakes.shp
 	./zip-it.sh 10m_physical/ne_10m_lakes.shp $@ 1>/dev/null 2>&1
 
-50m_lakes.zip: 50m_physical/ne_50m_lakes.shp
+lakes_50m.zip: 50m_physical/ne_50m_lakes.shp
 	./zip-it.sh 50m_physical/ne_50m_lakes.shp $@ 1>/dev/null 2>&1
 
-110m_lakes.zip: 110m_physical/ne_110m_lakes.shp
+lakes_110m.zip: 110m_physical/ne_110m_lakes.shp
 	./zip-it.sh 110m_physical/ne_110m_lakes.shp $@ 1>/dev/null 2>&1
 
-10m_admin_0_countries.zip: 10m_cultural/ne_10m_admin_0_countries.shp
+admin_0_countries_10m.zip: 10m_cultural/ne_10m_admin_0_countries.shp
 	./zip-it.sh 10m_cultural/ne_10m_admin_0_countries.shp $@ 1>/dev/null 2>&1
 
-50m_admin_0_countries.zip: 50m_cultural/ne_50m_admin_0_countries.shp
+admin_0_countries_50m.zip: 50m_cultural/ne_50m_admin_0_countries.shp
 	./zip-it.sh 50m_cultural/ne_50m_admin_0_countries.shp $@ 1>/dev/null 2>&1
 
-110m_admin_0_countries.zip: 110m_cultural/ne_110m_admin_0_countries.shp
+admin_0_countries_110m.zip: 110m_cultural/ne_110m_admin_0_countries.shp
 	./zip-it.sh 110m_cultural/ne_110m_admin_0_countries.shp $@ 1>/dev/null 2>&1
 
 clean:
-	rm -f 10m_land.zip
-	rm -f 50m_land.zip
-	rm -f 110m_land.zip
-	rm -f 10m_lakes.zip
-	rm -f 50m_lakes.zip
-	rm -f 110m_lakes.zip
-	rm -f 10m_admin_0_countries.zip
-	rm -f 50m_admin_0_countries.zip
-	rm -f 110m_admin_0_countries.zip
+	rm -f land_10m.zip
+	rm -f land_50m.zip
+	rm -f land_110m.zip
+	rm -f lakes_10m.zip
+	rm -f lakes_50m.zip
+	rm -f lakes_110m.zip
+	rm -f admin_0_countries_10m.zip
+	rm -f admin_0_countries_50m.zip
+	rm -f admin_0_countries_110m.zip
