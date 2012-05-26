@@ -12,8 +12,12 @@ P900913="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0
 
 # Use http://trac.osgeo.org/gdal/wiki/ConfigOptions#OGR_ENABLE_PARTIAL_REPROJECTION
 # and clip source to include only data within spherical mercator world square.
+# Encoding conversion will *only work* as of GDAL 1.9.x.
 #
-ogr2ogr --config OGR_ENABLE_PARTIAL_REPROJECTION TRUE -t_srs "$P900913" -clipsrc $EXTENT -segmentize 1 -skipfailures $base.shp $shapefile
+ogr2ogr \
+    --config OGR_ENABLE_PARTIAL_REPROJECTION TRUE --config SHAPE_ENCODING WINDOWS-1252 \
+    -t_srs "$P900913" -lco ENCODING=UTF-8 -clipsrc $EXTENT -segmentize 1 -skipfailures \
+    $base.shp $shapefile
 
 # Index the shapefile for Mapnik
 # https://github.com/mapnik/mapnik/tree/master/utils/shapeindex
