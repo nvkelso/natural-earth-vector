@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<!--<!DOCTYPE metadata SYSTEM "http://www.esri.com/metadata/esriprof80.dtd">-->
+<metadata xml:lang="en"><Esri><MetaID>{6CFB2B6A-438F-4B0F-957E-80C4699A9794}</MetaID><CreaDate>20110110</CreaDate><CreaTime>02034400</CreaTime><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="C:\Program Files\ArcGIS\ArcToolbox\Toolboxes\Data Management Tools.tbx\RepairGeometry" Date="20110110" Time="020344">RepairGeometry 10m_land DELETE_NULL 10m_land</Process></lineage></DataProperties></Esri></metadata>
