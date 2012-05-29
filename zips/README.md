@@ -1,0 +1,1 @@
+Scripts to build Natural Earth ZIP archives and copy them to the servers.
