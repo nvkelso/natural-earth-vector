@@ -28,6 +28,23 @@ The carefully generalized linework maintains consistent, recognizable geographic
 
 Natural Earth, however, is more than just a collection of pretty lines. The data attributes are equally important for mapmaking. Most data contain embedded feature names, which are ranked by relative importance. Other attributes facilitate faster map production, such as width attributes assigned to river segments for creating tapers.
 
+#Versioning
+
+2012 and the 2.0 release mark the project's shift from so-called marketing versions to [semantic versioning](http://semver.org/). 
+
+Natural Earth is a big project with hundreds of files that depend on each other and the total weighs in at several gigabytes. SemVer is a simple set of rules and requirements around version numbers. For our project, the data layout is the API. 
+
+* Version format of X.Y.Z (Major.Minor.Patch). 
+* When we change existing data file names or column names (thus breaking your data links), the X major version X.y.z will be incremented. 
+* When we introduce significatnt new content, major version X will be incremented. 
+* Bug fixes not affecting the API increment the patch version Z will be incremented. 
+* Backwards compatible API additions/changes increment the minor version Y
+* Backwards incompatible API changes increment the major version X.
+
+Under this scheme, version numbers and the way they change convey meaning about the underlying code and what has been modified from one version to the next.
+
 #&etc
 
 Natural Earth is maintained by Nathaneiel V. KELSO (@nvkelso) and Tom Patterson.
+
+The project transitioned to Github in 2012. Versioned files are here to collaborate around. The frontend still lives at NaturalEarthData.com.
