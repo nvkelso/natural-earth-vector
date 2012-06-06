@@ -26,4 +26,4 @@ shapeindex $base.shp
 
 ogrinfo -so $base.shp $base | tail -n +4 > info.txt
 zip -j $zipfile $base.dbf $base.index $base.prj $base.shp $base.shx info.txt
-rm -f $base.dbf $base.index $base.prj $base.shp $base.shx info.txt
+rm -f $base.dbf $base.index $base.prj $base.shp $base.shx $base.cpg info.txt
