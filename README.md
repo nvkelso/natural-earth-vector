@@ -37,7 +37,7 @@ Natural Earth is a big project with hundreds of files that depend on each other 
 * Version format of X.Y.Z (Major.Minor.Patch). 
 * Changing existing data file names, major version X will be incremented. 
 * Changing existing data column (field) names, major version X will be incremented. 
-* Removing `FeatureCla` attribute values, major version X will be incremented. 
+* Removing `FeatureCla` field attribute values, major version X will be incremented. 
 * Introduce significatnt new content, major version X will be incremented. 
 * Bug fixes not affecting the file and field names, patch version Z will be incremented. 
 * Backwards compatible API additions/changes, increment the minor version Y
