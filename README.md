@@ -45,6 +45,12 @@ Natural Earth is a big project with hundreds of files that depend on each other 
 
 Under this scheme, version numbers and the way they change convey meaning about the underlying code and what has been modified from one version to the next.
 
+When we introduce a new version of Natural Earth, you can tell by the version number how much effort you will need to extend to integrate the data with your map implementation.
+
+* Bug fixes Z: can simply use the new data files, replacing your old files.
+* Minor version Y: limited integration challenges, primarily around leveraging new content.
+* Major version X: significatnt integration challenges, either around changed file strucutre, field layout, field values like `FeatureCla` used in symbolizing data, or significant new additions or significant changes to existing themes.
+
 #&etc
 
 Natural Earth is maintained by Nathaneiel V. KELSO (@nvkelso) and Tom Patterson.
