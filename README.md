@@ -4,7 +4,7 @@ _No, really! This readme is a poor substitute for the live site._
 
 #About Natural Earth Vector
 
-Natural Earth is a public domain map dataset available at 1:10m, 1:50m, and 1:110 million scales. Featuring tightly integrated vector and raster data, with Natural Earth you can make a variety of visually pleasing, well-crafted maps with cartography or GIS software.
+Natural Earth is a public domain map dataset available at 1:10m, 1:50m, and 1:110 million scales. Featuring tightly integrated vector (here) and raster data ([over there](https://github.com/nvkelso/natural-earth-raster)), with Natural Earth you can make a variety of visually pleasing, well-crafted maps with cartography or GIS software.
 
 Natural Earth was built through a collaboration of many [volunteers](http://www.naturalearthdata.com/about/contributors/) and is supported by [NACIS](http://www.nacis.org/) (North American Cartographic Information Society), and is free for use in any type of project (see our [Terms of Use](http://www.naturalearthdata.com/about/terms-of-use/) page for more information).
 
