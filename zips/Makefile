@@ -675,8 +675,9 @@ all: ../zips/10m_cultural/10m_cultural \
 ../packages/Natural_Earth_quick_start/50m_raster:
 	mkdir -p ../packages/Natural_Earth_quick_start/50m_raster
 	rm -rf ../packages/Natural_Earth_quick_start/50m_raster/*
-	curl -L -o ../packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W.zip http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/raster/NE1_50M_SR_W.zip
-	tar -xzf ../packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W.zip
+	curl -o ../packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W.zip -L http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/raster/NE1_50M_SR_W.zip
+	unzip ../packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W.zip -d ../packages/Natural_Earth_quick_start/50m_raster/
+	rm ../packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W.zip
 	
 # copy the master assets into position for 110m_cultural:
 ../packages/Natural_Earth_quick_start/110m_cultural:
