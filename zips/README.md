@@ -1,22 +1,33 @@
 #About
 
-Scripts to build Natural Earth ZIP archives for individual themes, scalesetsm, and packagages.
+Scripts to build Natural Earth ZIP archives for individual themes, scalesets, and packagages.
 
-TODO: and copy them to the 2 servers.
+**Requirements**: `Make` a generic Unix utility, to be installed. 
 
-**Requirements**: `Make` a generic Unix utility, to be installed.
+Assumed to be run on Mac or Ubuntu Linux.
 
 #Usage
 
-From the command line, move into the directory:
+1. Increment the VERSION number, per the semantic versioning guidelines at ../README.md:
 
-    cd zips
-    
-Then run one of the make targets:
+        pico ../VERSION
+        
+2. Update the CHANGELOG with the new edits.
 
-    make all
+        pico ../CHANGELOG
     
-Other common targets include:
+Note: You'll likely want to edit the CHANGELOG in a real text editor. Those changes should
+also be recorded, with better formatting, in a public blog post.
+    
+3. Formalize the new version in Git by setting a tag:
+
+	    git tag  -m 'See CHANGELOG for details.' -a `cat ../VERSION`
+
+4. Package those changes for distribution by running one of the make targets:
+
+        make all
+    
+Other common, more specific targets include:
 
     make ../zips/10m_cultural/10m_cultural.zip
 	make ../zips/10m_physical/10m_physical.zip
@@ -27,3 +38,15 @@ Other common targets include:
     make ../zips/packages/natural_earth_vector.zip
     make ../zips/packages/Natural_Earth_quick_start/Natural_Earth_quick_start.zip
     make clean
+    
+6. Push those changes live to the distribution network!
+
+        make live
+        
+7. Write the blog post announcing the changes (parallels the ../CHANGELOG above).
+
+        http://naturalearthdata.com/blog/
+
+8. Send email to update list announcing the changes and directing them to the blog post.
+
+        http://naturalearthdata.com/updates/
