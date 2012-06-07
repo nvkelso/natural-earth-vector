@@ -1,4 +1,6 @@
-all: ../zips/10m_cultural/10m_cultural.zip \
+all: zips
+
+zips: ../zips/10m_cultural/10m_cultural.zip \
 	 ../zips/10m_physical/10m_physical.zip \
 	 ../zips/50m_cultural/50m_cultural.zip \
 	 ../zips/50m_physical/50m_physical.zip \
@@ -698,6 +700,15 @@ all: ../zips/10m_cultural/10m_cultural.zip \
 	cp ../110m_physical/110m_ocean.* ../packages/Natural_Earth_quick_start/110m_physical/
 	
 
+live: zips
+	# NATURALEARTHDATA.com copy
+	scp natural_earth_update_1d4.zip naturbb6@naturalearthdata.com:download/updates/natural_earth_update_1d4.zip
+	scp ne_10m_admin_0_countries.zip naturbb6@naturalearthdata.com:download/10m/cultural/10m-admin-0-countries.zip
+	# etc for each theme
+	# FREAC copy
+	scp natural_earth_update_1d4.zip nacis@ftp.freac.fsu.edu:nacis_ftp/web-download/updates/natural_earth_update_1d4.zip
+	scp ne_10m_admin_0_countries.zip nacis@ftp.freac.fsu.edu:nacis_ftp/web-download/10m/cultural/10m-admin-0-countries.zip
+	# etc for each theme
 
 clean:
 	mkdir -p ../zips/10m_cultural
