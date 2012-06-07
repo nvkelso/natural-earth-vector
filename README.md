@@ -35,30 +35,38 @@ The 2.0 release in 2012 marked the project's shift from so-called marketing vers
 Natural Earth is a big project with hundreds of files that depend on each other and the total weighs in at several gigabytes. SemVer is a simple set of rules and requirements around version numbers. For our project, the data layout is the API. 
 
 * **Version format of X.Y.Z** (Major.Minor.Patch). 
-* **Backwards incompatible** API changes, increment the major version X.
-* **Backwards compatible** API additions/changes, increment the minor version Y
+* **Backwards incompatible** changes, increment the major version X.
+* **Backwards compatible** additions/changes, increment the minor version Y
 * **Bug fixes** not affecting the file and field names, patch version Z will be incremented. 
 
-Specifically:
+Major version increments:
 
-* Changing existing data **file names**, major version X will be incremented. 
-* Changing existing data **column (field) names**, major version X will be incremented. 
-* Removing **`FeatureCla` field attribute values**, major version X will be incremented. 
-* Introduce **significant new content**, major version X will be incremented. 
-* **Additions, deletions to admin-0**, major version X will be incremented. 
-* Any shape or attribute change in **admin-0**, minor version Y will be incremented. 
-* Additions, deletions, changes in **admin-1**, minor version Y will be incremented. 
-* Additions, deletions to **any theme**, minor version Y will be incremented. 
-* Major shape or attribute changes in **any theme**, minor version Y will be incremented. 
-* Minor shape or attribute changes in **any theme**, patch version Z will be incremented. 
-* Bug fixes to shape, attributes in **any theme**, patch version Z will be incremented. 
+* Changing existing data **file names**
+* Changing existing data **column (field) names**
+* Removing **`FeatureCla` field attribute values**
+* Additions, deletions to **admin-0**
+* Introduce **significant new themes**
+
+Minor version increments:
+
+* Any shape or attribute change in **admin-0**
+* Additions, deletions, and any shape or attribute changes in **admin-1**
+* Additions, deletions to **any theme**
+* Major shape or attribute changes in **any theme**
+* Adding, changing **`FeatureCla` field attribute values**
+* Introduce **minor new themes**
+
+Patch version increments:
+
+* Minor shape or attribute changes in **any theme**
+* Bug fixes to shape, attributes in **any theme**
 
 Under this scheme, version numbers and the way they change convey meaning about the underlying code and what has been modified from one version to the next.
 
 When we introduce a new version of Natural Earth, you can tell by the version number how much effort you will need to extend to integrate the data with your map implementation.
 
 * **Bug fixes Z**: can simply use the new data files, replacing your old files.
-* **Minor version Y**: limited integration challenges, primarily around leveraging new content.
+* **Minor version Y**: limited integration challenges.
 * **Major version X**: significatnt integration challenges, either around changed file strucutre, field layout, field values like `FeatureCla` used in symbolizing data, or significant new additions or significant changes to existing themes.
 
 #&etc
