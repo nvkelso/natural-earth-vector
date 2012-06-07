@@ -1,7 +1,8 @@
 VERSION:=$(shell cat VERSION)
-PACKAGE=NaturalEarth-vector-$(VERSION)
-TARBALL=$(PACKAGE).tar.gz
-DOCROOT=naturalearthdata.com:public_html/www
+#PACKAGE=NaturalEarth-vector-$(VERSION)
+#TARBALL=$(PACKAGE).tar.gz
+DOCROOT_NE=ftp://naturalearthdata.com//download/
+DOCROOT_FREAC=ftp://ftp.freac.fsu.edu//web-download/
 
 all: zips
 
@@ -34,7 +35,6 @@ zips/packages/Natural_Earth_quick_start/Natural_Earth_quick_start.zip: \
 
 	#Bake off a version'd iteration of that file, too
 	cp zips/packages/Natural_Earth_quick_start.zip zips/packages/Natural_Earth_quick_start_$(VERSION).zip
-
 
 
 # PER THEME, BY SCALESET
@@ -778,16 +778,36 @@ live: zips
 	# NATURALEARTHDATA.com copy
 	#special items:
 	scp updates/natural_earth_update_$(VERSION).zip naturbb6@naturalearthdata.com:download/updates/natural_earth_update_$(VERSION).zip
-	scp packages/natural_earth_update_$(VERSION).zip naturbb6@naturalearthdata.com:download/packages/natural_earth_update_$(VERSION).zip
+	# packages
+	rsync -Cr zips/packages/ $(DOCROOT_NE)/packages/
 	# etc for each theme
-	scp ne_10m_admin_0_countries.zip naturbb6@naturalearthdata.com:download/10m/cultural/10m-admin-0-countries.zip
+	rsync -Cr zips/10m_cultural/ $(DOCROOT_NE)/10m/cultural/
+	rsync -Cr zips/10m_physical/ $(DOCROOT_NE)/10m/physical/
+	rsync -Cr zips/50m_cultural/ $(DOCROOT_NE)/50m/cultural/
+	rsync -Cr zips/50m_physical/ $(DOCROOT_NE)/50m/physical/
+	rsync -Cr zips/110m_cultural/ $(DOCROOT_NE)/110m/cultural/
+	rsync -Cr zips/110m_physical/ $(DOCROOT_NE)/110m/physical/
 	# FREAC copy
 	#special items:
 	scp updates/natural_earth_update_$(VERSION).zip nacis@ftp.freac.fsu.edu:nacis_ftp/web-download/updates/natural_earth_update_$(VERSION).zip
-	scp packages/natural_earth_update_$(VERSION).zip nacis@ftp.freac.fsu.edu:nacis_ftp/web-download/packages/natural_earth_update_$(VERSION).zip
+	# packages
+	rsync -Cr zips/packages/ $(DOCROOT_NE)/packages/
 	# etc for each theme
-	scp ne_10m_admin_0_countries.zip nacis@ftp.freac.fsu.edu:nacis_ftp/web-download/10m/cultural/10m-admin-0-countries.zip
+	rsync -Cr zips/10m_cultural/ $(DOCROOT_FREAC)/10m/cultural/
+	rsync -Cr zips/10m_physical/ $(DOCROOT_FREAC)/10m/physical/
+	rsync -Cr zips/50m_cultural/ $(DOCROOT_FREAC)/50m/cultural/
+	rsync -Cr zips/50m_physical/ $(DOCROOT_FREAC)/50m/physical/
+	rsync -Cr zips/110m_cultural/ $(DOCROOT_FREAC)/110m/cultural/
+	rsync -Cr zips/110m_physical/ $(DOCROOT_FREAC)/110m/physical/
 
+
+clean-quick-start:
+	rm -rf packages/Natural_Earth_quick_start/10m_cultural/*
+	rm -rf packages/Natural_Earth_quick_start/10m_physical/*
+	rm -rf packages/Natural_Earth_quick_start/50m_raster/*
+	rm -rf packages/Natural_Earth_quick_start/110m_cultural/*
+	rm -rf packages/Natural_Earth_quick_start/110m_physical/*
+	
 
 clean:
 	mkdir -p zips/10m_cultural
@@ -804,8 +824,3 @@ clean:
 	rm -rf zips/110m_cultural/*
 	rm -rf zips/110m_physical/*
 	rm -rf zips/packages/*
-	rm -rf packages/Natural_Earth_quick_start/10m_cultural/*
-	rm -rf packages/Natural_Earth_quick_start/10m_physical/*
-	rm -rf packages/Natural_Earth_quick_start/50m_raster/*
-	rm -rf packages/Natural_Earth_quick_start/110m_cultural/*
-	rm -rf packages/Natural_Earth_quick_start/110m_physical/*
