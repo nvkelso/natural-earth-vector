@@ -35,13 +35,18 @@ The 2.0 release in 2012 marked the project's shift from so-called marketing vers
 Natural Earth is a big project with hundreds of files that depend on each other and the total weighs in at several gigabytes. SemVer is a simple set of rules and requirements around version numbers. For our project, the data layout is the API. 
 
 * **Version format of X.Y.Z** (Major.Minor.Patch). 
+* **Backwards incompatible** API changes, increment the major version X.
+* **Backwards compatible** API additions/changes, increment the minor version Y
+* **Bug fixes** not affecting the file and field names, patch version Z will be incremented. 
 * Changing existing data file names, major version X will be incremented. 
 * Changing existing data column (field) names, major version X will be incremented. 
 * Removing `FeatureCla` field attribute values, major version X will be incremented. 
 * Introduce significant new content, major version X will be incremented. 
-* **Bug fixes** not affecting the file and field names, patch version Z will be incremented. 
-* **Backwards compatible** API additions/changes, increment the minor version Y
-* **Backwards incompatible** API changes, increment the major version X.
+* Additions, deletions to admin-0, major version X will be incremented. 
+* Other shape or attributes changes to admin-0, minor version Y will be incremented. 
+* Additions, deletions, changes to admin-1, minor version Y will be incremented. 
+* Changes to content any theme, minor version Y will be incremented. 
+* Bug fixes to content any theme, patch version Z will be incremented. 
 
 Under this scheme, version numbers and the way they change convey meaning about the underlying code and what has been modified from one version to the next.
 
