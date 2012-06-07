@@ -1,9 +1,9 @@
-all: ../zips/10m_cultural/10m_cultural \
-	 ../zips/10m_physical/10m_physical \
-	 ../zips/50m_cultural/50m_cultural \
-	 ../zips/50m_physical/50m_physical \
-	 ../zips/110m_cultural/110m_cultural \
-	 ../zips/110m_physical/110m_physical \
+all: ../zips/10m_cultural/10m_cultural.zip \
+	 ../zips/10m_physical/10m_physical.zip \
+	 ../zips/50m_cultural/50m_cultural.zip \
+	 ../zips/50m_physical/50m_physical.zip \
+	 ../zips/110m_cultural/110m_cultural.zip \
+	 ../zips/110m_physical/110m_physical.zip \
 	 ../zips/packages/natural_earth_vector.zip \
 	 ../zips/packages/Natural_Earth_quick_start/Natural_Earth_quick_start.zip
 
