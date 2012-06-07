@@ -1,3 +1,5 @@
+VERSION=2.0.0
+
 all: zips
 
 zips: ../zips/10m_cultural/10m_cultural.zip \
@@ -629,14 +631,14 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 ../zips/110m_physical/ne_110m_graticules_30.zip: ../110m_physical/ne_110m_graticules_30.shp ../110m_physical/ne_110m_graticules_30.dbf
 	zip -j -r $@ ../110m_physical/ne_110m_graticules_30.*
 
-../zips/110m_physical/ne_110m_wgs84_bounding_box.zip: 
-	zip -j -r $@ 
+../zips/110m_physical/ne_110m_wgs84_bounding_box.zip: ../zips/110m_physical/ne_110m_wgs84_bounding_box.shp ../zips/110m_physical/ne_110m_wgs84_bounding_box.dbf
+	zip -j -r $@ ../zips/110m_physical/ne_110m_wgs84_bounding_box.*
 
 # PACKAGES
 
 ../zips/packages/natural_earth_vector.zip:
-	zip -j -r ../zips/packages/natural_earth_vector.zip ../10m_cultural ../10m_physical ../50m_cultural ../50m_physical ../110m_cultural ../110m_physical
-	
+	zip -j -r ../zips/packages/natural_earth_vector.zip ../10m_cultural ../10m_physical ../50m_cultural ../50m_physical ../110m_cultural ../110m_physical  ../VERSION ../README.md ../CHANGELOG
+	cp ../zips/packages/natural_earth_vector.zip ../zips/packages/natural_earth_vector_$(VERSION).zip
 	
 ../zips/packages/Natural_Earth_quick_start/Natural_Earth_quick_start.zip: ../packages/Natural_Earth_quick_start/10m_cultural \
 	../packages/Natural_Earth_quick_start/10m_physical \
@@ -644,7 +646,8 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 	../packages/Natural_Earth_quick_start/110m_cultural \
 	../packages/Natural_Earth_quick_start/110m_physical
 
-	zip -j -r ../zips/packages/Natural_Earth_quick_start.zip ../packages/Natural_Earth_quick_start/
+	zip -j -r ../zips/packages/Natural_Earth_quick_start.zip ../packages/Natural_Earth_quick_start/ ../VERSION ../README.md ../CHANGELOG
+	cp ../zips/packages/Natural_Earth_quick_start.zip ../zips/packages/Natural_Earth_quick_start_$(VERSION).zip
 	
 # copy the master assets into position for 10m_cultural: 
 ../packages/Natural_Earth_quick_start/10m_cultural:
@@ -702,13 +705,18 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 
 live: zips
 	# NATURALEARTHDATA.com copy
-	scp natural_earth_update_1d4.zip naturbb6@naturalearthdata.com:download/updates/natural_earth_update_1d4.zip
+	#special items:
+	scp ../updates/natural_earth_update_$(VERSION).zip naturbb6@naturalearthdata.com:download/updates/natural_earth_update_$(VERSION).zip
+	scp ../packages/natural_earth_update_$(VERSION).zip naturbb6@naturalearthdata.com:download/packages/natural_earth_update_$(VERSION).zip
+	# etc for each theme
 	scp ne_10m_admin_0_countries.zip naturbb6@naturalearthdata.com:download/10m/cultural/10m-admin-0-countries.zip
-	# etc for each theme
 	# FREAC copy
-	scp natural_earth_update_1d4.zip nacis@ftp.freac.fsu.edu:nacis_ftp/web-download/updates/natural_earth_update_1d4.zip
-	scp ne_10m_admin_0_countries.zip nacis@ftp.freac.fsu.edu:nacis_ftp/web-download/10m/cultural/10m-admin-0-countries.zip
+	#special items:
+	scp ../updates/natural_earth_update_$(VERSION).zip nacis@ftp.freac.fsu.edu:nacis_ftp/web-download/updates/natural_earth_update_$(VERSION).zip
+	scp ../packages/natural_earth_update_$(VERSION).zip nacis@ftp.freac.fsu.edu:nacis_ftp/web-download/packages/natural_earth_update_$(VERSION).zip
 	# etc for each theme
+	scp ne_10m_admin_0_countries.zip nacis@ftp.freac.fsu.edu:nacis_ftp/web-download/10m/cultural/10m-admin-0-countries.zip
+
 
 clean:
 	mkdir -p ../zips/10m_cultural
@@ -717,12 +725,14 @@ clean:
 	mkdir -p ../zips/50m_physical
 	mkdir -p ../zips/110m_cultural
 	mkdir -p ../zips/110m_physical
+	mkdir -p ../zips/packages/
 	rm -rf ../zips/10m_cultural/*
 	rm -rf ../zips/10m_physical/*
 	rm -rf ../zips/50m_cultural/*
 	rm -rf ../zips/50m_physical/*
 	rm -rf ../zips/110m_cultural/*
 	rm -rf ../zips/110m_physical/*
+	rm -rf ../zips/packages/*
 	mkdir -p ../packages/Natural_Earth_quick_start/10m_cultural
 	mkdir -p ../packages/Natural_Earth_quick_start/10m_physical
 	mkdir -p ../packages/Natural_Earth_quick_start/50m_raster
