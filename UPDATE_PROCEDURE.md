@@ -1,4 +1,4 @@
-#About
+#Natural Earth Update Procedure
 
 Scripts to build Natural Earth ZIP archives for individual themes, scalesets, and packagages.
 
@@ -10,11 +10,11 @@ Assumed to be run on Mac or Ubuntu Linux.
 
 1. Increment the VERSION number, per the semantic versioning guidelines at ../README.md:
 
-        pico ../VERSION
+        pico VERSION
         
 2. Update the CHANGELOG with the new edits.
 
-        pico ../CHANGELOG
+        pico CHANGELOG
     
     Note: You'll likely want to edit the CHANGELOG in a real text editor. Those changes should
 also be recorded, with better formatting, in a public blog post.
@@ -43,10 +43,14 @@ also be recorded, with better formatting, in a public blog post.
 
         make live
         
-7. Write the blog post announcing the changes (parallels the ../CHANGELOG above).
+7. Updated Drainholes on the distribution server:
 
-        http://naturalearthdata.com/blog/
+        http://naturalearthdata.com/blog/wp-admin/
 
-8. Send email to update list announcing the changes and directing them to the blog post.
+8. Write the blog post announcing the changes (parallels the CHANGELOG above).
+
+        http://naturalearthdata.com/blog/wp-admin/
+
+9. Send email to update list announcing the changes and directing them to the blog post.
 
         http://naturalearthdata.com/updates/
