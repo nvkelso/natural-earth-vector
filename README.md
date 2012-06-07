@@ -46,10 +46,12 @@ Specifically:
 * Removing **`FeatureCla` field attribute values**, major version X will be incremented. 
 * Introduce **significant new content**, major version X will be incremented. 
 * **Additions, deletions to admin-0**, major version X will be incremented. 
-* Other shape or attributes in **admin-0**, minor version Y will be incremented. 
+* Any shape or attribute change in **admin-0**, minor version Y will be incremented. 
 * Additions, deletions, changes in **admin-1**, minor version Y will be incremented. 
-* Changes to **content any theme**, minor version Y will be incremented. 
-* Bug fixes to **content any theme**, patch version Z will be incremented. 
+* Additions, deletions to **any theme**, minor version Y will be incremented. 
+* Major shape or attribute changes in **any theme**, minor version Y will be incremented. 
+* Minor shape or attribute changes in **any theme**, patch version Z will be incremented. 
+* Bug fixes to shape, attributes in **any theme**, patch version Z will be incremented. 
 
 Under this scheme, version numbers and the way they change convey meaning about the underlying code and what has been modified from one version to the next.
 
