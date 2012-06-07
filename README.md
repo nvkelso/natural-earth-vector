@@ -38,6 +38,9 @@ Natural Earth is a big project with hundreds of files that depend on each other 
 * **Backwards incompatible** API changes, increment the major version X.
 * **Backwards compatible** API additions/changes, increment the minor version Y
 * **Bug fixes** not affecting the file and field names, patch version Z will be incremented. 
+
+Specifically:
+
 * Changing existing data file names, major version X will be incremented. 
 * Changing existing data column (field) names, major version X will be incremented. 
 * Removing `FeatureCla` field attribute values, major version X will be incremented. 
