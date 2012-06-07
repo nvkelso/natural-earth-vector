@@ -1,22 +1,19 @@
-VERSION=1.4.0
+VERSION:=$(shell cat VERSION)
+PACKAGE=NaturalEarth-vector-$(VERSION)
+TARBALL=$(PACKAGE).tar.gz
+DOCROOT=naturalearthdata.com:public_html/www
 
 all: zips
 
-zips: ../zips/10m_cultural/10m_cultural.zip \
-	 ../zips/10m_physical/10m_physical.zip \
-	 ../zips/50m_cultural/50m_cultural.zip \
-	 ../zips/50m_physical/50m_physical.zip \
-	 ../zips/110m_cultural/110m_cultural.zip \
-	 ../zips/110m_physical/110m_physical.zip \
-	 ../zips/packages/natural_earth_vector.zip \
-	 ../zips/packages/Natural_Earth_quick_start/Natural_Earth_quick_start.zip
+zips: ../zips/packages/Natural_Earth_quick_start/Natural_Earth_quick_start.zip
 
 
 # PER THEME, BY SCALESET
 
 # SCALESET ZIPS by zoom and physical, cultural (6 total)
 
-../zips/10m_cultural/10m_cultural.zip: ../zips/10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.zip \
+../zips/10m_cultural/10m_cultural.zip: \
+	../zips/10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.zip \
 	../zips/10m_cultural/ne_10m_admin_0_boundary_lines_land.zip \
 	../zips/10m_cultural/ne_10m_admin_0_boundary_lines_map_units.zip \
 	../zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.zip \
@@ -43,9 +40,10 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 	../zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.zip \
 	../zips/10m_cultural/ne_10m_parks_and_protected_areas.zip
 
-	zip -j -r ../zips/10m_cultural/10m_cultural.zip ../10m_cultural
+	zip -j -r ../zips/10m_cultural/10m_cultural.zip ../10m_cultural ../VERSION ../README.md ../CHANGELOG
 
-../zips/10m_physical/10m_physical.zip: ../zips/10m_physical/ne_10m_antarctic_ice_shelves_lines.zip \
+../zips/10m_physical/10m_physical.zip: \
+	../zips/10m_physical/ne_10m_antarctic_ice_shelves_lines.zip \
 	../zips/10m_physical/ne_10m_antarctic_ice_shelves_polys.zip \
 	../zips/10m_physical/ne_10m_coastline.zip \
 	../zips/10m_physical/ne_10m_geographic_lines.zip \
@@ -91,9 +89,10 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 	../zips/10m_physical/ne_10m_graticules_30.zip \
 	../zips/10m_physical/ne_10m_wgs84_bounding_box.zip
 
-	zip -j -r ../zips/10m_physical/10m_physical.zip ../10m_physical
+	zip -j -r ../zips/10m_physical/10m_physical.zip ../10m_physical ../VERSION ../README.md ../CHANGELOG
 
-../zips/50m_cultural/50m_cultural.zip: ../zips/50m_cultural/ne_50m_admin_0_boundary_breakaway_disputed_areas.zip \
+../zips/50m_cultural/50m_cultural.zip: \
+	../zips/50m_cultural/ne_50m_admin_0_boundary_breakaway_disputed_areas.zip \
 	../zips/50m_cultural/ne_50m_admin_0_boundary_lines_land.zip \
 	../zips/50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.zip \
 	../zips/50m_cultural/ne_50m_admin_0_boundary_map_units.zip \
@@ -111,9 +110,10 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 	../zips/50m_cultural/ne_50m_populated_places.zip \
 	../zips/50m_cultural/ne_50m_urban_areas.zip
 
-	zip -j -r ../zips/50m_cultural/50m_cultural.zip ../50m_cultural
+	zip -j -r ../zips/50m_cultural/50m_cultural.zip ../50m_cultural ../VERSION ../README.md ../CHANGELOG
 
-../zips/50m_physical/50m_physical.zip: ../zips/50m_physical/ne_50m_antarctic_ice_shelves_lines.zip \
+../zips/50m_physical/50m_physical.zip: \
+	../zips/50m_physical/ne_50m_antarctic_ice_shelves_lines.zip \
 	../zips/50m_physical/ne_50m_antarctic_ice_shelves_polys.zip \
 	../zips/50m_physical/ne_50m_coastline.zip \
 	../zips/50m_physical/ne_50m_geographic_lines.zip \
@@ -138,9 +138,10 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 	../zips/50m_physical/ne_50m_graticules_30.zip \
 	../zips/50m_physical/ne_50m_wgs84_bounding_box.zip
 
-	zip -j -r ../zips/50m_physical/50m_physical.zip ../50m_physical
+	zip -j -r ../zips/50m_physical/50m_physical.zip ../50m_physical ../VERSION ../README.md ../CHANGELOG
 
-../zips/110m_cultural/110m_cultural.zip: ../zips/110m_cultural/ne_110m_admin_0_boundary_lines_land.zip \
+../zips/110m_cultural/110m_cultural.zip: \
+	../zips/110m_cultural/ne_110m_admin_0_boundary_lines_land.zip \
 	../zips/110m_cultural/ne_110m_admin_0_countries.zip \
 	../zips/110m_cultural/ne_110m_admin_0_map_units.zip \
 	../zips/110m_cultural/ne_110m_admin_0_pacific_groupings.zip \
@@ -152,9 +153,10 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 	../zips/110m_cultural/ne_110m_populated_places_simple.zip \
 	../zips/110m_cultural/ne_110m_populated_places.zip
 	
-	zip -j -r ../zips/110m_cultural/110m_cultural.zip ../110m_cultural
+	zip -j -r ../zips/110m_cultural/110m_cultural.zip ../110m_cultural ../VERSION ../README.md ../CHANGELOG
 
-110m_physical.zip: ../zips/110m_physical/ne_110m_coastline.zip \
+110m_physical.zip: \
+	../zips/110m_physical/ne_110m_coastline.zip \
 	../zips/110m_physical/ne_110m_geographic_lines.zip \
 	../zips/110m_physical/ne_110m_geography_marine_polys.zip \
 	../zips/110m_physical/ne_110m_geography_regions_elevation_points.zip \
@@ -175,7 +177,7 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 	../zips/110m_physical/ne_110m_graticules_30.zip \
 	../zips/110m_physical/ne_110m_wgs84_bounding_box.zip
 
-	zip -j -r ../zips/110m_physical/110m_physical.zip ../110m_physical
+	zip -j -r ../zips/110m_physical/110m_physical.zip ../110m_physical ../VERSION ../README.md ../CHANGELOG
 
 
 
@@ -189,55 +191,55 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 
 # 10m_cultural
 
-../zips/10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.zip: ../10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.*
+../zips/10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.zip: ../10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.shp ../10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.dbf
 	zip -j -r $@ ../zips/10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.*
 	
-../zips/10m_cultural/ne_10m_admin_0_boundary_lines_land.zip: ../10m_cultural/ne_10m_admin_0_boundary_lines_land.*
+../zips/10m_cultural/ne_10m_admin_0_boundary_lines_land.zip: ../10m_cultural/ne_10m_admin_0_boundary_lines_land.shp ../10m_cultural/ne_10m_admin_0_boundary_lines_land.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_0_boundary_lines_land.*
 
-../zips/10m_cultural/ne_10m_admin_0_boundary_lines_map_units.zip: ../10m_cultural/ne_10m_admin_0_boundary_lines_map_units.*
+../zips/10m_cultural/ne_10m_admin_0_boundary_lines_map_units.zip: ../10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp ../10m_cultural/ne_10m_admin_0_boundary_lines_map_units.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_0_boundary_lines_map_units.*
 
-../zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.zip: ../10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.*
+../zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.zip: ../10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.shp ../10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.*
 
-../zips/10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_scale_ranks.zip: ../10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_scale_ranks.*
+../zips/10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_scale_ranks.zip: ../10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_scale_ranks.shp ../10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_scale_ranks.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_scale_ranks.*
 
-../zips/10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.zip: ../10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.*
+../zips/10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.zip: ../10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.shp ../10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.*
 	
-../zips/10m_cultural/ne_10m_admin_0_countries.zip: ../10m_cultural/ne_10m_admin_0_countries.*
+../zips/10m_cultural/ne_10m_admin_0_countries.zip: ../10m_cultural/ne_10m_admin_0_countries.shp ../10m_cultural/ne_10m_admin_0_countries.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_0_countries.*
 
-../zips/10m_cultural/ne_10m_admin_0_map_subunits.zip: ../10m_cultural/ne_10m_admin_0_map_subunits.*
+../zips/10m_cultural/ne_10m_admin_0_map_subunits.zip: ../10m_cultural/ne_10m_admin_0_map_subunits.shp ../10m_cultural/ne_10m_admin_0_map_subunits.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_0_map_subunits.*
 
-../zips/10m_cultural/ne_10m_admin_0_map_units.zip: ../10m_cultural/ne_10m_admin_0_map_units.*
+../zips/10m_cultural/ne_10m_admin_0_map_units.zip: ../10m_cultural/ne_10m_admin_0_map_units.shp ../10m_cultural/ne_10m_admin_0_map_units.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_0_map_units.*
 	
-../zips/10m_cultural/ne_10m_admin_0_pacific_groupings.zip: ../10m_cultural/ne_10m_admin_0_pacific_groupings.*
+../zips/10m_cultural/ne_10m_admin_0_pacific_groupings.zip: ../10m_cultural/ne_10m_admin_0_pacific_groupings.shp ../10m_cultural/ne_10m_admin_0_pacific_groupings.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_0_pacific_groupings.*
 	
-../zips/10m_cultural/ne_10m_admin_0_scale_ranks_with_minor_islands.zip: ../10m_cultural/ne_10m_admin_0_scale_ranks_with_minor_islands.*
+../zips/10m_cultural/ne_10m_admin_0_scale_ranks_with_minor_islands.zip: ../10m_cultural/ne_10m_admin_0_scale_ranks_with_minor_islands.shp ../10m_cultural/ne_10m_admin_0_scale_ranks_with_minor_islands.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_0_scale_ranks_with_minor_islands.*
 	
-../zips/10m_cultural/ne_10m_admin_0_scale_ranks.zip: ../10m_cultural/ne_10m_admin_0_scale_ranks.*
+../zips/10m_cultural/ne_10m_admin_0_scale_ranks.zip: ../10m_cultural/ne_10m_admin_0_scale_ranks.shp ../10m_cultural/ne_10m_admin_0_scale_ranks.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_0_scale_ranks.*
 	
-../zips/10m_cultural/ne_10m_admin_0_sovereignty.zip: ../10m_cultural/ne_10m_admin_0_sovereignty.*
+../zips/10m_cultural/ne_10m_admin_0_sovereignty.zip: ../10m_cultural/ne_10m_admin_0_sovereignty.shp ../10m_cultural/ne_10m_admin_0_sovereignty.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_0_sovereignty.*
 	
-../zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.zip: ../10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.*
+../zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.zip: ../10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.shp ../10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.*
 
-../zips/10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.zip: ../10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.*
+../zips/10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.zip: ../10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.shp ../10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.*
 
-../zips/10m_cultural/ne_10m_admin_1_states_provinces_shp.zip: ../10m_cultural/ne_10m_admin_1_states_provinces_shp.*
+../zips/10m_cultural/ne_10m_admin_1_states_provinces_shp.zip: ../10m_cultural/ne_10m_admin_1_states_provinces_shp.shp ../10m_cultural/ne_10m_admin_1_states_provinces_shp.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_admin_1_states_provinces_shp.*
 	
-../zips/10m_cultural/ne_10m_populated_places_simple.zip: ../10m_cultural/ne_10m_populated_places_simple.*
+../zips/10m_cultural/ne_10m_populated_places_simple.zip: ../10m_cultural/ne_10m_populated_places_simple.shp ../10m_cultural/ne_10m_populated_places_simple.dbf
 	zip -j -r $@ ../10m_cultural/ne_10m_populated_places_simple.*
 
 ../zips/10m_cultural/ne_10m_populated_places.zip: ../10m_cultural/ne_10m_populated_places.shp ../10m_cultural/ne_10m_populated_places.dbf
@@ -636,11 +638,20 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 
 # PACKAGES
 
-../zips/packages/natural_earth_vector.zip:
+../zips/packages/natural_earth_vector.zip: \
+	../zips/10m_cultural/10m_cultural.zip \
+	../zips/10m_physical/10m_physical.zip \
+	../zips/50m_cultural/50m_cultural.zip \
+	../zips/50m_physical/50m_physical.zip \
+	../zips/110m_cultural/110m_cultural.zip \
+	../zips/110m_physical/110m_physical.zip
+	
 	zip -j -r ../zips/packages/natural_earth_vector.zip ../10m_cultural ../10m_physical ../50m_cultural ../50m_physical ../110m_cultural ../110m_physical  ../VERSION ../README.md ../CHANGELOG
 	cp ../zips/packages/natural_earth_vector.zip ../zips/packages/natural_earth_vector_$(VERSION).zip
 	
-../zips/packages/Natural_Earth_quick_start/Natural_Earth_quick_start.zip: ../packages/Natural_Earth_quick_start/10m_cultural \
+../zips/packages/Natural_Earth_quick_start/Natural_Earth_quick_start.zip: 
+	../zips/packages/natural_earth_vector.zip \
+	../packages/Natural_Earth_quick_start/10m_cultural/status.txt \
 	../packages/Natural_Earth_quick_start/10m_physical \
 	../packages/Natural_Earth_quick_start/50m_raster \
 	../packages/Natural_Earth_quick_start/110m_cultural \
@@ -650,7 +661,21 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 	cp ../zips/packages/Natural_Earth_quick_start.zip ../zips/packages/Natural_Earth_quick_start_$(VERSION).zip
 	
 # copy the master assets into position for 10m_cultural: 
-../packages/Natural_Earth_quick_start/10m_cultural:
+../packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
+	../10m_cultural/10m_admin_0_boundary_breakaway_disputed_areas.shp ../10m_cultural/10m_admin_0_boundary_breakaway_disputed_areas.dbf \
+	../10m_cultural/10m_admin_0_boundary_lines_land.shp ../10m_cultural/10m_admin_0_boundary_lines_land.dbf \
+	../10m_cultural/10m_admin_0_boundary_lines_maritime_indicator.shp ../10m_cultural/10m_admin_0_boundary_lines_maritime_indicator.dbf \
+	../10m_cultural/10m_admin_0_breakaway_disputed_areas.shp ../10m_cultural/10m_admin_0_breakaway_disputed_areas.dbf \
+	../10m_cultural/10m_admin_0_map_subunits.shp ../10m_cultural/10m_admin_0_map_subunits.dbf \
+	../10m_cultural/10m_admin_0_map_units.shp ../10m_cultural/10m_admin_0_map_units.dbf \
+	../10m_cultural/10m_admin_0_scale_ranks_with_minor_islands.shp ../10m_cultural/10m_admin_0_scale_ranks_with_minor_islands.dbf \
+	../10m_cultural/10m_admin_1_states_provinces_lines_shp.shp ../10m_cultural/10m_admin_1_states_provinces_lines_shp.dbf \
+	../10m_cultural/10m_admin_1_states_provinces_shp.shp ../10m_cultural/10m_admin_1_states_provinces_shp.dbf \
+	../10m_cultural/10m_populated_places.shp ../10m_cultural/10m_populated_places.dbf \
+	../10m_cultural/10m_urban_areas.shp ../10m_cultural/10m_urban_areas.dbf
+
+	mkdir -p ../packages/Natural_Earth_quick_start/10m_cultural
+
 	cp ../10m_cultural/10m_admin_0_boundary_breakaway_disputed_areas.* ../packages/Natural_Earth_quick_start/10m_cultural/
 	cp ../10m_cultural/10m_admin_0_boundary_lines_land.* ../packages/Natural_Earth_quick_start/10m_cultural/
 	cp ../10m_cultural/10m_admin_0_boundary_lines_maritime_indicator.* ../packages/Natural_Earth_quick_start/10m_cultural/
@@ -663,8 +688,23 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 	cp ../10m_cultural/10m_populated_places.* ../packages/Natural_Earth_quick_start/10m_cultural/
 	cp ../10m_cultural/10m_urban_areas.* ../packages/Natural_Earth_quick_start/10m_cultural/
 	
+	touch ../packages/Natural_Earth_quick_start/10m_cultural
+	
 # copy the master assets into position for 10m_physical: 	
-../packages/Natural_Earth_quick_start/10m_physical:
+../packages/Natural_Earth_quick_start/10m_physical/status.txt: \
+	../10m_physical/10m_coastline.shp ../10m_physical/10m_coastline.dbf \
+	../10m_physical/10m_geography_marine_polys.shp ../10m_physical/10m_geography_marine_polys.dbf \
+	../10m_physical/10m_geography_regions_elevation_points.shp ../10m_physical/10m_geography_regions_elevation_points.dbf \
+	../10m_physical/10m_geography_regions_points.shp ../10m_physical/10m_geography_regions_points.dbf \
+	../10m_physical/10m_geography_regions_polys.shp ../10m_physical/10m_geography_regions_polys.dbf \
+	../10m_physical/10m_lakes.shp ../10m_physical/10m_lakes.dbf \
+	../10m_physical/10m_minor_islands.shp ../10m_physical/10m_minor_islands.dbf \
+	../10m_physical/10m_ocean.shp ../10m_physical/10m_ocean.dbf \
+	../10m_physical/10m_rivers_lake_centerlines_scale_ranks.shp ../10m_physical/10m_rivers_lake_centerlines_scale_ranks.dbf \
+	../10m_physical/10m_rivers_lake_centerlines.shp ../10m_physical/10m_rivers_lake_centerlines.dbf
+	
+	mkdir -p ../packages/Natural_Earth_quick_start/10m_physical
+
 	cp ../10m_physical/10m_coastline.* ../packages/Natural_Earth_quick_start/10m_physical/
 	cp ../10m_physical/10m_geography_marine_polys.* ../packages/Natural_Earth_quick_start/10m_physical/
 	cp ../10m_physical/10m_geography_regions_elevation_points.* ../packages/Natural_Earth_quick_start/10m_physical/
@@ -676,16 +716,29 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 	cp ../10m_physical/10m_rivers_lake_centerlines_scale_ranks.* ../packages/Natural_Earth_quick_start/10m_physical/
 	cp ../10m_physical/10m_rivers_lake_centerlines.* ../packages/Natural_Earth_quick_start/10m_physical/
 	
+	touch $@
+	
 # TODO: get the raster from the other repo, which doesn't exist now.
-../packages/Natural_Earth_quick_start/50m_raster:
+../packages/Natural_Earth_quick_start/50m_raster/status.txt:
+
 	mkdir -p ../packages/Natural_Earth_quick_start/50m_raster
 	rm -rf ../packages/Natural_Earth_quick_start/50m_raster/*
 	curl -o ../packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W.zip -L http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/raster/NE1_50M_SR_W.zip
 	unzip ../packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W.zip -d ../packages/Natural_Earth_quick_start/50m_raster/
 	rm ../packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W.zip
 	
+	touch $@
+	
 # copy the master assets into position for 110m_cultural:
-../packages/Natural_Earth_quick_start/110m_cultural:
+../packages/Natural_Earth_quick_start/110m_cultural/status.txt: ../110m_cultural/110m_admin_0_boundary_lines_land.shp ../110m_cultural/110m_admin_0_boundary_lines_land.dbf \
+	../110m_cultural/110m_admin_0_countries.shp ../110m_cultural/110m_admin_0_countries.dbf \
+	../110m_cultural110m_admin_0_pacific_groupings.shp ../110m_cultural110m_admin_0_pacific_groupings.dbf \
+	../110m_cultural110m_admin_0_tiny_countries.shp ../110m_cultural110m_admin_0_tiny_countries.dbf \
+	../110m_cultural110m_admin_1_states_provinces_shp.shp ../110m_cultural110m_admin_1_states_provinces_shp.dbf \
+	../110m_cultural110m_populated_places.shp ../110m_cultural110m_populated_places.dbf
+
+	mkdir -p ../packages/Natural_Earth_quick_start/110m_cultural
+
 	cp ../110m_cultural/110m_admin_0_boundary_lines_land.* ../packages/Natural_Earth_quick_start/110m_cultural/
 	cp ../110m_cultural/110m_admin_0_countries.* ../packages/Natural_Earth_quick_start/110m_cultural/
 	cp ../110m_cultural110m_admin_0_pacific_groupings.* ../packages/Natural_Earth_quick_start/110m_cultural/
@@ -693,8 +746,18 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 	cp ../110m_cultural110m_admin_1_states_provinces_shp.* ../packages/Natural_Earth_quick_start/110m_cultural/
 	cp ../110m_cultural110m_populated_places.* ../packages/Natural_Earth_quick_start/110m_cultural/
 	
+	touch $@
+	
 # copy the master assets into position for 110m_physical: 	
-../packages/Natural_Earth_quick_start/110m_physical:
+../packages/Natural_Earth_quick_start/110m_physical/status.txt: ../110m_physical/110m_coastline.shp ../110m_physical/110m_coastline.dbf \
+	../110m_physical/110m_geography_marine_polys.shp ../110m_physical/110m_geography_marine_polys.dbf \
+	../110m_physical/110m_geography_regions_points.shp ../110m_physical/110m_geography_regions_points.dbf \
+	../110m_physical/110m_geography_regions_polys.shp ../110m_physical/110m_geography_regions_polys.dbf \
+	../110m_physical/110m_lakes.shp ../110m_physical/110m_lakes.dbf \
+	../110m_physical/110m_ocean.shp ../110m_physical/110m_ocean.dbf
+		
+	mkdir -p ../packages/Natural_Earth_quick_start/110m_physical
+
 	cp ../110m_physical/110m_coastline.* ../packages/Natural_Earth_quick_start/110m_physical/
 	cp ../110m_physical/110m_geography_marine_polys.* ../packages/Natural_Earth_quick_start/110m_physical/
 	cp ../110m_physical/110m_geography_regions_points.* ../packages/Natural_Earth_quick_start/110m_physical/
@@ -702,6 +765,7 @@ zips: ../zips/10m_cultural/10m_cultural.zip \
 	cp ../110m_physical/110m_lakes.* ../packages/Natural_Earth_quick_start/110m_physical/
 	cp ../110m_physical/110m_ocean.* ../packages/Natural_Earth_quick_start/110m_physical/
 	
+	touch $@
 
 live: zips
 	# NATURALEARTHDATA.com copy
@@ -733,11 +797,6 @@ clean:
 	rm -rf ../zips/110m_cultural/*
 	rm -rf ../zips/110m_physical/*
 	rm -rf ../zips/packages/*
-	mkdir -p ../packages/Natural_Earth_quick_start/10m_cultural
-	mkdir -p ../packages/Natural_Earth_quick_start/10m_physical
-	mkdir -p ../packages/Natural_Earth_quick_start/50m_raster
-	mkdir -p ../packages/Natural_Earth_quick_start/110m_cultural
-	mkdir -p ../packages/Natural_Earth_quick_start/110m_physical
 	rm -rf ../packages/Natural_Earth_quick_start/10m_cultural/*
 	rm -rf ../packages/Natural_Earth_quick_start/10m_physical/*
 	rm -rf ../packages/Natural_Earth_quick_start/50m_raster/*
