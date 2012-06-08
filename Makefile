@@ -19,7 +19,6 @@ zips/packages/natural_earth_vector.zip: \
 	zips/110m_physical/110m_physical.zip
 	
 	zip -j -r zips/packages/natural_earth_vector.zip 10m_cultural 10m_physical 50m_cultural 50m_physical 110m_cultural 110m_physical  VERSION README.md CHANGELOG
-
 	#Bake off a version'd iteration of that file, too
 	cp zips/packages/natural_earth_vector.zip zips/packages/natural_earth_vector_$(VERSION).zip
 	
@@ -222,6 +221,15 @@ zips/110m_cultural/110m_cultural.zip: \
 
 zips/10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.zip: 10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.shp 10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.dbf
 	zip -j -r $@ zips/10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.*
+	#cp $@ "${@#.zip}_$(VERSION).zip"
+	#cp $@ "${@%.zip}_$(VERSION).zip"
+	
+	#land.zip			--- implied 1.4.2
+	#land-1.4.0.zip
+	#land-1.4.2.zip
+	#water.zip			--- implied 1.4.2 because there was no change between 1.4.1 and 1.4.2
+	#water-1.4.0.zip
+	#water-1.4.1.zip
 	
 zips/10m_cultural/ne_10m_admin_0_boundary_lines_land.zip: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp 10m_cultural/ne_10m_admin_0_boundary_lines_land.dbf
 	zip -j -r $@ 10m_cultural/ne_10m_admin_0_boundary_lines_land.*
@@ -781,6 +789,8 @@ live: zips
 	# packages
 	rsync -Cr zips/packages/ $(DOCROOT_NE)/packages/
 	# etc for each theme
+	#copy *.zip in folder > *_$(VERSION).zip
+	#ls zips/10m_cultural/*.zip | perl -p -e 's/^((.+)\.zip)$/cp \1 \2-1.4.zip/' | sh -ex
 	rsync -Cr zips/10m_cultural/ $(DOCROOT_NE)/10m/cultural/
 	rsync -Cr zips/10m_physical/ $(DOCROOT_NE)/10m/physical/
 	rsync -Cr zips/50m_cultural/ $(DOCROOT_NE)/50m/cultural/
@@ -799,6 +809,18 @@ live: zips
 	rsync -Cr zips/50m_physical/ $(DOCROOT_FREAC)/50m/physical/
 	rsync -Cr zips/110m_cultural/ $(DOCROOT_FREAC)/110m/cultural/
 	rsync -Cr zips/110m_physical/ $(DOCROOT_FREAC)/110m/physical/
+	# DOWNLOADS copy
+	#special items:
+	cp updates/natural_earth_update_$(VERSION).zip downloads/
+	# packages
+	rsync -Cr zips/packages/ downloads/
+	# etc for each theme
+	rsync -Cr zips/10m_cultural/ downloads/
+	rsync -Cr zips/10m_physical/ downloads/
+	rsync -Cr zips/50m_cultural/ downloads/
+	rsync -Cr zips/50m_physical/ downloads/
+	rsync -Cr zips/110m_cultural/ downloads/
+	rsync -Cr zips/110m_physical/ downloads/
 
 
 clean-quick-start:
