@@ -21,7 +21,7 @@ also be recorded, with better formatting, in a public blog post.
     
 3. Formalize the new version in Git by setting a tag:
 
-	    git tag  -m 'See CHANGELOG for details.' -a `cat VERSION`
+	    git tag  -m 'See CHANGELOG for details.' -a v`cat VERSION`
 
 4. Package those changes for distribution by running one of the make targets:
 
