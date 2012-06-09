@@ -16,11 +16,21 @@ zips/packages/natural_earth_vector.zip: \
 	zips/50m_cultural/50m_cultural.zip \
 	zips/50m_physical/50m_physical.zip \
 	zips/110m_cultural/110m_cultural.zip \
-	zips/110m_physical/110m_physical.zip
+	zips/110m_physical/110m_physical.zip \
+	zips/packages/natural_earth_vector.sqlite.zip
 	
-	zip -j -r zips/packages/natural_earth_vector.zip 10m_cultural 10m_physical 50m_cultural 50m_physical 110m_cultural 110m_physical  VERSION README.md CHANGELOG
+	zip -j -r zips/packages/natural_earth_vector.zip 10m_cultural 10m_physical 50m_cultural 50m_physical 110m_cultural 110m_physical VERSION README.md CHANGELOG
 	#Bake off a version'd iteration of that file, too
 	cp zips/packages/natural_earth_vector.zip zips/packages/natural_earth_vector_$(VERSION).zip
+
+
+zips/packages/natural_earth_vector.sqlite.zip:
+	#SQL-Lite
+	for shp in 10m_cultural/*.shp 10m_physical/*.shp 50m_cultural/*.shp 50m_physical/*.shp 110m_cultural/*.shp 110m_physical/*.shp; \
+	do \
+		ogr2ogr -f SQLite -append zips/packages/natural_earth_vector.sqlite $$shp; \
+	done
+	zip zips/packages/natural_earth_vector.sqlite.zip zips/packages/natural_earth_vector.sqlite VERSION README.md CHANGELOG
 	
 	
 zips/packages/Natural_Earth_quick_start/Natural_Earth_quick_start.zip: \
