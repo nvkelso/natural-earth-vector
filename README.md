@@ -71,6 +71,6 @@ When we introduce a new version of Natural Earth, you can tell by the version nu
 
 #&etc
 
-Natural Earth is maintained by Nathaneiel V. KELSO (@nvkelso) and Tom Patterson.
+Natural Earth is maintained by Nathaneiel V. KELSO ([@nvkelso](https://github.com/nvkelso/)) and Tom Patterson.
 
-The project transitioned to Github in 2012. Versioned files are here to collaborate around. The frontend still lives at NaturalEarthData.com.
+The project transitioned to Github in 2012. Versioned files are here to collaborate around. The frontend still lives at [NaturalEarthData.com](http://naturalearthdata.com).
