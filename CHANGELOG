@@ -1,0 +1,309 @@
+2011-08-19: 1.4.0
+- Full details: http://www.naturalearthdata.com/blog/natural-earth-version-1-4-release-notes/
+
+- NOTE:     Over 65 files have changed in version 1.4 of Natural Earth.
+- NEW:      Sovereign country of South Sudan independence on July 2011.
+- CHANGED:  South Sudan and Sudan's administrative level-1 units have also been refreshed.
+- NOTE:     The disputed Sudan and South Sudan area of Abyei is retained.
+- NEW:      Panama and Papua New Guinea back to separate countries. They were accidentally
+            merged into a super country in some admin-0 files for the 1.3.0 release.
+- NEW:      50m admin-1 states and provinces now includes version with lakes punched out.
+- NEW:      The 10m admin-1 file now includes a “scale rank” exploded version.
+- CHANGED:  A lake south of Kaunas on the Nemunas river has been recoded as an artificial 
+            reservoir named “Kauno marios”. 
+- CHANGED:  Rivers, 10m - Database structure changes: Name1 is now Name, Name2 is now 
+            Name_alt Attribute changes: Several dozen missing strokes weights were 
+            corrected, 1/2 dozen scaleRanks. One new mystery river segment.
+- CHANGED:  1. The stream marked as the Parana in Argentina has been renamed: the lower 
+            stretch is the lower portion of the remains Parana, then the Paraguay upstream 
+            from the confluence of the Paraguay and Parana. Then Cuiaba upstream from its 
+            confluence with the Paraguay, on up to the source.
+- CHANGED:  The Angara, a tributary of the Yenisey river, in Russia was at a scale rank 2 
+            while it’s parent was scale rank 4.
+- CHANGED:  Upper section of the James River is the Cowpasture River.
+- CHANGED:  South Branch of the Potomac, near its source, edited to add wiggle that 
+            matches National Atlas.
+- CHANGED:  La Grand Riviere in Canada name fix.
+- CHANGED:  RivNum 22874 renamed Pahsimeroi river
+- CHANGED:  The Palouse river headwaters extended to Idaho
+- CHANGED:  The Grand Ronde is likewise shorter than National Atlas suggests, starting a 
+            bit farther south than marked.
+- CHANGED:  Similkameen river edited to match with the 10m Admin-1 vectors and branch off 
+            from the Okanogan at Oroville, WA, and then proceed west & north into Canada, 
+            where it remains.
+- CHANGED:  Where the Snake River joins the Columbia River, part of the path of the 
+            Columbia was marked as the Snake.
+- CHANGED:  Sweden river funk: ‘Dallven’ instead of the correct ‘Dalälven‘. A few others 
+            like that, need more clarification. via Graham Asher
+- CHANGED:  IJssel river in Netherlands was incorrectly named Irrawaddy via Nathaniel
+- NEW:      North America Rivers supplement - Database structure changes: Name1 is now 
+            Name, Name2 is now Name_alt Removed River, abbreviated Creek, North, South, 
+            East, West, Branch, etc. in the Name column to make consistent with the basic
+            Rivers theme. Preserved the original in Name_full.
+- CHANGED:  River names in U.S. desert south west. via Daniel Huffman, below:
+- CHANGED:  The Marias River, a tributary of the Missouri in Montana, is listed as the 
+            “Marais” in the Natural Earth dataset.
+- CHANGED:  Upper portion of the stream marked as the “Maury River” (tributary to the 
+            James in Virginia) is the Calfpasure River, which joins the Little Calfpasture
+            River a bit southeast of Goshen to form the Maury.
+- CHANGED:  Rivnum 23000 is the San Pedro River. The Natural Earth line appears to give a
+            source just inside the US, but the National Atlas line has a source in Mexico.
+- CHANGED:  Rivnum 22432 is San Cristobal Wash.
+- CHANGED:  Rivnum 22467 is Centennial Wash
+- CHANGED:  Rivnum 22474 is the Hassayampa River, headwaters extended north.
+- CHANGED:  Rivnum 22435 is San Simon Creek.
+- CHANGED:  Rivernum 22453 & 22997 appear to correspond to the Santa Cruz River. Renamed
+            and extended headwaters south and cut the northern section so it drains to 
+            flats instead of the Gila river.
+- CHANGED:  22525 is Santa Maria River & Sycamore Creek
+- CHANGED:  22534 is Big Sandy River
+- CHANGED:  22550 is Trout Creek
+- CHANGED:  22676 is Meadow Valley Wash
+- CHANGED:  22533 is Carrizo Creek & Carrizo Wash
+- CHANGED:  22506 is Largo Creek
+- CHANGED:  22549 is Puerco River
+- CHANGED:  22596 is Chinle Creek & Chinle Wash
+- CHANGED:  22584 is Chaco River & Chaco Wash
+- NEW:      Europe rivers supplement Database structure changes: Name1 is now Name, Name2
+            is now Name_alt
+- CHANGED:  Marine label areas - Now includes French names for most features. Corrections
+            for Helodranon’ Antongila to Antongila Bay. Karskiye Vorota Strait looses
+            Vorota as that already means Straight.
+- CHANGED:  Graticules at 10m, 50m, 110m now have reasonable ScaleRank values.
+- CHANGED:  Geographic lines at 10m, 50m, and 110m demotes the pre 1995 date line segment
+            down to 100, giving Null Island company. Display column has been removed, Name
+            column added with shorter version of the old Display name. Name_Long contains
+            that former column, but renamed in keeping with current Natural Earth 
+            practices. Also, Abbrev column added for short names. Note now contains the 
+            “1995 Kiribati adjustment” and the like, including: “Any given day starts here
+            and progresses west, with yesterday nipping at its heals.” And a FeatureClass
+            column to bring into alignment with Natural Earth current practices.
+- CHANGED:  The South Georgia and the South Sandwich Islands were missing the words
+            South Sandwich.
+- NEW:      Sint Maarten is a adm_0 country.
+- CHANGED:  Admin-0 maritime boundaries, 10m - Corrected the maritime boundary between
+            Maine and New Brunswick. 
+- CHANGED:  Admin-1 polygons and lines, 10m - Small portion of the Rhode 
+            Island/Massachusetts boundary was missing in the NEV databases. The portion
+            in question was the part of Rhode Island that lies on the mainland, just east 
+            of the Sakonnet River and the city of Newport, and just south of Fall 
+            River, MA.
+- CHANGED:  All US state boundary fixes: R.I.-Mass., Va.-N.C. now bends south in the 
+            middle., Del.-Penn. boundary bends differently., Tenn.-Ala.-Ga.-Miss., 
+            Kan.-Col., Neb.-Co., Neb.-Wy., S.D.-Wy., S.D.-Mont., N.D.-Mont., Iowa-Mo., 
+            Modify the DC shape a bit to better match more detailed zooms and remove part
+            of the adm-1 line on the shore.
+- CHANGED:  The ADM1NAME Ãstfold corrected to Østfold.
+- CHANGED:  Zhejiang – Should be labeled as the Cocos (Keeling) Islands. Is part of
+            Australia. RENAMED Niue – Is not part of Australia, but independent. 
+            Associated with New Zealand. DELETED as admin-1 units are not shown for small
+            countries. Kerguelen Islands are part of France DELETED as admin-1 units are
+            not shown for small countries.
+- CHANGED:  Niassa Province in Mozambique is incorrectly spelled as ‘Nassa’. ‘Niassa’ is
+            there as a varname, but the province has never been called ‘Nassa’.
+- CHANGED:  Populated places (10m, 50m and 110m) - Norwegian cities, in whole related to
+            the special characters æ, ø and å. The following corrections should be made: 
+            Baerum -> Bærum, Svolvaer -> Svolvær, Tonsberg -> Tønsberg and 
+            Vadso -> Vadsø.
+- CHANGED:  Baguio City in the Philippines is still the defacto summer location of the 
+            supreme court (judiciary branch of government), a similar situation as Chile
+            and a couple other countries, but is now coded as “Admin-0 cap alt”. However, 
+            Quezon City and Pasay City are downgraded from Admin-0 capital alt to 
+            “Populated place” as the recent constitution states that the entire admin-1 
+            unit of Manila is the national capital and they fall inside that feature. 
+- CHANGED:  The place name Wiener Neustadt in Austria (that is the proper name of the 
+            city) had the wrong NAME attribute “Wiener”.
+- CHANGED:  Across the Mekong from Nakhon Phanom (Thailand), Natural Earth has a 
+            settlement marked “Khammouan” in Laos. Khammouan(e) is the name of a province.
+            The actual city across the river appears to be the capital of said province,
+            Thakhek.
+- CHANGED:  San Carlos moved east out of Lake Nicaragua.
+- CHANGED:  Primarily in Iran, Egypt, and Lebanon. “Name in NEV” >> “Should be”: 
+            Dayr az Zawr >> Dayr az Azwr, Khoramabad >> Khorramabad, 
+            Shahr E Kord >> Shar e Kord, Zagizig >> Zagazig, Damanhr >> Damanhur, 
+            Nabatiyet et Tahta >> Nabatiye et Tahta
+- CHANGED:  Greeneville, NC should be Greenville, NC
+- CHANGED:  Two point features labeled Bayankhongor in Mongolia. Kept the ’southern’ 
+            point, delete the northern one. Southern feature featureType changed to 
+            “Admin-1 cap”. 
+
+
+2011-01-31: 1.3.0
+- Full details: http://www.naturalearthdata.com/blog/natural-earth-version-1-3-release-notes/
+
+- Almost 10 new files or packages have been introduced in this release. 
+- The majority of files (171 out of 197) have changed with minor to large edits.
+- Unless otherwise noted: Topology and extent (vector) or georeferencing (raster) changes.
+- NEW:      Natural Earth quick start kit provides small sample of the themes styled in
+            an ArcMap .MXD document (read more at the Esri Mapping Center soon) 
+            and in a QGIS document.
+- CHANGED:  Added 4 versions of Cross Blended Hypso without Shaded Relief from 1.2.1 release
+- CHANGED:  All TIFs are now GeoTIFs with projection and cell size, registration points baked in. 
+- CHANGED:  All TIFs a Readme files have been added to all. 
+- CHANGED:  All TIFs a few files that had .tfw.txt are now just .tfw.
+- CHANGED:  All TIFs a few corrupt header files have been fixed. 
+- CHANGED:  Lakes - added Puma Yumco lake in Tibet on the Chinese border with Bhutan.
+- NEW:      Pluvial 10m lake theme for prehistoric water bodies starting with the Great 
+            Basin area of the United States and can grow to include more features.
+- CHANGED:  Historic lakes include a more precise Aral Sea and now includes Lake Texcoco 
+            at Mexico City, circa 1500. 
+- CHANGED:  Modified river and lake center lines and scale ranks for 10m North 
+            America supplement.
+- CHANGED:  Modified river and lake center lines and scale ranks for 10m Europe 
+            river supplement. 
+- CHANGED:  Many corrections in the 10m Rivers theme.
+- CHANGED:  Land label areas now clip North America, Europe, and Asia to 50 km to 
+            shoreline to promote more realistic auto labeling. Other changes.
+- CHANGED:  Label points and elevation points changed.
+- CHANGED:  Geographic lines: Added new Kiribati date line extension (and clipped to ±180 
+            ±90 bounding box).
+- CHANGED:  Parks: Two new U.S. National Park Service units added as the system expands 
+            to 384 total. Data fields updated so Name can be used for labels and UnitName
+            is the official park name.
+- CHANGED:  Populated places: Fix handful of city issues in all scales.             
+- NEW:      New countries: The Netherlands Antilles was dissolved in October 2010 and two 
+            new countries (Sint Maarten and Curaçao) were created out of part of the 
+            former territory, with the remaining islands devolved back to Netherlands as 
+            top-level, overseas administrative units of that country. Aruba remains a 
+            country.
+- WARNING:  A troubleshooting country has been added with an Indeterminate sovereignty 
+            class called Null Island
+- NEW:      New map units: New United Kingdom subdivisions for England, Scotland, Wales, 
+            Northern Ireland in 110m to match the 50m and 10m versions. 
+- CHANGED:  Pacific grouping lines adjusted to snap to 1° increments. The 110m version 
+            receives the same PacGroup column as the 50m version.
+- CHANGED:  Tiny countries: Ascension island moved to correct location nearer Africa north 
+            of St. Helena from erroneous position on South Georgia I. in 50m and 110m 
+            files. Adm0_A3 codes adjusted and moved to their own self titled column.
+- CHANGED:  Other admin_0 housekeeping and improvements.
+- CHANGED:  Added and revised some adm-0 maritime indicator lines. Moved Aland land 
+            boundary line to maritime indicator (and added one between Aland and mainland)
+- CHANGED:  Admin-1 all scales now include Abbreviation (US, Canada, partial UK) and 
+            shorter 2 to 3 digit “postal” codes to ease labeling (US, Canada, Mexico, 
+            Australia. Guessed at rest based on HASC/ISO codes). 
+- CHANGED:  Admin-1 there is some indication provided when to alternate these based on 
+            labelRank and scaleRank. 
+- CHANGED:  Admin01 region coding has also been provided for UK and US, could expand in 
+            the future (address inconsistency in France and Italy in particular where 
+            Natural Earth continues to show admin 1 regions rather than departments).
+- CHANGED:  States and provinces (both polygons and lines) now have correct ADM0_A3 codes 
+            and use the same MAP_COLOR column as the adm-0 in all scale sets. 
+- NEW:      Due to popular demand, a new supplementary version of the adm_1 polygons are 
+            provided with large lakes erased 
+- CHANGED:  Added SameAsCity column to indicate if the label should be placed only at a 
+            certain natural scale since the adm-1 name is the same (or very similar) to 
+            the adm-1 capital populated place point label. 
+- CHANGED:  Added scale ranking to adm-1 lines so they can appear in tandem with the polys.
+- CHANGED:  Countries with notable admin-1 changes: Algeria, Australia, Bangladesh, 
+            Belgium, Bhutan, China, Croatia, Congo, Cyprus, Denmark, Djibouti, Ethiopia, 
+            Fiji, Finland, Germany, Israel, Guinea, India, Italy, Ivory Coast, Japan, 
+            Kuwait, Kyrgyzstan, Lebanon, Macedonia, Malaysia, Mexico, Netherlands, New 
+            Zealand, Nigeria, Northern Cyprus, Norway, Oman, Pakistan, Paupa New Guinea, 
+            Peru, Philippines, Poland, Russia, Rwanda, Saudi Arabia, Slovenia, Solomon 
+            Islands, Spain, Sri Lanka, Sudan, Sweden, Switzerland, Tanzania, Tanzania, 
+            Trinidad, United Arab Emirates, United Kingdom, United Kingdom, Vanuatu, 
+            Vietnam, Yemen
+- CHANGED:  Merge sliver polygons and island polys with their larger parent polygon: 
+            Costa Rica, Croatia, Dominican Republic, El Salvador, Estonia, Greece, Haiti, 
+            Ireland, Nicaragua, Nigeria, Norway, Panama, Russia, Slovenia, Slovenia, Spain
+- REMOVED:  Deletions on a country basis: Cocos (Keeling) Islands, Northern Cyprus, 
+            Martinique and French Guiana arrondissements merged.
+- ADDED:    Added missing adm-1 lines: Cyprus, Denmark, Germany, India, Israel, Mexico, 
+            Rwanda, Russia, Spain, Switzerland, Syria, Yemen
+- REMOVED:  Removed adm-1 lines: Guinea, Iraq, Martinique and French Guiana, Nigeria, Others
+- ADDED:    Added many adm-1 maritme indicators as new “Adm-1 boundary water indicator” 
+            feature class: Croatia, Denmark, Netherlands, Multiple other countries, 
+            Southeast Asia island nations (Indonesia and Philippines in particular) 
+            remain outstanding., 
+- CHANGED:  Adm-1 gaps: Closed a few inside polygon “donut holes” adm_1 lines that didn’t 
+            have coincidental start-end points: Germany to Mongolia, Panama to Australia 
+            and Yemen. Ethiopia. Taiwan. Others.
+
+
+2010-10-25: 1.2.1
+- Full details: http://www.naturalearthdata.com/blog/miscellaneous/new-cross-blended-hypso-without-shaded-relief/
+
+- NEW:      Added Cross Blended Hypso without Shaded Relief
+
+
+2010-05-25: 1.2.0
+- Full details: http://www.naturalearthdata.com/blog/miscellaneous/natural-earth-version-1-2-release-notes/
+
+- NEW:      Supplementary hydrography rivers in North America (4x number of 1.1 rivers) 
+            via CEC North American Environmental Atlas (CEC NAEA).
+- NEW:      Supplementary hydrography lakes in North America (4x number of 1.1 rivers) 
+            via CEC NAEA.
+- NEW:      Supplementary hydrography rivers in Europe (4x number of 1.1 rivers) 
+            via European Commission, Joint Research Centre (JRC)
+- NEW:      Supplementary hydrography lakes in Europe (4x number of 1.1 rivers) 
+            via EC JRC
+- NEW:      Roads in North America via CEC NAEA.
+- NEW:      Railroads in North America via CEC NAEA.
+- NEW:      Supplementary roads in North America via XNR Productions.
+
+
+2010-03-15: 1.1.1
+- Full details: http://www.naturalearthdata.com/blog/miscellaneous/version-1-1-release-notes/
+
+- NEW:      Corrects the name of the 50m cultural `50m_admin_0_countries` file by adding the missing `r`.
+
+
+2010-03-01: 1.1.0
+- Full details: http://www.naturalearthdata.com/blog/miscellaneous/version-1-1-release-notes/
+
+- NEW:      National Parks for the United States of America.
+- NEW:      Landscan urban polygons (masks for population extraction out of original
+            LandScan data). 
+- REMOVED:  admin 0 marine boundary lines. The indicator lines are still there.
+- CHANGED:  10m, 50m, 110m populated places new towns being added, 30m selection created, 
+            various corrections, now include geonames.org IDs, bounding boxes from the 
+            landscan data, and historical populations for 500 mega cities.
+- NEW:      10m, 50m, 110m populated places - As this triples the file size, a new 
+            “simple” version is also available with the updates, but not the full 
+            attributes.
+- CHANGED:  50m and 110m Admin 0 and admin-1 get better country names and thematic codes, 
+            including slight reranking of some units and link out to the Correlates of War
+            database (cShapes).
+- CHANGED:  50m and 110m Admin 0 and admin-1 in 10m are rebuilt to fix coastline offset 
+            and overlaps and gaps between countries and state/province lines.
+- CHANGED:  10m, 50m, 110m Geographic label points for peaks and summits. Now spun off 
+            into separate feature class.
+- CHANGED:  110m country boundaries, missing countries, added missing mid-range islands. 
+            Includes Caspian sea and admin-0 scale ranks.
+- CHANGED:  All files names now use “_” underscore instead of “-” in filename for better 
+            compatibility with ArcMap.
+- CHANGED:  Handful of file name changes for consistency.
+- CHANGED:  10m Rivers and lakes. A couple names, fixed the scaleRanks to show as integers 
+            rather than strings.
+- CHANGED:  10m, 50m Updated the geographic areas marine names (Indonesia straight).
+- CHANGED:  10m, 50m Updated the geographic areas polys names (Seward Penn, Alaska).
+- CHANGED:  10m coastline updates for Venice. Same for land and ocean.
+- CHANGED:  10m bathymetry updates for several island mounts.
+- CHANGED:  10m Antarctic ice shelves, now includes ice shelf names.
+- CHANGED:  10m glaciated areas: names cleaned up, feature class column filled in.
+- CHANGED:  10m, 50m, 110m WGS84 bounding box has more point to aid in reprojecting as a 
+            linearized curve.
+- CHANGED:  Fixed TWF extent on the raster imagery to improve import into popular open 
+            source GIS packages.
+- CHANGED:  50m ocean can now project into web Mercator.
+- CHANGED:  110m all cultural and most physical themes now inside the +/- 180, +/- 90
+            bounding box.
+
+
+2010-01-09: 1.0.1
+- Full details: http://www.naturalearthdata.com/blog/miscellaneous/raster-imagery-1-0-1-released/
+
+- CHANGE:   The 10m raster data now fits perfectly within the ±180, ±90 bounding box.
+- CHANGE:   The 50m raster data now fits perfectly within the ±180, ±90 bounding box.
+- CHANGE:   The 10m raster data TFW files are updated.
+- CHANGE:   The 50m raster data TFW files are updated.
+
+
+2009-12-02: 1.0.0
+- Full details: http://www.naturalearthdata.com/blog/miscellaneous/let-the-downloads-begin/
+
+- NEW:      Initial release!
+
+
+2009-10-00: 0.0.0
+- NOTE:     Announced and demo'd at NACIS mapping conference in Sacramento, CA
