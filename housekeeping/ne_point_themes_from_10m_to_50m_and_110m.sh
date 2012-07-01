@@ -23,14 +23,8 @@ ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME
 #50m airports
 ogr2ogr -overwrite -sql "SELECT * FROM ne_50m_airports WHERE SCALERANK <= 4 ORDER BY SCALERANK" ne_50m_airports.shp ne_10m_airports.shp
 
-#110m airports
-ogr2ogr -overwrite -sql "SELECT * FROM ne_110m_airports WHERE SCALERANK <= 1 ORDER BY SCALERANK" ne_110m_airports.shp ne_10m_airports.shp
-
 
 # PORTS
 
 #50m ports
 ogr2ogr -overwrite -sql "SELECT * FROM ne_50m_ports WHERE SCALERANK <= 4 ORDER BY SCALERANK" ne_50m_ports.shp ne_10m_ports.shp
-
-#110m ports
-ogr2ogr -overwrite -sql "SELECT * FROM ne_110m_ports WHERE SCALERANK <= 1 ORDER BY SCALERANK" ne_110m_ports.shp ne_10m_ports.shp
