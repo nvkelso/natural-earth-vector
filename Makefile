@@ -4,16 +4,17 @@ VERSION_PREFIXED=_$(VERSION)
 #TARBALL=$(PACKAGE).tar.gz
 #Remember to escape the : in the urls
 #http://www.slac.stanford.edu/BFROOT/www/Computing/Offline/DataDist/ssh-idfile.html
+#
+#DOCROOT_NE=ftp\://naturalearthdata.com:download
 DOCROOT_NE=naturalearthdata.com:download/test
-#DOCROOT_NE=ftp\://naturalearthdata.com:download/test
-DOCROOT_FREAC=ftp\://ftp.freac.fsu.edu:web-download/test
+#DOCROOT_FREAC=ftp.freac.fsu.edu:nacis_ftp/web-download
+DOCROOT_FREAC=ftp.freac.fsu.edu:web-download/test
 
-all: zips
-	#Done!
-
-zips: zips/packages/natural_earth_vector.zip \
+all: zips/packages/natural_earth_vector.zip \
 	zips/packages/Natural_Earth_quick_start.zip
 	#Made zips...
+	
+	touch all
 
 zips/packages/natural_earth_vector.zip: \
 	zips/10m_cultural/10m_cultural.zip \
@@ -31,7 +32,7 @@ zips/packages/natural_earth_vector.zip: \
 
 zips/packages/natural_earth_vector.sqlite.zip:
 	#SQL-Lite
-	rm packages/natural_earth_vector.sqlite
+	rm -f packages/natural_earth_vector.sqlite
 	for shp in 10m_cultural/*.shp 10m_physical/*.shp 50m_cultural/*.shp 50m_physical/*.shp 110m_cultural/*.shp 110m_physical/*.shp; \
 	do \
 		ogr2ogr -f SQLite -append packages/natural_earth_vector.sqlite $$shp; \
@@ -229,6 +230,48 @@ zips/110m_physical/110m_physical.zip: \
 	cp $@ archive/110m_physical_$(VERSION).zip
 
 
+
+#DERIVED THEMES
+
+# POPULATED PLACES
+
+#10m simple- populated places
+10m_cultural/ne_10m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
+	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places WHERE natlscale >= 5 ORDER BY natlscale" $@ 10m_cultural/ne_10m_populated_places.shp
+
+#50m full - populated places
+50m_cultural/ne_50m_populated_places.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
+	# “SCALERANK” <= 4 Or "FEATURECLA" = 'Admin-0 capital' Or "FEATURECLA" = 'Admin-0 capital alt' Or "FEATURECLA" = 'Admin-0 region capital' Or "FEATURECLA" = 'Admin-1 region capital' Or "FEATURECLA" = 'Scientific station'	
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE natlscale >= 5 ORDER BY natlscale" $@ 10m_cultural/ne_10m_populated_places.shp
+
+50m_cultural/ne_50m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
+	#50m simple - populated places
+	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places WHERE natlscale >= 5 ORDER BY natlscale" $@ 10m_cultural/ne_10m_populated_places.shp
+
+#110m full - populated places
+110m_cultural/ne_110m_populated_places.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
+	# “SCALERANK” <= 1 Or "FEATURECLA" = 'Admin-0 capital' Or "FEATURECLA" = 'Admin-0 capital alt'
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE natlscale >= 5 ORDER BY natlscale" $@ 10m_cultural/ne_10m_populated_places.shp
+
+110m_cultural/ne_110m_populated_places.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
+	#110m simple - populated places
+	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places WHERE natlscale >= 5 ORDER BY natlscale" $@ 10m_cultural/ne_10m_populated_places.shp
+
+# AIRPORTS
+
+#50m airports
+50m_cultural/ne_50m_airports.shp: 10m_cultural/ne_50m_airports.shp 10m_cultural/ne_50m_airports.dbf
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_50m_airports WHERE SCALERANK <= 4 ORDER BY SCALERANK" $@ 10m_cultural/ne_10m_airports.shp
+
+# PORTS
+
+#50m ports
+50m_cultural/ne_50m_ports.shp: 10m_cultural/ne_50m_ports.shp 10m_cultural/ne_50m_ports.dbf
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_50m_ports WHERE SCALERANK <= 4 ORDER BY SCALERANK" $@ 10m_cultural/ne_10m_ports.shp
+	
+	
+	
+
 # THEMES
 
 # If either the geometry or the attributes change, time to remake the ZIPs
@@ -302,7 +345,7 @@ zips/10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.zip: 10m_cultural/ne
 zips/10m_cultural/ne_10m_admin_1_states_provinces_shp.zip: 10m_cultural/ne_10m_admin_1_states_provinces_shp.shp 10m_cultural/ne_10m_admin_1_states_provinces_shp.dbf
 	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_shp.*
 	cp $@ archive/ne_10m_admin_1_states_provinces_shp$(VERSION_PREFIXED).zip
-	
+
 zips/10m_cultural/ne_10m_populated_places_simple.zip: 10m_cultural/ne_10m_populated_places_simple.shp 10m_cultural/ne_10m_populated_places_simple.dbf
 	zip -j -r $@ 10m_cultural/ne_10m_populated_places_simple.*
 	cp $@ archive/ne_10m_populated_places_simple$(VERSION_PREFIXED).zip
@@ -937,7 +980,7 @@ packages/Natural_Earth_quick_start/50m_raster/status.txt:
 	rm -rf packages/Natural_Earth_quick_start/50m_raster/*
 	curl -o packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W.zip -L http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/raster/NE1_50M_SR_W.zip
 	unzip packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W.zip -d packages/Natural_Earth_quick_start/50m_raster/
-	rm packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W.zip
+	rm -f packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W.zip
 	
 	touch $@
 	
@@ -999,99 +1042,119 @@ zips/updates/natural_earth_update_1.4.0.zip:
 zips/updates/natural_earth_update_2.0.0.zip:
 	zip -r $@ updates/version_2d0/
 
-live-packages_ne: \
+zips/live-packages_ne: \
 	zips/packages/natural_earth_vector.zip \
 	zips/packages/natural_earth_vector.sqlite.zip \
 	zips/packages/Natural_Earth_quick_start.zip
 	
-	rsync -Cr --progress zips/packages/ $(DOCROOT_NE)/packages/
+	rsync -Cru --progress zips/packages/ $(DOCROOT_NE)/packages/
+	touch $@
 	
-live-10m_cultural_ne: zips/10m_cultural/10m_cultural.zip
-	rsync -Cr --progress zips/10m_cultural/ $(DOCROOT_NE)/10m/cultural/
+zips/live-10m_cultural_ne: zips/10m_cultural/10m_cultural.zip
+	rsync -Cru --progress zips/10m_cultural/ $(DOCROOT_NE)/10m/cultural/
+	touch $@
 
-live-10m_physical_ne: zips/10m_physical/10m_physical.zip
-	rsync -Cr --progress zips/10m_physical/ $(DOCROOT_NE)/10m/physical/
+zips/live-10m_physical_ne: zips/10m_physical/10m_physical.zip
+	rsync -Cru --progress zips/10m_physical/ $(DOCROOT_NE)/10m/physical/
+	touch $@
 
-live-50m_cultural_ne: zips/50m_cultural/50m_cultural.zip
-	rsync -Cr --progress zips/50m_cultural/ $(DOCROOT_NE)/50m/cultural/
+zips/live-50m_cultural_ne: zips/50m_cultural/50m_cultural.zip
+	rsync -Cru --progress zips/50m_cultural/ $(DOCROOT_NE)/50m/cultural/
+	touch $@
 
-live-50m_physical_ne: zips/50m_physical/50m_physical.zip
-	rsync -Cr --progress zips/50m_physical/ $(DOCROOT_NE)/50m/physical/
+zips/live-50m_physical_ne: zips/50m_physical/50m_physical.zip
+	rsync -Cru --progress zips/50m_physical/ $(DOCROOT_NE)/50m/physical/
+	touch $@
 
-live-110m_cultural_ne: zips/110m_cultural/110m_cultural.zip
-	rsync -Cr --progress zips/110m_cultural/ $(DOCROOT_NE)/110m/cultural/
+zips/live-110m_cultural_ne: zips/110m_cultural/110m_cultural.zip
+	rsync -Cru --progress zips/110m_cultural/ $(DOCROOT_NE)/110m/cultural/
+	touch $@
 
-live-110m_physical_ne: zips/110m_physical/110m_physical.zip
-	rsync -Cr --progress zips/110m_physical/ $(DOCROOT_NE)/110m/physical/
+zips/live-110m_physical_ne: zips/110m_physical/110m_physical.zip
+	rsync -Cru --progress zips/110m_physical/ $(DOCROOT_NE)/110m/physical/
+	touch $@
+
+zips/updates_ne: zips/updates/natural_earth_update_$(VERSION).zip
+	rsync -Cru --progress zips/updates/ $(DOCROOT_NE)/updates/
+	touch $@
 
 
-live-packages_freac: \
+zips/live-packages_freac: \
 	zips/packages/natural_earth_vector.zip \
 	zips/packages/natural_earth_vector.sqlite.zip \
 	zips/packages/Natural_Earth_quick_start.zip
 	
-	rsync -Cr --progress zips/packages/ $(DOCROOT_FREAC)/packages/
+	rsync -Cru --progress zips/packages/ $(DOCROOT_FREAC)/packages/
+	touch $@
 	
-live-10m_cultural_freac: zips/10m_cultural/10m_cultural.zip
-	rsync -Cr --progress zips/10m_cultural/ $(DOCROOT_FREAC)/10m/cultural/
+zips/live-10m_cultural_freac: zips/10m_cultural/10m_cultural.zip
+	rsync -Cru --progress zips/10m_cultural/ $(DOCROOT_FREAC)/10m/cultural/
+	touch $@
 
-live-10m_physical_freac: zips/10m_physical/10m_physical.zip
-	rsync -Cr --progress zips/10m_physical/ $(DOCROOT_FREAC)/10m/physical/
+zips/live-10m_physical_freac: zips/10m_physical/10m_physical.zip
+	rsync -Cru --progress zips/10m_physical/ $(DOCROOT_FREAC)/10m/physical/
+	touch $@
 
-live-50m_cultural_freac: zips/50m_cultural/50m_cultural.zip
-	rsync -Cr --progress zips/50m_cultural/ $(DOCROOT_FREAC)/50m/cultural/
+zips/live-50m_cultural_freac: zips/50m_cultural/50m_cultural.zip
+	rsync -Cru --progress zips/50m_cultural/ $(DOCROOT_FREAC)/50m/cultural/
+	touch $@
 
-live-50m_physical_freac: zips/50m_physical/50m_physical.zip
-	rsync -Cr --progress zips/50m_physical/ $(DOCROOT_FREAC)/50m/physical/
+zips/live-50m_physical_freac: zips/50m_physical/50m_physical.zip
+	rsync -Cru --progress zips/50m_physical/ $(DOCROOT_FREAC)/50m/physical/
+	touch $@
 
-live-110m_cultural_freac: zips/110m_cultural/110m_cultural.zip
-	rsync -Cr --progress zips/110m_cultural/ $(DOCROOT_FREAC)/110m/cultural/
+zips/live-110m_cultural_freac: zips/110m_cultural/110m_cultural.zip
+	rsync -Cru --progress zips/110m_cultural/ $(DOCROOT_FREAC)/110m/cultural/
+	touch $@
 
-live-110m_physical_freac: zips/110m_physical/110m_physical.zip
-	rsync -Cr --progress zips/110m_physical/ $(DOCROOT_FREAC)/110m/physical/
+zips/live-110m_physical_freac: zips/110m_physical/110m_physical.zip
+	rsync -Cru --progress zips/110m_physical/ $(DOCROOT_FREAC)/110m/physical/
+	touch $@
+
+zips/updates_freac: zips/updates/natural_earth_update_$(VERSION).zip
+	rsync -Cru --progress zips/updates/ $(DOCROOT_FREAC)/updates/
+	touch $@
 
 
-live: zips \
-	zips/updates/natural_earth_update_$(VERSION).zip \
-	live-packages_ne \
-	live-10m_cultural_ne \
-	live-10m_physical_ne \
-	live-50m_cultural_ne \
-	live-50m_physical_ne \
-	live-110m_cultural_ne \
-	live-110m_physical_ne \
-	live-packages_freac \
-	live-10m_cultural_freac \
-	live-10m_physical_freac \
-	live-50m_cultural_freac \
-	live-50m_physical_freac \
-	live-110m_cultural_freac \
-	live-110m_physical_freac
-	
-	#copy *.zip in folder > *_$(VERSION).zip
-	#ls zips/10m_cultural/*.zip | perl -p -e 's/^((.+)\.zip)$/cp \1 \2-1.4.zip/' | sh -ex
-
-	# NATURALEARTHDATA.com copy
-	#special items:
-	scp -i zips/updates/natural_earth_update_$(VERSION).zip $(DOCROOT_NE)/updates/natural_earth_update_$(VERSION).zip
-	
-	# FREAC copy
-	#special items:
-	scp -i zips/updates/natural_earth_update_$(VERSION).zip $(DOCROOT_FREAC)/web-download/updates/natural_earth_update_$(VERSION).zip
-
+downloads:
 	# DOWNLOADS copy
 	#special items:
 	cp updates/natural_earth_update_$(VERSION).zip downloads/
 	# packages
-	rsync -Cr --progress zips/packages/ downloads/
+	rsync -Cru --progress zips/packages/ downloads/
 	# etc for each theme
-	rsync -Cr --progress zips/10m_cultural/ downloads/
-	rsync -Cr --progress zips/10m_physical/ downloads/
-	rsync -Cr --progress zips/50m_cultural/ downloads/
-	rsync -Cr --progress zips/50m_physical/ downloads/
-	rsync -Cr --progress zips/110m_cultural/ downloads/
-	rsync -Cr --progress zips/110m_physical/ downloads/
+	rsync -Cru --progress zips/10m_cultural/ downloads/
+	rsync -Cru --progress zips/10m_physical/ downloads/
+	rsync -Cru --progress zips/50m_cultural/ downloads/
+	rsync -Cru --progress zips/50m_physical/ downloads/
+	rsync -Cru --progress zips/110m_cultural/ downloads/
+	rsync -Cru --progress zips/110m_physical/ downloads/
 
+	touch $@
+	
+
+live: \
+	zips/packages/natural_earth_vector.zip \
+	zips/packages/Natural_Earth_quick_start.zip\
+	zips/updates/natural_earth_update_$(VERSION).zip \
+	zips/live-packages_ne \
+	zips/updates_ne \
+	zips/live-10m_cultural_ne \
+	zips/live-10m_physical_ne \
+	zips/live-50m_cultural_ne \
+	zips/live-50m_physical_ne \
+	zips/live-110m_cultural_ne \
+	zips/live-110m_physical_ne \
+	zips/live-packages_freac \
+	zips/updates_freac \
+	zips/live-10m_cultural_freac \
+	zips/live-10m_physical_freac \
+	zips/live-50m_cultural_freac \
+	zips/live-50m_physical_freac \
+	zips/live-110m_cultural_freac \
+	zips/live-110m_physical_freac
+	
+	touch $@
 
 clean-quick-start:
 	rm -rf packages/Natural_Earth_quick_start/10m_cultural/*`
