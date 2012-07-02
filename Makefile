@@ -1009,19 +1009,19 @@ live-packages_ne: \
 live-10m_cultural_ne: zips/10m_cultural/10m_cultural.zip
 	rsync -Cr --progress zips/10m_cultural/ $(DOCROOT_NE)/10m/cultural/
 
-live-10m_physical_ne: zips/10m_cultural/10m_physical.zip
+live-10m_physical_ne: zips/10m_physical/10m_physical.zip
 	rsync -Cr --progress zips/10m_physical/ $(DOCROOT_NE)/10m/physical/
 
-live-50m_cultural_ne: zips/10m_cultural/50m_cultural.zip
+live-50m_cultural_ne: zips/50m_cultural/50m_cultural.zip
 	rsync -Cr --progress zips/50m_cultural/ $(DOCROOT_NE)/50m/cultural/
 
-live-50m_physical_ne: zips/10m_cultural/50m_physical.zip
+live-50m_physical_ne: zips/50m_physical/50m_physical.zip
 	rsync -Cr --progress zips/50m_physical/ $(DOCROOT_NE)/50m/physical/
 
-live-110m_cultural_ne: zips/10m_cultural/110m_cultural.zip
+live-110m_cultural_ne: zips/110m_cultural/110m_cultural.zip
 	rsync -Cr --progress zips/110m_cultural/ $(DOCROOT_NE)/110m/cultural/
 
-live-110m_physical_ne: zips/10m_cultural/110m_physical.zip
+live-110m_physical_ne: zips/110m_physical/110m_physical.zip
 	rsync -Cr --progress zips/110m_physical/ $(DOCROOT_NE)/110m/physical/
 
 
@@ -1035,19 +1035,19 @@ live-packages_freac: \
 live-10m_cultural_freac: zips/10m_cultural/10m_cultural.zip
 	rsync -Cr --progress zips/10m_cultural/ $(DOCROOT_FREAC)/10m/cultural/
 
-live-10m_physical_freac: zips/10m_cultural/10m_cultural.zip
+live-10m_physical_freac: zips/10m_physical/10m_physical.zip
 	rsync -Cr --progress zips/10m_physical/ $(DOCROOT_FREAC)/10m/physical/
 
-live-50m_cultural_freac: zips/10m_cultural/50m_cultural.zip
+live-50m_cultural_freac: zips/50m_cultural/50m_cultural.zip
 	rsync -Cr --progress zips/50m_cultural/ $(DOCROOT_FREAC)/50m/cultural/
 
-live-50m_physical_freac: zips/10m_cultural/50m_physical.zip
+live-50m_physical_freac: zips/50m_physical/50m_physical.zip
 	rsync -Cr --progress zips/50m_physical/ $(DOCROOT_FREAC)/50m/physical/
 
-live-110m_cultural_freac: zips/10m_cultural/110m_cultural.zip
+live-110m_cultural_freac: zips/110m_cultural/110m_cultural.zip
 	rsync -Cr --progress zips/110m_cultural/ $(DOCROOT_FREAC)/110m/cultural/
 
-live-110m_physical_freac: zips/10m_cultural/110m_physical.zip
+live-110m_physical_freac: zips/110m_physical/110m_physical.zip
 	rsync -Cr --progress zips/110m_physical/ $(DOCROOT_FREAC)/110m/physical/
 
 
