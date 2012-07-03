@@ -10,11 +10,13 @@ DOCROOT_NE=naturalearthdata.com:download/test
 #DOCROOT_FREAC=ftp.freac.fsu.edu:nacis_ftp/web-download
 DOCROOT_FREAC=ftp.freac.fsu.edu:web-download/test
 
-all: zips/packages/natural_earth_vector.zip \
+all: zip
+
+zip: zips/packages/natural_earth_vector.zip \
 	zips/packages/Natural_Earth_quick_start.zip
 	#Made zips...
 	
-	touch all
+	touch $@
 
 zips/packages/natural_earth_vector.zip: \
 	zips/10m_cultural/10m_cultural.zip \
@@ -25,7 +27,7 @@ zips/packages/natural_earth_vector.zip: \
 	zips/110m_physical/110m_physical.zip \
 	zips/packages/natural_earth_vector.sqlite.zip
 	
-	zip -r $@ 10m_cultural 10m_physical 50m_cultural 50m_physical 110m_cultural 110m_physical VERSION README.md CHANGELOG
+	zip -rf $@ 10m_cultural 10m_physical 50m_cultural 50m_physical 110m_cultural 110m_physical VERSION README.md CHANGELOG
 	#Bake off a version'd iteration of that file, too
 	cp $@ archive/natural_earth_vector_$(VERSION).zip
 
@@ -49,8 +51,28 @@ zips/packages/Natural_Earth_quick_start.zip: \
 	packages/Natural_Earth_quick_start/110m_cultural/status.txt \
 	packages/Natural_Earth_quick_start/110m_physical/status.txt
 
-	zip -r $@ packages/Natural_Earth_quick_start/ VERSION README.md CHANGELOG
+	zip -rf $@ packages/Natural_Earth_quick_start/ VERSION README.md CHANGELOG
 	cp $@ archive/Natural_Earth_quick_start_$(VERSION).zip
+	
+	
+zips/housekeeping: \
+	zips/housekeeping/ne_admin_0_details.zip \
+	zips/housekeeping/ne_admin_0_full_attributes.zip \
+	zips/housekeeping/ne_themes_versions.zip \
+	
+	touch $@
+
+
+zips/housekeeping/ne_admin_0_details.zip:
+	zip -rf $@ housekeeping/ne_admin_0_details.xls VERSION README.md CHANGELOG
+	
+zips/housekeeping/ne_admin_0_full_attributes.zip:
+	zip -rf $@ housekeeping/ne_admin_0_full_attributes.xls VERSION README.md CHANGELOG
+	
+zips/housekeeping/ne_themes_versions.zip:
+	zip -rf $@ housekeeping/ne_themes_versions.xls VERSION README.md CHANGELOG
+
+
 
 # PER THEME, BY SCALESET
 
@@ -84,7 +106,7 @@ zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.zip \
 	zips/10m_cultural/ne_10m_parks_and_protected_areas.zip
 
-	zip -r zips/10m_cultural/10m_cultural.zip 10m_cultural VERSION README.md CHANGELOG
+	zip -rf zips/10m_cultural/10m_cultural.zip 10m_cultural VERSION README.md CHANGELOG
 	cp $@ archive/10m_cultural_$(VERSION).zip	
 
 zips/10m_physical/10m_physical.zip: \
@@ -237,37 +259,37 @@ zips/110m_physical/110m_physical.zip: \
 
 #10m simple- populated places
 10m_cultural/ne_10m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
-	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places WHERE natlscale >= 5 ORDER BY natlscale" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places WHERE NATSCALE >= 5 ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
 
 #50m full - populated places
 50m_cultural/ne_50m_populated_places.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
 	# “SCALERANK” <= 4 Or "FEATURECLA" = 'Admin-0 capital' Or "FEATURECLA" = 'Admin-0 capital alt' Or "FEATURECLA" = 'Admin-0 region capital' Or "FEATURECLA" = 'Admin-1 region capital' Or "FEATURECLA" = 'Scientific station'	
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE natlscale >= 5 ORDER BY natlscale" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE NATSCALE >= 5 ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
 
 50m_cultural/ne_50m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
 	#50m simple - populated places
-	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places WHERE natlscale >= 5 ORDER BY natlscale" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places WHERE NATSCALE >= 5 ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
 
 #110m full - populated places
 110m_cultural/ne_110m_populated_places.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
 	# “SCALERANK” <= 1 Or "FEATURECLA" = 'Admin-0 capital' Or "FEATURECLA" = 'Admin-0 capital alt'
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE natlscale >= 5 ORDER BY natlscale" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE NATSCALE >= 5 ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
 
-110m_cultural/ne_110m_populated_places.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
+110m_cultural/ne_110m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
 	#110m simple - populated places
-	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places WHERE natlscale >= 5 ORDER BY natlscale" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places WHERE NATSCALE >= 5 ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
 
 # AIRPORTS
 
 #50m airports
-50m_cultural/ne_50m_airports.shp: 10m_cultural/ne_50m_airports.shp 10m_cultural/ne_50m_airports.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_50m_airports WHERE SCALERANK <= 4 ORDER BY SCALERANK" $@ 10m_cultural/ne_10m_airports.shp
+50m_cultural/ne_50m_airports.shp: 10m_cultural/ne_10m_airports.shp 10m_cultural/ne_10m_airports.dbf
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_airports WHERE SCALERANK <= 4 ORDER BY SCALERANK" $@ 10m_cultural/ne_10m_airports.shp
 
 # PORTS
 
 #50m ports
-50m_cultural/ne_50m_ports.shp: 10m_cultural/ne_50m_ports.shp 10m_cultural/ne_50m_ports.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_50m_ports WHERE SCALERANK <= 4 ORDER BY SCALERANK" $@ 10m_cultural/ne_10m_ports.shp
+50m_cultural/ne_50m_ports.shp: 10m_cultural/ne_10m_ports.shp 10m_cultural/ne_10m_ports.dbf
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_ports WHERE SCALERANK <= 4 ORDER BY SCALERANK" $@ 10m_cultural/ne_10m_ports.shp
 	
 	
 	
@@ -1025,22 +1047,22 @@ packages/Natural_Earth_quick_start/110m_physical/status.txt: \
 	touch $@
 	
 zips/updates/natural_earth_update_1.1.0.zip:
-	zip -r $@ updates/version_1d1/
+	zip -rf $@ updates/version_1d1/
 
 zips/updates/natural_earth_update_1.1.3.zip:
-	zip -r $@ updates/version_1d1d3/
+	zip -rf $@ updates/version_1d1d3/
 
 zips/updates/natural_earth_update_1.2.0.zip:
-	zip -r $@ updates/version_1d2/
+	zip -rf $@ updates/version_1d2/
 
 zips/updates/natural_earth_update_1.3.0.zip:
-	zip -r $@ updates/version_1d3/
+	zip -rf $@ updates/version_1d3/
 		
 zips/updates/natural_earth_update_1.4.0.zip:
-	zip -r $@ updates/version_1d4/
+	zip -rf $@ updates/version_1d4/
 
 zips/updates/natural_earth_update_2.0.0.zip:
-	zip -r $@ updates/version_2d0/
+	zip -rf $@ updates/version_2d0/
 
 zips/live-packages_ne: \
 	zips/packages/natural_earth_vector.zip \
@@ -1084,35 +1106,250 @@ zips/live-packages_freac: \
 	zips/packages/natural_earth_vector.sqlite.zip \
 	zips/packages/Natural_Earth_quick_start.zip
 	
-	rsync -Cru --progress zips/packages/ $(DOCROOT_FREAC)/packages/
+	#rsync -Cru --progress zips/packages/ $(DOCROOT_FREAC)/packages/
+	
+	scp zips/packages_/Natural_Earth_quick_start.zip $(DOCROOT_FREAC)/packages/Natural_Earth_quick_start.zip
+	scp zips/packages_/ne_10m_building_blocks.zip $(DOCROOT_FREAC)/packages/ne_10m_building_blocks.zip
+	scp zips/packages_/natural_earth_vector.zip $(DOCROOT_FREAC)/packages/Natural_Earth_quick_start.zip
+	scp zips/packages_/natural_earth_vector.sqlite.zip $(DOCROOT_FREAC)/packages/Natural_Earth_quick_start.zip
+	
 	touch $@
 	
 zips/live-10m_cultural_freac: zips/10m_cultural/10m_cultural.zip
-	rsync -Cru --progress zips/10m_cultural/ $(DOCROOT_FREAC)/10m/cultural/
+	#rsync -Cru --progress zips/10m_cultural/ $(DOCROOT_FREAC)/10m/cultural/
+	
+	scp zips/10m_cultural/ne_10m_cultural.zip $(DOCROOT_FREAC)/10m/cultural/10m-cultural.zip
+	scp zips/10m_cultural/ne_10m_admin_0_countries.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-countries.zip
+	scp zips/10m_cultural/ne_10m_admin_0_countries.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-countries.zip
+	
+	scp zips/10m_cultural/ne_10m_admin_0_map_units.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-map-units.zip
+	scp zips/10m_cultural/ne_10m_admin_0_map_subunits.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-map-subunits.zip
+	scp zips/10m_cultural/ne_10m_admin_0_scale_ranks.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-scale-ranks.zip
+	scp zips/10m_cultural/ne_10m_admin_0_scale_ranks_with_minor_islands.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-scale-ranks-with-minor-islands.zip
+	scp zips/10m_cultural/ne_10m_admin_0_sovereignty.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-sovereignty.zip
+	
+	scp zips/10m_cultural/ne_10m_admin_0_boundary_lines_land.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-boundary-lines-land.zip
+	scp zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-boundary-lines-maritime.zip
+	scp zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-boundary-lines-maritime-indicator.zip
+	scp zips/10m_cultural/ne_10m_admin_0_boundary_lines_map_units.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-boundary-lines-map-units.zip
+	scp zips/10m_cultural/ne_10m_admin_0_pacific_groupings.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-pacific-groupings.zip
+	
+	scp zips/10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-breakaway-disputed-areas.zip
+	scp zips/10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_with_scale_ranks.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-0-breakaway-disputed-areas-with-scale-ranks.zip
+	
+	scp zips/10m_cultural/ne_10m_admin_1_states_provinces_shp.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-1-states-provinces-shp.zip
+	scp zips/10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-1-states-provinces-lines-shp.zip
+	scp zips/10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-1-states-provinces-geodb.zip
+	scp zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.gdb.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-1-states-provinces-lakes-geodb.zip
+	scp zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.zip $(DOCROOT_FREAC)/10m/cultural/10m-admin-1-states-provinces-lakes-shp.zip
+	scp zips/10m_cultural/ne_ne_10m_admin_1_states_provinces_scale_ranks.zip $(DOCROOT_FREAC)/10m/cultural/ne_10m_admin_1_states_provinces_scale_ranks.zip
+	scp zips/10m_cultural/ne_10m_populated_places.zip $(DOCROOT_FREAC)/10m/cultural/10m-populated-places.zip
+	scp zips/10m_cultural/ne_10m_populated_places_less_columns.zip $(DOCROOT_FREAC)/10m/cultural/10m-populated-places-less-columns.zip
+	scp zips/10m_cultural/ne_10m_urban_area.zip $(DOCROOT_FREAC)/10m/cultural/10m-urban-area.zip
+	scp zips/10m_cultural/ne_10m_landscan_urban_areas.zip $(DOCROOT_FREAC)/10m/cultural/10m-landscan-urban-areas.zip
+	scp zips/10m_cultural/ne_10m_parks.zip $(DOCROOT_FREAC)/10m/cultural/10m-parks.zip
+	
+	scp zips/10m_cultural/ne_10m_roads.zip $(DOCROOT_FREAC)/10m/cultural/10m-roads.zip
+	scp zips/10m_cultural/ne_10m_roads_north_america_supplement.zip $(DOCROOT_FREAC)/10m/cultural/10m-roads-north-america-supplement.zip
+	scp zips/10m_cultural/ne_10m_railroads.zip $(DOCROOT_FREAC)/10m/cultural/10m-railroads.zip
+	scp zips/10m_cultural/ne_10m_airports.zip $(DOCROOT_FREAC)/10m/cultural/10m-airports.zip
+	scp zips/10m_cultural/ne_10m_ports.zip $(DOCROOT_FREAC)/10m/cultural/10m-ports.zip
+	scp zips/10m_cultural/ne_10m_timezones.zip $(DOCROOT_FREAC)/10m/cultural/10m-timezones.zip
+	
 	touch $@
 
 zips/live-10m_physical_freac: zips/10m_physical/10m_physical.zip
-	rsync -Cru --progress zips/10m_physical/ $(DOCROOT_FREAC)/10m/physical/
+	#rsync -Cru --progress zips/10m_physical/ $(DOCROOT_FREAC)/10m/physical/
+	
+	scp zips/10m_physical/ne_10m_physical.zip $(DOCROOT_FREAC)/10m/physical/10m-physical.zip
+
+	scp zips/10m_physical/ne_10m_rivers_lake_centerlines.zip $(DOCROOT_FREAC)/10m/physical/10m-rivers-lake-centerlines.zip
+	scp zips/10m_physical/ne_10m_rivers_lake_centerlines_scale_ranks.zip $(DOCROOT_FREAC)/10m/physical/10m-rivers-lake-centerlines-scale-ranks.zip
+	scp zips/10m_physical/ne_10m_rivers_lake_centerlines_north_america_supplement.zip $(DOCROOT_FREAC)/10m/physical/10m-rivers-lake-centerlines-north-america-supplement.zip
+	scp zips/10m_physical/ne_10m_rivers_lake_centerlines_europe_supplement.zip $(DOCROOT_FREAC)/10m/physical/10m-rivers-lake-centerlines-europe-supplement.zip
+	scp zips/10m_physical/ne_10m_lakes.zip $(DOCROOT_FREAC)/10m/physical/10m-lakes.zip
+	scp zips/10m_physical/ne_10m_lakes_north_america_supplement.zip $(DOCROOT_FREAC)/10m/physical/10m-lakes-north-america-supplement.zip
+	scp zips/10m_physical/ne_10m_lakes_europe_supplement.zip $(DOCROOT_FREAC)/10m/physical/10m-lakes-europe-supplement.zip
+	scp zips/10m_physical/ne_10m_lakes_historic.zip $(DOCROOT_FREAC)/10m/physical/10m-lakes-historic.zip
+	scp zips/10m_physical/ne_10m_lakes_pluvial.zip $(DOCROOT_FREAC)/10m/physical/10m-lakes-pluvial.zip
+	scp zips/10m_physical/ne_10m_playas.zip $(DOCROOT_FREAC)/10m/physical/10m-playas.zip
+	
+	scp zips/10m_physical/ne_10m_geography_regions_polys.zip $(DOCROOT_FREAC)/10m/physical/10m-geography-regions-polys.zip
+	scp zips/10m_physical/ne_10m_geography_regions_points.zip $(DOCROOT_FREAC)/10m/physical/10m-geography-regions-points.zip
+	scp zips/10m_physical/ne_10m_geography_elevation_points.zip $(DOCROOT_FREAC)/10m/physical/10m-geography-elevation-points.zip
+	scp zips/10m_physical/ne_10m_geography_marine_polys.zip $(DOCROOT_FREAC)/10m/physical/10m-geography-marine-polys.zip
+	scp zips/10m_physical/ne_10m_land.zip $(DOCROOT_FREAC)/10m/physical/10m-land.zip
+	scp zips/10m_physical/ne_10m_land_scale_ranks.zip $(DOCROOT_FREAC)/10m/physical/10m-land-scale-ranks.zip
+	scp zips/10m_physical/ne_10m_ocean.zip $(DOCROOT_FREAC)/10m/physical/10m-ocean.zip
+	scp zips/10m_physical/ne_10m_coastline.zip $(DOCROOT_FREAC)/10m/physical/10m-coastline.zip
+	
+	scp zips/10m_physical/ne_10m_minor_islands.zip $(DOCROOT_FREAC)/10m/physical/10m-minor-islands.zip
+	scp zips/10m_physical/ne_10m_minor_islands_coastline.zip $(DOCROOT_FREAC)/10m/physical/10m-minor-islands-coastline.zip
+	scp zips/10m_physical/ne_10m_reefs.zip $(DOCROOT_FREAC)/10m/physical/10m-reefs.zip
+	scp zips/10m_physical/ne_10m_glaciated_areas.zip $(DOCROOT_FREAC)/10m/physical/10m-glaciated-areas.zip
+	
+	scp zips/10m_physical/ne_10m_antarctic_ice_shelves_polys.zip $(DOCROOT_FREAC)/10m/physical/10m-antarctic-ice-shelves-polys.zip
+	scp zips/10m_physical/ne_10m_antarctic_ice_shelves_lines.zip $(DOCROOT_FREAC)/10m/physical/10m-antarctic-ice-shelves-lines.zip
+	
+	scp zips/10m_physical/ne_10m_bathymetry_all.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-all.zip
+	scp zips/10m_physical/ne_10m_bathymetry_0.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-0.zip
+	scp zips/10m_physical/ne_10m_bathymetry_200.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-200.zip
+	scp zips/10m_physical/ne_10m_bathymetry_1000.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-1000.zip
+	scp zips/10m_physical/ne_10m_bathymetry_2000.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-2000.zip
+	scp zips/10m_physical/ne_10m_bathymetry_3000.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-3000.zip
+	scp zips/10m_physical/ne_10m_bathymetry_4000.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-4000.zip
+	scp zips/10m_physical/ne_10m_bathymetry_5000.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-5000.zip
+	scp zips/10m_physical/ne_10m_bathymetry_6000.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-6000.zip
+	scp zips/10m_physical/ne_10m_bathymetry_7000.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-7000.zip
+	scp zips/10m_physical/ne_10m_bathymetry_8000.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-8000.zip
+	scp zips/10m_physical/ne_10m_bathymetry_9000.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-9000.zip
+	scp zips/10m_physical/ne_10m_bathymetry_10000.zip $(DOCROOT_FREAC)/10m/physical/10m-bathymetry-10000.zip
+	scp zips/10m_physical/ne_10m_geographic_lines.zip $(DOCROOT_FREAC)/10m/physical/10m-geographic-lines.zip
+	
+	scp zips/10m_physical/ne_10m_graticules_all.zip $(DOCROOT_FREAC)/10m/physical/10m-graticules-all.zip
+	scp zips/10m_physical/ne_10m_graticules_1.zip $(DOCROOT_FREAC)/10m/physical/10m-graticules-1.zip
+	scp zips/10m_physical/ne_10m_graticules_5.zip $(DOCROOT_FREAC)/10m/physical/10m-graticules-5.zip
+	scp zips/10m_physical/ne_10m_graticules_10.zip $(DOCROOT_FREAC)/10m/physical/10m-graticules-10.zip
+	scp zips/10m_physical/ne_10m_graticules_15.zip $(DOCROOT_FREAC)/10m/physical/10m-graticules-15.zip
+	scp zips/10m_physical/ne_10m_graticules_20.zip $(DOCROOT_FREAC)/10m/physical/10m-graticules-20.zip
+	scp zips/10m_physical/ne_10m_graticules_30.zip $(DOCROOT_FREAC)/10m/physical/10m-graticules-30.zip
+	scp zips/10m_/ne_10m_wgs84_bounding_box.zip $(DOCROOT_FREAC)/10m//10m-wgs84-bounding-box.zip
+
 	touch $@
 
 zips/live-50m_cultural_freac: zips/50m_cultural/50m_cultural.zip
-	rsync -Cru --progress zips/50m_cultural/ $(DOCROOT_FREAC)/50m/cultural/
+	#rsync -Cru --progress zips/50m_cultural/ $(DOCROOT_FREAC)/50m/cultural/
+	
+	scp zips/50m_cultural/ne_50m_cultural.zip $(DOCROOT_FREAC)/50m/cultural/50m-cultural.zip
+	scp zips/50m_cultural/ne_50m_admin_0_countries.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-0-countries.zip
+	
+	scp zips/50m_cultural/ne_50m_admin_0_map_units.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-0-map-units.zip
+	scp zips/50m_cultural/ne_50m_admin_0_map_subunits.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-0-map-subunits.zip
+	scp zips/50m_cultural/ne_50m_admin_0_scale_ranks.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-0-scale-ranks.zip
+	scp zips/50m_cultural/ne_50m_admin_0_sovereignty.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-0-sovereignty.zip
+	scp zips/50m_cultural/ne_50m_admin_0_tiny_countries.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-0-tiny-countries.zip
+	
+	scp zips/50m_cultural/ne_50m_admin_0_boundary_map_units.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-0-boundary-map-units.zip
+	scp zips/50m_cultural/ne_50m_admin_0_boundary_lines_land.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-0-boundary-lines-land.zip
+	scp zips/50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-0-boundary-lines-maritime-indicator.zip
+	scp zips/50m_cultural/ne_50m_admin_0_pacific_groupings.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-0-pacific-groupings.zip
+	
+	scp zips/50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-0-breakaway-disputed-areas.zip
+	scp zips/50m_cultural/ne_50m_admin_0_boundary_breakaway_disputed_areas.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-0-boundary-breakaway-disputed-areas.zip
+	
+	scp zips/50m_cultural/ne_50m_admin_1_states_provinces_shp.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-1-states-provinces-shp.zip
+	scp zips/50m_cultural/ne_50m_admin_1_states_provinces_lakes_shp.zip $(DOCROOT_FREAC)/50m/cultural/ne_50m_admin_1_states_provinces_lakes_shp.zip
+	scp zips/50m_cultural/ne_50m_admin_1_states_provinces_lines_shp.zip $(DOCROOT_FREAC)/50m/cultural/50m-admin-1-states-provinces-lines-shp.zip
+	scp zips/50m_cultural/ne_50m_populated_places.zip $(DOCROOT_FREAC)/50m/cultural/50m-populated-places.zip
+	scp zips/50m_cultural/ne_50m_populated_places_simple.zip $(DOCROOT_FREAC)/50m/cultural/50m-populated-places-simple.zip
+	scp zips/50m_cultural/ne_50m_urban_area.zip $(DOCROOT_FREAC)/50m/cultural/50m-urban-area.zip
+	scp zips/50m_cultural/ne_50m_roads.zip $(DOCROOT_FREAC)/50m/cultural/50m-roads.zip
+	scp zips/50m_cultural/ne_50m_railroads.zip $(DOCROOT_FREAC)/50m/cultural/50m-railroads.zip
+	scp zips/50m_cultural/ne_50m_airports.zip $(DOCROOT_FREAC)/50m/cultural/50m-airports.zip
+	scp zips/50m_cultural/ne_50m_ports.zip $(DOCROOT_FREAC)/50m/cultural/50m-ports.zip
+	
 	touch $@
 
 zips/live-50m_physical_freac: zips/50m_physical/50m_physical.zip
-	rsync -Cru --progress zips/50m_physical/ $(DOCROOT_FREAC)/50m/physical/
+	#rsync -Cru --progress zips/50m_physical/ $(DOCROOT_FREAC)/50m/physical/
+	
+	scp zips/50m_physical/ne_50m_physical.zip $(DOCROOT_FREAC)/50m/physical/50m-physical.zip
+	scp zips/50m_physical/ne_50m_rivers_lake_centerlines.zip $(DOCROOT_FREAC)/50m/physical/50m-rivers-lake-centerlines.zip
+	scp zips/50m_physical/ne_50m_rivers_lake_centerlines_with_scale_ranks.zip $(DOCROOT_FREAC)/50m/physical/50m-rivers-lake-centerlines-with-scale-ranks.zip
+	
+	scp zips/50m_physical/ne_50m_lakes.zip $(DOCROOT_FREAC)/50m/physical/50m-lakes.zip
+	scp zips/50m_physical/ne_50m_lakes_historic.zip $(DOCROOT_FREAC)/50m/physical/50m-lakes-historic.zip
+	scp zips/50m_physical/ne_50m_playas.zip $(DOCROOT_FREAC)/50m/physical/50m-playas.zip
+	
+	scp zips/50m_physical/ne_50m_geography_regions_polys.zip $(DOCROOT_FREAC)/50m/physical/50m-geography-regions-polys.zip
+	scp zips/50m_physical/ne_50m_geography_regions_points.zip $(DOCROOT_FREAC)/50m/physical/50m-geography-regions-points.zip
+	scp zips/50m_physical/ne_50m_geography_regions_elevation_points.zip $(DOCROOT_FREAC)/50m/physical/50m-geography-regions-elevation-points.zip
+	scp zips/50m_physical/ne_50m_geography_marine_polys.zip $(DOCROOT_FREAC)/50m/physical/50m-geography-marine-polys.zip
+	scp zips/50m_physical/ne_50m_land.zip $(DOCROOT_FREAC)/50m/physical/50m-land.zip
+	scp zips/50m_physical/ne_50m_ocean.zip $(DOCROOT_FREAC)/50m/physical/50m-ocean.zip
+	scp zips/50m_physical/ne_50m_coastline.zip $(DOCROOT_FREAC)/50m/physical/50m-coastline.zip
+	scp zips/50m_physical/ne_50m_glaciated_areas.zip $(DOCROOT_FREAC)/50m/physical/50m-glaciated-areas.zip
+	
+	scp zips/50m_physical/ne_50m_antarctic_ice_shelves_polys.zip $(DOCROOT_FREAC)/50m/physical/50m-antarctic-ice-shelves-polys.zip
+	scp zips/50m_physical/ne_50m_antarctic_ice_shelves_lines.zip $(DOCROOT_FREAC)/50m/physical/50m-antarctic-ice-shelves-lines.zip
+	scp zips/50m_physical/ne_50m_geographic_lines.zip $(DOCROOT_FREAC)/50m/physical/50m-geographic-lines.zip
+	
+	scp zips/50m_physical/ne_50m_graticules_all.zip $(DOCROOT_FREAC)/50m/physical/50m-graticules-all.zip
+	scp zips/50m_physical/ne_50m_graticules_1.zip $(DOCROOT_FREAC)/50m/physical/50m-graticules-1.zip
+	scp zips/50m_physical/ne_50m_graticules_5.zip $(DOCROOT_FREAC)/50m/physical/50m-graticules-5.zip
+	scp zips/50m_physical/ne_50m_graticules_10.zip $(DOCROOT_FREAC)/50m/physical/50m-graticules-10.zip
+	scp zips/50m_physical/ne_50m_graticules_15.zip $(DOCROOT_FREAC)/50m/physical/50m-graticules-15.zip
+	scp zips/50m_physical/ne_50m_graticules_20.zip $(DOCROOT_FREAC)/50m/physical/50m-graticules-20.zip
+	scp zips/50m_physical/ne_50m_graticules_30.zip $(DOCROOT_FREAC)/50m/physical/50m-graticules-30.zip
+	scp zips/50m_/ne_50m_wgs84_bounding_box.zip $(DOCROOT_FREAC)/50m//50m-wgs84-bounding-box.zip	
+	
 	touch $@
 
 zips/live-110m_cultural_freac: zips/110m_cultural/110m_cultural.zip
-	rsync -Cru --progress zips/110m_cultural/ $(DOCROOT_FREAC)/110m/cultural/
+	#rsync -Cru --progress zips/110m_cultural/ $(DOCROOT_FREAC)/110m/cultural/
+	
+	scp zips/110m_cultural/ne_110m_cultural.zip $(DOCROOT_FREAC)/110m/cultural/110m-cultural.zip
+	scp zips/110m_cultural/ne_110m_admin_0_countries.zip $(DOCROOT_FREAC)/110m/cultural/110m-admin-0-countries.zip
+	scp zips/110m_cultural/ne_110m_admin_0_map_units.zip $(DOCROOT_FREAC)/110m/cultural/110m-admin-0-map-units.zip
+	scp zips/110m_cultural/ne_110m_admin_0_scale_ranks.zip $(DOCROOT_FREAC)/110m/cultural/110m-admin-0-scale-ranks.zip
+	scp zips/110m_cultural/ne_110m_admin_0_sovereignty.zip $(DOCROOT_FREAC)/110m/cultural/110m-admin-0-sovereignty.zip
+	scp zips/110m_cultural/ne_110m_admin_0_tiny_countries.zip $(DOCROOT_FREAC)/110m/cultural/110m-admin-0-tiny-countries.zip
+	scp zips/110m_cultural/ne_110m_admin_0_boundary_lines.zip $(DOCROOT_FREAC)/110m/cultural/110m-admin-0-boundary-lines.zip
+	scp zips/110m_cultural/ne_110m_admin_0_pacific_groupings.zip $(DOCROOT_FREAC)/110m/cultural/110m-admin-0-pacific-groupings.zip
+	
+	scp zips/110m_cultural/ne_110m_admin_1_states_provinces_poly_shp.zip $(DOCROOT_FREAC)/110m/cultural/110m-admin-1-states-provinces-poly-shp.zip
+	scp zips/110m_cultural/ne_110m_admin_1_states_provinces_lines_shp.zip $(DOCROOT_FREAC)/110m/cultural/110m-admin-1-states-provinces-lines-shp.zip
+	scp zips/110m_cultural/ne_110m_populated_places.zip $(DOCROOT_FREAC)/110m/cultural/110m-populated-places.zip
+	scp zips/110m_cultural/ne_110m_populated_places_simple.zip $(DOCROOT_FREAC)/110m/cultural/110m-populated-places-simple.zip
+
 	touch $@
 
 zips/live-110m_physical_freac: zips/110m_physical/110m_physical.zip
-	rsync -Cru --progress zips/110m_physical/ $(DOCROOT_FREAC)/110m/physical/
+	#rsync -Cru --progress zips/110m_physical/ $(DOCROOT_FREAC)/110m/physical/
+	
+	scp zips/110m_physical/ne_110m_physical.zip $(DOCROOT_FREAC)/110m/physical/110m-physical.zip
+	scp zips/110m_physical/ne_110m_rivers_lake_centerlines.zip $(DOCROOT_FREAC)/110m/physical/110m-rivers-lake-centerlines.zip
+	scp zips/110m_physical/ne_110m_lakes.zip $(DOCROOT_FREAC)/110m/physical/110m-lakes.zip
+	
+	scp zips/110m_physical/ne_110m_geography_regions_polys.zip $(DOCROOT_FREAC)/110m/physical/110m-geography-regions-polys.zip
+	scp zips/110m_physical/ne_110m_geography_regions_points.zip $(DOCROOT_FREAC)/110m/physical/110m-geography-regions-points.zip
+	scp zips/110m_physical/ne_110m_geography_regions_elevation_points.zip $(DOCROOT_FREAC)/110m/physical/110m-geography-regions-elevation-points.zip
+	scp zips/110m_physical/ne_110m_geography_marine_polys.zip $(DOCROOT_FREAC)/110m/physical/110m-geography-marine-polys.zip
+	scp zips/110m_physical/ne_110m_land.zip $(DOCROOT_FREAC)/110m/physical/110m-land.zip
+	scp zips/110m_physical/ne_110m_ocean.zip $(DOCROOT_FREAC)/110m/physical/110m-ocean.zip
+	scp zips/110m_physical/ne_110m_coastline.zip $(DOCROOT_FREAC)/110m/physical/110m-coastline.zip
+	scp zips/110m_physical/ne_110m_glaciated_areas.zip $(DOCROOT_FREAC)/110m/physical/110m-glaciated-areas.zip
+	scp zips/110m_physical/ne_110m_geographic_lines.zip $(DOCROOT_FREAC)/110m/physical/110m-physical-geographic-lines.zip
+	
+	scp zips/110m_physical/ne_110m_graticules_all.zip $(DOCROOT_FREAC)/110m/physical/110m-graticules-all.zip
+	scp zips/110m_physical/ne_110m_graticules_1.zip $(DOCROOT_FREAC)/110m/physical/110m-graticules-1.zip
+	scp zips/110m_physical/ne_110m_graticules_5.zip $(DOCROOT_FREAC)/110m/physical/110m-graticules-5.zip
+	scp zips/110m_physical/ne_110m_graticules_10.zip $(DOCROOT_FREAC)/110m/physical/110m-graticules-10.zip
+	scp zips/110m_physical/ne_110m_graticules_15.zip $(DOCROOT_FREAC)/110m/physical/110m-graticules-15.zip
+	scp zips/110m_physical/ne_110m_graticules_20.zip $(DOCROOT_FREAC)/110m/physical/110m-graticules-20.zip
+	scp zips/110m_physical/ne_110m_graticules_30.zip $(DOCROOT_FREAC)/110m/physical/110m-graticules-30.zip
+	scp zips/110m_physical/ne_110m_wgs84_bounding_box.zip $(DOCROOT_FREAC)/110m/physical/110m-wgs84-bounding-box.zip
+	
 	touch $@
 
 zips/updates_freac: zips/updates/natural_earth_update_$(VERSION).zip
-	rsync -Cru --progress zips/updates/ $(DOCROOT_FREAC)/updates/
+	#rsync -Cru --progress zips/updates/ $(DOCROOT_FREAC)/updates/
+
+	scp zips/updates_/natural_earth_update_1d1.zip $(DOCROOT_FREAC)/updates/natural_earth_update_1d1.zip
+	scp zips/updates_/natural_earth_update_1d2.zip $(DOCROOT_FREAC)/updates/natural_earth_update_1d2.zip
+	scp zips/updates_/natural_earth_update_1d3.zip $(DOCROOT_FREAC)/updates/natural_earth_update_1d3.zip
+	scp zips/updates_/natural_earth_update_1d4.zip $(DOCROOT_FREAC)/updates/natural_earth_update_1d4.zip
+	scp zips/updates_/natural_earth_update_$(VERSION).zip $(DOCROOT_FREAC)/updates/natural_earth_update_$(VERSION).zip
+
+	touch $@
+
+zips/housekeeping_freac: zips/updates/natural_earth_update_$(VERSION).zip
+	#rsync -Cru --progress zips/housekeeping/ $(DOCROOT_FREAC)/housekeeping/
+
+	scp zips/housekeeping_housekeeping/ne_admin_0_details.zip $(DOCROOT_FREAC)/housekeeping/housekeeping/ne_admin_0_details.zip
+	scp zips/housekeeping_housekeeping/ne_admin_0_full_attributes.zip $(DOCROOT_FREAC)/housekeeping/housekeeping/ne_admin_0_full_attributes.zip
+	scp zips/housekeeping_housekeeping/ne_themes_versions.zip $(DOCROOT_FREAC)/housekeeping/housekeeping/ne_themes_versions.zip
+
 	touch $@
 
 
