@@ -6,9 +6,9 @@ VERSION_PREFIXED=_$(VERSION)
 #http://www.slac.stanford.edu/BFROOT/www/Computing/Offline/DataDist/ssh-idfile.html
 #
 #DOCROOT_NE=ftp\://naturalearthdata.com:download
-DOCROOT_NE=naturalearthdata.com:download/test
+DOCROOT_NE=naturbb6@naturalearthdata.com:download/test
 #DOCROOT_FREAC=ftp.freac.fsu.edu:nacis_ftp/web-download
-DOCROOT_FREAC=ftp.freac.fsu.edu:web-download/test
+DOCROOT_FREAC=nacis@ftp.freac.fsu.edu:nacis_ftp/web-download/test
 
 all: zip
 
@@ -27,7 +27,7 @@ zips/packages/natural_earth_vector.zip: \
 	zips/110m_physical/110m_physical.zip \
 	zips/packages/natural_earth_vector.sqlite.zip
 	
-	zip -rf $@ 10m_cultural 10m_physical 50m_cultural 50m_physical 110m_cultural 110m_physical VERSION README.md CHANGELOG
+	zip -ru $@ 10m_cultural 10m_physical 50m_cultural 50m_physical 110m_cultural 110m_physical VERSION README.md CHANGELOG
 	#Bake off a version'd iteration of that file, too
 	cp $@ archive/natural_earth_vector_$(VERSION).zip
 
@@ -51,7 +51,7 @@ zips/packages/Natural_Earth_quick_start.zip: \
 	packages/Natural_Earth_quick_start/110m_cultural/status.txt \
 	packages/Natural_Earth_quick_start/110m_physical/status.txt
 
-	zip -rf $@ packages/Natural_Earth_quick_start/ VERSION README.md CHANGELOG
+	zip -ru $@ packages/Natural_Earth_quick_start/ VERSION README.md CHANGELOG
 	cp $@ archive/Natural_Earth_quick_start_$(VERSION).zip
 	
 	
@@ -64,13 +64,13 @@ zips/housekeeping: \
 
 
 zips/housekeeping/ne_admin_0_details.zip:
-	zip -rf $@ housekeeping/ne_admin_0_details.xls VERSION README.md CHANGELOG
+	zip -ru $@ housekeeping/ne_admin_0_details.xls VERSION README.md CHANGELOG
 	
 zips/housekeeping/ne_admin_0_full_attributes.zip:
-	zip -rf $@ housekeeping/ne_admin_0_full_attributes.xls VERSION README.md CHANGELOG
+	zip -ru $@ housekeeping/ne_admin_0_full_attributes.xls VERSION README.md CHANGELOG
 	
 zips/housekeeping/ne_themes_versions.zip:
-	zip -rf $@ housekeeping/ne_themes_versions.xls VERSION README.md CHANGELOG
+	zip -ru $@ housekeeping/ne_themes_versions.xls VERSION README.md CHANGELOG
 
 
 
@@ -106,7 +106,7 @@ zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.zip \
 	zips/10m_cultural/ne_10m_parks_and_protected_areas.zip
 
-	zip -rf zips/10m_cultural/10m_cultural.zip 10m_cultural VERSION README.md CHANGELOG
+	zip -ru $@ 10m_cultural VERSION README.md CHANGELOG
 	cp $@ archive/10m_cultural_$(VERSION).zip	
 
 zips/10m_physical/10m_physical.zip: \
@@ -178,7 +178,7 @@ zips/50m_cultural/50m_cultural.zip: \
 	zips/50m_cultural/ne_50m_populated_places.zip \
 	zips/50m_cultural/ne_50m_urban_areas.zip
 
-	zip -j -r zips/50m_cultural/50m_cultural.zip 50m_cultural VERSION README.md CHANGELOG
+	zip -j -r $@ 50m_cultural VERSION README.md CHANGELOG
 	cp $@ archive/50m_cultural_$(VERSION).zip
 
 zips/50m_physical/50m_physical.zip: \
@@ -207,7 +207,7 @@ zips/50m_physical/50m_physical.zip: \
 	zips/50m_physical/ne_50m_graticules_30.zip \
 	zips/50m_physical/ne_50m_wgs84_bounding_box.zip
 
-	zip -j -r zips/50m_physical/50m_physical.zip 50m_physical VERSION README.md CHANGELOG
+	zip -j -r $@ 50m_physical VERSION README.md CHANGELOG
 	cp $@ archive/50m_physical_$(VERSION).zip
 
 zips/110m_cultural/110m_cultural.zip: \
@@ -223,7 +223,7 @@ zips/110m_cultural/110m_cultural.zip: \
 	zips/110m_cultural/ne_110m_populated_places_simple.zip \
 	zips/110m_cultural/ne_110m_populated_places.zip
 	
-	zip -j -r zips/110m_cultural/110m_cultural.zip 110m_cultural VERSION README.md CHANGELOG
+	zip -j -r $@ 110m_cultural VERSION README.md CHANGELOG
 	cp $@ archive/110m_cultural_$(VERSION).zip
 
 zips/110m_physical/110m_physical.zip: \
@@ -248,7 +248,7 @@ zips/110m_physical/110m_physical.zip: \
 	zips/110m_physical/ne_110m_graticules_30.zip \
 	zips/110m_physical/ne_110m_wgs84_bounding_box.zip
 
-	zip -j -r zips/110m_physical/110m_physical.zip 110m_physical VERSION README.md CHANGELOG
+	zip -j -r $@ 110m_physical VERSION README.md CHANGELOG
 	cp $@ archive/110m_physical_$(VERSION).zip
 
 
@@ -1047,22 +1047,22 @@ packages/Natural_Earth_quick_start/110m_physical/status.txt: \
 	touch $@
 	
 zips/updates/natural_earth_update_1.1.0.zip:
-	zip -rf $@ updates/version_1d1/
+	zip -ru $@ updates/version_1d1/
 
 zips/updates/natural_earth_update_1.1.3.zip:
-	zip -rf $@ updates/version_1d1d3/
+	zip -ru $@ updates/version_1d1d3/
 
 zips/updates/natural_earth_update_1.2.0.zip:
-	zip -rf $@ updates/version_1d2/
+	zip -ru $@ updates/version_1d2/
 
 zips/updates/natural_earth_update_1.3.0.zip:
-	zip -rf $@ updates/version_1d3/
+	zip -ru $@ updates/version_1d3/
 		
 zips/updates/natural_earth_update_1.4.0.zip:
-	zip -rf $@ updates/version_1d4/
+	zip -ru $@ updates/version_1d4/
 
 zips/updates/natural_earth_update_2.0.0.zip:
-	zip -rf $@ updates/version_2d0/
+	zip -ru $@ updates/version_2d0/
 
 zips/live-packages_ne: \
 	zips/packages/natural_earth_vector.zip \
@@ -1108,10 +1108,10 @@ zips/live-packages_freac: \
 	
 	#rsync -Cru --progress zips/packages/ $(DOCROOT_FREAC)/packages/
 	
-	scp zips/packages_/Natural_Earth_quick_start.zip $(DOCROOT_FREAC)/packages/Natural_Earth_quick_start.zip
-	scp zips/packages_/ne_10m_building_blocks.zip $(DOCROOT_FREAC)/packages/ne_10m_building_blocks.zip
-	scp zips/packages_/natural_earth_vector.zip $(DOCROOT_FREAC)/packages/Natural_Earth_quick_start.zip
-	scp zips/packages_/natural_earth_vector.sqlite.zip $(DOCROOT_FREAC)/packages/Natural_Earth_quick_start.zip
+	scp zips/packages/Natural_Earth_quick_start.zip $(DOCROOT_FREAC)/packages/Natural_Earth_quick_start.zip
+	scp zips/packages/ne_10m_building_blocks.zip $(DOCROOT_FREAC)/packages/ne_10m_building_blocks.zip
+	scp zips/packages/natural_earth_vector.zip $(DOCROOT_FREAC)/packages/Natural_Earth_quick_start.zip
+	scp zips/packages/natural_earth_vector.sqlite.zip $(DOCROOT_FREAC)/packages/Natural_Earth_quick_start.zip
 	
 	touch $@
 	
@@ -1409,6 +1409,7 @@ clean:
 	mkdir -p zips/110m_cultural
 	mkdir -p zips/110m_physical
 	mkdir -p zips/packages/
+	mkdir -p zips/updates/
 	mkdir -p archive
 	rm -rf zips/10m_cultural/*
 	rm -rf zips/10m_physical/*
