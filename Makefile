@@ -259,25 +259,25 @@ zips/110m_physical/110m_physical.zip: \
 
 #10m simple- populated places
 10m_cultural/ne_10m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
-	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places WHERE NATSCALE >= 5 ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
-
+	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
+    
 #50m full - populated places
 50m_cultural/ne_50m_populated_places.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
 	# “SCALERANK” <= 4 Or "FEATURECLA" = 'Admin-0 capital' Or "FEATURECLA" = 'Admin-0 capital alt' Or "FEATURECLA" = 'Admin-0 region capital' Or "FEATURECLA" = 'Admin-1 region capital' Or "FEATURECLA" = 'Scientific station'	
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE NATSCALE >= 5 ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE SCALERANK <= 4 OR FEATURECLA = 'Admin-0 capital' OR FEATURECLA = 'Admin-0 capital alt' OR FEATURECLA = 'Admin-0 region capital' OR FEATURECLA = 'Admin-1 region capital' OR FEATURECLA = 'Scientific station' ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
 
-50m_cultural/ne_50m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
+50m_cultural/ne_50m_populated_places_simple.shp: 50m_cultural/ne_50m_populated_places.shp 50m_cultural/ne_50m_populated_places.dbf
 	#50m simple - populated places
-	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places WHERE NATSCALE >= 5 ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_50m_populated_places ORDER BY NATSCALE" $@ 50m_cultural/ne_50m_populated_places.shp
 
 #110m full - populated places
 110m_cultural/ne_110m_populated_places.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
 	# “SCALERANK” <= 1 Or "FEATURECLA" = 'Admin-0 capital' Or "FEATURECLA" = 'Admin-0 capital alt'
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE NATSCALE >= 5 ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE SCALERANK <= 1 OR FEATURECLA = 'Admin-0 capital' OR FEATURECLA = 'Admin-0 capital alt' ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
 
-110m_cultural/ne_110m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
+110m_cultural/ne_110m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 110m_cultural/ne_110m_populated_places.dbf
 	#110m simple - populated places
-	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places WHERE NATSCALE >= 5 ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_110m_populated_places ORDER BY NATSCALE" $@ 110m_cultural/ne_110m_populated_places.shp
 
 # AIRPORTS
 
@@ -294,13 +294,33 @@ zips/110m_physical/110m_physical.zip: \
 # Physical labels
 
 #50m
-#zips/110m_physical/ne_110m_geography_regions_elevation_points.shp: 10m_physical/ne_10m_geography_regions_elevation_points.shp 10m_physical/ne_10m_geography_regions_elevation_points.dbf
-#zips/110m_physical/ne_110m_geography_regions_points.shp: 10m_physical/ne_10m_geography_regions_points.shp 10m_physical/ne_10m_geography_regions_points.dbf
+
+50m_physical/ne_50m_geography_regions_points.shp: 10m_physical/ne_10m_geography_regions_points.shp 10m_physical/ne_10m_geography_regions_points.dbf
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_points WHERE SCALERANK <= 5 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_regions_points.shp
+
+50m_physical/ne_50m_geography_regions_elevation_points.shp: 10m_physical/ne_10m_geography_regions_elevation_points.shp 10m_physical/ne_10m_geography_regions_elevation_points.dbf
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_elevation_points WHERE SCALERANK <= 5 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_regions_elevation_points.shp
+
+50m_physical/ne_50m_geography_marine_polys.shp: 10m_physical/ne_10m_geography_marine_polys.shp 10m_physical/ne_10m_geography_marine_polys.dbf
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_marine_polys WHERE SCALERANK <= 4 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_marine_polys.shp
+
+50m_physical/ne_50m_geography_regions_polys.shp: 10m_physical/ne_10m_geography_regions_polys.shp 10m_physical/ne_10m_geography_regions_polys.dbf
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_polys WHERE SCALERANK <= 4 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_regions_polys.shp
+
 
 #110m
-#zips/50m_physical/ne_50m_geography_regions_elevation_points.shp: 10m_physical/ne_10m_geography_regions_elevation_points.shp 10m_physical/ne_10m_geography_regions_elevation_points.dbf
-#zips/50m_physical/ne_50m_geography_regions_points.shp: 10m_physical/ne_10m_geography_regions_points.shp 10m_physical/ne_10m_geography_regions_points.dbf
 
+110m_physical/ne_110m_geography_regions_points.shp: 10m_physical/ne_10m_geography_regions_points.shp 10m_physical/ne_10m_geography_regions_points.dbf
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_points WHERE SCALERANK <= 2 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_regions_points.shp
+        
+110m_physical/ne_110m_geography_regions_elevation_points.shp: 10m_physical/ne_10m_geography_regions_elevation_points.shp 10m_physical/ne_10m_geography_regions_elevation_points.dbf
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_elevation_points WHERE SCALERANK <= 2 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_regions_elevation_points.shp
+    
+110m_physical/ne_110m_geography_marine_polys.shp: 10m_physical/ne_10m_geography_marine_polys.shp 10m_physical/ne_10m_geography_marine_polys.dbf
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_marine_polys WHERE SCALERANK <= 1 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_marine_polys.shp
+
+110m_physical/ne_110m_geography_regions_polys.shp: 10m_physical/ne_10m_geography_regions_polys.shp 10m_physical/ne_10m_geography_regions_polys.dbf
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_polys WHERE SCALERANK <= 1 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_regions_polys.shp
 
 	
 
