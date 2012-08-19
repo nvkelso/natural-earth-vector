@@ -79,17 +79,17 @@ zips/housekeeping/ne_themes_versions.zip:
 # SCALESET ZIPS by zoom and physical, cultural (6 total)
 
 zips/10m_cultural/10m_cultural.zip: \
-	zips/10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.zip \
+	zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_land.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_map_units.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.zip \
-	zips/10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_scale_rank.zip \
-	zips/10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.zip \
+	zips/10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.zip \
+	zips/10m_cultural/ne_10m_admin_0_disputed_areas.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries.zip \
 	zips/10m_cultural/ne_10m_admin_0_map_subunits.zip \
 	zips/10m_cultural/ne_10m_admin_0_map_units.zip \
 	zips/10m_cultural/ne_10m_admin_0_pacific_groupings.zip \
-	zips/10m_cultural/ne_10m_admin_0_scale_rank_with_minor_islands.zip \
+	zips/10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.zip \
 	zips/10m_cultural/ne_10m_admin_0_scale_rank.zip \
 	zips/10m_cultural/ne_10m_admin_0_sovereignty.zip \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.zip \
@@ -160,7 +160,7 @@ zips/10m_physical/10m_physical.zip: \
 	cp $@ archive/10m_physical_$(VERSION).zip
 
 zips/50m_cultural/50m_cultural.zip: \
-	zips/50m_cultural/ne_50m_admin_0_boundary_breakaway_disputed_areas.zip \
+	zips/50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.zip \
 	zips/50m_cultural/ne_50m_admin_0_boundary_lines_land.zip \
 	zips/50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.zip \
 	zips/50m_cultural/ne_50m_admin_0_boundary_map_units.zip \
@@ -259,75 +259,75 @@ zips/110m_physical/110m_physical.zip: \
 
 #10m simple- populated places
 10m_cultural/ne_10m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
-	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_10m_populated_places ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT scalerank, natscale, labelrank, featurecla, name, namepar, namealt, diffascii, nameascii, adm0cap, capalt, capin, worldcity, megacity, sov0name, sov_a3, adm0name, adm0_a3, adm1name, iso_a2, note, latitude, longitude, changed, namediff, diffnote, pop_max, pop_min, pop_other, geonameid, meganame, ls_name, ls_match, checkme FROM ne_10m_populated_places ORDER BY natscale" $@ 10m_cultural/ne_10m_populated_places.shp
     
 #50m full - populated places
 50m_cultural/ne_50m_populated_places.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
 	# “SCALERANK” <= 4 Or "FEATURECLA" = 'Admin-0 capital' Or "FEATURECLA" = 'Admin-0 capital alt' Or "FEATURECLA" = 'Admin-0 region capital' Or "FEATURECLA" = 'Admin-1 region capital' Or "FEATURECLA" = 'Scientific station'	
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE SCALERANK <= 4 OR FEATURECLA = 'Admin-0 capital' OR FEATURECLA = 'Admin-0 capital alt' OR FEATURECLA = 'Admin-0 region capital' OR FEATURECLA = 'Admin-1 region capital' OR FEATURECLA = 'Scientific station' ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE scalerank <= 4 OR featurecla = 'Admin-0 capital' OR featurecla = 'Admin-0 capital alt' OR featurecla = 'Admin-0 region capital' OR featurecla = 'Admin-1 region capital' OR featurecla = 'Scientific station' ORDER BY natscale" $@ 10m_cultural/ne_10m_populated_places.shp
 
 50m_cultural/ne_50m_populated_places_simple.shp: 50m_cultural/ne_50m_populated_places.shp 50m_cultural/ne_50m_populated_places.dbf
 	#50m simple - populated places
-	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_50m_populated_places ORDER BY NATSCALE" $@ 50m_cultural/ne_50m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT scalerank, natscale, labelrank, featurecla, name, namepar, namealt, diffascii, nameascii, adm0cap, capalt, capin, worldcity, megacity, sov0name, sov_a3, adm0name, adm0_a3, adm1name, iso_a2, note, latitude, longitude, changed, namediff, diffnote, pop_max, pop_min, pop_other, geonameid, meganame, ls_name, ls_match, checkme FROM ne_50m_populated_places ORDER BY natscale" $@ 50m_cultural/ne_50m_populated_places.shp
 
 #110m full - populated places
 110m_cultural/ne_110m_populated_places.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
 	# “SCALERANK” <= 1 Or "FEATURECLA" = 'Admin-0 capital' Or "FEATURECLA" = 'Admin-0 capital alt'
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE SCALERANK <= 1 OR FEATURECLA = 'Admin-0 capital' OR FEATURECLA = 'Admin-0 capital alt' ORDER BY NATSCALE" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_populated_places WHERE scalerank <= 1 OR featurecla = 'Admin-0 capital' OR featurecla = 'Admin-0 capital alt' ORDER BY natscale" $@ 10m_cultural/ne_10m_populated_places.shp
 
-110m_cultural/ne_110m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 110m_cultural/ne_110m_populated_places.dbf
+110m_cultural/ne_110m_populated_places_simple.shp: 110m_cultural/ne_110m_populated_places.shp 110m_cultural/ne_110m_populated_places.dbf
 	#110m simple - populated places
-	ogr2ogr -overwrite -sql "SELECT SCALERANK, NATSCALE, LABELRANK, FEATURECLA, NAME, NAMEPAR, NAMEALT, DIFFASCII, NAMEASCII, ADM0CAP, CAPALT, CAPIN, WORLDCITY, MEGACITY, SOV0NAME, SOV_A3, ADM0NAME, ADM0_A3, ADM1NAME, ISO_A2, NOTE, LATITUDE, LONGITUDE, CHANGED, NAMEDIFF, DIFFNOTE, POP_MAX, POP_MIN, POP_OTHER, GEONAMEID, MEGANAME, LS_NAME, LS_MATCH, CHECKME FROM ne_110m_populated_places ORDER BY NATSCALE" $@ 110m_cultural/ne_110m_populated_places.shp
+	ogr2ogr -overwrite -sql "SELECT scalerank, natscale, labelrank, featurecla, name, namepar, namealt, diffascii, nameascii, adm0cap, capalt, capin, worldcity, megacity, sov0name, sov_a3, adm0name, adm0_a3, adm1name, iso_a2, note, latitude, longitude, changed, namediff, diffnote, pop_max, pop_min, pop_other, geonameid, meganame, ls_name, ls_match, checkme FROM ne_110m_populated_places ORDER BY natscale" $@ 110m_cultural/ne_110m_populated_places.shp
 
 # TINY COUNTRIES
 
 # 110m
 
 110m_cultural/ne_110m_admin_0_tiny_countries.shp: 50m_cultural/ne_50m_admin_0_tiny_countries.shp 50m_cultural/ne_50m_admin_0_tiny_countries.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_50m_admin_0_tiny_countries WHERE SCALERANK <= 2 ORDER BY SCALERANK" $@ 50m_cultural/ne_50m_admin_0_tiny_countries.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_50m_admin_0_tiny_countries WHERE scalerank <= 2 ORDER BY scalerank" $@ 50m_cultural/ne_50m_admin_0_tiny_countries.shp
 
 # AIRPORTS
 
 #50m airports
 50m_cultural/ne_50m_airports.shp: 10m_cultural/ne_10m_airports.shp 10m_cultural/ne_10m_airports.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_airports WHERE SCALERANK <= 4 ORDER BY SCALERANK" $@ 10m_cultural/ne_10m_airports.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_airports WHERE scalerank <= 4 ORDER BY scalerank" $@ 10m_cultural/ne_10m_airports.shp
 
 # PORTS
 
 # 50m ports
 50m_cultural/ne_50m_ports.shp: 10m_cultural/ne_10m_ports.shp 10m_cultural/ne_10m_ports.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_ports WHERE SCALERANK <= 4 ORDER BY SCALERANK" $@ 10m_cultural/ne_10m_ports.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_ports WHERE scalerank <= 4 ORDER BY scalerank" $@ 10m_cultural/ne_10m_ports.shp
 	
 # Physical labels
 
 # 50m
 
 50m_physical/ne_50m_geography_regions_points.shp: 10m_physical/ne_10m_geography_regions_points.shp 10m_physical/ne_10m_geography_regions_points.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_points WHERE SCALERANK <= 5 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_regions_points.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_points WHERE scalerank <= 5 ORDER BY scalerank" $@ 10m_physical/ne_10m_geography_regions_points.shp
 
 50m_physical/ne_50m_geography_regions_elevation_points.shp: 10m_physical/ne_10m_geography_regions_elevation_points.shp 10m_physical/ne_10m_geography_regions_elevation_points.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_elevation_points WHERE SCALERANK <= 5 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_regions_elevation_points.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_elevation_points WHERE scalerank <= 5 ORDER BY scalerank" $@ 10m_physical/ne_10m_geography_regions_elevation_points.shp
 
 50m_physical/ne_50m_geography_marine_polys.shp: 10m_physical/ne_10m_geography_marine_polys.shp 10m_physical/ne_10m_geography_marine_polys.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_marine_polys WHERE SCALERANK <= 4 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_marine_polys.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_marine_polys WHERE scalerank <= 4 ORDER BY scalerank" $@ 10m_physical/ne_10m_geography_marine_polys.shp
 
 50m_physical/ne_50m_geography_regions_polys.shp: 10m_physical/ne_10m_geography_regions_polys.shp 10m_physical/ne_10m_geography_regions_polys.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_polys WHERE SCALERANK <= 4 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_regions_polys.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_polys WHERE scalerank <= 4 ORDER BY scalerank" $@ 10m_physical/ne_10m_geography_regions_polys.shp
 
 
 # 110m
 
 110m_physical/ne_110m_geography_regions_points.shp: 10m_physical/ne_10m_geography_regions_points.shp 10m_physical/ne_10m_geography_regions_points.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_points WHERE SCALERANK <= 2 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_regions_points.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_points WHERE scalerank <= 2 ORDER BY scalerank" $@ 10m_physical/ne_10m_geography_regions_points.shp
         
 110m_physical/ne_110m_geography_regions_elevation_points.shp: 10m_physical/ne_10m_geography_regions_elevation_points.shp 10m_physical/ne_10m_geography_regions_elevation_points.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_elevation_points WHERE SCALERANK <= 2 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_regions_elevation_points.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_elevation_points WHERE scalerank <= 2 ORDER BY scalerank" $@ 10m_physical/ne_10m_geography_regions_elevation_points.shp
     
 110m_physical/ne_110m_geography_marine_polys.shp: 10m_physical/ne_10m_geography_marine_polys.shp 10m_physical/ne_10m_geography_marine_polys.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_marine_polys WHERE SCALERANK <= 1 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_marine_polys.shp
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_marine_polys WHERE scalerank <= 1 ORDER BY scalerank" $@ 10m_physical/ne_10m_geography_marine_polys.shp
 
 110m_physical/ne_110m_geography_regions_polys.shp: 10m_physical/ne_10m_geography_regions_polys.shp 10m_physical/ne_10m_geography_regions_polys.dbf
-	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_polys WHERE SCALERANK <= 1 ORDER BY SCALERANK" $@ 10m_physical/ne_10m_geography_regions_polys.shp        
+	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_polys WHERE scalerank <= 1 ORDER BY scalerank" $@ 10m_physical/ne_10m_geography_regions_polys.shp        
 	
 
 # THEMES
@@ -364,23 +364,23 @@ zips/10m_cultural/ne_10m_admin_0_pacific_groupings.zip: 10m_cultural/ne_10m_admi
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_pacific_groupings$(VERSION_PREFIXED).zip
 
-zips/10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.zip: 10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.shp 10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.dbf
+zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.zip: 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-breakaway-disputed-areas/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_10m_admin_0_boundary_breakaway_disputed_areas$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_10m_admin_0_boundary_lines_disputed_areas$(VERSION_PREFIXED).zip
 
-zips/10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.zip: 10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.shp 10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.dbf
+zips/10m_cultural/ne_10m_admin_0_disputed_areas.zip: 10m_cultural/ne_10m_admin_0_disputed_areas.shp 10m_cultural/ne_10m_admin_0_disputed_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-breakaway-disputed-areas/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_10m_admin_0_breakaway_disputed_areas$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_10m_admin_0_disputed_areas$(VERSION_PREFIXED).zip
 	
-zips/10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_scale_rank.zip: 10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_scale_rank.shp 10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_scale_rank.dbf
+zips/10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.zip: 10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.shp 10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-breakaway-disputed-areas/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_10m_admin_0_breakaway_disputed_areas_scale_rank$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands$(VERSION_PREFIXED).zip
 	
 zips/10m_cultural/ne_10m_admin_0_countries.zip: 10m_cultural/ne_10m_admin_0_countries.shp 10m_cultural/ne_10m_admin_0_countries.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -400,11 +400,11 @@ zips/10m_cultural/ne_10m_admin_0_map_units.zip: 10m_cultural/ne_10m_admin_0_map_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_map_units$(VERSION_PREFIXED).zip
 		
-zips/10m_cultural/ne_10m_admin_0_scale_rank_with_minor_islands.zip: 10m_cultural/ne_10m_admin_0_scale_rank_with_minor_islands.shp 10m_cultural/ne_10m_admin_0_scale_rank_with_minor_islands.dbf
+zips/10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.zip: 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-details/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_10m_admin_0_scale_rank_with_minor_islands$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_10m_admin_0_scale_rank_minor_islands$(VERSION_PREFIXED).zip
 	
 zips/10m_cultural/ne_10m_admin_0_scale_rank.zip: 10m_cultural/ne_10m_admin_0_scale_rank.shp 10m_cultural/ne_10m_admin_0_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -492,18 +492,18 @@ zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.zip: 10m_cultural/
 	cp $@ archive/ne_10m_admin_1_states_provinces_lakes_geodb$(VERSION_PREFIXED).zip
 
 zips/10m_cultural/ne_10m_parks_and_protected_areas.zip: \
-	10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_area.shp 10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_area.dbf \
-	10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_line.shp 10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_line.dbf \
-	10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_point.shp 10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_point.dbf \
-	10m_cultural/ne_10m_parks_and_protected_areas/10m_us_parks_READ_ME.rtf
+	10m_cultural/ne_10m_us_parks_area.shp 10m_cultural/ne_10m_us_parks_area.dbf \
+	10m_cultural/ne_10m_us_parks_line.shp 10m_cultural/ne_10m_us_parks_line.dbf \
+	10m_cultural/ne_10m_us_parks_point.shp 10m_cultural/ne_10m_us_parks_point.dbf \
+	10m_cultural/ne_10m_us_parks.README.rtf
 	
-	cp VERSION 10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_area.VERSION.txt
-	cp VERSION 10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_line.VERSION.txt
-	cp VERSION 10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_point.VERSION.txt
-	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_area.README.html
-	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_line.README.html
-	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_point.README.html
-	zip -j -r $@ 10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_*.* 10m_cultural/ne_10m_parks_and_protected_areas/10m_us_parks_READ_ME.rtf
+	cp VERSION 10m_cultural/ne_10m_us_parks_area.VERSION.txt
+	cp VERSION 10m_cultural/ne_10m_us_parks_line.VERSION.txt
+	cp VERSION 10m_cultural/ne_10m_us_parks_point.VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_us_parks_area.README.html
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_us_parks_line.README.html
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_us_parks_point.README.html
+	zip -j -r $@ 10m_cultural/ne_10m_us_parks_*.* 10m_cultural/ne_10m_us_parks.README.rtf
 	cp $@ archive/ne_10m_parks_and_protected_areas$(VERSION_PREFIXED).zip
 
 
@@ -865,11 +865,11 @@ zips/50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.zip: 50m_cultural/ne_5
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_breakaway_disputed_areas$(VERSION_PREFIXED).zip
 
-zips/50m_cultural/ne_50m_admin_0_boundary_breakaway_disputed_areas.zip: 50m_cultural/ne_50m_admin_0_boundary_breakaway_disputed_areas.shp 50m_cultural/ne_50m_admin_0_boundary_breakaway_disputed_areas.dbf
+zips/50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.zip: 50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.shp 50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-breakaway-disputed-areas/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_50m_admin_0_boundary_breakaway_disputed_areas$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_50m_admin_0_boundary_lines_disputed_areas$(VERSION_PREFIXED).zip
 
 zips/50m_cultural/ne_50m_admin_1_states_provinces_shp.zip: 50m_cultural/ne_50m_admin_1_states_provinces_shp.shp 50m_cultural/ne_50m_admin_1_states_provinces_shp.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1251,27 +1251,30 @@ zips/110m_physical/ne_110m_wgs84_bounding_box.zip: 110m_physical/ne_110m_graticu
 	
 # copy the master assets into position for 10m_cultural: 
 packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
-	10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.shp 10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.dbf \
+	10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb/gdb \
+	10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.dbf \
 	10m_cultural/ne_10m_admin_0_boundary_lines_land.shp 10m_cultural/ne_10m_admin_0_boundary_lines_land.dbf \
 	10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.shp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.dbf \
-	10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.shp 10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.dbf \
+	10m_cultural/ne_10m_admin_0_disputed_areas.shp 10m_cultural/ne_10m_admin_0_disputed_areas.dbf \
 	10m_cultural/ne_10m_admin_0_map_subunits.shp 10m_cultural/ne_10m_admin_0_map_subunits.dbf \
 	10m_cultural/ne_10m_admin_0_map_units.shp 10m_cultural/ne_10m_admin_0_map_units.dbf \
-	10m_cultural/ne_10m_admin_0_scale_rank_with_minor_islands.shp 10m_cultural/ne_10m_admin_0_scale_rank_with_minor_islands.dbf \
+	10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.dbf \
 	10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.shp 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.dbf \
 	10m_cultural/ne_10m_admin_1_states_provinces_shp.shp 10m_cultural/ne_10m_admin_1_states_provinces_shp.dbf \
 	10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf \
 	10m_cultural/ne_10m_urban_areas.shp 10m_cultural/ne_10m_urban_areas.dbf
 
 	mkdir -p packages/Natural_Earth_quick_start/10m_cultural
-
-	cp 10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.* packages/Natural_Earth_quick_start/10m_cultural/
+	mkdir -p packages/Natural_Earth_quick_start/10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb/
+	
+	cp -r 10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb/* packages/Natural_Earth_quick_start/10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb/
+	cp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_land.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.* packages/Natural_Earth_quick_start/10m_cultural/
-	cp 10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_admin_0_disputed_areas.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_map_subunits.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_map_units.* packages/Natural_Earth_quick_start/10m_cultural/
-	cp 10m_cultural/ne_10m_admin_0_scale_rank_with_minor_islands.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_1_states_provinces_shp.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_populated_places.* packages/Natural_Earth_quick_start/10m_cultural/
