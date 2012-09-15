@@ -93,7 +93,7 @@ zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_admin_0_scale_rank.zip \
 	zips/10m_cultural/ne_10m_admin_0_sovereignty.zip \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.zip \
-	zips/10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.zip \
+	zips/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_shp.zip \
 	zips/10m_cultural/ne_10m_populated_places_simple.zip \
 	zips/10m_cultural/ne_10m_populated_places.zip \
@@ -172,7 +172,7 @@ zips/50m_cultural/50m_cultural.zip: \
 	zips/50m_cultural/ne_50m_admin_0_scale_rank.zip \
 	zips/50m_cultural/ne_50m_admin_0_sovereignty.zip \
 	zips/50m_cultural/ne_50m_admin_0_tiny_countries.zip \
-	zips/50m_cultural/ne_50m_admin_1_states_provinces_lines_shp.zip \
+	zips/50m_cultural/ne_50m_admin_1_states_provinces_lines.zip \
 	zips/50m_cultural/ne_50m_admin_1_states_provinces_shp.zip \
 	zips/50m_cultural/ne_50m_populated_places_simple.zip \
 	zips/50m_cultural/ne_50m_populated_places.zip \
@@ -424,7 +424,7 @@ zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.zip: 10m_cultural/ne
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_1_states_provinces_lakes_shp$(VERSION_PREFIXED).zip
 
-zips/10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.shp 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.dbf
+zips/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lines.shp 10m_cultural/ne_10m_admin_1_states_provinces_lines.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
@@ -877,7 +877,7 @@ zips/50m_cultural/ne_50m_admin_1_states_provinces_shp.zip: 50m_cultural/ne_50m_a
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_1_states_provinces_shp$(VERSION_PREFIXED).zip
 
-zips/50m_cultural/ne_50m_admin_1_states_provinces_lines_shp.zip: 50m_cultural/ne_50m_admin_1_states_provinces_lines_shp.shp 50m_cultural/ne_50m_admin_1_states_provinces_lines_shp.dbf
+zips/50m_cultural/ne_50m_admin_1_states_provinces_lines.zip: 50m_cultural/ne_50m_admin_1_states_provinces_lines.shp 50m_cultural/ne_50m_admin_1_states_provinces_lines.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
@@ -1259,7 +1259,7 @@ packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
 	10m_cultural/ne_10m_admin_0_map_subunits.shp 10m_cultural/ne_10m_admin_0_map_subunits.dbf \
 	10m_cultural/ne_10m_admin_0_map_units.shp 10m_cultural/ne_10m_admin_0_map_units.dbf \
 	10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.dbf \
-	10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.shp 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.dbf \
+	10m_cultural/ne_10m_admin_1_states_provinces_lines.shp 10m_cultural/ne_10m_admin_1_states_provinces_lines.dbf \
 	10m_cultural/ne_10m_admin_1_states_provinces_shp.shp 10m_cultural/ne_10m_admin_1_states_provinces_shp.dbf \
 	10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf \
 	10m_cultural/ne_10m_urban_areas.shp 10m_cultural/ne_10m_urban_areas.dbf
@@ -1275,7 +1275,7 @@ packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
 	cp 10m_cultural/ne_10m_admin_0_map_subunits.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_map_units.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.* packages/Natural_Earth_quick_start/10m_cultural/
-	cp 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_admin_1_states_provinces_lines.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_1_states_provinces_shp.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_populated_places.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_urban_areas.* packages/Natural_Earth_quick_start/10m_cultural/
