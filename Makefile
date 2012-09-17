@@ -27,7 +27,7 @@ zips/packages/natural_earth_vector.zip: \
 	zips/110m_physical/110m_physical.zip \
 	zips/packages/natural_earth_vector.sqlite.zip
 	
-	zip -ru $@ 10m_cultural 10m_physical 50m_cultural 50m_physical 110m_cultural 110m_physical VERSION README.md CHANGELOG
+	zip -r $@ 10m_cultural 10m_physical 50m_cultural 50m_physical 110m_cultural 110m_physical VERSION README.md CHANGELOG
 	#Bake off a version'd iteration of that file, too
 	cp $@ archive/natural_earth_vector_$(VERSION).zip
 
@@ -51,7 +51,7 @@ zips/packages/Natural_Earth_quick_start.zip: \
 	packages/Natural_Earth_quick_start/110m_cultural/status.txt \
 	packages/Natural_Earth_quick_start/110m_physical/status.txt
 
-	zip -ru $@ packages/Natural_Earth_quick_start/ VERSION README.md CHANGELOG
+	zip -r $@ packages/Natural_Earth_quick_start/ VERSION README.md CHANGELOG
 	cp $@ archive/Natural_Earth_quick_start_$(VERSION).zip
 	
 	
@@ -64,13 +64,13 @@ zips/housekeeping: \
 
 
 zips/housekeeping/ne_admin_0_details.zip:
-	zip -ru $@ housekeeping/ne_admin_0_details.xls VERSION README.md CHANGELOG
+	zip -r $@ housekeeping/ne_admin_0_details.xls VERSION README.md CHANGELOG
 	
 zips/housekeeping/ne_admin_0_full_attributes.zip:
-	zip -ru $@ housekeeping/ne_admin_0_full_attributes.xls VERSION README.md CHANGELOG
+	zip -r $@ housekeeping/ne_admin_0_full_attributes.xls VERSION README.md CHANGELOG
 	
 zips/housekeeping/ne_themes_versions.zip:
-	zip -ru $@ housekeeping/ne_themes_versions.xls VERSION README.md CHANGELOG
+	zip -r $@ housekeeping/ne_themes_versions.xls VERSION README.md CHANGELOG
 
 
 
@@ -92,9 +92,18 @@ zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.zip \
 	zips/10m_cultural/ne_10m_admin_0_scale_rank.zip \
 	zips/10m_cultural/ne_10m_admin_0_sovereignty.zip \
+	zips/10m_cultural/ne_10m_admin_0_antarctic_claims.zip \
+	zips/10m_cultural/ne_10m_admin_0_antarctic_claim_limit_lines.zip \
+	zips/10m_cultural/ne_10m_admin_0_label_points.zip \
+	zips/10m_cultural/ne_10m_admin_0_seams.zip \
+	zips/10m_cultural/ne_10m_admin_1_states_provinces_geodb.zip \
+	zips/10m_cultural/ne_10m_admin_1_states_provinces_scale_rank_geodb.zip \
+	zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.zip \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.zip \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_shp.zip \
+	zips/10m_cultural/ne_10m_admin_1_label_points.zip \
+	zips/10m_cultural/ne_10m_admin_1_seams.zip \
 	zips/10m_cultural/ne_10m_populated_places_simple.zip \
 	zips/10m_cultural/ne_10m_populated_places.zip \
 	zips/10m_cultural/ne_10m_railroads.zip \
@@ -102,11 +111,12 @@ zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_roads.zip \
 	zips/10m_cultural/ne_10m_urban_areas_landscan.zip \
 	zips/10m_cultural/ne_10m_urban_areas.zip \
-	zips/10m_cultural/ne_10m_admin_1_states_provinces_geodb.zip \
-	zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.zip \
-	zips/10m_cultural/ne_10m_parks_and_protected_areas.zip
-
-	zip -ru $@ 10m_cultural VERSION README.md CHANGELOG
+	zips/10m_cultural/ne_10m_parks_and_protected_lands.zip \
+	zips/10m_cultural/ne_10m_airports.zip \
+	zips/10m_cultural/ne_10m_ports.zip \
+	zips/10m_cultural/ne_10m_time_zones.zip
+	
+	zip -r $@ 10m_cultural VERSION README.md CHANGELOG
 	cp $@ archive/10m_cultural_$(VERSION).zip	
 
 zips/10m_physical/10m_physical.zip: \
@@ -125,9 +135,11 @@ zips/10m_physical/10m_physical.zip: \
 	zips/10m_physical/ne_10m_lakes_pluvial.zip \
 	zips/10m_physical/ne_10m_lakes.zip \
 	zips/10m_physical/ne_10m_land.zip \
+	zips/10m_physical/ne_10m_land_scale_rank.zip \
 	zips/10m_physical/ne_10m_minor_islands_coastline.zip \
 	zips/10m_physical/ne_10m_minor_islands.zip \
 	zips/10m_physical/ne_10m_ocean.zip \
+	zips/10m_physical/ne_10m_ocean_scale_rank.zip \
 	zips/10m_physical/ne_10m_playas.zip \
 	zips/10m_physical/ne_10m_reefs.zip \
 	zips/10m_physical/ne_10m_rivers_europe.zip \
@@ -154,7 +166,10 @@ zips/10m_physical/10m_physical.zip: \
 	zips/10m_physical/ne_10m_graticules_15.zip \
 	zips/10m_physical/ne_10m_graticules_20.zip \
 	zips/10m_physical/ne_10m_graticules_30.zip \
-	zips/10m_physical/ne_10m_wgs84_bounding_box.zip
+	zips/10m_physical/ne_10m_wgs84_bounding_box.zip \
+	zips/10m_physical/ne_10m_land_ocean_label_points.zip \
+	zips/10m_physical/ne_10m_land_ocean_seams.zip \
+	zips/10m_physical/ne_10m_minor_islands_label_points.zip
 
 	zip -j -r $@ 10m_physical VERSION README.md CHANGELOG
 	cp $@ archive/10m_physical_$(VERSION).zip
@@ -420,6 +435,30 @@ zips/10m_cultural/ne_10m_admin_0_sovereignty.zip: 10m_cultural/ne_10m_admin_0_so
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_sovereignty$(VERSION_PREFIXED).zip
 	
+zips/10m_cultural/ne_10m_admin_0_label_points.zip: 10m_cultural/ne_10m_admin_0_label_points.shp 10m_cultural/ne_10m_admin_0_label_points.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-cultural-building-blocks/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_label_points$(VERSION_PREFIXED).zip
+	
+zips/10m_cultural/ne_10m_admin_0_seams.zip: 10m_cultural/ne_10m_admin_0_seams.shp 10m_cultural/ne_10m_admin_0_seams.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-cultural-building-blocks/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_seams$(VERSION_PREFIXED).zip
+	
+zips/10m_cultural/ne_10m_admin_0_antarctic_claims.zip: 10m_cultural/ne_10m_admin_0_antarctic_claims.shp 10m_cultural/ne_10m_admin_0_antarctic_claims.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-breakaway-disputed-areas/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_antarctic_claims$(VERSION_PREFIXED).zip
+
+zips/10m_cultural/ne_10m_admin_0_antarctic_claim_limit_lines.zip: 10m_cultural/ne_10m_admin_0_antarctic_claim_limit_lines.shp 10m_cultural/ne_10m_admin_0_antarctic_claim_limit_lines.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-breakaway-disputed-areas/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_antarctic_claim_limit_lines$(VERSION_PREFIXED).zip
+	
 zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.shp 10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
@@ -437,6 +476,12 @@ zips/10m_cultural/ne_10m_admin_1_states_provinces_shp.zip: 10m_cultural/ne_10m_a
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_1_states_provinces_shp$(VERSION_PREFIXED).zip
+	
+zips/10m_cultural/ne_10m_admin_1_seams.zip: 10m_cultural/ne_10m_admin_1_seams.shp 10m_cultural/ne_10m_admin_1_seams.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-cultural-building-blocks/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_1_seams$(VERSION_PREFIXED).zip	
 
 zips/10m_cultural/ne_10m_populated_places_simple.zip: 10m_cultural/ne_10m_populated_places_simple.shp 10m_cultural/ne_10m_populated_places_simple.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -479,34 +524,67 @@ zips/10m_cultural/ne_10m_urban_areas.zip: 10m_cultural/ne_10m_urban_areas.shp 10
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-urban-area/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_urban_areas$(VERSION_PREFIXED).zip
-			
+	
+zips/10m_cultural/ne_10m_airports.zip: 10m_cultural/ne_10m_airports.shp 10m_cultural/ne_10m_airports.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/airports/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_airports$(VERSION_PREFIXED).zip
+
+zips/10m_cultural/ne_10m_ports.zip: 10m_cultural/ne_10m_ports.shp 10m_cultural/ne_10m_ports.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/ports/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_ports$(VERSION_PREFIXED).zip
+	
+zips/10m_cultural/ne_10m_time_zones.zip: 10m_cultural/ne_10m_time_zones.shp 10m_cultural/ne_10m_time_zones.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/timezones/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_time_zones$(VERSION_PREFIXED).zip
+
+
 # folders for theme groups or geodb special items
+zips/10m_cultural/ne_10m_admin_1_label_points.zip: 10m_cultural/ne_10m_admin_1_label_points.gdb/gdb
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-cultural-building-blocks/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ 10m_cultural/ne_10m_admin_1_label_points.gdb $(subst zips/, ,$(basename $@)).VERSION.txt $(subst zips/, ,$(basename $@)).README.html
+	cp $@ archive/ne_10m_admin_1_label_points$(VERSION_PREFIXED).zip
+
 zips/10m_cultural/ne_10m_admin_1_states_provinces_geodb.zip: 10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb/gdb
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
-	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb
+	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb $(subst zips/, ,$(basename $@)).VERSION.txt $(subst zips/, ,$(basename $@)).README.html
 	cp $@ archive/ne_10m_admin_1_states_provinces_geodb$(VERSION_PREFIXED).zip
+
+zips/10m_cultural/ne_10m_admin_1_states_provinces_scale_rank_geodb.zip: 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank_geodb.gdb/gdb
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank_geodb.gdb $(subst zips/, ,$(basename $@)).VERSION.txt $(subst zips/, ,$(basename $@)).README.html
+	cp $@ archive/ne_10m_admin_1_states_provinces_scale_rank_geodb$(VERSION_PREFIXED).zip
 
 zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.gdb/gdb
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
-	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.gdb
+	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.gdb $(subst zips/, ,$(basename $@)).VERSION.txt $(subst zips/, ,$(basename $@)).README.html
 	cp $@ archive/ne_10m_admin_1_states_provinces_lakes_geodb$(VERSION_PREFIXED).zip
 
-zips/10m_cultural/ne_10m_parks_and_protected_areas.zip: \
-	10m_cultural/ne_10m_us_parks_area.shp 10m_cultural/ne_10m_us_parks_area.dbf \
-	10m_cultural/ne_10m_us_parks_line.shp 10m_cultural/ne_10m_us_parks_line.dbf \
-	10m_cultural/ne_10m_us_parks_point.shp 10m_cultural/ne_10m_us_parks_point.dbf \
-	10m_cultural/ne_10m_us_parks.README.rtf
+zips/10m_cultural/ne_10m_parks_and_protected_lands.zip: \
+	10m_cultural/ne_10m_parks_and_protected_lands_area.shp 10m_cultural/ne_10m_parks_and_protected_lands_area.dbf \
+	10m_cultural/ne_10m_parks_and_protected_lands_scale_rank.shp 10m_cultural/ne_10m_parks_and_protected_lands_scale_rank.dbf \
+	10m_cultural/ne_10m_parks_and_protected_lands_line.shp 10m_cultural/ne_10m_parks_and_protected_lands_line.dbf \
+	10m_cultural/ne_10m_parks_and_protected_lands_point.shp 10m_cultural/ne_10m_parks_and_protected_lands_point.dbf
 	
-	cp VERSION 10m_cultural/ne_10m_us_parks_area.VERSION.txt
-	cp VERSION 10m_cultural/ne_10m_us_parks_line.VERSION.txt
-	cp VERSION 10m_cultural/ne_10m_us_parks_point.VERSION.txt
-	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_us_parks_area.README.html
-	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_us_parks_line.README.html
-	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_us_parks_point.README.html
-	zip -j -r $@ 10m_cultural/ne_10m_us_parks_*.* 10m_cultural/ne_10m_us_parks.README.rtf
-	cp $@ archive/ne_10m_parks_and_protected_areas$(VERSION_PREFIXED).zip
+	cp VERSION 10m_cultural/ne_10m_parks_and_protected_lands_area.VERSION.txt
+	cp VERSION 10m_cultural/ne_10m_parks_and_protected_lands_scale_rank.VERSION.txt
+	cp VERSION 10m_cultural/ne_10m_parks_and_protected_lands_line.VERSION.txt
+	cp VERSION 10m_cultural/ne_10m_parks_and_protected_lands_point.VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_parks_and_protected_lands_area.README.html
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_parks_and_protected_lands_scale_rank.README.html
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_parks_and_protected_lands_line.README.html
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_parks_and_protected_lands_point.README.html
+	zip -j -r $@ 10m_cultural/ne_10m_parks_and_protected_lands*.*
+	cp $@ archive/ne_10m_parks_and_protected_lands$(VERSION_PREFIXED).zip
 
 
 # 10m physical:
@@ -601,6 +679,12 @@ zips/10m_physical/ne_10m_land.zip: 10m_physical/ne_10m_land.shp 10m_physical/ne_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_land$(VERSION_PREFIXED).zip
 
+zips/10m_physical/ne_10m_land_scale_rank.zip: 10m_physical/ne_10m_land_scale_rank.shp 10m_physical/ne_10m_land_scale_rank.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-land/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_land_scale_rank$(VERSION_PREFIXED).zip
+
 zips/10m_physical/ne_10m_minor_islands_coastline.zip: 10m_physical/ne_10m_minor_islands_coastline.shp 10m_physical/ne_10m_minor_islands_coastline.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-minor-islands/ > $(subst zips/, ,$(basename $@)).README.html
@@ -618,6 +702,12 @@ zips/10m_physical/ne_10m_ocean.zip: 10m_physical/ne_10m_ocean.shp 10m_physical/n
 	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-ocean/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_ocean$(VERSION_PREFIXED).zip
+
+zips/10m_physical/ne_10m_ocean_scale_rank.zip: 10m_physical/ne_10m_ocean_scale_rank.shp 10m_physical/ne_10m_ocean_scale_rank.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-ocean/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_ocean_scale_rank$(VERSION_PREFIXED).zip
 
 zips/10m_physical/ne_10m_playas.zip: 10m_physical/ne_10m_playas.shp 10m_physical/ne_10m_playas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -797,6 +887,24 @@ zips/10m_physical/ne_10m_wgs84_bounding_box.zip: 10m_physical/ne_10m_graticules_
 	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-graticules/ > 10m_physical/ne_10m_graticules_all/ne_10m_wgs84_bounding_box.README.html
 	zip -j -r $@ 10m_physical/ne_10m_graticules_all/ne_10m_wgs84_bounding_box.*
 	cp $@ archive/ne_10m_wgs84_bounding_box$(VERSION_PREFIXED).zip
+	
+zips/10m_physical/ne_10m_land_ocean_label_points.zip: 10m_physical/ne_10m_land_ocean_label_points.shp 10m_physical/ne_10m_land_ocean_label_points.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-physical-building-blocks/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_land_ocean_label_points$(VERSION_PREFIXED).zip
+
+zips/10m_physical/ne_10m_land_ocean_seams.zip: 10m_physical/ne_10m_land_ocean_seams.shp 10m_physical/ne_10m_land_ocean_seams.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-physical-building-blocks/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_land_ocean_seams$(VERSION_PREFIXED).zip
+
+zips/10m_physical/ne_10m_minor_islands_label_points.zip: 10m_physical/ne_10m_minor_islands_label_points.shp 10m_physical/ne_10m_minor_islands_label_points.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-physical-building-blocks/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_minor_islands_label_points$(VERSION_PREFIXED).zip
 
 
 # 50m cultural
@@ -1376,22 +1484,22 @@ packages/Natural_Earth_quick_start/110m_physical/status.txt: \
 	touch $@
 	
 zips/updates/natural_earth_update_1.1.0.zip:
-	zip -ru $@ updates/version_1d1/
+	zip -r $@ updates/version_1d1/
 
 zips/updates/natural_earth_update_1.1.3.zip:
-	zip -ru $@ updates/version_1d1d3/
+	zip -r $@ updates/version_1d1d3/
 
 zips/updates/natural_earth_update_1.2.0.zip:
-	zip -ru $@ updates/version_1d2/
+	zip -r $@ updates/version_1d2/
 
 zips/updates/natural_earth_update_1.3.0.zip:
-	zip -ru $@ updates/version_1d3/
+	zip -r $@ updates/version_1d3/
 		
 zips/updates/natural_earth_update_1.4.0.zip:
-	zip -ru $@ updates/version_1d4/
+	zip -r $@ updates/version_1d4/
 
 zips/updates/natural_earth_update_2.0.0.zip:
-	zip -ru $@ updates/version_2d0/
+	zip -r $@ updates/version_2d0/
 
 zips/live-packages_ne: \
 	zips/packages/natural_earth_vector.zip \
@@ -1513,12 +1621,21 @@ live: \
 	touch $@
 
 clean-quick-start:
-	rm -rf packages/Natural_Earth_quick_start/10m_cultural/*`
+	rm -rf packages/Natural_Earth_quick_start/10m_cultural/*
 	rm -rf packages/Natural_Earth_quick_start/10m_physical/*
 	rm -rf packages/Natural_Earth_quick_start/50m_raster/*
 	rm -rf packages/Natural_Earth_quick_start/110m_cultural/*
 	rm -rf packages/Natural_Earth_quick_start/110m_physical/*
 	
+clean-lite:
+	rm -f zips/packages/natural_earth_vector.zip
+	rm -f zips/10m_cultural/10m_cultural.zip
+	rm -f zips/10m_physical/10m_physical.zip
+	rm -f zips/50m_cultural/50m_cultural.zip
+	rm -f zips/50m_physical/50m_physical.zip
+	rm -f zips/110m_cultural/110m_cultural.zip
+	rm -f zips/110m_physical/110m_physical.zip
+	rm -f zips/packages/natural_earth_vector.sqlite.zip
 
 clean:
 	mkdir -p zips/10m_cultural
