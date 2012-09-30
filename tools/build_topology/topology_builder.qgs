@@ -24,9 +24,24 @@
         </destinationsrs>
     </mapcanvas>
     <legend>
-        <legendlayer open="true" checked="Qt::Checked" name="OGRGeoJSON" showFeatureCount="0">
+        <legendlayer open="true" checked="Qt::Unchecked" name="physical lines" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="ne_10m_minor_islands_polygon_output20120929171340887" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="ne_10m_physical_land_ocean_line_input20120929165923337" visible="0"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OGRGeoJSON" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="ne_10m_cultural_admin_0_line_input20120929165902536" visible="0"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OGRGeoJSON" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="ne_10m_cultural_admin_1_line_input20120929165809560" visible="0"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OGRGeoJSON" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="ne_10m_minor_islands_polygon_output20120929171340887" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendlayer open="true" checked="Qt::Unchecked" name="OGRGeoJSON" showFeatureCount="0">
@@ -42,21 +57,6 @@
         <legendlayer open="true" checked="Qt::Unchecked" name="OGRGeoJSON" showFeatureCount="0">
             <filegroup open="true" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="ne_10m_physical_land_ocean_polygon_output20120929171018153" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OGRGeoJSON" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="ne_10m_physical_land_ocean_line_input20120929165923337" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OGRGeoJSON" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="ne_10m_cultural_admin_0_line_input20120929165902536" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OGRGeoJSON" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="ne_10m_cultural_admin_1_line_input20120929165809560" visible="0"/>
             </filegroup>
         </legendlayer>
     </legend>
@@ -96,11 +96,11 @@
                     <outlinewidth>0.26</outlinewidth>
                     <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath null="1"></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>scalerank</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -122,9 +122,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
@@ -162,11 +162,11 @@
                     <outlinewidth>0.26</outlinewidth>
                     <fillcolor red="136" blue="2" green="172"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath null="1"></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>index</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -188,9 +188,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
@@ -228,11 +228,11 @@
                     <outlinewidth>0.26</outlinewidth>
                     <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath null="1"></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>scalerank</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -254,9 +254,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
@@ -294,11 +294,11 @@
                     <outlinewidth>0.26</outlinewidth>
                     <fillcolor red="98" blue="107" green="18"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath null="1"></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>index</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -320,9 +320,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
@@ -360,11 +360,11 @@
                     <outlinewidth>0.26</outlinewidth>
                     <fillcolor red="176" blue="238" green="151"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath null="1"></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>index</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -386,15 +386,15 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>ne_10m_physical_land_ocean_line_input20120929165923337</id>
             <datasource>./ne_10m_physical_land_ocean_line_input.geojson</datasource>
-            <layername>OGRGeoJSON</layername>
+            <layername>physical lines</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
@@ -426,11 +426,11 @@
                     <outlinewidth>0.26</outlinewidth>
                     <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath null="1"></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>scalerank</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -452,9 +452,13 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform></editform>
+            <edittypes>
+                <edittype type="0" name="featurecla"/>
+                <edittype type="0" name="scalerank"/>
+            </edittypes>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
@@ -492,11 +496,11 @@
                     <outlinewidth>0.26</outlinewidth>
                     <fillcolor red="212" blue="14" green="9"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath null="1"></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>index</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -518,9 +522,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <attributeactions/>
         </maplayer>
     </projectlayers>
