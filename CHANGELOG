@@ -1,5 +1,5 @@
 2012-10-12: 2.0.0
-- Full details: 
+- Full details: tk tk tk
 
 GENERAL
 - NATURAL_EARTH_UPDATE_2.0.0	**UPDATED**All instances of Name1 have been changed to name, NAME to name, Name2 to name_alt. Vertexes were added to many themes to allow them to project into conics smoothly. All field (column) names are now lowercase and generally in the order of: scalerank, featurecla, name, name_alt, natscale, labelrank, *. Scale ranks in filenames now scale rank (singular). All files now include VERSION and README files. Full changes detailed by file below.
