@@ -374,6 +374,7 @@ HOUSEKEEPING
             projection into conics.
 - UPDATED:  NE_50M_ADMIN_0_TINY_COUNTRIES - Updated admin-0 details.
 - **NEW**:  NE_50M_ADMIN_0_TINY_COUNTRIES_SCALE_RANK - To ease final admin-0 details.
+            Added Caribbean Netherlands, Macao, and Hong Kong.
 - NO DIFF:  NE_50M_ADMIN_0_BOUNDARY_MAP_UNITS. 
 - UPDATED:  NE_50M_ADMIN_0_BOUNDARY_LINES_LAND - A additional coding
             to allow official US gov't view of same. better disputed coding, in
