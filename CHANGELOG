@@ -1,3 +1,551 @@
+2012-10-12: 2.0.0
+
+- Full details: tk tk tk
+- Many thanks to Xan Gregg, Peter Bispham, Daniel Huffman, Drew Noakes, Miguel 
+  Angel Vilela, Matthew Toro, Kevin Pickell, Alex Tait, Hans VdM, Mike Migurski, 
+  Shawn Allen, Rob and more!
+
+GENERAL
+
+- UPDATED:  NATURAL_EARTH_UPDATE_2.0.0 - All instances of name1 have
+            been changed to name, name to name, name2 to name_alt. Vertexes were
+            added to many themes to allow them to project into conics smoothly.
+            All field (column) names are now lowercase and generally in the
+            order of: scalerank, featurecla, name, name_alt, natscale,
+            labelrank, *. Fixes topology errors in all 10m files excepting some 
+            bathymetry themes.
+
+PACKAGES
+
+- UPDATED:  NATURAL_EARTH_QUICK_START - Incorporates all changes above and below.
+
+10M_BUILDING_BLOCKS
+
+- **NEW**:  NE_10M_LAND_OCEAN_LABEL_POINTS - Used for building the 10m
+            physical geometry.
+- **NEW**:  NE_10M_MINOR_ISLAND_LABEL_POINTS - Used for building the
+            10m physical geometry.
+- **NEW**:  NE_10M_ADMIN_0_LABEL_POINTS - Used for building the 10m
+            cultural geometry.
+- **NEW**:  NE_10M_ADMIN_1_LABEL_POINTS.GDB - Used for building the
+            10m cultural geometry.
+- **NEW**:  NE_10M_ADMIN_1_LABEL_POINTS_DETAILS.GDB - Used for
+            building the 10m cultural geometry.
+- **NEW**:  NE_10M_LAND_OCEAN_SEAMS - Used for building the 10m
+            physical geometry. Includes densified vertex along lines to allow
+            smooth projection into conics.
+- **NEW**:  NE_10M_ADMIN_0_SEAMS - Used for building the 10m cultural
+            geometry. Includes densified vertex along lines to allow smooth
+            projection into conics.
+- **NEW**:  NE_10M_ADMIN_1_SEAMS - Used for building the 10m cultural
+            geometry. Includes densified vertex along lines to allow smooth
+            projection into conics.
+
+NATURAL_EARTH_VECTOR
+
+- **NEW**:  NATURAL_EARTH_VECTOR.SQLITE All natural earth themes
+            packaged in a single sqlite database file.
+
+HOUSEKEEPING
+
+- UPDATED:  NE_ADMIN_0_DETAILS - Track admin-0 countries and other
+            levels. Updated for South Sudan, map colors, population figures,
+            removed () from notes, and more. note: diffs between sov, adm0, map
+            units, map subunits, and new breakaways are all calculated on the a3
+            codes now, no longer mix of names and a3 codes. Added and split
+            note_adm0 and note_brk to note which countries are parts of which
+            sovereignties and who's breaking away or disputing. One spurious
+            “county” feature code fixed to “country” (finland). Added labelrank
+            on all. Added new mapcolors (7, 8, 9 and old 13). Includes new
+            detail on Caribbean Netherlands map unit. Adds more detail to Bhutan
+            disputed areas. Now includes continent codes, and future region code
+            placeholder columns. Fixes over 2.0.0 release candidate 2 problems
+            in Georgia, Chile, and Cyprus for parts that had scaleranks > 6 and
+            were disappearing from countries and up on selection / dissolve.
+            Added name_len to know when to abbreviate labels.
+- **NEW**:  NE_ADMIN_0_FULL_ATTRIBUTES - Added as placeholder for
+            extra thematic data by country (eg from World Bank, CIA World
+            Factbook, etc) but only has old 1.2 era data for now.
+- **NEW**:  NE_ADMIN_1_DETAILS - Track admin-1 states and provinces.
+- UPDATED:  NE_THEMES_VERSIONS - What version is each file at? Stats on each.
+
+10M_CULTURAL
+
+- UPDATED:  NE_10M_ADMIN_0_SOVEREIGNTY - See changelog for 
+            ne_10m_admin_0_scale_rank_minor_islands, below. 
+- UPDATED:  NE_10M_ADMIN_0_COUNTRIES - See changelog for 
+            ne_10m_admin_0_scale_rank_minor_islands, below. 
+- UPDATED:  NE_10M_ADMIN_0_MAP_UNITS - See changelog for 
+            ne_10m_admin_0_scale_rank_minor_islands, below. 
+- UPDATED:  ne_10m_admin_0_map_subunits - See changelog for 
+            ne_10m_admin_0_scale_rank_minor_islands, below. 
+- UPDATED:  NE_10M_ADMIN_0_DISPUTED_AREAS - See changelog for
+            ne_10m_admin_0_disputed_areas_scale_rank, below. 
+- UPDATED:  NE_10M_ADMIN_0_DISPUTED_AREAS_SCALE_RANK - Now derived
+            from the admin-0 scale ranks. specific admin_a3 codes have been
+            added for each. additional disputed areas have been added, some
+            modified, including adding Taiwan, more detail around Bhutan, and
+            adding labelrank attribute to help know when it's relevant to label
+            on map. Fixes: N96NSYPAPV.
+- UPDATED:  NE_10M_ADMIN_0_SCALE_RANK - See changelog for 
+            ne_10m_admin_0_scale_rank_minor_islands, below.
+- UPDATED:  NE_10M_ADMIN_0_SCALE_RANK_MINOR_ISLANDS - Name change to
+            removed plural from scale rank. Rebuilt geometry so all admin-0
+            parts have coincidental boundary linework (no sliver polygons, no
+            small self-intersection loops). Uses updated admin-0 details, including
+            final iso code for South Sudan, recombining Gaza Strip and West Bank 
+            into Palestine, retiring Maly Vysotsky island back to Russia as the 
+            Finish lease expired. Now incorporates disputed areas an some depreciated
+            areas for easier political map assembly. Fixes: VS55865Z8A, 2MH8QDPMWZ, 
+            89272PRVWP, 86981W1MPA, WUAU1PQN6H, 8XV9T88TM6, AWLB5ZJXMN.
+- UPDATED:  ne_10m_admin_0_boundary_lines_land - Minor updates to
+            alignment of boundary lines (and topology fixes), additional coding to
+            allow official US gov't view of same. better disputed coding, including 
+            Kosovo. Densified vertex along lines to allow smooth projection into 
+            conics. Moved Omani exclave Madha to correct location. Adds left and right
+            labels and codes. Fixes: N96NSYPAPV, ZQNTN5VGDD, Z8ZYYUQZVS.
+- UPDATED:  NE_10M_ADMIN_0_BOUNDARY_LINES_MARITIME_INDICATOR - Minor
+            updates, including marking Alaska / BC boundary as disputed. Moved
+            Hong Kong admin-1 line to admin-0 marine indicator. Includes
+            densified vertex along lines to allow smooth projection into conics.
+            name1 have been changed to name, name to name, name2 to name_alt.
+            Fixes: 4VA9P9UGQE.
+- UPDATED:  NE_10M_ADMIN_0_BOUNDARY_LINES_MAP_UNITS - Minor updates to
+            alignment of boundary lines, additional coding to allow official US
+            gov't view of same. Better disputed coding. Densified vertex along
+            lines to allow smooth projection into conics. The ZIP now contains the
+            lines, not the polygons. Fixes: N96NSYPAPV, ZP7DXPEM1M
+- UPDATED:  NE_10M_ADMIN_0_BOUNDARY_LINES_DISPUTED_AREAS - Minor
+            updates to alignment of boundary lines, additional coding to allow
+            official US gov't view of same. Better disputed coding. Densified
+            vertex along lines to allow smooth projection into conics. Adds
+            notes about who's claim the line is in the name column. Fixes:
+            N96NSYPAPV.
+- UPDATED:  NE_10M_ADMIN_0_PACIFIC_GROUPINGS - Densified vertex along
+            lines to allow smooth projection into conics.
+- **NEW**:  NE_10M_ADMIN_0_ANTARCTICA_CLAIMS - Although countries have
+            paused their claims to the southernmost continent,  they haven't
+            suspended them. Thanks, Hans!
+- **NEW**:  NE_10M_ADMIN_0_ANTARCTICA_CLAIM_LIMIT_LINES - Although
+            countries have paused their claims to the southernmost continent, 
+            they haven't suspended them. Thanks, Hans!
+- UPDATED:  NE_10M_ADMIN_1_STATES_PROVINCES_SHP - Multiple, see changelog fr
+            ne_10m_admin_1_states_provinces_geodb.gdb, below.
+- UPDATED:  NE_10M_ADMIN_1_STATES_PROVINCES_LINES_SHP - Multiple, see changelog fr
+            ne_10m_admin_1_states_provinces_geodb.gdb, below.
+            Now an export of the geodb version (some details lost in
+            utf8-windows1252 character conversion). Note the _shp postfix is
+            enforced now.
+- **NEW**:  NE_10M_ADMIN_1_STATES_PROVINCES_LINES_GEODB.gdb - To allow
+            for left and right labeling along lines using the utf8 names.
+- UPDATED:  NE_10M_ADMIN_1_STATES_PROVINCES_GEODB.gdb - Rebuilt
+            geometry so all admin-1 have coincidental boundary line work (no
+            sliver polygons, no small self-intersection loops) and new coastline
+            (Gibraltar is in the right spot, 1000s of other spots world wide).
+            Removed duplicate lines in the philippine. Added new provinces in
+            New Zealand. Moved Hong Kong admin-1 line to admin-0 marine
+            indicator. Fixed Canada boundary between Labrador and Quebec. Fixes
+            Czech admin-1 regions. Uses updated admin-1 details. name1 have been
+            changed to name, name to name, name2 to name_alt. Added name_len to
+            know when to abbreviate labels. Updates map colors. No longer 
+            includes Baffin Island lake. Fixes 95ZDQXDPHW, G8Y31LEYY8, 
+            XZ2G1MU9HJ, 4VA9P9UGQE, WNVSE7BTRM.
+- UPDATED:  NE_10M_ADMIN_1_STATES_PROVINCES_LAKES_GEODB.gdb - Multiple, see 
+            changelog for ne_10m_admin_1_states_provinces_geodb.gdb, above.
+- UPDATED:  NE_10M_ADMIN_1_STATES_PROVINCES_LAKES_SHP -  Multiple, see 
+            changelog for ne_10m_admin_1_states_provinces_geodb.gdb, above.
+- UPDATED:  NE_10M_ADMIN_1_STATES_PROVINCES_SCALE_RANK_GEODB.gdb  Multiple, 
+            see changelog for ne_10m_admin_1_states_provinces_geodb.gdb, above.
+- UPDATED:  NE_10M_ADMIN_1_STATES_PROVINCES_SCALE_RANK_MINOR_ISLANDS_GEODB.gdb -
+            Multiple, see changelog for ne_10m_admin_1_states_provinces_geodb.gdb.
+- UPDATED:  NE_10M_POPULATED_PLACES - A couple name corrections
+            (Morelia, Mexico spelling fixed. Mazatlan, Mexico spelling fixed.
+            Clarified confusion around Tabatinga / Leticia on the Colombian /
+            Brazilian border. On the Brazil / Bolivia border, clarified
+            Brasileia / Cobija. Fixed spelling of Shuozhou, China), many
+            population max values, mostly in China, India, rift valley (Africa),
+            Nigeria, and other countries in east Asia, but some elsewhere. Made 
+            sure cities in Switzerland are coded admin-0 of CH and China are CN.
+            Moved Amundsen Base to 176° so it's in the -12 timezone. Also moved
+            Peter I Island. Vatican City is also moved to be contained by it's
+            admin-0 polygon. Same for San Marino. Added a poprank column with 0
+            to 14 numerical classes. Deleted spurious Extra Eureka town in Canada 
+            near Greenland. Delete duplicate town Urengoy in RUS, rename the real
+            one Novy Urengoy. Fixes: 4SUAZ7BB49, D459XT1Z6Y.
+- UPDATED:  NE_10M_POPULATED_PLACES_LESS_COLUMNS - Now auto generated
+            from the - ne_10m_populated_places file. see that changelog.
+- UPDATED:  NE_10M_URBAN_AREA - Removed spurious urban polygons in
+            Nevada and other high reflectance desert areas or ice fields like on
+            Mt. Hood in Oregon. Added detailed scalerank attributes.
+- NO DIFF:  NE_10M_LANDSCAN_URBAN_AREAS.
+- UPDATED:  NE_10M_PARKS_AND_PROTECTED_LANDS_AREA - Filename is now
+            parks and protected lands, but content remains exclusively United
+            States only. Several new parks added, see readme. Fixed topology
+            errors. Adjusted coastlines to match new coastlines. Adjusted a few
+            scale ranks for zooms 2, 3, 4.
+- **NEW**:  NE_10M_PARKS_AND_PROTECTED_LANDS_SCALE_RANKS - Source for
+            dissolved park area multi-polygons.
+- UPDATED:  NE_10M_PARKS_AND_PROTECTED_LANDS_LINES - Filename is now
+            parks and protected lands, but content remains exclusively united
+            states only. several new parks added, see readme.
+- UPDATED:  NE_10M_PARKS_AND_PROTECTED_LANDS_POINTS - Filename is now
+            parks and protected lands, but content remains exclusively United
+            States only. Several new parks added including Cesar Chavez National
+            Monument, see readme for full details. Added missing “name” column.
+            Some reranking for scaleranks 7, 8, 9 for parks in urban centers.
+            Added missing unit_codes for Clinton Birthplace NHS and River Raisin
+            NBP.
+- UPDATED:  NE_10M_ROADS - Now global coverage, includes scaleranks.
+            new Europe roads include route numbers and road types. Added some
+            detail in North America.
+- UPDATED:  NE_10M_ROADS_NORTH_AMERICA_SUPPLEMENT - Now includes scaleranks.
+- UPDATED:  NE_10M_RAILROADS - Now global coverage, includes scaleranks.
+- **NEW**:  NE_10M_AIRPORTS - Added airports as a selection of Mile High Club (updated).
+- **NEW**:  NE_10M_PORTS - Added ports as a selection from High Seas (updated).
+- **NEW**:  NE_10M_TIME_ZONES   Generalized time zones, thanks Alex!
+            Includes special dispensation for Antarctica.
+
+10M_PHYSICAL
+
+- UPDATED:  NE_10M_RIVERS_LAKE_CENTERLINES - See changelog for 
+            ne_10m_rivers_lake_centerlines_scale_ranks for details.
+- UPDATED:  NE_10M_RIVERS_LAKE_CENTERLINES_SCALE_RANKS - Updated river
+            names, few new rivers, splits. added river connector in Sweden
+            between lake near Stockholm and Baltic Sea. Fixes in France and
+            Netherlands. Fixes Mackenzie river at it's confluence with Dawson
+            river in Australia. Names the Mahakam in Borneo (Rivernum 544). 
+            Changes scalerank on Nelson river in Canada.
+            Fixes: SHAWNZQJ3B, 5J47B13PJ7, W9X539LBUT, 35YLBL2W9Z.
+- UPDATED:  NE_10M_RIVERS_LAKE_CENTERLINES_NORTH_AMERICA_SUPPLEMENT -
+            Updated river names, few new rivers, splits. Fixes: SHAWNZQJ3B,
+            5J47B13PJ7.
+- UPDATED:  NE_10M_RIVERS_LAKE_CENTERLINES_EUROPE_SUPPLEMENT - Updated
+            river names, few new rivers, splits. fixed topology errors. Fixes:
+            SHAWNZQJ3B.
+- UPDATED:  NE_10M_LAKES - Removed major lake groupings (Great Lakes,
+            Finger Lakes, etc) to geography label areas instead. Title cased the
+            feature class values. Added Swedish lake near Stockholm (had been
+            extension of Baltic Sea in ocean theme). Fixed topology errors.
+            Fixed a few reservoir and salt lake codes (thanks Craig!).
+- UPDATED:  NE_10M_LAKES_NORTH_AMERICA_SUPPLEMENT - Name1 have been
+            changed to name, name to name, name2 to name_alt. Fixes 4VA9P9UGQE.
+- NO DIFF:  NE_10M_LAKES_EUROPE_SUPPLEMENT.
+- UPDATED:  NE_10M_LAKES_HISTORIC - Name1 have been changed to name,
+            name to name, name2 to name_alt. Updated scale ranks so Aral Sea is
+            3, lake in Mexico is now 8. Fixes 4VA9P9UGQE.
+- UPDATED:  NE_10M_LAKES_PLUVIAL - Fixed topology errors.
+- NO DIFF:  NE_10M_PLAYAS.
+- UPDATED:  NE_10M_GEOGRAPHY_REGIONS_POLYS - Now includes major lake
+            groupings (Great Lakes, Finger Lakes, etc) moved, from lake theme.
+            Fixed topology errors. Title case feature class values. Removed
+            duplicate Laccadive Islands poly.
+- NO DIFF:  NE_10M_GEOGRAPHY_REGIONS_POINTS.
+- NO DIFF:  NE_10M_GEOGRAPHY_ELEVATION_POINTS.
+- UPDATED:  NE_10M_GEOGRAPHY_MARINE_POLYS - Updated the scale ranks
+            for better zoom-by-zoom mapping. Fixed topology errors.
+- UPDATED:  NE_10M_LAND - A dissolved version of the original 1.x
+            file, now renamed "ne_10m_land_scale_rank", see that changelog for 
+            full details. Fixes XAWXTN54GT.
+- **NEW**:  NE_10M_LAND_SCALE_RANKS - Renamed our original land file
+            to this. Incorporates new coastline. Includes densified vertex along 
+            lines to allow smooth projection into conics. Fixes XAWXTN54GT.
+- UPDATED:  NE_10M_OCEAN - A dissolved version of the original 1.x
+            file, now renamed "ne_10m_ocean_scale_rank", see that changelog for 
+            full details. Fixes XAWXTN54GT. 
+- **NEW**:  NE_10M_OCEAN_SCALE_RANKS - Renamed our original ocean file
+            to this. Incorporates new coastline. Removed Swedish lake near 
+            Stockholm  (had been extension of Baltic Sea in ocean theme) to lakes
+            layer. Incorporates new coastline. Includes densified vertex along 
+            lines to allow smooth projection into conics. Fixes XAWXTN54GT.
+- UPDATED:  NE_10M_COASTLINE - Better matches modern satellite imagery
+            to zoom 8-ish. The earlier coastline could have been several
+            kilometers off (like in Gibraltar). Several large new islands added.
+            Includes densified vertex along lines to allow smooth projection
+            into conics.
+- UPDATED:  NE_10M_MINOR_ISLANDS - Better matches modern satellite
+            imagery to zoom 8-ish. the earlier coastline could have been several
+            kilometers off. several hundred small new islands added.
+- UPDATED:  NE_10M_MINOR_ISLANDS_COASTLINE - Better matches modern
+            satellite imagery to zoom 8-ish. the earlier coastline could have
+            been several kilometers off. several hundred small new islands
+            added.
+- NO DIFF:  NE_10M_REEFS.
+- UPDATED:  NE_10M_GLACIATED_AREAS - Donut holes in large glaciers are
+            now punched thru rather than being duplicate polygons. Clipped to
+            new land shape. May miss a few sliver polygons between ice and
+            coastline. Fixed topology errors. Includes densified vertex along 
+            lines to allow smooth projection into conics. Fixes: 1EH6NRTJ6P.
+- UPDATED:  NE_10M_ANTARCTIC_ICE_SHELVES_POLYS - Densified vertex
+            along lines to allow smooth projection into conics. Fixed topology
+            errors. Remade columns (fieldnames).
+- UPDATED:  NE_10M_ANTARCTIC_ICE_SHELVES_LINES - Densified vertex
+            along lines to allow smooth projection into conics.
+- UPDATED:  NE_10M_BATHYMETRY_ALL - Includes new coastline, fixes
+            topology errors and vertex densification, see below. 
+- UPDATED:  NE_10M_BATHYMETRY_0 - Better matches modern satellite
+            imagery to zoom 8-ish. The earlier coastline could have been several
+            kilometers off. several large new islands added. topology errors
+            repaired. Includes densified vertex along lines to allow smooth 
+            projection into conics.
+- UPDATED:  NE_10M_BATHYMETRY_200 - Topology errors repaired. Includes densified 
+			vertex along lines to allow smooth projection into conics.
+- UPDATED:  NE_10M_BATHYMETRY_1000 - Topology errors repaired. Includes densified 
+			vertex along lines to allow smooth projection into conics.
+- UPDATED:  NE_10M_BATHYMETRY_2000 - Topology errors repaired. Includes densified 
+			vertex along lines to allow smooth projection into conics.
+- WAITING:  NE_10M_BATHYMETRY_3000 - Still needs further fixes. Includes densified 
+			vertex along lines to allow smooth projection into conics.
+- WAITING:  NE_10M_BATHYMETRY_4000 - Still needs further fixes. Includes densified 
+			vertex along lines to allow smooth projection into conics.
+- WAITING:  NE_10M_BATHYMETRY_5000 - Still needs further fixes. Includes densified 
+			vertex along lines to allow smooth projection into conics.
+- UPDATED:  NE_10M_BATHYMETRY_6000 - Topology errors repaire. Includes densified 
+			vertex along lines to allow smooth projection into conics.
+- WAITING:  NE_10M_BATHYMETRY_7000 - Still needs further fixes.
+- WAITING:  NE_10M_BATHYMETRY_8000 - Still needs further fixes.
+- WAITING:  NE_10M_BATHYMETRY_9000 - Still needs further fixes.
+- WAITING:  NE_10M_BATHYMETRY_10000 - Still needs further fixes.
+- UPDATED:  NE_10M_GEOGRAPHIC_LINES - New int'l date line, thanks
+            Alex! Also densified linework for smoother projection into conics.
+- UPDATED:  NE_10M_GRATICULES_ALL - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_10M_GRATICULES_1 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_10M_GRATICULES_5 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_10M_GRATICULES_10 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_10M_GRATICULES_15 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_10M_GRATICULES_20 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_10M_GRATICULES_30 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_10M_WGS84_BOUNDING_BOX - Densified vertex along lines
+            to allow smooth projection into conics.
+
+10M RASTERS
+
+- UPDATED:  HYP_HR_SR_W_DR_OCEAN - New water areas, new embedded shaded relief.
+- UPDATED:  HYP_LR_SR_W_DR_OCEAN - New water areas, new embedded shaded relief.
+- UPDATED:  HYP_HR_SR_W_DR - New water areas, new embedded shaded relief.
+- UPDATED:  HYP_LR_SR_W_DR - New water areas, new embedded shaded relief.
+- UPDATED:  HYP_HR_SR_W - New water areas, new embedded shaded relief.
+- UPDATED:  HYP_LR_SR_W - New water areas, new embedded shaded relief.
+- UPDATED:  HYP_HR_SR - New water areas, new embedded shaded relief.
+- UPDATED:  HYP_LR_SR - New water areas, new embedded shaded relief.
+- UPDATED:  NE1_LR_LC_SR_W_DR - New water areas, new embedded shaded relief.
+- UPDATED:  NE1_LR_LC_SR_W - New water areas, new embedded shaded relief.
+- UPDATED:  NE1_LR_LC_SR - New water areas, new embedded shaded relief.
+- NO DIFF:  NE1_LR_LC.
+- UPDATED:  NE1_HR_LC_SR_W_DR - New water areas, new embedded shaded relief.
+- UPDATED:  NE1_HR_LC_SR_W - New water areas, new embedded shaded relief.
+- UPDATED:  NE1_HR_LC_SR, new embedded shaded relief.
+- NO DIFF:  NE1_HR_LC.
+- UPDATED:  NE2_LR_LC_SR_W_DR - New water areas, new embedded shaded relief.
+- UPDATED:  NE2_LR_LC_SR_W - New water areas, new embedded shaded relief.
+- UPDATED:  NE2_LR_LC_SR, new embedded shaded relief.
+- NO DIFF:  NE2_LR_LC.
+- UPDATED:  NE2_HR_LC_SR_W_DR - New water areas, new embedded shaded relief.
+- UPDATED:  NE2_HR_LC_SR_W - New water areas, new embedded shaded relief.
+- UPDATED:  NE2_HR_LC_SR - New water areas, new embedded shaded relief.
+- NO DIFF:  NE2_HR_LC.
+- NO DIFF:  NE_10M_OCEAN_BOTTOM_OB_LR.
+- UPDATED:  NE_10M_SHADED_RELIEF_SR_HR - New water areas, new embedded shaded relief.
+- UPDATED:  NE_10M_SHADED_RELIEF_SR_LR - New water areas, new embedded shaded relief.
+- **NEW**:  GRAY_HR_SR_OB_DR - Special greyscale relief + hypsometric tints.
+- **NEW**:  GRAY_HR_SR_OB - Special greyscale relief + hypsometric tints.
+- **NEW**:  GRAY_HR_SR_W - Special greyscale relief + hypsometric tints.
+- **NEW**:  GRAY_HR_SR - Special greyscale relief + hypsometric tints.
+- **NEW**:  GRAY_LR_SR_OB_DR - Special greyscale relief + hypsometric tints.
+- **NEW**:  GRAY_LR_SR_OB - Special greyscale relief + hypsometric tints.
+- **NEW**:  GRAY_LR_SR_W - Special greyscale relief + hypsometric tints.
+- **NEW**:  GRAY_LR_SR - Special greyscale relief + hypsometric tints.
+
+50M CULTURAL
+
+- UPDATED:  NE_50M_ADMIN_0_COUNTRIES - See changelog for ne_50m_admin_0_scale_ranks.
+- UPDATED:  NE_50M_ADMIN_0_SOVEREIGNTY - See changelog for ne_50m_admin_0_scale_ranks.
+- UPDATED:  NE_50M_ADMIN_0_MAP_UNITS - See changelog for ne_50m_admin_0_scale_ranks.
+- UPDATED:  NE_50M_ADMIN_0_MAP_SUBUNITS - See changelog for ne_50m_admin_0_scale_ranks.
+- UPDATED:  NE_50M_ADMIN_0_SCALE_RANKS - Fixes topology errors, uses
+            updated admin-0 details, new lake in sweden is no longer punched
+            out (was part of ocean). Densified vertex along lines to allow smooth
+            projection into conics.
+- UPDATED:  NE_50M_ADMIN_0_TINY_COUNTRIES - Updated admin-0 details.
+- **NEW**:  NE_50M_ADMIN_0_TINY_COUNTRIES_SCALE_RANK - To ease final admin-0 details.
+- NO DIFF:  NE_50M_ADMIN_0_BOUNDARY_MAP_UNITS. 
+- UPDATED:  NE_50M_ADMIN_0_BOUNDARY_LINES_LAND - A additional coding
+            to allow official US gov't view of same. better disputed coding, in
+            alignment with 10m file Kosovo, etc). Densified vertex along lines
+            to allow smooth projection into conics. Fixes: N96NSYPAPV.
+- NO DIFF:  NE_50M_ADMIN_0_BOUNDARY_LINES_MARITIME_INDICATOR.
+- NO DIFF:  NE_50M_ADMIN_0_PACIFIC_GROUPINGS.
+- UPDATED:  NE_50M_ADMIN_0_BREAKAWAY_DISPUTED_AREAS - Filename change.
+            minor updates to alignment of boundary lines, additional coding to
+            allow official US gov't view of same. better disputed coding.
+            Densified vertex along lines to allow smooth projection into conics.
+            Fixes: N96NSYPAPV.
+- UPDATED:  NE_50M_ADMIN_0_BOUNDARY_LINES_DISPUTED_AREAS - Filename
+            change. minor updates to alignment of boundary lines, additional
+            coding to allow official US gov't view of same. Better disputed
+            coding. Densified vertex along lines to allow smooth projection into
+            conics. Fixes: N96NSYPAPV.
+- UPDATED:  NE_50M_ADMIN_1_STATES_PROVINCES_SHP - Added some new ISO
+            coding, other minor changes. Fixes topology errors. Adds admin-1 for
+            brazil and australia. Uses same coding as 10m files. Derived from
+            new scale rank version.
+- **NEW**:  NE_50M_ADMIN_1_STATES_PROVINCES_SHP_SCALE_RANK - Added a
+            version for data linking ease in future revisions.
+- **NEW**:  NE_50M_ADMIN_1_STATES_PROVINCES_LAKES_SHP - Added new
+            version that punches out large lakes, based on lakes of scalerank = 0.
+- UPDATED:  NE_50M_ADMIN_1_STATES_PROVINCES_LINES_SHP - Filename
+            change to remove plural from scale rank. Fixes topology errors. adds
+            more columns for selection based on 10m version.
+- UPDATED:  NE_50M_POPULATED_PLACES - Now auto generated from the
+            ne_10m_populated_places file, see that changelog.
+- UPDATED:  NE_50M_POPULATED_PLACES_SIMPLE - Now auto generated from
+            the ne_10m_populated_places file, see that changelog.
+- UPDATED:  NE_50M_URBAN_AREA - Added detailed scale ranks based on
+            new coding of 10m file.
+- **NEW**:  NE_50M_AIRPORTS - Now auto generated from the ne_10m_airports file.
+- **NEW**:  NE_50M_PORTS - Now auto generated from the ne_10m_ports file.
+
+50M_PHYSICAL
+
+- UPDATED:  NE_50M_RIVERS_LAKE_CENTERLINES - Added lake to baltic
+            connector in Sweden. name1 have been changed to name, name to name,
+            name2 to name_alt. Fixes 4VA9P9UGQE.
+- UPDATED:  NE_50M_RIVERS_LAKE_CENTERLINES_SCALE_RANKS - Added lake to
+            baltic connector in Sweden. name1 have been changed to name, name to
+            name, name2 to name_alt. Fixes 4VA9P9UGQE.
+- UPDATED:  NE_50M_LAKES - Moved lake in Sweden here instead of ocean.
+            name1 have been changed to name, name to name, name2 to name_alt.
+            fixes 4VA9P9UGQE.
+- UPDATED:  NE_50M_LAKES_HISTORIC - name1 have been changed to name,
+            name to name, name2 to name_alt. Updated scaleranks. Fixes
+            4VA9P9UGQE.
+- UPDATED:  NE_50M_PLAYAS - name1 have been changed to name, name to
+            name, name2 to name_alt. Fixes 4VA9P9UGQE.
+- UPDATED:  NE_50M_GEOGRAPHY_REGIONS_POLYS - Now auto generated from
+            the 10m version. Now includes major lake groupings (Great Lakes,
+            Finger Lakes, etc) moved from lake theme.
+- UPDATED:  NE_50M_GEOGRAPHY_REGIONS_POINTS - Now auto generated from the 10m version.
+- UPDATED:  NE_50M_GEOGRAPHY_REGIONS_ELEVATION_POINTS - Now auto
+            generated from the 10m version.
+- UPDATED:  NE_50M_GEOGRAPHY_MARINE_POLYS - Now auto generated from the 10m version.
+- UPDATED:  NE_50M_LAND - name1 have been changed to name, name to
+            name, name2 was removed. Removed lake near Stockholm, Sweden. Fixes
+            4VA9P9UGQE. Densified vertex along lines to allow smooth projection
+            into conics.
+- UPDATED:  NE_50M_OCEAN - name1 have been changed to name, name to
+            name, name2 was removed. Removed lake near Stockholm, Sweden. Fixes
+            4VA9P9UGQE. Densified vertex along lines to allow smooth projection
+            into conics.
+- UPDATED:  NE_50M_COASTLINE - Removed lake near Stockholm, Sweden.
+- NO DIFF:  NE_50M_GLACIATED_AREAS.
+- UPDATED:  NE_50M_ANTARCTIC_ICE_SHELVES_POLYS - Densified vertex along lines 
+			to allow smooth projection into conics.
+- UPDATED:  NE_50M_ANTARCTIC_ICE_SHELVES_LINES - Densified vertex along lines 
+			to allow smooth projection into conics.
+- UPDATED:  NE_50M_GEOGRAPHIC_LINES - New int'l date line, thanks Alex! Also 
+            densified linework for smoother projection into conics.
+- UPDATED:  NE_50M_GRATICULES_ALL - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_50M_GRATICULES_1 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_50M_GRATICULES_5 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_50M_GRATICULES_10 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_50M_GRATICULES_15 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_50M_GRATICULES_20 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_50M_GRATICULES_30 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_50M_WGS84_BOUNDING_BOX - Densified vertex along lines
+            to allow smooth projection into conics.
+
+50M RASTER
+
+- UPDATED:  HYP_50M_SR_W - New water areas, new embedded shaded relief.
+- UPDATED:  HYP_50M_SR - New embedded shaded relief.
+- UPDATED:  NE1_50M_SR_W - New water areas, new embedded shaded relief.
+- UPDATED:  NE1_50M_SR - New embedded shaded relief.
+- UPDATED:  NE2_50M_SR_W - New water areas, new embedded shaded relief.
+- UPDATED:  NE2_50M_SR - New embedded shaded relief.
+- NO DIFF:  NE_50M_OCEAN_BOTTOM_OB_50M.
+- UPDATED:  NE_50M_BATHYMETRY_BATHY_50M - New water areas.
+- UPDATED:  NE_50M_SHADED_RELIEF_SR_50M - New embedded shaded relief.
+- **NEW**:  GRAY_50M_SR - Special greyscale relief + hypsometric tints.
+- **NEW**:  GRAY_50M_SR_W - Special greyscale relief + hypsometric tints.
+- **NEW**:  GRAY_50M_SR_OB  Special greyscale relief + hypsometric tints.
+
+110M CULTURAL
+
+- UPDATED:  NE_110M_ADMIN_0_COUNTRIES - Fixes topology errors, uses updated details.
+- UPDATED:  NE_110M_ADMIN_0_SOVEREIGNTY - Fixes topology errors, uses updated details.
+- UPDATED:  NE_110M_ADMIN_0_MAP_UNITS - Fixes topology errors, uses updated details.
+- UPDATED:  NE_110M_ADMIN_0_SCALE_RANKS - Fixes topology errors, uses updated details.
+- UPDATED:  NE_110M_ADMIN_0_TINY_COUNTRIES - Fixes topology errors,
+            uses updated admin-0 details.
+- UPDATED:  NE_110M_ADMIN_0_BOUNDARY_LINES_LAND - A additional coding
+            to allow official US gov't view of same. added disputed codings
+            (Kosovo, etc). More consistent with 10m file now. Added missing
+            Chile, Peru boundary, thanks Brody!
+- UPDATED:  NE_110M_ADMIN_0_PACIFIC_GROUPINGs - Densified vertex along
+            lines to allow smooth projection into conics.
+- UPDATED:  NE_110M_ADMIN_1_STATES_PROVINCES_SHP - Added some new ISO
+            coding, other minor changes. Fixes topology errors. Uses same coding
+            as 10m files. Derived from new scale rank version.
+- **NEW**:  NE_110M_ADMIN_1_STATES_PROVINCES_SHP_SCALE_RANK - Added a
+            version for data linking ease in future revisions.
+- UPDATED:  NE_110M_ADMIN_1_STATES_PROVINCES_LINES_SHP - Filename
+            change to remove plural from scale rank. Fixes topology errors. Adds
+            more columns for selection based on 10m version.
+- UPDATED:  NE_110M_POPULATED_PLACES - Now auto generated from the
+            ne_10m_populated_places file, see that changelog.
+- UPDATED:  NE_110M_POPULATED_PLACES_SIMPLE - Now auto generated from
+            the ne_10m_populated_places file, see that changelog.
+
+110M_PHYSICAL
+
+- UPDATED:  NE_110M_RIVERS_LAKE_CENTERLINES - name1 have been changed
+            to name, name to name, name2 to name_alt. Fixes 4VA9P9UGQE.
+- UPDATED:  NE_110M_LAKES - Deleted Caspian Sea (already represented
+            in the 110m ocean theme). name1 have been changed to name, name to
+            name, name2 to name_alt. Fixes STRJ4AN2LH, 4VA9P9UGQE.
+- UPDATED:  NE_110M_GEOGRAPHY_REGIONS_POLYS - Now auto generated from
+            the 10m version. Now includes major lake groupings (Great Lakes) 
+            moved from lake theme.
+- UPDATED:  NE_110M_GEOGRAPHY_REGIONS_POINTS - Now auto generated from 10m version.
+- UPDATED:  NE_110M_GEOGRAPHY_REGIONS_ELEVATION_POINTS - Now auto
+            generated from the 10m version.
+- UPDATED:  NE_110M_GEOGRAPHY_MARINE_POLYS - Now auto generated from the 10m version.
+- UPDATED:  NE_110M_LAND - Fixed topology.
+- NO DIFF:  NE_110M_OCEAN.
+- NO DIFF:  NE_110M_COASTLINE.
+- NO DIFF:  NE_110M_GLACIATED_AREAS.
+- UPDATED:  NE_110M_GEOGRAPHIC_LINES - New int'l date line, thanks
+            Alex! Also densified linework for smoother projection into conics.
+- UPDATED:  NE_110M_GRATICULES_ALL - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_110M_GRATICULES_1 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_110M_GRATICULES_5 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_110M_GRATICULES_10 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_110M_GRATICULES_15 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_110M_GRATICULES_20 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED:  NE_110M_GRATICULES_30 - Densified vertex along lines to
+            allow smooth projection into conics.
+- UPDATED   NE_110M_WGS84_BOUNDING_BOX  densified vertex along lines
+            to allow smooth projection into conics.
+
 2011-08-19: 1.4.0
 - Full details: http://www.naturalearthdata.com/blog/natural-earth-version-1-4-release-notes/
 
