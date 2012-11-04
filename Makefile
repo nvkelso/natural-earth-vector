@@ -1235,8 +1235,7 @@ zips/110m_cultural/ne_110m_admin_1_states_provinces_shp.zip: 110m_cultural/ne_11
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_1_states_provinces_shp$(VERSION_PREFIXED).zip
 	
-zips/110m_cultural/ne_110m_admin_1_states_provinces_shp_scale_rank
-.zip: 110m_cultural/ne_110m_admin_1_states_provinces_shp_scale_rank.shp 110m_cultural/ne_110m_admin_1_states_provinces_shp_scale_rank.dbf
+zips/110m_cultural/ne_110m_admin_1_states_provinces_shp_scale_rank.zip: 110m_cultural/ne_110m_admin_1_states_provinces_shp_scale_rank.shp 110m_cultural/ne_110m_admin_1_states_provinces_shp_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
