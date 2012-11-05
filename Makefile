@@ -261,7 +261,6 @@ zips/110m_physical/110m_physical.zip: \
 	zips/110m_physical/ne_110m_lakes.zip \
 	zips/110m_physical/ne_110m_land.zip \
 	zips/110m_physical/ne_110m_ocean.zip \
-	zips/110m_physical/ne_110m_physical_geographic_lines.zip \
 	zips/110m_physical/ne_110m_rivers_lake_centerlines.zip \
 	zips/110m_physical/ne_110m_graticules_all.zip \
 	zips/110m_physical/ne_110m_graticules_1.zip \
