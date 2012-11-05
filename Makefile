@@ -107,6 +107,7 @@ zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_populated_places_simple.zip \
 	zips/10m_cultural/ne_10m_populated_places.zip \
 	zips/10m_cultural/ne_10m_railroads.zip \
+	zips/10m_cultural/ne_10m_railroads_north_america.zip \
 	zips/10m_cultural/ne_10m_roads_north_america.zip \
 	zips/10m_cultural/ne_10m_roads.zip \
 	zips/10m_cultural/ne_10m_urban_areas_landscan.zip \
@@ -502,6 +503,12 @@ zips/10m_cultural/ne_10m_railroads.zip: 10m_cultural/ne_10m_railroads.shp 10m_cu
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/railroads/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_railroads$(VERSION_PREFIXED).zip
+
+zips/10m_cultural/ne_10m_railroads_north_america.zip: 10m_cultural/ne_10m_railroads_north_america.shp 10m_cultural/ne_10m_railroads_north_america.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/railroads/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_railroads_north_america$(VERSION_PREFIXED).zip
 
 zips/10m_cultural/ne_10m_roads.zip: 10m_cultural/ne_10m_roads.shp 10m_cultural/ne_10m_roads.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
