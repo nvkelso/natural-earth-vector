@@ -86,6 +86,7 @@ zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.zip \
 	zips/10m_cultural/ne_10m_admin_0_disputed_areas.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_lakes.zip \
 	zips/10m_cultural/ne_10m_admin_0_map_subunits.zip \
 	zips/10m_cultural/ne_10m_admin_0_map_units.zip \
 	zips/10m_cultural/ne_10m_admin_0_pacific_groupings.zip \
@@ -101,6 +102,7 @@ zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.zip \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.zip \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip \
+	zips/10m_cultural/ne_10m_admin_1_states_provinces_lines_geodb.zip \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_shp.zip \
 	zips/10m_cultural/ne_10m_admin_1_label_points.zip \
 	zips/10m_cultural/ne_10m_admin_1_seams.zip \
@@ -182,6 +184,7 @@ zips/50m_cultural/50m_cultural.zip: \
 	zips/50m_cultural/ne_50m_admin_0_boundary_map_units.zip \
 	zips/50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.zip \
 	zips/50m_cultural/ne_50m_admin_0_countries.zip \
+	zips/50m_cultural/ne_50m_admin_0_countries_lakes.zip \
 	zips/50m_cultural/ne_50m_admin_0_map_subunits.zip \
 	zips/50m_cultural/ne_50m_admin_0_map_units.zip \
 	zips/50m_cultural/ne_50m_admin_0_pacific_groupings.zip \
@@ -232,6 +235,7 @@ zips/50m_physical/50m_physical.zip: \
 zips/110m_cultural/110m_cultural.zip: \
 	zips/110m_cultural/ne_110m_admin_0_boundary_lines_land.zip \
 	zips/110m_cultural/ne_110m_admin_0_countries.zip \
+	zips/110m_cultural/ne_110m_admin_0_countries_lakes.zip \
 	zips/110m_cultural/ne_110m_admin_0_map_units.zip \
 	zips/110m_cultural/ne_110m_admin_0_pacific_groupings.zip \
 	zips/110m_cultural/ne_110m_admin_0_scale_rank.zip \
@@ -408,6 +412,12 @@ zips/10m_cultural/ne_10m_admin_0_countries.zip: 10m_cultural/ne_10m_admin_0_coun
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_countries$(VERSION_PREFIXED).zip
 
+zips/10m_cultural/ne_10m_admin_0_countries_lakes.zip: 10m_cultural/ne_10m_admin_0_countries_lakes.shp 10m_cultural/ne_10m_admin_0_countries_lakes.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_lakes$(VERSION_PREFIXED).zip
+
 zips/10m_cultural/ne_10m_admin_0_map_subunits.zip: 10m_cultural/ne_10m_admin_0_map_subunits.shp 10m_cultural/ne_10m_admin_0_map_subunits.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-details/ > $(subst zips/, ,$(basename $@)).README.html
@@ -577,6 +587,12 @@ zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.zip: 10m_cultural/
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.gdb $(subst zips/, ,$(basename $@)).VERSION.txt $(subst zips/, ,$(basename $@)).README.html
 	cp $@ archive/ne_10m_admin_1_states_provinces_lakes_geodb$(VERSION_PREFIXED).zip
+
+zips/10m_cultural/ne_10m_admin_1_states_provinces_lines_geodb.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lines_geodb.gdb/gdb
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_lines_geodb.gdb $(subst zips/, ,$(basename $@)).VERSION.txt $(subst zips/, ,$(basename $@)).README.html
+	cp $@ archive/ne_10m_admin_1_states_provinces_lines_geodb$(VERSION_PREFIXED).zip
 
 zips/10m_cultural/ne_10m_parks_and_protected_lands.zip: \
 	10m_cultural/ne_10m_parks_and_protected_lands_area.shp 10m_cultural/ne_10m_parks_and_protected_lands_area.dbf \
@@ -948,6 +964,12 @@ zips/50m_cultural/ne_50m_admin_0_countries.zip: 50m_cultural/ne_50m_admin_0_coun
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_countries$(VERSION_PREFIXED).zip
 
+zips/50m_cultural/ne_50m_admin_0_countries_lakes.zip: 50m_cultural/ne_50m_admin_0_countries_lakes.shp 50m_cultural/ne_50m_admin_0_countries_lakes.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_50m_admin_0_countries_lakes$(VERSION_PREFIXED).zip
+
 zips/50m_cultural/ne_50m_admin_0_map_subunits.zip: 50m_cultural/ne_50m_admin_0_map_subunits.shp 50m_cultural/ne_50m_admin_0_map_subunits.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-details/ > $(subst zips/, ,$(basename $@)).README.html
@@ -1199,6 +1221,12 @@ zips/110m_cultural/ne_110m_admin_0_countries.zip: 110m_cultural/ne_110m_admin_0_
 	curl http://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_0_countries$(VERSION_PREFIXED).zip
+	
+zips/110m_cultural/ne_110m_admin_0_countries_lakes.zip: 110m_cultural/ne_110m_admin_0_countries_lakes.shp 110m_cultural/ne_110m_admin_0_countries_lakes.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_110m_admin_0_countries_lakes$(VERSION_PREFIXED).zip
 	
 zips/110m_cultural/ne_110m_admin_0_boundary_lines_land.zip: 110m_cultural/ne_110m_admin_0_boundary_lines_land.shp 110m_cultural/ne_110m_admin_0_boundary_lines_land.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
