@@ -13,7 +13,7 @@ GENERAL
             All field (column) names are now lowercase and generally in the
             order of: scalerank, featurecla, name, name_alt, natscale,
             labelrank, *. Fixes topology errors in all 10m files excepting some 
-            bathymetry themes.
+            bathymetry themes. Introduces a new "gray" relief raster series.
 
 PACKAGES
 
@@ -479,9 +479,12 @@ HOUSEKEEPING
 - NO DIFF:  NE_50M_OCEAN_BOTTOM_OB_50M.
 - UPDATED:  NE_50M_BATHYMETRY_BATHY_50M - New water areas.
 - UPDATED:  NE_50M_SHADED_RELIEF_SR_50M - New embedded shaded relief.
-- **NEW**:  GRAY_50M_SR - Special greyscale relief + hypsometric tints.
+- **NEW**:  GRAY_50M_SR - Special greyscale relief + hypsometric tints. 
+            Final files use ALL CAPS names, release candidates didn't.
 - **NEW**:  GRAY_50M_SR_W - Special greyscale relief + hypsometric tints.
+            Final files use ALL CAPS names, release candidates didn't.
 - **NEW**:  GRAY_50M_SR_OB  Special greyscale relief + hypsometric tints.
+            Final files use ALL CAPS names, release candidates didn't.
 
 110M CULTURAL
 
