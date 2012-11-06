@@ -49,7 +49,9 @@ zips/packages/Natural_Earth_quick_start.zip: \
 	packages/Natural_Earth_quick_start/10m_physical/status.txt \
 	packages/Natural_Earth_quick_start/50m_raster/status.txt \
 	packages/Natural_Earth_quick_start/110m_cultural/status.txt \
-	packages/Natural_Earth_quick_start/110m_physical/status.txt
+	packages/Natural_Earth_quick_start/110m_physical/status.txt \
+	packages/Natural_Earth_quick_start/Natural_Earth_quick_start_for_ArcMap.mxd \
+	packages/Natural_Earth_quick_start/Natural_Earth_quick_start_for_QGIS.qgs
 
 	zip -r $@ packages/Natural_Earth_quick_start/ VERSION README.md CHANGELOG
 	cp $@ archive/Natural_Earth_quick_start_$(VERSION).zip
