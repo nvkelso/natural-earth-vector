@@ -325,6 +325,9 @@ zips/110m_physical/110m_physical.zip: \
 
 # 50m
 
+50m_physical/ne_50m_geographic_lines.shp: 10m_physical/ne_10m_geographic_lines.shp 10m_physical/ne_10m_geographic_lines.dbf
+	ogr2ogr -overwrite $@ 10m_physical/ne_10m_geographic_lines.shp
+
 50m_physical/ne_50m_geography_regions_points.shp: 10m_physical/ne_10m_geography_regions_points.shp 10m_physical/ne_10m_geography_regions_points.dbf
 	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_points WHERE scalerank <= 5 ORDER BY scalerank" $@ 10m_physical/ne_10m_geography_regions_points.shp
 
@@ -339,6 +342,9 @@ zips/110m_physical/110m_physical.zip: \
 
 
 # 110m
+
+110m_physical/ne_110m_geographic_lines.shp: 10m_physical/ne_10m_geographic_lines.shp 10m_physical/ne_10m_geographic_lines.dbf
+	ogr2ogr -overwrite $@ 10m_physical/ne_10m_geographic_lines.shp
 
 110m_physical/ne_110m_geography_regions_points.shp: 10m_physical/ne_10m_geography_regions_points.shp 10m_physical/ne_10m_geography_regions_points.dbf
 	ogr2ogr -overwrite -sql "SELECT * FROM ne_10m_geography_regions_points WHERE scalerank <= 2 ORDER BY scalerank" $@ 10m_physical/ne_10m_geography_regions_points.shp
