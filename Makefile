@@ -1092,6 +1092,18 @@ zips/50m_cultural/ne_50m_populated_places_simple.zip: 50m_cultural/ne_50m_popula
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_populated_places_simple$(VERSION_PREFIXED).zip
 
+zips/50m_cultural/ne_50m_airports.zip: 50m_cultural/ne_50m_airports.shp 50m_cultural/ne_50m_airports.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/airports-2/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_50m_airports$(VERSION_PREFIXED).zip
+
+zips/50m_cultural/ne_50m_ports.zip: 50m_cultural/ne_50m_ports.shp 50m_cultural/ne_50m_ports.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/ports-2/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_50m_ports$(VERSION_PREFIXED).zip
+	
 zips/50m_cultural/ne_50m_urban_areas.zip: 50m_cultural/ne_50m_urban_areas.shp 50m_cultural/ne_50m_urban_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-urban-areas/ > $(subst zips/, ,$(basename $@)).README.html
