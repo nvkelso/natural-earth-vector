@@ -1,19 +1,46 @@
 2012-10-12: 2.0.0
 
-- Full details on NaturalEarthData.com/blog.
-- Many thanks to Xan Gregg, Scott Zillmer, Peter Bispham, Daniel Huffman, Drew Noakes,  
-  Miguel Angel Vilela, Matthew Toro, Kevin Pickell, Alex Tait, Hans vdM, Mike Migurski, 
-  Shawn Allen, Rob, Iain, Leo and more!
+- Full details: http://www.naturalearthdata.com/blog/miscellaneous/natural-earth-v2-0-0-release-notes/.
+
+- Many thanks to the individuals who contributed over the last year of development: Tom, Nathaniel, Alex Tait, Hans van der Maarel, Scott Zillmer, Mike Migurski, Daniel Huffman, Xan Gregg, Peter Bispham, Drew Noakes, Miguel Angel Vilela, Matthew Toro, Kevin Pickell, Shawn Allen, Robert Coup, Iain, Leo, and more! Thanks also to Stamen thru the Knight Foundation Citytracking grant for sponsoring a portion of this work including remastering geometries for better PostGIS import, the move to Github, and adopting semantic versioning.
 
 GENERAL
 
-- UPDATED:  NATURAL_EARTH_UPDATE_2.0.0 - All instances of name1 have
-            been changed to name, name to name, name2 to name_alt. Vertexes were
-            added to many themes to allow them to project into conics smoothly.
-            All field (column) names are now lowercase and generally in the
-            order of: scalerank, featurecla, name, name_alt, natscale,
-            labelrank, *. Fixes topology errors in all 10m files excepting some 
-            bathymetry themes. Introduces a new "gray" relief raster series.
+- UPDATED:  NATURAL_EARTH_UPDATE_2.0.0 - This release focuses on 7 major areas: 
+1) Economic geography: adds global roads, railroads, ports, airports, and time zones to 
+show how people are interconnected and goods route.
+2) Remastered geometries: fixes topological errors at 1:10 to 1:1,000 scales in the basic 
+coastline, ocean, land, admin-0, and admin-1 related themes for files in the the 1:10m 
+scaleset. By removing self-intersections, sliver polygons, and adjusting offset polygons, 
+Natural Earth imports into more GIS software (like PostGIS) and will be easier to 
+maintain. The coastline is adjusted to better conform to ~1:3,000,000 satellite imagery. 
+Because of all these changes, some raster themes are also updated. Land, ocean, and minor 
+islands all build topologically by scripting ingredients, as do the admin-0 and admin-1 
+cultural themes.
+3) Introduce Gray Earth rasters. Worldwide terrain depicted monochromatically in shades of 
+gray. It combines shaded relief and regionally adjusted hypsography that emphasizes both 
+high mountains and the micro terrain found in lowlands. View new raster »
+4) New file name and field name schemas. Full adoption of ne_10m_theme_name.shp file names 
+with `ne_` prefix to allow better import into GeoDB and PostGIS storage, lowercase field 
+(column) names instead of MiXeD and UPPER cased names, and use of consistent `name` field 
+(versus name1).
+5) Address user submitted bug reports, ~25 since the 1.4 release, and earlier.
+6) Moved to Github for the backend versioned file management and coordination. Includes 
+scripts to package updates and auto-create derived themes. 
+7) Adopt semantic versioning. Know, by theme, the level of effort needed to update your 
+maps when Natural Earth data updates are released. 
+* Other notable changes:
+All themes now include README and VERSION files. The admin-0 attributes have more veracity 
+and now includes nested disputed areas (was a sidecar). Adds continent, region, subregion 
+codes. Adds versions of country and admin-1 without boundary lakes.  All places and parts 
+of places have population and GDP estimates. The populated places pop_max and pop_min 
+attributes are now fully built out for all records (pop max is for the metropolitan area, 
+pop_min is for the incorporated city of the same name). populated places now include 
+rank_max and rank_min for simple town size grading. All instances of name1 have been 
+changed to name, name to name, name2 to name_alt. Vertexes were added to many themes to 
+allow them to project into conics smoothly (they're back!). All field (column) names are 
+now generally in the order of: scalerank, featurecla, name, name_alt, natscale, 
+labelrank, *.
 
 PACKAGES
 
