@@ -54,7 +54,12 @@ zips/packages/Natural_Earth_quick_start.zip: \
 	packages/Natural_Earth_quick_start/Natural_Earth_quick_start_for_ArcMap.mxd \
 	packages/Natural_Earth_quick_start/Natural_Earth_quick_start_for_QGIS.qgs
 
-	zip -r $@ packages/Natural_Earth_quick_start/ VERSION README.md CHANGELOG
+	cp CHANGELOG packages/Natural_Earth_quick_start/CHANGELOG
+	cp README.md packages/Natural_Earth_quick_start/README.md
+	cp VERSION packages/Natural_Earth_quick_start/VERSION
+
+	rm $@
+	zip -r $@ packages/Natural_Earth_quick_start/
 	cp $@ archive/Natural_Earth_quick_start_$(VERSION).zip
 	
 	
