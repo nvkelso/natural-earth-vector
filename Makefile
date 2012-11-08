@@ -6,9 +6,9 @@ VERSION_PREFIXED=_$(VERSION)
 #http://www.slac.stanford.edu/BFROOT/www/Computing/Offline/DataDist/ssh-idfile.html
 #
 #DOCROOT_NE=ftp\://naturalearthdata.com:download
-DOCROOT_NE=naturalearthdata.com:download/
+DOCROOT_NE=naturalearthdata.com:download
 #DOCROOT_FREAC=ftp.freac.fsu.edu:nacis_ftp/web-download
-DOCROOT_FREAC=ftp.freac.fsu.edu:nacis_ftp/web-download/
+DOCROOT_FREAC=ftp.freac.fsu.edu:nacis_ftp/web-download
 
 all: zip
 
