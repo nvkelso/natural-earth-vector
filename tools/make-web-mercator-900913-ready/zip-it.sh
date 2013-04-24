@@ -21,7 +21,8 @@ ogr2ogr \
 
 # Index the shapefile for Mapnik
 # https://github.com/mapnik/mapnik/tree/master/utils/shapeindex
-#
+# Install shapeindex:
+# sudo apt-get install mapnik-utils
 shapeindex $base.shp
 
 ogrinfo -so $base.shp $base | tail -n +4 > info.txt
