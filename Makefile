@@ -105,13 +105,10 @@ zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_admin_0_antarctic_claim_limit_lines.zip \
 	zips/10m_cultural/ne_10m_admin_0_label_points.zip \
 	zips/10m_cultural/ne_10m_admin_0_seams.zip \
-	zips/10m_cultural/ne_10m_admin_1_states_provinces_geodb.zip \
-	zips/10m_cultural/ne_10m_admin_1_states_provinces_scale_rank_geodb.zip \
-	zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.zip \
-	zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.zip \
+	zips/10m_cultural/ne_10m_admin_1_states_provinces.zip \
+	zips/10m_cultural/ne_10m_admin_1_states_provinces_scale_rank.zip \
+	zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes.zip \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip \
-	zips/10m_cultural/ne_10m_admin_1_states_provinces_lines_geodb.zip \
-	zips/10m_cultural/ne_10m_admin_1_states_provinces_shp.zip \
 	zips/10m_cultural/ne_10m_admin_1_label_points.zip \
 	zips/10m_cultural/ne_10m_admin_1_seams.zip \
 	zips/10m_cultural/ne_10m_populated_places_simple.zip \
@@ -203,9 +200,9 @@ zips/50m_cultural/50m_cultural.zip: \
 	zips/50m_cultural/ne_50m_admin_0_tiny_countries.zip \
 	zips/50m_cultural/ne_50m_admin_0_tiny_countries_scale_rank.zip \
 	zips/50m_cultural/ne_50m_admin_1_states_provinces_lines.zip \
-	zips/50m_cultural/ne_50m_admin_1_states_provinces_shp.zip \
-	zips/50m_cultural/ne_50m_admin_1_states_provinces_shp_scale_rank.zip \
-	zips/50m_cultural/ne_50m_admin_1_states_provinces_lakes_shp.zip \
+	zips/50m_cultural/ne_50m_admin_1_states_provinces.zip \
+	zips/50m_cultural/ne_50m_admin_1_states_provinces_scale_rank.zip \
+	zips/50m_cultural/ne_50m_admin_1_states_provinces_lakes.zip \
 	zips/50m_cultural/ne_50m_populated_places_simple.zip \
 	zips/50m_cultural/ne_50m_populated_places.zip \
 	zips/50m_cultural/ne_50m_urban_areas.zip
@@ -252,9 +249,9 @@ zips/110m_cultural/110m_cultural.zip: \
 	zips/110m_cultural/ne_110m_admin_0_sovereignty.zip \
 	zips/110m_cultural/ne_110m_admin_0_tiny_countries.zip \
 	zips/110m_cultural/ne_110m_admin_1_states_provinces_lines.zip \
-	zips/110m_cultural/ne_110m_admin_1_states_provinces_shp.zip \
-	zips/110m_cultural/ne_110m_admin_1_states_provinces_lakes_shp.zip \
-	zips/110m_cultural/ne_110m_admin_1_states_provinces_shp_scale_rank.zip \
+	zips/110m_cultural/ne_110m_admin_1_states_provinces.zip \
+	zips/110m_cultural/ne_110m_admin_1_states_provinces_lakes.zip \
+	zips/110m_cultural/ne_110m_admin_1_states_provinces_scale_rank.zip \
 	zips/110m_cultural/ne_110m_populated_places_simple.zip \
 	zips/110m_cultural/ne_110m_populated_places.zip
 	
@@ -524,27 +521,27 @@ zips/10m_cultural/ne_10m_admin_0_antarctic_claim_limit_lines.zip: 10m_cultural/n
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 	
-zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.shp 10m_cultural/ne_10m_admin_1_states_provinces_lakes_shp.dbf
+zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lakes.shp 10m_cultural/ne_10m_admin_1_states_provinces_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_10m_admin_1_states_provinces_lakes_shp$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_10m_admin_1_states_provinces_lakes$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
-zips/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.shp 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.dbf
-	cp VERSION 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.VERSION.txt
-	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.README.html
-	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.*
-	cp $@ archive/ne_10m_admin_1_states_provinces_lines_shp$(VERSION_PREFIXED).zip
+zips/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lines.shp 10m_cultural/ne_10m_admin_1_states_provinces_lines.dbf
+	cp VERSION 10m_cultural/ne_10m_admin_1_states_provinces_lines.VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > 10m_cultural/ne_10m_admin_1_states_provinces_lines.README.html
+	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_lines.*
+	cp $@ archive/ne_10m_admin_1_states_provinces_lines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@))_shp.shp
+	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
-zips/10m_cultural/ne_10m_admin_1_states_provinces_shp.zip: 10m_cultural/ne_10m_admin_1_states_provinces_shp.shp 10m_cultural/ne_10m_admin_1_states_provinces_shp.dbf
+zips/10m_cultural/ne_10m_admin_1_states_provinces.zip: 10m_cultural/ne_10m_admin_1_states_provinces.shp 10m_cultural/ne_10m_admin_1_states_provinces.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_10m_admin_1_states_provinces_shp$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_10m_admin_1_states_provinces$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 	
@@ -661,35 +658,13 @@ zips/10m_cultural/ne_10m_cultural_building_blocks_all.zip: \
 
 
 # folders for theme groups or geodb special items
-zips/10m_cultural/ne_10m_admin_1_label_points.zip: 10m_cultural/ne_10m_admin_1_label_points.gdb/gdb
+zips/10m_cultural/ne_10m_admin_1_label_points.zip: 10m_cultural/ne_10m_admin_1_label_points.shp 10m_cultural/ne_10m_admin_1_label_points.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-cultural-building-blocks/ > $(subst zips/, ,$(basename $@)).README.html
-	zip -j -r $@ 10m_cultural/ne_10m_admin_1_label_points.gdb $(subst zips/, ,$(basename $@)).VERSION.txt $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_1_label_points$(VERSION_PREFIXED).zip
-
-zips/10m_cultural/ne_10m_admin_1_states_provinces_geodb.zip: 10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb/gdb
-	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
-	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
-	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb $(subst zips/, ,$(basename $@)).VERSION.txt $(subst zips/, ,$(basename $@)).README.html
-	cp $@ archive/ne_10m_admin_1_states_provinces_geodb$(VERSION_PREFIXED).zip
-
-zips/10m_cultural/ne_10m_admin_1_states_provinces_scale_rank_geodb.zip: 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank_geodb.gdb/gdb
-	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
-	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
-	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank_geodb.gdb $(subst zips/, ,$(basename $@)).VERSION.txt $(subst zips/, ,$(basename $@)).README.html
-	cp $@ archive/ne_10m_admin_1_states_provinces_scale_rank_geodb$(VERSION_PREFIXED).zip
-
-zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.gdb/gdb
-	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
-	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
-	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_lakes_geodb.gdb $(subst zips/, ,$(basename $@)).VERSION.txt $(subst zips/, ,$(basename $@)).README.html
-	cp $@ archive/ne_10m_admin_1_states_provinces_lakes_geodb$(VERSION_PREFIXED).zip
-
-zips/10m_cultural/ne_10m_admin_1_states_provinces_lines_geodb.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lines_geodb.gdb/gdb
-	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
-	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
-	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_lines_geodb.gdb $(subst zips/, ,$(basename $@)).VERSION.txt $(subst zips/, ,$(basename $@)).README.html
-	cp $@ archive/ne_10m_admin_1_states_provinces_lines_geodb$(VERSION_PREFIXED).zip
+	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_parks_and_protected_lands.zip: \
 	10m_cultural/ne_10m_parks_and_protected_lands_area.shp 10m_cultural/ne_10m_parks_and_protected_lands_area.dbf \
@@ -1255,27 +1230,27 @@ zips/50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.zip: 50m_cultural
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
-zips/50m_cultural/ne_50m_admin_1_states_provinces_shp.zip: 50m_cultural/ne_50m_admin_1_states_provinces_shp.shp 50m_cultural/ne_50m_admin_1_states_provinces_shp.dbf
+zips/50m_cultural/ne_50m_admin_1_states_provinces.zip: 50m_cultural/ne_50m_admin_1_states_provinces.shp 50m_cultural/ne_50m_admin_1_states_provinces.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_50m_admin_1_states_provinces_shp$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_50m_admin_1_states_provinces$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
-zips/50m_cultural/ne_50m_admin_1_states_provinces_shp_scale_rank.zip: 50m_cultural/ne_50m_admin_1_states_provinces_shp_scale_rank.shp 50m_cultural/ne_50m_admin_1_states_provinces_shp_scale_rank.dbf
+zips/50m_cultural/ne_50m_admin_1_states_provinces_scale_rank.zip: 50m_cultural/ne_50m_admin_1_states_provinces_scale_rank.shp 50m_cultural/ne_50m_admin_1_states_provinces_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_50m_admin_1_states_provinces_shp_scale_rank$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_50m_admin_1_states_provinces_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
-zips/50m_cultural/ne_50m_admin_1_states_provinces_lakes_shp.zip: 50m_cultural/ne_50m_admin_1_states_provinces_lakes_shp.shp 50m_cultural/ne_50m_admin_1_states_provinces_lakes_shp.dbf
+zips/50m_cultural/ne_50m_admin_1_states_provinces_lakes.zip: 50m_cultural/ne_50m_admin_1_states_provinces_lakes.shp 50m_cultural/ne_50m_admin_1_states_provinces_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_50m_admin_1_states_provinces_lakes_shp$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_50m_admin_1_states_provinces_lakes$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
@@ -1593,27 +1568,27 @@ zips/110m_cultural/ne_110m_admin_0_tiny_countries.zip: 110m_cultural/ne_110m_adm
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 	
-zips/110m_cultural/ne_110m_admin_1_states_provinces_shp.zip: 110m_cultural/ne_110m_admin_1_states_provinces_shp.shp 110m_cultural/ne_110m_admin_1_states_provinces_shp.dbf
+zips/110m_cultural/ne_110m_admin_1_states_provinces.zip: 110m_cultural/ne_110m_admin_1_states_provinces.shp 110m_cultural/ne_110m_admin_1_states_provinces.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_110m_admin_1_states_provinces_shp$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_110m_admin_1_states_provinces$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 	
-zips/110m_cultural/ne_110m_admin_1_states_provinces_lakes_shp.zip: 110m_cultural/ne_110m_admin_1_states_provinces_lakes_shp.shp 110m_cultural/ne_110m_admin_1_states_provinces_lakes_shp.dbf
+zips/110m_cultural/ne_110m_admin_1_states_provinces_lakes.zip: 110m_cultural/ne_110m_admin_1_states_provinces_lakes.shp 110m_cultural/ne_110m_admin_1_states_provinces_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_110m_admin_1_states_provinces_lakes_shp$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_110m_admin_1_states_provinces_lakes$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 	
-zips/110m_cultural/ne_110m_admin_1_states_provinces_shp_scale_rank.zip: 110m_cultural/ne_110m_admin_1_states_provinces_shp_scale_rank.shp 110m_cultural/ne_110m_admin_1_states_provinces_shp_scale_rank.dbf
+zips/110m_cultural/ne_110m_admin_1_states_provinces_scale_rank.zip: 110m_cultural/ne_110m_admin_1_states_provinces_scale_rank.shp 110m_cultural/ne_110m_admin_1_states_provinces_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_110m_admin_1_states_provinces_shp_scale_rank$(VERSION_PREFIXED).zip
+	cp $@ archive/ne_110m_admin_1_states_provinces_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 	
@@ -1813,8 +1788,8 @@ packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
 	10m_cultural/ne_10m_admin_0_map_subunits.shp 10m_cultural/ne_10m_admin_0_map_subunits.dbf \
 	10m_cultural/ne_10m_admin_0_map_units.shp 10m_cultural/ne_10m_admin_0_map_units.dbf \
 	10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.dbf \
-	10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.shp 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.dbf \
-	10m_cultural/ne_10m_admin_1_states_provinces_shp.shp 10m_cultural/ne_10m_admin_1_states_provinces_shp.dbf \
+	10m_cultural/ne_10m_admin_1_states_provinces_lines.shp 10m_cultural/ne_10m_admin_1_states_provinces_lines.dbf \
+	10m_cultural/ne_10m_admin_1_states_provinces.shp 10m_cultural/ne_10m_admin_1_states_provinces.dbf \
 	10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf \
 	10m_cultural/ne_10m_urban_areas.shp 10m_cultural/ne_10m_urban_areas.dbf
 
@@ -1829,8 +1804,8 @@ packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
 	cp 10m_cultural/ne_10m_admin_0_map_subunits.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_map_units.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.* packages/Natural_Earth_quick_start/10m_cultural/
-	cp 10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.* packages/Natural_Earth_quick_start/10m_cultural/
-	cp 10m_cultural/ne_10m_admin_1_states_provinces_shp.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_admin_1_states_provinces_lines.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_admin_1_states_provinces.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_populated_places.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_urban_areas.* packages/Natural_Earth_quick_start/10m_cultural/
 	
@@ -1881,7 +1856,7 @@ packages/Natural_Earth_quick_start/110m_cultural/status.txt: \
 	110m_cultural/ne_110m_admin_0_countries.shp 110m_cultural/ne_110m_admin_0_countries.dbf \
 	110m_cultural/ne_110m_admin_0_pacific_groupings.shp 110m_cultural/ne_110m_admin_0_pacific_groupings.dbf \
 	110m_cultural/ne_110m_admin_0_tiny_countries.shp 110m_cultural/ne_110m_admin_0_tiny_countries.dbf \
-	110m_cultural/ne_110m_admin_1_states_provinces_shp.shp 110m_cultural/ne_110m_admin_1_states_provinces_shp.dbf \
+	110m_cultural/ne_110m_admin_1_states_provinces.shp 110m_cultural/ne_110m_admin_1_states_provinces.dbf \
 	110m_cultural/ne_110m_populated_places.shp 110m_cultural/ne_110m_populated_places.dbf
 
 	mkdir -p packages/Natural_Earth_quick_start/110m_cultural
@@ -1890,7 +1865,7 @@ packages/Natural_Earth_quick_start/110m_cultural/status.txt: \
 	cp 110m_cultural/ne_110m_admin_0_countries.* packages/Natural_Earth_quick_start/110m_cultural/
 	cp 110m_cultural/ne_110m_admin_0_pacific_groupings.* packages/Natural_Earth_quick_start/110m_cultural/
 	cp 110m_cultural/ne_110m_admin_0_tiny_countries.* packages/Natural_Earth_quick_start/110m_cultural/
-	cp 110m_cultural/ne_110m_admin_1_states_provinces_shp.* packages/Natural_Earth_quick_start/110m_cultural/
+	cp 110m_cultural/ne_110m_admin_1_states_provinces.* packages/Natural_Earth_quick_start/110m_cultural/
 	cp 110m_cultural/ne_110m_populated_places.* packages/Natural_Earth_quick_start/110m_cultural/
 	
 	touch $@
