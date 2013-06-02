@@ -2052,6 +2052,21 @@ live: \
 	
 	touch $@
 
+live_ne: \
+	zips/packages/natural_earth_vector.zip \
+	zips/packages/Natural_Earth_quick_start.zip\
+	zips/updates/natural_earth_update_$(VERSION).zip \
+	zips/live-packages_ne \
+	zips/updates_ne \
+	zips/live-10m_cultural_ne \
+	zips/live-10m_physical_ne \
+	zips/live-50m_cultural_ne \
+	zips/live-50m_physical_ne \
+	zips/live-110m_cultural_ne \
+	zips/live-110m_physical_ne
+	
+	touch $@
+
 clean-quick-start:
 	rm -rf packages/Natural_Earth_quick_start/10m_cultural/*
 	rm -rf packages/Natural_Earth_quick_start/10m_physical/*
