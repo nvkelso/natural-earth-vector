@@ -545,6 +545,14 @@ zips/10m_cultural/ne_10m_admin_1_states_provinces.zip: 10m_cultural/ne_10m_admin
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 	
+zips/10m_cultural/ne_10m_admin_1_states_provinces_scale_rank.zip: 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank.shp 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_1_states_provinces_scale_rank$(VERSION_PREFIXED).zip
+	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	
 zips/10m_cultural/ne_10m_admin_1_seams.zip: 10m_cultural/ne_10m_admin_1_seams.shp 10m_cultural/ne_10m_admin_1_seams.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-cultural-building-blocks/ > $(subst zips/, ,$(basename $@)).README.html
@@ -682,6 +690,7 @@ zips/10m_cultural/ne_10m_parks_and_protected_lands.zip: \
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_parks_and_protected_lands_point.README.html
 	zip -j -r $@ 10m_cultural/ne_10m_parks_and_protected_lands*.*
 	cp $@ archive/ne_10m_parks_and_protected_lands$(VERSION_PREFIXED).zip
+	rm geojson/ne_10m_parks_and_protected_lands_*.geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/ne_10m_parks_and_protected_lands_area.geojson 10m_cultural/ne_10m_parks_and_protected_lands_area.shp
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/ne_10m_parks_and_protected_lands_scale_rank.geojson 10m_cultural/ne_10m_parks_and_protected_lands_scale_rank.shp
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/ne_10m_parks_and_protected_lands_line.geojson 10m_cultural/ne_10m_parks_and_protected_lands_line.shp
@@ -1780,7 +1789,6 @@ zips/110m_physical/ne_110m_wgs84_bounding_box.zip: 110m_physical/ne_110m_graticu
 	
 # copy the master assets into position for 10m_cultural: 
 packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
-	10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb/gdb \
 	10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.dbf \
 	10m_cultural/ne_10m_admin_0_boundary_lines_land.shp 10m_cultural/ne_10m_admin_0_boundary_lines_land.dbf \
 	10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.shp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.dbf \
@@ -1794,9 +1802,7 @@ packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
 	10m_cultural/ne_10m_urban_areas.shp 10m_cultural/ne_10m_urban_areas.dbf
 
 	mkdir -p packages/Natural_Earth_quick_start/10m_cultural
-	mkdir -p packages/Natural_Earth_quick_start/10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb/
 	
-	cp -r 10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb/* packages/Natural_Earth_quick_start/10m_cultural/ne_10m_admin_1_states_provinces_geodb.gdb/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_land.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.* packages/Natural_Earth_quick_start/10m_cultural/

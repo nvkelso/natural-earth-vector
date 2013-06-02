@@ -1,3 +1,98 @@
+2013-06-02: 3.0.0
+
+- Many thanks to the individuals who contributed over the last year of development: Tom, Nathaniel, staff of Geographx in New Zealand, David at foursquare and more.
+
+GENERAL
+
+1) Updates to the admin-1 layer in 10m series to radically increase coverage, quality, and move towards fully UTF-8 based Shapefiles, no more GeoDB! Because everything is now SHP format, the 50m and 110m admin-1 files have also been renamed.
+2) Updates in New Zealand for coastline, rivers, lakes, geographic areas, roads, railroad, and populated places.
+3) Coastline updates in New Zealand, deletion of Sandy Island, and other admin-1 adjustments force the admin-0, and ocean, land & some bathymetry polygons to rebuild. 
+4) Pinnacles National Monument elevated to National Park.
+5) Salish Sea added for physical marine label areas.
+6) Minor changes for Russian hydrology in 10m and 50m series. 
+7) Sister site quattroshapes.com launches with administrative data at nominal 1:100,000 scale.
+
+10M_CULTURAL
+
+- UPDATED:  ne_10m_admin_0_boundary_lines_disputed_areas - more disputed areas to match 
+			US State Department data.
+- UPDATED:  ne_10m_admin_0_disputed_areas_scale_rank_minor_islands - more disputed areas 
+			to match US State Department data.
+- UPDATED:  ne_10m_admin_0_disputed_areas - more disputed areas to match US State 
+			Department data.
+- UPDATED:  ne_10m_admin_0_boundary_lines_land - better match US State Department 
+			1:100,000 data.
+- UPDATED:  ne_10m_admin_0_boundary_lines_map_units - minor to no change.
+- UPDATED:  ne_10m_admin_0_boundary_lines_maritime_indicator - Caribbean adjustment. 
+- UPDATED:  ne_10m_admin_0_countries - minor changes to attributes, coastline changes.
+- UPDATED:  ne_10m_admin_0_countries_lakes - minor changes to attributes, 
+			coastline changes.
+- UPDATED:  ne_10m_admin_0_map_subunits - minor changes to attributes, coastline changes.
+- UPDATED:  ne_10m_admin_0_map_units - minor changes to attributes, coastline changes.
+- UPDATED:  ne_10m_admin_0_scale_rank_minor_islands - minor changes to attributes, 
+			coastline changes.
+- UPDATED:  ne_10m_admin_0_scale_rank - minor changes to attributes, coastline changes.
+- UPDATED:  ne_10m_admin_0_sovereignty - minor changes to attributes, coastline changes.
+- UPDATED:  ne_10m_admin_0_label_points - minor changes to attributes, coastline changes.
+- UPDATED:  ne_10m_admin_1_states_provinces - major changes to attributes and coverage, 
+			coastline changes.
+- UPDATED:  ne_10m_admin_1_states_provinces_scale_rank - major changes to attributes and 
+			coverage, coastline changes.
+- UPDATED:  ne_10m_admin_1_states_provinces_lakes - major changes to attributes and 
+			coverage, coastline changes.
+- UPDATED:  ne_10m_admin_1_states_provinces_lines - major changes to attributes and 
+			coverage, coastline changes.
+- UPDATED:  ne_10m_admin_1_label_points - major changes to attributes and coverage, 
+			coastline changes.
+- UPDATED:  ne_10m_populated_places - additional coverage in New Zealand.
+- UPDATED:  ne_10m_railroads - additional coverage in New Zealand.
+- UPDATED:  ne_10m_roads - additional coverage in New Zealand.
+- UPDATED:  ne_10m_parks_and_protected_lands- Pinnacles National Monument elevated to 
+			National Park.
+
+10M_PHYSICAL
+
+- UPDATED:  ne_10m_coastline - No more Sandy Island, better coverage in New Zealand
+- UPDATED:  ne_10m_minor_islands_coastline - minor adjustments.
+- UPDATED:  ne_10m_geography_marine_polys - Salish Sea added.
+- UPDATED:  ne_10m_geography_regions_polys - additional coverage in New Zealand.
+- UPDATED:  ne_10m_lakes - additional coverage in New Zealand; Russian adjustments.
+- UPDATED:  ne_10m_land - No more Sandy Island, better coverage in New Zealand
+- UPDATED:  ne_10m_land_scale_rank - No more Sandy Island, better coverage in New Zealand
+- UPDATED:  ne_10m_ocean - No more Sandy Island, better coverage in New Zealand
+- UPDATED:  ne_10m_ocean_scale_rank - No more Sandy Island, better coverage in New Zealand
+- UPDATED:  ne_10m_rivers_lake_centerlines_scale_rank - additional coverage in New 
+			Zealand; Russian adjustments.
+- UPDATED:  ne_10m_rivers_lake_centerlines - additional coverage in New Zealand; Russian 
+			adjustments.
+- UPDATED:  ne_10m_bathymetry_I_2000 - No more Sandy Island
+- UPDATED:  ne_10m_bathymetry_J_1000 - No more Sandy Island
+- UPDATED:  ne_10m_bathymetry_K_200 - No more Sandy Island
+- UPDATED:  ne_10m_bathymetry_L_0 - No more Sandy Island
+- UPDATED:  ne_10m_land_ocean_label_points - No more Sandy Island, other 
+			coastline changes.
+- UPDATED:  ne_10m_land_ocean_seams - No more Sandy Island, other coastline changes.
+
+50M_CULTURAL
+
+- UPDATED:  ne_50m_admin_1_states_provinces - remove _shp postfix like 10m changes.
+- UPDATED:  ne_50m_admin_1_states_provinces_scale_rank - remove _shp postfix 
+			like 10m changes.
+- UPDATED:  ne_50m_admin_1_states_provinces_lakes - remove _shp postfix like 10m changes.
+
+50M_PHYSICAL
+
+- UPDATED:  ne_50m_lakes - Russian hydro.
+- UPDATED:  ne_50m_rivers_lake_centerlines_scale_rank - Russian hydro.
+- UPDATED:  ne_50m_rivers_lake_centerlines - Russian hydro
+
+110M_CULTURAL
+
+- UPDATED:  ne_110m_admin_1_states_provinces - remove _shp postfix like 10m changes.
+- UPDATED:  ne_110m_admin_1_states_provinces_lakes - remove _shp postfix like 10m changes.
+- UPDATED:  ne_110m_admin_1_states_provinces_scale_rank - remove _shp postfix 
+			like 10m changes.
+
 2012-10-12: 2.0.0
 
 - Full details: http://www.naturalearthdata.com/blog/miscellaneous/natural-earth-v2-0-0-release-notes/.
