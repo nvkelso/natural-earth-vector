@@ -1,21 +1,21 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="1.4.0-Enceladus" >
+<qgis projectname="" version="1.7.4-Wroclaw">
     <title></title>
     <mapcanvas>
         <units>degrees</units>
         <extent>
             <xmin>-189.000509</xmin>
-            <ymin>-154.451132</ymin>
-            <xmax>189.000023</xmax>
-            <ymax>154.452529</ymax>
+            <ymin>-161.102861</ymin>
+            <xmax>189.000012</xmax>
+            <ymax>161.102861</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
             <spatialrefsys>
-                <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                 <srsid>3452</srsid>
                 <srid>4326</srid>
-                <epsg>4326</epsg>
+                <authid>EPSG:4326</authid>
                 <description>WGS 84</description>
                 <projectionacronym>longlat</projectionacronym>
                 <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -24,108 +24,118 @@
         </destinationsrs>
     </mapcanvas>
     <legend>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_populated_places" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_populated_places20110129160052611" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="ne_10m_populated_places" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="ne_10m_populated_places20121105034420572" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_populated_places" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_populated_places20110129155009670" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_populated_places" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_populated_places20110129160052611" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_1_states_provinces_shp" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_admin_1_states_provinces_shp20110129155506025" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_populated_places" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_populated_places20110129155009670" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_coastline" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_coastline20110129154930711" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="ne_10m_populated_places" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="ne_10m_populated_places20121105033924513" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_0_boundary_breakaway_disputed_areas" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_admin_0_boundary_breakaway_disputed_areas20110129154811474" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_1_states_provinces_shp" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_admin_1_states_provinces_shp20110129155506025" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_0_boundary_lines_land" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_admin_0_boundary_lines_land20110129154658879" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_coastline" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_coastline20110129154930711" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_rivers_lake_centerlines" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_rivers_lake_centerlines20110129154348237" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_0_boundary_breakaway_disputed_areas" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_admin_0_boundary_breakaway_disputed_areas20110129154811474" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_lakes" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_lakes20110129153532100" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_0_boundary_lines_land" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_admin_0_boundary_lines_land20110129154658879" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_rivers_lake_centerlines_scale_ranks" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_rivers_lake_centerlines_scale_ranks20110129153818139" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_rivers_lake_centerlines" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_rivers_lake_centerlines20110129154348237" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_0_boundary_lines_maritime_indicator" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_admin_0_boundary_lines_maritime_indicator20110129153716575" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_lakes" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_lakes20110129153532100" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_1_states_provinces_lines_shp" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_admin_1_states_provinces_lines_shp20110129153641871" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_rivers_lake_centerlines_scale_ranks" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_rivers_lake_centerlines_scale_ranks20110129153818139" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_geography_marine_polys" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_geography_marine_polys20110129153035542" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_0_boundary_lines_maritime_indicator" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_admin_0_boundary_lines_maritime_indicator20110129153716575" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_urban_areas" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_urban_areas20110129152944846" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_1_states_provinces_lines_shp" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_admin_1_states_provinces_lines_shp20110129153641871" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_0_map_units" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_admin_0_map_units20110129152852243" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_geography_marine_polys" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_geography_marine_polys20110129153035542" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_0_breakaway_disputed_areas" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_admin_0_breakaway_disputed_areas20110129152420514" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_urban_areas" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_urban_areas20110129152944846" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_1_states_provinces_shp" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_admin_1_states_provinces_shp20110129152025278" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_0_map_units" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_admin_0_map_units20110129152852243" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_0_scale_ranks_with_minor_islands" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_admin_0_scale_ranks_with_minor_islands20110129151930201" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_0_breakaway_disputed_areas" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_admin_0_breakaway_disputed_areas20110129152420514" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="10m_ocean" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="10m_ocean20110129151757350" visible="1" />
+        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_1_states_provinces_shp" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_admin_1_states_provinces_shp20110129152025278" visible="1"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Checked" name="10m_admin_0_scale_ranks_with_minor_islands" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_admin_0_scale_ranks_with_minor_islands20110129151930201" visible="1"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Checked" name="10m_ocean" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="10m_ocean20110129151757350" visible="1"/>
             </filegroup>
         </legendlayer>
     </legend>
-    <projectlayers layercount="18" >
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0" >
+    <projectlayers layercount="20">
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>10m_admin_0_boundary_breakaway_disputed_areas20110129154811474</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_cultural/10m_admin_0_boundary_breakaway_disputed_areas.shp|layerid=0</datasource>
+            <datasource>./10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp|layerid=0</datasource>
             <layername>10m_admin_0_boundary_breakaway_disputed_areas</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -133,8 +143,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -146,52 +156,56 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="255" blue="0" green="0" />
+                    <outlinecolor red="255" blue="0" green="0"/>
                     <outlinestyle>DashLine</outlinestyle>
                     <outlinewidth>0.3</outlinewidth>
-                    <fillcolor red="0" blue="0" green="0" />
+                    <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="FeatureCla" />
-                <edittype type="0" name="ScaleRank" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
+            <customproperties/>
             <displayfield>ScaleRank</displayfield>
             <label>0</label>
-            <attributeactions/>
             <labelattributes>
-                <label fieldname="" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="FeatureCla"/>
+                <edittype type="0" name="ScaleRank"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>10m_admin_0_boundary_lines_land20110129154658879</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_cultural/10m_admin_0_boundary_lines_land.shp|layerid=0</datasource>
+            <datasource>./10m_cultural/ne_10m_admin_0_boundary_lines_land.shp|layerid=0</datasource>
             <layername>10m_admin_0_boundary_lines_land</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -199,8 +213,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -212,52 +226,56 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="0" blue="0" green="0" />
+                    <outlinecolor red="0" blue="0" green="0"/>
                     <outlinestyle>SolidLine</outlinestyle>
                     <outlinewidth>0.3</outlinewidth>
-                    <fillcolor red="0" blue="0" green="0" />
+                    <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="FeatureCla" />
-                <edittype type="0" name="ScaleRank" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
+            <customproperties/>
             <displayfield>ScaleRank</displayfield>
             <label>0</label>
-            <attributeactions/>
             <labelattributes>
-                <label fieldname="" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="FeatureCla"/>
+                <edittype type="0" name="ScaleRank"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>10m_admin_0_boundary_lines_maritime_indicator20110129153716575</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_cultural/10m_admin_0_boundary_lines_maritime_indicator.shp|layerid=0</datasource>
+            <datasource>./10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.shp|layerid=0</datasource>
             <layername>10m_admin_0_boundary_lines_maritime_indicator</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -265,8 +283,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -278,56 +296,60 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="70" blue="195" green="159" />
+                    <outlinecolor red="70" blue="195" green="159"/>
                     <outlinestyle>DashLine</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="0" blue="0" green="0" />
+                    <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="FeatureCla" />
-                <edittype type="0" name="Name1" />
-                <edittype type="0" name="Name2" />
-                <edittype type="0" name="Note" />
-                <edittype type="0" name="PacGroup" />
-                <edittype type="0" name="ScaleRank" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
+            <customproperties/>
             <displayfield>ScaleRank</displayfield>
             <label>0</label>
-            <attributeactions/>
             <labelattributes>
-                <label fieldname="" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="FeatureCla"/>
+                <edittype type="0" name="Name1"/>
+                <edittype type="0" name="Name2"/>
+                <edittype type="0" name="Note"/>
+                <edittype type="0" name="PacGroup"/>
+                <edittype type="0" name="ScaleRank"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>10m_admin_0_breakaway_disputed_areas20110129152420514</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_cultural/10m_admin_0_breakaway_disputed_areas.shp|layerid=0</datasource>
+            <datasource>./10m_cultural/ne_10m_admin_0_disputed_areas.shp|layerid=0</datasource>
             <layername>10m_admin_0_breakaway_disputed_areas</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -335,8 +357,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -348,56 +370,60 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="0" blue="0" green="0" />
+                    <outlinecolor red="0" blue="0" green="0"/>
                     <outlinestyle>NoPen</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="200" blue="200" green="200" />
+                    <fillcolor red="200" blue="200" green="200"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="COMMENT" />
-                <edittype type="0" name="FEATURECLA" />
-                <edittype type="0" name="NAME" />
-                <edittype type="0" name="NAME_ALT" />
-                <edittype type="0" name="NAME_GROUP" />
-                <edittype type="0" name="SCALERANK" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
+            <customproperties/>
             <displayfield>NAME</displayfield>
             <label>0</label>
-            <attributeactions/>
             <labelattributes>
-                <label fieldname="" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="COMMENT"/>
+                <edittype type="0" name="FEATURECLA"/>
+                <edittype type="0" name="NAME"/>
+                <edittype type="0" name="NAME_ALT"/>
+                <edittype type="0" name="NAME_GROUP"/>
+                <edittype type="0" name="SCALERANK"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1000" maxLabelScale="2e+06" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="1" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1000" maxLabelScale="2e+07" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="1">
             <id>10m_admin_0_map_units20110129152852243</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_cultural/10m_admin_0_map_units.shp|layerid=0</datasource>
+            <datasource>./10m_cultural/ne_10m_admin_0_map_units.shp|layerid=0</datasource>
             <layername>10m_admin_0_map_units</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -405,8 +431,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -418,78 +444,191 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="0" blue="0" green="0" />
+                    <outlinecolor red="0" blue="0" green="0"/>
                     <outlinestyle>NoPen</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="211" blue="168" green="128" />
+                    <fillcolor red="211" blue="168" green="128"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="ABBREV" />
-                <edittype type="0" name="ADM0_A3" />
-                <edittype type="0" name="ADM0_DIF" />
-                <edittype type="0" name="ADMIN" />
-                <edittype type="0" name="FIPS_10_" />
-                <edittype type="0" name="FeatureCla" />
-                <edittype type="0" name="GDP_MD_EST" />
-                <edittype type="0" name="GEOUNIT" />
-                <edittype type="0" name="GEOU_DIF" />
-                <edittype type="0" name="GU_A3" />
-                <edittype type="0" name="ISO_A2" />
-                <edittype type="0" name="ISO_A3" />
-                <edittype type="0" name="ISO_N3" />
-                <edittype type="0" name="LEVEL" />
-                <edittype type="0" name="LabelRank" />
-                <edittype type="0" name="MAP_COLOR" />
-                <edittype type="0" name="NAME" />
-                <edittype type="0" name="NAME_FORMA" />
-                <edittype type="0" name="NAME_SORT" />
-                <edittype type="0" name="POP_EST" />
-                <edittype type="0" name="POSTAL" />
-                <edittype type="0" name="SOVEREIGNT" />
-                <edittype type="0" name="SOV_A3" />
-                <edittype type="0" name="SU_DIF" />
-                <edittype type="0" name="ScaleRank" />
-                <edittype type="0" name="TERR_" />
-                <edittype type="0" name="TYPE" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
-            <displayfield>ScaleRank</displayfield>
-            <label>1</label>
-            <attributeactions/>
-            <labelfield>NAME</labelfield>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/dataDefinedProperty0" value=""/>
+                <property key="labeling/dataDefinedProperty1" value=""/>
+                <property key="labeling/dataDefinedProperty10" value=""/>
+                <property key="labeling/dataDefinedProperty11" value=""/>
+                <property key="labeling/dataDefinedProperty12" value=""/>
+                <property key="labeling/dataDefinedProperty13" value=""/>
+                <property key="labeling/dataDefinedProperty14" value=""/>
+                <property key="labeling/dataDefinedProperty2" value=""/>
+                <property key="labeling/dataDefinedProperty3" value=""/>
+                <property key="labeling/dataDefinedProperty4" value=""/>
+                <property key="labeling/dataDefinedProperty5" value=""/>
+                <property key="labeling/dataDefinedProperty6" value=""/>
+                <property key="labeling/dataDefinedProperty7" value=""/>
+                <property key="labeling/dataDefinedProperty8" value=""/>
+                <property key="labeling/dataDefinedProperty9" value=""/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/fieldName" value="name"/>
+                <property key="labeling/fontFamily" value="Lucida Grande"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontSize" value="14"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="75"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multiLineLabels" value="false"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placement" value="0"/>
+                <property key="labeling/placementFlags" value="0"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/scaleMax" value="10000000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+            </customproperties>
+            <displayfield>name</displayfield>
+            <label>0</label>
+            <labelfield>name</labelfield>
             <labelattributes>
-                <label fieldname="NAME" text="Label" />
-                <family fieldname="" name="Arial Italic" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="81" blue="81" green="81" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="name" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="14"/>
+                <bold fieldname="" on="1"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="1"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="81" blue="81" green="81"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="ABBREV"/>
+                <edittype type="0" name="ADM0_A3"/>
+                <edittype type="0" name="ADM0_DIF"/>
+                <edittype type="0" name="ADMIN"/>
+                <edittype type="0" name="FIPS_10_"/>
+                <edittype type="0" name="FeatureCla"/>
+                <edittype type="0" name="GDP_MD_EST"/>
+                <edittype type="0" name="GEOUNIT"/>
+                <edittype type="0" name="GEOU_DIF"/>
+                <edittype type="0" name="GU_A3"/>
+                <edittype type="0" name="ISO_A2"/>
+                <edittype type="0" name="ISO_A3"/>
+                <edittype type="0" name="ISO_N3"/>
+                <edittype type="0" name="LEVEL"/>
+                <edittype type="0" name="LabelRank"/>
+                <edittype type="0" name="MAP_COLOR"/>
+                <edittype type="0" name="NAME"/>
+                <edittype type="0" name="NAME_FORMA"/>
+                <edittype type="0" name="NAME_SORT"/>
+                <edittype type="0" name="POP_EST"/>
+                <edittype type="0" name="POSTAL"/>
+                <edittype type="0" name="SOVEREIGNT"/>
+                <edittype type="0" name="SOV_A3"/>
+                <edittype type="0" name="SU_DIF"/>
+                <edittype type="0" name="ScaleRank"/>
+                <edittype type="0" name="TERR_"/>
+                <edittype type="0" name="TYPE"/>
+                <edittype type="0" name="abbrev"/>
+                <edittype type="0" name="abbrev_len"/>
+                <edittype type="0" name="adm0_a3"/>
+                <edittype type="0" name="adm0_a3_is"/>
+                <edittype type="0" name="adm0_a3_un"/>
+                <edittype type="0" name="adm0_a3_us"/>
+                <edittype type="0" name="adm0_a3_wb"/>
+                <edittype type="0" name="adm0_dif"/>
+                <edittype type="0" name="admin"/>
+                <edittype type="0" name="brk_a3"/>
+                <edittype type="0" name="brk_diff"/>
+                <edittype type="0" name="brk_group"/>
+                <edittype type="0" name="brk_name"/>
+                <edittype type="0" name="continent"/>
+                <edittype type="0" name="economy"/>
+                <edittype type="0" name="featurecla"/>
+                <edittype type="0" name="fips_10"/>
+                <edittype type="0" name="formal_en"/>
+                <edittype type="0" name="formal_fr"/>
+                <edittype type="0" name="gdp_md_est"/>
+                <edittype type="0" name="gdp_year"/>
+                <edittype type="0" name="geou_dif"/>
+                <edittype type="0" name="geounit"/>
+                <edittype type="0" name="gu_a3"/>
+                <edittype type="0" name="homepart"/>
+                <edittype type="0" name="income_grp"/>
+                <edittype type="0" name="iso_a2"/>
+                <edittype type="0" name="iso_a3"/>
+                <edittype type="0" name="iso_n3"/>
+                <edittype type="0" name="labelrank"/>
+                <edittype type="0" name="lastcensus"/>
+                <edittype type="0" name="level"/>
+                <edittype type="0" name="long_len"/>
+                <edittype type="0" name="mapcolor13"/>
+                <edittype type="0" name="mapcolor7"/>
+                <edittype type="0" name="mapcolor8"/>
+                <edittype type="0" name="mapcolor9"/>
+                <edittype type="0" name="name"/>
+                <edittype type="0" name="name_alt"/>
+                <edittype type="0" name="name_len"/>
+                <edittype type="0" name="name_long"/>
+                <edittype type="0" name="name_sort"/>
+                <edittype type="0" name="note_adm0"/>
+                <edittype type="0" name="note_brk"/>
+                <edittype type="0" name="pop_est"/>
+                <edittype type="0" name="pop_year"/>
+                <edittype type="0" name="postal"/>
+                <edittype type="0" name="region_un"/>
+                <edittype type="0" name="region_wb"/>
+                <edittype type="0" name="scalerank"/>
+                <edittype type="0" name="sov_a3"/>
+                <edittype type="0" name="sovereignt"/>
+                <edittype type="0" name="su_a3"/>
+                <edittype type="0" name="su_dif"/>
+                <edittype type="0" name="subregion"/>
+                <edittype type="0" name="subunit"/>
+                <edittype type="0" name="tiny"/>
+                <edittype type="0" name="type"/>
+                <edittype type="0" name="un_a3"/>
+                <edittype type="0" name="wb_a2"/>
+                <edittype type="0" name="wb_a3"/>
+                <edittype type="0" name="wikipedia"/>
+                <edittype type="0" name="woe_id"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>10m_admin_0_scale_ranks_with_minor_islands20110129151930201</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_cultural/10m_admin_0_scale_ranks_with_minor_islands.shp|layerid=0</datasource>
+            <datasource>./10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp|layerid=0</datasource>
             <layername>10m_admin_0_scale_ranks_with_minor_islands</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -497,8 +636,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -510,58 +649,62 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="0" blue="0" green="0" />
+                    <outlinecolor red="0" blue="0" green="0"/>
                     <outlinestyle>NoPen</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="238" blue="223" green="236" />
+                    <fillcolor red="238" blue="223" green="236"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="FeatureCla" />
-                <edittype type="0" name="LabelRank" />
-                <edittype type="0" name="ScaleRank" />
-                <edittype type="0" name="_ADM0_A3" />
-                <edittype type="0" name="_GU_A3" />
-                <edittype type="0" name="_SOV_A3" />
-                <edittype type="0" name="_SUBUNIT" />
-                <edittype type="0" name="_SU_A3" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
+            <customproperties/>
             <displayfield>ScaleRank</displayfield>
             <label>0</label>
-            <attributeactions/>
             <labelattributes>
-                <label fieldname="" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="FeatureCla"/>
+                <edittype type="0" name="LabelRank"/>
+                <edittype type="0" name="ScaleRank"/>
+                <edittype type="0" name="_ADM0_A3"/>
+                <edittype type="0" name="_GU_A3"/>
+                <edittype type="0" name="_SOV_A3"/>
+                <edittype type="0" name="_SUBUNIT"/>
+                <edittype type="0" name="_SU_A3"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>10m_admin_1_states_provinces_lines_shp20110129153641871</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_cultural/10m_admin_1_states_provinces_lines_shp.shp|layerid=0</datasource>
+            <datasource>./10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.shx|layerid=0</datasource>
             <layername>10m_admin_1_states_provinces_lines_shp</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -569,8 +712,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -582,56 +725,60 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="203" blue="202" green="204" />
+                    <outlinecolor red="203" blue="202" green="204"/>
                     <outlinestyle>SolidLine</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="0" blue="0" green="0" />
+                    <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="ADM0_A3" />
-                <edittype type="0" name="COUNTRYNAM" />
-                <edittype type="0" name="FeatureCla" />
-                <edittype type="0" name="MAP_COLOR" />
-                <edittype type="0" name="NAME1" />
-                <edittype type="0" name="SCALERANK" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
+            <customproperties/>
             <displayfield>NAME1</displayfield>
             <label>0</label>
-            <attributeactions/>
             <labelattributes>
-                <label fieldname="" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="ADM0_A3"/>
+                <edittype type="0" name="COUNTRYNAM"/>
+                <edittype type="0" name="FeatureCla"/>
+                <edittype type="0" name="MAP_COLOR"/>
+                <edittype type="0" name="NAME1"/>
+                <edittype type="0" name="SCALERANK"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>10m_admin_1_states_provinces_shp20110129152025278</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_cultural/10m_admin_1_states_provinces_shp.shp|layerid=0</datasource>
+            <datasource>./10m_cultural/ne_10m_admin_1_states_provinces_shp.shp|layerid=0</datasource>
             <layername>10m_admin_1_states_provinces_shp</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -639,13 +786,13 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
-            <classificationattribute>ADM0_A3</classificationattribute>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
+            <classificationattribute>sr_adm0_a3</classificationattribute>
             <uniquevalue>
-                <classificationfield>ADM0_A3</classificationfield>
+                <classificationfield>sr_adm0_a3</classificationfield>
                 <symbol>
-                    <lowervalue null="1" ></lowervalue>
+                    <lowervalue null="1"></lowervalue>
                     <uppervalue></uppervalue>
                     <label>default</label>
                     <pointsymbol>hard:circle</pointsymbol>
@@ -654,12 +801,12 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="0" blue="0" green="0" />
+                    <outlinecolor red="0" blue="0" green="0"/>
                     <outlinestyle>NoPen</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="238" blue="223" green="236" />
+                    <fillcolor red="238" blue="223" green="236"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
                 <symbol>
                     <lowervalue>USA</lowervalue>
@@ -671,88 +818,129 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="0" blue="0" green="0" />
+                    <outlinecolor red="0" blue="0" green="0"/>
                     <outlinestyle>NoPen</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="255" blue="255" green="255" />
+                    <fillcolor red="255" blue="255" green="255"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </uniquevalue>
-            <edittypes>
-                <edittype type="0" name="ADM0_A3" />
-                <edittype type="0" name="Abbrev" />
-                <edittype type="0" name="Area_sqkm" />
-                <edittype type="0" name="CheckMe" />
-                <edittype type="0" name="Country_Pr" />
-                <edittype type="0" name="DataRank" />
-                <edittype type="0" name="ENGTYPE_1" />
-                <edittype type="0" name="FIPS_1" />
-                <edittype type="0" name="FIRST_FIPS" />
-                <edittype type="0" name="FIRST_HASC" />
-                <edittype type="0" name="HASC_1" />
-                <edittype type="0" name="ISO" />
-                <edittype type="0" name="LabelRank" />
-                <edittype type="0" name="MAP_COLOR" />
-                <edittype type="0" name="NAME_0" />
-                <edittype type="0" name="NAME_1" />
-                <edittype type="0" name="NEV_Countr" />
-                <edittype type="0" name="NL_NAME_1" />
-                <edittype type="0" name="OBJECTID" />
-                <edittype type="0" name="Postal" />
-                <edittype type="0" name="ProvNumber" />
-                <edittype type="0" name="REMARKS_1" />
-                <edittype type="0" name="Region" />
-                <edittype type="0" name="RegionVar" />
-                <edittype type="0" name="Region_C_1" />
-                <edittype type="0" name="Region_C_2" />
-                <edittype type="0" name="Region_C_3" />
-                <edittype type="0" name="Region_Cod" />
-                <edittype type="0" name="ScaleRank" />
-                <edittype type="0" name="Shape_Area" />
-                <edittype type="0" name="Shape_Leng" />
-                <edittype type="0" name="TYPE_1" />
-                <edittype type="0" name="VALIDFR_1" />
-                <edittype type="0" name="VALIDTO_1" />
-                <edittype type="0" name="VARNAME_1" />
-                <edittype type="0" name="VertexCou" />
-                <edittype type="0" name="gadm_level" />
-                <edittype type="0" name="sameAsCity" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
-            <displayfield>OBJECTID</displayfield>
+            <customproperties/>
+            <displayfield>name</displayfield>
             <label>0</label>
-            <attributeactions/>
             <labelattributes>
-                <label fieldname="" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="ADM0_A3"/>
+                <edittype type="0" name="Abbrev"/>
+                <edittype type="0" name="Area_sqkm"/>
+                <edittype type="0" name="CheckMe"/>
+                <edittype type="0" name="Country_Pr"/>
+                <edittype type="0" name="DataRank"/>
+                <edittype type="0" name="ENGTYPE_1"/>
+                <edittype type="0" name="FIPS_1"/>
+                <edittype type="0" name="FIRST_FIPS"/>
+                <edittype type="0" name="FIRST_HASC"/>
+                <edittype type="0" name="HASC_1"/>
+                <edittype type="0" name="ISO"/>
+                <edittype type="0" name="LabelRank"/>
+                <edittype type="0" name="MAP_COLOR"/>
+                <edittype type="0" name="NAME_0"/>
+                <edittype type="0" name="NAME_1"/>
+                <edittype type="0" name="NEV_Countr"/>
+                <edittype type="0" name="NL_NAME_1"/>
+                <edittype type="0" name="OBJECTID"/>
+                <edittype type="0" name="Postal"/>
+                <edittype type="0" name="ProvNumber"/>
+                <edittype type="0" name="REMARKS_1"/>
+                <edittype type="0" name="Region"/>
+                <edittype type="0" name="RegionVar"/>
+                <edittype type="0" name="Region_C_1"/>
+                <edittype type="0" name="Region_C_2"/>
+                <edittype type="0" name="Region_C_3"/>
+                <edittype type="0" name="Region_Cod"/>
+                <edittype type="0" name="ScaleRank"/>
+                <edittype type="0" name="Shape_Area"/>
+                <edittype type="0" name="Shape_Leng"/>
+                <edittype type="0" name="TYPE_1"/>
+                <edittype type="0" name="VALIDFR_1"/>
+                <edittype type="0" name="VALIDTO_1"/>
+                <edittype type="0" name="VARNAME_1"/>
+                <edittype type="0" name="VertexCou"/>
+                <edittype type="0" name="abbrev"/>
+                <edittype type="0" name="adm0_sr"/>
+                <edittype type="0" name="adm1_code"/>
+                <edittype type="0" name="adm1_code_"/>
+                <edittype type="0" name="admin"/>
+                <edittype type="0" name="admin0_lab"/>
+                <edittype type="0" name="area_sqkm"/>
+                <edittype type="0" name="big_code"/>
+                <edittype type="0" name="check_me"/>
+                <edittype type="0" name="code_hasc"/>
+                <edittype type="0" name="code_local"/>
+                <edittype type="0" name="datarank"/>
+                <edittype type="0" name="diss_me"/>
+                <edittype type="0" name="featurecla"/>
+                <edittype type="0" name="gadm_level"/>
+                <edittype type="0" name="hasc_maybe"/>
+                <edittype type="0" name="iso_3166_2"/>
+                <edittype type="0" name="iso_a2"/>
+                <edittype type="0" name="labelrank"/>
+                <edittype type="0" name="mapcolor13"/>
+                <edittype type="0" name="mapcolor9"/>
+                <edittype type="0" name="name"/>
+                <edittype type="0" name="name_alt"/>
+                <edittype type="0" name="name_len"/>
+                <edittype type="0" name="name_local"/>
+                <edittype type="0" name="note"/>
+                <edittype type="0" name="postal"/>
+                <edittype type="0" name="provnum_ne"/>
+                <edittype type="0" name="region"/>
+                <edittype type="0" name="region_big"/>
+                <edittype type="0" name="region_cod"/>
+                <edittype type="0" name="sameAsCity"/>
+                <edittype type="0" name="sameascity"/>
+                <edittype type="0" name="scalerank"/>
+                <edittype type="0" name="sr_adm0_a3"/>
+                <edittype type="0" name="sr_sov_a3"/>
+                <edittype type="0" name="type"/>
+                <edittype type="0" name="type_en"/>
+                <edittype type="0" name="wikipedia"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="2e+06" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="1" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="2e+06" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="1">
             <id>10m_admin_1_states_provinces_shp20110129155506025</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_cultural/10m_admin_1_states_provinces_shp.shp|layerid=0|subset="LabelRank" &lt;= 8</datasource>
+            <datasource>./10m_cultural/ne_10m_admin_1_states_provinces_shp.shp|layerid=0|subset="LabelRank" &lt;= 8</datasource>
             <layername>10m_admin_1_states_provinces_shp</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -760,8 +948,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -773,89 +961,176 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="0" blue="0" green="0" />
+                    <outlinecolor red="0" blue="0" green="0"/>
                     <outlinestyle>NoPen</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="82" blue="36" green="219" />
+                    <fillcolor red="82" blue="36" green="219"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="ADM0_A3" />
-                <edittype type="0" name="Abbrev" />
-                <edittype type="0" name="Area_sqkm" />
-                <edittype type="0" name="CheckMe" />
-                <edittype type="0" name="Country_Pr" />
-                <edittype type="0" name="DataRank" />
-                <edittype type="0" name="ENGTYPE_1" />
-                <edittype type="0" name="FIPS_1" />
-                <edittype type="0" name="FIRST_FIPS" />
-                <edittype type="0" name="FIRST_HASC" />
-                <edittype type="0" name="HASC_1" />
-                <edittype type="0" name="ISO" />
-                <edittype type="0" name="LabelRank" />
-                <edittype type="0" name="MAP_COLOR" />
-                <edittype type="0" name="NAME_0" />
-                <edittype type="0" name="NAME_1" />
-                <edittype type="0" name="NEV_Countr" />
-                <edittype type="0" name="NL_NAME_1" />
-                <edittype type="0" name="OBJECTID" />
-                <edittype type="0" name="Postal" />
-                <edittype type="0" name="ProvNumber" />
-                <edittype type="0" name="REMARKS_1" />
-                <edittype type="0" name="Region" />
-                <edittype type="0" name="RegionVar" />
-                <edittype type="0" name="Region_C_1" />
-                <edittype type="0" name="Region_C_2" />
-                <edittype type="0" name="Region_C_3" />
-                <edittype type="0" name="Region_Cod" />
-                <edittype type="0" name="ScaleRank" />
-                <edittype type="0" name="Shape_Area" />
-                <edittype type="0" name="Shape_Leng" />
-                <edittype type="0" name="TYPE_1" />
-                <edittype type="0" name="VALIDFR_1" />
-                <edittype type="0" name="VALIDTO_1" />
-                <edittype type="0" name="VARNAME_1" />
-                <edittype type="0" name="VertexCou" />
-                <edittype type="0" name="gadm_level" />
-                <edittype type="0" name="sameAsCity" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
-            <displayfield>OBJECTID</displayfield>
-            <label>1</label>
-            <attributeactions/>
-            <labelfield>NAME_1</labelfield>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/dataDefinedProperty0" value=""/>
+                <property key="labeling/dataDefinedProperty1" value=""/>
+                <property key="labeling/dataDefinedProperty10" value=""/>
+                <property key="labeling/dataDefinedProperty11" value=""/>
+                <property key="labeling/dataDefinedProperty12" value=""/>
+                <property key="labeling/dataDefinedProperty13" value=""/>
+                <property key="labeling/dataDefinedProperty14" value=""/>
+                <property key="labeling/dataDefinedProperty2" value=""/>
+                <property key="labeling/dataDefinedProperty3" value=""/>
+                <property key="labeling/dataDefinedProperty4" value=""/>
+                <property key="labeling/dataDefinedProperty5" value=""/>
+                <property key="labeling/dataDefinedProperty6" value=""/>
+                <property key="labeling/dataDefinedProperty7" value=""/>
+                <property key="labeling/dataDefinedProperty8" value=""/>
+                <property key="labeling/dataDefinedProperty9" value=""/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/fieldName" value="name"/>
+                <property key="labeling/fontFamily" value="Lucida Grande"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontSize" value="16"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="75"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multiLineLabels" value="false"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placement" value="0"/>
+                <property key="labeling/placementFlags" value="0"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/scaleMax" value="2500000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/textColorB" value="64"/>
+                <property key="labeling/textColorG" value="64"/>
+                <property key="labeling/textColorR" value="64"/>
+            </customproperties>
+            <displayfield>name</displayfield>
+            <label>0</label>
+            <labelfield>name</labelfield>
             <labelattributes>
-                <label fieldname="NAME_1" text="Label" />
-                <family fieldname="" name="Arial Bold" />
-                <size fieldname="" units="pt" value="13" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="77" blue="77" green="77" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="name" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="16"/>
+                <bold fieldname="" on="1"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="77" blue="77" green="77"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="ADM0_A3"/>
+                <edittype type="0" name="Abbrev"/>
+                <edittype type="0" name="Area_sqkm"/>
+                <edittype type="0" name="CheckMe"/>
+                <edittype type="0" name="Country_Pr"/>
+                <edittype type="0" name="DataRank"/>
+                <edittype type="0" name="ENGTYPE_1"/>
+                <edittype type="0" name="FIPS_1"/>
+                <edittype type="0" name="FIRST_FIPS"/>
+                <edittype type="0" name="FIRST_HASC"/>
+                <edittype type="0" name="HASC_1"/>
+                <edittype type="0" name="ISO"/>
+                <edittype type="0" name="LabelRank"/>
+                <edittype type="0" name="MAP_COLOR"/>
+                <edittype type="0" name="NAME_0"/>
+                <edittype type="0" name="NAME_1"/>
+                <edittype type="0" name="NEV_Countr"/>
+                <edittype type="0" name="NL_NAME_1"/>
+                <edittype type="0" name="OBJECTID"/>
+                <edittype type="0" name="Postal"/>
+                <edittype type="0" name="ProvNumber"/>
+                <edittype type="0" name="REMARKS_1"/>
+                <edittype type="0" name="Region"/>
+                <edittype type="0" name="RegionVar"/>
+                <edittype type="0" name="Region_C_1"/>
+                <edittype type="0" name="Region_C_2"/>
+                <edittype type="0" name="Region_C_3"/>
+                <edittype type="0" name="Region_Cod"/>
+                <edittype type="0" name="ScaleRank"/>
+                <edittype type="0" name="Shape_Area"/>
+                <edittype type="0" name="Shape_Leng"/>
+                <edittype type="0" name="TYPE_1"/>
+                <edittype type="0" name="VALIDFR_1"/>
+                <edittype type="0" name="VALIDTO_1"/>
+                <edittype type="0" name="VARNAME_1"/>
+                <edittype type="0" name="VertexCou"/>
+                <edittype type="0" name="abbrev"/>
+                <edittype type="0" name="adm0_sr"/>
+                <edittype type="0" name="adm1_code"/>
+                <edittype type="0" name="adm1_code_"/>
+                <edittype type="0" name="admin"/>
+                <edittype type="0" name="admin0_lab"/>
+                <edittype type="0" name="area_sqkm"/>
+                <edittype type="0" name="big_code"/>
+                <edittype type="0" name="check_me"/>
+                <edittype type="0" name="code_hasc"/>
+                <edittype type="0" name="code_local"/>
+                <edittype type="0" name="datarank"/>
+                <edittype type="0" name="diss_me"/>
+                <edittype type="0" name="featurecla"/>
+                <edittype type="0" name="gadm_level"/>
+                <edittype type="0" name="hasc_maybe"/>
+                <edittype type="0" name="iso_3166_2"/>
+                <edittype type="0" name="iso_a2"/>
+                <edittype type="0" name="labelrank"/>
+                <edittype type="0" name="mapcolor13"/>
+                <edittype type="0" name="mapcolor9"/>
+                <edittype type="0" name="name"/>
+                <edittype type="0" name="name_alt"/>
+                <edittype type="0" name="name_len"/>
+                <edittype type="0" name="name_local"/>
+                <edittype type="0" name="note"/>
+                <edittype type="0" name="postal"/>
+                <edittype type="0" name="provnum_ne"/>
+                <edittype type="0" name="region"/>
+                <edittype type="0" name="region_big"/>
+                <edittype type="0" name="region_cod"/>
+                <edittype type="0" name="sameAsCity"/>
+                <edittype type="0" name="sameascity"/>
+                <edittype type="0" name="scalerank"/>
+                <edittype type="0" name="sr_adm0_a3"/>
+                <edittype type="0" name="sr_sov_a3"/>
+                <edittype type="0" name="type"/>
+                <edittype type="0" name="type_en"/>
+                <edittype type="0" name="wikipedia"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>10m_coastline20110129154930711</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_physical/10m_coastline.shp|layerid=0</datasource>
+            <datasource>./10m_physical/ne_10m_coastline.shp|layerid=0</datasource>
             <layername>10m_coastline</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -863,8 +1138,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -876,53 +1151,57 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="70" blue="195" green="159" />
+                    <outlinecolor red="70" blue="195" green="159"/>
                     <outlinestyle>SolidLine</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="0" blue="0" green="0" />
+                    <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="FeatureCla" />
-                <edittype type="0" name="Note" />
-                <edittype type="0" name="ScaleRank" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
+            <customproperties/>
             <displayfield>ScaleRank</displayfield>
             <label>0</label>
-            <attributeactions/>
             <labelattributes>
-                <label fieldname="" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="FeatureCla"/>
+                <edittype type="0" name="Note"/>
+                <edittype type="0" name="ScaleRank"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="100000" maxLabelScale="1.5e+07" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="1" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="100000" maxLabelScale="1.5e+07" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="1">
             <id>10m_geography_marine_polys20110129153035542</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_physical/10m_geography_marine_polys.shp|layerid=0</datasource>
+            <datasource>./10m_physical/ne_10m_geography_marine_polys.shp|layerid=0</datasource>
             <layername>10m_geography_marine_polys</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -930,8 +1209,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -943,57 +1222,68 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="0" blue="0" green="0" />
+                    <outlinecolor red="0" blue="0" green="0"/>
                     <outlinestyle>NoPen</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="62" blue="186" green="32" />
+                    <fillcolor red="62" blue="186" green="32"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="Changed" />
-                <edittype type="0" name="FeatureCla" />
-                <edittype type="0" name="Name" />
-                <edittype type="0" name="NameAlt" />
-                <edittype type="0" name="Note" />
-                <edittype type="0" name="ScaleRank" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
-            <displayfield>ScaleRank</displayfield>
+            <customproperties/>
+            <displayfield>name</displayfield>
             <label>1</label>
-            <attributeactions/>
-            <labelfield>Name</labelfield>
+            <labelfield>name</labelfield>
             <labelattributes>
-                <label fieldname="Name" text="Label" />
-                <family fieldname="" name="Times" />
-                <size fieldname="" units="pt" value="14" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="1" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="70" blue="195" green="159" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="name" text="Label"/>
+                <family fieldname="" name="Times"/>
+                <size fieldname="" units="pt" value="14"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="1"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="70" blue="195" green="159"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="Changed"/>
+                <edittype type="0" name="FeatureCla"/>
+                <edittype type="0" name="Name"/>
+                <edittype type="0" name="NameAlt"/>
+                <edittype type="0" name="Note"/>
+                <edittype type="0" name="ScaleRank"/>
+                <edittype type="0" name="changed"/>
+                <edittype type="0" name="featurecla"/>
+                <edittype type="0" name="name"/>
+                <edittype type="0" name="name_fr"/>
+                <edittype type="0" name="namealt"/>
+                <edittype type="0" name="note"/>
+                <edittype type="0" name="scalerank"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>10m_lakes20110129153532100</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_physical/10m_lakes.shp|layerid=0</datasource>
+            <datasource>./10m_physical/ne_10m_lakes.shp|layerid=0</datasource>
             <layername>10m_lakes</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -1001,8 +1291,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -1014,56 +1304,60 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="70" blue="195" green="159" />
+                    <outlinecolor red="70" blue="195" green="159"/>
                     <outlinestyle>SolidLine</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="198" blue="242" green="226" />
+                    <fillcolor red="198" blue="242" green="226"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="Delta" />
-                <edittype type="0" name="FeatureCla" />
-                <edittype type="0" name="Name1" />
-                <edittype type="0" name="Name2" />
-                <edittype type="0" name="Note" />
-                <edittype type="0" name="ScaleRank" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
+            <customproperties/>
             <displayfield>FeatureCla</displayfield>
             <label>0</label>
-            <attributeactions/>
             <labelattributes>
-                <label fieldname="" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="Delta"/>
+                <edittype type="0" name="FeatureCla"/>
+                <edittype type="0" name="Name1"/>
+                <edittype type="0" name="Name2"/>
+                <edittype type="0" name="Note"/>
+                <edittype type="0" name="ScaleRank"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>10m_ocean20110129151757350</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_physical/10m_ocean.shp|layerid=0</datasource>
+            <datasource>./10m_physical/ne_10m_ocean.shp|layerid=0</datasource>
             <layername>10m_ocean</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -1071,8 +1365,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -1084,51 +1378,55 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="0" blue="0" green="0" />
+                    <outlinecolor red="0" blue="0" green="0"/>
                     <outlinestyle>NoPen</outlinestyle>
                     <outlinewidth>0</outlinewidth>
-                    <fillcolor red="198" blue="242" green="226" />
+                    <fillcolor red="198" blue="242" green="226"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="RecNum" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
+            <customproperties/>
             <displayfield>RecNum</displayfield>
             <label>0</label>
-            <attributeactions/>
             <labelattributes>
-                <label fieldname="" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="RecNum"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="5e+07" minLabelScale="1" maxLabelScale="1e+07" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="1" >
+        <maplayer minimumScale="1" maximumScale="5e+06" minLabelScale="1" maxLabelScale="1e+07" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="1">
             <id>10m_populated_places20110129155009670</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_cultural/10m_populated_places.shp|layerid=0|subset="FEATURECLA"  !=  'Admin-0 capital'  AND  "SCALERANK" &lt;= 8</datasource>
+            <datasource>./10m_cultural/ne_10m_populated_places.shp|layerid=0|subset="FEATURECLA"  !=  'Admin-0 capital'  AND  "SCALERANK" &lt;= 8</datasource>
             <layername>10m_populated_places</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -1136,8 +1434,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -1149,144 +1447,150 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="0" blue="0" green="0" />
+                    <outlinecolor red="0" blue="0" green="0"/>
                     <outlinestyle>SolidLine</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="170" blue="170" green="170" />
+                    <fillcolor red="170" blue="170" green="170"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="ADM0CAP" />
-                <edittype type="0" name="ADM0NAME" />
-                <edittype type="0" name="ADM0_A3" />
-                <edittype type="0" name="ADM1NAME" />
-                <edittype type="0" name="ADMIN1_COD" />
-                <edittype type="0" name="CAPALT" />
-                <edittype type="0" name="CAPIN" />
-                <edittype type="0" name="CHANGED" />
-                <edittype type="0" name="CHECKME" />
-                <edittype type="0" name="CITYALT" />
-                <edittype type="0" name="COMPARE" />
-                <edittype type="0" name="DIFFASCII" />
-                <edittype type="0" name="DIFFNOTE" />
-                <edittype type="0" name="ELEVATION" />
-                <edittype type="0" name="FEATURECLA" />
-                <edittype type="0" name="FEATURE_CL" />
-                <edittype type="0" name="FEATURE_CO" />
-                <edittype type="0" name="GEONAMEID" />
-                <edittype type="0" name="GEONAMESNO" />
-                <edittype type="0" name="GN_ASCII" />
-                <edittype type="0" name="GN_POP" />
-                <edittype type="0" name="GTOPO30" />
-                <edittype type="0" name="ISO_A2" />
-                <edittype type="0" name="LABELRANK" />
-                <edittype type="0" name="LATITUDE" />
-                <edittype type="0" name="LONGITUDE" />
-                <edittype type="0" name="LS_MATCH" />
-                <edittype type="0" name="LS_NAME" />
-                <edittype type="0" name="MAX_AREAKM" />
-                <edittype type="0" name="MAX_AREAMI" />
-                <edittype type="0" name="MAX_BBXMAX" />
-                <edittype type="0" name="MAX_BBXMIN" />
-                <edittype type="0" name="MAX_BBYMAX" />
-                <edittype type="0" name="MAX_BBYMIN" />
-                <edittype type="0" name="MAX_NATSCA" />
-                <edittype type="0" name="MAX_PERKM" />
-                <edittype type="0" name="MAX_PERMI" />
-                <edittype type="0" name="MAX_POP10" />
-                <edittype type="0" name="MAX_POP20" />
-                <edittype type="0" name="MAX_POP300" />
-                <edittype type="0" name="MAX_POP310" />
-                <edittype type="0" name="MAX_POP50" />
-                <edittype type="0" name="MEAN_BBXC" />
-                <edittype type="0" name="MEAN_BBYC" />
-                <edittype type="0" name="MEGACITY" />
-                <edittype type="0" name="MEGANAME" />
-                <edittype type="0" name="MIN_AREAKM" />
-                <edittype type="0" name="MIN_AREAMI" />
-                <edittype type="0" name="MIN_BBXMAX" />
-                <edittype type="0" name="MIN_BBXMIN" />
-                <edittype type="0" name="MIN_BBYMAX" />
-                <edittype type="0" name="MIN_BBYMIN" />
-                <edittype type="0" name="MIN_PERKM" />
-                <edittype type="0" name="MIN_PERMI" />
-                <edittype type="0" name="NAME" />
-                <edittype type="0" name="NAMEALT" />
-                <edittype type="0" name="NAMEASCII" />
-                <edittype type="0" name="NAMEDIFF" />
-                <edittype type="0" name="NAMEPAR" />
-                <edittype type="0" name="NATSCALE" />
-                <edittype type="0" name="NOTE" />
-                <edittype type="0" name="POP1950" />
-                <edittype type="0" name="POP1955" />
-                <edittype type="0" name="POP1960" />
-                <edittype type="0" name="POP1965" />
-                <edittype type="0" name="POP1970" />
-                <edittype type="0" name="POP1975" />
-                <edittype type="0" name="POP1980" />
-                <edittype type="0" name="POP1985" />
-                <edittype type="0" name="POP1990" />
-                <edittype type="0" name="POP1995" />
-                <edittype type="0" name="POP2000" />
-                <edittype type="0" name="POP2005" />
-                <edittype type="0" name="POP2010" />
-                <edittype type="0" name="POP2015" />
-                <edittype type="0" name="POP2020" />
-                <edittype type="0" name="POP2025" />
-                <edittype type="0" name="POP2050" />
-                <edittype type="0" name="POP_MAX" />
-                <edittype type="0" name="POP_MIN" />
-                <edittype type="0" name="POP_OTHER" />
-                <edittype type="0" name="SCALERANK" />
-                <edittype type="0" name="SOV0NAME" />
-                <edittype type="0" name="SOV_A3" />
-                <edittype type="0" name="TIMEZONE" />
-                <edittype type="0" name="UN_ADM0" />
-                <edittype type="0" name="UN_FID" />
-                <edittype type="0" name="UN_LAT" />
-                <edittype type="0" name="UN_LONG" />
-                <edittype type="0" name="WORLDCITY" />
-                <edittype type="0" name="ls_gross" />
-                <edittype type="0" name="popDiff" />
-                <edittype type="0" name="popPerc" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
+            <customproperties/>
             <displayfield>SCALERANK</displayfield>
             <label>1</label>
-            <attributeactions/>
             <labelfield>NAME</labelfield>
             <labelattributes>
-                <label fieldname="NAME" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="10" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="1" y="1" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="aboveright" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="NAME" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="10"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="1" y="1" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="aboveright"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="ADM0CAP"/>
+                <edittype type="0" name="ADM0NAME"/>
+                <edittype type="0" name="ADM0_A3"/>
+                <edittype type="0" name="ADM1NAME"/>
+                <edittype type="0" name="ADMIN1_COD"/>
+                <edittype type="0" name="CAPALT"/>
+                <edittype type="0" name="CAPIN"/>
+                <edittype type="0" name="CHANGED"/>
+                <edittype type="0" name="CHECKME"/>
+                <edittype type="0" name="CITYALT"/>
+                <edittype type="0" name="COMPARE"/>
+                <edittype type="0" name="DIFFASCII"/>
+                <edittype type="0" name="DIFFNOTE"/>
+                <edittype type="0" name="ELEVATION"/>
+                <edittype type="0" name="FEATURECLA"/>
+                <edittype type="0" name="FEATURE_CL"/>
+                <edittype type="0" name="FEATURE_CO"/>
+                <edittype type="0" name="GEONAMEID"/>
+                <edittype type="0" name="GEONAMESNO"/>
+                <edittype type="0" name="GN_ASCII"/>
+                <edittype type="0" name="GN_POP"/>
+                <edittype type="0" name="GTOPO30"/>
+                <edittype type="0" name="ISO_A2"/>
+                <edittype type="0" name="LABELRANK"/>
+                <edittype type="0" name="LATITUDE"/>
+                <edittype type="0" name="LONGITUDE"/>
+                <edittype type="0" name="LS_MATCH"/>
+                <edittype type="0" name="LS_NAME"/>
+                <edittype type="0" name="MAX_AREAKM"/>
+                <edittype type="0" name="MAX_AREAMI"/>
+                <edittype type="0" name="MAX_BBXMAX"/>
+                <edittype type="0" name="MAX_BBXMIN"/>
+                <edittype type="0" name="MAX_BBYMAX"/>
+                <edittype type="0" name="MAX_BBYMIN"/>
+                <edittype type="0" name="MAX_NATSCA"/>
+                <edittype type="0" name="MAX_PERKM"/>
+                <edittype type="0" name="MAX_PERMI"/>
+                <edittype type="0" name="MAX_POP10"/>
+                <edittype type="0" name="MAX_POP20"/>
+                <edittype type="0" name="MAX_POP300"/>
+                <edittype type="0" name="MAX_POP310"/>
+                <edittype type="0" name="MAX_POP50"/>
+                <edittype type="0" name="MEAN_BBXC"/>
+                <edittype type="0" name="MEAN_BBYC"/>
+                <edittype type="0" name="MEGACITY"/>
+                <edittype type="0" name="MEGANAME"/>
+                <edittype type="0" name="MIN_AREAKM"/>
+                <edittype type="0" name="MIN_AREAMI"/>
+                <edittype type="0" name="MIN_BBXMAX"/>
+                <edittype type="0" name="MIN_BBXMIN"/>
+                <edittype type="0" name="MIN_BBYMAX"/>
+                <edittype type="0" name="MIN_BBYMIN"/>
+                <edittype type="0" name="MIN_PERKM"/>
+                <edittype type="0" name="MIN_PERMI"/>
+                <edittype type="0" name="NAME"/>
+                <edittype type="0" name="NAMEALT"/>
+                <edittype type="0" name="NAMEASCII"/>
+                <edittype type="0" name="NAMEDIFF"/>
+                <edittype type="0" name="NAMEPAR"/>
+                <edittype type="0" name="NATSCALE"/>
+                <edittype type="0" name="NOTE"/>
+                <edittype type="0" name="POP1950"/>
+                <edittype type="0" name="POP1955"/>
+                <edittype type="0" name="POP1960"/>
+                <edittype type="0" name="POP1965"/>
+                <edittype type="0" name="POP1970"/>
+                <edittype type="0" name="POP1975"/>
+                <edittype type="0" name="POP1980"/>
+                <edittype type="0" name="POP1985"/>
+                <edittype type="0" name="POP1990"/>
+                <edittype type="0" name="POP1995"/>
+                <edittype type="0" name="POP2000"/>
+                <edittype type="0" name="POP2005"/>
+                <edittype type="0" name="POP2010"/>
+                <edittype type="0" name="POP2015"/>
+                <edittype type="0" name="POP2020"/>
+                <edittype type="0" name="POP2025"/>
+                <edittype type="0" name="POP2050"/>
+                <edittype type="0" name="POP_MAX"/>
+                <edittype type="0" name="POP_MIN"/>
+                <edittype type="0" name="POP_OTHER"/>
+                <edittype type="0" name="SCALERANK"/>
+                <edittype type="0" name="SOV0NAME"/>
+                <edittype type="0" name="SOV_A3"/>
+                <edittype type="0" name="TIMEZONE"/>
+                <edittype type="0" name="UN_ADM0"/>
+                <edittype type="0" name="UN_FID"/>
+                <edittype type="0" name="UN_LAT"/>
+                <edittype type="0" name="UN_LONG"/>
+                <edittype type="0" name="WORLDCITY"/>
+                <edittype type="0" name="ls_gross"/>
+                <edittype type="0" name="popDiff"/>
+                <edittype type="0" name="popPerc"/>
+                <edittype type="0" name="rank_max"/>
+                <edittype type="0" name="rank_min"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="2e+07" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="1" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="2e+07" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="1">
             <id>10m_populated_places20110129160052611</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_cultural/10m_populated_places.shp|layerid=0|subset="FEATURECLA" = 'Admin-0 capital'</datasource>
+            <datasource>./10m_cultural/ne_10m_populated_places.shp|layerid=0|subset="FEATURECLA" = 'Admin-0 capital'</datasource>
             <layername>10m_populated_places</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -1294,8 +1598,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="System">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -1307,144 +1611,196 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="0" blue="0" green="0" />
+                    <outlinecolor red="0" blue="0" green="0"/>
                     <outlinestyle>SolidLine</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="0" blue="0" green="0" />
+                    <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="ADM0CAP" />
-                <edittype type="0" name="ADM0NAME" />
-                <edittype type="0" name="ADM0_A3" />
-                <edittype type="0" name="ADM1NAME" />
-                <edittype type="0" name="ADMIN1_COD" />
-                <edittype type="0" name="CAPALT" />
-                <edittype type="0" name="CAPIN" />
-                <edittype type="0" name="CHANGED" />
-                <edittype type="0" name="CHECKME" />
-                <edittype type="0" name="CITYALT" />
-                <edittype type="0" name="COMPARE" />
-                <edittype type="0" name="DIFFASCII" />
-                <edittype type="0" name="DIFFNOTE" />
-                <edittype type="0" name="ELEVATION" />
-                <edittype type="0" name="FEATURECLA" />
-                <edittype type="0" name="FEATURE_CL" />
-                <edittype type="0" name="FEATURE_CO" />
-                <edittype type="0" name="GEONAMEID" />
-                <edittype type="0" name="GEONAMESNO" />
-                <edittype type="0" name="GN_ASCII" />
-                <edittype type="0" name="GN_POP" />
-                <edittype type="0" name="GTOPO30" />
-                <edittype type="0" name="ISO_A2" />
-                <edittype type="0" name="LABELRANK" />
-                <edittype type="0" name="LATITUDE" />
-                <edittype type="0" name="LONGITUDE" />
-                <edittype type="0" name="LS_MATCH" />
-                <edittype type="0" name="LS_NAME" />
-                <edittype type="0" name="MAX_AREAKM" />
-                <edittype type="0" name="MAX_AREAMI" />
-                <edittype type="0" name="MAX_BBXMAX" />
-                <edittype type="0" name="MAX_BBXMIN" />
-                <edittype type="0" name="MAX_BBYMAX" />
-                <edittype type="0" name="MAX_BBYMIN" />
-                <edittype type="0" name="MAX_NATSCA" />
-                <edittype type="0" name="MAX_PERKM" />
-                <edittype type="0" name="MAX_PERMI" />
-                <edittype type="0" name="MAX_POP10" />
-                <edittype type="0" name="MAX_POP20" />
-                <edittype type="0" name="MAX_POP300" />
-                <edittype type="0" name="MAX_POP310" />
-                <edittype type="0" name="MAX_POP50" />
-                <edittype type="0" name="MEAN_BBXC" />
-                <edittype type="0" name="MEAN_BBYC" />
-                <edittype type="0" name="MEGACITY" />
-                <edittype type="0" name="MEGANAME" />
-                <edittype type="0" name="MIN_AREAKM" />
-                <edittype type="0" name="MIN_AREAMI" />
-                <edittype type="0" name="MIN_BBXMAX" />
-                <edittype type="0" name="MIN_BBXMIN" />
-                <edittype type="0" name="MIN_BBYMAX" />
-                <edittype type="0" name="MIN_BBYMIN" />
-                <edittype type="0" name="MIN_PERKM" />
-                <edittype type="0" name="MIN_PERMI" />
-                <edittype type="0" name="NAME" />
-                <edittype type="0" name="NAMEALT" />
-                <edittype type="0" name="NAMEASCII" />
-                <edittype type="0" name="NAMEDIFF" />
-                <edittype type="0" name="NAMEPAR" />
-                <edittype type="0" name="NATSCALE" />
-                <edittype type="0" name="NOTE" />
-                <edittype type="0" name="POP1950" />
-                <edittype type="0" name="POP1955" />
-                <edittype type="0" name="POP1960" />
-                <edittype type="0" name="POP1965" />
-                <edittype type="0" name="POP1970" />
-                <edittype type="0" name="POP1975" />
-                <edittype type="0" name="POP1980" />
-                <edittype type="0" name="POP1985" />
-                <edittype type="0" name="POP1990" />
-                <edittype type="0" name="POP1995" />
-                <edittype type="0" name="POP2000" />
-                <edittype type="0" name="POP2005" />
-                <edittype type="0" name="POP2010" />
-                <edittype type="0" name="POP2015" />
-                <edittype type="0" name="POP2020" />
-                <edittype type="0" name="POP2025" />
-                <edittype type="0" name="POP2050" />
-                <edittype type="0" name="POP_MAX" />
-                <edittype type="0" name="POP_MIN" />
-                <edittype type="0" name="POP_OTHER" />
-                <edittype type="0" name="SCALERANK" />
-                <edittype type="0" name="SOV0NAME" />
-                <edittype type="0" name="SOV_A3" />
-                <edittype type="0" name="TIMEZONE" />
-                <edittype type="0" name="UN_ADM0" />
-                <edittype type="0" name="UN_FID" />
-                <edittype type="0" name="UN_LAT" />
-                <edittype type="0" name="UN_LONG" />
-                <edittype type="0" name="WORLDCITY" />
-                <edittype type="0" name="ls_gross" />
-                <edittype type="0" name="popDiff" />
-                <edittype type="0" name="popPerc" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/dataDefinedProperty0" value=""/>
+                <property key="labeling/dataDefinedProperty1" value=""/>
+                <property key="labeling/dataDefinedProperty10" value=""/>
+                <property key="labeling/dataDefinedProperty11" value=""/>
+                <property key="labeling/dataDefinedProperty12" value=""/>
+                <property key="labeling/dataDefinedProperty13" value=""/>
+                <property key="labeling/dataDefinedProperty14" value=""/>
+                <property key="labeling/dataDefinedProperty2" value=""/>
+                <property key="labeling/dataDefinedProperty3" value=""/>
+                <property key="labeling/dataDefinedProperty4" value=""/>
+                <property key="labeling/dataDefinedProperty5" value=""/>
+                <property key="labeling/dataDefinedProperty6" value=""/>
+                <property key="labeling/dataDefinedProperty7" value=""/>
+                <property key="labeling/dataDefinedProperty8" value=""/>
+                <property key="labeling/dataDefinedProperty9" value=""/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/enabled" value="false"/>
+                <property key="labeling/fieldName" value="NAME"/>
+                <property key="labeling/fontFamily" value="Lucida Grande"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontSize" value="13"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multiLineLabels" value="false"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placement" value="0"/>
+                <property key="labeling/placementFlags" value="0"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/scaleMax" value="10000000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+            </customproperties>
             <displayfield>SCALERANK</displayfield>
             <label>1</label>
-            <attributeactions/>
             <labelfield>NAME</labelfield>
             <labelattributes>
-                <label fieldname="NAME" text="Label" />
-                <family fieldname="" name="Arial Bold" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="1" y="1" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="aboveright" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="NAME" text="Label"/>
+                <family fieldname="" name="Arial Bold"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="1" y="1" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="aboveright"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="ADM0CAP"/>
+                <edittype type="0" name="ADM0NAME"/>
+                <edittype type="0" name="ADM0_A3"/>
+                <edittype type="0" name="ADM1NAME"/>
+                <edittype type="0" name="ADMIN1_COD"/>
+                <edittype type="0" name="CAPALT"/>
+                <edittype type="0" name="CAPIN"/>
+                <edittype type="0" name="CHANGED"/>
+                <edittype type="0" name="CHECKME"/>
+                <edittype type="0" name="CITYALT"/>
+                <edittype type="0" name="COMPARE"/>
+                <edittype type="0" name="DIFFASCII"/>
+                <edittype type="0" name="DIFFNOTE"/>
+                <edittype type="0" name="ELEVATION"/>
+                <edittype type="0" name="FEATURECLA"/>
+                <edittype type="0" name="FEATURE_CL"/>
+                <edittype type="0" name="FEATURE_CO"/>
+                <edittype type="0" name="GEONAMEID"/>
+                <edittype type="0" name="GEONAMESNO"/>
+                <edittype type="0" name="GN_ASCII"/>
+                <edittype type="0" name="GN_POP"/>
+                <edittype type="0" name="GTOPO30"/>
+                <edittype type="0" name="ISO_A2"/>
+                <edittype type="0" name="LABELRANK"/>
+                <edittype type="0" name="LATITUDE"/>
+                <edittype type="0" name="LONGITUDE"/>
+                <edittype type="0" name="LS_MATCH"/>
+                <edittype type="0" name="LS_NAME"/>
+                <edittype type="0" name="MAX_AREAKM"/>
+                <edittype type="0" name="MAX_AREAMI"/>
+                <edittype type="0" name="MAX_BBXMAX"/>
+                <edittype type="0" name="MAX_BBXMIN"/>
+                <edittype type="0" name="MAX_BBYMAX"/>
+                <edittype type="0" name="MAX_BBYMIN"/>
+                <edittype type="0" name="MAX_NATSCA"/>
+                <edittype type="0" name="MAX_PERKM"/>
+                <edittype type="0" name="MAX_PERMI"/>
+                <edittype type="0" name="MAX_POP10"/>
+                <edittype type="0" name="MAX_POP20"/>
+                <edittype type="0" name="MAX_POP300"/>
+                <edittype type="0" name="MAX_POP310"/>
+                <edittype type="0" name="MAX_POP50"/>
+                <edittype type="0" name="MEAN_BBXC"/>
+                <edittype type="0" name="MEAN_BBYC"/>
+                <edittype type="0" name="MEGACITY"/>
+                <edittype type="0" name="MEGANAME"/>
+                <edittype type="0" name="MIN_AREAKM"/>
+                <edittype type="0" name="MIN_AREAMI"/>
+                <edittype type="0" name="MIN_BBXMAX"/>
+                <edittype type="0" name="MIN_BBXMIN"/>
+                <edittype type="0" name="MIN_BBYMAX"/>
+                <edittype type="0" name="MIN_BBYMIN"/>
+                <edittype type="0" name="MIN_PERKM"/>
+                <edittype type="0" name="MIN_PERMI"/>
+                <edittype type="0" name="NAME"/>
+                <edittype type="0" name="NAMEALT"/>
+                <edittype type="0" name="NAMEASCII"/>
+                <edittype type="0" name="NAMEDIFF"/>
+                <edittype type="0" name="NAMEPAR"/>
+                <edittype type="0" name="NATSCALE"/>
+                <edittype type="0" name="NOTE"/>
+                <edittype type="0" name="POP1950"/>
+                <edittype type="0" name="POP1955"/>
+                <edittype type="0" name="POP1960"/>
+                <edittype type="0" name="POP1965"/>
+                <edittype type="0" name="POP1970"/>
+                <edittype type="0" name="POP1975"/>
+                <edittype type="0" name="POP1980"/>
+                <edittype type="0" name="POP1985"/>
+                <edittype type="0" name="POP1990"/>
+                <edittype type="0" name="POP1995"/>
+                <edittype type="0" name="POP2000"/>
+                <edittype type="0" name="POP2005"/>
+                <edittype type="0" name="POP2010"/>
+                <edittype type="0" name="POP2015"/>
+                <edittype type="0" name="POP2020"/>
+                <edittype type="0" name="POP2025"/>
+                <edittype type="0" name="POP2050"/>
+                <edittype type="0" name="POP_MAX"/>
+                <edittype type="0" name="POP_MIN"/>
+                <edittype type="0" name="POP_OTHER"/>
+                <edittype type="0" name="SCALERANK"/>
+                <edittype type="0" name="SOV0NAME"/>
+                <edittype type="0" name="SOV_A3"/>
+                <edittype type="0" name="TIMEZONE"/>
+                <edittype type="0" name="UN_ADM0"/>
+                <edittype type="0" name="UN_FID"/>
+                <edittype type="0" name="UN_LAT"/>
+                <edittype type="0" name="UN_LONG"/>
+                <edittype type="0" name="WORLDCITY"/>
+                <edittype type="0" name="ls_gross"/>
+                <edittype type="0" name="popDiff"/>
+                <edittype type="0" name="popPerc"/>
+                <edittype type="0" name="rank_max"/>
+                <edittype type="0" name="rank_min"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1000" maxLabelScale="1e+07" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="1" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1000" maxLabelScale="1e+07" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="1">
             <id>10m_rivers_lake_centerlines20110129154348237</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_physical/10m_rivers_lake_centerlines.shp|layerid=0</datasource>
+            <datasource>./10m_physical/ne_10m_rivers_lake_centerlines.shp|layerid=0</datasource>
             <layername>10m_rivers_lake_centerlines</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -1452,8 +1808,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -1465,57 +1821,114 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="172" blue="61" green="213" />
+                    <outlinecolor red="172" blue="61" green="213"/>
                     <outlinestyle>NoPen</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="0" blue="0" green="0" />
+                    <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
-            <edittypes>
-                <edittype type="0" name="FeatureCla" />
-                <edittype type="0" name="Name" />
-                <edittype type="0" name="Name_alt" />
-                <edittype type="0" name="Note" />
-                <edittype type="0" name="RiverNum" />
-                <edittype type="0" name="ScaleRank" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
-            <displayfield>ScaleRank</displayfield>
-            <label>1</label>
-            <attributeactions/>
-            <labelfield>Name</labelfield>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/dataDefinedProperty0" value=""/>
+                <property key="labeling/dataDefinedProperty1" value=""/>
+                <property key="labeling/dataDefinedProperty10" value=""/>
+                <property key="labeling/dataDefinedProperty11" value=""/>
+                <property key="labeling/dataDefinedProperty12" value=""/>
+                <property key="labeling/dataDefinedProperty13" value=""/>
+                <property key="labeling/dataDefinedProperty14" value=""/>
+                <property key="labeling/dataDefinedProperty2" value=""/>
+                <property key="labeling/dataDefinedProperty3" value=""/>
+                <property key="labeling/dataDefinedProperty4" value=""/>
+                <property key="labeling/dataDefinedProperty5" value=""/>
+                <property key="labeling/dataDefinedProperty6" value=""/>
+                <property key="labeling/dataDefinedProperty7" value=""/>
+                <property key="labeling/dataDefinedProperty8" value=""/>
+                <property key="labeling/dataDefinedProperty9" value=""/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/fieldName" value="name"/>
+                <property key="labeling/fontFamily" value="Times"/>
+                <property key="labeling/fontItalic" value="true"/>
+                <property key="labeling/fontSize" value="11"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multiLineLabels" value="false"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placement" value="2"/>
+                <property key="labeling/placementFlags" value="10"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/scaleMax" value="10000000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/textColorB" value="255"/>
+                <property key="labeling/textColorG" value="128"/>
+                <property key="labeling/textColorR" value="0"/>
+            </customproperties>
+            <displayfield>name</displayfield>
+            <label>0</label>
+            <labelfield>name</labelfield>
             <labelattributes>
-                <label fieldname="Name" text="Label" />
-                <family fieldname="" name="Times" />
-                <size fieldname="" units="pt" value="11" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="1" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="70" blue="195" green="159" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="name" text="Label"/>
+                <family fieldname="" name="Times"/>
+                <size fieldname="" units="pt" value="11"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="1"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="70" blue="195" green="159"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="above"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="FeatureCla"/>
+                <edittype type="0" name="Name"/>
+                <edittype type="0" name="Name_alt"/>
+                <edittype type="0" name="Note"/>
+                <edittype type="0" name="RiverNum"/>
+                <edittype type="0" name="ScaleRank"/>
+                <edittype type="0" name="dissolve"/>
+                <edittype type="0" name="featurecla"/>
+                <edittype type="0" name="name"/>
+                <edittype type="0" name="name_alt"/>
+                <edittype type="0" name="note"/>
+                <edittype type="0" name="rivernum"/>
+                <edittype type="0" name="scalerank"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>10m_rivers_lake_centerlines_scale_ranks20110129153818139</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_physical/10m_rivers_lake_centerlines_scale_ranks.shp|layerid=0</datasource>
+            <datasource>./10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.shp|layerid=0</datasource>
             <layername>10m_rivers_lake_centerlines_scale_ranks</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -1523,12 +1936,12 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
-            <classificationattribute>StrokeWeig</classificationattribute>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
+            <classificationattribute>strokeweig</classificationattribute>
             <graduatedsymbol>
                 <mode>Quantile</mode>
-                <classificationfield>StrokeWeig</classificationfield>
+                <classificationfield>strokeweig</classificationfield>
                 <symbol>
                     <lowervalue>0.000</lowervalue>
                     <uppervalue>0.200</uppervalue>
@@ -1539,12 +1952,12 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="108" blue="195" green="170" />
+                    <outlinecolor red="108" blue="195" green="170"/>
                     <outlinestyle>SolidLine</outlinestyle>
                     <outlinewidth>0.25</outlinewidth>
-                    <fillcolor red="0" blue="0" green="0" />
+                    <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
                 <symbol>
                     <lowervalue>0.2001</lowervalue>
@@ -1556,12 +1969,12 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="108" blue="195" green="170" />
+                    <outlinecolor red="108" blue="195" green="170"/>
                     <outlinestyle>SolidLine</outlinestyle>
                     <outlinewidth>0.94</outlinewidth>
-                    <fillcolor red="0" blue="0" green="0" />
+                    <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
                 <symbol>
                     <lowervalue>0.35001</lowervalue>
@@ -1573,12 +1986,12 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="108" blue="195" green="170" />
+                    <outlinecolor red="108" blue="195" green="170"/>
                     <outlinestyle>SolidLine</outlinestyle>
                     <outlinewidth>1.63</outlinewidth>
-                    <fillcolor red="0" blue="0" green="0" />
+                    <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
                 <symbol>
                     <lowervalue>0.6001</lowervalue>
@@ -1590,12 +2003,12 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="108" blue="195" green="170" />
+                    <outlinecolor red="108" blue="195" green="170"/>
                     <outlinestyle>SolidLine</outlinestyle>
                     <outlinewidth>2.31</outlinewidth>
-                    <fillcolor red="0" blue="0" green="0" />
+                    <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
                 <symbol>
                     <lowervalue>1.001</lowervalue>
@@ -1607,58 +2020,62 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="108" blue="195" green="170" />
+                    <outlinecolor red="108" blue="195" green="170"/>
                     <outlinestyle>SolidLine</outlinestyle>
                     <outlinewidth>3</outlinewidth>
-                    <fillcolor red="0" blue="0" green="0" />
+                    <fillcolor red="0" blue="0" green="0"/>
                     <fillpattern>NoBrush</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </graduatedsymbol>
-            <edittypes>
-                <edittype type="0" name="Dissolve" />
-                <edittype type="0" name="FeatureCla" />
-                <edittype type="0" name="Name1" />
-                <edittype type="0" name="Name2" />
-                <edittype type="0" name="Note" />
-                <edittype type="0" name="RiverNum" />
-                <edittype type="0" name="ScaleRank" />
-                <edittype type="0" name="StrokeWeig" />
-            </edittypes>
-            <editform></editform>
-            <editforminit></editforminit>
+            <customproperties/>
             <displayfield>StrokeWeig</displayfield>
             <label>0</label>
-            <attributeactions/>
             <labelattributes>
-                <label fieldname="" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="Dissolve"/>
+                <edittype type="0" name="FeatureCla"/>
+                <edittype type="0" name="Name1"/>
+                <edittype type="0" name="Name2"/>
+                <edittype type="0" name="Note"/>
+                <edittype type="0" name="RiverNum"/>
+                <edittype type="0" name="ScaleRank"/>
+                <edittype type="0" name="StrokeWeig"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>10m_urban_areas20110129152944846</id>
-            <datasource>/Volumes/Data/NaturalEarth/Research/version_1d3/NaturalEarth_quick_start/10m_cultural/10m_urban_areas.shp|layerid=0</datasource>
+            <datasource>./10m_cultural/ne_10m_urban_areas.shp|layerid=0</datasource>
             <layername>10m_urban_areas</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
-                    <epsg>4326</epsg>
+                    <authid>EPSG:4326</authid>
                     <description>WGS 84</description>
                     <projectionacronym>longlat</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
@@ -1666,8 +2083,8 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider encoding="System" >ogr</provider>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
             <singlesymbol>
                 <symbol>
                     <lowervalue></lowervalue>
@@ -1679,56 +2096,496 @@
                     <rotationclassificationfieldname></rotationclassificationfieldname>
                     <scaleclassificationfieldname></scaleclassificationfieldname>
                     <symbolfieldname></symbolfieldname>
-                    <outlinecolor red="0" blue="0" green="0" />
+                    <outlinecolor red="0" blue="0" green="0"/>
                     <outlinestyle>NoPen</outlinestyle>
                     <outlinewidth>0.26</outlinewidth>
-                    <fillcolor red="250" blue="183" green="228" />
+                    <fillcolor red="250" blue="183" green="228"/>
                     <fillpattern>SolidPattern</fillpattern>
-                    <texturepath></texturepath>
+                    <texturepath>.</texturepath>
                 </symbol>
             </singlesymbol>
+            <customproperties/>
+            <displayfield>ScaleRank</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
             <edittypes>
-                <edittype type="0" name="FeatureCla" />
-                <edittype type="0" name="ScaleRank" />
-                <edittype type="0" name="hasPlace" />
+                <edittype type="0" name="FeatureCla"/>
+                <edittype type="0" name="ScaleRank"/>
+                <edittype type="0" name="hasPlace"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="5e+06" maximumScale="1e+07" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+            <id>ne_10m_populated_places20121105033924513</id>
+            <datasource>./10m_cultural/ne_10m_populated_places.shp|layerid=0|subset="FEATURECLA"  !=  'Admin-0 capital'   AND "SCALERANK" &lt;= 5</datasource>
+            <layername>ne_10m_populated_places</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
+            <singlesymbol>
+                <symbol>
+                    <lowervalue></lowervalue>
+                    <uppervalue></uppervalue>
+                    <label></label>
+                    <pointsymbol>hard:circle</pointsymbol>
+                    <pointsize>1</pointsize>
+                    <pointsizeunits>pixels</pointsizeunits>
+                    <rotationclassificationfieldname></rotationclassificationfieldname>
+                    <scaleclassificationfieldname></scaleclassificationfieldname>
+                    <symbolfieldname></symbolfieldname>
+                    <outlinecolor red="0" blue="0" green="0"/>
+                    <outlinestyle>SolidLine</outlinestyle>
+                    <outlinewidth>0.26</outlinewidth>
+                    <fillcolor red="146" blue="9" green="205"/>
+                    <fillpattern>SolidPattern</fillpattern>
+                    <texturepath null="1"></texturepath>
+                </symbol>
+            </singlesymbol>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/dataDefinedProperty0" value=""/>
+                <property key="labeling/dataDefinedProperty1" value=""/>
+                <property key="labeling/dataDefinedProperty10" value=""/>
+                <property key="labeling/dataDefinedProperty11" value=""/>
+                <property key="labeling/dataDefinedProperty12" value=""/>
+                <property key="labeling/dataDefinedProperty13" value=""/>
+                <property key="labeling/dataDefinedProperty14" value=""/>
+                <property key="labeling/dataDefinedProperty2" value=""/>
+                <property key="labeling/dataDefinedProperty3" value=""/>
+                <property key="labeling/dataDefinedProperty4" value=""/>
+                <property key="labeling/dataDefinedProperty5" value=""/>
+                <property key="labeling/dataDefinedProperty6" value=""/>
+                <property key="labeling/dataDefinedProperty7" value=""/>
+                <property key="labeling/dataDefinedProperty8" value=""/>
+                <property key="labeling/dataDefinedProperty9" value=""/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/fieldName" value="NAME"/>
+                <property key="labeling/fontFamily" value="Lucida Grande"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontSize" value="10"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multiLineLabels" value="false"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placement" value="0"/>
+                <property key="labeling/placementFlags" value="0"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/scaleMax" value="0"/>
+                <property key="labeling/scaleMin" value="0"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+            </customproperties>
+            <displayfield>SCALERANK</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="ADM0CAP"/>
+                <edittype type="0" name="ADM0NAME"/>
+                <edittype type="0" name="ADM0_A3"/>
+                <edittype type="0" name="ADM1NAME"/>
+                <edittype type="0" name="ADMIN1_COD"/>
+                <edittype type="0" name="CAPALT"/>
+                <edittype type="0" name="CAPIN"/>
+                <edittype type="0" name="CHANGED"/>
+                <edittype type="0" name="CHECKME"/>
+                <edittype type="0" name="CITYALT"/>
+                <edittype type="0" name="COMPARE"/>
+                <edittype type="0" name="DIFFASCII"/>
+                <edittype type="0" name="DIFFNOTE"/>
+                <edittype type="0" name="ELEVATION"/>
+                <edittype type="0" name="FEATURECLA"/>
+                <edittype type="0" name="FEATURE_CL"/>
+                <edittype type="0" name="FEATURE_CO"/>
+                <edittype type="0" name="GEONAMEID"/>
+                <edittype type="0" name="GEONAMESNO"/>
+                <edittype type="0" name="GN_ASCII"/>
+                <edittype type="0" name="GN_POP"/>
+                <edittype type="0" name="GTOPO30"/>
+                <edittype type="0" name="ISO_A2"/>
+                <edittype type="0" name="LABELRANK"/>
+                <edittype type="0" name="LATITUDE"/>
+                <edittype type="0" name="LONGITUDE"/>
+                <edittype type="0" name="LS_MATCH"/>
+                <edittype type="0" name="LS_NAME"/>
+                <edittype type="0" name="MAX_AREAKM"/>
+                <edittype type="0" name="MAX_AREAMI"/>
+                <edittype type="0" name="MAX_BBXMAX"/>
+                <edittype type="0" name="MAX_BBXMIN"/>
+                <edittype type="0" name="MAX_BBYMAX"/>
+                <edittype type="0" name="MAX_BBYMIN"/>
+                <edittype type="0" name="MAX_NATSCA"/>
+                <edittype type="0" name="MAX_PERKM"/>
+                <edittype type="0" name="MAX_PERMI"/>
+                <edittype type="0" name="MAX_POP10"/>
+                <edittype type="0" name="MAX_POP20"/>
+                <edittype type="0" name="MAX_POP300"/>
+                <edittype type="0" name="MAX_POP310"/>
+                <edittype type="0" name="MAX_POP50"/>
+                <edittype type="0" name="MEAN_BBXC"/>
+                <edittype type="0" name="MEAN_BBYC"/>
+                <edittype type="0" name="MEGACITY"/>
+                <edittype type="0" name="MEGANAME"/>
+                <edittype type="0" name="MIN_AREAKM"/>
+                <edittype type="0" name="MIN_AREAMI"/>
+                <edittype type="0" name="MIN_BBXMAX"/>
+                <edittype type="0" name="MIN_BBXMIN"/>
+                <edittype type="0" name="MIN_BBYMAX"/>
+                <edittype type="0" name="MIN_BBYMIN"/>
+                <edittype type="0" name="MIN_PERKM"/>
+                <edittype type="0" name="MIN_PERMI"/>
+                <edittype type="0" name="NAME"/>
+                <edittype type="0" name="NAMEALT"/>
+                <edittype type="0" name="NAMEASCII"/>
+                <edittype type="0" name="NAMEDIFF"/>
+                <edittype type="0" name="NAMEPAR"/>
+                <edittype type="0" name="NATSCALE"/>
+                <edittype type="0" name="NOTE"/>
+                <edittype type="0" name="POP1950"/>
+                <edittype type="0" name="POP1955"/>
+                <edittype type="0" name="POP1960"/>
+                <edittype type="0" name="POP1965"/>
+                <edittype type="0" name="POP1970"/>
+                <edittype type="0" name="POP1975"/>
+                <edittype type="0" name="POP1980"/>
+                <edittype type="0" name="POP1985"/>
+                <edittype type="0" name="POP1990"/>
+                <edittype type="0" name="POP1995"/>
+                <edittype type="0" name="POP2000"/>
+                <edittype type="0" name="POP2005"/>
+                <edittype type="0" name="POP2010"/>
+                <edittype type="0" name="POP2015"/>
+                <edittype type="0" name="POP2020"/>
+                <edittype type="0" name="POP2025"/>
+                <edittype type="0" name="POP2050"/>
+                <edittype type="0" name="POP_MAX"/>
+                <edittype type="0" name="POP_MIN"/>
+                <edittype type="0" name="POP_OTHER"/>
+                <edittype type="0" name="SCALERANK"/>
+                <edittype type="0" name="SOV0NAME"/>
+                <edittype type="0" name="SOV_A3"/>
+                <edittype type="0" name="TIMEZONE"/>
+                <edittype type="0" name="UN_ADM0"/>
+                <edittype type="0" name="UN_FID"/>
+                <edittype type="0" name="UN_LAT"/>
+                <edittype type="0" name="UN_LONG"/>
+                <edittype type="0" name="WORLDCITY"/>
+                <edittype type="0" name="ls_gross"/>
+                <edittype type="0" name="popDiff"/>
+                <edittype type="0" name="popPerc"/>
+                <edittype type="0" name="rank_max"/>
+                <edittype type="0" name="rank_min"/>
             </edittypes>
             <editform></editform>
             <editforminit></editforminit>
-            <displayfield>ScaleRank</displayfield>
-            <label>0</label>
+            <annotationform></annotationform>
             <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+            <id>ne_10m_populated_places20121105034420572</id>
+            <datasource>./10m_cultural/ne_10m_populated_places.shp|layerid=0|subset="SCALERANK" &lt;= 1</datasource>
+            <layername>ne_10m_populated_places</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="UTF-8">ogr</provider>
+            <vectorjoins/>
+            <singlesymbol>
+                <symbol>
+                    <lowervalue></lowervalue>
+                    <uppervalue></uppervalue>
+                    <label></label>
+                    <pointsymbol>hard:circle</pointsymbol>
+                    <pointsize>0.1</pointsize>
+                    <pointsizeunits>pixels</pointsizeunits>
+                    <rotationclassificationfieldname></rotationclassificationfieldname>
+                    <scaleclassificationfieldname></scaleclassificationfieldname>
+                    <symbolfieldname></symbolfieldname>
+                    <outlinecolor red="0" blue="0" green="0"/>
+                    <outlinestyle>SolidLine</outlinestyle>
+                    <outlinewidth>0.26</outlinewidth>
+                    <fillcolor red="240" blue="47" green="62"/>
+                    <fillpattern>SolidPattern</fillpattern>
+                    <texturepath null="1"></texturepath>
+                </symbol>
+            </singlesymbol>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/dataDefinedProperty0" value=""/>
+                <property key="labeling/dataDefinedProperty1" value=""/>
+                <property key="labeling/dataDefinedProperty10" value=""/>
+                <property key="labeling/dataDefinedProperty11" value=""/>
+                <property key="labeling/dataDefinedProperty12" value=""/>
+                <property key="labeling/dataDefinedProperty13" value=""/>
+                <property key="labeling/dataDefinedProperty14" value=""/>
+                <property key="labeling/dataDefinedProperty2" value=""/>
+                <property key="labeling/dataDefinedProperty3" value=""/>
+                <property key="labeling/dataDefinedProperty4" value=""/>
+                <property key="labeling/dataDefinedProperty5" value=""/>
+                <property key="labeling/dataDefinedProperty6" value=""/>
+                <property key="labeling/dataDefinedProperty7" value=""/>
+                <property key="labeling/dataDefinedProperty8" value=""/>
+                <property key="labeling/dataDefinedProperty9" value=""/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/fieldName" value="NAME"/>
+                <property key="labeling/fontFamily" value="Lucida Grande"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontSize" value="10"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multiLineLabels" value="false"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placement" value="0"/>
+                <property key="labeling/placementFlags" value="0"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/scaleMax" value="0"/>
+                <property key="labeling/scaleMin" value="0"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+            </customproperties>
+            <displayfield>SCALERANK</displayfield>
+            <label>0</label>
             <labelattributes>
-                <label fieldname="" text="Label" />
-                <family fieldname="" name="Lucida Grande" />
-                <size fieldname="" units="pt" value="12" />
-                <bold fieldname="" on="0" />
-                <italic fieldname="" on="0" />
-                <underline fieldname="" on="0" />
-                <color fieldname="" red="0" blue="0" green="0" />
-                <x fieldname="" />
-                <y fieldname="" />
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname="" />
-                <angle fieldname="" value="0" auto="0" />
-                <alignment fieldname="" value="center" />
-                <buffercolor fieldname="" red="255" blue="255" green="255" />
-                <buffersize fieldname="" units="pt" value="1" />
-                <bufferenabled fieldname="" on="" />
-                <multilineenabled fieldname="" on="" />
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Lucida Grande"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="ADM0CAP"/>
+                <edittype type="0" name="ADM0NAME"/>
+                <edittype type="0" name="ADM0_A3"/>
+                <edittype type="0" name="ADM1NAME"/>
+                <edittype type="0" name="ADMIN1_COD"/>
+                <edittype type="0" name="CAPALT"/>
+                <edittype type="0" name="CAPIN"/>
+                <edittype type="0" name="CHANGED"/>
+                <edittype type="0" name="CHECKME"/>
+                <edittype type="0" name="CITYALT"/>
+                <edittype type="0" name="COMPARE"/>
+                <edittype type="0" name="DIFFASCII"/>
+                <edittype type="0" name="DIFFNOTE"/>
+                <edittype type="0" name="ELEVATION"/>
+                <edittype type="0" name="FEATURECLA"/>
+                <edittype type="0" name="FEATURE_CL"/>
+                <edittype type="0" name="FEATURE_CO"/>
+                <edittype type="0" name="GEONAMEID"/>
+                <edittype type="0" name="GEONAMESNO"/>
+                <edittype type="0" name="GN_ASCII"/>
+                <edittype type="0" name="GN_POP"/>
+                <edittype type="0" name="GTOPO30"/>
+                <edittype type="0" name="ISO_A2"/>
+                <edittype type="0" name="LABELRANK"/>
+                <edittype type="0" name="LATITUDE"/>
+                <edittype type="0" name="LONGITUDE"/>
+                <edittype type="0" name="LS_MATCH"/>
+                <edittype type="0" name="LS_NAME"/>
+                <edittype type="0" name="MAX_AREAKM"/>
+                <edittype type="0" name="MAX_AREAMI"/>
+                <edittype type="0" name="MAX_BBXMAX"/>
+                <edittype type="0" name="MAX_BBXMIN"/>
+                <edittype type="0" name="MAX_BBYMAX"/>
+                <edittype type="0" name="MAX_BBYMIN"/>
+                <edittype type="0" name="MAX_NATSCA"/>
+                <edittype type="0" name="MAX_PERKM"/>
+                <edittype type="0" name="MAX_PERMI"/>
+                <edittype type="0" name="MAX_POP10"/>
+                <edittype type="0" name="MAX_POP20"/>
+                <edittype type="0" name="MAX_POP300"/>
+                <edittype type="0" name="MAX_POP310"/>
+                <edittype type="0" name="MAX_POP50"/>
+                <edittype type="0" name="MEAN_BBXC"/>
+                <edittype type="0" name="MEAN_BBYC"/>
+                <edittype type="0" name="MEGACITY"/>
+                <edittype type="0" name="MEGANAME"/>
+                <edittype type="0" name="MIN_AREAKM"/>
+                <edittype type="0" name="MIN_AREAMI"/>
+                <edittype type="0" name="MIN_BBXMAX"/>
+                <edittype type="0" name="MIN_BBXMIN"/>
+                <edittype type="0" name="MIN_BBYMAX"/>
+                <edittype type="0" name="MIN_BBYMIN"/>
+                <edittype type="0" name="MIN_PERKM"/>
+                <edittype type="0" name="MIN_PERMI"/>
+                <edittype type="0" name="NAME"/>
+                <edittype type="0" name="NAMEALT"/>
+                <edittype type="0" name="NAMEASCII"/>
+                <edittype type="0" name="NAMEDIFF"/>
+                <edittype type="0" name="NAMEPAR"/>
+                <edittype type="0" name="NATSCALE"/>
+                <edittype type="0" name="NOTE"/>
+                <edittype type="0" name="POP1950"/>
+                <edittype type="0" name="POP1955"/>
+                <edittype type="0" name="POP1960"/>
+                <edittype type="0" name="POP1965"/>
+                <edittype type="0" name="POP1970"/>
+                <edittype type="0" name="POP1975"/>
+                <edittype type="0" name="POP1980"/>
+                <edittype type="0" name="POP1985"/>
+                <edittype type="0" name="POP1990"/>
+                <edittype type="0" name="POP1995"/>
+                <edittype type="0" name="POP2000"/>
+                <edittype type="0" name="POP2005"/>
+                <edittype type="0" name="POP2010"/>
+                <edittype type="0" name="POP2015"/>
+                <edittype type="0" name="POP2020"/>
+                <edittype type="0" name="POP2025"/>
+                <edittype type="0" name="POP2050"/>
+                <edittype type="0" name="POP_MAX"/>
+                <edittype type="0" name="POP_MIN"/>
+                <edittype type="0" name="POP_OTHER"/>
+                <edittype type="0" name="SCALERANK"/>
+                <edittype type="0" name="SOV0NAME"/>
+                <edittype type="0" name="SOV_A3"/>
+                <edittype type="0" name="TIMEZONE"/>
+                <edittype type="0" name="UN_ADM0"/>
+                <edittype type="0" name="UN_FID"/>
+                <edittype type="0" name="UN_LAT"/>
+                <edittype type="0" name="UN_LONG"/>
+                <edittype type="0" name="WORLDCITY"/>
+                <edittype type="0" name="ls_gross"/>
+                <edittype type="0" name="popDiff"/>
+                <edittype type="0" name="popPerc"/>
+                <edittype type="0" name="rank_max"/>
+                <edittype type="0" name="rank_min"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <annotationform></annotationform>
+            <attributeactions/>
         </maplayer>
     </projectlayers>
     <properties>
+        <WMSServiceAbstract type="QString"></WMSServiceAbstract>
+        <WMSContactPerson type="QString"></WMSContactPerson>
+        <Identify>
+            <disabledLayers type="QStringList"/>
+        </Identify>
+        <WMSContactPhone type="QString"></WMSContactPhone>
+        <SpatialRefSys>
+            <ProjectCRSProj4String type="QString">+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0</ProjectCRSProj4String>
+        </SpatialRefSys>
         <Gui>
-            <SelectionColorBluePart type="int" >0</SelectionColorBluePart>
-            <CanvasColorGreenPart type="int" >255</CanvasColorGreenPart>
-            <CanvasColorRedPart type="int" >255</CanvasColorRedPart>
-            <SelectionColorRedPart type="int" >255</SelectionColorRedPart>
-            <SelectionColorGreenPart type="int" >255</SelectionColorGreenPart>
-            <CanvasColorBluePart type="int" >255</CanvasColorBluePart>
+            <SelectionColorBluePart type="int">0</SelectionColorBluePart>
+            <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
+            <CanvasColorRedPart type="int">255</CanvasColorRedPart>
+            <SelectionColorRedPart type="int">255</SelectionColorRedPart>
+            <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
+            <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
+            <CanvasColorBluePart type="int">255</CanvasColorBluePart>
         </Gui>
+        <Paths>
+            <Absolute type="bool">false</Absolute>
+        </Paths>
+        <WMSContactMail type="QString"></WMSContactMail>
         <PositionPrecision>
-            <DecimalPlaces type="int" >2</DecimalPlaces>
-            <Automatic type="bool" >true</Automatic>
+            <DecimalPlaces type="int">2</DecimalPlaces>
+            <Automatic type="bool">true</Automatic>
         </PositionPrecision>
+        <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
+        <WMSContactOrganization type="QString"></WMSContactOrganization>
+        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
+        <WMSServiceTitle type="QString"></WMSServiceTitle>
     </properties>
 </qgis>

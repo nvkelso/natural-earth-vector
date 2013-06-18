@@ -128,9 +128,9 @@ function googleTranslateElementInit() {
 <div style="float: left; width: 170px;"><img class="alignnone size-full wp-image-1918" title="pop_thumb" src="http://www.naturalearthdata.com/wp-content/uploads/2009/09/pop_thumb.png" alt="pop_thumb" width="150" height="97" /></div>
 <div style="float: left; width: 410px;"><em>City and town points, from Tokyo to Wasilla, Cairo to Kandahar</em>
 <div class="download-link-div">
-	<a class="download-link" rel="nofollow" title="Downloaded 22087 times (Shapefile, geoDB, or TIFF format)" onclick="if (window.urchinTracker) urchinTracker ('http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/10m-populated-places.zip');" href="http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/10m-populated-places.zip" onclick="javascript:pageTracker._trackPageview('/downloads/http///download/10m/cultural/10m-populated-places.zip');">Download populated places</a> <span class="download-link-span">(1.43 MB) version 1.4.0</span> 
+	<a class="download-link" rel="nofollow" title="Downloaded 26754 times (Shapefile, geoDB, or TIFF format)" onclick="if (window.urchinTracker) urchinTracker ('http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_populated_places.zip');" href="http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_populated_places.zip" onclick="javascript:pageTracker._trackPageview('/downloads/http///download/10m/cultural/ne_10m_populated_places.zip');">Download populated places</a> <span class="download-link-span">(1.51 MB) version 2.0.0</span> 
 </div> <div class="download-link-div">
-	<a class="download-link" rel="nofollow" title="Downloaded 2107 times (Shapefile, geoDB, or TIFF format)" onclick="if (window.urchinTracker) urchinTracker ('http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/10m-populated-places-simple.zip');" href="http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/10m-populated-places-simple.zip" onclick="javascript:pageTracker._trackPageview('/downloads/http///download/10m/cultural/10m-populated-places-simple.zip');">Download simple (less columns)</a> <span class="download-link-span">(666.36 KB) version 1.4.0</span> 
+	<a class="download-link" rel="nofollow" title="Downloaded 2515 times (Shapefile, geoDB, or TIFF format)" onclick="if (window.urchinTracker) urchinTracker ('http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_populated_places_simple.zip');" href="http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_populated_places_simple.zip" onclick="javascript:pageTracker._trackPageview('/downloads/http///download/10m/cultural/ne_10m_populated_places_simple.zip');">Download simple (less columns)</a> <span class="download-link-span">(719.87 KB) version 2.0.0</span> 
 </div>
 <span id="more-472"></span></div>
 </div>
@@ -142,13 +142,66 @@ function googleTranslateElementInit() {
 <p>Population estimates were derived from the LANDSCAN dataset maintained and distributed by the Oak Ridge National Laboratory. These data were converted from raster to vector and pixels with fewer than 200 persons per square kilometer were removed from the dataset as they were classified as rural. Once urban pixels were selected, these pixels were aggregated into contiguous units. Concurrently Thiessen polygons were created based on the selected city points. The Thiessen polygons were used to intersect the contiguous city boundaries to produce bounded areas for the cities. As a result, our estimates capture a metropolitan and micropolitan populations per city regardless of administrative units.</p>
 <p>Once intersected, the contiguous polygons were recalculated, using aerial interpolation assuming uniform population distribution within each pixel, to determine the population total. This process was conducted multiple times, for each scale level, to produce population estimates for each city at nested scales of 1:300 million, 1:110 million, 1:50 million, 1:20 million, and 1:10 million. </p>
 <div class="download-link-div">
-	<a class="download-link" rel="nofollow" title="Downloaded 393 times (Shapefile, geoDB, or TIFF format)" onclick="if (window.urchinTracker) urchinTracker ('http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/10m-urban-areas-landscan.zip');" href="http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/10m-urban-areas-landscan.zip" onclick="javascript:pageTracker._trackPageview('/downloads/http///download/10m/cultural/10m-urban-areas-landscan.zip');">Download landscan urban areas</a> <span class="download-link-span">(13.06 MB) version 1.1.0</span> 
+	<a class="download-link" rel="nofollow" title="Downloaded 481 times (Shapefile, geoDB, or TIFF format)" onclick="if (window.urchinTracker) urchinTracker ('http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_urban_areas_landscan.zip');" href="http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_urban_areas_landscan.zip" onclick="javascript:pageTracker._trackPageview('/downloads/http///download/10m/cultural/ne_10m_urban_areas_landscan.zip');">Download landscan urban areas</a> <span class="download-link-span">(13.01 MB) version 2.0.0</span> 
 </div>
+<p><strong>Population ranks</strong></p>
+<p>Are calculated as rank_max and rank_min using this general VB formula that can be pasted into ArcMap Field Calculator advanced area (set your output to x):</p>
+<blockquote><p>
+a = [pop_max]</p>
+<p>if( a > 10000000 ) then
+x = 14
+elseif( a > 5000000 ) then
+x = 13
+elseif( a > 1000000 ) then
+x = 12
+elseif( a > 500000 ) then
+x = 11
+elseif( a > 200000 ) then
+x = 10
+elseif( a > 100000 ) then
+x = 9
+elseif( a > 50000 ) then
+x = 8
+elseif( a > 20000 ) then
+x = 7
+elseif( a > 10000 ) then
+x = 6
+elseif( a > 5000 ) then
+x = 5
+elseif( a > 2000 ) then
+x = 4
+elseif( a > 1000 ) then
+x = 3
+elseif( a > 200 ) then
+x = 2
+elseif( a > 0 ) then
+x = 1
+else
+x = 0
+end if</p></blockquote>
 <p><strong>Issues</strong></p>
 <p>While we don&#8217;t want to show every admin-1 capital, for those countries where we show most admin-1 capitals, we should have a complete set. If you find we are missing one, please log it in the Cx tool at right.</p>
 <p><strong>Version History</strong></p>
-<p><strong><span style="color: #888888;">0.9.0<span style="font-weight: normal;"> on 2009.12.3 (Thursday, December 3rd, 2009)</span></span></strong>
-Initial release.</div>
+	<ul>
+					<li>
+									<a rel="nofollow" title="Download version 2.0.0 of ne_10m_populated_places.zip" href="http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_populated_places.zip" onclick="javascript:pageTracker._trackPageview('/downloads/http///download/10m/cultural/ne_10m_populated_places.zip');">2.0.0</a>								
+							</li>
+					<li>
+									1.4.0								
+							</li>
+					<li>
+									1.3.0								
+							</li>
+					<li>
+									1.1.0								
+							</li>
+					<li>
+									0.9.0								
+							</li>
+			</ul>
+
+<p><a href="https://github.com/nvkelso/natural-earth-vector/blob/master/CHANGELOG" onclick="javascript:pageTracker._trackPageview('/outbound/article/https://github.com/nvkelso/natural-earth-vector/blob/master/CHANGELOG');">The master changelog is available on Github »</a>
+</div>
 
 <div class="sociable">
 <div class="sociable_tagline">
