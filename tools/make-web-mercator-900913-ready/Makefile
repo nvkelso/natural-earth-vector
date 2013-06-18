@@ -8,7 +8,7 @@ zips: land_10m.zip land_50m.zip land_110m.zip roads_10m.zip roads_north_america_
 	  admin_0_countries_10m.zip admin_0_countries_50m.zip admin_0_countries_110m.zip admin_0_map_subunits_10m.zip \
 	  admin_0_map_subunits_50m.zip admin_0_map_units_10m.zip admin_0_map_units_50m.zip admin_0_map_units_110m.zip \
 	  admin_0_pacific_groupings_10m.zip admin_0_pacific_groupings_50m.zip admin_0_pacific_groupings_110m.zip \
-	  admin_0_scale_ranks_10m.zip admin_0_scale_ranks_50m.zip admin_0_scale_ranks_110m.zip \
+	  admin_0_scale_ranks_50m.zip admin_0_scale_ranks_110m.zip \
 	  admin_0_scale_ranks_with_minor_islands_10m.zip admin_0_sovereignty_10m.zip admin_0_sovereignty_50m.zip \
 	  admin_0_sovereignty_110m.zip admin_0_tiny_countries_50m.zip admin_0_tiny_countries_110m.zip \
 	  admin_1_states_provinces_lakes_shp_10m.zip admin_1_states_provinces_lines_shp_10m.zip \
@@ -37,69 +37,106 @@ zips: land_10m.zip land_50m.zip land_110m.zip roads_10m.zip roads_north_america_
 	  populated_places_simple_110m.zip railroads_10m.zip reefs_10m.zip rivers_europe_10m.zip \
 	  rivers_lake_centerlines_10m.zip rivers_lake_centerlines_50m.zip rivers_lake_centerlines_110m.zip \
 	  rivers_lake_centerlines_scale_ranks_10m.zip rivers_lake_centerlines_scale_ranks_50m.zip \
-	  rivers_north_america_10m.zip
-	mkdir zips
-	ln land_*m.zip zips/
-	ln admin_0_boundary_breakaway_disputed_areas_*m.zip zips/
-	ln admin_0_boundary_lines_land_*m.zip zips/
-	ln admin_0_boundary_lines_map_units_*m.zip zips/
-	ln admin_0_boundary_lines_maritime_indicator_*m.zip zips/
-	ln admin_0_boundary_map_units_*m.zip zips/
-	ln admin_0_breakaway_disputed_areas_*m.zip zips/
-	ln admin_0_countries_*m.zip zips/
-	ln admin_0_map_subunits_*m.zip zips/
-	ln admin_0_map_units_*m.zip zips/
-	ln admin_0_pacific_groupings_*m.zip zips/
-	ln admin_0_scale_ranks_*m.zip zips/
-	ln admin_0_sovereignty_*m.zip zips/
-	ln admin_0_tiny_countries_*m.zip zips/
-	ln admin_1_states_provinces_lakes_shp_*m.zip zips/
-	ln admin_1_states_provinces_lines_shp_*m.zip zips/
-	ln admin_1_states_provinces_shp_*m.zip zips/
-	ln antarctic_ice_shelves_lines_*m.zip zips/
-	ln antarctic_ice_shelves_polys_*m.zip zips/
-	ln bathymetry_A_10000_*m.zip zips/
-	ln bathymetry_B_9000_*m.zip zips/
-	ln bathymetry_C_8000_*m.zip zips/
-	ln bathymetry_D_7000_*m.zip zips/
-	ln bathymetry_E_6000_*m.zip zips/
-	ln bathymetry_F_5000_*m.zip zips/
-	ln bathymetry_G_4000_*m.zip zips/
-	ln bathymetry_H_3000_*m.zip zips/
-	ln bathymetry_I_2000_*m.zip zips/
-	ln bathymetry_J_1000_*m.zip zips/
-	ln bathymetry_K_200_*m.zip zips/
-	ln bathymetry_L_0_*m.zip zips/
-	ln coastline_*m.zip zips/
-	ln geographic_lines_*m.zip zips/
-	ln geography_marine_polys_*m.zip zips/
-	ln geography_regions_elevation_points_*m.zip zips/
-	ln geography_regions_points_*m.zip zips/
-	ln geography_regions_polys_*m.zip zips/
-	ln glaciated_areas_*m.zip zips/
-	ln graticules_1_*m.zip zips/
-	ln graticules_5_*m.zip zips/
-	ln graticules_10_*m.zip zips/
-	ln graticules_15_*m.zip zips/
-	ln graticules_20_*m.zip zips/
-	ln graticules_30_*m.zip zips/
-	ln wgs84_bounding_box_*m.zip zips/
-	ln lakes_*m.zip zips/
-	ln minor_islands_*m.zip zips/
-	ln ocean_*m.zip zips/
-	ln us_parks_area_*m.zip zips/
-	ln us_parks_line_*m.zip zips/
-	ln us_parks_point_*m.zip zips/
-	ln physical_geographic_lines_*m.zip zips/
-	ln playas_*m.zip zips/
-	ln populated_places_*m.zip zips/
-	ln railroads_*m.zip zips/
-	ln reefs_*m.zip zips/
-	ln rivers_europe_*m.zip zips/
-	ln rivers_lake_centerlines_*m.zip zips/
-	ln rivers_north_america_*m.zip zips/
-	ln roads_*m.zip zips/
-	ln urban_areas_*m.zip zips/
+	  rivers_north_america_10m.zip \
+	  admin_0_antarctic_claims_10m.zip \
+	  admin_0_antarctic_claim_limit_lines_10m.zip \
+	  parks_and_protected_lands_scale_rank_10m.zip \
+	  airports_10m.zip \
+	  ports_10m.zip \
+	  airports_50m.zip \
+	  ports_50m.zip \
+	  time_zones_10m.zip \
+	  land_scale_ranks_10m.zip \
+	  ocean_scale_ranks_10m.zip \
+	  admin_0_tiny_countries_scale_rank_50m.zip \
+	  admin_1_states_provinces_shp_scale_rank_50m.zip \
+	  admin_1_states_provinces_lakes_shp_50m.zip \
+	  admin_1_states_provinces_shp_scale_rank_110m.zip \
+	  land_ocean_label_points_10m.zip \
+	  minor_island_label_points_10m.zip \
+	  admin_0_label_points_10m.zip \
+	  land_ocean_seams_10m.zip \
+	  admin_0_seams_10m.zip \
+	  admin_1_seams_10m.zip
+	  
+	mkdir -p zips
+	ln -f land_*m.zip zips/
+	ln -f admin_0_boundary_breakaway_disputed_areas_*m.zip zips/
+	ln -f admin_0_boundary_lines_land_*m.zip zips/
+	ln -f admin_0_boundary_lines_map_units_*m.zip zips/
+	ln -f admin_0_boundary_lines_maritime_indicator_*m.zip zips/
+	ln -f admin_0_boundary_map_units_*m.zip zips/
+	ln -f admin_0_breakaway_disputed_areas_*m.zip zips/
+	ln -f admin_0_countries_*m.zip zips/
+	ln -f admin_0_map_subunits_*m.zip zips/
+	ln -f admin_0_map_units_*m.zip zips/
+	ln -f admin_0_pacific_groupings_*m.zip zips/
+	ln -f admin_0_scale_ranks_*m.zip zips/
+	ln -f admin_0_sovereignty_*m.zip zips/
+	ln -f admin_0_tiny_countries_*m.zip zips/
+	ln -f admin_1_states_provinces_lakes_shp_*m.zip zips/
+	ln -f admin_1_states_provinces_lines_shp_*m.zip zips/
+	ln -f admin_1_states_provinces_shp_*m.zip zips/
+	ln -f antarctic_ice_shelves_lines_*m.zip zips/
+	ln -f antarctic_ice_shelves_polys_*m.zip zips/
+	ln -f bathymetry_A_10000_*m.zip zips/
+	ln -f bathymetry_B_9000_*m.zip zips/
+	ln -f bathymetry_C_8000_*m.zip zips/
+	ln -f bathymetry_D_7000_*m.zip zips/
+	ln -f bathymetry_E_6000_*m.zip zips/
+	ln -f bathymetry_F_5000_*m.zip zips/
+	ln -f bathymetry_G_4000_*m.zip zips/
+	ln -f bathymetry_H_3000_*m.zip zips/
+	ln -f bathymetry_I_2000_*m.zip zips/
+	ln -f bathymetry_J_1000_*m.zip zips/
+	ln -f bathymetry_K_200_*m.zip zips/
+	ln -f bathymetry_L_0_*m.zip zips/
+	ln -f coastline_*m.zip zips/
+	ln -f geographic_lines_*m.zip zips/
+	ln -f geography_marine_polys_*m.zip zips/
+	ln -f geography_regions_elevation_points_*m.zip zips/
+	ln -f geography_regions_points_*m.zip zips/
+	ln -f geography_regions_polys_*m.zip zips/
+	ln -f glaciated_areas_*m.zip zips/
+	ln -f graticules_1_*m.zip zips/
+	ln -f graticules_5_*m.zip zips/
+	ln -f graticules_10_*m.zip zips/
+	ln -f graticules_15_*m.zip zips/
+	ln -f graticules_20_*m.zip zips/
+	ln -f graticules_30_*m.zip zips/
+	ln -f wgs84_bounding_box_*m.zip zips/
+	ln -f lakes_*m.zip zips/
+	ln -f minor_islands_*m.zip zips/
+	ln -f ocean_*m.zip zips/
+	ln -f us_parks_area_*m.zip zips/
+	ln -f us_parks_line_*m.zip zips/
+	ln -f us_parks_point_*m.zip zips/
+	ln -f physical_geographic_lines_*m.zip zips/
+	ln -f playas_*m.zip zips/
+	ln -f populated_places_*m.zip zips/
+	ln -f railroads_*m.zip zips/
+	ln -f reefs_*m.zip zips/
+	ln -f rivers_europe_*m.zip zips/
+	ln -f rivers_lake_centerlines_*m.zip zips/
+	ln -f rivers_north_america_*m.zip zips/
+	ln -f roads_*m.zip zips/
+	ln -f urban_areas_*m.zip zips/
+	ln -f admin_0_antarctic_claims_*m.zip zips/
+	ln -f admin_0_antarctic_claim_limit_lines_*m.zip zips/
+	ln -f parks_and_protected_lands_scale_ranks_*m.zip zips/
+	ln -f airports_*m.zip zips/
+	ln -f ports_*m.zip zips/
+	ln -f time_zones_*m.zip zips/
+	ln -f land_scale_ranks_*m.zip zips/
+	ln -f ocean_scale_ranks_*m.zip zips/
+	ln -f admin_0_tiny_countries_scale_rank_*m.zip zips/
+	ln -f admin_1_states_provinces_shp_scale_rank_*m.zip zips/
+	ln -f land_ocean_label_points_*m.zip zips/
+	ln -f minor_island_label_points_*m.zip zips/
+	ln -f admin_0_label_points_*m.zip zips/
+	ln -f land_ocean_seams_*m.zip zips/
+	ln -f admin_0_seams_*m.zip zips/
+	ln -f admin_1_seams_*m.zip zips/
 
 
 
@@ -112,11 +149,11 @@ land_50m.zip: ../../50m_physical/ne_50m_land.shp
 land_110m.zip: ../../110m_physical/ne_110m_land.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../110m_physical/ne_110m_land.shp $@ 1>/dev/null 2>&1
 
-admin_0_boundary_breakaway_disputed_areas_10m.zip: ../../10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_boundary_breakaway_disputed_areas.shp $@ 1>/dev/null 2>&1
+admin_0_boundary_breakaway_disputed_areas_10m.zip: ../../10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp $@ 1>/dev/null 2>&1
 
-admin_0_boundary_breakaway_disputed_areas_50m.zip: ../../50m_cultural/ne_50m_admin_0_boundary_breakaway_disputed_areas.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_admin_0_boundary_breakaway_disputed_areas.shp $@ 1>/dev/null 2>&1
+admin_0_boundary_breakaway_disputed_areas_50m.zip: ../../50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.shp $@ 1>/dev/null 2>&1
 
 admin_0_boundary_lines_land_10m.zip: ../../10m_cultural/ne_10m_admin_0_boundary_lines_land.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_boundary_lines_land.shp $@ 1>/dev/null 2>&1
@@ -139,14 +176,14 @@ admin_0_boundary_lines_maritime_indicator_50m.zip: ../../50m_cultural/ne_50m_adm
 admin_0_boundary_map_units_50m.zip: ../../50m_cultural/ne_50m_admin_0_boundary_map_units.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_admin_0_boundary_map_units.shp $@ 1>/dev/null 2>&1
 
-admin_0_breakaway_disputed_areas_10m.zip: ../../10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_breakaway_disputed_areas.shp $@ 1>/dev/null 2>&1
+admin_0_breakaway_disputed_areas_10m.zip: ../../10m_cultural/ne_10m_admin_0_disputed_areas.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_disputed_areas.shp $@ 1>/dev/null 2>&1
 
 admin_0_breakaway_disputed_areas_50m.zip: ../../50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.shp $@ 1>/dev/null 2>&1
 
-admin_0_breakaway_disputed_areas_scale_ranks_10m.zip: ../../10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_scale_ranks.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_breakaway_disputed_areas_scale_ranks.shp $@ 1>/dev/null 2>&1
+admin_0_breakaway_disputed_areas_scale_ranks_10m.zip: ../../10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.shp $@ 1>/dev/null 2>&1
 
 admin_0_countries_10m.zip: ../../10m_cultural/ne_10m_admin_0_countries.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_countries.shp $@ 1>/dev/null 2>&1
@@ -181,17 +218,14 @@ admin_0_pacific_groupings_50m.zip: ../../50m_cultural/ne_50m_admin_0_pacific_gro
 admin_0_pacific_groupings_110m.zip: ../../110m_cultural/ne_110m_admin_0_pacific_groupings.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../110m_cultural/ne_110m_admin_0_pacific_groupings.shp $@ 1>/dev/null 2>&1
 
-admin_0_scale_ranks_10m.zip: ../../10m_cultural/ne_10m_admin_0_scale_ranks.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_scale_ranks.shp $@ 1>/dev/null 2>&1
+admin_0_scale_ranks_50m.zip: ../../50m_cultural/ne_50m_admin_0_scale_rank.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_admin_0_scale_rank.shp $@ 1>/dev/null 2>&1
 
-admin_0_scale_ranks_50m.zip: ../../50m_cultural/ne_50m_admin_0_scale_ranks.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_admin_0_scale_ranks.shp $@ 1>/dev/null 2>&1
+admin_0_scale_ranks_110m.zip: ../../110m_cultural/ne_110m_admin_0_scale_rank.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../110m_cultural/ne_110m_admin_0_scale_rank.shp $@ 1>/dev/null 2>&1
 
-admin_0_scale_ranks_110m.zip: ../../110m_cultural/ne_110m_admin_0_scale_ranks.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../110m_cultural/ne_110m_admin_0_scale_ranks.shp $@ 1>/dev/null 2>&1
-
-admin_0_scale_ranks_with_minor_islands_10m.zip: ../../10m_cultural/ne_10m_admin_0_scale_ranks_with_minor_islands.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_scale_ranks_with_minor_islands.shp $@ 1>/dev/null 2>&1
+admin_0_scale_ranks_with_minor_islands_10m.zip: ../../10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp $@ 1>/dev/null 2>&1
 
 admin_0_sovereignty_10m.zip: ../../10m_cultural/ne_10m_admin_0_sovereignty.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_sovereignty.shp $@ 1>/dev/null 2>&1
@@ -214,11 +248,11 @@ admin_1_states_provinces_lakes_shp_10m.zip: ../../10m_cultural/ne_10m_admin_1_st
 admin_1_states_provinces_lines_shp_10m.zip: ../../10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_1_states_provinces_lines_shp.shp $@ 1>/dev/null 2>&1
 
-admin_1_states_provinces_lines_shp_50m.zip: ../../50m_cultural/ne_50m_admin_1_states_provinces_lines_shp.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_admin_1_states_provinces_lines_shp.shp $@ 1>/dev/null 2>&1
+admin_1_states_provinces_lines_shp_50m.zip: ../../50m_cultural/ne_50m_admin_1_states_provinces_lines.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_admin_1_states_provinces_lines.shp $@ 1>/dev/null 2>&1
 
-admin_1_states_provinces_lines_shp_110m.zip: ../../110m_cultural/ne_110m_admin_1_states_provinces_lines_shp.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../110m_cultural/ne_110m_admin_1_states_provinces_lines_shp.shp $@ 1>/dev/null 2>&1
+admin_1_states_provinces_lines_shp_110m.zip: ../../110m_cultural/ne_110m_admin_1_states_provinces_lines.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../110m_cultural/ne_110m_admin_1_states_provinces_lines.shp $@ 1>/dev/null 2>&1
 
 admin_1_states_provinces_shp_10m.zip: ../../10m_cultural/ne_10m_admin_1_states_provinces_shp.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_1_states_provinces_shp.shp $@ 1>/dev/null 2>&1
@@ -442,17 +476,17 @@ ocean_50m.zip: ../../50m_physical/ne_50m_ocean.shp
 ocean_110m.zip: ../../110m_physical/ne_110m_ocean.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../110m_physical/ne_110m_ocean.shp $@ 1>/dev/null 2>&1
 
-us_parks_area_10m.zip: ../../10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_area.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_area.shp $@ 1>/dev/null 2>&1
+us_parks_area_10m.zip: ../../10m_cultural/ne_10m_parks_and_protected_lands_area.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_parks_and_protected_lands_area.shp $@ 1>/dev/null 2>&1
 
-us_parks_line_10m.zip: ../../10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_line.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_line.shp $@ 1>/dev/null 2>&1
+us_parks_line_10m.zip: ../../10m_cultural/ne_10m_parks_and_protected_lands_line.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_parks_and_protected_lands_line.shp $@ 1>/dev/null 2>&1
 
-us_parks_point_10m.zip: ../../10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_point.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_parks_and_protected_areas/ne_10m_us_parks_point.shp $@ 1>/dev/null 2>&1
+us_parks_point_10m.zip: ../../10m_cultural/ne_10m_parks_and_protected_lands_point.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_parks_and_protected_lands_point.shp $@ 1>/dev/null 2>&1
 
-physical_geographic_lines_110m.zip: ../../110m_physical/ne_110m_physical_geographic_lines.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../110m_physical/ne_110m_physical_geographic_lines.shp $@ 1>/dev/null 2>&1
+physical_geographic_lines_110m.zip: ../../110m_physical/ne_110m_geographic_lines.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../110m_physical/ne_110m_geographic_lines.shp $@ 1>/dev/null 2>&1
 
 playas_10m.zip: ../../10m_physical/ne_10m_playas.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_physical/ne_10m_playas.shp $@ 1>/dev/null 2>&1
@@ -496,11 +530,11 @@ rivers_lake_centerlines_50m.zip: ../../50m_physical/ne_50m_rivers_lake_centerlin
 rivers_lake_centerlines_110m.zip: ../../110m_physical/ne_110m_rivers_lake_centerlines.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../110m_physical/ne_110m_rivers_lake_centerlines.shp $@ 1>/dev/null 2>&1
 
-rivers_lake_centerlines_scale_ranks_10m.zip: ../../10m_physical/ne_10m_rivers_lake_centerlines_scale_ranks.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_physical/ne_10m_rivers_lake_centerlines_scale_ranks.shp $@ 1>/dev/null 2>&1
+rivers_lake_centerlines_scale_ranks_10m.zip: ../../10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.shp $@ 1>/dev/null 2>&1
 
-rivers_lake_centerlines_scale_ranks_50m.zip: ../../50m_physical/ne_50m_rivers_lake_centerlines_scale_ranks.shp
-	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_physical/ne_50m_rivers_lake_centerlines_scale_ranks.shp $@ 1>/dev/null 2>&1
+rivers_lake_centerlines_scale_ranks_50m.zip: ../../50m_physical/ne_50m_rivers_lake_centerlines_scale_rank.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_physical/ne_50m_rivers_lake_centerlines_scale_rank.shp $@ 1>/dev/null 2>&1
 
 rivers_north_america_10m.zip: ../../10m_physical/ne_10m_rivers_north_america.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_physical/ne_10m_rivers_north_america.shp $@ 1>/dev/null 2>&1
@@ -519,6 +553,68 @@ urban_areas_50m.zip: ../../50m_cultural/ne_50m_urban_areas.shp
 
 urban_areas_landscan_10m.zip: ../../10m_cultural/ne_10m_urban_areas_landscan.shp
 	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_urban_areas_landscan.shp $@ 1>/dev/null 2>&1
+
+admin_0_antarctic_claims_10m.zip: ../../10m_cultural/ne_10m_admin_0_antarctic_claims.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_antarctic_claims.shp $@ 1>/dev/null 2>&1
+
+admin_0_antarctic_claim_limit_lines_10m.zip: ../../10m_cultural/ne_10m_admin_0_antarctic_claim_limit_lines.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_antarctic_claim_limit_lines.shp $@ 1>/dev/null 2>&1
+
+parks_and_protected_lands_scale_rank_10m.zip: ../../10m_cultural/ne_10m_parks_and_protected_lands_scale_rank.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_parks_and_protected_lands_scale_rank.shp $@ 1>/dev/null 2>&1
+
+airports_10m.zip: ../../10m_cultural/ne_10m_airports.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_airports.shp $@ 1>/dev/null 2>&1
+
+ports_10m.zip: ../../10m_cultural/ne_10m_ports.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_ports.shp $@ 1>/dev/null 2>&1
+
+airports_50m.zip: ../../50m_cultural/ne_50m_airports.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_airports.shp $@ 1>/dev/null 2>&1
+
+ports_50m.zip: ../../50m_cultural/ne_50m_ports.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_ports.shp $@ 1>/dev/null 2>&1
+
+time_zones_10m.zip: ../../10m_cultural/ne_10m_time_zones.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_time_zones.shp $@ 1>/dev/null 2>&1
+
+land_scale_ranks_10m.zip: ../../10m_physical/ne_10m_land_scale_rank.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_physical/ne_10m_land_scale_rank.shp $@ 1>/dev/null 2>&1
+
+ocean_scale_ranks_10m.zip: ../../10m_physical/ne_10m_ocean_scale_rank.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_physical/ne_10m_ocean_scale_rank.shp $@ 1>/dev/null 2>&1
+
+admin_0_tiny_countries_scale_rank_50m.zip: ../../50m_cultural/ne_50m_admin_0_tiny_countries_scale_rank.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_admin_0_tiny_countries_scale_rank.shp $@ 1>/dev/null 2>&1
+
+admin_1_states_provinces_shp_scale_rank_50m.zip: ../../50m_cultural/ne_50m_admin_1_states_provinces_shp_scale_rank.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_admin_1_states_provinces_shp_scale_rank.shp $@ 1>/dev/null 2>&1
+
+admin_1_states_provinces_lakes_shp_50m.zip: ../../50m_cultural/ne_50m_admin_1_states_provinces_lakes_shp.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../50m_cultural/ne_50m_admin_1_states_provinces_lakes_shp.shp $@ 1>/dev/null 2>&1
+
+admin_1_states_provinces_shp_scale_rank_110m.zip: ../../110m_cultural/ne_110m_admin_1_states_provinces_shp_scale_rank.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../110m_cultural/ne_110m_admin_1_states_provinces_shp_scale_rank.shp $@ 1>/dev/null 2>&1
+
+land_ocean_label_points_10m.zip: ../../10m_physical/ne_10m_land_ocean_label_points.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_physical/ne_10m_land_ocean_label_points.shp $@ 1>/dev/null 2>&1
+
+minor_island_label_points_10m.zip: ../../10m_physical/ne_10m_minor_islands_label_points.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_physical/ne_10m_minor_islands_label_points.shp $@ 1>/dev/null 2>&1
+
+admin_0_label_points_10m.zip: ../../10m_cultural/ne_10m_admin_0_label_points.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_label_points.shp $@ 1>/dev/null 2>&1
+
+land_ocean_seams_10m.zip: ../../10m_physical/ne_10m_land_ocean_seams.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_physical/ne_10m_land_ocean_seams.shp $@ 1>/dev/null 2>&1
+
+admin_0_seams_10m.zip: ../../10m_cultural/ne_10m_admin_0_seams.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_0_seams.shp $@ 1>/dev/null 2>&1
+
+admin_1_seams_10m.zip: ../../10m_cultural/ne_10m_admin_1_seams.shp
+	lockrun --lockfile=zip-it.lock --wait -- ./zip-it.sh ../../10m_cultural/ne_10m_admin_1_seams.shp $@ 1>/dev/null 2>&1
+
+
 
 live: zips
 	ls zips/*.zip | xargs -n1 -P4 python do-info.py
@@ -546,4 +642,20 @@ clean:
 		  physical_geographic_lines_*m.zip playas_*m.zip populated_places_*m.zip populated_places_simple_*m.zip \
 		  railroads_*m.zip reefs_*m.zip rivers_europe_*m.zip rivers_lake_centerlines_*m.zip \
 		  rivers_lake_centerlines_scale_ranks_*m.zip rivers_north_america_*m.zip roads_*m.zip roads_north_america_*m.zip \
-		  urban_areas_*m.zip urban_areas_landscan_*m.zip
+		  urban_areas_*m.zip urban_areas_landscan_*m.zip \
+		  admin_0_antarctic_claims_*m.zip \
+		  admin_0_antarctic_claim_limit_lines_*m.zip \
+		  parks_and_protected_lands_scale_ranks_*m.zip \
+		  airports_*m.zip \
+		  ports_*m.zip \
+		  time_zones_*m.zip \
+		  land_scale_ranks_*m.zip \
+		  ocean_scale_ranks_*m.zip \
+		  admin_0_tiny_countries_scale_rank_*m.zip \
+		  admin_1_states_provinces_shp_scale_rank_*m.zip \
+		  land_ocean_label_points_*m.zip \
+		  minor_island_label_points_*m.zip \
+		  admin_0_label_points_*m.zip \
+		  land_ocean_seams_*m.zip \
+		  admin_0_seams_*m.zip \
+		  admin_1_seams_*m.zip
