@@ -1,0 +1,178 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Mt. Kilimanjaro", "elevation": 5895.0, "comment": "Highest point in Africa", "name_alt": null, "lat_y": -3.075738214, "long_x": 37.353282097, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 37.353251647031612, -3.075714746279047 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Vinson Massif", "elevation": 4892.0, "comment": null, "name_alt": null, "lat_y": -78.529351495, "long_x": -85.633717414, "nation1": null, "nation2": null, "note": null, "region": "Antarctica", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -85.633729484894999, -78.529362492279134 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Mt. Everest", "elevation": 8848.0, "comment": "Worlds highest point", "name_alt": null, "lat_y": 27.980475165, "long_x": 86.880625847, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 86.880596034929596, 27.980480509130615 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "depression", "name": "Turpan Depression", "elevation": -154.0, "comment": null, "name_alt": null, "lat_y": 42.768683173, "long_x": 89.340098504, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 89.34011996654479, 42.768685221849474 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "depression", "name": null, "elevation": -416.0, "comment": "Worlds lowest point", "name_alt": null, "lat_y": 31.515387274, "long_x": 35.474742058, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 35.47472016487373, 31.515389797694517 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "pass", "name": "Khyber Pass", "elevation": 1070.0, "comment": null, "name_alt": null, "lat_y": 34.098395087, "long_x": 71.097788933, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 71.09782951165829, 34.09839078145032 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "K2", "elevation": 8611.0, "comment": null, "name_alt": null, "lat_y": 35.882391669, "long_x": 76.513194207, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 76.513209078095741, 35.882405972470139 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Muztag Feng", "elevation": 6973.0, "comment": null, "name_alt": "Ulugh Muztag", "lat_y": 36.416510321, "long_x": 87.413218621, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 87.413199374650361, 36.416503800555063 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Kailash", "elevation": 6638.0, "comment": null, "name_alt": null, "lat_y": 31.06659577, "long_x": 81.312510613, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 81.312536305884493, 31.066598981098316 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "depression", "name": null, "elevation": -28.0, "comment": "Lowest point in Europe", "name_alt": null, "lat_y": 44.257574774, "long_x": 49.009532097, "nation1": null, "nation2": null, "note": null, "region": "Europe", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 49.009533839000483, 44.257559156738566 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Gora Elbrus", "elevation": 5642.0, "comment": "Highest point in Europe", "name_alt": "Mount Elbrus", "lat_y": 43.355169989, "long_x": 42.439219597, "nation1": null, "nation2": null, "note": null, "region": "Europe", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 42.439197508117729, 43.355170925834429 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "depression", "name": "Death Valley", "elevation": -86.0, "comment": "Lowest point in N. America", "name_alt": null, "lat_y": 36.24225495, "long_x": -116.828236457, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -116.828225501354567, 36.242254535610769 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Mt. McKinley", "elevation": 6194.0, "comment": "Highest point in N. America", "name_alt": null, "lat_y": 63.069403387, "long_x": -151.007313606, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -151.007295564174512, 63.06941124467545 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Mt. Whitney", "elevation": 4421.0, "comment": null, "name_alt": null, "lat_y": 36.582709052, "long_x": -118.292225715, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -118.292218224559448, 36.582715141594875 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "depression", "name": null, "elevation": -16.0, "comment": "Lowest point in Australia", "name_alt": null, "lat_y": -28.448663019, "long_x": 137.284434441, "nation1": null, "nation2": null, "note": null, "region": "Oceania", "subregion": "Australia" }, "geometry": { "type": "Point", "coordinates": [ 137.284437652612297, -28.448653493871916 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Mt. Kosciuszko", "elevation": 2228.0, "comment": "Highest point in Australia", "name_alt": null, "lat_y": -36.455865167, "long_x": 148.263194207, "nation1": null, "nation2": null, "note": null, "region": "Oceania", "subregion": "Australia" }, "geometry": { "type": "Point", "coordinates": [ 148.263191525115332, -36.455879799517831 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Cerro Aconcagua", "elevation": 6959.0, "comment": "Highest point in S. America", "name_alt": null, "lat_y": -32.655694269, "long_x": -70.015797493, "nation1": null, "nation2": null, "note": null, "region": "South America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -70.01580098903159, -32.655678630528783 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "depression", "name": null, "elevation": -40.0, "comment": "Lowest point in S. America", "name_alt": null, "lat_y": -42.623955988, "long_x": -63.968800422, "nation1": null, "nation2": null, "note": null, "region": "South America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -63.968777935065432, -42.623996802557443 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Cero Raya", "elevation": 2070.0, "comment": null, "name_alt": null, "lat_y": 5.451666571, "long_x": -66.375599739, "nation1": null, "nation2": null, "note": null, "region": "South America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -66.375590858161303, 5.451674293245532 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "depression", "name": null, "elevation": -156.0, "comment": "Lowest point in Africa", "name_alt": null, "lat_y": 11.67182038, "long_x": 42.413340691, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 42.413346898575696, 11.67181564798851 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Mt. Takahe", "elevation": 3460.0, "comment": null, "name_alt": null, "lat_y": -76.272881769, "long_x": -112.099842903, "nation1": null, "nation2": null, "note": null, "region": "Antarctica", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -112.099866275074163, -76.272846628723769 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Mt. Sidley", "elevation": 4285.0, "comment": null, "name_alt": null, "lat_y": -77.031548761, "long_x": -126.066517707, "nation1": null, "nation2": null, "note": null, "region": "Antarctica", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -126.066506303285152, -77.031562018782566 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Mt. Fridtjof Nansen", "elevation": 4069.0, "comment": null, "name_alt": null, "lat_y": -85.3475888, "long_x": -167.554676887, "nation1": null, "nation2": null, "note": null, "region": "Antarctica", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -167.554674647806365, -85.347622325300975 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Gongga Shan", "elevation": 7556.0, "comment": null, "name_alt": null, "lat_y": 29.595770575, "long_x": 101.879161004, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 101.879119691219358, 29.59578008131124 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Dhaulagiri", "elevation": 8172.0, "comment": null, "name_alt": null, "lat_y": 28.696478583, "long_x": 83.4951278, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 83.495135582780591, 28.696461610290228 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Belukha", "elevation": 4506.0, "comment": null, "name_alt": null, "lat_y": 49.807074286, "long_x": 86.606333855, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 86.60633722431956, 49.807079151752731 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Nganglong Kangri", "elevation": 6720.0, "comment": null, "name_alt": null, "lat_y": 32.81659577, "long_x": 80.999888543, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 80.999905496735522, 32.816604463939392 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Geladandong", "elevation": 6621.0, "comment": null, "name_alt": "Geladaindong", "lat_y": 33.416632391, "long_x": 91.083384636, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 91.083420447535872, 33.416621346356507 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Mt. Blanc", "elevation": 4807.0, "comment": null, "name_alt": null, "lat_y": 45.833685614, "long_x": 6.865000847, "nation1": null, "nation2": null, "note": null, "region": "Europe", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 6.865042753153404, 45.833678898832034 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Mt. Washington", "elevation": 1917.0, "comment": null, "name_alt": null, "lat_y": 44.267279364, "long_x": -71.307423469, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -71.307442851430423, 44.267293526894235 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Mt. Katahdin", "elevation": 1606.0, "comment": null, "name_alt": null, "lat_y": 45.903387762, "long_x": -68.923634407, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -68.923612735880525, 45.903394761440708 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Mt. Shasta", "elevation": 4322.0, "comment": null, "name_alt": null, "lat_y": 41.409308173, "long_x": -122.194996711, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -122.195014000168456, 41.409306684135018 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Grand Teton", "elevation": 4199.0, "comment": null, "name_alt": null, "lat_y": 43.763373114, "long_x": -110.801808235, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -110.801802151867236, 43.763368207134157 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3, "featurecla": "mountain", "name": "Mt. Hood", "elevation": 3426.0, "comment": null, "name_alt": null, "lat_y": 45.384466864, "long_x": -121.696583625, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -121.696581934936063, 45.384484166461732 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Mt. Kenya", "elevation": 5199.0, "comment": null, "name_alt": null, "lat_y": -0.150079034, "long_x": 37.299937371, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 37.299934764851173, -0.150072011359029 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Mt. Stanley", "elevation": 4979.0, "comment": null, "name_alt": null, "lat_y": 0.380072333, "long_x": 29.872080925, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 29.872085245566154, 0.380107833717176 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Klyuchevskaya Sopka", "elevation": 4750.0, "comment": null, "name_alt": null, "lat_y": 56.055975653, "long_x": 160.643931511, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 160.643937049499783, 56.055979309611217 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Bogda Feng", "elevation": 5445.0, "comment": null, "name_alt": "Bogda Peak", "lat_y": 43.795111395, "long_x": 88.317393425, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 88.317405226537943, 43.795115986977969 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Pik Imeni Ismail Samani", "elevation": 7495.0, "comment": null, "name_alt": null, "lat_y": 38.932379462, "long_x": 72.021739129, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 72.021746453321668, 38.932373982656387 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Gora Manas", "elevation": 4482.0, "comment": null, "name_alt": null, "lat_y": 42.289984442, "long_x": 71.054209832, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 71.05420660805612, 42.290004637970284 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Shah Fuladi", "elevation": 5048.0, "comment": null, "name_alt": null, "lat_y": 34.642096259, "long_x": 67.62769616, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 67.627708313259149, 34.642101804958692 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "K?h-e Jang Qal'eh", "elevation": 4171.0, "comment": null, "name_alt": null, "lat_y": 33.117010809, "long_x": 64.188365105, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 64.188365496845961, 33.116996625133339 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Gora Munku-Sardyk", "elevation": 3491.0, "comment": null, "name_alt": null, "lat_y": 51.716376044, "long_x": 100.616587761, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 100.616559764555319, 51.716389015896603 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Wutai Shan", "elevation": 3058.0, "comment": null, "name_alt": null, "lat_y": 39.087591864, "long_x": 113.570201043, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 113.570219422915187, 39.087598814640835 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Kangt", "elevation": 7060.0, "comment": null, "name_alt": null, "lat_y": 27.874701239, "long_x": 92.531993035, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 92.532023979747777, 27.874694967895323 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Mt. Chamberlin", "elevation": 2749.0, "comment": null, "name_alt": null, "lat_y": 69.281073309, "long_x": -144.913624641000013, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -144.913620238300467, 69.281070368162432 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Gunung Kinabalu", "elevation": 4101.0, "comment": null, "name_alt": null, "lat_y": 6.083380438, "long_x": 116.549937371, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": "Malay Archipelago" }, "geometry": { "type": "Point", "coordinates": [ 116.549986871563846, 6.083398563929052 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Puncak Jaya", "elevation": 4884.0, "comment": null, "name_alt": "Carstensz Pyramid", "lat_y": -4.077691339, "long_x": 137.166270379, "nation1": null, "nation2": null, "note": null, "region": "Oceania", "subregion": "Melanesia" }, "geometry": { "type": "Point", "coordinates": [ 137.166251897112289, -4.077668215497425 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Chimborazo", "elevation": 6267.0, "comment": null, "name_alt": null, "lat_y": -1.469292902, "long_x": -78.81749427, "nation1": null, "nation2": null, "note": null, "region": "South America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -78.817489230743618, -1.469260929551098 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Pico Bolvar", "elevation": 4980.0, "comment": null, "name_alt": null, "lat_y": 8.55286286, "long_x": -71.052723762, "nation1": null, "nation2": null, "note": null, "region": "South America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -71.052733564286541, 8.552858823586945 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4, "featurecla": "mountain", "name": "Cerro Champaqu", "elevation": 2770.0, "comment": null, "name_alt": null, "lat_y": -31.991631769, "long_x": -64.916005012, "nation1": null, "nation2": null, "note": null, "region": "South America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -64.916000816894041, -31.991641097917707 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Jebel Toubkal", "elevation": 4165.0, "comment": null, "name_alt": null, "lat_y": 31.062079169, "long_x": -7.916127082, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -7.91613382509621, 31.062075124428461 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Thabana Ntlenyana", "elevation": 3482.0, "comment": null, "name_alt": null, "lat_y": -29.466607355, "long_x": 29.266734246, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 29.266696283353582, -29.466602027744443 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Mt. Batu", "elevation": 4307.0, "comment": null, "name_alt": null, "lat_y": 6.666693427, "long_x": 39.41675866, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 39.416776553724702, 6.666693333298667 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Argun", "elevation": 3418.0, "comment": null, "name_alt": null, "lat_y": 6.109808661, "long_x": 36.747325066, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 36.747297202735325, 6.109814655554828 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Kinyeti", "elevation": 3187.0, "comment": null, "name_alt": null, "lat_y": 3.95508454, "long_x": 32.90125573, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 32.901291984963962, 3.955085567071237 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Muleta", "elevation": 3405.0, "comment": null, "name_alt": null, "lat_y": 9.268866278, "long_x": 41.733531121, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 41.733556650774943, 9.268880316323958 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Ras Dejen", "elevation": 4533.0, "comment": null, "name_alt": null, "lat_y": 13.236761786, "long_x": 38.372325066, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 38.372331145071598, 13.236746923139563 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Mt. Elgon", "elevation": 4321.0, "comment": null, "name_alt": null, "lat_y": 1.123114325, "long_x": 34.5341903, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 34.534161893317702, 1.123151291741095 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "depression", "name": "Qattara Depression", "elevation": -133.0, "comment": null, "name_alt": null, "lat_y": 30.043585516, "long_x": 27.496226433, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 27.496252662343352, 30.043601500049618 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "depression", "name": "Er Richat Depression", "elevation": 485.0, "comment": null, "name_alt": null, "lat_y": 21.205511786, "long_x": -11.373036262, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -11.373046977682492, 21.205520447091686 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Talo", "elevation": 4413.0, "comment": null, "name_alt": null, "lat_y": 10.656683661, "long_x": 37.882212761, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 37.882219744785544, 10.656694524534643 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Lesatima", "elevation": 4001.0, "comment": null, "name_alt": null, "lat_y": -0.324761652, "long_x": 36.623667839, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 36.623618192707625, -0.324805975232238 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Otgon Tenger", "elevation": 4000.0, "comment": null, "name_alt": null, "lat_y": 47.599982001, "long_x": 97.550181511, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 97.550192773940836, 47.599962187369108 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Gora Korolenko", "elevation": 1647.0, "comment": null, "name_alt": null, "lat_y": 58.288275458, "long_x": 115.007090691, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 115.007109397678306, 58.288260226720915 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Magen Gangri", "elevation": 6282.0, "comment": null, "name_alt": "Mt. Amnyemaqen", "lat_y": 34.800116278, "long_x": 99.466563347, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 99.466611555708795, 34.800113655784394 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Taibai Shan", "elevation": 3767.0, "comment": null, "name_alt": null, "lat_y": 33.950079657, "long_x": 107.750132683, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 107.750116250835191, 33.950072909202888 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Nanda Devi", "elevation": 7817.0, "comment": null, "name_alt": null, "lat_y": 30.542486884, "long_x": 79.970957879, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 79.97097045380761, 30.542477872633519 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Daba Shan", "elevation": 2708.0, "comment": null, "name_alt": null, "lat_y": 32.249884345, "long_x": 109.000010613, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 108.999993222192671, 32.24987024130764 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Mazong Shan", "elevation": 2584.0, "comment": null, "name_alt": null, "lat_y": 41.523810126, "long_x": 97.119395379, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 97.119376209291858, 41.523816806090757 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Gora Burun-Shibertuy", "elevation": 2519.0, "comment": null, "name_alt": null, "lat_y": 49.700079657, "long_x": 109.98316491, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 109.983124216338268, 49.700081863195145 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Skalistyy Golets", "elevation": 2467.0, "comment": null, "name_alt": null, "lat_y": 56.401495673, "long_x": 119.098033074, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 119.098049140860468, 56.401488862771501 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Inyaptuk Golets", "elevation": 2641.0, "comment": null, "name_alt": null, "lat_y": 56.364081122, "long_x": 111.631480339, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 111.6315044904172, 56.364086262090368 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Grandiozny Pk.", "elevation": 2891.0, "comment": null, "name_alt": null, "lat_y": 53.925665595, "long_x": 96.038584832, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 96.038578380970222, 53.925687125460335 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Wheeler Pk.", "elevation": 3982.0, "comment": null, "name_alt": null, "lat_y": 38.986273505, "long_x": -114.313404914, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -114.313405500265887, 38.98625634692057 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Borah Pk.", "elevation": 3859.0, "comment": null, "name_alt": null, "lat_y": 44.140082098, "long_x": -113.78221595, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -113.782215865754438, 44.140100449631937 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Sacajawea Pk.", "elevation": 2999.0, "comment": null, "name_alt": null, "lat_y": 45.253668524, "long_x": -117.296681282, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -117.296687016149164, 45.253655847232579 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Trapper Pk.", "elevation": 3096.0, "comment": null, "name_alt": null, "lat_y": 45.906378485, "long_x": -114.313832161, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -114.313809416039987, 45.906383738169012 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Kings Pk.", "elevation": 4123.0, "comment": null, "name_alt": null, "lat_y": 40.782110907, "long_x": -110.372547981, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -110.372560858737188, 40.782106270121353 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Mt. Baker", "elevation": 3286.0, "comment": null, "name_alt": null, "lat_y": 48.795904852, "long_x": -121.823231575, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -121.823249921692039, 48.795916402884991 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Mt. Elbert", "elevation": 4402.0, "comment": null, "name_alt": null, "lat_y": 39.12506745, "long_x": -106.44640052, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -106.446418751385522, 39.12508219847679 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Uncompahgre Pk.", "elevation": 4361.0, "comment": null, "name_alt": null, "lat_y": 38.073004462, "long_x": -107.477040168, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -107.477050240564608, 38.073002781693297 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Mt. Mitchell", "elevation": 2037.0, "comment": null, "name_alt": null, "lat_y": 35.764715887, "long_x": -82.268055793, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -82.26806090567662, 35.764704915899053 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Clingmans Dome", "elevation": 2025.0, "comment": null, "name_alt": null, "lat_y": 35.586920477, "long_x": -83.497425911, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -83.497418955710117, 35.58694158372014 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Spruce Knob", "elevation": 1482.0, "comment": null, "name_alt": null, "lat_y": 38.714972235, "long_x": -79.535206672, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -79.535207169731819, 38.714986513038824 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5, "featurecla": "mountain", "name": "Mt. Rogers", "elevation": 1746.0, "comment": null, "name_alt": null, "lat_y": 36.677008368, "long_x": -81.562001106, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -81.562016132559748, 36.677029474845902 ] } }
+
+]
+}

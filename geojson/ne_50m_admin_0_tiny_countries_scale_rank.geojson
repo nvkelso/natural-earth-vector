@@ -1,0 +1,158 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "VGB", "sr_gu_a3": "VGB", "sr_su_a3": "VGB", "sr_subunit": "British Virgin Islands", "sr_label_i": 4, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -64.39934961543895, 18.4900011639063 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "TCA", "sr_gu_a3": "TCA", "sr_su_a3": "TCA", "sr_subunit": "Turks and Caicos Islands", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -71.953904310573876, 21.912993441281742 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "NL1", "sr_adm0_a3": "CUW", "sr_gu_a3": "CUW", "sr_su_a3": "CUW", "sr_subunit": "Curaçao", "sr_label_i": 4, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -68.852705036659131, 12.121956520187553 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "NL1", "sr_adm0_a3": "ABW", "sr_gu_a3": "ABW", "sr_su_a3": "ABW", "sr_subunit": "Aruba", "sr_label_i": 4, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -69.975794086596807, 12.513677198447681 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "CYM", "sr_gu_a3": "CYM", "sr_su_a3": "CYM", "sr_subunit": "Cayman Islands", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -81.266036294947753, 19.325871895324099 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "NZL", "sr_adm0_a3": "COK", "sr_gu_a3": "COK", "sr_su_a3": "COK", "sr_subunit": "Cook Islands", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -159.78922694470387, -21.220086945691605 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "WSM", "sr_adm0_a3": "WSM", "sr_gu_a3": "WSM", "sr_su_a3": "WSM", "sr_subunit": "Samoa", "sr_label_i": 2, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -172.413730266883363, -13.637369985140253 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "USA", "sr_adm0_a3": "ASM", "sr_gu_a3": "ASM", "sr_su_a3": "ASM", "sr_subunit": "American Samoa", "sr_label_i": 3, "sr_label_o": 5 }, "geometry": { "type": "Point", "coordinates": [ -170.72829845387173, -14.310235459814862 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "NZL", "sr_adm0_a3": "NIU", "sr_gu_a3": "NIU", "sr_su_a3": "NIU", "sr_subunit": "Niue", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -169.869891764277696, -19.054762203887947 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "NZL", "sr_adm0_a3": "TKL", "sr_gu_a3": "TKL", "sr_su_a3": "TKL", "sr_subunit": "Tokelau", "sr_label_i": 4, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -172.485089426760197, -8.564862441025753 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "FR1", "sr_adm0_a3": "WLF", "sr_gu_a3": "WLF", "sr_su_a3": "WLF", "sr_subunit": "Wallis and Futuna", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -176.164162151348592, -13.279760063789581 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "TON", "sr_adm0_a3": "TON", "sr_gu_a3": "TON", "sr_su_a3": "TON", "sr_subunit": "Tonga", "sr_label_i": 3, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -175.235332954667541, -21.158187998515473 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "FR1", "sr_adm0_a3": "PYF", "sr_gu_a3": "PYF", "sr_su_a3": "PYF", "sr_subunit": "French Polynesia", "sr_label_i": 2, "sr_label_o": 5 }, "geometry": { "type": "Point", "coordinates": [ -149.475495978778554, -17.625004983512099 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "GB1", "sr_adm0_a3": "PCN", "sr_gu_a3": "PCN", "sr_su_a3": "PCN", "sr_subunit": "Pitcairn Islands", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -128.317800120960328, -24.364139777771015 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "ATG", "sr_adm0_a3": "ATG", "sr_gu_a3": "ATG", "sr_su_a3": "ATG", "sr_subunit": "Antigua and Barbuda", "sr_label_i": 4, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -61.78580425747009, 17.072942158120441 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "KNA", "sr_adm0_a3": "KNA", "sr_gu_a3": "KNA", "sr_su_a3": "KNA", "sr_subunit": "Saint Kitts and Nevis", "sr_label_i": 4, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -62.578065969439649, 17.147172041872864 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny GeoUnit", "sr_sov_a3": "FR1", "sr_adm0_a3": "MAF", "sr_gu_a3": "MAF", "sr_su_a3": "MAF", "sr_subunit": "Saint Martin", "sr_label_i": 4, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -63.060390303797817, 18.071158607446876 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "AIA", "sr_gu_a3": "AIA", "sr_su_a3": "AIA", "sr_subunit": "Anguilla", "sr_label_i": 4, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -63.052636175039652, 18.228321050566194 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4.0, "featurecla": "Admin-0 Tiny GeoUnit", "sr_sov_a3": "FR1", "sr_adm0_a3": "GLP", "sr_gu_a3": "GLP", "sr_su_a3": "GLP", "sr_subunit": "Guadeloupe", "sr_label_i": 2, "sr_label_o": 5 }, "geometry": { "type": "Point", "coordinates": [ -61.66602372907829, 16.179994615132387 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "DMA", "sr_adm0_a3": "DMA", "sr_gu_a3": "DMA", "sr_su_a3": "DMA", "sr_subunit": "Dominica", "sr_label_i": 4, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -61.35367574406672, 15.431584086663634 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4.0, "featurecla": "Admin-0 Tiny GeoUnit", "sr_sov_a3": "FR1", "sr_adm0_a3": "MTQ", "sr_gu_a3": "MTQ", "sr_su_a3": "MTQ", "sr_subunit": "Martinique", "sr_label_i": 3, "sr_label_o": 5 }, "geometry": { "type": "Point", "coordinates": [ -61.029686813196008, 14.684815740954434 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "LCA", "sr_adm0_a3": "LCA", "sr_gu_a3": "LCA", "sr_su_a3": "LCA", "sr_subunit": "Saint Lucia", "sr_label_i": 4, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -60.977964049176308, 13.87809676253363 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "VCT", "sr_adm0_a3": "VCT", "sr_gu_a3": "VCT", "sr_su_a3": "VCT", "sr_subunit": "Saint Vincent and the Grenadines", "sr_label_i": 4, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -61.201710984935687, 13.231854152880999 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GRD", "sr_adm0_a3": "GRD", "sr_gu_a3": "GRD", "sr_su_a3": "GRD", "sr_subunit": "Grenada", "sr_label_i": 4, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -61.676858345532594, 12.108370660575304 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "BRB", "sr_adm0_a3": "BRB", "sr_gu_a3": "BRB", "sr_su_a3": "BRB", "sr_subunit": "Barbados", "sr_label_i": 3, "sr_label_o": 5 }, "geometry": { "type": "Point", "coordinates": [ -59.554305983838844, 13.174672374462602 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "TTO", "sr_adm0_a3": "TTO", "sr_gu_a3": "TTO", "sr_su_a3": "TTO", "sr_subunit": "Trinidad and Tobago", "sr_label_i": 2, "sr_label_o": 5 }, "geometry": { "type": "Point", "coordinates": [ -61.255188941565905, 10.43680324164859 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "STP", "sr_adm0_a3": "STP", "sr_gu_a3": "STP", "sr_su_a3": "STP", "sr_subunit": "Sao Tome and Principe", "sr_label_i": 3, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ 6.617198520543866, 0.246806952308191 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "BAC", "sr_gu_a3": "SHN", "sr_su_a3": "BAC", "sr_subunit": "Ascension", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -14.362068334482444, -7.939246540570252 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "SHN", "sr_gu_a3": "SHN", "sr_su_a3": "SHN", "sr_subunit": "Saint Helena", "sr_label_i": 2, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -5.716296101395358, -15.963221612123107 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "MLT", "sr_adm0_a3": "MLT", "sr_gu_a3": "MLT", "sr_su_a3": "MLT", "sr_subunit": "Malta", "sr_label_i": 3, "sr_label_o": 5 }, "geometry": { "type": "Point", "coordinates": [ 14.438179478988388, 35.882081031796645 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "BHR", "sr_adm0_a3": "BHR", "sr_gu_a3": "BHR", "sr_su_a3": "BHR", "sr_subunit": "Bahrain", "sr_label_i": 2, "sr_label_o": 2 }, "geometry": { "type": "Point", "coordinates": [ 50.553638136605002, 26.06944265390905 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "MDV", "sr_adm0_a3": "MDV", "sr_gu_a3": "MDV", "sr_su_a3": "MDV", "sr_subunit": "Maldives", "sr_label_i": 2, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ 73.50223056083513, 4.186658727806048 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "IOT", "sr_gu_a3": "IOT", "sr_su_a3": "IOT", "sr_subunit": "British Indian Ocean Territory", "sr_label_i": 2, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 72.478729494182573, -7.340705873210993 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "SGP", "sr_adm0_a3": "SGP", "sr_gu_a3": "SGP", "sr_su_a3": "SGP", "sr_subunit": "Singapore", "sr_label_i": 3, "sr_label_o": 3 }, "geometry": { "type": "Point", "coordinates": [ 103.814819829003227, 1.359363931813562 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "BRN", "sr_adm0_a3": "BRN", "sr_gu_a3": "BRN", "sr_su_a3": "BRN", "sr_subunit": "Brunei", "sr_label_i": 2, "sr_label_o": 2 }, "geometry": { "type": "Point", "coordinates": [ 114.567454603389251, 4.434669496170784 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "PLW", "sr_adm0_a3": "PLW", "sr_gu_a3": "PLW", "sr_su_a3": "PLW", "sr_subunit": "Palau", "sr_label_i": 2, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 134.579241336207929, 7.507494163314107 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "USA", "sr_adm0_a3": "MNP", "sr_gu_a3": "MNP", "sr_su_a3": "MNP", "sr_subunit": "Northern Mariana Islands", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 145.739263327247045, 15.17463695328189 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "USA", "sr_adm0_a3": "GUM", "sr_gu_a3": "GUM", "sr_su_a3": "GUM", "sr_subunit": "Guam", "sr_label_i": 2, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 144.77003842181864, 13.459684857600507 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "FSM", "sr_adm0_a3": "FSM", "sr_gu_a3": "FSM", "sr_su_a3": "FSM", "sr_subunit": "Federated States of Micronesia", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 158.242015193460702, 6.885941535379288 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "MHL", "sr_adm0_a3": "MHL", "sr_gu_a3": "MHL", "sr_su_a3": "MHL", "sr_subunit": "Marshall Islands", "sr_label_i": 2, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 168.728966006411838, 7.313460144816133 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "KIR", "sr_adm0_a3": "KIR", "sr_gu_a3": "KIR", "sr_su_a3": "KIR", "sr_subunit": "Kiribati", "sr_label_i": 2, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 173.135158383166186, 1.364258124187756 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "NRU", "sr_adm0_a3": "NRU", "sr_gu_a3": "NRU", "sr_su_a3": "NRU", "sr_subunit": "Nauru", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 166.93748256244703, -0.523068535976108 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "TUV", "sr_adm0_a3": "TUV", "sr_gu_a3": "TUV", "sr_su_a3": "TUV", "sr_subunit": "Tuvalu", "sr_label_i": 5, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 179.203974226233527, -8.499723713165849 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 1.0, "featurecla": "Admin-0 Tiny Countries Pacific", "sr_sov_a3": "VUT", "sr_adm0_a3": "VUT", "sr_gu_a3": "VUT", "sr_su_a3": "VUT", "sr_subunit": "Vanuatu", "sr_label_i": 2, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ 166.927066439598889, -15.367957152169708 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "LBN", "sr_adm0_a3": "LBN", "sr_gu_a3": "LBN", "sr_su_a3": "LBN", "sr_subunit": "Lebanon", "sr_label_i": 4, "sr_label_o": 5 }, "geometry": { "type": "Point", "coordinates": [ 35.808633535679405, 33.874485871955017 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny countries", "sr_sov_a3": "ISR", "sr_adm0_a3": "PSX", "sr_gu_a3": "WEB", "sr_su_a3": "WEB", "sr_subunit": "West Bank", "sr_label_i": 6, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 35.256649385783703, 32.101110747842938 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "MUS", "sr_adm0_a3": "MUS", "sr_gu_a3": "MUS", "sr_su_a3": "MUS", "sr_subunit": "Mauritius", "sr_label_i": 2, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ 57.585659958168492, -20.302274672122962 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 1.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "FR1", "sr_adm0_a3": "ATF", "sr_gu_a3": "ATF", "sr_su_a3": "ATF", "sr_subunit": "French Southern and Antarctic Lands", "sr_label_i": 2, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 69.225139990869252, -49.338781961635448 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "COM", "sr_adm0_a3": "COM", "sr_gu_a3": "COM", "sr_su_a3": "COM", "sr_subunit": "Comoros", "sr_label_i": 2, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 43.337943198143535, -11.715555516231973 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "SYC", "sr_adm0_a3": "SYC", "sr_gu_a3": "SYC", "sr_su_a3": "SYC", "sr_subunit": "Seychelles", "sr_label_i": 2, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 46.441629404244452, -9.402058190564674 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "DN1", "sr_adm0_a3": "FRO", "sr_gu_a3": "FRO", "sr_su_a3": "FRO", "sr_subunit": "Faroe Islands", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -6.942567803221323, 62.191617760358326 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "FI1", "sr_adm0_a3": "ALD", "sr_gu_a3": "ALD", "sr_su_a3": "ALD", "sr_subunit": "Aland", "sr_label_i": 5, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 19.996921025630343, 60.234062852565216 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny GeoUnit", "sr_sov_a3": "NOR", "sr_adm0_a3": "NJM", "sr_gu_a3": "NJM", "sr_su_a3": "NJM", "sr_subunit": "Jan Mayen", "sr_label_i": 2, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -8.420617438175157, 71.028248806432543 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "FR1", "sr_adm0_a3": "SPM", "sr_gu_a3": "SPM", "sr_su_a3": "SPM", "sr_subunit": "Saint Pierre and Miquelon", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -56.315703042343273, 46.857465586140222 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "BMU", "sr_gu_a3": "BMU", "sr_su_a3": "BMU", "sr_subunit": "Bermuda", "sr_label_i": 2, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -64.747977986307035, 32.307221641280876 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny GeoUnit", "sr_sov_a3": "PRT", "sr_adm0_a3": "PAZ", "sr_gu_a3": "PAZ", "sr_su_a3": "PAZ", "sr_subunit": "Azores", "sr_label_i": 2, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -28.423474244011175, 38.482330117709921 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny GeoSubunit", "sr_sov_a3": "ESP", "sr_adm0_a3": "ESC", "sr_gu_a3": "ESP", "sr_su_a3": "ESC", "sr_subunit": "Canary Islands", "sr_label_i": 2, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -16.592772263568634, 28.228989968662177 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny GeoUnit", "sr_sov_a3": "PRT", "sr_adm0_a3": "PMD", "sr_gu_a3": "PMD", "sr_su_a3": "PMD", "sr_subunit": "Madeira", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -16.959751345358598, 32.745365140496688 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "LUX", "sr_adm0_a3": "LUX", "sr_gu_a3": "LUX", "sr_su_a3": "LUX", "sr_subunit": "Luxembourg", "sr_label_i": 5, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 6.090255806388654, 49.763919280424773 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "GGY", "sr_gu_a3": "GGY", "sr_su_a3": "GGY", "sr_subunit": "Guernsey", "sr_label_i": 5, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -2.569138549604133, 49.45956768257895 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "GIB", "sr_gu_a3": "GIB", "sr_su_a3": "GIB", "sr_subunit": "Gibraltar", "sr_label_i": 5, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -5.369102999177471, 36.127815514325277 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "JEY", "sr_gu_a3": "JEY", "sr_su_a3": "JEY", "sr_subunit": "Jersey", "sr_label_i": 6, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -2.132591982350618, 49.229760444673957 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "IMN", "sr_gu_a3": "IMN", "sr_su_a3": "IMN", "sr_subunit": "Isle of Man", "sr_label_i": 5, "sr_label_o": 5 }, "geometry": { "type": "Point", "coordinates": [ -4.530992285637012, 54.20731507606871 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "LIE", "sr_adm0_a3": "LIE", "sr_gu_a3": "LIE", "sr_su_a3": "LIE", "sr_subunit": "Liechtenstein", "sr_label_i": 6, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 9.53913850986504, 47.126776082995036 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "SMR", "sr_adm0_a3": "SMR", "sr_gu_a3": "SMR", "sr_su_a3": "SMR", "sr_subunit": "San Marino", "sr_label_i": 5, "sr_label_o": 5 }, "geometry": { "type": "Point", "coordinates": [ 12.458793865120413, 43.940942768607897 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "VAT", "sr_adm0_a3": "VAT", "sr_gu_a3": "VAT", "sr_su_a3": "VAT", "sr_subunit": "Vatican", "sr_label_i": 5, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 12.450446956181111, 41.900703886235135 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "MCO", "sr_adm0_a3": "MCO", "sr_gu_a3": "MCO", "sr_su_a3": "MCO", "sr_subunit": "Monaco", "sr_label_i": 5, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 7.397134554240836, 43.750270127450449 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 4.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "AND", "sr_adm0_a3": "AND", "sr_gu_a3": "AND", "sr_su_a3": "AND", "sr_subunit": "Andorra", "sr_label_i": 5, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 1.547698163518419, 42.536812706414025 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "USA", "sr_adm0_a3": "VIR", "sr_gu_a3": "VIR", "sr_su_a3": "VIR", "sr_subunit": "United States Virgin Islands", "sr_label_i": 3, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -64.912388219766626, 18.348536935773211 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "ISR", "sr_adm0_a3": "PSX", "sr_gu_a3": "GAZ", "sr_su_a3": "GAZ", "sr_subunit": "Gaza", "sr_label_i": 6, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 34.376640221530408, 31.426755899148986 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny GeoUnit", "sr_sov_a3": "FR1", "sr_adm0_a3": "BLM", "sr_gu_a3": "BLM", "sr_su_a3": "BLM", "sr_subunit": "Saint Barthelemy", "sr_label_i": 4, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -62.843918620814861, 17.900259910355032 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 6.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "NL1", "sr_adm0_a3": "SXM", "sr_gu_a3": "SXM", "sr_su_a3": "SXM", "sr_subunit": "Sint Maarten", "sr_label_i": 4, "sr_label_o": 4 }, "geometry": { "type": "Point", "coordinates": [ -63.081062157159693, 18.008024861341028 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2.0, "featurecla": "Admin-0 Tiny Countries", "sr_sov_a3": "GB1", "sr_adm0_a3": "SGS", "sr_gu_a3": "SGS", "sr_su_a3": "SGS", "sr_subunit": "South Georgia and the Islands", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -36.792143407672654, -54.274478863695265 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5.0, "featurecla": "Admin-0 Tiny GeoUnit", "sr_sov_a3": "NL1", "sr_adm0_a3": "NLD", "sr_gu_a3": "NLY", "sr_su_a3": "NLY", "sr_subunit": "Caribbean Netherlands", "sr_label_i": 5, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ -68.252057108975222, 12.182538157764933 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 3.0, "featurecla": "Admin-0 map unit", "sr_sov_a3": "CH1", "sr_adm0_a3": "HKG", "sr_gu_a3": "HKG", "sr_su_a3": "HKG", "sr_subunit": "Hong Kong S.A.R.", "sr_label_i": 3, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 114.107921572821567, 22.437011833699916 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 5.0, "featurecla": "Admin-0 map unit", "sr_sov_a3": "CH1", "sr_adm0_a3": "MAC", "sr_gu_a3": "MAC", "sr_su_a3": "MAC", "sr_subunit": "Macao S.A.R", "sr_label_i": 5, "sr_label_o": 6 }, "geometry": { "type": "Point", "coordinates": [ 113.549639007252409, 22.154250035290829 ] } }
+
+]
+}

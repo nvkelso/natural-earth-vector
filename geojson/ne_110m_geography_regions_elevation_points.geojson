@@ -1,0 +1,44 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Mt. Kilimanjaro", "elevation": 5895.0, "comment": "Highest point in Africa", "name_alt": null, "lat_y": -3.075738214, "long_x": 37.353282097, "nation1": null, "nation2": null, "note": null, "region": "Africa", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 37.353251647031612, -3.075714746279047 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Vinson Massif", "elevation": 4892.0, "comment": null, "name_alt": null, "lat_y": -78.529351495, "long_x": -85.633717414, "nation1": null, "nation2": null, "note": null, "region": "Antarctica", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -85.633729484894999, -78.529362492279134 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Mt. Everest", "elevation": 8848.0, "comment": "Worlds highest point", "name_alt": null, "lat_y": 27.980475165, "long_x": 86.880625847, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 86.880596034929596, 27.980480509130615 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "depression", "name": "Turpan Depression", "elevation": -154.0, "comment": null, "name_alt": null, "lat_y": 42.768683173, "long_x": 89.340098504, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 89.34011996654479, 42.768685221849474 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "depression", "name": null, "elevation": -416.0, "comment": "Worlds lowest point", "name_alt": null, "lat_y": 31.515387274, "long_x": 35.474742058, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 35.47472016487373, 31.515389797694517 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "pass", "name": "Khyber Pass", "elevation": 1070.0, "comment": null, "name_alt": null, "lat_y": 34.098395087, "long_x": 71.097788933, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 71.09782951165829, 34.09839078145032 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "K2", "elevation": 8611.0, "comment": null, "name_alt": null, "lat_y": 35.882391669, "long_x": 76.513194207, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 76.513209078095741, 35.882405972470139 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Muztag Feng", "elevation": 6973.0, "comment": null, "name_alt": "Ulugh Muztag", "lat_y": 36.416510321, "long_x": 87.413218621, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 87.413199374650361, 36.416503800555063 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Kailash", "elevation": 6638.0, "comment": null, "name_alt": null, "lat_y": 31.06659577, "long_x": 81.312510613, "nation1": null, "nation2": null, "note": null, "region": "Asia", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 81.312536305884493, 31.066598981098316 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "depression", "name": null, "elevation": -28.0, "comment": "Lowest point in Europe", "name_alt": null, "lat_y": 44.257574774, "long_x": 49.009532097, "nation1": null, "nation2": null, "note": null, "region": "Europe", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 49.009533839000483, 44.257559156738566 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Gora Elbrus", "elevation": 5642.0, "comment": "Highest point in Europe", "name_alt": "Mount Elbrus", "lat_y": 43.355169989, "long_x": 42.439219597, "nation1": null, "nation2": null, "note": null, "region": "Europe", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ 42.439197508117729, 43.355170925834429 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "depression", "name": "Death Valley", "elevation": -86.0, "comment": "Lowest point in N. America", "name_alt": null, "lat_y": 36.24225495, "long_x": -116.828236457, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -116.828225501354567, 36.242254535610769 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Mt. McKinley", "elevation": 6194.0, "comment": "Highest point in N. America", "name_alt": null, "lat_y": 63.069403387, "long_x": -151.007313606, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -151.007295564174512, 63.06941124467545 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Mt. Whitney", "elevation": 4421.0, "comment": null, "name_alt": null, "lat_y": 36.582709052, "long_x": -118.292225715, "nation1": null, "nation2": null, "note": null, "region": "North America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -118.292218224559448, 36.582715141594875 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "depression", "name": null, "elevation": -16.0, "comment": "Lowest point in Australia", "name_alt": null, "lat_y": -28.448663019, "long_x": 137.284434441, "nation1": null, "nation2": null, "note": null, "region": "Oceania", "subregion": "Australia" }, "geometry": { "type": "Point", "coordinates": [ 137.284437652612297, -28.448653493871916 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Mt. Kosciuszko", "elevation": 2228.0, "comment": "Highest point in Australia", "name_alt": null, "lat_y": -36.455865167, "long_x": 148.263194207, "nation1": null, "nation2": null, "note": null, "region": "Oceania", "subregion": "Australia" }, "geometry": { "type": "Point", "coordinates": [ 148.263191525115332, -36.455879799517831 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Cerro Aconcagua", "elevation": 6959.0, "comment": "Highest point in S. America", "name_alt": null, "lat_y": -32.655694269, "long_x": -70.015797493, "nation1": null, "nation2": null, "note": null, "region": "South America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -70.01580098903159, -32.655678630528783 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "depression", "name": null, "elevation": -40.0, "comment": "Lowest point in S. America", "name_alt": null, "lat_y": -42.623955988, "long_x": -63.968800422, "nation1": null, "nation2": null, "note": null, "region": "South America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -63.968777935065432, -42.623996802557443 ] } }
+,
+{ "type": "Feature", "properties": { "scalerank": 2, "featurecla": "mountain", "name": "Cero Raya", "elevation": 2070.0, "comment": null, "name_alt": null, "lat_y": 5.451666571, "long_x": -66.375599739, "nation1": null, "nation2": null, "note": null, "region": "South America", "subregion": null }, "geometry": { "type": "Point", "coordinates": [ -66.375590858161303, 5.451674293245532 ] } }
+
+]
+}

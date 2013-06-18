@@ -1,0 +1,636 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "unit_code": "GRBA", "unit_name": "Great Basin NP", "unit_type": "National Park", "nps_region": "Pacific West", "scalerank": 7, "featurecla": "National Park Service", "name": "Great Basin" }, "geometry": { "type": "Point", "coordinates": [ -114.244252082416324, 38.927150783327356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MEVE", "unit_name": "Mesa Verde NP", "unit_type": "National Park", "nps_region": "Intermountain", "scalerank": 7, "featurecla": "National Park Service", "name": "Mesa Verde" }, "geometry": { "type": "Point", "coordinates": [ -108.447255012103824, 37.227158921348192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NEPE", "unit_name": "Nez Perce NHP", "unit_type": "National Historical Park", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Nez Perce NHP" }, "geometry": { "type": "Point", "coordinates": [ -116.275868293353824, 45.796128647910692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "DAAV", "unit_name": "Dayton Aviation Heritage NHP", "unit_type": "National Historical Park", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Dayton Aviation Heritage NHP" }, "geometry": { "type": "Point", "coordinates": [ -84.063791470437167, 39.804673569785692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "TAPR", "unit_name": "Tallgrass Prairie N PRES", "unit_type": "National Preserve", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Tallgrass Prairie N PRES" }, "geometry": { "type": "Point", "coordinates": [ -96.549875454812167, 38.41864655155652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CARI", "unit_name": "Cane River Creole NHP", "unit_type": "National Historical Park", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Cane River Creole NHP" }, "geometry": { "type": "Point", "coordinates": [ -93.008371548562167, 31.66437409061902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NICO", "unit_name": "Nicodemus NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Nicodemus NHS" }, "geometry": { "type": "Point", "coordinates": [ -99.617990689187167, 39.39032623905652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NAVA", "unit_name": "Navajo NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Navajo NM" }, "geometry": { "type": "Point", "coordinates": [ -110.536366340228824, 36.68549225468152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ADAM", "unit_name": "Adams NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Adams NHP" }, "geometry": { "type": "Point", "coordinates": [ -71.012766079812167, 42.256577866660692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BOST", "unit_name": "Boston NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Boston NHP" }, "geometry": { "type": "Point", "coordinates": [ -71.055409308978824, 42.373277085410692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WICR", "unit_name": "Wilson's Creek NB", "unit_type": "National Battlefield", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Wilson's Creek NB" }, "geometry": { "type": "Point", "coordinates": [ -93.408802863666324, 37.099839585410692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FODA", "unit_name": "Fort Davis NHS", "unit_type": "National Historic Site", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Davis NHS" }, "geometry": { "type": "Point", "coordinates": [ -103.899037238666324, 30.598781642702356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PAAL", "unit_name": "Palo Alto Battlefield NHP", "unit_type": "National Historical Park", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Palo Alto Battlefield NHP" }, "geometry": { "type": "Point", "coordinates": [ -97.463002082416324, 26.023789780723192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "EUON", "unit_name": "Eugene O'Neill NHS", "unit_type": "National Historic Site", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "Eugene O'Neill NHS" }, "geometry": { "type": "Point", "coordinates": [ -122.026641405332995, 37.82599518436902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "AZRU", "unit_name": "Aztec Ruins NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Aztec Ruins NM" }, "geometry": { "type": "Point", "coordinates": [ -108.000559048562167, 36.827988999473192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CHCU", "unit_name": "Chaco Culture NHP", "unit_type": "National Historical Park", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Chaco Culture NHP" }, "geometry": { "type": "Point", "coordinates": [ -107.958729621478824, 36.052842515098192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FLNI", "unit_name": "Flight 93 N MEM", "unit_type": "National Memorial", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Flight 93 N MEM" }, "geometry": { "type": "Point", "coordinates": [ -78.892770962624667, 40.05768463749402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAMA", "unit_name": "Salem Maritime NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Salem Maritime NHS" }, "geometry": { "type": "Point", "coordinates": [ -70.885731574603824, 42.519273179160692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SITK", "unit_name": "Sitka NHP", "unit_type": "National Historical Park", "nps_region": "Alaska", "scalerank": 8, "featurecla": "National Park Service", "name": "Sitka NHP" }, "geometry": { "type": "Point", "coordinates": [ -135.318714973041324, 57.06635162968152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "KLGO", "unit_name": "Klondike Gold Rush NHP", "unit_type": "National Historical Park", "nps_region": "Alaska", "scalerank": 8, "featurecla": "National Park Service", "name": "Klondike Gold Rush NHP" }, "geometry": { "type": "Point", "coordinates": [ -135.29263261627051, 59.631577866660692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOLA", "unit_name": "Fort Laramie NHS", "unit_type": "National Historic Site", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Laramie NHS" }, "geometry": { "type": "Point", "coordinates": [ -104.546538866270495, 42.204331772910692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MACA", "unit_name": "Mammoth Cave NP", "unit_type": "National Park", "nps_region": "Southeast", "scalerank": 7, "featurecla": "National Park Service", "name": "Mammoth Cave" }, "geometry": { "type": "Point", "coordinates": [ -86.126616991270495, 37.18341705936902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BOAF", "unit_name": "Boston African American NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Boston African American NHS" }, "geometry": { "type": "Point", "coordinates": [ -71.070668098041324, 42.35785553593152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "EDAL", "unit_name": "Edgar Allan Poe NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Edgar Allan Poe NHS" }, "geometry": { "type": "Point", "coordinates": [ -75.165069139707995, 39.990708726035692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "COWP", "unit_name": "Cowpens NB", "unit_type": "National Battlefield", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Cowpens NB" }, "geometry": { "type": "Point", "coordinates": [ -81.808338996478824, 35.13068268436902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NATC", "unit_name": "Natchez NHP", "unit_type": "National Historical Park", "nps_region": "Southeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Natchez NHP" }, "geometry": { "type": "Point", "coordinates": [ -91.382191535541324, 31.54254791874402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WICL", "unit_name": "President William Jefferson Clinton Birthplace Home NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "President William Jefferson Clinton Birthplace Home NHS" }, "geometry": { "type": "Point", "coordinates": [ -93.593535936582995, 33.666652736452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HOSP", "unit_name": "Hot Springs NP", "unit_type": "National Park", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Hot Springs" }, "geometry": { "type": "Point", "coordinates": [ -93.065907355853824, 34.508449611452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HSTR", "unit_name": "Harry S Truman NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Harry S Truman NHS" }, "geometry": { "type": "Point", "coordinates": [ -94.530506965228824, 38.901271877077356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SARI", "unit_name": "Salt River Bay NHP & E PRES", "unit_type": "National Historical Park and Ecological Preserve", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Salt River Bay NHP & E PRES" }, "geometry": { "type": "Point", "coordinates": [ -64.755848762103824, 17.76447174686902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "TUAI", "unit_name": "Tuskegee Airmen NHS", "unit_type": "National Historic Site", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Tuskegee Airmen NHS" }, "geometry": { "type": "Point", "coordinates": [ -85.680165168353824, 32.455471095827356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PAGR", "unit_name": "Paterson Great Falls NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Paterson Great Falls NHP" }, "geometry": { "type": "Point", "coordinates": [ -74.179351366270495, 40.91510651249402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "EDIS", "unit_name": "Thomas Edison NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Thomas Edison NHP" }, "geometry": { "type": "Point", "coordinates": [ -74.239735480853824, 40.785874741660692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CHIC", "unit_name": "Chickasaw NRA", "unit_type": "National Recreation Area", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Chickasaw NRA" }, "geometry": { "type": "Point", "coordinates": [ -96.997873501687167, 34.455674546348192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GRPO", "unit_name": "Grand Portage NM", "unit_type": "National Monument", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Grand Portage NM" }, "geometry": { "type": "Point", "coordinates": [ -89.737619595437167, 47.974595444785692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MIMI", "unit_name": "Minuteman Missile NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Minuteman Missile NHS" }, "geometry": { "type": "Point", "coordinates": [ -101.961455858457995, 43.87775299686902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOUS", "unit_name": "Fort Union Trading Post NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Union Trading Post NHS" }, "geometry": { "type": "Point", "coordinates": [ -103.975575324603824, 48.04401276249402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "DEPO", "unit_name": "Devils Postpile NM", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Devils Postpile NM" }, "geometry": { "type": "Point", "coordinates": [ -119.087310350645495, 37.61530182499402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "KALA", "unit_name": "Kalaupapa NHP", "unit_type": "National Historical Park", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Kalaupapa NHP" }, "geometry": { "type": "Point", "coordinates": [ -156.967559374082981, 21.190212306764863 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "VALR", "unit_name": "World War II Valor in the Pacific NM--Pearl Harbor Sites", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "World War II Valor in the Pacific NM--Pearl Harbor Sites" }, "geometry": { "type": "Point", "coordinates": [ -157.962473111062167, 21.368679103639863 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "VALR", "unit_name": "World War II Valor in the Pacific NM--Tule Lake Site", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "World War II Valor in the Pacific NM--Tule Lake Site" }, "geometry": { "type": "Point", "coordinates": [ -121.382110155332995, 41.89496491093152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "VALR", "unit_name": "World War II Valor in the Pacific NM--Atka Site", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "World War II Valor in the Pacific NM--Atka Site" }, "geometry": { "type": "Point", "coordinates": [ -174.465484178770481, 52.12335846561902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "VALR", "unit_name": "World War II Valor in the Pacific NM--Kiska Site", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "World War II Valor in the Pacific NM--Kiska Site" }, "geometry": { "type": "Point", "coordinates": [ 177.498545769146176, 51.963405666139856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "VALR", "unit_name": "World War II Valor in the Pacific NM--Attu Site", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "World War II Valor in the Pacific NM--Attu Site" }, "geometry": { "type": "Point", "coordinates": [ 172.95590253997949, 52.893540757285692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CABR", "unit_name": "Cabrillo NM", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Cabrillo NM" }, "geometry": { "type": "Point", "coordinates": [ -117.241566535541324, 32.672471421348192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOWA", "unit_name": "Fort Washington Park", "unit_type": "Park", "nps_region": "National Capital", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Washington Park" }, "geometry": { "type": "Point", "coordinates": [ -77.028716600645495, 38.710598048952356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CLBA", "unit_name": "Clara Barton NHS", "unit_type": "National Historic Site", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Clara Barton NHS" }, "geometry": { "type": "Point", "coordinates": [ -77.140288866270495, 38.96784088749402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GWMP", "unit_name": "George Washington MEM PKWY", "unit_type": "Memorial Parkway", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "George Washington MEM PKWY" }, "geometry": { "type": "Point", "coordinates": [ -77.075957811582995, 38.733750718223192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "VAFO", "unit_name": "Valley Forge NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 7, "featurecla": "National Park Service", "name": "Valley Forge NHP" }, "geometry": { "type": "Point", "coordinates": [ -75.444650845437167, 40.09894440311902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "AFBG", "unit_name": "African Burial Ground NM", "unit_type": "National Monument", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "African Burial Ground NM" }, "geometry": { "type": "Point", "coordinates": [ -74.004424608457995, 40.714585679160692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PUHO", "unit_name": "Pu'uhonua o Honaunau NHP", "unit_type": "National Historical Park", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Pu'uhonua o Honaunau NHP" }, "geometry": { "type": "Point", "coordinates": [ -155.902984178770481, 19.41144440311902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PUHE", "unit_name": "Pu'ukohola Heiau NHS", "unit_type": "National Historic Site", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Pu'ukohola Heiau NHS" }, "geometry": { "type": "Point", "coordinates": [ -155.815785285541324, 20.025173244264863 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ULSG", "unit_name": "Ulysses S. Grant NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Ulysses S. Grant NHS" }, "geometry": { "type": "Point", "coordinates": [ -90.351796027728824, 38.55182526249402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "KAHO", "unit_name": "Kaloko-Honokohau NHP", "unit_type": "National Historical Park", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Kaloko-Honokohau NHP" }, "geometry": { "type": "Point", "coordinates": [ -156.033355272520481, 19.680690822389863 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ALFL", "unit_name": "Alibates Flint Quarries NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 9, "featurecla": "National Park Service", "name": "Alibates Flint Quarries NM" }, "geometry": { "type": "Point", "coordinates": [ -101.672189907937167, 35.583115952598192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "VICR", "unit_name": "Virgin Islands Coral Reef NM", "unit_type": "National Monument", "nps_region": "Southeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Virgin Islands Coral Reef NM" }, "geometry": { "type": "Point", "coordinates": [ -64.696278449603824, 18.27826569218152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CHAM", "unit_name": "Chamizal N MEM", "unit_type": "National Memorial", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Chamizal N MEM" }, "geometry": { "type": "Point", "coordinates": [ -106.454660611062167, 31.76740143436902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HUTR", "unit_name": "Hubbell Trading Post NHS", "unit_type": "National Historic Site", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Hubbell Trading Post NHS" }, "geometry": { "type": "Point", "coordinates": [ -109.559966600645495, 35.707383530723192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "KEMO", "unit_name": "Kennesaw Mountain NBP", "unit_type": "National Battlefield Park", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Kennesaw Mountain NBP" }, "geometry": { "type": "Point", "coordinates": [ -84.589100715228824, 33.923936265098192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CAVE", "unit_name": "Carlsbad Caverns NP", "unit_type": "National Park", "nps_region": "Intermountain", "scalerank": 7, "featurecla": "National Park Service", "name": "Carlsbad Caverns" }, "geometry": { "type": "Point", "coordinates": [ -104.527821418353824, 32.15241119999402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GWCA", "unit_name": "George Washington Carver NM", "unit_type": "National Monument", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "George Washington Carver NM" }, "geometry": { "type": "Point", "coordinates": [ -94.355580207416324, 36.98224518436902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MORU", "unit_name": "Mount Rushmore N MEM", "unit_type": "National Memorial", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Mount Rushmore N MEM" }, "geometry": { "type": "Point", "coordinates": [ -103.449004686582995, 43.87738678593152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JODR", "unit_name": "John D. Rockefeller, Jr. MEM PKWY", "unit_type": "Memorial Parkway", "nps_region": "Intermountain", "scalerank": 9, "featurecla": "National Park Service", "name": "John D. Rockefeller, Jr. MEM PKWY" }, "geometry": { "type": "Point", "coordinates": [ -110.725046353249667, 44.08808014530652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CUVA", "unit_name": "Cuyahoga Valley National Park", "unit_type": "National Park", "nps_region": "Midwest", "scalerank": 7, "featurecla": "National Park Service", "name": "Cuyahoga Valley" }, "geometry": { "type": "Point", "coordinates": [ -81.569447394916324, 41.26459381718152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BRCA", "unit_name": "Bryce Canyon NP", "unit_type": "National Park", "nps_region": "Intermountain", "scalerank": 7, "featurecla": "National Park Service", "name": "Bryce Canyon" }, "geometry": { "type": "Point", "coordinates": [ -112.178659634499667, 37.60529205936902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MANZ", "unit_name": "Manzanar NHS", "unit_type": "National Historic Site", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Manzanar NHS" }, "geometry": { "type": "Point", "coordinates": [ -118.153065558978824, 36.72699616093152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PISC", "unit_name": "Piscataway Park", "unit_type": "Park", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Piscataway Park" }, "geometry": { "type": "Point", "coordinates": [ -77.056670702207995, 38.684434311973192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "THST", "unit_name": "Thomas Stone NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Thomas Stone NHS" }, "geometry": { "type": "Point", "coordinates": [ -77.027617967832995, 38.527696030723192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOFR", "unit_name": "Fort Frederica NM", "unit_type": "National Monument", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Frederica NM" }, "geometry": { "type": "Point", "coordinates": [ -81.392933723041324, 31.21979401249402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "DRTO", "unit_name": "Dry Tortugas NP", "unit_type": "National Park", "nps_region": "Southeast", "scalerank": 7, "featurecla": "National Park Service", "name": "Dry Tortugas" }, "geometry": { "type": "Point", "coordinates": [ -82.866607225645495, 24.65436432499402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JELA", "unit_name": "Jean Lafitte NHP & PRES", "unit_type": "National Historical Park and Preserve", "nps_region": "Southeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Jean Lafitte NHP & PRES" }, "geometry": { "type": "Point", "coordinates": [ -90.170155402728824, 29.802110093223192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JAZZ", "unit_name": "New Orlean Jazz National Historical Park", "unit_type": "National Historical Park", "nps_region": "Southeast", "scalerank": 9, "featurecla": "National Park Service", "name": "New Orlean Jazz National Historical Park" }, "geometry": { "type": "Point", "coordinates": [ -90.040638801166324, 29.99335358280652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "KNRI", "unit_name": "Knife River Indian Villages NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Knife River Indian Villages NHS" }, "geometry": { "type": "Point", "coordinates": [ -101.384063280332995, 47.35297272343152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "LABE", "unit_name": "Lava Beds NM", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Lava Beds NM" }, "geometry": { "type": "Point", "coordinates": [ -121.521351691791324, 41.76154205936902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "DESO", "unit_name": "De Soto N MEM", "unit_type": "National Memorial", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "De Soto N MEM" }, "geometry": { "type": "Point", "coordinates": [ -82.641021288145495, 27.50495026249402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ABLI", "unit_name": "Abraham Lincoln Birthplace NHP", "unit_type": "National Historical Park", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Abraham Lincoln Birthplace NHP" }, "geometry": { "type": "Point", "coordinates": [ -85.644357876687167, 37.61176178593152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "LIHO", "unit_name": "Lincoln Home NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Lincoln Home NHS" }, "geometry": { "type": "Point", "coordinates": [ -89.645171678770495, 39.797267970827356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "LIBO", "unit_name": "Lincoln Boyhood N MEM", "unit_type": "National Memorial", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Lincoln Boyhood N MEM" }, "geometry": { "type": "Point", "coordinates": [ -86.996815558978824, 38.118760483848192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MOCA", "unit_name": "Montezuma Castle NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Montezuma Castle NM" }, "geometry": { "type": "Point", "coordinates": [ -111.836740689187167, 34.61090729374402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAJU", "unit_name": "San Juan NHS", "unit_type": "National Historic Site", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "San Juan NHS" }, "geometry": { "type": "Point", "coordinates": [ -66.102365689187167, 18.45526764530652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "VIIS", "unit_name": "Virgin Islands NP", "unit_type": "National Park", "nps_region": "Southeast", "scalerank": 7, "featurecla": "National Park Service", "name": "Virgin Islands" }, "geometry": { "type": "Point", "coordinates": [ -64.739979621478824, 18.344020900514863 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "COSW", "unit_name": "Congaree NP", "unit_type": "National Park", "nps_region": "Southeast", "scalerank": 7, "featurecla": "National Park Service", "name": "Congaree" }, "geometry": { "type": "Point", "coordinates": [ -80.767689582416324, 33.767686265098192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WACA", "unit_name": "Walnut Canyon NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Walnut Canyon NM" }, "geometry": { "type": "Point", "coordinates": [ -111.495106574603824, 35.161240952598192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "KEWE", "unit_name": "Keweenaw NHP", "unit_type": "National Historical Park", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Keweenaw NHP" }, "geometry": { "type": "Point", "coordinates": [ -88.412546353249667, 47.263942775514856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JAGA", "unit_name": "James A Garfield NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "James A Garfield NHS" }, "geometry": { "type": "Point", "coordinates": [ -81.350900845437167, 41.66486237186902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HEHO", "unit_name": "Herbert Hoover NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Herbert Hoover NHS" }, "geometry": { "type": "Point", "coordinates": [ -91.351348436582995, 41.66742584843152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOUN", "unit_name": "Fort Union NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Union NM" }, "geometry": { "type": "Point", "coordinates": [ -105.012115038145495, 35.907375392702356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PIPE", "unit_name": "Pipestone NM", "unit_type": "National Monument", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Pipestone NM" }, "geometry": { "type": "Point", "coordinates": [ -96.324696418353824, 44.014064845827356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HOVE", "unit_name": "Hovenweep NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Hovenweep NM" }, "geometry": { "type": "Point", "coordinates": [ -109.072946743874667, 37.385239976035692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "THRO", "unit_name": "Theodore Roosevelt NP--South Unit", "unit_type": "National Park", "nps_region": "Midwest", "scalerank": 7, "featurecla": "National Park Service", "name": "T. Roosevelt NP South" }, "geometry": { "type": "Point", "coordinates": [ -103.459624803770495, 46.952175197389856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "THRO", "unit_name": "Theodore Roosevelt NP--North Unit", "unit_type": "National Park", "nps_region": "Midwest", "scalerank": 7, "featurecla": "National Park Service", "name": "T. Roosevelt NP North" }, "geometry": { "type": "Point", "coordinates": [ -103.373565233457995, 47.595933335410692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "EFMO", "unit_name": "Effigy Mounds NM", "unit_type": "National Monument", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Effigy Mounds NM" }, "geometry": { "type": "Point", "coordinates": [ -91.207753058978824, 43.091457423952356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOBU", "unit_name": "Fossil Butte NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Fossil Butte NM" }, "geometry": { "type": "Point", "coordinates": [ -110.766346808978824, 41.85663483280652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CACL", "unit_name": "Castle Clinton NM", "unit_type": "National Monument", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Castle Clinton NM" }, "geometry": { "type": "Point", "coordinates": [ -74.016753710020495, 40.70343659061902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FEHA", "unit_name": "Federal Hall N MEM", "unit_type": "National Memorial", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Federal Hall N MEM" }, "geometry": { "type": "Point", "coordinates": [ -74.009999152728824, 40.70734284061902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAPA", "unit_name": "Saint Paul's Church NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Saint Paul's Church NHS" }, "geometry": { "type": "Point", "coordinates": [ -73.825672980853824, 40.89288971561902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MIMA", "unit_name": "Minute Man NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Minute Man NHP" }, "geometry": { "type": "Point", "coordinates": [ -71.291574673562167, 42.45160553593152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ANJO", "unit_name": "Andrew Johnson NHS", "unit_type": "National Historic Site", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Andrew Johnson NHS" }, "geometry": { "type": "Point", "coordinates": [ -82.838124152728824, 36.15546295780652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GOIS", "unit_name": "Governors Island NM", "unit_type": "National Monument", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Governors Island NM" }, "geometry": { "type": "Point", "coordinates": [ -74.017241991270495, 40.691636460410692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GEGR", "unit_name": "General Grant N MEM", "unit_type": "National Memorial", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "General Grant N MEM" }, "geometry": { "type": "Point", "coordinates": [ -73.962961392312167, 40.81354401249402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HAGR", "unit_name": "Hamilton Grange N MEM", "unit_type": "National Memorial", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Hamilton Grange N MEM" }, "geometry": { "type": "Point", "coordinates": [ -73.947173631895495, 40.82135651249402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "THRB", "unit_name": "Theodore Roosevelt Birthplace NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Theodore Roosevelt Birthplace NHS" }, "geometry": { "type": "Point", "coordinates": [ -73.988758918353824, 40.73859284061902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ELMO", "unit_name": "El Morro NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "El Morro NM" }, "geometry": { "type": "Point", "coordinates": [ -108.346424933978824, 35.038967189577356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PISP", "unit_name": "Pipe Spring NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Pipe Spring NM" }, "geometry": { "type": "Point", "coordinates": [ -112.739857551166324, 36.862901108848192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FILA", "unit_name": "First Ladies NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 9, "featurecla": "National Park Service", "name": "First Ladies NHS" }, "geometry": { "type": "Point", "coordinates": [ -81.376047329812167, 40.79669830936902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOSM", "unit_name": "Fort Smith NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 9, "featurecla": "National Park Service", "name": "Fort Smith NHS" }, "geometry": { "type": "Point", "coordinates": [ -94.431141730853824, 35.38873932499402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CHSC", "unit_name": "Little Rock Central High School NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 9, "featurecla": "National Park Service", "name": "Little Rock Central High School NHS" }, "geometry": { "type": "Point", "coordinates": [ -92.300038215228824, 34.736924546348192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BRVB", "unit_name": "Brown v. Board of Education NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Brown v. Board of Education NHS" }, "geometry": { "type": "Point", "coordinates": [ -95.676503058978824, 39.037990627077356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CATO", "unit_name": "Catoctin Mountain Park", "unit_type": "Park", "nps_region": "National Capital", "scalerank": 8, "featurecla": "National Park Service", "name": "Catoctin Mountain Park" }, "geometry": { "type": "Point", "coordinates": [ -77.461211717832995, 39.651027736452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WAPA", "unit_name": "War in the Pacific NHP", "unit_type": "National Historical Park", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "War in the Pacific NHP" }, "geometry": { "type": "Point", "coordinates": [ 144.653493685812805, 13.38959381718152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOTH", "unit_name": "Ford's Theatre NHS", "unit_type": "National Historic Site", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Ford's Theatre NHS" }, "geometry": { "type": "Point", "coordinates": [ -77.025624152728824, 38.896714585410692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FRDO", "unit_name": "Frederick Douglass NHS", "unit_type": "National Historic Site", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Frederick Douglass NHS" }, "geometry": { "type": "Point", "coordinates": [ -76.985015428770495, 38.86286041874402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MAMC", "unit_name": "Mary McLeod Bethune Council House NHS", "unit_type": "National Historic Site", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Mary McLeod Bethune Council House NHS" }, "geometry": { "type": "Point", "coordinates": [ -77.030995246478824, 38.90814850468152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WHIS", "unit_name": "Whiskeytown NRA", "unit_type": "National Recreation Area", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Whiskeytown NRA" }, "geometry": { "type": "Point", "coordinates": [ -122.608469204812167, 40.61530182499402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ELRO", "unit_name": "Eleanor Roosevelt NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Eleanor Roosevelt NHS" }, "geometry": { "type": "Point", "coordinates": [ -73.901193814187167, 41.763576564577356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HOFR", "unit_name": "Home of Franklin D. Roosevelt NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Home of Franklin D. Roosevelt NHS" }, "geometry": { "type": "Point", "coordinates": [ -73.926747199603824, 41.76801178593152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SUCR", "unit_name": "Sunset Crater Volcano NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 9, "featurecla": "National Park Service", "name": "Sunset Crater Volcano NM" }, "geometry": { "type": "Point", "coordinates": [ -111.511423306374667, 35.37128327030652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BOHA", "unit_name": "Boston Harbor Islands NRA", "unit_type": "National Recreation Area", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Boston Harbor Islands NRA" }, "geometry": { "type": "Point", "coordinates": [ -70.876210090228824, 42.26227448124402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HAFE", "unit_name": "Harpers Ferry NHP", "unit_type": "National Historical Park", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Harpers Ferry NHP" }, "geometry": { "type": "Point", "coordinates": [ -77.741932746478824, 39.312770900514856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "LEWI", "unit_name": "Lewis and Clark NHP", "unit_type": "National Historical Park", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Lewis and Clark NHP" }, "geometry": { "type": "Point", "coordinates": [ -123.896962043353824, 46.13153717655652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ARCH", "unit_name": "Arches NP", "unit_type": "National Park", "nps_region": "Intermountain", "scalerank": 7, "featurecla": "National Park Service", "name": "Arches" }, "geometry": { "type": "Point", "coordinates": [ -109.595529751687167, 38.70783112186902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NACA", "unit_name": "National Capital Parks", "unit_type": "Park", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "National Capital Parks" }, "geometry": { "type": "Point", "coordinates": [ -76.894317186582995, 38.835923569785692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CEBR", "unit_name": "Cedar Breaks NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Cedar Breaks NM" }, "geometry": { "type": "Point", "coordinates": [ -112.844878710020495, 37.633897202598192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CHRI", "unit_name": "Christiansted NHS", "unit_type": "National Historic Site", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Christiansted NHS" }, "geometry": { "type": "Point", "coordinates": [ -64.739776170957995, 17.734035548952363 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CAWO", "unit_name": "Carter G. Woodson Home NHS", "unit_type": "National Historic Site", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Carter G. Woodson Home NHS" }, "geometry": { "type": "Point", "coordinates": [ -77.024403449603824, 38.91083405155652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BUIS", "unit_name": "Buck Island Reef NM", "unit_type": "National Monument", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Buck Island Reef NM" }, "geometry": { "type": "Point", "coordinates": [ -64.622059699603824, 17.809475002077363 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CHPI", "unit_name": "Charles Pinckney NHS", "unit_type": "National Historic Site", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Charles Pinckney NHS" }, "geometry": { "type": "Point", "coordinates": [ -79.824940558978824, 32.845933335410692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NISI", "unit_name": "Ninety Six NHS", "unit_type": "National Historic Site", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Ninety Six NHS" }, "geometry": { "type": "Point", "coordinates": [ -82.015207486062167, 34.143703517702356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WICA", "unit_name": "Wind Cave NP", "unit_type": "National Park", "nps_region": "Midwest", "scalerank": 7, "featurecla": "National Park Service", "name": "Wind Cave" }, "geometry": { "type": "Point", "coordinates": [ -103.428578254291324, 43.608018296348192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "TONT", "unit_name": "Tonto NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Tonto NM" }, "geometry": { "type": "Point", "coordinates": [ -111.113596157937167, 33.648342189577356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "APCO", "unit_name": "Appomattox Court House NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Appomattox Court House NHP" }, "geometry": { "type": "Point", "coordinates": [ -78.802886522520495, 37.382554429160692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "DETO", "unit_name": "Devils Tower NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Devils Tower NM" }, "geometry": { "type": "Point", "coordinates": [ -104.715240038145495, 44.59162018436902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FLFO", "unit_name": "Florissant Fossil Beds NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Florissant Fossil Beds NM" }, "geometry": { "type": "Point", "coordinates": [ -105.278879361062167, 38.918483791139856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CARL", "unit_name": "Carl Sandburg Home NHS", "unit_type": "National Historic Site", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Carl Sandburg Home NHS" }, "geometry": { "type": "Point", "coordinates": [ -82.452463345437167, 35.266709702598192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MALU", "unit_name": "Martin Luther King, Jr. NHS", "unit_type": "National Historic Site", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Martin Luther King, Jr. NHS" }, "geometry": { "type": "Point", "coordinates": [ -84.371815558978824, 33.754990952598192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOSU", "unit_name": "Fort Sumter NM", "unit_type": "National Monument", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Sumter NM" }, "geometry": { "type": "Point", "coordinates": [ -79.879383918353824, 32.753566798952356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BRCR", "unit_name": "Brices Cross Roads NBS", "unit_type": "National Battlefield Site", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Brices Cross Roads NBS" }, "geometry": { "type": "Point", "coordinates": [ -88.728952603249667, 34.506211655723192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "TUPE", "unit_name": "Tupelo NB", "unit_type": "National Battlefield", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Tupelo NB" }, "geometry": { "type": "Point", "coordinates": [ -88.737131314187167, 34.255601304160692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GREE", "unit_name": "Greenbelt Park", "unit_type": "Park", "nps_region": "National Capital", "scalerank": 8, "featurecla": "National Park Service", "name": "Greenbelt Park" }, "geometry": { "type": "Point", "coordinates": [ -76.897694465228824, 38.984035548952356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WUPA", "unit_name": "Wupatki NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Wupatki NM" }, "geometry": { "type": "Point", "coordinates": [ -111.403635220437167, 35.56122467655652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CUGA", "unit_name": "Cumberland Gap NHP", "unit_type": "National Historical Park", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Cumberland Gap NHP" }, "geometry": { "type": "Point", "coordinates": [ -83.606434699603824, 36.631252345827356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JICA", "unit_name": "Jimmy Carter NHS", "unit_type": "National Historic Site", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Jimmy Carter NHS" }, "geometry": { "type": "Point", "coordinates": [ -84.432850715228824, 32.026271877077356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ARHO", "unit_name": "Arlington House, The Robert E. Lee MEM", "unit_type": "Memorial", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Arlington House, The Robert E. Lee MEM" }, "geometry": { "type": "Point", "coordinates": [ -77.073719855853824, 38.882066147910692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "LYBA", "unit_name": "Lyndon Baines Johnson Memorial Grove on the Potomac", "unit_type": "Memorial", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Lyndon Baines Johnson Memorial Grove on the Potomac" }, "geometry": { "type": "Point", "coordinates": [ -77.051747199603824, 38.879055080202356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "THIS", "unit_name": "Theodore Roosevelt Island", "unit_type": "Memorial", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Theodore Roosevelt Island" }, "geometry": { "type": "Point", "coordinates": [ -77.062774217832995, 38.89606354374402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "TICA", "unit_name": "Timpanogos Cave NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Timpanogos Cave NM" }, "geometry": { "type": "Point", "coordinates": [ -111.709421353249667, 40.44037506718152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CASA", "unit_name": "Castillo de San Marcos NM", "unit_type": "National Monument", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Castillo de San Marcos NM" }, "geometry": { "type": "Point", "coordinates": [ -81.312367316791324, 29.897975978639856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ANTI", "unit_name": "Antietam NB", "unit_type": "National Battlefield", "nps_region": "National Capital", "scalerank": 8, "featurecla": "National Park Service", "name": "Antietam NB" }, "geometry": { "type": "Point", "coordinates": [ -77.735991991270495, 39.462388413535692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MONO", "unit_name": "Monocacy NB", "unit_type": "National Battlefield", "nps_region": "National Capital", "scalerank": 8, "featurecla": "National Park Service", "name": "Monocacy NB" }, "geometry": { "type": "Point", "coordinates": [ -77.393055793353824, 39.34357330936902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GRKO", "unit_name": "Grant-Kohrs Ranch NHS", "unit_type": "National Historic Site", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Grant-Kohrs Ranch NHS" }, "geometry": { "type": "Point", "coordinates": [ -112.747344530332995, 46.413845119264856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WOTR", "unit_name": "Wolf Trap National Park for the Performing Arts", "unit_type": "Park", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Wolf Trap National Park for the Performing Arts" }, "geometry": { "type": "Point", "coordinates": [ -77.263701952207995, 38.937892970827356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SCBL", "unit_name": "Scotts Bluff NM", "unit_type": "National Monument", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Scotts Bluff NM" }, "geometry": { "type": "Point", "coordinates": [ -103.707061327207995, 41.83502838749402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HOME", "unit_name": "Homestead NM of America", "unit_type": "National Monument", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Homestead NM of America" }, "geometry": { "type": "Point", "coordinates": [ -96.832508918353824, 40.28876373905652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WABA", "unit_name": "Washita Battlefield NHS", "unit_type": "National Historic Site", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Washita Battlefield NHS" }, "geometry": { "type": "Point", "coordinates": [ -99.704619920957995, 35.620754298952356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "YUHO", "unit_name": "Yucca House NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 9, "featurecla": "National Park Service", "name": "Yucca House NM" }, "geometry": { "type": "Point", "coordinates": [ -108.686146613666324, 37.24909088749402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WHMI", "unit_name": "Whitman Mission NHS", "unit_type": "National Historic Site", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Whitman Mission NHS" }, "geometry": { "type": "Point", "coordinates": [ -118.465565558978824, 46.042466538535692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "TUZI", "unit_name": "Tuzigoot NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Tuzigoot NM" }, "geometry": { "type": "Point", "coordinates": [ -112.032053189187167, 34.772121486452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "TUMA", "unit_name": "Tumacacori NHP", "unit_type": "National Historical Park", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Tumacacori NHP" }, "geometry": { "type": "Point", "coordinates": [ -111.047596808978824, 31.562282619264856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAND", "unit_name": "Sand Creek Massacre NHS", "unit_type": "National Historic Site", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Sand Creek Massacre NHS" }, "geometry": { "type": "Point", "coordinates": [ -102.519357876687167, 38.56305573124402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MANA", "unit_name": "Manassas NBP", "unit_type": "National Battlefield Park", "nps_region": "National Capital", "scalerank": 8, "featurecla": "National Park Service", "name": "Manassas NBP" }, "geometry": { "type": "Point", "coordinates": [ -77.530791795957995, 38.821437892702356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GOGA", "unit_name": "Golden Gate NRA", "unit_type": "National Recreation Area", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "Golden Gate NRA" }, "geometry": { "type": "Point", "coordinates": [ -122.489979621478824, 37.84100983280652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GICL", "unit_name": "Gila Cliff Dwellings NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Gila Cliff Dwellings NM" }, "geometry": { "type": "Point", "coordinates": [ -108.273548957416324, 33.22760651249402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOBO", "unit_name": "Fort Bowie NHS", "unit_type": "National Historic Site", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Bowie NHS" }, "geometry": { "type": "Point", "coordinates": [ -109.456206835020495, 32.151638088014856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CHIR", "unit_name": "Chiricahua NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Chiricahua NM" }, "geometry": { "type": "Point", "coordinates": [ -109.345529751687167, 32.011135158327356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CAVO", "unit_name": "Capulin Volcano", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Capulin Volcano" }, "geometry": { "type": "Point", "coordinates": [ -103.973011848041324, 36.781724351035692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "LIBI", "unit_name": "Little Bighorn Battlefield NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Little Bighorn Battlefield NM" }, "geometry": { "type": "Point", "coordinates": [ -107.429676887103824, 45.565700588014856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CEBE", "unit_name": "Cedar Creek and Belle Grove NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Cedar Creek and Belle Grove NHP" }, "geometry": { "type": "Point", "coordinates": [ -78.314239061582995, 38.993760483848192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BLCA", "unit_name": "Black Canyon of the Gunnison NP", "unit_type": "National Park", "nps_region": "Intermountain", "scalerank": 7, "featurecla": "National Park Service", "name": "Black Canyon of the Gunnison" }, "geometry": { "type": "Point", "coordinates": [ -107.723947720437167, 38.577500718223192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WRBR", "unit_name": "Wright Brothers N MEM", "unit_type": "National Memorial", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Wright Brothers N MEM" }, "geometry": { "type": "Point", "coordinates": [ -75.663319465228824, 36.021144923952356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WORI", "unit_name": "Women's Rights NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Women's Rights NHP" }, "geometry": { "type": "Point", "coordinates": [ -76.787627733457995, 42.912502345827356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WIHO", "unit_name": "William Howard Taft NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 9, "featurecla": "National Park Service", "name": "William Howard Taft NHS" }, "geometry": { "type": "Point", "coordinates": [ -84.510080532937167, 39.12470123905652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WHHO", "unit_name": "White House", "unit_type": "Park", "nps_region": "National Capital", "scalerank": 8, "featurecla": "National Park Service", "name": "White House" }, "geometry": { "type": "Point", "coordinates": [ -77.036284960020495, 38.895615952598192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WEFA", "unit_name": "Weir Farm NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Weir Farm NHS" }, "geometry": { "type": "Point", "coordinates": [ -73.453765428770495, 41.25812409061902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WASH", "unit_name": "Washinton Monument", "unit_type": "Memorial", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Washinton Monument" }, "geometry": { "type": "Point", "coordinates": [ -77.035552538145495, 38.890000718223192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NAMA", "unit_name": "National Mall", "unit_type": "Park", "nps_region": "National Capital", "scalerank": 8, "featurecla": "National Park Service", "name": "National Mall" }, "geometry": { "type": "Point", "coordinates": [ -77.035552538145495, 38.890000718223192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "KOWA", "unit_name": "Korean War Veterans MEM", "unit_type": "Memorial", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Korean War Veterans MEM" }, "geometry": { "type": "Point", "coordinates": [ -77.039418098041324, 38.887193101035692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FRDE", "unit_name": "Franklin Delano Roosevelt MEM", "unit_type": "Memorial", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Franklin Delano Roosevelt MEM" }, "geometry": { "type": "Point", "coordinates": [ -77.037464973041324, 38.885239976035692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "LINC\t", "unit_name": "Lincoln MEM", "unit_type": "Memorial", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Lincoln MEM" }, "geometry": { "type": "Point", "coordinates": [ -77.047230598041324, 38.890000718223192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "THJE", "unit_name": "Thomas Jefferson MEM", "unit_type": "Memorial", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Thomas Jefferson MEM" }, "geometry": { "type": "Point", "coordinates": [ -77.035552538145495, 38.884059963014856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "WWII", "unit_name": "World War II MEM", "unit_type": "Memorial", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "World War II MEM" }, "geometry": { "type": "Point", "coordinates": [ -77.040313280332995, 38.890000718223192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "VIVE", "unit_name": "Vietnam Veterans MEM", "unit_type": "Memorial", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Vietnam Veterans MEM" }, "geometry": { "type": "Point", "coordinates": [ -77.044219530332995, 38.890000718223192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "COGA", "unit_name": "Constitution Gardens", "unit_type": "Park", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Constitution Gardens" }, "geometry": { "type": "Point", "coordinates": [ -77.041371223041324, 38.890000718223192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "VICK", "unit_name": "Vicksburg NMP", "unit_type": "National Military Park", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Vicksburg NMP" }, "geometry": { "type": "Point", "coordinates": [ -90.854603644916324, 32.34162018436902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "VAMA", "unit_name": "Vanderbilt Mansion NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Vanderbilt Mansion NHS" }, "geometry": { "type": "Point", "coordinates": [ -73.941883918353824, 41.79535553593152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "TUIN", "unit_name": "Tuskegee Institute NHS", "unit_type": "National Historic Site", "nps_region": "Southeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Tuskegee Institute NHS" }, "geometry": { "type": "Point", "coordinates": [ -85.704701301166324, 32.430324611452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "TIMU", "unit_name": "Timucuan EHP", "unit_type": "Ecological and Historic Preserve", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Timucuan EHP" }, "geometry": { "type": "Point", "coordinates": [ -81.472157355853824, 30.488308009889856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "THRI", "unit_name": "Theodore Roosevelt Inaugural NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Theodore Roosevelt Inaugural NHS" }, "geometry": { "type": "Point", "coordinates": [ -78.872914191791324, 42.901353257285692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "THKO", "unit_name": "Thaddeus Kosciuszko N MEM", "unit_type": "National Memorial", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Thaddeus Kosciuszko N MEM" }, "geometry": { "type": "Point", "coordinates": [ -75.162424282937167, 39.97211334843152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "STRI", "unit_name": "Stones River NB", "unit_type": "National Battlefield", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Stones River NB" }, "geometry": { "type": "Point", "coordinates": [ -86.433298306374667, 35.873195705202356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "STEA", "unit_name": "Steamtown NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Steamtown NHS" }, "geometry": { "type": "Point", "coordinates": [ -75.670236782937167, 41.40680573124402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "STLI", "unit_name": "Statue of Liberty NM", "unit_type": "National Monument", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Statue of Liberty NM" }, "geometry": { "type": "Point", "coordinates": [ -74.040272590228824, 40.697902736452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SPAR", "unit_name": "Springfield Armory NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Springfield Armory NHS" }, "geometry": { "type": "Point", "coordinates": [ -72.579457160541324, 42.108872788535692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SHIL", "unit_name": "Shiloh NMP", "unit_type": "National Military Park", "nps_region": "Southeast", "scalerank": 7, "featurecla": "National Park Service", "name": "Shiloh NMP" }, "geometry": { "type": "Point", "coordinates": [ -88.339548306374667, 35.143215236452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAIR", "unit_name": "Saugus Iron Works NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Saugus Iron Works NHS" }, "geometry": { "type": "Point", "coordinates": [ -71.007313605853824, 42.468491929160692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SARA", "unit_name": "Saratoga NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Saratoga NHP" }, "geometry": { "type": "Point", "coordinates": [ -73.629058397520495, 42.97907135624402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAJH", "unit_name": "San Juan Island NHP", "unit_type": "National Historical Park", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "San Juan Island NHP" }, "geometry": { "type": "Point", "coordinates": [ -123.076079881895495, 48.529323634889856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAFR", "unit_name": "San Francisco Maritime NHP", "unit_type": "National Historical Park", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "San Francisco Maritime NHP" }, "geometry": { "type": "Point", "coordinates": [ -122.423695441791324, 37.79474518436902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAAN", "unit_name": "San Antonio Missions NHP", "unit_type": "National Historical Park", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "San Antonio Missions NHP" }, "geometry": { "type": "Point", "coordinates": [ -98.454416470437167, 29.332383530723192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAPU", "unit_name": "Salinas Pueblo Missions v", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Salinas Pueblo Missions v" }, "geometry": { "type": "Point", "coordinates": [ -106.092844204812167, 34.259873765098192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAGA", "unit_name": "Saint-Gaudens NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Saint-Gaudens NHS" }, "geometry": { "type": "Point", "coordinates": [ -72.372141079812167, 43.500230210410692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SACR", "unit_name": "Saint Croix Island IHS", "unit_type": "International Historic Site", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Saint Croix Island IHS" }, "geometry": { "type": "Point", "coordinates": [ -67.154774543353824, 45.12409088749402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAGU", "unit_name": "Saguaro NP East--Rincon Mountain District", "unit_type": "National Park", "nps_region": "Intermountain", "scalerank": 7, "featurecla": "National Park Service", "name": "Saguaro NP East" }, "geometry": { "type": "Point", "coordinates": [ -110.619007941791324, 32.18048737186902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAGU", "unit_name": "Saguaro NP West--Tuscon Mountain District", "unit_type": "National Park", "nps_region": "Intermountain", "scalerank": 9, "featurecla": "National Park Service", "name": "Saguaro NP West" }, "geometry": { "type": "Point", "coordinates": [ -111.154164191791324, 32.286281642702356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "SAHI", "unit_name": "Sagamore Hill NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Sagamore Hill NHS" }, "geometry": { "type": "Point", "coordinates": [ -73.496164517312167, 40.88568756718152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "RUCA", "unit_name": "Russell Cave NM", "unit_type": "National Monument", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Russell Cave NM" }, "geometry": { "type": "Point", "coordinates": [ -85.814442512103824, 34.974758205202356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "RORI", "unit_name": "Rosie the Riveter\/World War II Home Front NHP", "unit_type": "National Historical Park", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "Rosie the Riveter\/World War II Home Front NHP" }, "geometry": { "type": "Point", "coordinates": [ -122.348907030332995, 37.91107819218152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ROWI", "unit_name": "Roger Williams N MEM", "unit_type": "National Memorial", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Roger Williams N MEM" }, "geometry": { "type": "Point", "coordinates": [ -71.410715298562167, 41.828517970827356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ROCR", "unit_name": "Rock Creek Park", "unit_type": "Park", "nps_region": "National Capital", "scalerank": 8, "featurecla": "National Park Service", "name": "Rock Creek Park" }, "geometry": { "type": "Point", "coordinates": [ -77.046050585020495, 38.931545314577356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "RICH", "unit_name": "Richmond NBP", "unit_type": "National Battlefield Park", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Richmond NBP" }, "geometry": { "type": "Point", "coordinates": [ -77.483143683978824, 37.56049225468152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "RABR", "unit_name": "Rainbow Bridge NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Rainbow Bridge NM" }, "geometry": { "type": "Point", "coordinates": [ -110.966420051166324, 37.07807037968152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PRWI", "unit_name": "Prince William Forest Park", "unit_type": "Park", "nps_region": "National Capital", "scalerank": 8, "featurecla": "National Park Service", "name": "Prince William Forest Park" }, "geometry": { "type": "Point", "coordinates": [ -77.384063280332995, 38.58832428593152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "POPO", "unit_name": "Poverty Point NM", "unit_type": "National Monument", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Poverty Point NM" }, "geometry": { "type": "Point", "coordinates": [ -91.406605598041324, 32.63507721561902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PINN", "unit_name": "Pinnacles NM", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Pinnacles NM" }, "geometry": { "type": "Point", "coordinates": [ -121.176299608457995, 36.498887436973192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PETR", "unit_name": "Petroglyph NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Petroglyph NM" }, "geometry": { "type": "Point", "coordinates": [ -106.734038866270495, 35.130397853639856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PETE", "unit_name": "Petersburg NB", "unit_type": "National Battlefield", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Petersburg NB" }, "geometry": { "type": "Point", "coordinates": [ -77.366973436582995, 37.22736237186902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "RIRA", "unit_name": "River Raisin NBP", "unit_type": "National Battlefield Park", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "River Raisin NBP" }, "geometry": { "type": "Point", "coordinates": [ -83.383778449603824, 41.93427155155652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PEVI", "unit_name": "Perry's Victory and International Peace MEM", "unit_type": "Memorial", "nps_region": "Midwest", "scalerank": 9, "featurecla": "National Park Service", "name": "Perry's Victory and International Peace MEM" }, "geometry": { "type": "Point", "coordinates": [ -82.811919725645495, 41.65387604374402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PAAV", "unit_name": "Pennsylvania Avenue NHS", "unit_type": "National Historic Site", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Pennsylvania Avenue NHS" }, "geometry": { "type": "Point", "coordinates": [ -77.018055793353824, 38.892726955202356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PECO", "unit_name": "Pecos NHP", "unit_type": "National Historical Park", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Pecos NHP" }, "geometry": { "type": "Point", "coordinates": [ -105.675567186582995, 35.538316147910692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PERI", "unit_name": "Pea Ridge NMP", "unit_type": "National Military Park", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Pea Ridge NMP" }, "geometry": { "type": "Point", "coordinates": [ -94.032460090228824, 36.455715236452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ORCA", "unit_name": "Oregon Caves NM", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Oregon Caves NM" }, "geometry": { "type": "Point", "coordinates": [ -123.404774543353824, 42.09516022343152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "OCMU", "unit_name": "Ocmulgee NM", "unit_type": "National Monument", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Ocmulgee NM" }, "geometry": { "type": "Point", "coordinates": [ -83.604074673562167, 32.830430405723192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NEBE", "unit_name": "New Bedford Whaling NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "New Bedford Whaling NHP" }, "geometry": { "type": "Point", "coordinates": [ -70.923288540749667, 41.634670314577356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NABR", "unit_name": "Natural Bridges NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Natural Bridges NM" }, "geometry": { "type": "Point", "coordinates": [ -110.007232225645495, 37.59882233280652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NPSA", "unit_name": "National Park of American Samoa--Tutuila Unit", "unit_type": "National Park", "nps_region": "Pacific West", "scalerank": 7, "featurecla": "National Park Service", "name": "NP of Amer. Samoa--Tutuila" }, "geometry": { "type": "Point", "coordinates": [ -170.685454881895481, -14.285170180214308 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NPSA", "unit_name": "National Park of American Samoa--Ofu Unit", "unit_type": "National Park", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "NP of Amer. Samoa--Ofu" }, "geometry": { "type": "Point", "coordinates": [ -169.655629035541324, -14.178806247922637 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NPSA", "unit_name": "National Park of American Samoa--Ta'? Unit", "unit_type": "National Park", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "NP of Amer. Samoa--Ta'?" }, "geometry": { "type": "Point", "coordinates": [ -169.482207811582981, -14.24065520625598 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MUWO", "unit_name": "Muir Woods NM", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Muir Woods NM" }, "geometry": { "type": "Point", "coordinates": [ -122.582102017312167, 37.897202866660692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MORR", "unit_name": "Morristown NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Morristown NHP" }, "geometry": { "type": "Point", "coordinates": [ -74.528350389707995, 40.76935455936902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MOCR", "unit_name": "Moores Creek NB", "unit_type": "National Battlefield", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Moores Creek NB" }, "geometry": { "type": "Point", "coordinates": [ -78.110137499082995, 34.458360093223192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MIIN", "unit_name": "Minidoka NHS", "unit_type": "National Historic Site", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Minidoka NHS" }, "geometry": { "type": "Point", "coordinates": [ -114.245676236062167, 42.67804596561902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MAVA", "unit_name": "Martin Van Buren NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Martin Van Buren NHS" }, "geometry": { "type": "Point", "coordinates": [ -73.702951626687167, 42.369614976035692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MABI", "unit_name": "Marsh-Billings-Rockefeller NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Marsh-Billings-Rockefeller NHP" }, "geometry": { "type": "Point", "coordinates": [ -72.535104946999667, 43.633530991660692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "MALW", "unit_name": "Maggie L. Walker NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Maggie L. Walker NHS" }, "geometry": { "type": "Point", "coordinates": [ -77.438303189187167, 37.548081772910692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "LYJO", "unit_name": "Lyndon B. Johnson NHP", "unit_type": "National Historical Park", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Lyndon B. Johnson NHP" }, "geometry": { "type": "Point", "coordinates": [ -98.625436978249667, 30.239488022910692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "LOWE", "unit_name": "Lowell NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Lowell NHP" }, "geometry": { "type": "Point", "coordinates": [ -71.330922004291324, 42.64655182499402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "LONG", "unit_name": "Longfellow NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Longfellow NHS" }, "geometry": { "type": "Point", "coordinates": [ -71.125965949603824, 42.37714264530652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "LIRI", "unit_name": "Little River Canyon N PRES", "unit_type": "National Preserve", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Little River Canyon N PRES" }, "geometry": { "type": "Point", "coordinates": [ -85.606149868874667, 34.423814194785692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "LAMR", "unit_name": "Lake Meredith NRA", "unit_type": "National Recreation Area", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Lake Meredith NRA" }, "geometry": { "type": "Point", "coordinates": [ -101.697214321999667, 35.595933335410692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "KIMO", "unit_name": "Kings Mountain NMP", "unit_type": "National Military Park", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Kings Mountain NMP" }, "geometry": { "type": "Point", "coordinates": [ -81.389881965228824, 35.141384181764856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JOFL", "unit_name": "Johnstown Flood N MEM", "unit_type": "National Memorial", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Johnstown Flood N MEM" }, "geometry": { "type": "Point", "coordinates": [ -78.774159308978824, 40.345200913535692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JOMU", "unit_name": "John Muir NHS", "unit_type": "National Historic Site", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "John Muir NHS" }, "geometry": { "type": "Point", "coordinates": [ -122.133534308978824, 37.982896226035692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JOFI", "unit_name": "John Fitzgerald Kennedy NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "John Fitzgerald Kennedy NHS" }, "geometry": { "type": "Point", "coordinates": [ -71.123036262103824, 42.34674713749402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JODA", "unit_name": "John Day Fossil Beds NM--Sheeprock Unit", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "John Day Fossil Beds NM--Sheeprock Unit" }, "geometry": { "type": "Point", "coordinates": [ -119.649199999082995, 44.538112697389856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JODA", "unit_name": "John Day Fossil Beds NM--Clarno Unit", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "John Day Fossil Beds NM--Clarno Unit" }, "geometry": { "type": "Point", "coordinates": [ -120.408884243874667, 44.93561432499402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JODA", "unit_name": "John Day Fossil Beds NM--Painted Hills Unit", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "John Day Fossil Beds NM--Painted Hills Unit" }, "geometry": { "type": "Point", "coordinates": [ -120.264597134499667, 44.646999416139856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JECA", "unit_name": "Jewel Cave NM", "unit_type": "National Monument", "nps_region": "Midwest", "scalerank": 9, "featurecla": "National Park Service", "name": "Jewel Cave NM" }, "geometry": { "type": "Point", "coordinates": [ -103.832386848041324, 43.73065827030652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "JEFF", "unit_name": "Jefferson National Expansion MEM", "unit_type": "Memorial", "nps_region": "Midwest", "scalerank": 9, "featurecla": "National Park Service", "name": "Jefferson National Expansion MEM" }, "geometry": { "type": "Point", "coordinates": [ -90.236439582416324, 38.631699936973192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "INDE", "unit_name": "Independence NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Independence NHP" }, "geometry": { "type": "Point", "coordinates": [ -75.161936001687167, 39.974025783327356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HOBE", "unit_name": "Horseshoe Bend NMP", "unit_type": "National Military Park", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Horseshoe Bend NMP" }, "geometry": { "type": "Point", "coordinates": [ -85.731638150124667, 32.976548569785692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HOFU", "unit_name": "Hopewell Furnace NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Hopewell Furnace NHS" }, "geometry": { "type": "Point", "coordinates": [ -75.765939907937167, 40.192043361452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HOCU", "unit_name": "Hopewell Culture NHP", "unit_type": "National Historical Park", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Hopewell Culture NHP" }, "geometry": { "type": "Point", "coordinates": [ -82.983509894916324, 39.383897202598192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "PIMA", "unit_name": "Hohokam Pima NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Hohokam Pima NM" }, "geometry": { "type": "Point", "coordinates": [ -111.914499478249667, 33.186753647910692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HAMP", "unit_name": "Hampton NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Hampton NHS" }, "geometry": { "type": "Point", "coordinates": [ -76.588408983457995, 39.414536851035692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HALE", "unit_name": "Haleakala NP", "unit_type": "National Park", "nps_region": "Pacific West", "scalerank": 7, "featurecla": "National Park Service", "name": "Haleakala" }, "geometry": { "type": "Point", "coordinates": [ -156.147002733457981, 20.704494533327363 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "HAFO", "unit_name": "Hagerman Fossil Beds NM", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Hagerman Fossil Beds NM" }, "geometry": { "type": "Point", "coordinates": [ -114.940907355853824, 42.763657944785692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GUCO", "unit_name": "Guilford Courthouse NMP", "unit_type": "National Military Park", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Guilford Courthouse NMP" }, "geometry": { "type": "Point", "coordinates": [ -79.840809699603824, 36.13349030155652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GUMO", "unit_name": "Guadalupe Mountains NP", "unit_type": "National Park", "nps_region": "Intermountain", "scalerank": 7, "featurecla": "National Park Service", "name": "Guadalupe Mountains" }, "geometry": { "type": "Point", "coordinates": [ -104.885772264707995, 31.916652736452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GOSP", "unit_name": "Golden Spike NHS", "unit_type": "National Historic Site", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Golden Spike NHS" }, "geometry": { "type": "Point", "coordinates": [ -112.543120897520495, 41.619370835410692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GETT", "unit_name": "Gettysburg NMP", "unit_type": "National Military Park", "nps_region": "Northeast", "scalerank": 7, "featurecla": "National Park Service", "name": "Gettysburg NMP" }, "geometry": { "type": "Point", "coordinates": [ -77.237416144916324, 39.799465236452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GEWA", "unit_name": "George Washington Birthplace NM", "unit_type": "National Monument", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "George Washington Birthplace NM" }, "geometry": { "type": "Point", "coordinates": [ -76.923695441791324, 38.193833726035692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GERO", "unit_name": "George Rogers Clark NHP", "unit_type": "National Historical Park", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "George Rogers Clark NHP" }, "geometry": { "type": "Point", "coordinates": [ -87.535552538145495, 38.677110093223192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GATE", "unit_name": "Gateway NRA", "unit_type": "National Recreation Area", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Gateway NRA" }, "geometry": { "type": "Point", "coordinates": [ -73.860910611062167, 40.618638413535692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FRHI", "unit_name": "Friendship Hill NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Friendship Hill NHS" }, "geometry": { "type": "Point", "coordinates": [ -79.923410611062167, 39.77777741093152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FRSP", "unit_name": "Fredericksburg and Spotsylvania County Battlefields Memorial NMP", "unit_type": "National Military Park", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Fredericksburg and Spotsylvania County Battlefields Memorial NMP" }, "geometry": { "type": "Point", "coordinates": [ -77.460723436582995, 38.273545640098192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FRLA", "unit_name": "Frederick Law Olmsted NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Frederick Law Olmsted NHS" }, "geometry": { "type": "Point", "coordinates": [ -71.131214973041324, 42.32562897343152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOVA", "unit_name": "Fort Vancouver NHS", "unit_type": "National Historic Site", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "Fort Vancouver NHS" }, "geometry": { "type": "Point", "coordinates": [ -122.639719204812167, 45.640163478639856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOST", "unit_name": "Fort Stanwix NM", "unit_type": "National Monument", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Stanwix NM" }, "geometry": { "type": "Point", "coordinates": [ -75.455677863666324, 43.208278713014856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOSC", "unit_name": "Fort Scott NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Scott NHS" }, "geometry": { "type": "Point", "coordinates": [ -94.704538540749667, 37.84174225468152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FORA", "unit_name": "Fort Raleigh NHS", "unit_type": "National Historic Site", "nps_region": "Southeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Fort Raleigh NHS" }, "geometry": { "type": "Point", "coordinates": [ -75.714019335020495, 35.934922593223192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOPU", "unit_name": "Fort Pulaski NM", "unit_type": "National Monument", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Pulaski NM" }, "geometry": { "type": "Point", "coordinates": [ -80.943023241270495, 32.034694728639856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOPO", "unit_name": "Fort Point NHS", "unit_type": "National Historic Site", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "Fort Point NHS" }, "geometry": { "type": "Point", "coordinates": [ -122.473622199603824, 37.79059479374402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FONE", "unit_name": "Fort Necessity NB", "unit_type": "National Battlefield", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Necessity NB" }, "geometry": { "type": "Point", "coordinates": [ -79.588368293353824, 39.811183986452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOMC", "unit_name": "Fort McHenry NM & Historic Shrine", "unit_type": "National Monument and Historic Shrine", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Fort McHenry NM & Historic Shrine" }, "geometry": { "type": "Point", "coordinates": [ -76.580881314187167, 39.261501369264856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOMA", "unit_name": "Fort Matanzas NM", "unit_type": "National Monument", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Matanzas NM" }, "geometry": { "type": "Point", "coordinates": [ -81.238880988666324, 29.71149323124402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOLS", "unit_name": "Fort Larned NHS", "unit_type": "National Historic Site", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Larned NHS" }, "geometry": { "type": "Point", "coordinates": [ -99.219390428770495, 38.18378327030652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FODO", "unit_name": "Fort Donelson NB", "unit_type": "National Battlefield", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Donelson NB" }, "geometry": { "type": "Point", "coordinates": [ -87.853667772520495, 36.480373439577356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOCA", "unit_name": "Fort Caroline N MEM", "unit_type": "National Memorial", "nps_region": "Southeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Fort Caroline N MEM" }, "geometry": { "type": "Point", "coordinates": [ -81.489328579812167, 30.377956447389856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "EISE", "unit_name": "Eisenhower NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Eisenhower NHS" }, "geometry": { "type": "Point", "coordinates": [ -77.267567512103824, 39.794663804160692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "EBLA", "unit_name": "Ebey's Landing NH RES", "unit_type": "National Historical Reserve", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "Ebey's Landing NH RES" }, "geometry": { "type": "Point", "coordinates": [ -122.699248827207995, 48.21295807499402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "KLSE", "unit_name": "Klondike Gold Rush NHP--Seattle Unit", "unit_type": "National Historical Park", "nps_region": "Pacific West", "scalerank": 9, "featurecla": "National Park Service", "name": "Klondike Gold Rush NHP--Seattle Unit" }, "geometry": { "type": "Point", "coordinates": [ -122.341094530332995, 47.571030991660692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "DEWA", "unit_name": "Delaware Water Gap NRA", "unit_type": "National Recreation Area", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Delaware Water Gap NRA" }, "geometry": { "type": "Point", "coordinates": [ -75.118275519916324, 40.99652741093152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CURE", "unit_name": "Curecanti NRA", "unit_type": "National Recreation Area", "nps_region": "Intermountain", "scalerank": 9, "featurecla": "National Park Service", "name": "Curecanti NRA" }, "geometry": { "type": "Point", "coordinates": [ -107.330677863666324, 38.43964264530652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CUIS", "unit_name": "Cumberland Island NS", "unit_type": "National Seashore", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Cumberland Island NS" }, "geometry": { "type": "Point", "coordinates": [ -81.449208137103824, 30.873073634889856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CORO", "unit_name": "Coronado N MEM", "unit_type": "National Memorial", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Coronado N MEM" }, "geometry": { "type": "Point", "coordinates": [ -110.257110155332995, 31.34943268436902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "COLM", "unit_name": "Colorado NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Colorado NM" }, "geometry": { "type": "Point", "coordinates": [ -108.683216926166324, 39.048000392702356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "FOMR", "unit_name": "Fort Monroe NM", "unit_type": "National Monument", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Fort Monroe NM" }, "geometry": { "type": "Point", "coordinates": [ -76.311594204812167, 37.017686265098192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "COLO", "unit_name": "Colonial NHP", "unit_type": "National Historical Park", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Colonial NHP" }, "geometry": { "type": "Point", "coordinates": [ -76.658599413145495, 37.27069733280652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CIRO", "unit_name": "City of Rocks N RES", "unit_type": "National Reserve", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "City of Rocks N RES" }, "geometry": { "type": "Point", "coordinates": [ -113.707020637103824, 42.06525299686902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CHCH", "unit_name": "Chickamauga and Chattanooga NMP", "unit_type": "National Military Park", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Chickamauga and Chattanooga NMP" }, "geometry": { "type": "Point", "coordinates": [ -85.255360480853824, 34.919094142702356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CHCH", "unit_name": "Chickamauga and Chattanooga NMP", "unit_type": "National Military Park", "nps_region": "Southeast", "scalerank": 9, "featurecla": "National Park Service", "name": "Chickamauga and Chattanooga NMP" }, "geometry": { "type": "Point", "coordinates": [ -85.370432095437167, 34.983058986452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CAGR", "unit_name": "Casa Grande Ruins NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Casa Grande Ruins NM" }, "geometry": { "type": "Point", "coordinates": [ -111.533436652728824, 32.997056382285692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CACH", "unit_name": "Canyon de Chelly NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Canyon de Chelly NM" }, "geometry": { "type": "Point", "coordinates": [ -109.340402798562167, 36.094387111452356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BOWA", "unit_name": "Booker T. Washington NM", "unit_type": "National Monument", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Booker T. Washington NM" }, "geometry": { "type": "Point", "coordinates": [ -79.731556769916324, 37.115586655723192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BISC", "unit_name": "Biscayne NP", "unit_type": "National Park", "nps_region": "Southeast", "scalerank": 7, "featurecla": "National Park Service", "name": "Biscayne" }, "geometry": { "type": "Point", "coordinates": [ -80.199696418353824, 25.471340236452363 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BITH", "unit_name": "Big Thicket N PRES--Turkey Creek Unit", "unit_type": "National Preserve", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Big Thicket N PRES--Turkey Creek Unit" }, "geometry": { "type": "Point", "coordinates": [ -94.356394009499667, 30.46979401249402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BITH", "unit_name": "Big Thicket N PRES--Birch Creek Unit", "unit_type": "National Preserve", "nps_region": "Intermountain", "scalerank": 9, "featurecla": "National Park Service", "name": "Big Thicket N PRES--Birch Creek Unit" }, "geometry": { "type": "Point", "coordinates": [ -94.211415168353824, 30.746852931764856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BITH", "unit_name": "Big Thicket N PRES--Neches Bottom and Jack Gore Baygall Unit", "unit_type": "National Preserve", "nps_region": "Intermountain", "scalerank": 9, "featurecla": "National Park Service", "name": "Big Thicket N PRES--Neches Bottom and Jack Gore Baygall Unit" }, "geometry": { "type": "Point", "coordinates": [ -94.144724087624667, 30.483669338014856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BITH", "unit_name": "Big Thicket N PRES - Beaumont Unit", "unit_type": "National Preserve", "nps_region": "Intermountain", "scalerank": 9, "featurecla": "National Park Service", "name": "Big Thicket N PRES - Beaumont Unit" }, "geometry": { "type": "Point", "coordinates": [ -94.132679816791324, 30.19757721561902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BITH", "unit_name": "Big Thicket N PRES--Big Sandy Creek Unit", "unit_type": "National Preserve", "nps_region": "Intermountain", "scalerank": 9, "featurecla": "National Park Service", "name": "Big Thicket N PRES--Big Sandy Creek Unit" }, "geometry": { "type": "Point", "coordinates": [ -94.678212043353824, 30.62274811405652 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BITH", "unit_name": "Big Thicket N PRES--Lance Rosier Unit", "unit_type": "National Preserve", "nps_region": "Intermountain", "scalerank": 9, "featurecla": "National Park Service", "name": "Big Thicket N PRES--Lance Rosier Unit" }, "geometry": { "type": "Point", "coordinates": [ -94.455677863666324, 30.25641510624402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BIHO", "unit_name": "Big Hole NB", "unit_type": "National Battlefield", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "Big Hole NB" }, "geometry": { "type": "Point", "coordinates": [ -113.651193814187167, 45.646999416139856 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BEOL", "unit_name": "Bent's Old Fort NHS", "unit_type": "National Historic Site", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Bent's Old Fort NHS" }, "geometry": { "type": "Point", "coordinates": [ -103.426747199603824, 38.040025132285692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ARPO", "unit_name": "Arkansas Post N MEM", "unit_type": "National Memorial", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Arkansas Post N MEM" }, "geometry": { "type": "Point", "coordinates": [ -91.347075975645495, 34.020900783327356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "APIS", "unit_name": "Apostle Islands NL", "unit_type": "National Lakeshore", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Apostle Islands NL" }, "geometry": { "type": "Point", "coordinates": [ -90.601470506895495, 46.94379303593152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ANDE", "unit_name": "Andersonville NHS", "unit_type": "National Historic Site", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Andersonville NHS" }, "geometry": { "type": "Point", "coordinates": [ -84.131052212624667, 32.197658595827356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "AMIS", "unit_name": "Amistad NRA", "unit_type": "National Recreation Area", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Amistad NRA" }, "geometry": { "type": "Point", "coordinates": [ -101.036895311582995, 29.52057526249402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ALPO", "unit_name": "Allegheny Portage Railroad NHS", "unit_type": "National Historic Site", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Allegheny Portage Railroad NHS" }, "geometry": { "type": "Point", "coordinates": [ -78.547027147520495, 40.45551178593152 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "AGFO", "unit_name": "Agate Fossil Beds NM", "unit_type": "National Monument", "nps_region": "Midwest", "scalerank": 8, "featurecla": "National Park Service", "name": "Agate Fossil Beds NM" }, "geometry": { "type": "Point", "coordinates": [ -103.744374152728824, 42.421372788535692 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "ACAD", "unit_name": "Acadia NP", "unit_type": "National Park", "nps_region": "Northeast", "scalerank": 7, "featurecla": "National Park Service", "name": "Acadia" }, "geometry": { "type": "Point", "coordinates": [ -68.239735480853824, 44.35944244999402 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "BAND", "unit_name": "Bandelier NM", "unit_type": "National Monument", "nps_region": "Intermountain", "scalerank": 8, "featurecla": "National Park Service", "name": "Bandelier NM" }, "geometry": { "type": "Point", "coordinates": [ -106.357329881895495, 35.818752345827356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "GREG", "unit_name": "Great Egg Harbor SRR", "unit_type": "Scenic and Recreational River", "nps_region": "Northeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Great Egg Harbor SRR" }, "geometry": { "type": "Point", "coordinates": [ -74.853545702207995, 39.329209702598192 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "POHE", "unit_name": "Potomac Heritage NST", "unit_type": "National Scenic Trail", "nps_region": "National Capital", "scalerank": 9, "featurecla": "National Park Service", "name": "Potomac Heritage NST" }, "geometry": { "type": "Point", "coordinates": [ -77.720489061582995, 39.34210846561902 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "NATR", "unit_name": "Natchez Trace Parkway NST", "unit_type": "National Scenic Trail", "nps_region": "Southeast", "scalerank": 8, "featurecla": "National Park Service", "name": "Natchez Trace Parkway NST" }, "geometry": { "type": "Point", "coordinates": [ -89.654367642312167, 32.870021877077356 ] } }
+,
+{ "type": "Feature", "properties": { "unit_code": "CECH", "unit_name": "César E. Chávez NM", "unit_type": "National Monument", "nps_region": "Pacific West", "scalerank": 8, "featurecla": "National Park Service", "name": "César E. Chávez NM" }, "geometry": { "type": "Point", "coordinates": [ -118.56102, 35.240772530035898 ] } }
+
+]
+}
