@@ -1,3 +1,36 @@
+2013-12-03: 3.1.0
+
+- Minor fix to restore missing Brcko District and portion of Republic Srpska in Bosnia and Herzegovina that went missing in 3.0.0 when Brcko District was added to the admin-1 but not completely to admin-0. The boundary lines were fixed in 3.0.0 already.
+
+- UPDATED:  ne_10m_admin_0_disputed_areas_scale_rank_minor_islands - Restore missing Brcko 
+			District and portion of Republic Srpska in Bosnia and Herzegovina.
+- UPDATED:  ne_10m_admin_0_disputed_areas - Restore missing Brcko District and portion of 
+			Republic Srpska in Bosnia and Herzegovina.
+- UPDATED:  ne_10m_admin_0_countries - Restore missing Brcko District and portion of 
+			Republic Srpska in Bosnia and Herzegovina.
+- UPDATED:  ne_10m_admin_0_countries_lakes - Restore missing Brcko District and portion of 
+			Republic Srpska in Bosnia and Herzegovina.
+- UPDATED:  ne_10m_admin_0_map_subunits - Restore missing Brcko District and portion of 
+			Republic Srpska in Bosnia and Herzegovina.
+- UPDATED:  ne_10m_admin_0_map_units - Restore missing Brcko District and portion of Republic
+			Srpska in Bosnia and Herzegovina.
+- UPDATED:  ne_10m_admin_0_scale_rank_minor_islands - Restore missing Brcko District and 
+			portion of Republic Srpska in Bosnia and Herzegovina.
+- UPDATED:  ne_10m_admin_0_scale_rank - Restore missing Brcko District and portion of 
+			Republic Srpska in Bosnia and Herzegovina.
+- UPDATED:  ne_10m_admin_0_sovereignty - Restore missing Brcko District and portion of 
+			Republic Srpska in Bosnia and Herzegovina.
+- UPDATED:  ne_10m_admin_0_label_points - Add Brcko District and portion of Republic Srpska
+			in Bosnia and Herzegovina.
+
+
+2013-12-01: 3.0.1
+
+- Tiny bug fix, reposting ne_10m_land SHP and ZIP. 
+
+- BUG FIX:  ne_10m_land - Fix NaN error in SHP component. Bad file copy earlier?
+
+
 2013-06-02: 3.0.0
 
 - Many thanks to the individuals who contributed over the last year of development: Tom, Nathaniel, staff of Geographx in New Zealand, David at foursquare and more.
