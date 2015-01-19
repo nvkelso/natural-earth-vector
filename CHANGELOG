@@ -1,3 +1,13 @@
+2015-01-16: 3.3.0
+
+- Added new Manual Shaded Relief to the 50m raster set.
+
+
+2014-10-18: 3.2.0
+
+- Erased [Sandy Island](http://en.wikipedia.org/wiki/Sandy_Island,_New_Caledonia) from all Natural Earth raster files (10m and 50m sets).
+
+
 2013-12-03: 3.1.0
 
 - Minor fix to restore missing Brcko District and portion of Republic Srpska in Bosnia and Herzegovina that went missing in 3.0.0 when Brcko District was added to the admin-1 but not completely to admin-0. The boundary lines were fixed in 3.0.0 already.
