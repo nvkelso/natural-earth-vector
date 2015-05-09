@@ -58,7 +58,7 @@ zips/packages/Natural_Earth_quick_start.zip: \
 	cp README.md packages/Natural_Earth_quick_start/README.md
 	cp VERSION packages/Natural_Earth_quick_start/VERSION
 
-	rm $@
+	rm -f $@
 	zip -r $@ packages/Natural_Earth_quick_start/
 	cp $@ archive/Natural_Earth_quick_start_$(VERSION).zip
 	
@@ -690,7 +690,7 @@ zips/10m_cultural/ne_10m_parks_and_protected_lands.zip: \
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/parks-and-protected-lands/ > 10m_cultural/ne_10m_parks_and_protected_lands_point.README.html
 	zip -j -r $@ 10m_cultural/ne_10m_parks_and_protected_lands*.*
 	cp $@ archive/ne_10m_parks_and_protected_lands$(VERSION_PREFIXED).zip
-	rm geojson/ne_10m_parks_and_protected_lands_*.geojson
+	rm -f geojson/ne_10m_parks_and_protected_lands_*.geojson
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/ne_10m_parks_and_protected_lands_area.geojson 10m_cultural/ne_10m_parks_and_protected_lands_area.shp
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/ne_10m_parks_and_protected_lands_scale_rank.geojson 10m_cultural/ne_10m_parks_and_protected_lands_scale_rank.shp
 	ogr2ogr -overwrite -f GeoJSON -lco WINDOWS-1252 geojson/ne_10m_parks_and_protected_lands_line.geojson 10m_cultural/ne_10m_parks_and_protected_lands_line.shp
