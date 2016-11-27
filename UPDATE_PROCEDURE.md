@@ -2,8 +2,11 @@
 
 Scripts to build Natural Earth ZIP archives for individual themes, scalesets, and packagages.
 
-**Requirements**: `Make` a generic Unix utility, to be installed. 
+**Requirements**: 
 
+ - `Make` a generic Unix utility, to be installed. 
+ - `GDAL` to be installed and the folder containing ogr2ogr to be added to the PATH environment variable
+   
 Assumed to be run on Mac or Ubuntu Linux.
 
 #Usage
@@ -39,6 +42,12 @@ also be recorded, with better formatting, in a public blog post.
         make zips/packages/Natural_Earth_quick_start/Natural_Earth_quick_start.zip
         make clean
     
+    Note, that if this is a clean clone or checkout you should
+    start with the following, since 'clean' creates the required
+    empty directories:
+    
+        make clean all
+            
 6. Push those changes live to the distribution network!
 
         make live
