@@ -2,6 +2,8 @@
 
 Scripts to build Natural Earth ZIP archives for individual themes, scalesets, and packagages.
 
+_NOTE: Individual Pull Requests should **not** include running these steps, it'll create merge conflicts between different binary files (some of which are no longer tracked in the repository because of Github.com changes)._
+
 **Requirements**: 
 
  - `Make` a generic Unix utility, to be installed. 
