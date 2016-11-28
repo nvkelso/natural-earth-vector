@@ -42,14 +42,34 @@ The authors provide Natural Earth as a public service and are not responsible fo
 
 The authors used data from The Washington Post, here is their release:
 
-    Natural Earth is hereby granted a non-exclusive license to use the data being provided by The Washington Post for the sole purpose of creating a world base map.  The Washington Post makes no claims as to the completeness, accuracy or content of the data, and makes no representation of any kind, including, but not limited to, any warranty as to the accuracy or fitness of the data for a particular use (nor shall the act of distribution constitute any such warranty). No responsibility is assumed by The Washington Post for any claims arising out of Natural Earth’s use of the data.
+    Natural Earth is hereby granted a non-exclusive license to use the data being 
+    provided by The Washington Post for the sole purpose of creating a world base map.  
+    The Washington Post makes no claims as to the completeness, accuracy or content of 
+    the data, and makes no representation of any kind, including, but not limited to, 
+    any warranty as to the accuracy or fitness of the data for a particular use (nor 
+    shall the act of distribution constitute any such warranty). No responsibility is 
+    assumed by The Washington Post for any claims arising out of Natural Earth’s use 
+    of the data.
 
 The author’s used river and lake data (for Europe only) from the European Commission, Joint Research Centre, Institute for Environment and Sustainability, here is their release:
 
-    Natural Earth is hereby granted a non-exclusive license to use the data being provided by European Commission, Joint Research Centre, Institute for Environment and Sustainability (JRC IES) for the sole purpose of creating a world base map. The EC JRC IES makes no claims as to the completeness, accuracy or content of the data, and makes no representation of any kind, including, but not limited to, any warranty as to the accuracy or fitness of the data for a particular use (nor shall the act of distribution constitute any such warranty). No responsibility is assumed by EC JRC IES for any claims arising out of Natural Earth’s use of the data.
+    Natural Earth is hereby granted a non-exclusive license to use the data being 
+    provided by European Commission, Joint Research Centre, Institute for Environment 
+    and Sustainability (JRC IES) for the sole purpose of creating a world base map. The 
+    EC JRC IES makes no claims as to the completeness, accuracy or content of the data, 
+    and makes no representation of any kind, including, but not limited to, any warranty 
+    as to the accuracy or fitness of the data for a particular use (nor shall the act of 
+    distribution constitute any such warranty). No responsibility is assumed by EC JRC 
+    IES for any claims arising out of Natural Earth’s use of the data.
 
 The author’s used road transportation data (for North America only) from XNR Productions, here is their release:
 
-    Natural Earth is hereby granted a non-exclusive license to use the data being provided by XNR Productions for the sole purpose of creating a world base map. XNR makes no claims as to the completeness, accuracy or content of the data, and makes no representation of any kind, including, but not limited to, any warranty as to the accuracy or fitness of the data for a particular use (nor shall the act of distribution constitute any such warranty). No responsibility is assumed by XNR for any claims arising out of Natural Earth’s use of the data.
+    Natural Earth is hereby granted a non-exclusive license to use the data being 
+    provided by XNR Productions for the sole purpose of creating a world base map. 
+    XNR makes no claims as to the completeness, accuracy or content of the data, and 
+    makes no representation of any kind, including, but not limited to, any warranty 
+    as to the accuracy or fitness of the data for a particular use (nor shall the act 
+    of distribution constitute any such warranty). No responsibility is assumed by XNR 
+    for any claims arising out of Natural Earth’s use of the data.
 
 Happy mapping!
