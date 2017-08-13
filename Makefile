@@ -363,7 +363,7 @@ zips/110m_physical/110m_physical.zip: \
 110m_physical/ne_110m_geography_marine_polys.shp: 10m_physical/ne_10m_geography_marine_polys.shp 10m_physical/ne_10m_geography_marine_polys.dbf
 	ogr2ogr -overwrite -lco ENCODING=UTF-8 -sql "SELECT * FROM ne_10m_geography_marine_polys WHERE scalerank <= 1 ORDER BY scalerank" $@ 10m_physical/ne_10m_geography_marine_polys.shp
 
-110m_physical/ne_110m_geography_regions_plys.shp: 10m_physical/ne_10m_geography_regions_polys.shp 10m_physical/ne_10m_geography_regions_polys.dbf
+110m_physical/ne_110m_geography_regions_polys.shp: 10m_physical/ne_10m_geography_regions_polys.shp 10m_physical/ne_10m_geography_regions_polys.dbf
 	ogr2ogr -overwrite -lco ENCODING=UTF-8  -sql "SELECT * FROM ne_10m_geography_regions_polys WHERE scalerank <= 1 ORDER BY scalerank" $@ 10m_physical/ne_10m_geography_regions_polys.shp
 
 
