@@ -19,24 +19,24 @@ gp.AddToolbox("C:/Program Files/ArcGIS/ArcToolbox/Toolboxes/Analysis Tools.tbx")
 
 
 # Local variables...
-ne_10m_land_ocean_seams_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_land_ocean_seams.shp"
-ne_10m_minor_islands_coastline_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_minor_islands_coastline.shp"
-ne_10m_coastline_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_coastline.shp"
-ne_10m_physical_building_blocks_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\intermediate\\ne_10m_physical_building_blocks.shp"
-ne_10m_land_scale_rank_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_land_scale_rank.shp"
-ne_10m_land_ocean_label_points_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_land_ocean_label_points.shp"
-ne_10m_ocean_scale_rank_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_ocean_scale_rank.shp"
-ne_10m_ocean_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_ocean.shp"
-ne_10m_land_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_land.shp"
-ne_10m_admin_0_map_subunits_test_shp__4_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_ocean.shp"
-ne_10m_ocean = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_ocean.shp"
-ne_10m_admin_0_map_subunits_test_shp__7_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_ocean.shp"
-ne_10m_admin_0_map_subunits_test_shp__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_land.shp"
-ne_10m_ocean__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_land.shp"
-ne_10m_admin_0_map_subunits_test_shp__3_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_land.shp"
+ne_10m_land_ocean_seams_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_land_ocean_seams.shp"
+ne_10m_minor_islands_coastline_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_minor_islands_coastline.shp"
+ne_10m_coastline_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_coastline.shp"
+ne_10m_physical_building_blocks_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\intermediate\\ne_10m_physical_building_blocks.shp"
+ne_10m_land_scale_rank_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_land_scale_rank.shp"
+ne_10m_land_ocean_label_points_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_land_ocean_label_points.shp"
+ne_10m_ocean_scale_rank_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_ocean_scale_rank.shp"
+ne_10m_ocean_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_ocean.shp"
+ne_10m_land_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_land.shp"
+ne_10m_admin_0_map_subunits_test_shp__4_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_ocean.shp"
+ne_10m_ocean = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_ocean.shp"
+ne_10m_admin_0_map_subunits_test_shp__7_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_ocean.shp"
+ne_10m_admin_0_map_subunits_test_shp__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_land.shp"
+ne_10m_ocean__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_land.shp"
+ne_10m_admin_0_map_subunits_test_shp__3_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_land.shp"
 
 # Process: Feature To Polygon...
-gp.FeatureToPolygon_management("C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_coastline.shp;C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_minor_islands_coastline.shp;C:\\ProjectFiles\\NaturalEarth\\nev_version_2d1d0\\10m_physical\\ne_10m_land_ocean_seams.shp", ne_10m_physical_building_blocks_shp, "", "ATTRIBUTES", ne_10m_land_ocean_label_points_shp)
+gp.FeatureToPolygon_management("C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_coastline.shp;C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_minor_islands_coastline.shp;C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_physical\\ne_10m_land_ocean_seams.shp", ne_10m_physical_building_blocks_shp, "", "ATTRIBUTES", ne_10m_land_ocean_label_points_shp)
 
 # Process: Select (3)...
 gp.Select_analysis(ne_10m_physical_building_blocks_shp, ne_10m_ocean_scale_rank_shp, "\"featurecla\" = 'Ocean'")

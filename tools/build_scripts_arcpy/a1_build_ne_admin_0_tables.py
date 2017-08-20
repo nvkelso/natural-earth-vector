@@ -16,17 +16,17 @@ gp.AddToolbox("C:/Program Files/ArcGIS/ArcToolbox/Toolboxes/Analysis Tools.tbx")
 
 
 # Local variables...
-ne_admin_0_details_level_4_subunits_dbf = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\ne_admin_0_details_level_4_subunits.dbf"
-ne_admin_0_details_level_3_map_units_dbf = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\ne_admin_0_details_level_3_map_units.dbf"
-ne_admin_0_details_level_2_countries_dbf = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\ne_admin_0_details_level_2_countries.dbf"
-ne_admin_0_details_level_1_sov_dbf = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\ne_admin_0_details_level_1_sov.dbf"
-Sheet1_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\ne_admin_0_details.xls\\Sheet1$"
-ne_admin_0_details_level_5_disputed_dbf = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\ne_admin_0_details_level_5_disputed.dbf"
-ne_admin_0_details_level_2_countries_dbf__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\ne_admin_0_details_level_2_countries.dbf"
-ne_admin_0_details_level_4_subunits_dbf__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\ne_admin_0_details_level_4_subunits.dbf"
-ne_admin_0_details_level_5_disputed_dbf__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\ne_admin_0_details_level_5_disputed.dbf"
-ne_admin_0_details_level_3_map_units_dbf__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\ne_admin_0_details_level_3_map_units.dbf"
-ne_admin_0_details_level_2_countries_dbf__6_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\ne_admin_0_details_level_1_sov.dbf"
+ne_admin_0_details_level_4_subunits_dbf = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\ne_admin_0_details_level_4_subunits.dbf"
+ne_admin_0_details_level_3_map_units_dbf = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\ne_admin_0_details_level_3_map_units.dbf"
+ne_admin_0_details_level_2_countries_dbf = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\ne_admin_0_details_level_2_countries.dbf"
+ne_admin_0_details_level_1_sov_dbf = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\ne_admin_0_details_level_1_sov.dbf"
+Sheet1_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\ne_admin_0_details.xls\\Sheet1$"
+ne_admin_0_details_level_5_disputed_dbf = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\ne_admin_0_details_level_5_disputed.dbf"
+ne_admin_0_details_level_2_countries_dbf__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\ne_admin_0_details_level_2_countries.dbf"
+ne_admin_0_details_level_4_subunits_dbf__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\ne_admin_0_details_level_4_subunits.dbf"
+ne_admin_0_details_level_5_disputed_dbf__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\ne_admin_0_details_level_5_disputed.dbf"
+ne_admin_0_details_level_3_map_units_dbf__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\ne_admin_0_details_level_3_map_units.dbf"
+ne_admin_0_details_level_2_countries_dbf__6_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\ne_admin_0_details_level_1_sov.dbf"
 
 # Process: Table Select (3)...
 gp.TableSelect_analysis(Sheet1_, ne_admin_0_details_level_2_countries_dbf, "`level` <= 2")

@@ -19,13 +19,13 @@ gp.AddToolbox("C:/Program Files/ArcGIS/ArcToolbox/Toolboxes/Analysis Tools.tbx")
 
 
 # Local variables...
-ne_50m_admin_1_states_provinces_lakes_shp_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\50m_cultural\\ne_50m_admin_1_states_provinces_lakes_shp.shp"
-ne_50m_lakes_tmp_admin_1_erase_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\50m_physical\\ne_50m_lakes_tmp_admin_1_erase.shp"
-ne_50m_lakes_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\50m_physical\\ne_50m_lakes.shp"
-ne_10m_admin_1_states_provinces_geodb_tmp__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\50m_cultural\\ne_50m_admin_1_states_provinces_shp.shp"
-ne_50m_admin_1_states_provinces_shp_scale_rank_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\50m_cultural\\ne_50m_admin_1_states_provinces_shp_scale_rank.shp"
-ne_10m_admin_1_label_points_details = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\10m_cultural\\ne_10m_admin_1_label_points.gdb\\ne_10m_admin_1_label_points_details"
-ne_50m_admin_1_states_provinces_shp_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_2d0d0_rc4\\50m_cultural\\ne_50m_admin_1_states_provinces_shp.shp"
+ne_50m_admin_1_states_provinces_lakes_shp_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\50m_cultural\\ne_50m_admin_1_states_provinces_lakes_shp.shp"
+ne_50m_lakes_tmp_admin_1_erase_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\50m_physical\\ne_50m_lakes_tmp_admin_1_erase.shp"
+ne_50m_lakes_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\50m_physical\\ne_50m_lakes.shp"
+ne_10m_admin_1_states_provinces_geodb_tmp__2_ = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\50m_cultural\\ne_50m_admin_1_states_provinces_shp.shp"
+ne_50m_admin_1_states_provinces_shp_scale_rank_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\50m_cultural\\ne_50m_admin_1_states_provinces_shp_scale_rank.shp"
+ne_10m_admin_1_label_points_details = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\10m_cultural\\ne_10m_admin_1_label_points.gdb\\ne_10m_admin_1_label_points_details"
+ne_50m_admin_1_states_provinces_shp_shp = "C:\\ProjectFiles\\NaturalEarth\\nev_version_4d0d0\\50m_cultural\\ne_50m_admin_1_states_provinces_shp.shp"
 
 # Process: Select (2)...
 gp.Select_analysis(ne_50m_admin_1_states_provinces_shp_scale_rank_shp, ne_50m_admin_1_states_provinces_shp_shp, "\"scalerank\" >= 0")
