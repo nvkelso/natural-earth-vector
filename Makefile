@@ -288,6 +288,15 @@ zips/110m_physical/110m_physical.zip: \
 
 # POPULATED PLACES
 
+derived_populated_places: 10m_cultural/ne_10m_populated_places.shp \
+	10m_cultural/ne_10m_populated_places_simple.shp \
+	50m_cultural/ne_50m_populated_places.shp \
+	50m_cultural/ne_50m_populated_places_simple.shp \
+	110m_cultural/ne_110m_populated_places.shp \
+	110m_cultural/ne_110m_populated_places_simple.shp \
+
+	touch $@
+
 #10m simple- populated places
 10m_cultural/ne_10m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
 	ogr2ogr -overwrite -lco ENCODING=UTF-8 -sql "SELECT scalerank, natscale, labelrank, featurecla, name, namepar, namealt, diffascii, nameascii, adm0cap, capalt, capin, worldcity, megacity, sov0name, sov_a3, adm0name, adm0_a3, adm1name, iso_a2, note, latitude, longitude, changed, namediff, diffnote, pop_max, pop_min, pop_other, rank_max, rank_min, geonameid, meganame, ls_name, ls_match, checkme FROM ne_10m_populated_places ORDER BY natscale" $@ 10m_cultural/ne_10m_populated_places.shp
