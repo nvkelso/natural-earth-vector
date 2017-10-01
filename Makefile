@@ -340,6 +340,24 @@ derived_populated_places: 10m_cultural/ne_10m_populated_places.shp \
 
 # Physical labels
 
+derived_physical_labels: 10m_physical/ne_10m_geographic_lines.shp 10m_physical/ne_10m_geographic_lines.dbf \
+	10m_physical/ne_10m_geography_regions_points.shp 10m_physical/ne_10m_geography_regions_points.dbf \
+	10m_physical/ne_10m_geography_regions_elevation_points.shp 10m_physical/ne_10m_geography_regions_elevation_points.dbf \
+	10m_physical/ne_10m_geography_marine_polys.shp 10m_physical/ne_10m_geography_marine_polys.dbf \
+	10m_physical/ne_10m_geography_regions_polys.shp 10m_physical/ne_10m_geography_regions_polys.dbf \
+	50m_physical/ne_50m_geographic_lines.shp 50m_physical/ne_50m_geographic_lines.dbf \
+	50m_physical/ne_50m_geography_regions_points.shp 50m_physical/ne_50m_geography_regions_points.dbf \
+	50m_physical/ne_50m_geography_regions_elevation_points.shp 50m_physical/ne_50m_geography_regions_elevation_points.dbf \
+	50m_physical/ne_50m_geography_marine_polys.shp 50m_physical/ne_50m_geography_marine_polys.dbf \
+	50m_physical/ne_50m_geography_regions_polys.shp 50m_physical/ne_50m_geography_regions_polys.dbf \
+	110m_physical/ne_110m_geographic_lines.shp 110m_physical/ne_110m_geographic_lines.dbf \
+	110m_physical/ne_110m_geography_regions_points.shp 110m_physical/ne_110m_geography_regions_points.dbf \
+	110m_physical/ne_110m_geography_regions_elevation_points.shp 110m_physical/ne_110m_geography_regions_elevation_points.dbf \
+	110m_physical/ne_110m_geography_marine_polys.shp 110m_physical/ne_110m_geography_marine_polys.dbf \
+	110m_physical/ne_110m_geography_regions_polys.shp 110m_physical/ne_110m_geography_regions_polys.dbf \
+
+	touch $@
+
 # 50m
 
 50m_physical/ne_50m_geographic_lines.shp: 10m_physical/ne_10m_geographic_lines.shp 10m_physical/ne_10m_geographic_lines.dbf
