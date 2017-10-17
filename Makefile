@@ -392,7 +392,7 @@ zips/10m_cultural/ne_10m_admin_0_boundary_lines_land.zip: 10m_cultural/ne_10m_ad
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_boundary_lines_land$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_boundary_lines_map_units.zip: 10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp 10m_cultural/ne_10m_admin_0_boundary_lines_map_units.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -400,7 +400,7 @@ zips/10m_cultural/ne_10m_admin_0_boundary_lines_map_units.zip: 10m_cultural/ne_1
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_boundary_lines_map_units$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.zip: 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.shp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -408,7 +408,7 @@ zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.zip: 10m_cult
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_boundary_lines_maritime_indicator$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_pacific_groupings.zip: 10m_cultural/ne_10m_admin_0_pacific_groupings.shp 10m_cultural/ne_10m_admin_0_pacific_groupings.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -416,7 +416,7 @@ zips/10m_cultural/ne_10m_admin_0_pacific_groupings.zip: 10m_cultural/ne_10m_admi
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_pacific_groupings$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.zip: 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -424,7 +424,7 @@ zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.zip: 10m_cultural
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_boundary_lines_disputed_areas$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_disputed_areas.zip: 10m_cultural/ne_10m_admin_0_disputed_areas.shp 10m_cultural/ne_10m_admin_0_disputed_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -432,7 +432,7 @@ zips/10m_cultural/ne_10m_admin_0_disputed_areas.zip: 10m_cultural/ne_10m_admin_0
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_disputed_areas$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.zip: 10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.shp 10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -440,7 +440,7 @@ zips/10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.zip: 10
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_countries.zip: 10m_cultural/ne_10m_admin_0_countries.shp 10m_cultural/ne_10m_admin_0_countries.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -448,7 +448,7 @@ zips/10m_cultural/ne_10m_admin_0_countries.zip: 10m_cultural/ne_10m_admin_0_coun
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_countries$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_countries_lakes.zip: 10m_cultural/ne_10m_admin_0_countries_lakes.shp 10m_cultural/ne_10m_admin_0_countries_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -456,7 +456,7 @@ zips/10m_cultural/ne_10m_admin_0_countries_lakes.zip: 10m_cultural/ne_10m_admin_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_countries_lakes$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_map_subunits.zip: 10m_cultural/ne_10m_admin_0_map_subunits.shp 10m_cultural/ne_10m_admin_0_map_subunits.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -464,7 +464,7 @@ zips/10m_cultural/ne_10m_admin_0_map_subunits.zip: 10m_cultural/ne_10m_admin_0_m
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_map_subunits$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_map_units.zip: 10m_cultural/ne_10m_admin_0_map_units.shp 10m_cultural/ne_10m_admin_0_map_units.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -472,7 +472,7 @@ zips/10m_cultural/ne_10m_admin_0_map_units.zip: 10m_cultural/ne_10m_admin_0_map_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_map_units$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.zip: 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -480,7 +480,7 @@ zips/10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.zip: 10m_cultural/ne_1
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_scale_rank_minor_islands$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_scale_rank.zip: 10m_cultural/ne_10m_admin_0_scale_rank.shp 10m_cultural/ne_10m_admin_0_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -488,7 +488,7 @@ zips/10m_cultural/ne_10m_admin_0_scale_rank.zip: 10m_cultural/ne_10m_admin_0_sca
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_sovereignty.zip: 10m_cultural/ne_10m_admin_0_sovereignty.shp 10m_cultural/ne_10m_admin_0_sovereignty.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -496,7 +496,7 @@ zips/10m_cultural/ne_10m_admin_0_sovereignty.zip: 10m_cultural/ne_10m_admin_0_so
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_sovereignty$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_label_points.zip: 10m_cultural/ne_10m_admin_0_label_points.shp 10m_cultural/ne_10m_admin_0_label_points.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -504,7 +504,7 @@ zips/10m_cultural/ne_10m_admin_0_label_points.zip: 10m_cultural/ne_10m_admin_0_l
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_label_points$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_seams.zip: 10m_cultural/ne_10m_admin_0_seams.shp 10m_cultural/ne_10m_admin_0_seams.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -512,7 +512,7 @@ zips/10m_cultural/ne_10m_admin_0_seams.zip: 10m_cultural/ne_10m_admin_0_seams.sh
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_seams$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_antarctic_claims.zip: 10m_cultural/ne_10m_admin_0_antarctic_claims.shp 10m_cultural/ne_10m_admin_0_antarctic_claims.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -520,7 +520,7 @@ zips/10m_cultural/ne_10m_admin_0_antarctic_claims.zip: 10m_cultural/ne_10m_admin
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_antarctic_claims$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_0_antarctic_claim_limit_lines.zip: 10m_cultural/ne_10m_admin_0_antarctic_claim_limit_lines.shp 10m_cultural/ne_10m_admin_0_antarctic_claim_limit_lines.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -528,7 +528,7 @@ zips/10m_cultural/ne_10m_admin_0_antarctic_claim_limit_lines.zip: 10m_cultural/n
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_antarctic_claim_limit_lines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lakes.shp 10m_cultural/ne_10m_admin_1_states_provinces_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -536,7 +536,7 @@ zips/10m_cultural/ne_10m_admin_1_states_provinces_lakes.zip: 10m_cultural/ne_10m
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_1_states_provinces_lakes$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip: 10m_cultural/ne_10m_admin_1_states_provinces_lines.shp 10m_cultural/ne_10m_admin_1_states_provinces_lines.dbf
 	cp VERSION 10m_cultural/ne_10m_admin_1_states_provinces_lines.VERSION.txt
@@ -544,7 +544,7 @@ zips/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip: 10m_cultural/ne_10m
 	zip -j -r $@ 10m_cultural/ne_10m_admin_1_states_provinces_lines.*
 	cp $@ archive/ne_10m_admin_1_states_provinces_lines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_1_states_provinces.zip: 10m_cultural/ne_10m_admin_1_states_provinces.shp 10m_cultural/ne_10m_admin_1_states_provinces.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -552,7 +552,7 @@ zips/10m_cultural/ne_10m_admin_1_states_provinces.zip: 10m_cultural/ne_10m_admin
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_1_states_provinces$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_1_states_provinces_scale_rank.zip: 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank.shp 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -560,7 +560,7 @@ zips/10m_cultural/ne_10m_admin_1_states_provinces_scale_rank.zip: 10m_cultural/n
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_1_states_provinces_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_admin_1_seams.zip: 10m_cultural/ne_10m_admin_1_seams.shp 10m_cultural/ne_10m_admin_1_seams.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -568,7 +568,7 @@ zips/10m_cultural/ne_10m_admin_1_seams.zip: 10m_cultural/ne_10m_admin_1_seams.sh
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_1_seams$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_populated_places_simple.zip: 10m_cultural/ne_10m_populated_places_simple.shp 10m_cultural/ne_10m_populated_places_simple.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -576,7 +576,7 @@ zips/10m_cultural/ne_10m_populated_places_simple.zip: 10m_cultural/ne_10m_popula
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_populated_places_simple$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_populated_places.zip: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -584,7 +584,7 @@ zips/10m_cultural/ne_10m_populated_places.zip: 10m_cultural/ne_10m_populated_pla
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_populated_places$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_railroads.zip: 10m_cultural/ne_10m_railroads.shp 10m_cultural/ne_10m_railroads.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -592,7 +592,7 @@ zips/10m_cultural/ne_10m_railroads.zip: 10m_cultural/ne_10m_railroads.shp 10m_cu
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_railroads$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_railroads_north_america.zip: 10m_cultural/ne_10m_railroads_north_america.shp 10m_cultural/ne_10m_railroads_north_america.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -600,7 +600,7 @@ zips/10m_cultural/ne_10m_railroads_north_america.zip: 10m_cultural/ne_10m_railro
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_railroads_north_america$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_roads.zip: 10m_cultural/ne_10m_roads.shp 10m_cultural/ne_10m_roads.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -608,7 +608,7 @@ zips/10m_cultural/ne_10m_roads.zip: 10m_cultural/ne_10m_roads.shp 10m_cultural/n
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_roads$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_roads_north_america.zip: 10m_cultural/ne_10m_roads_north_america.shp 10m_cultural/ne_10m_roads_north_america.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -616,7 +616,7 @@ zips/10m_cultural/ne_10m_roads_north_america.zip: 10m_cultural/ne_10m_roads_nort
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_roads_north_america$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_urban_areas_landscan.zip: 10m_cultural/ne_10m_urban_areas_landscan.shp 10m_cultural/ne_10m_urban_areas_landscan.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -624,7 +624,7 @@ zips/10m_cultural/ne_10m_urban_areas_landscan.zip: 10m_cultural/ne_10m_urban_are
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_urban_areas_landscan$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_urban_areas.zip: 10m_cultural/ne_10m_urban_areas.shp 10m_cultural/ne_10m_urban_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -632,7 +632,7 @@ zips/10m_cultural/ne_10m_urban_areas.zip: 10m_cultural/ne_10m_urban_areas.shp 10
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_urban_areas$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_airports.zip: 10m_cultural/ne_10m_airports.shp 10m_cultural/ne_10m_airports.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -640,7 +640,7 @@ zips/10m_cultural/ne_10m_airports.zip: 10m_cultural/ne_10m_airports.shp 10m_cult
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_airports$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_ports.zip: 10m_cultural/ne_10m_ports.shp 10m_cultural/ne_10m_ports.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -648,7 +648,7 @@ zips/10m_cultural/ne_10m_ports.zip: 10m_cultural/ne_10m_ports.shp 10m_cultural/n
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_ports$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_time_zones.zip: 10m_cultural/ne_10m_time_zones.shp 10m_cultural/ne_10m_time_zones.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -656,7 +656,7 @@ zips/10m_cultural/ne_10m_time_zones.zip: 10m_cultural/ne_10m_time_zones.shp 10m_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_time_zones$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_cultural_building_blocks_all.zip: \
 	zips/10m_cultural/ne_10m_admin_0_label_points.zip \
@@ -681,7 +681,7 @@ zips/10m_cultural/ne_10m_admin_1_label_points.zip: 10m_cultural/ne_10m_admin_1_l
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_1_label_points$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_cultural/ne_10m_parks_and_protected_lands.zip: \
 	10m_cultural/ne_10m_parks_and_protected_lands_area.shp 10m_cultural/ne_10m_parks_and_protected_lands_area.dbf \
@@ -700,10 +700,10 @@ zips/10m_cultural/ne_10m_parks_and_protected_lands.zip: \
 	zip -j -r $@ 10m_cultural/ne_10m_parks_and_protected_lands*.*
 	cp $@ archive/ne_10m_parks_and_protected_lands$(VERSION_PREFIXED).zip
 	rm -f geojson/ne_10m_parks_and_protected_lands_*.geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/ne_10m_parks_and_protected_lands_area.geojson 10m_cultural/ne_10m_parks_and_protected_lands_area.shp
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/ne_10m_parks_and_protected_lands_scale_rank.geojson 10m_cultural/ne_10m_parks_and_protected_lands_scale_rank.shp
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/ne_10m_parks_and_protected_lands_line.geojson 10m_cultural/ne_10m_parks_and_protected_lands_line.shp
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/ne_10m_parks_and_protected_lands_point.geojson 10m_cultural/ne_10m_parks_and_protected_lands_point.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/ne_10m_parks_and_protected_lands_area.geojson 10m_cultural/ne_10m_parks_and_protected_lands_area.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/ne_10m_parks_and_protected_lands_scale_rank.geojson 10m_cultural/ne_10m_parks_and_protected_lands_scale_rank.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/ne_10m_parks_and_protected_lands_line.geojson 10m_cultural/ne_10m_parks_and_protected_lands_line.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/ne_10m_parks_and_protected_lands_point.geojson 10m_cultural/ne_10m_parks_and_protected_lands_point.shp
 
 
 
@@ -715,7 +715,7 @@ zips/10m_physical/ne_10m_antarctic_ice_shelves_lines.zip: 10m_physical/ne_10m_an
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_antarctic_ice_shelves_lines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_antarctic_ice_shelves_polys.zip: 10m_physical/ne_10m_antarctic_ice_shelves_polys.shp 10m_physical/ne_10m_antarctic_ice_shelves_polys.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -723,7 +723,7 @@ zips/10m_physical/ne_10m_antarctic_ice_shelves_polys.zip: 10m_physical/ne_10m_an
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_antarctic_ice_shelves_lines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_coastline.zip: 10m_physical/ne_10m_coastline.shp 10m_physical/ne_10m_coastline.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -731,7 +731,7 @@ zips/10m_physical/ne_10m_coastline.zip: 10m_physical/ne_10m_coastline.shp 10m_ph
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_coastline$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_geographic_lines.zip: 10m_physical/ne_10m_geographic_lines.shp 10m_physical/ne_10m_geographic_lines.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -739,7 +739,7 @@ zips/10m_physical/ne_10m_geographic_lines.zip: 10m_physical/ne_10m_geographic_li
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_geographic_lines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_geography_marine_polys.zip: 10m_physical/ne_10m_geography_marine_polys.shp 10m_physical/ne_10m_geography_marine_polys.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -747,7 +747,7 @@ zips/10m_physical/ne_10m_geography_marine_polys.zip: 10m_physical/ne_10m_geograp
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_geography_marine_polys$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_geography_regions_elevation_points.zip: 10m_physical/ne_10m_geography_regions_elevation_points.shp 10m_physical/ne_10m_geography_regions_elevation_points.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -755,7 +755,7 @@ zips/10m_physical/ne_10m_geography_regions_elevation_points.zip: 10m_physical/ne
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_geography_regions_elevation_points$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_geography_regions_points.zip: 10m_physical/ne_10m_geography_regions_points.shp 10m_physical/ne_10m_geography_regions_points.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -763,7 +763,7 @@ zips/10m_physical/ne_10m_geography_regions_points.zip: 10m_physical/ne_10m_geogr
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_geography_regions_points$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_geography_regions_polys.zip: 10m_physical/ne_10m_geography_regions_polys.shp 10m_physical/ne_10m_geography_regions_polys.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -771,7 +771,7 @@ zips/10m_physical/ne_10m_geography_regions_polys.zip: 10m_physical/ne_10m_geogra
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_geography_regions_polys$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_glaciated_areas.zip: 10m_physical/ne_10m_glaciated_areas.shp 10m_physical/ne_10m_glaciated_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -779,7 +779,7 @@ zips/10m_physical/ne_10m_glaciated_areas.zip: 10m_physical/ne_10m_glaciated_area
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_glaciated_areas$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_lakes_europe.zip: 10m_physical/ne_10m_lakes_europe.shp 10m_physical/ne_10m_lakes_europe.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -787,7 +787,7 @@ zips/10m_physical/ne_10m_lakes_europe.zip: 10m_physical/ne_10m_lakes_europe.shp 
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_lakes_europe$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_lakes_historic.zip: 10m_physical/ne_10m_lakes_historic.shp 10m_physical/ne_10m_lakes_historic.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -795,7 +795,7 @@ zips/10m_physical/ne_10m_lakes_historic.zip: 10m_physical/ne_10m_lakes_historic.
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_lakes_historic$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_lakes_north_america.zip: 10m_physical/ne_10m_lakes_north_america.shp 10m_physical/ne_10m_lakes_north_america.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -803,7 +803,7 @@ zips/10m_physical/ne_10m_lakes_north_america.zip: 10m_physical/ne_10m_lakes_nort
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_lakes_north_america$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_lakes_pluvial.zip: 10m_physical/ne_10m_lakes_pluvial.shp 10m_physical/ne_10m_lakes_pluvial.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -811,7 +811,7 @@ zips/10m_physical/ne_10m_lakes_pluvial.zip: 10m_physical/ne_10m_lakes_pluvial.sh
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_lakes_pluvial$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_lakes.zip: 10m_physical/ne_10m_lakes.shp 10m_physical/ne_10m_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -819,7 +819,7 @@ zips/10m_physical/ne_10m_lakes.zip: 10m_physical/ne_10m_lakes.shp 10m_physical/n
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_lakes$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_land.zip: 10m_physical/ne_10m_land.shp 10m_physical/ne_10m_land.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -827,7 +827,7 @@ zips/10m_physical/ne_10m_land.zip: 10m_physical/ne_10m_land.shp 10m_physical/ne_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_land$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_land_scale_rank.zip: 10m_physical/ne_10m_land_scale_rank.shp 10m_physical/ne_10m_land_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -835,7 +835,7 @@ zips/10m_physical/ne_10m_land_scale_rank.zip: 10m_physical/ne_10m_land_scale_ran
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_land_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_minor_islands_coastline.zip: 10m_physical/ne_10m_minor_islands_coastline.shp 10m_physical/ne_10m_minor_islands_coastline.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -843,7 +843,7 @@ zips/10m_physical/ne_10m_minor_islands_coastline.zip: 10m_physical/ne_10m_minor_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_minor_islands_coastline$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_minor_islands.zip: 10m_physical/ne_10m_minor_islands.shp 10m_physical/ne_10m_minor_islands.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -851,7 +851,7 @@ zips/10m_physical/ne_10m_minor_islands.zip: 10m_physical/ne_10m_minor_islands.sh
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_minor_islands$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_ocean.zip: 10m_physical/ne_10m_ocean.shp 10m_physical/ne_10m_ocean.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -859,7 +859,7 @@ zips/10m_physical/ne_10m_ocean.zip: 10m_physical/ne_10m_ocean.shp 10m_physical/n
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_ocean$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_ocean_scale_rank.zip: 10m_physical/ne_10m_ocean_scale_rank.shp 10m_physical/ne_10m_ocean_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -867,7 +867,7 @@ zips/10m_physical/ne_10m_ocean_scale_rank.zip: 10m_physical/ne_10m_ocean_scale_r
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_ocean_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_playas.zip: 10m_physical/ne_10m_playas.shp 10m_physical/ne_10m_playas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -875,7 +875,7 @@ zips/10m_physical/ne_10m_playas.zip: 10m_physical/ne_10m_playas.shp 10m_physical
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_playas$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_reefs.zip: 10m_physical/ne_10m_reefs.shp 10m_physical/ne_10m_reefs.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -883,7 +883,7 @@ zips/10m_physical/ne_10m_reefs.zip: 10m_physical/ne_10m_reefs.shp 10m_physical/n
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_reefs$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_rivers_europe.zip: 10m_physical/ne_10m_rivers_europe.shp 10m_physical/ne_10m_rivers_europe.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -891,7 +891,7 @@ zips/10m_physical/ne_10m_rivers_europe.zip: 10m_physical/ne_10m_rivers_europe.sh
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_rivers_europe$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.zip: 10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.shp 10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -899,7 +899,7 @@ zips/10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.zip: 10m_physical/ne
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_rivers_lake_centerlines_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_rivers_lake_centerlines.zip: 10m_physical/ne_10m_rivers_lake_centerlines.shp 10m_physical/ne_10m_rivers_lake_centerlines.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -907,7 +907,7 @@ zips/10m_physical/ne_10m_rivers_lake_centerlines.zip: 10m_physical/ne_10m_rivers
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_rivers_lake_centerlines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_rivers_north_america.zip: 10m_physical/ne_10m_rivers_north_america.shp 10m_physical/ne_10m_rivers_north_america.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -915,7 +915,7 @@ zips/10m_physical/ne_10m_rivers_north_america.zip: 10m_physical/ne_10m_rivers_no
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_rivers_north_america$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_bathymetry_all.zip: \
 	zips/10m_physical/ne_10m_bathymetry_A_10000.zip \
@@ -940,7 +940,7 @@ zips/10m_physical/ne_10m_bathymetry_A_10000.zip: 10m_physical/ne_10m_bathymetry_
 	zip -j -r $@ 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_A_10000.*
 	cp $@ archive/ne_10m_bathymetry_A_10000$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_A_10000.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_A_10000.shp
 
 zips/10m_physical/ne_10m_bathymetry_B_9000.zip: 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_B_9000.shp 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_B_9000.dbf
 	cp VERSION 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_B_9000.VERSION.txt
@@ -948,7 +948,7 @@ zips/10m_physical/ne_10m_bathymetry_B_9000.zip: 10m_physical/ne_10m_bathymetry_a
 	zip -j -r $@ 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_B_9000.*
 	cp $@ archive/ne_10m_bathymetry_B_9000$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_B_9000.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_B_9000.shp
 
 zips/10m_physical/ne_10m_bathymetry_C_8000.zip: 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_C_8000.shp 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_C_8000.dbf
 	cp VERSION 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_C_8000.VERSION.txt
@@ -956,7 +956,7 @@ zips/10m_physical/ne_10m_bathymetry_C_8000.zip: 10m_physical/ne_10m_bathymetry_a
 	zip -j -r $@ 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_C_8000.*
 	cp $@ archive/ne_10m_bathymetry_C_8000$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_C_8000.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_C_8000.shp
 
 zips/10m_physical/ne_10m_bathymetry_D_7000.zip: 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_D_7000.shp 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_D_7000.dbf
 	cp VERSION 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_D_7000.VERSION.txt
@@ -964,7 +964,7 @@ zips/10m_physical/ne_10m_bathymetry_D_7000.zip: 10m_physical/ne_10m_bathymetry_a
 	zip -j -r $@ 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_D_7000.*
 	cp $@ archive/ne_10m_bathymetry_D_7000$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_D_7000.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_D_7000.shp
 
 zips/10m_physical/ne_10m_bathymetry_E_6000.zip: 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_E_6000.shp 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_E_6000.dbf
 	cp VERSION 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_E_6000.VERSION.txt
@@ -972,7 +972,7 @@ zips/10m_physical/ne_10m_bathymetry_E_6000.zip: 10m_physical/ne_10m_bathymetry_a
 	zip -j -r $@ 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_E_6000.*
 	cp $@ archive/ne_10m_bathymetry_E_6000$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_E_6000.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_E_6000.shp
 
 zips/10m_physical/ne_10m_bathymetry_F_5000.zip: 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_F_5000.shp 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_F_5000.dbf
 	cp VERSION 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_F_5000.VERSION.txt
@@ -980,7 +980,7 @@ zips/10m_physical/ne_10m_bathymetry_F_5000.zip: 10m_physical/ne_10m_bathymetry_a
 	zip -j -r $@ 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_F_5000.*
 	cp $@ archive/ne_10m_bathymetry_F_5000$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_F_5000.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_F_5000.shp
 
 zips/10m_physical/ne_10m_bathymetry_G_4000.zip: 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_G_4000.shp 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_G_4000.dbf
 	cp VERSION 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_G_4000.VERSION.txt
@@ -988,7 +988,7 @@ zips/10m_physical/ne_10m_bathymetry_G_4000.zip: 10m_physical/ne_10m_bathymetry_a
 	zip -j -r $@ 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_G_4000.*
 	cp $@ archive/ne_10m_bathymetry_G_4000$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_G_4000.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_G_4000.shp
 
 zips/10m_physical/ne_10m_bathymetry_H_3000.zip: 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_H_3000.shp 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_H_3000.dbf
 	cp VERSION 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_H_3000.VERSION.txt
@@ -996,7 +996,7 @@ zips/10m_physical/ne_10m_bathymetry_H_3000.zip: 10m_physical/ne_10m_bathymetry_a
 	zip -j -r $@ 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_H_3000.*
 	cp $@ archive/ne_10m_bathymetry_H_3000$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_H_3000.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_H_3000.shp
 
 zips/10m_physical/ne_10m_bathymetry_I_2000.zip: 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_I_2000.shp 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_I_2000.dbf
 	cp VERSION 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_I_2000.VERSION.txt
@@ -1004,7 +1004,7 @@ zips/10m_physical/ne_10m_bathymetry_I_2000.zip: 10m_physical/ne_10m_bathymetry_a
 	zip -j -r $@ 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_I_2000.*
 	cp $@ archive/ne_10m_bathymetry_I_2000$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_I_2000.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_I_2000.shp
 
 zips/10m_physical/ne_10m_bathymetry_J_1000.zip: 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_J_1000.shp 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_J_1000.dbf
 	cp VERSION 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_J_1000.VERSION.txt
@@ -1012,7 +1012,7 @@ zips/10m_physical/ne_10m_bathymetry_J_1000.zip: 10m_physical/ne_10m_bathymetry_a
 	zip -j -r $@ 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_J_1000.*
 	cp $@ archive/ne_10m_bathymetry_J_1000$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_J_1000.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_J_1000.shp
 
 zips/10m_physical/ne_10m_bathymetry_K_200.zip: 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_K_200.shp 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_K_200.dbf
 	cp VERSION 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_K_200.VERSION.txt
@@ -1020,7 +1020,7 @@ zips/10m_physical/ne_10m_bathymetry_K_200.zip: 10m_physical/ne_10m_bathymetry_al
 	zip -j -r $@ 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_K_200.*
 	cp $@ archive/ne_10m_bathymetry_K_200$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_K_200.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_K_200.shp
 
 zips/10m_physical/ne_10m_bathymetry_L_0.zip: 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_L_0.shp 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_L_0.dbf
 	cp VERSION 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_L_0.VERSION.txt
@@ -1028,7 +1028,7 @@ zips/10m_physical/ne_10m_bathymetry_L_0.zip: 10m_physical/ne_10m_bathymetry_all/
 	zip -j -r $@ 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_L_0.*
 	cp $@ archive/ne_10m_bathymetry_L_0$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_L_0.shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_L_0.shp
 
 zips/10m_physical/ne_10m_graticules_all.zip: \
 	zips/10m_physical/ne_10m_graticules_1.zip \
@@ -1048,7 +1048,7 @@ zips/10m_physical/ne_10m_graticules_1.zip: 10m_physical/ne_10m_graticules_all/ne
 	zip -j -r $@ 10m_physical/ne_10m_graticules_all/ne_10m_graticules_1.*
 	cp $@ archive/ne_10m_graticules_1$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_graticules_5.zip: 10m_physical/ne_10m_graticules_all/ne_10m_graticules_5.shp 10m_physical/ne_10m_graticules_all/ne_10m_graticules_5.dbf
 	cp VERSION 10m_physical/ne_10m_graticules_all/ne_10m_graticules_5.VERSION.txt
@@ -1056,7 +1056,7 @@ zips/10m_physical/ne_10m_graticules_5.zip: 10m_physical/ne_10m_graticules_all/ne
 	zip -j -r $@ 10m_physical/ne_10m_graticules_all/ne_10m_graticules_5.*
 	cp $@ archive/ne_10m_graticules_5$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_graticules_10.zip: 10m_physical/ne_10m_graticules_all/ne_10m_graticules_10.shp 10m_physical/ne_10m_graticules_all/ne_10m_graticules_10.dbf
 	cp VERSION 10m_physical/ne_10m_graticules_all/ne_10m_graticules_10.VERSION.txt
@@ -1064,7 +1064,7 @@ zips/10m_physical/ne_10m_graticules_10.zip: 10m_physical/ne_10m_graticules_all/n
 	zip -j -r $@ 10m_physical/ne_10m_graticules_all/ne_10m_graticules_10.*
 	cp $@ archive/ne_10m_graticules_10$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_graticules_15.zip: 10m_physical/ne_10m_graticules_all/ne_10m_graticules_15.shp 10m_physical/ne_10m_graticules_all/ne_10m_graticules_15.dbf
 	cp VERSION 10m_physical/ne_10m_graticules_all/ne_10m_graticules_15.VERSION.txt
@@ -1072,7 +1072,7 @@ zips/10m_physical/ne_10m_graticules_15.zip: 10m_physical/ne_10m_graticules_all/n
 	zip -j -r $@ 10m_physical/ne_10m_graticules_all/ne_10m_graticules_15.*
 	cp $@ archive/ne_10m_graticules_15$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_graticules_20.zip: 10m_physical/ne_10m_graticules_all/ne_10m_graticules_20.shp 10m_physical/ne_10m_graticules_all/ne_10m_graticules_20.dbf
 	cp VERSION 10m_physical/ne_10m_graticules_all/ne_10m_graticules_20.VERSION.txt
@@ -1080,7 +1080,7 @@ zips/10m_physical/ne_10m_graticules_20.zip: 10m_physical/ne_10m_graticules_all/n
 	zip -j -r $@ 10m_physical/ne_10m_graticules_all/ne_10m_graticules_20.*
 	cp $@ archive/ne_10m_graticules_20$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_graticules_30.zip: 10m_physical/ne_10m_graticules_all/ne_10m_graticules_30.shp 10m_physical/ne_10m_graticules_all/ne_10m_graticules_30.dbf
 	cp VERSION 10m_physical/ne_10m_graticules_all/ne_10m_graticules_30.VERSION.txt
@@ -1088,7 +1088,7 @@ zips/10m_physical/ne_10m_graticules_30.zip: 10m_physical/ne_10m_graticules_all/n
 	zip -j -r $@ 10m_physical/ne_10m_graticules_all/ne_10m_graticules_30.*
 	cp $@ archive/ne_10m_graticules_30$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_wgs84_bounding_box.zip: 10m_physical/ne_10m_graticules_all/ne_10m_wgs84_bounding_box.shp 10m_physical/ne_10m_graticules_all/ne_10m_wgs84_bounding_box.dbf
 	cp VERSION 10m_physical/ne_10m_graticules_all/ne_10m_wgs84_bounding_box.VERSION.txt
@@ -1096,7 +1096,7 @@ zips/10m_physical/ne_10m_wgs84_bounding_box.zip: 10m_physical/ne_10m_graticules_
 	zip -j -r $@ 10m_physical/ne_10m_graticules_all/ne_10m_wgs84_bounding_box.*
 	cp $@ archive/ne_10m_wgs84_bounding_box$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson 10m_physical/ne_10m_graticules_all/$(subst zips/10m_physical/,,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_land_ocean_label_points.zip: 10m_physical/ne_10m_land_ocean_label_points.shp 10m_physical/ne_10m_land_ocean_label_points.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1104,7 +1104,7 @@ zips/10m_physical/ne_10m_land_ocean_label_points.zip: 10m_physical/ne_10m_land_o
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_land_ocean_label_points$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_land_ocean_seams.zip: 10m_physical/ne_10m_land_ocean_seams.shp 10m_physical/ne_10m_land_ocean_seams.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1112,7 +1112,7 @@ zips/10m_physical/ne_10m_land_ocean_seams.zip: 10m_physical/ne_10m_land_ocean_se
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_land_ocean_seams$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_minor_islands_label_points.zip: 10m_physical/ne_10m_minor_islands_label_points.shp 10m_physical/ne_10m_minor_islands_label_points.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1120,7 +1120,7 @@ zips/10m_physical/ne_10m_minor_islands_label_points.zip: 10m_physical/ne_10m_min
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_minor_islands_label_points$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/10m_physical/ne_10m_physical_building_blocks_all.zip: \
 	zips/10m_physical/ne_10m_minor_islands_label_points.zip \
@@ -1142,7 +1142,7 @@ zips/50m_cultural/ne_50m_admin_0_boundary_lines_land.zip: 50m_cultural/ne_50m_ad
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_boundary_lines_land$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_boundary_map_units.zip: 50m_cultural/ne_50m_admin_0_boundary_map_units.shp 50m_cultural/ne_50m_admin_0_boundary_map_units.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1150,7 +1150,7 @@ zips/50m_cultural/ne_50m_admin_0_boundary_map_units.zip: 50m_cultural/ne_50m_adm
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_boundary_map_units$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_pacific_groupings.zip: 50m_cultural/ne_50m_admin_0_pacific_groupings.shp 50m_cultural/ne_50m_admin_0_pacific_groupings.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1158,7 +1158,7 @@ zips/50m_cultural/ne_50m_admin_0_pacific_groupings.zip: 50m_cultural/ne_50m_admi
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_pacific_groupings$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.zip: 50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.shp 50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1166,7 +1166,7 @@ zips/50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.zip: 50m_cult
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_boundary_lines_maritime_indicator$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_countries.zip: 50m_cultural/ne_50m_admin_0_countries.shp 50m_cultural/ne_50m_admin_0_countries.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1174,7 +1174,7 @@ zips/50m_cultural/ne_50m_admin_0_countries.zip: 50m_cultural/ne_50m_admin_0_coun
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_countries$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_countries_lakes.zip: 50m_cultural/ne_50m_admin_0_countries_lakes.shp 50m_cultural/ne_50m_admin_0_countries_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1182,7 +1182,7 @@ zips/50m_cultural/ne_50m_admin_0_countries_lakes.zip: 50m_cultural/ne_50m_admin_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_countries_lakes$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_map_subunits.zip: 50m_cultural/ne_50m_admin_0_map_subunits.shp 50m_cultural/ne_50m_admin_0_map_subunits.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1190,7 +1190,7 @@ zips/50m_cultural/ne_50m_admin_0_map_subunits.zip: 50m_cultural/ne_50m_admin_0_m
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_map_subunits$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_map_units.zip: 50m_cultural/ne_50m_admin_0_map_units.shp 50m_cultural/ne_50m_admin_0_map_units.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1198,7 +1198,7 @@ zips/50m_cultural/ne_50m_admin_0_map_units.zip: 50m_cultural/ne_50m_admin_0_map_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_map_units$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_scale_rank.zip: 50m_cultural/ne_50m_admin_0_scale_rank.shp 50m_cultural/ne_50m_admin_0_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1206,7 +1206,7 @@ zips/50m_cultural/ne_50m_admin_0_scale_rank.zip: 50m_cultural/ne_50m_admin_0_sca
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_sovereignty.zip: 50m_cultural/ne_50m_admin_0_sovereignty.shp 50m_cultural/ne_50m_admin_0_sovereignty.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1214,7 +1214,7 @@ zips/50m_cultural/ne_50m_admin_0_sovereignty.zip: 50m_cultural/ne_50m_admin_0_so
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_sovereignty$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_tiny_countries.zip: 50m_cultural/ne_50m_admin_0_tiny_countries.shp 50m_cultural/ne_50m_admin_0_tiny_countries.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1222,7 +1222,7 @@ zips/50m_cultural/ne_50m_admin_0_tiny_countries.zip: 50m_cultural/ne_50m_admin_0
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_tiny_countries$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_tiny_countries_scale_rank.zip: 50m_cultural/ne_50m_admin_0_tiny_countries_scale_rank.shp 50m_cultural/ne_50m_admin_0_tiny_countries_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1230,7 +1230,7 @@ zips/50m_cultural/ne_50m_admin_0_tiny_countries_scale_rank.zip: 50m_cultural/ne_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_tiny_countries_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.zip: 50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.shp 50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1238,7 +1238,7 @@ zips/50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.zip: 50m_cultural/ne_5
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_breakaway_disputed_areas$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.zip: 50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.shp 50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1246,7 +1246,7 @@ zips/50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.zip: 50m_cultural
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_boundary_lines_disputed_areas$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_1_states_provinces.zip: 50m_cultural/ne_50m_admin_1_states_provinces.shp 50m_cultural/ne_50m_admin_1_states_provinces.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1254,7 +1254,7 @@ zips/50m_cultural/ne_50m_admin_1_states_provinces.zip: 50m_cultural/ne_50m_admin
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_1_states_provinces$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_1_states_provinces_scale_rank.zip: 50m_cultural/ne_50m_admin_1_states_provinces_scale_rank.shp 50m_cultural/ne_50m_admin_1_states_provinces_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1262,7 +1262,7 @@ zips/50m_cultural/ne_50m_admin_1_states_provinces_scale_rank.zip: 50m_cultural/n
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_1_states_provinces_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_1_states_provinces_lakes.zip: 50m_cultural/ne_50m_admin_1_states_provinces_lakes.shp 50m_cultural/ne_50m_admin_1_states_provinces_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1270,7 +1270,7 @@ zips/50m_cultural/ne_50m_admin_1_states_provinces_lakes.zip: 50m_cultural/ne_50m
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_1_states_provinces_lakes$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_admin_1_states_provinces_lines.zip: 50m_cultural/ne_50m_admin_1_states_provinces_lines.shp 50m_cultural/ne_50m_admin_1_states_provinces_lines.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1278,7 +1278,7 @@ zips/50m_cultural/ne_50m_admin_1_states_provinces_lines.zip: 50m_cultural/ne_50m
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_1_states_provinces_lines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_populated_places.zip: 50m_cultural/ne_50m_populated_places.shp 50m_cultural/ne_50m_populated_places.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1286,7 +1286,7 @@ zips/50m_cultural/ne_50m_populated_places.zip: 50m_cultural/ne_50m_populated_pla
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_populated_places$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_populated_places_simple.zip: 50m_cultural/ne_50m_populated_places_simple.shp 50m_cultural/ne_50m_populated_places_simple.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1294,7 +1294,7 @@ zips/50m_cultural/ne_50m_populated_places_simple.zip: 50m_cultural/ne_50m_popula
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_populated_places_simple$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_airports.zip: 50m_cultural/ne_50m_airports.shp 50m_cultural/ne_50m_airports.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1302,7 +1302,7 @@ zips/50m_cultural/ne_50m_airports.zip: 50m_cultural/ne_50m_airports.shp 50m_cult
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_airports$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_ports.zip: 50m_cultural/ne_50m_ports.shp 50m_cultural/ne_50m_ports.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1310,7 +1310,7 @@ zips/50m_cultural/ne_50m_ports.zip: 50m_cultural/ne_50m_ports.shp 50m_cultural/n
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_ports$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_cultural/ne_50m_urban_areas.zip: 50m_cultural/ne_50m_urban_areas.shp 50m_cultural/ne_50m_urban_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1318,7 +1318,7 @@ zips/50m_cultural/ne_50m_urban_areas.zip: 50m_cultural/ne_50m_urban_areas.shp 50
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_urban_areas$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 
 # 50m physical
@@ -1329,7 +1329,7 @@ zips/50m_physical/ne_50m_antarctic_ice_shelves_lines.zip: 50m_physical/ne_50m_an
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_antarctic_ice_shelves_lines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_antarctic_ice_shelves_polys.zip: 50m_physical/ne_50m_antarctic_ice_shelves_polys.shp 50m_physical/ne_50m_antarctic_ice_shelves_polys.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1337,7 +1337,7 @@ zips/50m_physical/ne_50m_antarctic_ice_shelves_polys.zip: 50m_physical/ne_50m_an
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_antarctic_ice_shelves_polys$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_coastline.zip: 50m_physical/ne_50m_coastline.shp 50m_physical/ne_50m_coastline.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1345,7 +1345,7 @@ zips/50m_physical/ne_50m_coastline.zip: 50m_physical/ne_50m_coastline.shp 50m_ph
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_coastline$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_geographic_lines.zip: 50m_physical/ne_50m_geographic_lines.shp 50m_physical/ne_50m_geographic_lines.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1353,7 +1353,7 @@ zips/50m_physical/ne_50m_geographic_lines.zip: 50m_physical/ne_50m_geographic_li
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_geographic_lines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_geography_marine_polys.zip: 50m_physical/ne_50m_geography_marine_polys.shp 50m_physical/ne_50m_geography_marine_polys.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1361,7 +1361,7 @@ zips/50m_physical/ne_50m_geography_marine_polys.zip: 50m_physical/ne_50m_geograp
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_geography_marine_polys$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_geography_regions_elevation_points.zip: 50m_physical/ne_50m_geography_regions_elevation_points.shp 50m_physical/ne_50m_geography_regions_elevation_points.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1369,7 +1369,7 @@ zips/50m_physical/ne_50m_geography_regions_elevation_points.zip: 50m_physical/ne
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_geography_regions_elevation_points$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_geography_regions_points.zip: 50m_physical/ne_50m_geography_regions_points.shp 50m_physical/ne_50m_geography_regions_points.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1377,7 +1377,7 @@ zips/50m_physical/ne_50m_geography_regions_points.zip: 50m_physical/ne_50m_geogr
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_geography_regions_points$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_geography_regions_polys.zip: 50m_physical/ne_50m_geography_regions_polys.shp 50m_physical/ne_50m_geography_regions_polys.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1385,7 +1385,7 @@ zips/50m_physical/ne_50m_geography_regions_polys.zip: 50m_physical/ne_50m_geogra
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_geography_regions_polys$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_glaciated_areas.zip: 50m_physical/ne_50m_glaciated_areas.shp 50m_physical/ne_50m_glaciated_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1393,7 +1393,7 @@ zips/50m_physical/ne_50m_glaciated_areas.zip: 50m_physical/ne_50m_glaciated_area
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_glaciated_areas$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_lakes_historic.zip: 50m_physical/ne_50m_lakes_historic.shp 50m_physical/ne_50m_lakes_historic.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1401,7 +1401,7 @@ zips/50m_physical/ne_50m_lakes_historic.zip: 50m_physical/ne_50m_lakes_historic.
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_lakes_historic$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_lakes.zip: 50m_physical/ne_50m_lakes.shp 50m_physical/ne_50m_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1409,7 +1409,7 @@ zips/50m_physical/ne_50m_lakes.zip: 50m_physical/ne_50m_lakes.shp 50m_physical/n
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_lakes$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_land.zip: 50m_physical/ne_50m_land.shp 50m_physical/ne_50m_land.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1417,7 +1417,7 @@ zips/50m_physical/ne_50m_land.zip: 50m_physical/ne_50m_land.shp 50m_physical/ne_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_land$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_ocean.zip: 50m_physical/ne_50m_ocean.shp 50m_physical/ne_50m_ocean.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1425,7 +1425,7 @@ zips/50m_physical/ne_50m_ocean.zip: 50m_physical/ne_50m_ocean.shp 50m_physical/n
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_ocean$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_playas.zip: 50m_physical/ne_50m_playas.shp 50m_physical/ne_50m_playas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1433,7 +1433,7 @@ zips/50m_physical/ne_50m_playas.zip: 50m_physical/ne_50m_playas.shp 50m_physical
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_playas$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_rivers_lake_centerlines_scale_rank.zip: 50m_physical/ne_50m_rivers_lake_centerlines_scale_rank.shp 50m_physical/ne_50m_rivers_lake_centerlines_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1441,7 +1441,7 @@ zips/50m_physical/ne_50m_rivers_lake_centerlines_scale_rank.zip: 50m_physical/ne
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_rivers_lake_centerlines_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_rivers_lake_centerlines.zip: 50m_physical/ne_50m_rivers_lake_centerlines.shp 50m_physical/ne_50m_rivers_lake_centerlines.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1449,7 +1449,7 @@ zips/50m_physical/ne_50m_rivers_lake_centerlines.zip: 50m_physical/ne_50m_rivers
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_rivers_lake_centerlines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_graticules_all.zip: \
 	zips/50m_physical/ne_50m_graticules_1.zip \
@@ -1469,7 +1469,7 @@ zips/50m_physical/ne_50m_graticules_1.zip: 50m_physical/ne_50m_graticules_all/ne
 	zip -j -r $@ 50m_physical/ne_50m_graticules_all/ne_50m_graticules_1.*
 	cp $@ archive/ne_50m_graticules_1$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_graticules_5.zip: 50m_physical/ne_50m_graticules_all/ne_50m_graticules_5.shp 50m_physical/ne_50m_graticules_all/ne_50m_graticules_5.dbf
 	cp VERSION 50m_physical/ne_50m_graticules_all/ne_50m_graticules_5.VERSION.txt
@@ -1477,7 +1477,7 @@ zips/50m_physical/ne_50m_graticules_5.zip: 50m_physical/ne_50m_graticules_all/ne
 	zip -j -r $@ 50m_physical/ne_50m_graticules_all/ne_50m_graticules_5.*
 	cp $@ archive/ne_50m_graticules_5$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_graticules_10.zip: 50m_physical/ne_50m_graticules_all/ne_50m_graticules_10.shp 50m_physical/ne_50m_graticules_all/ne_50m_graticules_10.dbf
 	cp VERSION 50m_physical/ne_50m_graticules_all/ne_50m_graticules_10.VERSION.txt
@@ -1485,7 +1485,7 @@ zips/50m_physical/ne_50m_graticules_10.zip: 50m_physical/ne_50m_graticules_all/n
 	zip -j -r $@ 50m_physical/ne_50m_graticules_all/ne_50m_graticules_10.*
 	cp $@ archive/ne_50m_graticules_10$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_graticules_15.zip: 50m_physical/ne_50m_graticules_all/ne_50m_graticules_15.shp 50m_physical/ne_50m_graticules_all/ne_50m_graticules_15.dbf
 	cp VERSION 50m_physical/ne_50m_graticules_all/ne_50m_graticules_15.VERSION.txt
@@ -1493,7 +1493,7 @@ zips/50m_physical/ne_50m_graticules_15.zip: 50m_physical/ne_50m_graticules_all/n
 	zip -j -r $@ 50m_physical/ne_50m_graticules_all/ne_50m_graticules_15.*
 	cp $@ archive/ne_50m_graticules_15$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_graticules_20.zip: 50m_physical/ne_50m_graticules_all/ne_50m_graticules_20.shp 50m_physical/ne_50m_graticules_all/ne_50m_graticules_20.dbf
 	cp VERSION 50m_physical/ne_50m_graticules_all/ne_50m_graticules_20.VERSION.txt
@@ -1501,7 +1501,7 @@ zips/50m_physical/ne_50m_graticules_20.zip: 50m_physical/ne_50m_graticules_all/n
 	zip -j -r $@ 50m_physical/ne_50m_graticules_all/ne_50m_graticules_20.*
 	cp $@ archive/ne_50m_graticules_20$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_graticules_30.zip: 50m_physical/ne_50m_graticules_all/ne_50m_graticules_30.shp 50m_physical/ne_50m_graticules_all/ne_50m_graticules_30.dbf
 	cp VERSION 50m_physical/ne_50m_graticules_all/ne_50m_graticules_30.VERSION.txt
@@ -1509,7 +1509,7 @@ zips/50m_physical/ne_50m_graticules_30.zip: 50m_physical/ne_50m_graticules_all/n
 	zip -j -r $@ 50m_physical/ne_50m_graticules_all/ne_50m_graticules_30.*
 	cp $@ archive/ne_50m_graticules_30$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
 
 zips/50m_physical/ne_50m_wgs84_bounding_box.zip: 50m_physical/ne_50m_graticules_all/ne_50m_wgs84_bounding_box.shp 50m_physical/ne_50m_graticules_all/ne_50m_wgs84_bounding_box.dbf
 	cp VERSION 50m_physical/ne_50m_graticules_all/ne_50m_wgs84_bounding_box.VERSION.txt
@@ -1517,7 +1517,7 @@ zips/50m_physical/ne_50m_wgs84_bounding_box.zip: 50m_physical/ne_50m_graticules_
 	zip -j -r $@ 50m_physical/ne_50m_graticules_all/ne_50m_wgs84_bounding_box.*
 	cp $@ archive/ne_50m_wgs84_bounding_box$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson 50m_physical/ne_50m_graticules_all/$(subst zips/50m_physical/,,$(basename $@)).shp
 
 
 # 110m cultural
@@ -1528,7 +1528,7 @@ zips/110m_cultural/ne_110m_admin_0_countries.zip: 110m_cultural/ne_110m_admin_0_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_0_countries$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_admin_0_countries_lakes.zip: 110m_cultural/ne_110m_admin_0_countries_lakes.shp 110m_cultural/ne_110m_admin_0_countries_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1536,7 +1536,7 @@ zips/110m_cultural/ne_110m_admin_0_countries_lakes.zip: 110m_cultural/ne_110m_ad
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_0_countries_lakes$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_admin_0_boundary_lines_land.zip: 110m_cultural/ne_110m_admin_0_boundary_lines_land.shp 110m_cultural/ne_110m_admin_0_boundary_lines_land.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1544,7 +1544,7 @@ zips/110m_cultural/ne_110m_admin_0_boundary_lines_land.zip: 110m_cultural/ne_110
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_0_boundary_lines_land$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_admin_0_pacific_groupings.zip: 110m_cultural/ne_110m_admin_0_pacific_groupings.shp 110m_cultural/ne_110m_admin_0_pacific_groupings.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1552,7 +1552,7 @@ zips/110m_cultural/ne_110m_admin_0_pacific_groupings.zip: 110m_cultural/ne_110m_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_0_pacific_groupings$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_admin_0_map_units.zip: 110m_cultural/ne_110m_admin_0_map_units.shp 110m_cultural/ne_110m_admin_0_map_units.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1560,7 +1560,7 @@ zips/110m_cultural/ne_110m_admin_0_map_units.zip: 110m_cultural/ne_110m_admin_0_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_0_map_units$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_admin_0_scale_rank.zip: 110m_cultural/ne_110m_admin_0_scale_rank.shp 110m_cultural/ne_110m_admin_0_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1568,7 +1568,7 @@ zips/110m_cultural/ne_110m_admin_0_scale_rank.zip: 110m_cultural/ne_110m_admin_0
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_0_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_admin_0_sovereignty.zip: 110m_cultural/ne_110m_admin_0_sovereignty.shp 110m_cultural/ne_110m_admin_0_sovereignty.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1576,7 +1576,7 @@ zips/110m_cultural/ne_110m_admin_0_sovereignty.zip: 110m_cultural/ne_110m_admin_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_0_sovereignty$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_admin_0_tiny_countries.zip: 110m_cultural/ne_110m_admin_0_tiny_countries.shp 110m_cultural/ne_110m_admin_0_tiny_countries.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1584,7 +1584,7 @@ zips/110m_cultural/ne_110m_admin_0_tiny_countries.zip: 110m_cultural/ne_110m_adm
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_0_tiny_countries$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_admin_1_states_provinces.zip: 110m_cultural/ne_110m_admin_1_states_provinces.shp 110m_cultural/ne_110m_admin_1_states_provinces.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1592,7 +1592,7 @@ zips/110m_cultural/ne_110m_admin_1_states_provinces.zip: 110m_cultural/ne_110m_a
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_1_states_provinces$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_admin_1_states_provinces_lakes.zip: 110m_cultural/ne_110m_admin_1_states_provinces_lakes.shp 110m_cultural/ne_110m_admin_1_states_provinces_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1600,7 +1600,7 @@ zips/110m_cultural/ne_110m_admin_1_states_provinces_lakes.zip: 110m_cultural/ne_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_1_states_provinces_lakes$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_admin_1_states_provinces_scale_rank.zip: 110m_cultural/ne_110m_admin_1_states_provinces_scale_rank.shp 110m_cultural/ne_110m_admin_1_states_provinces_scale_rank.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1608,7 +1608,7 @@ zips/110m_cultural/ne_110m_admin_1_states_provinces_scale_rank.zip: 110m_cultura
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_1_states_provinces_scale_rank$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_admin_1_states_provinces_lines.zip: 110m_cultural/ne_110m_admin_1_states_provinces_lines.shp 110m_cultural/ne_110m_admin_1_states_provinces_lines.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1616,7 +1616,7 @@ zips/110m_cultural/ne_110m_admin_1_states_provinces_lines.zip: 110m_cultural/ne_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_admin_1_states_provinces_lines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_populated_places.zip: 110m_cultural/ne_110m_populated_places.shp 110m_cultural/ne_110m_populated_places.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1624,7 +1624,7 @@ zips/110m_cultural/ne_110m_populated_places.zip: 110m_cultural/ne_110m_populated
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_populated_places$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_cultural/ne_110m_populated_places_simple.zip: 110m_cultural/ne_110m_populated_places_simple.shp 110m_cultural/ne_110m_populated_places_simple.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1632,7 +1632,7 @@ zips/110m_cultural/ne_110m_populated_places_simple.zip: 110m_cultural/ne_110m_po
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_populated_places_simple$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_cultural/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 
 # 110m physical
@@ -1643,7 +1643,7 @@ zips/110m_physical/ne_110m_coastline.zip: 110m_physical/ne_110m_coastline.shp 11
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_coastline$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_geographic_lines.zip: 110m_physical/ne_110m_geographic_lines.shp 110m_physical/ne_110m_geographic_lines.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1651,7 +1651,7 @@ zips/110m_physical/ne_110m_geographic_lines.zip: 110m_physical/ne_110m_geographi
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_geographic_lines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_geography_marine_polys.zip: 110m_physical/ne_110m_geography_marine_polys.shp 110m_physical/ne_110m_geography_marine_polys.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1659,7 +1659,7 @@ zips/110m_physical/ne_110m_geography_marine_polys.zip: 110m_physical/ne_110m_geo
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_geography_marine_polys$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_geography_regions_elevation_points.zip: 110m_physical/ne_110m_geography_regions_elevation_points.shp 110m_physical/ne_110m_geography_regions_elevation_points.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1667,7 +1667,7 @@ zips/110m_physical/ne_110m_geography_regions_elevation_points.zip: 110m_physical
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_geography_regions_elevation_points$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_geography_regions_points.zip: 110m_physical/ne_110m_geography_regions_points.shp 110m_physical/ne_110m_geography_regions_points.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1675,7 +1675,7 @@ zips/110m_physical/ne_110m_geography_regions_points.zip: 110m_physical/ne_110m_g
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_geography_regions_points$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_geography_regions_polys.zip: 110m_physical/ne_110m_geography_regions_polys.shp 110m_physical/ne_110m_geography_regions_polys.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1683,7 +1683,7 @@ zips/110m_physical/ne_110m_geography_regions_polys.zip: 110m_physical/ne_110m_ge
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_geography_regions_polys$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_glaciated_areas.zip: 110m_physical/ne_110m_glaciated_areas.shp 110m_physical/ne_110m_glaciated_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1691,7 +1691,7 @@ zips/110m_physical/ne_110m_glaciated_areas.zip: 110m_physical/ne_110m_glaciated_
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_glaciated_areas$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_lakes.zip: 110m_physical/ne_110m_lakes.shp 110m_physical/ne_110m_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1699,7 +1699,7 @@ zips/110m_physical/ne_110m_lakes.zip: 110m_physical/ne_110m_lakes.shp 110m_physi
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_lakes$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_land.zip: 110m_physical/ne_110m_land.shp 110m_physical/ne_110m_land.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1707,7 +1707,7 @@ zips/110m_physical/ne_110m_land.zip: 110m_physical/ne_110m_land.shp 110m_physica
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_land$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_ocean.zip: 110m_physical/ne_110m_ocean.shp 110m_physical/ne_110m_ocean.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1715,7 +1715,7 @@ zips/110m_physical/ne_110m_ocean.zip: 110m_physical/ne_110m_ocean.shp 110m_physi
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_ocean$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_rivers_lake_centerlines.zip: 110m_physical/ne_110m_rivers_lake_centerlines.shp 110m_physical/ne_110m_rivers_lake_centerlines.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1723,7 +1723,7 @@ zips/110m_physical/ne_110m_rivers_lake_centerlines.zip: 110m_physical/ne_110m_ri
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_110m_rivers_lake_centerlines$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson $(subst zips/, ,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_graticules_all.zip: \
 	zips/110m_physical/ne_110m_graticules_1.zip \
@@ -1743,7 +1743,7 @@ zips/110m_physical/ne_110m_graticules_1.zip: 110m_physical/ne_110m_graticules_al
 	zip -j -r $@ 110m_physical/ne_110m_graticules_all/ne_110m_graticules_1.*
 	cp $@ archive/ne_110m_graticules_1$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_graticules_5.zip: 110m_physical/ne_110m_graticules_all/ne_110m_graticules_5.shp 110m_physical/ne_110m_graticules_all/ne_110m_graticules_5.dbf
 	cp VERSION 110m_physical/ne_110m_graticules_all/ne_110m_graticules_5.VERSION.txt
@@ -1751,7 +1751,7 @@ zips/110m_physical/ne_110m_graticules_5.zip: 110m_physical/ne_110m_graticules_al
 	zip -j -r $@ 110m_physical/ne_110m_graticules_all/ne_110m_graticules_5.*
 	cp $@ archive/ne_110m_graticules_5$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_graticules_10.zip: 110m_physical/ne_110m_graticules_all/ne_110m_graticules_10.shp 110m_physical/ne_110m_graticules_all/ne_110m_graticules_10.dbf
 	cp VERSION 110m_physical/ne_110m_graticules_all/ne_110m_graticules_10.VERSION.txt
@@ -1759,7 +1759,7 @@ zips/110m_physical/ne_110m_graticules_10.zip: 110m_physical/ne_110m_graticules_a
 	zip -j -r $@ 110m_physical/ne_110m_graticules_all/ne_110m_graticules_10.*
 	cp $@ archive/ne_110m_graticules_10$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_graticules_15.zip: 110m_physical/ne_110m_graticules_all/ne_110m_graticules_15.shp 110m_physical/ne_110m_graticules_all/ne_110m_graticules_15.dbf
 	cp VERSION 110m_physical/ne_110m_graticules_all/ne_110m_graticules_15.VERSION.txt
@@ -1767,7 +1767,7 @@ zips/110m_physical/ne_110m_graticules_15.zip: 110m_physical/ne_110m_graticules_a
 	zip -j -r $@ 110m_physical/ne_110m_graticules_all/ne_110m_graticules_15.*
 	cp $@ archive/ne_110m_graticules_15$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_graticules_20.zip: 110m_physical/ne_110m_graticules_all/ne_110m_graticules_20.shp 110m_physical/ne_110m_graticules_all/ne_110m_graticules_20.dbf
 	cp VERSION 110m_physical/ne_110m_graticules_all/ne_110m_graticules_20.VERSION.txt
@@ -1775,7 +1775,7 @@ zips/110m_physical/ne_110m_graticules_20.zip: 110m_physical/ne_110m_graticules_a
 	zip -j -r $@ 110m_physical/ne_110m_graticules_all/ne_110m_graticules_20.*
 	cp $@ archive/ne_110m_graticules_20$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_graticules_30.zip: 110m_physical/ne_110m_graticules_all/ne_110m_graticules_30.shp 110m_physical/ne_110m_graticules_all/ne_110m_graticules_30.dbf
 	cp VERSION 110m_physical/ne_110m_graticules_all/ne_110m_graticules_30.VERSION.txt
@@ -1783,7 +1783,7 @@ zips/110m_physical/ne_110m_graticules_30.zip: 110m_physical/ne_110m_graticules_a
 	zip -j -r $@ 110m_physical/ne_110m_graticules_all/ne_110m_graticules_30.*
 	cp $@ archive/ne_110m_graticules_30$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
 
 zips/110m_physical/ne_110m_wgs84_bounding_box.zip: 110m_physical/ne_110m_graticules_all/ne_110m_wgs84_bounding_box.shp 110m_physical/ne_110m_graticules_all/ne_110m_wgs84_bounding_box.dbf
 	cp VERSION 110m_physical/ne_110m_graticules_all/ne_110m_wgs84_bounding_box.VERSION.txt
@@ -1791,7 +1791,7 @@ zips/110m_physical/ne_110m_wgs84_bounding_box.zip: 110m_physical/ne_110m_graticu
 	zip -j -r $@ 110m_physical/ne_110m_graticules_all/ne_110m_wgs84_bounding_box.*
 	cp $@ archive/ne_110m_wgs84_bounding_box$(VERSION_PREFIXED).zip
 	rm -f geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson
-	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
+	ogr2ogr -f GeoJSON -clipsrc -180 -90 180 90 -lco RFC7946=YES -lco WRITE_BBOX=YES geojson/$(subst zips/110m_physical/,,$(basename $@)).geojson 110m_physical/ne_110m_graticules_all/$(subst zips/110m_physical/,,$(basename $@)).shp
 
 
 # PACKAGES
