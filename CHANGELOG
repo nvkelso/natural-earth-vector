@@ -407,9 +407,6 @@ The following files include the same changes as the 10m versions (mostly adding 
 The following files include the same changes as the 10m versions (mostly adding min_zoom properties).
 
 - UPDATED:  ne_110m_coastline
-
-            TODO: min_zoom values are not always present, should match the land polys.
-
 - UPDATED:  ne_110m_geographic_lines
 - UPDATED:  ne_110m_geography_marine_polys
 - UPDATED:  ne_110m_geography_regions_elevation_points
