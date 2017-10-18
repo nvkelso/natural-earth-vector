@@ -20,14 +20,17 @@ PACKAGES
 - UPDATED:  110M_PHYSICAL
 - UPDATED:  ALL SHP
 - UPDATED:  SQLite
+- UPDATED:  GeoJSON
+
+    TODO: https://github.com/nvkelso/natural-earth-vector/pull/230
 
     TODO: Run Mapshaper over
 x    - 50m countries
 x    - 110m countries
     - Anything else QGIS complains about, even if it's built in ArcGIS.
-        This is primarily the country files at 50m and 110m... which MapShaper cleaned, so???
-            and marine polys
-            geography region polys
+        This is primarily the country files at 50m and 110m... but MapShaper cleaned, so??
+            - and marine polys
+            - geography region polys
 
 HOUSEKEEPING
 
