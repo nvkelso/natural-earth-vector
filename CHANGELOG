@@ -22,9 +22,12 @@ PACKAGES
 - UPDATED:  SQLite
 
     TODO: Run Mapshaper over
-    - 50m countries
-    - 110m countries
+x    - 50m countries
+x    - 110m countries
     - Anything else QGIS complains about, even if it's built in ArcGIS.
+        This is primarily the country files at 50m and 110m... which MapShaper cleaned, so???
+            and marine polys
+            geography region polys
 
 HOUSEKEEPING
 
@@ -231,9 +234,6 @@ HOUSEKEEPING
             - Slide Mt. had wrong elevation. Fixes: #169 Thanks @mojodna
 - UPDATED:  ne_10m_geography_regions_points
             - Adds min_zoom column.
-
-            TODO: Update QGIS project
-
 - UPDATED:  ne_10m_geography_regions_polys
             - Adds min_label, max_label. Change scalerank from float to int.
               NOTE: features don't have min_zoom as they should be label-only.
@@ -408,7 +408,7 @@ The following files include the same changes as the 10m versions (mostly adding 
 
 - UPDATED:  ne_110m_coastline
 
-            TODO: min_zoom values are not always present.
+            TODO: min_zoom values are not always present, should match the land polys.
 
 - UPDATED:  ne_110m_geographic_lines
 - UPDATED:  ne_110m_geography_marine_polys
