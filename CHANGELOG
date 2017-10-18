@@ -1,25 +1,127 @@
-2017-10-05: 4.0.0
+2017-10-15: 4.0.0
 
 - Many thanks to the over 50 people who contributed to the v4 release of Natural Earth, we couldn't do it without you! Jeremy, @raffam, @pnorman, @mojodna, @imresamu, Hannes, Axel, @pinakographo, @CaucasusandMercury, @jschleuss, Martha, Kuba, Jesús, Arkadiy, Philip, Benedikt, Ivor, @almccon, Jacob, Alice, Geoffrey, @ajmas, @instantdelay, Matt, Daniel, Felix, @karimbahgat, @migurski, Olaf, @mvexel, @yaph, Jessica, @kernc, Quentin, Peter, @xangregg, Roland, Rob, @teahan36, @dgddgd, @dkerkow, Graham, Michel, @dshorthouse, @pinakographos, Alain, Aileen, Daniel, Charles, Martin, Aaron, MattA, StephenE, NathanielD, and others.
 
 GENERAL
 
-1) The v4 series introduces significant changes to admin-0 country shapes to account for the disputed area of Crimea, and several important admin-0 country name changes like Czechia renamed from Czech Republic. Admin-0 population and GDP values have also been updated to 2016/2017 vintage.
-2) The v4 series introduces web map optimized min_zoom, min_label, max_label properties that compliment the existing scalerank property that was originally curated for print cartography in proper projection glory. The min_zoom property is optimized for the web Mercator projection we are collectively hallucinating, and the min_label and max_label properties are optional on some themes when the label should be displayed later than the feature's geometry (or should stop showing).
-3) While the v3 series went full UTF-8 for unicode language support a few errors were made along the way. v4 fixes bad Windows-1252 character encoding to UTF-8 conversion bugs. We also better document with the character encoding by adding a .cpg file to shapefile, and on the Natural Earth website documentation. Fixes #89, #186, 4RUN1M5S75; thanks Jeremy and @pnorman.
+1) The v4 series introduces significant changes to admin-0 country shapes to account for the disputed area of Crimea, and several important admin-0 country name changes like Czechia renamed from Czech Republic. Admin-0 population and GDP values have also been updated to 2016/2017 vintage (primarily from CIA World Factbook).
+2) The v4 series introduces web map optimized min_zoom, min_label, max_label properties that compliment the existing scalerank property that was originally curated for print cartography in proper projection glory. The min_zoom property is optimized for the web Mercator projection we are collectively hallucinating, and the min_label and max_label properties are optional on some themes when the label should be displayed later than the feature's geometry (or should stop showing). Fixes: #200, #202.
+3) While the v3 series went full UTF-8 unicode (character encoding) language support a few errors were made along the way. v4 fixes bad Windows-1252 to UTF-8 conversion bugs. We also better document with the character encoding by adding a .cpg file to shapefile, and on the Natural Earth website documentation. Fixes #89, #186, 4RUN1M5S75; thanks Jeremy and @pnorman.
 4) We added French names for marine areas way back in v1.4.0, and v4 adds many thousand more for populated places in the following languages: name_en, name_de, name_es, name_fr, name_pt, name_ru, name_zh. The existing name, name_alt, and nameascii fields have been updated, and name features over 600 labels with accent marks (versus the 80 or so that were garbled in the v3 series).
 
 PACKAGES
 
 - UPDATED:  NATURAL_EARTH_QUICK_START - beta of v2 QGIS file.
+- UPDATED:  10M_CULTURAL
+- UPDATED:  10M_PHYSICAL
+- UPDATED:  50M_CULTURAL
+- UPDATED:  50M_PHYSICAL
+- UPDATED:  110M_CULTURAL
+- UPDATED:  110M_PHYSICAL
+- UPDATED:  ALL SHP
+- UPDATED:  SQLite
+
+    TODO: Run Mapshaper over
+    - 50m countries
+    - 110m countries
+    - Anything else QGIS complains about, even if it's built in ArcGIS.
 
 HOUSEKEEPING
 
-- UPDATED:  NE_ADMIN_0_DETAILS - Track admin-0 countries and other
-            levels. Updated for ..., gdp, population, pop_rank values,
+- UPDATED:  NE_ADMIN_0_DETAILS - Spreadsheet tracks admin-0 countries and other levels.
+            See ne_10m_admin in the 10M_CULTURAL section below for more changes.
 
 10M_CULTURAL
 
+- UPDATED:  ne_10m_admin-0 themes, including:
+            10m_cultural/ne_10m_admin_0_countries
+            10m_cultural/ne_10m_admin_0_countries_lakes
+            ne_10m_admin_0_map_subunits
+            ne_10m_admin_0_map_units
+            ne_10m_admin_0_scale_rank
+            ne_10m_admin_0_scale_rank_minor_islands
+            ne_10m_admin_0_sovereignty
+            ne_10m_admin_0_label_points
+            ne_10m_admin_0_disputed_areas
+            ne_10m_admin_0_disputed_areas_scale_rank_minor_islands
+            - New geometry between Ukraine and Russia for Crimea, other disputed areas.
+              Fixes: #177, 3UXAJS1GJ3, T5DPJ1EBD6. Thanks Daniel, Felix.
+            - Serbia and Kosovo are no longer disputed adm0 disputed_areas. Fixes: #197
+            - Rename Czechia. Fixes: RN2P6RR539, thanks Jaroslav.
+            - Correct spelling of Republic of Congo updated to Republic of the Congo.
+              Fixes 93QN3GN355, DAHQEA7VV6; thanks Alice, Geoffrey.
+            - Rename Cape Verde to Cabo Verde. Fixes: #217
+            - Correct spelling of Holy See (was Sea).
+              Fixes #122, 23GYH3R41J. Thanks @almccon, Jacob.
+            - Correct spelling of Dhekelia *Sovereign* Base Area
+              Fixes BP268E29YA, thanks Geoffrey (again)
+            - Update name, name_long, and formal_en names for North Korea, South Korea,
+              and Laos Fixes: #188, Thanks @instantdelay
+            - Update Kosovo ISO_A2 value to follow European Union usage.
+              Fixes: #134, thanks @ajmas
+            - Correct incorrect ISO_A2 values for Senegal to SN from SM.
+              Fixes 4MJDPJUY7W, thanks Matt.
+            - Population and GDP values updated to 2016/2017 vintage (primarily from CIA
+              World Factbook).
+            - Adds min_zoom, min_label, max_label, and pop_rank properties.
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_admin_0_antarctic_claim_limit_lines
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_admin_0_antarctic_claims
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_admin_0_boundary_lines_disputed_areas
+            - Crimea and other disputed territory changes.
+            - Adds min_zoom property.
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_admin_0_boundary_lines_land
+            - Adds min_zoom
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_admin_0_boundary_lines_map_units
+            - Adds min_zoom
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_admin_0_boundary_lines_maritime_indicator
+            - Adds min_zoom
+            - Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_admin_0_pacific_groupings
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_admin_0_seams
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_admin-1, including:
+            ne_10m_admin_1_states_provinces
+            ne_10m_admin_1_states_provinces_lakes
+            ne_10m_admin_1_states_provinces_scale_rank
+            ne_10m_admin_1_label_points
+            - Crimea and other disputed territory changes.
+            - Adds min_zoom, min_label, max_label, and pop_rank properties.
+            - Complete rebuild of ISO-3166-2 codes, growing from less than 25% of features
+              to nearly complete coverage. Also FIPS and HASC.
+            - For places ISO doesn't yet list subdivisions, Natural Earth uses the pattern ??-X**~ (following @migurski's OpenAddresses convention) where ?? is the ISO 3166-1 country code * are numbers from 0-9 for the subdivisions not covered by ISO; and -99-X**~ where ISO 3166-1 doesn't list a country code.
+              Fixes: #10, #128, #151, #171, 3P4L9Z3WVQ; thanks @karimbahgat, @migurski,
+              and Olaf.
+            - Script reference: https://github.com/karimbahgat/pshapes/blob/master/BaseData/natearthupdate/update_natearthcodes.py
+            - Correct ISO-3166-2 codes in France, Japan, and Finland. Fixes #191, #165.
+            - Correct ISO-3166-2 codes for Santa Catarina, Brazil. Fixes: #190.
+            - Correct ISO-3166-2 codes for Mexico. Fixes #138, thanks @mvexel.
+            - Correct FIPS codes, like Minnesota to US27 FIPS and code_local.
+              Fixes: #166, MYJL36PN7T, thanks @yaph, Jessica.
+            - Correct names, locations of Norfolk Island, Australia and Lord Howe Island.
+              Fixes: #161, thanks @almccon.
+            - Correct HASC code for "lake". Fixes: #193, thanks @kernc.
+            - Correct names of France provinces names and codes.
+              Fixes 4BYEM9LASV, thanks Quentin.
+            - Correct names South Sudan states. Fixes TVYWXQJXPM, thanks Peter.
+            - Correct type_en values for "Unitary Authority (wales" to add missing trailing ")". Fixes HJ1U643PUJ, thanks Geoffrey (again).
+            - UTF-8 encoding related changes.
+- UPDATE:  ne_10m_admin_1_states_provinces_lines
+           - Remove 2nd shapefile versions from ZIP, and related admin-1 packaging.
+             Fixes: #123 Thanks @mojodna
+- UPDATED:  ne_10m_admin_1_seams
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_admin_1_states_provinces_lines
+            - Crimea and other disputed territory changes.
+            - Adds min_zoom, min_label, max_label, and pop_rank properties.
+            - UTF-8 encoding related changes.
 - UPDATED:  ne_10m_populated_places
             - Add Wikidata (wikidataid) and Who's On First (wofid) concordances.
               Fixes: #214, thanks @imresamu.
@@ -45,244 +147,288 @@ HOUSEKEEPING
               Fixes PTA8ZJ9Y52, thanks Philip.
             - Move Passau into Germany from incorrect Austria location.
               Fixes HWTPB8VH21, 5MT15J9DZJ; thanks Benedikt, Ivor.
-
-- UPDATED:  ne_10m_admin-0
-            - Rename Cape Verde to Cabo Verde. Fixes: #217
-            - Correct spelling of Holy See (was Sea).
-              Fixes #122, 23GYH3R41J. Thanks @almccon, Jacob.
-            - Correct spelling of Republic of Congo updated to Republic of the Congo.
-              Fixes 93QN3GN355, DAHQEA7VV6; thanks Alice, Geoffrey.
-            - Rename Czechia. Fixes: RN2P6RR539, thanks Jaroslav.
-            - Correct spelling of Dhekelia *Sovereign* Base Area
-              Fixes BP268E29YA, thanks Geoffrey (again)
-            - Update Kosovo ISO_A2 value to follow European Union usage.
-              Fixes: #134, thanks @ajmas
-            - Update name, name_long, and formal_en names for North Korea, South Korea,
-              and Laos Fixes: #188, Thanks @instantdelay
-            - Correct incorrect ISO_A2 values for Senegal to SN from SM.
-              Fixes 4MJDPJUY7W, thanks Matt.
-
-- UPDATED:  ne_10m_disputed
-            - Russia and Ukraine changes adm0 for Crimea, etc.
-              Fixes: #177, 3UXAJS1GJ3, T5DPJ1EBD6. Thanks Daniel, Felix.
-            - Serbia and Kosovo are no longer disputed adm0 disputed_areas. Fixes: #197
-
-- UPDATED:  ne_10m_admin-1
-            - Complete rebuild of ISO-3166-2 codes, growing from less than 25% of features
-              to nearly complete coverage. Also FIPS and HASC.
-            - For places ISO doesn't yet list subdivisions, Natural Earth uses the pattern ??-X**~ (following @migurski's OpenAddresses convention) where ?? is the ISO 3166-1 country code * are numbers from 0-9 for the subdivisions not covered by ISO; and -99-X**~ where ISO 3166-1 doesn't list a country code.
-              Fixes: #10, #128, #151, #171, 3P4L9Z3WVQ; thanks @karimbahgat, @migurski,
-              and Olaf.
-            - Script reference: https://github.com/karimbahgat/pshapes/blob/master/BaseData/natearthupdate/update_natearthcodes.py
-            - Correct ISO-3166-2 codes in France, Japan, and Finland. Fixes #191, #165.
-            - Correct ISO-3166-2 codes for Santa Catarina, Brazil. Fixes: #190.
-            - Correct ISO-3166-2 codes for Mexico. Fixes #138, thanks @mvexel.
-            - Correct FIPS codes, like Minnesota to US27 FIPS and code_local.
-              Fixes: #166, MYJL36PN7T, thanks @yaph, Jessica.
-            - Correct names, locations of Norfolk Island, Australia and Lord Howe Island.
-              Fixes: #161, thanks @almccon.
-            - Correct HASC code for "lake". Fixes: #193, thanks @kernc.
-            - Correct names of France provinces names and codes.
-              Fixes 4BYEM9LASV, thanks Quentin.
-            - Correct names South Sudan states. Fixes TVYWXQJXPM, thanks Peter.
-            - Correct type_en values for "Unitary Authority (wales" to add missing trailing ")". Fixes HJ1U643PUJ, thanks Geoffrey (again).
-
-- UPDATE:  Fixes different feature counts for ne_10m_populated_places and
-           ne_10m_populated_places_simple.shp packaging.
-           Fixes: #185 Thanks @pnorman
-
-- UPDATE:  Fixes ne_10m_admin_1_states_provinces_lines.zip containing 2 shapefile
-           versions, and related admin-1 packaging.
-           Fixes: #123 Thanks @mojodna
-
-Fixes: #200, #202 Upgrades for web map display (add min_zoom)
-
-    Add layer list (including, but not limited to):
-
-    ne_110m_admin_0_countries
-    ne_110m_admin_1_states_provinces_lines
-    ne_110m_admin_0_boundary_lines_land
-    ne_110m_populated_places
-
-    ne_110m_coastline
-    ne_110m_lakes
-    ne_110m_rivers_lake_centerlines
-    ne_10m_geography_marine_polys
-    ne_110m_geography_regions_polys
-    ne_110m_glaciated_areas
-    ne_110m_land
-    ne_110m_ocean
-
-    ne_50m_admin_0_boundary_lines_disputed_areas
-    ne_50m_admin_0_boundary_lines_maritime_indicator
-    ne_50m_admin_0_boundary_lines_land
-    ne_50m_admin_0_boundary_map_units
-    ne_50m_admin_0_countries
-    ne_50m_admin_1_states_provinces_lakes
-    ne_10m_admin_1_states_provinces_lines
-    ne_50m_populated_places
-    ne_10m_roads
-    ne_50m_admin_0_map_subunits
-    ne_50m_urban_areas
-
-    ne_50m_geography_regions_elevation_points
-    ne_50m_geographic_lines
-    ne_50m_lakes
-    ne_50m_rivers_lake_centerlines_scale_rank
-    ne_50m_coastline
-    ne_50m_antarctic_ice_shelves_lines
-    ne_50m_antarctic_ice_shelves_polys
-    ne_50m_geography_marine_polys
-    ne_50m_geography_regions_polys
-    ne_50m_glaciated_areas
-    ne_50m_land
-    ne_50m_ocean
-
-    ne_10m_admin_0_boundary_lines_maritime_indicator
-    ne_10m_admin_0_boundary_lines_disputed_areas
-    ne_10m_admin_0_boundary_lines_land
-    ne_10m_admin_0_boundary_lines_maritime_indicator
-    ne_10m_admin_0_map_subunits
-    ne_10m_admin_0_countries
-    ne_10m_admin_0_disputed_areas
-    ne_10m_admin_0_boundary_lines_disputed_areas
-    ne_10m_admin_1 labels
-    ne_10m_admin_1_states_provinces_lines
-    ne_10m_populated_places
-    ne_10m_roads
-    ne_10m_parks_and_protected_lands_line
-    ne_10m_parks_and_protected_lands_point
-    ne_10m_parks_and_protected_lands_area
-    ne_10m_urban_areas
-
-    ne_10m_lakes_historic
-    ne_10m_playas
-    ne_10m_lakes
-    ne_10m_lakes_north_america
-    ne_10m_lakes_europe
-    ne_10m_rivers_europe
-    ne_10m_rivers_north_america
-    ne_10m_rivers_lake_centerlines
-    ne_10m_rivers_lake_centerlines_scale_rank
-    ne_10m_coastline
-    ne_10m_reefs
-    ne_10m_geography_regions_polys
-    ne_10m_geography_marine_polys
-    ne_10m_geography_regions_points
-    ne_10m_geography_regions_elevation_points
-    ne_10m_geographic_lines
-    ne_10m_antarctic_ice_shelves_polys
-    ne_10m_antarctic_ice_shelves_lines
-    ne_10m_glaciated_areas
-    ne_10m_land_scale_rank
-    ne_10m_ocean_scale_rank
-    ne_10m_minor_islands
-    ne_10m_minor_islands_coastline
-
-Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
-    10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.shp
-    10m_cultural/ne_10m_railroads.shp
-    10m_cultural/ne_10m_time_zones.shp
-
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_populated_places_simple
+            - Related changes from source ne_10m_populated_places theme.
+            - Fixes different feature counts for ne_10m_populated_places and
+              ne_10m_populated_places_simple.shp packaging.
+              Fixes: #185 Thanks @pnorman
+- UPDATED:  ne_10m_airports
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_parks_and_protected_lands_area
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_parks_and_protected_lands_line
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_parks_and_protected_lands_point
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_parks_and_protected_lands_scale_rank
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_ports
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_railroads
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_railroads_north_america
+            - Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_roads
+            - Adds min_zoom and min_label properties.
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_roads_north_america
+            - UTF-8 encoding related changes (min_zoom not added).
+- UPDATED:  ne_10m_time_zones
+            - Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_urban_areas
+            - Adds min_zoom
+            - UTF-8 encoding related changes.
+- UPDATED:  ne_10m_urban_areas_landscan
+            - UTF-8 encoding related changes.
 
 10M_PHYSICAL
 
-- UPDATED:  min_zoom and min_label, max_label changes, similar to 10M_CULTURAL summary.
-- UPDATED:  Add Isla Genovesa (Galapagos, Ecuador) to minor islands and minor coastline.
-            Fixes: DGAUAB5MGT, thanks Roland.
-- UPDATED:  Restore St. Marys River polygon between Lake Superior and Lake Huron from the
-            v2 series. Fixes 6XQ5T9B31W, thanks Rob.
-- UPDATED:  Sri Lanka coastline had a bad scalerank. Fixes: #157, thanks @teahan36.
-- UPDATED:  Mont Blanc is in France and Italy simultaneously. Fixes: #100 Thanks @dgddgd
-- UPDATED:  Correct Matterhorn elevation. Fixes: #103, #184, thanks @dkerkow, @almccon.
-- UPDATED:  Use newer Denali name as default for Mt. McKinley in Alaska.
-            Fixes: #154, thanks @almccon.
-- UPDATED:  Slide Mt. had wrong elevation. Fixes: #169 Thanks @mojodna
-- UPDATED:  Fix corrupted accent marks on rivers, lakes, physical label areas.
-            Fixes: XTAVLERD11, thanks Graham.
-- UPDATED:  Fixes Scheldt river name in Belgium. Fixes BNQ6DNJNPG, thanks Michel.
-- UPDATED:  Correct the Flo of the Po. Fixes: #183, thanks @dshorthouse.
-- UPDATED:  The Europe river supplemental had long names with commas, this update splits
-            the second name into a new name_alt column. Fixes: #201.
-- UPDATED:  Fix names of dozens of rivers and lakes in Europe including Russia and
-            Ukraine. Fixes: #182, #211. Thanks @CaucasusandMercury.
-- UPDATED:  Correct misspelled rivers names. Fixes: #155, thanks @pinakographos.
-- UPDATED:  Correct La Loire and Allier river names and alignments in France.
-            Fixes BWEGTWVGL7, thanks Alain.
-- UPDATED:  Fix the Sava and Ljubljanica rivers in Croatia and Slovenia.
-            Fixes 5U82RQN2ZX, thanks Alain.
-- UPDATED:  Fix Garonne river tributary names. Fixes 1HDEL3DRX8, thanks Aileen.
-- UPDATED:  Vltava (nea Moldau) river in the Czechia. Fixes DL2WR6AWT6, thanks Daniel.
-- UPDATED:  St. Croix River (forming a part of the eastern boarder of MN) was mislabeled
-            as Namekagon River. Fixes 9WZGP6GMY6, thanks Matt.
-- UPDATED:  Close Klamath river gap in California. Fixes #159, @pinakographos.
-- UPDATED:  Trim Yukon, Porcupine rivers overshoot in Alaska. Fixes #159, @pinakographos.
-- UPDATED:  Add scalerank to ice shelves themes (and min_zoom). Fixes: #198
-- UPDATED:  Merge 2 Gulf of Anadyr' marine label areas into single multi-part polygon.
-- UPDATED:  Fix marine label area names & encoding, including Bahía de Campeche, Hecate
-            Strait, Queen Charlotte Strait, and almost all name_fr values. Fixes: #178
+- UPDATED:  ne_10m_antarctic_ice_shelves_lines
+            - Add scalerank and min_zoom to ice shelves themes (and min_zoom). Fixes: #198
+- UPDATED:  ne_10m_antarctic_ice_shelves_polys
+            - Add scalerank and min_zoom to ice shelves themes (and min_zoom). Fixes: #198
+- UPDATED:  ne_10m_bathymetry related themes:
+            ne_10m_bathymetry_A_10000
+            ne_10m_bathymetry_B_9000
+            ne_10m_bathymetry_C_8000
+            ne_10m_bathymetry_D_7000
+            ne_10m_bathymetry_E_6000
+            ne_10m_bathymetry_F_5000
+            ne_10m_bathymetry_G_4000
+            ne_10m_bathymetry_H_3000
+            ne_10m_bathymetry_I_2000
+            ne_10m_bathymetry_J_1000
+            ne_10m_bathymetry_K_200
+            ne_10m_bathymetry_L_0
+            - Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
+- UPDATED:  ne_10m_coastline
+            - Adds min_zoom. Change scalerank from float to int.
+            - Sri Lanka coastline had a bad scalerank. Fixes: #157, thanks @teahan36.
+- UPDATED:  ne_10m_geographic_lines
+            - Adds min_zoom property.
+            - Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
+- UPDATED:  ne_10m_minor_islands related themes:
+            ne_10m_minor_islands
+            ne_10m_minor_islands_coastline
+            ne_10m_minor_islands_label_points
+            - Add Isla Genovesa (Galapagos, Ecuador) to minor islands and minor coastline.
+              Fixes: DGAUAB5MGT, thanks Roland.
+- UPDATED:  ne_10m_geography_marine_polys
+            - Adds min_label, max_label. Change scalerank from float to int.
+              NOTE: features don't have min_zoom as they should be label-only.
+            - Merge 2 Gulf of Anadyr' marine label areas into single multi-part polygon.
+            - Fix marine label area names & encoding, including Bahía de Campeche, Hecate
+              Strait, Queen Charlotte Strait, and almost all name_fr values. Fixes: #178
+- UPDATED:  ne_10m_geography_regions_elevation_points
+            - Adds min_zoom column.
+            - Mont Blanc is in France and Italy simultaneously. Fixes: #100 Thanks @dgddgd
+            - Correct Matterhorn elevation. Fixes: #103, #184, thanks @dkerkow, @almccon.
+            - Use newer Denali name as default for Mt. McKinley in Alaska.
+              Fixes: #154, thanks @almccon.
+            - Slide Mt. had wrong elevation. Fixes: #169 Thanks @mojodna
+- UPDATED:  ne_10m_geography_regions_points
+            - Adds min_zoom column.
 
+            TODO: Update QGIS project
 
-Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
-    10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_I_2000.shp
-    10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_J_1000.shp
-    10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_K_200.shp
-    10m_physical/ne_10m_bathymetry_all/ne_10m_bathymetry_L_0.shp
-    10m_physical/ne_10m_geographic_lines.shp
-
+- UPDATED:  ne_10m_geography_regions_polys
+            - Adds min_label, max_label. Change scalerank from float to int.
+              NOTE: features don't have min_zoom as they should be label-only.
+- UPDATED:  ne_10m_glaciated_areas
+            - Adds min_zoom property.
+- UPDATED:  ne_10m_graticules related themes:
+            ne_10m_graticules_1
+            ne_10m_graticules_10
+            ne_10m_graticules_15
+            ne_10m_graticules_20
+            ne_10m_graticules_30
+            ne_10m_graticules_5
+            ne_10m_wgs84_bounding_box
+            - Change the dd column to a signed integer from float.
+- UPDATED:  ne_10m_lakes related themes, including:
+            ne_10m_lakes
+            ne_10m_lakes_europe
+            ne_10m_lakes_historic
+            ne_10m_lakes_north_america
+            ne_10m_lakes_pluvial
+            - Adds min_zoom, min_label. Change scalerank from float to int.
+            - Restore St. Marys River polygon between Lake Superior and Lake Huron from
+              the v2 series. Fixes 6XQ5T9B31W, thanks Rob.
+            - Fix corrupted accent marks on rivers, lakes, physical label areas.
+              Fixes: XTAVLERD11, thanks Graham.
+- UPDATED:  ne_10m_land and ocean related themes:
+            ne_10m_land
+            ne_10m_land_ocean_label_points
+            ne_10m_land_ocean_seams
+            ne_10m_land_scale_rank
+            ne_10m_ocean
+            ne_10m_ocean_scale_rank
+            - Adds min_zoom.
+- UPDATED:  ne_10m_playas
+            - Adds min_zoom.
+- UPDATED:  ne_10m_reefs
+            - Adds min_zoom.
+- UPDATED:  ne_10m_rivers related themes:
+            ne_10m_rivers_lake_centerlines
+            ne_10m_rivers_lake_centerlines_scale_rank
+            ne_10m_rivers_north_america
+            ne_10m_rivers_europe
+            - Adds min_zoom, min_label. Change strokewei from to float with 2 decimals,
+              add name_alt column, add name_en column.
+            - The Europe river supplemental had long names with commas, this update splits
+              the second name into a new name_alt column. Fixes: #201.
+            - Fix corrupted accent marks on rivers, lakes, physical label areas.
+              Fixes: XTAVLERD11, thanks Graham.
+            - Fixes Scheldt river name in Belgium. Fixes BNQ6DNJNPG, thanks Michel.
+            - Correct the Flo of the Po. Fixes: #183, thanks @dshorthouse.
+            - Fix names of dozens of rivers and lakes in Europe including Russia and
+              Ukraine. Fixes: #182, #211. Thanks @CaucasusandMercury.
+            - Correct misspelled rivers names. Fixes: #155, thanks @pinakographos.
+            - Correct La Loire and Allier river names and alignments in France.
+              Fixes BWEGTWVGL7, thanks Alain.
+            - Fix the Sava and Ljubljanica rivers in Croatia and Slovenia.
+              Fixes 5U82RQN2ZX, thanks Alain.
+            - Fix Garonne river tributary names. Fixes 1HDEL3DRX8, thanks Aileen.
+            - Vltava (nea Moldau) river in the Czechia. Fixes DL2WR6AWT6, thanks Daniel.
+            - St. Croix River (forming a part of the eastern boarder of MN) was mislabeled
+              as Namekagon River. Fixes 9WZGP6GMY6, thanks Matt.
+            - Close Klamath river gap in California. Fixes #159, @pinakographos.
+            - Trim Yukon, Porcupine rivers overshoot in Alaska.
+              Fixes #159, @pinakographos.
 
 50M_CULTURAL
 
-- UPDATED:  .
-- BUG FIX:  .
-
-- UPDATED:  min_zoom and min_label, max_label changes, similar to 10M_CULTURAL summary.
-
-    Also some funk in 50m to account for Caribbean Netherlands per 72NTBEHVAT (thanks Charles)
-
-- UPDATED:  Contents of ne_50m_admin_1_states_provinces_lines.zip are inconsistently
-            named, related admin-1 packaging. Fixes: #124 Thanks @mojodna
-
-
-Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
-    50m_cultural/ne_50m_admin_0_scale_rank.shp
-    50m_cultural/ne_50m_admin_0_tiny_countries.shp
-    50m_cultural/ne_50m_admin_0_tiny_countries_scale_rank.shp
-    50m_cultural/ne_50m_admin_1_states_provinces.shp
-    50m_cultural/ne_50m_admin_1_states_provinces_lakes.shp
-    50m_cultural/ne_50m_admin_1_states_provinces_lines.shp
-    50m_cultural/ne_50m_admin_1_states_provinces_scale_rank.shp
-
+- UPDATED:  ne_50m_admin-0 related themes, including:
+            ne_50m_admin_0_countries
+            ne_50m_admin_0_countries_lakes
+            ne_50m_admin_0_map_subunits
+            ne_50m_admin_0_map_units
+            ne_50m_admin_0_scale_rank
+            ne_50m_admin_0_sovereignty
+            ne_50m_admin_0_breakaway_disputed_areas
+            - Add min_zoom, min_label, max_label changes and similar 10M_CULTURAL changes.
+            - Correct Caribbean Netherlands grouping. Fixes 72NTBEHVAT (thanks Charles)
+            - Fix geometry errors (ne_50m_admin_0_scale_rank, ne_50m_admin_0_sovereignty,
+              ne_50m_admin_0_tiny_countries). Fixes: #4, #164. Thanks @xangregg.
+- UPDATED:  ne_50m_admin_0_tiny_countries
+- UPDATED:  ne_50m_admin_0_tiny_countries_scale_rank
+            - Add min_zoom, min_label, max_label changes and similar 10M_CULTURAL changes.
+            - Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
+- UPDATED:  ne_50m_admin_0_boundary_lines_land
+            - Adds min_zoom property.
+- UPDATED:  ne_50m_admin_0_boundary_lines_maritime_indicator
+            - Adds min_zoom property.
+- UPDATED:  ne_50m_admin_0_boundary_map_units
+            - Adds min_zoom property.
+- UPDATED:  ne_50m_admin_0_boundary_lines_disputed_areas
+            - Adds min_zoom and note properties.
+- UPDATED:  ne_50m_admin_0_pacific_groupings
+            - Minor undocumented updates.
+- UPDATED:  ne_50m_admin_1_states_provinces
+            ne_50m_admin_1_states_provinces_lakes
+            ne_50m_admin_1_states_provinces_scale_rank
+            - Add min_zoom, min_label, max_label changes and similar 10M_CULTURAL changes.
+            - Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
+            - Change scalerank in ne_50m_admin_1_states_provinces_scale_rank to an int.
+- UPDATED:  ne_50m_admin_1_states_provinces_lines
+            - Contents of ne_50m_admin_1_states_provinces_lines.zip were inconsistently
+              named; related admin-1 packaging. Fixes: #124 Thanks @mojodna
+            - Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
+- UPDATED:  ne_50m_populated_places
+            - Same changes as ne_10m_populated_places.
+- UPDATED:  ne_50m_populated_places_simple
+            - Same changes as ne_10m_populated_places_simple, add min_zoom property.
+- UPDATED:  ne_50m_airports
+            - Minor undocumented updates.
+- UPDATED:  ne_50m_ports
+            - Minor undocumented updates.
+- UPDATED:  ne_50m_urban_areas
+            - Add min_zoom property.
 
 50M_PHYSICAL
 
-- UPDATED:  Populated places get same updates as 10_CULTURAL note.
-- UPDATED:  min_zoom and min_label, max_label changes, similar to 10M_CULTURAL summary.
+The following files include the same changes as the 10m versions (mostly adding min_zoom properties).
+
+- UPDATED:  ne_50m_antarctic_ice_shelves_lines
+- UPDATED:  ne_50m_antarctic_ice_shelves_polys
+- UPDATED:  ne_50m_coastline
+- UPDATED:  ne_50m_geographic_lines
+- UPDATED:  ne_50m_geography_marine_polys
+- UPDATED:  ne_50m_geography_regions_elevation_points
+- UPDATED:  ne_50m_geography_regions_points
+- UPDATED:  ne_50m_geography_regions_polys
+- UPDATED:  ne_50m_glaciated_areas
+- UPDATED:  ne_50m_graticules related themes:
+            ne_50m_graticules_1
+            ne_50m_graticules_10
+            ne_50m_graticules_15
+            ne_50m_graticules_20
+            ne_50m_graticules_30
+            ne_50m_graticules_5
+            ne_50m_wgs84_bounding_box
+- UPDATED:  ne_50m_lakes
+- UPDATED:  ne_50m_lakes_historic
+- UPDATED:  ne_50m_land
+- UPDATED:  ne_50m_ocean
+- UPDATED:  ne_50m_playas
+- UPDATED:  ne_50m_rivers_lake_centerlines
+- UPDATED:  ne_50m_rivers_lake_centerlines_scale_rank
+
 
 110M_CULTURAL
 
-- UPDATED:  .
-- BUG FIX:  .
-- UPDATED:  min_zoom and min_label, max_label changes, similar to 10M_CULTURAL summary.
+The following files include the same changes as the 10m versions (mostly adding min_zoom properties), unless otherwise noted.
 
-Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
-    110m_cultural/ne_110m_admin_0_scale_rank.shp
-    110m_cultural/ne_110m_admin_1_states_provinces.shp
-    110m_cultural/ne_110m_admin_1_states_provinces_lakes.shp
-    110m_cultural/ne_110m_admin_1_states_provinces_scale_rank.shp
-
-
+- UPDATED:  ne_110m_admin-0 related themes, including:
+            ne_110m_admin_0_countries
+            ne_110m_admin_0_countries_lakes
+            ne_110m_admin_0_map_units
+            ne_110m_admin_0_scale_rank
+            ne_110m_admin_0_sovereignty
+            - Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
+- UPDATED:  ne_110m_admin_0_boundary_lines_land
+- UPDATED:  ne_110m_admin_0_pacific_groupings
+- UPDATED:  ne_110m_admin_0_tiny_countries
+- UPDATED:  ne_110m_admin-1 related themes, including:
+            ne_110m_admin_1_states_provinces
+            ne_110m_admin_1_states_provinces_lakes
+            ne_110m_admin_1_states_provinces_scale_rank
+            - Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
+- UPDATED:  ne_110m_admin_1_states_provinces_lines
+            - Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
+- UPDATED:  ne_110m_populated_places
+- UPDATED:  ne_110m_populated_places_simple
 
 110M_PHYSICAL
 
-- UPDATED:  min_zoom and min_label, max_label changes, similar to 10M_CULTURAL summary.
+The following files include the same changes as the 10m versions (mostly adding min_zoom properties).
 
+- UPDATED:  ne_110m_coastline
 
+            TODO: min_zoom values are not always present.
 
-
-
-
-
+- UPDATED:  ne_110m_geographic_lines
+- UPDATED:  ne_110m_geography_marine_polys
+- UPDATED:  ne_110m_geography_regions_elevation_points
+- UPDATED:  ne_110m_geography_regions_points
+- UPDATED:  ne_110m_geography_regions_polys
+- UPDATED:  ne_110m_glaciated_areas
+- UPDATED:  ne_110m_graticules related themes:
+            ne_110m_graticules_1
+            ne_110m_graticules_10
+            ne_110m_graticules_15
+            ne_110m_graticules_20
+            ne_110m_graticules_30
+            ne_110m_graticules_5
+            ne_110m_wgs84_bounding_box
+- UPDATED:  ne_110m_lakes
+- UPDATED:  ne_110m_land
+            - Correct featurecla to Land from Country.
+- UPDATED:  ne_110m_ocean
+- UPDATED:  ne_110m_rivers_lake_centerlines
 
 
 
@@ -310,25 +456,25 @@ Herzegovina that went missing in 3.0.0 when Brcko District was added to the admi
 completely to admin-0. The boundary lines were fixed in 3.0.0 already.
 
 - UPDATED:  ne_10m_admin_0_disputed_areas_scale_rank_minor_islands - Restore missing Brcko
-        District and portion of Republic Srpska in Bosnia and Herzegovina.
+            District and portion of Republic Srpska in Bosnia and Herzegovina.
 - UPDATED:  ne_10m_admin_0_disputed_areas - Restore missing Brcko District and portion of
-        Republic Srpska in Bosnia and Herzegovina.
+            Republic Srpska in Bosnia and Herzegovina.
 - UPDATED:  ne_10m_admin_0_countries - Restore missing Brcko District and portion of
-        Republic Srpska in Bosnia and Herzegovina.
+            Republic Srpska in Bosnia and Herzegovina.
 - UPDATED:  ne_10m_admin_0_countries_lakes - Restore missing Brcko District and portion of
-        Republic Srpska in Bosnia and Herzegovina.
+            Republic Srpska in Bosnia and Herzegovina.
 - UPDATED:  ne_10m_admin_0_map_subunits - Restore missing Brcko District and portion of
-        Republic Srpska in Bosnia and Herzegovina.
-- UPDATED:  ne_10m_admin_0_map_units - Restore missing Brcko District and portion of Republic
-        Srpska in Bosnia and Herzegovina.
+            Republic Srpska in Bosnia and Herzegovina.
+- UPDATED:  ne_10m_admin_0_map_units - Restore missing Brcko District and portion of
+            Republic Srpska in Bosnia and Herzegovina.
 - UPDATED:  ne_10m_admin_0_scale_rank_minor_islands - Restore missing Brcko District and
-        portion of Republic Srpska in Bosnia and Herzegovina.
+            portion of Republic Srpska in Bosnia and Herzegovina.
 - UPDATED:  ne_10m_admin_0_scale_rank - Restore missing Brcko District and portion of
-        Republic Srpska in Bosnia and Herzegovina.
+            Republic Srpska in Bosnia and Herzegovina.
 - UPDATED:  ne_10m_admin_0_sovereignty - Restore missing Brcko District and portion of
-        Republic Srpska in Bosnia and Herzegovina.
-- UPDATED:  ne_10m_admin_0_label_points - Add Brcko District and portion of Republic Srpska
-        in Bosnia and Herzegovina.
+            Republic Srpska in Bosnia and Herzegovina.
+- UPDATED:  ne_10m_admin_0_label_points - Add Brcko District and portion of Republic
+            Srpska in Bosnia and Herzegovina.
 
 
 2013-12-01: 3.0.1
