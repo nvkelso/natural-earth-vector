@@ -24,14 +24,6 @@ PACKAGES
 
     TODO: https://github.com/nvkelso/natural-earth-vector/pull/230
 
-    TODO: Run Mapshaper over
-x    - 50m countries
-x    - 110m countries
-    - Anything else QGIS complains about, even if it's built in ArcGIS.
-        This is primarily the country files at 50m and 110m... but MapShaper cleaned, so??
-            - and marine polys
-            - geography region polys
-
 HOUSEKEEPING
 
 - UPDATED:  NE_ADMIN_0_DETAILS - Spreadsheet tracks admin-0 countries and other levels.
@@ -228,6 +220,7 @@ HOUSEKEEPING
             - Merge 2 Gulf of Anadyr' marine label areas into single multi-part polygon.
             - Fix marine label area names & encoding, including Bahía de Campeche, Hecate
               Strait, Queen Charlotte Strait, and almost all name_fr values. Fixes: #178
+            - Fix geometry topology errors for TopoJSON enthusiasts.
 - UPDATED:  ne_10m_geography_regions_elevation_points
             - Adds min_zoom column.
             - Mont Blanc is in France and Italy simultaneously. Fixes: #100 Thanks @dgddgd
@@ -240,6 +233,7 @@ HOUSEKEEPING
 - UPDATED:  ne_10m_geography_regions_polys
             - Adds min_label, max_label. Change scalerank from float to int.
               NOTE: features don't have min_zoom as they should be label-only.
+            - Fix geometry topology errors for TopoJSON enthusiasts.
 - UPDATED:  ne_10m_glaciated_areas
             - Adds min_zoom property.
 - UPDATED:  ne_10m_graticules related themes:
@@ -316,6 +310,7 @@ HOUSEKEEPING
             - Correct Caribbean Netherlands grouping. Fixes 72NTBEHVAT (thanks Charles)
             - Fix geometry errors (ne_50m_admin_0_scale_rank, ne_50m_admin_0_sovereignty,
               ne_50m_admin_0_tiny_countries). Fixes: #4, #164. Thanks @xangregg.
+            - Fix other geometry topology errors for TopoJSON enthusiasts.
 - UPDATED:  ne_50m_admin_0_tiny_countries
 - UPDATED:  ne_50m_admin_0_tiny_countries_scale_rank
             - Add min_zoom, min_label, max_label changes and similar 10M_CULTURAL changes.
@@ -392,6 +387,7 @@ The following files include the same changes as the 10m versions (mostly adding 
             ne_110m_admin_0_scale_rank
             ne_110m_admin_0_sovereignty
             - Fix geometry errors. Fixes: #4, #164. Thanks @xangregg.
+            - Fix other geometry topology errors for TopoJSON enthusiasts.
 - UPDATED:  ne_110m_admin_0_boundary_lines_land
 - UPDATED:  ne_110m_admin_0_pacific_groupings
 - UPDATED:  ne_110m_admin_0_tiny_countries
