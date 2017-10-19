@@ -22,6 +22,8 @@ PACKAGES
 - UPDATED:  SQLite
 - UPDATED:  GeoJSON
 
+    TODO: remove GZ geojson and publish to GitHub the raw GeoJSON
+
     TODO: https://github.com/nvkelso/natural-earth-vector/pull/230
 
 HOUSEKEEPING
