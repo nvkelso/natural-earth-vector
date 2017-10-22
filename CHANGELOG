@@ -24,8 +24,6 @@ PACKAGES
 
     TODO: remove GZ geojson and publish to GitHub the raw GeoJSON
 
-    TODO: https://github.com/nvkelso/natural-earth-vector/pull/230
-
 HOUSEKEEPING
 
 - UPDATED:  NE_ADMIN_0_DETAILS - Spreadsheet tracks admin-0 countries and other levels.
