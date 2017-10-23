@@ -4,7 +4,6 @@ housekeeping/.~lock.ne_admin_0_details.xls#
 packages/natural_earth_vector.sqlite
 packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W/NE1_50M_SR_W.tif
 geojson/ne_10m_roads_north_america.geojson
-geojson/ne_10m_urban_areas_landscan.geojson
 *.sqlite
 zips/10m_cultural/
 zips/10m_physical/
