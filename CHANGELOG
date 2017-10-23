@@ -22,8 +22,6 @@ PACKAGES
 - UPDATED:  SQLite
 - UPDATED:  GeoJSON
 
-    TODO: remove GZ geojson and publish to GitHub the raw GeoJSON
-
 HOUSEKEEPING
 
 - UPDATED:  NE_ADMIN_0_DETAILS - Spreadsheet tracks admin-0 countries and other levels.
