@@ -927,8 +927,8 @@ zips/10m_physical/ne_10m_rivers_lake_centerlines.zip: 10m_physical/ne_10m_rivers
 	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-rivers-lake-centerlines/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_rivers_lake_centerlines$(VERSION_PREFIXED).zip
-	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
-		| jq -c . > geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
+	#ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+	#	| jq -c . > geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
 
 zips/10m_physical/ne_10m_rivers_north_america.zip: 10m_physical/ne_10m_rivers_north_america.shp 10m_physical/ne_10m_rivers_north_america.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1226,8 +1226,8 @@ zips/50m_cultural/ne_50m_admin_0_scale_rank.zip: 50m_cultural/ne_50m_admin_0_sca
 	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-details/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_scale_rank$(VERSION_PREFIXED).zip
-	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
-		| jq -c . > geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
+	#ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+	#	| jq -c . > geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
 
 zips/50m_cultural/ne_50m_admin_0_sovereignty.zip: 50m_cultural/ne_50m_admin_0_sovereignty.shp 50m_cultural/ne_50m_admin_0_sovereignty.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1469,8 +1469,8 @@ zips/50m_physical/ne_50m_rivers_lake_centerlines.zip: 50m_physical/ne_50m_rivers
 	curl http://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-rivers-lake-centerlines/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_rivers_lake_centerlines$(VERSION_PREFIXED).zip
-	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
-		| jq -c . > geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
+	#ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+	#	| jq -c . > geojson/$(subst zips/50m_physical/,,$(basename $@)).geojson
 
 zips/50m_physical/ne_50m_graticules_all.zip: \
 	zips/50m_physical/ne_50m_graticules_1.zip \
