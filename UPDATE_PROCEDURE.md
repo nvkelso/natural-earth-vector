@@ -1,4 +1,4 @@
-#Natural Earth Update Procedure
+# Natural Earth Update Procedure
 
 Scripts to build Natural Earth ZIP archives for individual themes, scalesets, and packagages.
 
@@ -11,7 +11,7 @@ _NOTE: Individual Pull Requests should **not** include running these steps, it'l
    
 Assumed to be run on Mac or Ubuntu Linux.
 
-#Usage
+# Usage
 
 1. Increment the VERSION number, per the semantic versioning guidelines at ../README.md:
 
