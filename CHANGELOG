@@ -1,3 +1,20 @@
+2017-11-13: 4.0.1
+
+PACKAGES
+
+- UPDATED:  110M_PHYSICAL
+- UPDATED:  ALL SHP
+- UPDATED:  SQLite
+- UPDATED:  GeoJSON
+
+110M_PHYSICAL
+
+- UPDATED:  ne_110m_coastline
+            - incorrectly had `min_zooom` column name, updated to `min_zoom` to be
+              consistent with rest of project.
+            - Fixes: #238, thanks @PetersonGIS.
+
+
 2017-10-15: 4.0.0
 
 - Many thanks to the over 50 people who contributed to the v4 release of Natural Earth, we couldn't do it without you! Jeremy, @raffam, @pnorman, @mojodna, @imresamu, Hannes, Axel, @pinakographo, @CaucasusandMercury, @jschleuss, Martha, Kuba, Jesús, Arkadiy, Philip, Benedikt, Ivor, @almccon, Jacob, Alice, Geoffrey, @ajmas, @instantdelay, Matt, Daniel, Felix, @karimbahgat, @migurski, Olaf, @mvexel, @yaph, Jessica, @kernc, Quentin, Peter, @xangregg, Roland, Rob, @teahan36, @dgddgd, @dkerkow, Graham, Michel, @dshorthouse, @pinakographos, Alain, Aileen, Daniel, Charles, Martin, Aaron, MattA, StephenE, NathanielD, and others.
