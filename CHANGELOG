@@ -17,14 +17,37 @@ PACKAGES
 
 2017-10-15: 4.0.0
 
-- Many thanks to the over 50 people who contributed to the v4 release of Natural Earth, we couldn't do it without you! Jeremy, @raffam, @pnorman, @mojodna, @imresamu, Hannes, Axel, @pinakographo, @CaucasusandMercury, @jschleuss, Martha, Kuba, Jesús, Arkadiy, Philip, Benedikt, Ivor, @almccon, Jacob, Alice, Geoffrey, @ajmas, @instantdelay, Matt, Daniel, Felix, @karimbahgat, @migurski, Olaf, @mvexel, @yaph, Jessica, @kernc, Quentin, Peter, @xangregg, Roland, Rob, @teahan36, @dgddgd, @dkerkow, Graham, Michel, @dshorthouse, @pinakographos, Alain, Aileen, Daniel, Charles, Martin, Aaron, MattA, StephenE, NathanielD, and others.
+- Many thanks to the over 50 people who contributed to the v4 release of Natural Earth,
+  we couldn't do it without you! Jeremy, @raffam, @pnorman, @mojodna, @imresamu, Hannes,
+  Axel, @pinakographo, @CaucasusandMercury, @jschleuss, Martha, Kuba, Jesús, Arkadiy,
+  Philip, Benedikt, Ivor, @almccon, Jacob, Alice, Geoffrey, @ajmas, @instantdelay, Matt,
+  Daniel, Felix, @karimbahgat, @migurski, Olaf, @mvexel, @yaph, Jessica, @kernc, Quentin,
+  Peter, @xangregg, Roland, Rob, @teahan36, @dgddgd, @dkerkow, Graham, Michel,
+  @dshorthouse, @pinakographos, Alain, Aileen, Daniel, Charles, Martin, Aaron, MattA,
+  StephenE, NathanielD, Aron, Lou, and others.
 
 GENERAL
 
-1) The v4 series introduces significant changes to admin-0 country shapes to account for the disputed area of Crimea, and several important admin-0 country name changes like Czechia renamed from Czech Republic. Admin-0 population and GDP values have also been updated to 2016/2017 vintage (primarily from CIA World Factbook).
-2) The v4 series introduces web map optimized min_zoom, min_label, max_label properties that compliment the existing scalerank property that was originally curated for print cartography in proper projection glory. The min_zoom property is optimized for the web Mercator projection we are collectively hallucinating, and the min_label and max_label properties are optional on some themes when the label should be displayed later than the feature's geometry (or should stop showing). Fixes: #200, #202.
-3) While the v3 series went full UTF-8 unicode (character encoding) language support a few errors were made along the way. v4 fixes bad Windows-1252 to UTF-8 conversion bugs. We also better document with the character encoding by adding a .cpg file to shapefile, and on the Natural Earth website documentation. Fixes #89, #186, 4RUN1M5S75; thanks Jeremy and @pnorman.
-4) We added French names for marine areas way back in v1.4.0, and v4 adds many thousand more for populated places in the following languages: name_en, name_de, name_es, name_fr, name_pt, name_ru, name_zh. The existing name, name_alt, and nameascii fields have been updated, and name features over 600 labels with accent marks (versus the 80 or so that were garbled in the v3 series).
+1) The v4 series introduces significant changes to admin-0 country shapes to account for
+   the disputed area of Crimea, and several important admin-0 country name changes like
+   Czechia renamed from Czech Republic. Admin-0 population and GDP values have also been
+   updated to 2016/2017 vintage (primarily from CIA World Factbook).
+2) The v4 series introduces web map optimized min_zoom, min_label, max_label properties
+   that compliment the existing scalerank property that was originally curated for print
+   cartography in proper projection glory. The min_zoom property is optimized for the web
+   Mercator projection we are collectively hallucinating, and the min_label and max_label
+   properties are optional on some themes when the label should be displayed later than
+   the feature's geometry (or should stop showing). Fixes: #200, #202.
+3) While the v3 series went full UTF-8 unicode (character encoding) language support a few
+   errors were made along the way. v4 fixes bad Windows-1252 to UTF-8 conversion bugs. We
+   also better document with the character encoding by adding a .cpg file to shapefile,
+   and on the Natural Earth website documentation. Fixes #89, #186, 4RUN1M5S75; thanks
+   Jeremy and @pnorman.
+4) We added French names for marine areas way back in v1.4.0, and v4 adds many thousand
+   more for populated places in the following languages: name_en, name_de, name_es,
+   name_fr, name_pt, name_ru, name_zh. The existing name, name_alt, and nameascii fields
+   have been updated, and name features over 600 labels with accent marks (versus the 80
+   or so that were garbled in the v3 series).
 
 PACKAGES
 
