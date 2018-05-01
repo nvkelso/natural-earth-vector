@@ -1,12 +1,28 @@
+#!/usr/bin/env python3
+
+
+"""
+Fetch Wikidata Labels 
+@authors: @ImreSamu
+
+Wikidata limitations: 
+ population:  https://www.wikidata.org/wiki/Property_talk:P1082#Querying_for_the_latest_value   lot of constraint violations. 
+
+
+"""
 #--  pip3 install -U SPARQLWrapper
 #--  pip3 install -U fiona
+
+
 
 import argparse
 import csv
 import requests
 import time
 import fiona
-from SPARQLWrapper import SPARQLWrapper, JSON
+import sys
+from SPARQLWrapper import SPARQLWrapper, JSON, SPARQLExceptions
+
 
 parser = argparse.ArgumentParser(description='Fetch wikidata labels for Natural-Earth ')
 
@@ -15,6 +31,7 @@ parser.add_argument('-output_csv_name', default='ne_10m_populated_places.csv',  
 
 
 args = parser.parse_args()
+
 
 
 def get_sparql_value(result,id):
@@ -40,13 +57,13 @@ def fetchwikidata( wid ):
 
     sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
     query_template="""        
-            PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+         PREFIX geo: <http://www.opengis.net/ont/geosparql#>
             SELECT
                 ?entity
-                ?entityLabel
-                ?entityDescription
+              #  ?entityLabel
+              #  ?entityDescription
             
-                (group_concat(distinct  ?pLabel  ; separator = "#")       as ?type_grp)
+              #  (group_concat(distinct  ?pLabel  ; separator = "#")       as ?type_grp)
 
                 (group_concat(distinct ?name_ar ; separator="#") as ?name_ar)
                 (group_concat(distinct ?name_bn ; separator="#") as ?name_bn)
@@ -72,10 +89,16 @@ def fetchwikidata( wid ):
 
                 (group_concat(distinct  ?disambiguation; separator = "#")       as ?disambiguation)
                 
+                (SAMPLE(?population)                                            as ?population )
+                (SAMPLE(?elev)                                                  as ?elevation  )
+
             WHERE {
                 VALUES ?entity { wd:Q1781 }
             
                 SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+                OPTIONAL { ?entity p:P2044/psn:P2044/wikibase:quantityAmount ?elev }  # normalized height
+                OPTIONAL { ?entity wdt:P1082     ?population . }    # preferred population
                 
                 OPTIONAL { ?entity wdt:P31 ?property.  ?property rdfs:label ?pLabel         FILTER (lang(?pLabel) = "en").         }
                 OPTIONAL { ?entity wdt:P17 ?country.   ?country  rdfs:label ?countryLabelx  FILTER (lang(?countryLabelx) = "en").  }
@@ -107,15 +130,59 @@ def fetchwikidata( wid ):
                 OPTIONAL { ?entity rdfs:label ?name_zh  FILTER((LANG(?name_zh)) = "zh") . }
 
             }
-            GROUP BY ?entity ?entityLabel   ?entityDescription
+            GROUP BY ?entity 
     """
 
-    q=query_template.replace('Q1781',wid)
-    sparql.setQuery(q)
-    sparql.setTimeout(1000)
 
-    sparql.setReturnFormat(JSON)
-    results = sparql.query().convert()
+    q=query_template.replace('Q1781',wid)
+
+    results = None
+    retries = 0
+    while results == None and retries < 8:
+        try:
+            results = None
+            sparql.setQuery(q)
+            sparql.setTimeout(1000)
+            sparql.setReturnFormat(JSON)
+            results = sparql.query().convert()
+
+        except SPARQLExceptions.EndPointNotFound :
+            print('ERRwikidata-SPARQLExceptions-EndPointNotFound:  Retrying in 30 seconds.')
+            time.sleep(30)
+            retries += 1
+            continue
+
+        except SPARQLExceptions.EndPointInternalError :
+            print("ERRwikidata-SPARQLExceptions-EndPointInternalError: Retrying in 30 seconds." )
+            time.sleep(30)
+            retries += 1
+            continue
+
+        except SPARQLExceptions.QueryBadFormed :
+            print("ERRwikidata-SPARQLExceptions-QueryBadFormed : Check!  "   )
+            return "error"
+
+        except TimeoutError:
+            print("ERRwikidata-SPARQLExceptions  TimeOut : Retrying in 1 seconds." )
+            time.sleep(1)
+            retries += 1            
+            continue
+
+        except KeyboardInterrupt:
+            # quit
+            sys.exit()
+
+        except:
+            print("ERRwikidata: other error. Retrying in 3 seconds." )
+            time.sleep(3)
+            retries += 1
+            continue
+
+    if results == None and retries >= 8:
+        print("Wikidata request failed ; system stopped! ")
+        sys.exit(1)
+
+
     return results
 
 print('- Start Natural-Earth wikidata label query - ')
@@ -124,6 +191,8 @@ print('- Start Natural-Earth wikidata label query - ')
 with open(args.output_csv_name, "w", encoding='utf-8') as f:
     writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
     writer.writerow(("ne_fid","wd_id"
+        ,"population"
+        ,"elevation"
         ,"name_ar"
         ,"name_bn"
         ,"name_de"
@@ -173,9 +242,10 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                 wd_id=get_sparql_value(result,'entity').split('/')[4]
 
                 #wd_label=get_sparql_value(result,'entityLabel')
-
                 #wd_description = get_sparql_value(result,'placeDescription')
                 #wd_type = "#"+get_sparql_value(result,'type_grp')+"#"
+                population=get_sparql_value(result,'population')
+                elevation =get_sparql_value(result,'elevation')
 
                 name_ar=get_sparql_label(result,'name_ar')
                 name_bn=get_sparql_label(result,'name_bn')
@@ -200,6 +270,8 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                 name_zh=get_sparql_label(result,'name_zh')
 
                 writer.writerow((ne_fid,wd_id
+                    ,population
+                    ,elevation
                     ,name_ar
                     ,name_bn
                     ,name_de
