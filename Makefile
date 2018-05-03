@@ -292,6 +292,156 @@ derived_themes: derived_populated_places \
 	50m_cultural/ne_50m_ports.shp \
 	derived_physical_labels
 
+mapshaper_10m_ocean_land: 10m_physical/ne_10m_coastline.shp \
+	10m_physical/ne_10m_minor_islands_coastline.shp \
+	10m_physical/ne_10m_land_ocean_seams.shp \
+	10m_physical/ne_10m_land_ocean_label_points.shp
+	mkdir -p intermediate
+	mapshaper -i combine-files snap \
+		10m_physical/ne_10m_coastline.shp \
+		10m_physical/ne_10m_minor_islands_coastline.shp \
+		10m_physical/ne_10m_land_ocean_seams.shp \
+		-filter-fields \
+		-merge-layers \
+		-polygons gap-tolerance=1e-5 \
+		-join 10m_physical/ne_10m_land_ocean_label_points.shp \
+		-o intermediate/ne_10m_physical_building_blocks.shp \
+		-filter 'featurecla !== null' + \
+		-filter 'featurecla == "Ocean"' + \
+		-o intermediate/ne_10m_ocean_scale_rank.shp \
+		-filter 'featurecla !== null' + \
+		-filter target=1 'featurecla == "Land"' \
+		-o intermediate/ne_10m_land_scale_rank.shp \
+		-dissolve featurecla copy-fields=scalerank,min_zoom \
+		-filter 'featurecla !== null' + \
+		-filter 'featurecla == "Ocean"' + \
+		-o intermediate/ne_10m_ocean.shp \
+		-filter 'featurecla !== null' + \
+		-filter target=1 'featurecla == "Land"' \
+		-o intermediate/ne_10m_land.shp
+
+build_a1_ne_10m_admin_0_scale_rank: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
+	10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp \
+	10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp \
+	10m_cultural/ne_10m_admin_0_seams.shp \
+	10m_physical/ne_10m_coastline.shp \
+	10m_physical/ne_10m_minor_islands_coastline.shp \
+	10m_cultural/ne_10m_admin_0_label_points.shp
+	mkdir -p intermediate
+	mapshaper -i combine-files snap \
+		10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
+		10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp \
+		10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp \
+		10m_cultural/ne_10m_admin_0_seams.shp \
+		10m_physical/ne_10m_coastline.shp \
+		10m_physical/ne_10m_minor_islands_coastline.shp \
+		-filter-fields \
+		-merge-layers \
+		-polygons gap-tolerance=1e-5 \
+		-join 10m_cultural/ne_10m_admin_0_label_points.shp \
+		-filter 'scalerank !== null' + \
+		-o intermediate/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-filter 'scalerank !== null' + \
+		-filter 'scalerank <= 6' + \
+		-o intermediate/ne_10m_admin_0_scale_rank.shp \
+
+build_a2_ne_10m_admin_0_disputed: intermediate/ne_10m_admin_0_scale_rank_minor_islands.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mkdir -p intermediate
+	mapshaper -i intermediate/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-filter '"Admin-0 breakaway and disputed,Admin-0 claim area,Admin-0 indeterminant,Admin-0 overlay,Admin-0 lease".indexOf(featurecla) > -1' \
+		-o intermediate/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.shp \
+		-dissolve 'sr_brk_a3' copy-fields=featurecla,scalerank,min_zoom \
+		-filter 'scalerank !== null' + \
+		-filter 'scalerank <= 6' + \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf keys=sr_brk_a3,BRK_A3 \
+		-each 'brk_a3=sr_brk_a3, delete sr_brk_a3' \
+		-o intermediate/ne_10m_admin_0_disputed_areas.shp \
+
+build_a3_ne_10m_admin_0_subunits: intermediate/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_4_subunits.dbf
+	mkdir -p intermediate
+	mapshaper -i intermediate/ne_10m_admin_0_scale_rank.shp \
+		-dissolve 'sr_su_a3' copy-fields=featurecla,scalerank,min_zoom \
+		-filter 'scalerank !== null' + \
+		-join housekeeping/ne_admin_0_details_level_4_subunits.dbf keys=sr_su_a3,SU_A3 \
+		-each 'featurecla="Admin-0 map subunit", delete sr_su_a3' \
+		-o intermediate/ne_10m_admin_0_map_subunits.shp \
+
+build_a4_ne_10m_admin_0_units: intermediate/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_3_map_units.dbf
+	mkdir -p intermediate
+	mapshaper -i intermediate/ne_10m_admin_0_scale_rank.shp \
+		-dissolve 'sr_gu_a3' copy-fields=featurecla,scalerank,min_zoom \
+		-filter 'scalerank !== null' + \
+		-join housekeeping/ne_admin_0_details_level_3_map_units.dbf keys=sr_gu_a3,GU_A3 \
+		-each 'featurecla="Admin-0 map unit", delete sr_gu_a3' \
+		-o intermediate/ne_10m_admin_0_map_units.shp \
+
+intermediate/ne_10m_lakes_big.shp: 10m_physical/ne_10m_lakes.shp
+	mkdir -p intermediate
+	mapshaper -i 10m_physical/ne_10m_lakes.shp \
+		-filter 'scalerank <= 0' + \
+		-o intermediate/ne_10m_lakes_big.shp \
+
+build_a5_ne_10m_admin_0_countries: intermediate/ne_10m_admin_0_scale_rank.shp \
+	intermediate/ne_10m_lakes_big.shp \
+	10m_physical/ne_10m_lakes.shp \
+	housekeeping/ne_admin_0_details_level_2_countries.dbf
+	mkdir -p intermediate
+	mapshaper -i intermediate/ne_10m_admin_0_scale_rank.shp \
+		-dissolve 'sr_adm0_a3' copy-fields=featurecla,scalerank,min_zoom \
+		-filter 'scalerank !== null' + \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf keys=sr_adm0_a3,ADM0_A3 \
+		-each 'featurecla="Admin-0 country", delete sr_adm0_a3' \
+		-o intermediate/ne_10m_admin_0_countries.shp \
+		-erase intermediate/ne_10m_lakes_big.shp \
+		-o intermediate/ne_10m_admin_0_countries_lakes.shp \
+
+build_a6_ne_10m_admin_0_sov: intermediate/ne_10m_admin_0_scale_rank.shp \
+	intermediate/ne_10m_lakes_big.shp \
+	10m_physical/ne_10m_lakes.shp \
+	housekeeping/ne_admin_0_details_level_1_sov.dbf
+	mkdir -p intermediate
+	mapshaper -i intermediate/ne_10m_admin_0_scale_rank.shp \
+		-dissolve 'sr_sov_a3' copy-fields=featurecla,scalerank,min_zoom \
+		-filter 'scalerank !== null' + \
+		-join housekeeping/ne_admin_0_details_level_1_sov.dbf keys=sr_sov_a3,SOV_A3 \
+		-each 'featurecla="Admin-0 sovereignty", delete sr_sov_a3' \
+		-o intermediate/ne_10m_admin_0_sovereignty.shp \
+
+build_a7_ne_10m_admin_1_all: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
+	10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp \
+	10m_physical/ne_10m_coastline.shp \
+	10m_physical/ne_10m_minor_islands_coastline.shp \
+	10m_cultural/ne_10m_admin_1_states_provinces_lines.shp \
+	10m_cultural/ne_10m_admin_1_seams.shp \
+	10m_cultural/ne_10m_admin_1_label_points.shp \
+	10m_cultural/ne_10m_admin_1_label_points_details.dbf \
+	intermediate/ne_10m_lakes_big.shp \
+	10m_physical/ne_10m_lakes.shp
+	mkdir -p intermediate
+	mapshaper -i combine-files snap \
+		10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
+		10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp \
+		10m_physical/ne_10m_coastline.shp \
+		10m_physical/ne_10m_minor_islands_coastline.shp \
+		10m_cultural/ne_10m_admin_1_states_provinces_lines.shp \
+		10m_cultural/ne_10m_admin_1_seams.shp \
+		-filter-fields \
+		-merge-layers \
+		-polygons gap-tolerance=1e-5 \
+		-join 10m_cultural/ne_10m_admin_1_label_points.shp \
+		-filter 'sr_adm0_a3 !== null' + \
+		-o intermediate/ne_10m_admin_1_states_provinces_scale_rank_minor_islands.shp \
+		-filter 'adm0_sr !== null' + \
+		-filter 'adm0_sr <= 6' + \
+		-o intermediate/ne_10m_admin_1_states_provinces_scale_rank.shp \
+		-dissolve 'adm1_code' copy-fields=featurecla,scalerank,min_zoom \
+		-join 10m_cultural/ne_10m_admin_1_label_points_details.dbf keys=adm1_code,adm1_code \
+		-o intermediate/ne_10m_admin_1_states_provinces.shp \
+		-erase intermediate/ne_10m_lakes_big.shp \
+		-o intermediate/ne_10m_admin_1_states_provinces_lakes.shp \
 
 # POPULATED PLACES
 
