@@ -443,6 +443,19 @@ build_a7_ne_10m_admin_1_all: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp
 		-erase intermediate/ne_10m_lakes_big.shp \
 		-o intermediate/ne_10m_admin_1_states_provinces_lakes.shp \
 
+build_a0_ne_50m_admin_0_disputed: intermediate/ne_50m_admin_0_breakaway_disputed_areas.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mkdir -p intermediate
+	mapshaper -i intermediate/ne_50m_admin_0_breakaway_disputed_areas.shp \
+		-filter '"Admin-0 breakaway and disputed,Admin-0 claim area,Admin-0 indeterminant,Admin-0 overlay,Admin-0 lease".indexOf(featurecla) > -1' \
+		-o intermediate/ne_50m_admin_0_disputed_areas_scale_rank.shp \
+		-dissolve 'sr_brk_a3' copy-fields=featurecla,scalerank,min_zoom \
+		-filter 'scalerank !== null' + \
+		-filter 'scalerank <= 6' + \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 \
+		-each 'brk_a3=sr_brk_a3, delete sr_brk_a3' \
+		-o intermediate/ne_50m_admin_0_disputed_areas.shp \
+
 build_b1_ne_50m_admin_0_subunits: 50m_cultural/ne_50m_admin_0_scale_rank.shp \
 	housekeeping/ne_admin_0_details_level_4_subunits.dbf
 	mkdir -p intermediate
