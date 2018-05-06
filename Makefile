@@ -292,6 +292,28 @@ derived_themes: derived_populated_places \
 	50m_cultural/ne_50m_ports.shp \
 	derived_physical_labels
 
+mapshaper: mapshaper_10m_ocean_land \
+	build_a1_ne_10m_admin_0_scale_rank \
+	build_a2_ne_10m_admin_0_disputed \
+	build_a3_ne_10m_admin_0_subunits \
+	build_a4_ne_10m_admin_0_units \
+	build_a5_ne_10m_admin_0_countries \
+	build_a6_ne_10m_admin_0_sov \
+	build_a7_ne_10m_admin_1_all \
+	build_a0_ne_50m_admin_0_disputed \
+	build_b1_ne_50m_admin_0_subunits \
+	build_b2_ne_50m_admin_0_units \
+	build_b3_ne_50m_admin_0_countries \
+	build_b4_ne_50m_admin_0_sov \
+	build_b5_ne_50m_admin_0_tiny_countries \
+	build_b6_ne_50m_admin_1_all \
+	build_c1_ne_110m_admin_0_units \
+	build_c2_ne_110m_admin_0_countries \
+	build_c3_ne_110m_admin_0_sov \
+	build_c4_ne_110m_admin_1
+
+
+
 mapshaper_10m_ocean_land: 10m_physical/ne_10m_coastline.shp \
 	10m_physical/ne_10m_minor_islands_coastline.shp \
 	10m_physical/ne_10m_land_ocean_seams.shp \
@@ -443,10 +465,10 @@ build_a7_ne_10m_admin_1_all: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp
 		-erase intermediate/ne_10m_lakes_big.shp \
 		-o intermediate/ne_10m_admin_1_states_provinces_lakes.shp \
 
-build_a0_ne_50m_admin_0_disputed: intermediate/ne_50m_admin_0_breakaway_disputed_areas.shp \
+build_a0_ne_50m_admin_0_disputed: 50m_cultural/ne_50m_admin_0_breakaway_disputed_areas_scale_rank.shp \
 	housekeeping/ne_admin_0_details_level_5_disputed.dbf
 	mkdir -p intermediate
-	mapshaper -i intermediate/ne_50m_admin_0_breakaway_disputed_areas.shp \
+	mapshaper -i 50m_cultural/ne_50m_admin_0_breakaway_disputed_areas_scale_rank.shp \
 		-filter '"Admin-0 breakaway and disputed,Admin-0 claim area,Admin-0 indeterminant,Admin-0 overlay,Admin-0 lease".indexOf(featurecla) > -1' \
 		-o intermediate/ne_50m_admin_0_disputed_areas_scale_rank.shp \
 		-dissolve 'sr_brk_a3' copy-fields=featurecla,scalerank,min_zoom \
