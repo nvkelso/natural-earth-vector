@@ -292,14 +292,18 @@ derived_themes: derived_populated_places \
 	50m_cultural/ne_50m_ports.shp \
 	derived_physical_labels
 
-mapshaper: mapshaper_10m_ocean_land \
-	build_a1_ne_10m_admin_0_scale_rank \
+mapshaper: build_a1_ne_10m_admin_0_scale_rank \
 	build_a2_ne_10m_admin_0_disputed \
 	build_a3_ne_10m_admin_0_subunits \
 	build_a4_ne_10m_admin_0_units \
 	build_a5_ne_10m_admin_0_countries \
 	build_a6_ne_10m_admin_0_sov \
 	build_a7_ne_10m_admin_1_all \
+	build_a8_ne_10m_physical_land_ocean \
+	build_a8_ne_10m_physical_ocean_scale_rank \
+	build_a8_ne_10m_physical_ocean \
+	build_a8_ne_10m_physical_land_scale_rank \
+	build_a8_ne_10m_physical_land \
 	build_b0_ne_50m_admin_0_disputed \
 	build_b1_ne_50m_admin_0_subunits \
 	build_b2_ne_50m_admin_0_units \
@@ -312,9 +316,7 @@ mapshaper: mapshaper_10m_ocean_land \
 	build_c3_ne_110m_admin_0_sov \
 	build_c4_ne_110m_admin_1
 
-
-
-mapshaper_10m_ocean_land: 10m_physical/ne_10m_coastline.shp \
+build_a8_ne_10m_physical_land_ocean: 10m_physical/ne_10m_coastline.shp \
 	10m_physical/ne_10m_minor_islands_coastline.shp \
 	10m_physical/ne_10m_land_ocean_seams.shp \
 	10m_physical/ne_10m_land_ocean_label_points.shp
@@ -325,21 +327,45 @@ mapshaper_10m_ocean_land: 10m_physical/ne_10m_coastline.shp \
 		10m_physical/ne_10m_land_ocean_seams.shp \
 		-filter-fields \
 		-merge-layers \
-		-polygons gap-tolerance=1e-5 \
+		-polygons gap-tolerance=1e-6 \
 		-join 10m_physical/ne_10m_land_ocean_label_points.shp \
 		-o intermediate/ne_10m_physical_building_blocks.shp \
+		-each 'diss_me=featurecla+"_"+min_zoom' \
+		-o intermediate/ne_10m_physical_building_blocks_tmp.shp \
+#calc='join_count=count(),featurecla=featurecla,min_zoom=min_zoom' \
+
+build_a8_ne_10m_physical_ocean_scale_rank: intermediate/ne_10m_physical_building_blocks_tmp.shp
+	mkdir -p intermediate
+	mapshaper -i intermediate/ne_10m_physical_building_blocks_tmp.shp \
 		-filter 'featurecla !== null' + \
 		-filter 'featurecla == "Ocean"' + \
+		-each 'delete diss_me' \
 		-o intermediate/ne_10m_ocean_scale_rank.shp \
-		-filter 'featurecla !== null' + \
-		-filter target=1 'featurecla == "Land"' \
-		-o intermediate/ne_10m_land_scale_rank.shp \
-		-dissolve featurecla copy-fields=scalerank,min_zoom \
+
+build_a8_ne_10m_physical_ocean: intermediate/ne_10m_physical_building_blocks_tmp.shp
+	mkdir -p intermediate
+	mapshaper -i intermediate/ne_10m_physical_building_blocks_tmp.shp \
+		-dissolve diss_me copy-fields=featurecla,scalerank,min_zoom \
 		-filter 'featurecla !== null' + \
 		-filter 'featurecla == "Ocean"' + \
+		-each 'delete diss_me' \
 		-o intermediate/ne_10m_ocean.shp \
+
+build_a8_ne_10m_physical_land_scale_rank: intermediate/ne_10m_physical_building_blocks_tmp.shp
+	mkdir -p intermediate
+	mapshaper -i intermediate/ne_10m_physical_building_blocks_tmp.shp \
 		-filter 'featurecla !== null' + \
-		-filter target=1 'featurecla == "Land"' \
+		-filter '"Land,Null island".indexOf(featurecla) > -1' \
+		-each 'delete diss_me' \
+		-o intermediate/ne_10m_land_scale_rank.shp \
+
+build_a8_ne_10m_physical_land: intermediate/ne_10m_physical_building_blocks_tmp.shp
+	mkdir -p intermediate
+	mapshaper -i intermediate/ne_10m_physical_building_blocks_tmp.shp \
+		-dissolve diss_me copy-fields=featurecla,scalerank,min_zoom \
+		-filter 'featurecla !== null' + \
+		-filter '"Land,Null island".indexOf(featurecla) > -1' \
+		-each 'delete diss_me' \
 		-o intermediate/ne_10m_land.shp
 
 build_a1_ne_10m_admin_0_scale_rank: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
