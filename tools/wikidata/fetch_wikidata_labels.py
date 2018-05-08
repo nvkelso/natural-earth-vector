@@ -62,7 +62,7 @@ def get_sparql_label(result,id):
     val=''
     if id in result:
         val = result[id]['value'].split('#')[0].split('(')[0].split(',')[0]
-    return val
+    return val.strip()
 
 def get_sparql_numvalue(result,id):
     val=-1
@@ -77,7 +77,7 @@ def fetchwikidata( a_wid ):
     query_template="""
          PREFIX geo: <http://www.opengis.net/ont/geosparql#>
             SELECT
-                ?e
+                ?e ?i ?r
                 (group_concat(distinct ?name_ar;separator="#") as ?name_ar)
                 (group_concat(distinct ?name_bn;separator="#") as ?name_bn)
                 (group_concat(distinct ?name_de;separator="#") as ?name_de)
@@ -101,11 +101,18 @@ def fetchwikidata( a_wid ):
                 (group_concat(distinct ?name_zh;separator="#") as ?name_zh)
                 (group_concat(distinct ?disambiguation; separator = "#") as ?disambiguation)
                 (SAMPLE(?population) as ?population)
-                (SAMPLE(?elev) as ?elevation)
+                #(SAMPLE(?elev) as ?elevation)
             WHERE {
-                VALUES ?e { wd:Q1781 }
+                {
+                    SELECT DISTINCT  ?e ?i ?r
+                    WHERE{ 
+                        VALUES ?i { wd:Q2102493 wd:Q1781 }
+                        OPTIONAL{ ?i owl:sameAs ?r. }
+                        BIND(COALESCE(?r, ?i) AS ?e). 
+                    }
+                }
                 SERVICE wikibase:label {bd:serviceParam wikibase:language "en".}
-                OPTIONAL{?e p:P2044/psn:P2044/wikibase:quantityAmount ?elev}
+                #OPTIONAL{?e p:P2044/psn:P2044/wikibase:quantityAmount ?elev}
                 OPTIONAL{?e wdt:P1082 ?population .}
                 OPTIONAL{?e rdfs:label ?name_ar FILTER((LANG(?name_ar))="ar").}
                 OPTIONAL{?e rdfs:label ?name_bn FILTER((LANG(?name_bn))="bn").}
@@ -129,7 +136,7 @@ def fetchwikidata( a_wid ):
                 OPTIONAL{?e rdfs:label ?name_vi FILTER((LANG(?name_vi))="vi").}
                 OPTIONAL{?e rdfs:label ?name_zh FILTER((LANG(?name_zh))="zh").}
             }
-            GROUP BY ?e
+            GROUP BY ?e ?i ?r
     """
 
     ws=""
@@ -137,7 +144,7 @@ def fetchwikidata( a_wid ):
         ws+=" wd:"+wid
 
     print( "fetch: ", ws )
-    q=query_template.replace('wd:Q1781',ws)
+    q=query_template.replace('wd:Q2102493 wd:Q1781',ws)
 
     # compress the Query -  removing the extra spaces
     while '  ' in q:
@@ -198,8 +205,9 @@ print('- Start Natural-Earth wikidata label query - ')
 with open(args.output_csv_name, "w", encoding='utf-8') as f:
     writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
     writer.writerow(("wd_id"
+        ,"wd_id_new"
         ,"population"
-        ,"elevation"
+     #   ,"elevation"
         ,"name_ar"
         ,"name_bn"
         ,"name_de"
@@ -248,10 +256,15 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                 wikidata_chunk =[ ]
 
                 for result in results["results"]["bindings"]:
-                    wd_id=get_sparql_value(result,'e').split('/')[4]
-
+                    #print(result)
+                    wd_id_label=get_sparql_value(result,'e').split('/')[4]
+                    wd_id      =get_sparql_value(result,'i').split('/')[4]
+                    wd_id_new  =get_sparql_value(result,'r')
+                    if wd_id_new !='':
+                        wd_id_new=wd_id_new.split('/')[4]
+                        print('Redirected:',wd_id,wd_id_new)
                     population=get_sparql_value(result,'population')
-                    elevation =get_sparql_value(result,'elevation')
+                    #elevaelevation =get_sparql_value(result,'elevation')
 
                     name_ar=get_sparql_label(result,'name_ar')
                     name_bn=get_sparql_label(result,'name_bn')
@@ -277,8 +290,9 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
 
                     writer.writerow((
                          wd_id
+                        ,wd_id_new 
                         ,population
-                        ,elevation
+                        #,elevation
                         ,name_ar
                         ,name_bn
                         ,name_de
