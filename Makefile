@@ -330,42 +330,23 @@ build_a8_ne_10m_physical_land_ocean: 10m_physical/ne_10m_coastline.shp \
 		-polygons gap-tolerance=1e-6 \
 		-join 10m_physical/ne_10m_land_ocean_label_points.shp \
 		-o intermediate/ne_10m_physical_building_blocks.shp \
-		-each 'diss_me=featurecla+"_"+min_zoom' \
-		-o intermediate/ne_10m_physical_building_blocks_tmp.shp \
-#calc='join_count=count(),featurecla=featurecla,min_zoom=min_zoom' \
 
-build_a8_ne_10m_physical_ocean_scale_rank: intermediate/ne_10m_physical_building_blocks_tmp.shp
+build_a8_ne_10m_physical_ocean: intermediate/ne_10m_physical_building_blocks.shp
 	mkdir -p intermediate
 	mapshaper -i intermediate/ne_10m_physical_building_blocks_tmp.shp \
 		-filter 'featurecla !== null' + \
 		-filter 'featurecla == "Ocean"' + \
-		-each 'delete diss_me' \
 		-o intermediate/ne_10m_ocean_scale_rank.shp \
-
-build_a8_ne_10m_physical_ocean: intermediate/ne_10m_physical_building_blocks_tmp.shp
-	mkdir -p intermediate
-	mapshaper -i intermediate/ne_10m_physical_building_blocks_tmp.shp \
-		-dissolve diss_me copy-fields=featurecla,scalerank,min_zoom \
-		-filter 'featurecla !== null' + \
-		-filter 'featurecla == "Ocean"' + \
-		-each 'delete diss_me' \
+		-dissolve featurecla,min_zoom copy-fields=featurecla,scalerank,min_zoom \
 		-o intermediate/ne_10m_ocean.shp \
 
-build_a8_ne_10m_physical_land_scale_rank: intermediate/ne_10m_physical_building_blocks_tmp.shp
+build_a8_ne_10m_physical_land: intermediate/ne_10m_physical_building_blocks.shp
 	mkdir -p intermediate
 	mapshaper -i intermediate/ne_10m_physical_building_blocks_tmp.shp \
 		-filter 'featurecla !== null' + \
 		-filter '"Land,Null island".indexOf(featurecla) > -1' \
-		-each 'delete diss_me' \
 		-o intermediate/ne_10m_land_scale_rank.shp \
-
-build_a8_ne_10m_physical_land: intermediate/ne_10m_physical_building_blocks_tmp.shp
-	mkdir -p intermediate
-	mapshaper -i intermediate/ne_10m_physical_building_blocks_tmp.shp \
-		-dissolve diss_me copy-fields=featurecla,scalerank,min_zoom \
-		-filter 'featurecla !== null' + \
-		-filter '"Land,Null island".indexOf(featurecla) > -1' \
-		-each 'delete diss_me' \
+		-dissolve featurecla,min_zoom copy-fields=featurecla,scalerank,min_zoom \
 		-o intermediate/ne_10m_land.shp
 
 build_a1_ne_10m_admin_0_scale_rank: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
