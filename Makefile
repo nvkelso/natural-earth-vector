@@ -366,13 +366,13 @@ build_a1_ne_10m_admin_0_scale_rank: 10m_cultural/ne_10m_admin_0_boundary_lines_l
 		10m_physical/ne_10m_minor_islands_coastline.shp \
 		-filter-fields \
 		-merge-layers \
-		-polygons gap-tolerance=1e-5 \
+		-polygons gap-tolerance=1e-6 \
 		-join 10m_cultural/ne_10m_admin_0_label_points.shp \
-		-filter 'scalerank !== null' + \
 		-o intermediate/ne_10m_admin_0_scale_rank_minor_islands.shp \
 		-filter 'scalerank !== null' + \
 		-filter 'scalerank <= 6' + \
 		-o intermediate/ne_10m_admin_0_scale_rank.shp \
+#calc='join_count = count()'
 
 build_a2_ne_10m_admin_0_disputed: intermediate/ne_10m_admin_0_scale_rank_minor_islands.shp \
 	housekeeping/ne_admin_0_details_level_5_disputed.dbf
@@ -382,9 +382,8 @@ build_a2_ne_10m_admin_0_disputed: intermediate/ne_10m_admin_0_scale_rank_minor_i
 		-o intermediate/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.shp \
 		-dissolve 'sr_brk_a3' copy-fields=featurecla,scalerank \
 		-filter 'scalerank !== null' + \
-		-filter 'scalerank <= 6' + \
 		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 \
-		-each 'brk_a3=sr_brk_a3, delete sr_brk_a3' \
+		-each 'BRK_A3=sr_brk_a3, delete sr_brk_a3' \
 		-o intermediate/ne_10m_admin_0_disputed_areas.shp \
 
 build_a3_ne_10m_admin_0_subunits: intermediate/ne_10m_admin_0_scale_rank.shp \
