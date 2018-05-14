@@ -458,11 +458,10 @@ build_a7_ne_10m_admin_1_all: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp
 		10m_cultural/ne_10m_admin_1_seams.shp \
 		-filter-fields \
 		-merge-layers \
-		-polygons gap-tolerance=1e-5 \
+		-polygons gap-tolerance=1e-4 \
 		-join 10m_cultural/ne_10m_admin_1_label_points.shp \
-		-filter 'sr_adm0_a3 !== null' + \
-		-o intermediate/ne_10m_admin_1_states_provinces_scale_rank_minor_islands.shp \
 		-filter 'adm0_sr !== null' + \
+		-o intermediate/ne_10m_admin_1_states_provinces_scale_rank_minor_islands.shp \
 		-filter 'adm0_sr <= 6' + \
 		-o intermediate/ne_10m_admin_1_states_provinces_scale_rank.shp \
 		-dissolve 'adm1_code' copy-fields=featurecla,scalerank \
@@ -470,6 +469,7 @@ build_a7_ne_10m_admin_1_all: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp
 		-o intermediate/ne_10m_admin_1_states_provinces.shp \
 		-erase intermediate/ne_10m_lakes_big.shp \
 		-o intermediate/ne_10m_admin_1_states_provinces_lakes.shp \
+#  calc='join_count = count()'
 
 build_b0_ne_50m_admin_0_disputed: 50m_cultural/ne_50m_admin_0_breakaway_disputed_areas_scale_rank.shp \
 	housekeeping/ne_admin_0_details_level_5_disputed.dbf
