@@ -7,7 +7,7 @@ import json
 
 import argparse
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description='Add unique ne_id to Natural Earth theme features based on Brooklyn Ints.')
 parser.add_argument("--input", "-i", type=str, required=True)
 parser.add_argument("--output", "-o", type=str, required=True)
 args = parser.parse_args()
