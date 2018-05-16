@@ -508,7 +508,7 @@ build_b3_ne_50m_admin_0_countries: 50m_cultural/ne_50m_admin_0_scale_rank.shp \
 		-filter 'scalerank !== null' + \
 		-each 'featurecla="Admin-0 country"' \
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=sr_adm0_a3,ADM0_A3 fields=* \
-		-each 'ADM0_A3=sr_adm0_a3, delete sr_adm0_a3' \
+		-each 'delete sr_adm0_a3' \
 		-o 50m_cultural/ne_50m_admin_0_countries.shp \
 		-erase intermediate/ne_50m_lakes_big.shp \
 		-o 50m_cultural/ne_50m_admin_0_countries_lakes.shp \
