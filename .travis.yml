@@ -71,8 +71,6 @@ matrix:
                 - pip3 install -U csvtomd
                 - pip3 install -U requests
 
-
-
         - language: python
           python: 3.5
           os: linux
@@ -86,7 +84,6 @@ matrix:
                 - python -c "import fiona"                
                 - pip3 install -U csvtomd
                 - pip3 install -U requests
-
 
 script:
   - python3 ./tools/wikidata/platform_debug_info.py

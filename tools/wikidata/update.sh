@@ -21,7 +21,7 @@ function fetch_names {
     nei_letter_case=$1
     nei_path=$2
     neo_path=$3
-    ne_shapepath=$4    
+    ne_shapepath=$4
     ne_shapefile=$5
 
     mkdir -p ${neo_path}/${ne_shapepath}
@@ -32,9 +32,9 @@ function fetch_names {
     echo "parameters:"
     echo "  nei_letter_case:  ${nei_letter_case}"
     echo "  nei_path       :  ${nei_path}"
-    echo "  neo_path       :  ${neo_path}"    
+    echo "  neo_path       :  ${neo_path}"
     echo "  ne_shapepath   :  ${ne_shapepath}"
-    echo "  ne_shapefile   :  ${ne_shapefile}"    
+    echo "  ne_shapefile   :  ${ne_shapefile}"
     echo " "
 
 
@@ -50,7 +50,7 @@ function write_names {
     nei_letter_case=$1
     nei_path=$2
     neo_path=$3
-    ne_shapepath=$4    
+    ne_shapepath=$4
     ne_shapefile=$5
 
     mkdir -p ${neo_path}/${ne_shapepath}
@@ -61,9 +61,9 @@ function write_names {
     echo "parameters:"
     echo "  nei_letter_case:  ${nei_letter_case}"
     echo "  nei_path       :  ${nei_path}"
-    echo "  neo_path       :  ${neo_path}"    
+    echo "  neo_path       :  ${neo_path}"
     echo "  ne_shapepath   :  ${ne_shapepath}"
-    echo "  ne_shapefile   :  ${ne_shapefile}"    
+    echo "  ne_shapefile   :  ${ne_shapefile}"
     echo " "
 
 
@@ -138,7 +138,7 @@ rm -f $logmd
 #  lettercase = uppercase variable names [WIKIDATAID, NAME_AR, NAME_BN, NAME_DE, NAME_EN, NAME_ES, ... ]
 #  lettercase = lowercase variable names [wikidataid, name_ar, name_bn, name_de, name_en, name_es ]
 
-#            lettercase | input folder | output folder | shape_path   |  shape filename 
+#            lettercase | input folder | output folder | shape_path   |  shape filename
 # ----------------------| ------------ | ------------- | -------------| ---------------------------------------
 update_names uppercase    .              x_tempshape     10m_cultural   ne_10m_admin_0_countries_lakes.shp
 update_names uppercase    .              x_tempshape     10m_cultural   ne_10m_admin_0_countries.shp
@@ -168,7 +168,7 @@ update_names lowercase    .              x_tempshape     10m_physical   ne_10m_r
 update_names lowercase    .              x_tempshape     10m_physical   ne_10m_rivers_north_america.shp
 
 update_names lowercase    .              x_tempshape     10m_cultural   ne_10m_admin_1_label_points_details.shp
-   
+
 
 
 #cp -r x_tempshape/10m_cultural/*    10m_cultural/
