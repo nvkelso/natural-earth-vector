@@ -286,6 +286,317 @@ zips/110m_physical/110m_physical.zip: \
 
 #DERIVED THEMES
 
+derived_themes: derived_populated_places \
+	110m_cultural/ne_110m_admin_0_tiny_countries.shp \
+	50m_cultural/ne_50m_airports.shp \
+	50m_cultural/ne_50m_ports.shp \
+	derived_physical_labels
+
+mapshaper: build_a1_ne_10m_admin_0_scale_rank \
+	build_a2_ne_10m_admin_0_disputed \
+	build_a3_ne_10m_admin_0_subunits \
+	build_a4_ne_10m_admin_0_units \
+	build_a5_ne_10m_admin_0_countries \
+	build_a6_ne_10m_admin_0_sov \
+	build_a7_ne_10m_admin_1_all \
+	build_a8_ne_10m_physical_land_ocean \
+	build_a8_ne_10m_physical_ocean \
+	build_a8_ne_10m_physical_land \
+	build_b0_ne_50m_admin_0_disputed \
+	build_b1_ne_50m_admin_0_subunits \
+	build_b2_ne_50m_admin_0_units \
+	build_b3_ne_50m_admin_0_countries \
+	build_b4_ne_50m_admin_0_sov \
+	build_b5_ne_50m_admin_0_tiny_countries \
+	build_b6_ne_50m_admin_1_all \
+	build_c1_ne_110m_admin_0_units \
+	build_c2_ne_110m_admin_0_countries \
+	build_c3_ne_110m_admin_0_sov \
+	build_c4_ne_110m_admin_1
+
+build_a8_ne_10m_physical_land_ocean: 10m_physical/ne_10m_coastline.shp \
+	10m_physical/ne_10m_minor_islands_coastline.shp \
+	10m_physical/ne_10m_land_ocean_seams.shp \
+	10m_physical/ne_10m_land_ocean_label_points.shp
+	mkdir -p intermediate
+	mapshaper -i combine-files snap \
+		10m_physical/ne_10m_coastline.shp \
+		10m_physical/ne_10m_minor_islands_coastline.shp \
+		10m_physical/ne_10m_land_ocean_seams.shp \
+		-filter-fields \
+		-merge-layers \
+		-polygons gap-tolerance=1e-6 \
+		-join 10m_physical/ne_10m_land_ocean_label_points.shp \
+		-o intermediate/ne_10m_physical_building_blocks.shp \
+
+build_a8_ne_10m_physical_ocean: intermediate/ne_10m_physical_building_blocks.shp
+	mapshaper -i intermediate/ne_10m_physical_building_blocks.shp \
+		-filter 'featurecla !== null' + \
+		-filter 'featurecla == "Ocean"' + \
+		-o 10m_physical/ne_10m_ocean_scale_rank.shp \
+		-dissolve featurecla,min_zoom copy-fields=featurecla,scalerank,min_zoom \
+		-o 10m_physical/ne_10m_ocean.shp \
+
+build_a8_ne_10m_physical_land: intermediate/ne_10m_physical_building_blocks.shp
+	mapshaper -i intermediate/ne_10m_physical_building_blocks.shp \
+		-filter 'featurecla !== null' + \
+		-filter '"Land,Null island".indexOf(featurecla) > -1' \
+		-o 10m_physical/ne_10m_land_scale_rank.shp \
+		-dissolve featurecla,min_zoom copy-fields=featurecla,scalerank,min_zoom \
+		-o 10m_physical/ne_10m_land.shp
+
+build_a1_ne_10m_admin_0_scale_rank: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
+	10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp \
+	10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp \
+	10m_cultural/ne_10m_admin_0_seams.shp \
+	10m_physical/ne_10m_coastline.shp \
+	10m_physical/ne_10m_minor_islands_coastline.shp \
+	10m_cultural/ne_10m_admin_0_label_points.shp
+	mapshaper -i combine-files snap \
+		10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
+		10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp \
+		10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp \
+		10m_cultural/ne_10m_admin_0_seams.shp \
+		10m_physical/ne_10m_coastline.shp \
+		10m_physical/ne_10m_minor_islands_coastline.shp \
+		-filter-fields \
+		-merge-layers \
+		-polygons gap-tolerance=1e-6 \
+		-join 10m_cultural/ne_10m_admin_0_label_points.shp \
+		-o 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-filter 'scalerank !== null' + \
+		-filter 'scalerank <= 6' + \
+		-o 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+#calc='join_count = count()'
+
+build_a2_ne_10m_admin_0_disputed: 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-filter '"Admin-0 breakaway and disputed,Admin-0 claim area,Admin-0 indeterminant,Admin-0 overlay,Admin-0 lease".indexOf(featurecla) > -1' \
+		-o 10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.shp \
+		-dissolve 'sr_brk_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=* \
+		-each 'delete sr_brk_a3' \
+		-o 10m_cultural/ne_10m_admin_0_disputed_areas.shp \
+
+build_a3_ne_10m_admin_0_subunits: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_4_subunits.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+		-dissolve 'sr_su_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 map subunit"' \
+		-join housekeeping/ne_admin_0_details_level_4_subunits.dbf encoding=utf8 keys=sr_su_a3,SU_A3 fields=* \
+		-each 'delete sr_su_a3' \
+		-o 10m_cultural/ne_10m_admin_0_map_subunits.shp \
+
+build_a4_ne_10m_admin_0_units: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_3_map_units.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+		-dissolve 'sr_gu_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 map unit"' \
+		-join housekeeping/ne_admin_0_details_level_3_map_units.dbf encoding=utf8 keys=sr_gu_a3,GU_A3 fields=* \
+		-each 'delete sr_gu_a3' \
+		-o 10m_cultural/ne_10m_admin_0_map_units.shp \
+
+intermediate/ne_10m_lakes_big.shp: 10m_physical/ne_10m_lakes.shp
+	mkdir -p intermediate
+	mapshaper -i 10m_physical/ne_10m_lakes.shp \
+		-filter 'scalerank <= 0' + \
+		-o intermediate/ne_10m_lakes_big.shp \
+
+build_a5_ne_10m_admin_0_countries: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	intermediate/ne_10m_lakes_big.shp \
+	10m_physical/ne_10m_lakes.shp \
+	housekeeping/ne_admin_0_details_level_2_countries.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+		-dissolve 'sr_adm0_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=sr_adm0_a3,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-o 10m_cultural/ne_10m_admin_0_countries.shp \
+		-erase intermediate/ne_10m_lakes_big.shp \
+		-o 10m_cultural/ne_10m_admin_0_countries_lakes.shp \
+
+build_a6_ne_10m_admin_0_sov: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	intermediate/ne_10m_lakes_big.shp \
+	10m_physical/ne_10m_lakes.shp \
+	housekeeping/ne_admin_0_details_level_1_sov.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+		-dissolve 'sr_sov_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 sovereignty"' \
+		-join housekeeping/ne_admin_0_details_level_1_sov.dbf encoding=utf8 keys=sr_sov_a3,SOV_A3 fields=* \
+		-each 'delete sr_sov_a3' \
+		-o 10m_cultural/ne_10m_admin_0_sovereignty.shp \
+
+build_a7_ne_10m_admin_1_all: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
+	10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp \
+	10m_physical/ne_10m_coastline.shp \
+	10m_physical/ne_10m_minor_islands_coastline.shp \
+	10m_cultural/ne_10m_admin_1_states_provinces_lines.shp \
+	10m_cultural/ne_10m_admin_1_seams.shp \
+	10m_cultural/ne_10m_admin_1_label_points.shp \
+	10m_cultural/ne_10m_admin_1_label_points_details.dbf \
+	intermediate/ne_10m_lakes_big.shp \
+	10m_physical/ne_10m_lakes.shp
+	mapshaper -i combine-files snap \
+		10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
+		10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp \
+		10m_physical/ne_10m_coastline.shp \
+		10m_physical/ne_10m_minor_islands_coastline.shp \
+		10m_cultural/ne_10m_admin_1_states_provinces_lines.shp \
+		10m_cultural/ne_10m_admin_1_seams.shp \
+		-filter-fields \
+		-merge-layers \
+		-polygons gap-tolerance=1e-4 \
+		-join 10m_cultural/ne_10m_admin_1_label_points.shp \
+		-filter 'adm0_sr !== null' + \
+		-o 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank_minor_islands.shp \
+		-filter 'adm0_sr <= 6' + \
+		-o 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank.shp \
+		-dissolve 'adm1_code' copy-fields=featurecla,scalerank \
+		-join 10m_cultural/ne_10m_admin_1_label_points_details.dbf encoding=utf8 keys=adm1_code,adm1_code fields=* \
+		-o 10m_cultural/ne_10m_admin_1_states_provinces.shp \
+		-erase intermediate/ne_10m_lakes_big.shp \
+		-o 10m_cultural/ne_10m_admin_1_states_provinces_lakes.shp \
+#  calc='join_count = count()'
+
+build_b0_ne_50m_admin_0_disputed: 50m_cultural/ne_50m_admin_0_breakaway_disputed_areas_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 50m_cultural/ne_50m_admin_0_breakaway_disputed_areas_scale_rank.shp \
+		-dissolve 'sr_brk_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-filter 'scalerank <= 6' + \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=* \
+		-each 'delete sr_brk_a3' \
+		-o 50m_cultural/ne_50m_admin_0_disputed_areas.shp \
+
+build_b1_ne_50m_admin_0_subunits: 50m_cultural/ne_50m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_4_subunits.dbf
+	mapshaper -i 50m_cultural/ne_50m_admin_0_scale_rank.shp \
+		-dissolve 'sr_su_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 map subunit"' \
+		-join housekeeping/ne_admin_0_details_level_4_subunits.dbf encoding=utf8 keys=sr_su_a3,SU_A3 fields=* \
+		-each 'delete sr_su_a3' \
+		-o 50m_cultural/ne_50m_admin_0_map_subunits.shp \
+
+build_b2_ne_50m_admin_0_units: 50m_cultural/ne_50m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_3_map_units.dbf
+	mapshaper -i 50m_cultural/ne_50m_admin_0_scale_rank.shp \
+		-dissolve 'sr_gu_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 map unit"' \
+		-join housekeeping/ne_admin_0_details_level_3_map_units.dbf encoding=utf8 keys=sr_gu_a3,GU_A3 fields=* \
+		-each 'delete sr_gu_a3' \
+		-o 50m_cultural/ne_50m_admin_0_map_units.shp \
+
+intermediate/ne_50m_lakes_big.shp: 50m_physical/ne_50m_lakes.shp
+	mkdir -p intermediate
+	mapshaper -i 50m_physical/ne_50m_lakes.shp \
+		-filter 'admin == "admin-0"' + \
+		-o intermediate/ne_50m_lakes_big.shp \
+
+build_b3_ne_50m_admin_0_countries: 50m_cultural/ne_50m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_2_countries.dbf \
+	intermediate/ne_50m_lakes_big.shp
+	mapshaper -i 50m_cultural/ne_50m_admin_0_scale_rank.shp \
+		-dissolve 'sr_adm0_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=sr_adm0_a3,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-o 50m_cultural/ne_50m_admin_0_countries.shp \
+		-erase intermediate/ne_50m_lakes_big.shp \
+		-o 50m_cultural/ne_50m_admin_0_countries_lakes.shp \
+
+build_b4_ne_50m_admin_0_sov: 50m_cultural/ne_50m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_1_sov.dbf
+	mapshaper -i 50m_cultural/ne_50m_admin_0_scale_rank.shp \
+		-dissolve 'sr_sov_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 sovereignty"' \
+		-join housekeeping/ne_admin_0_details_level_1_sov.dbf encoding=utf8 keys=sr_sov_a3,SOV_A3 fields=* \
+		-each 'delete sr_sov_a3' \
+		-o 50m_cultural/ne_50m_admin_0_sovereignty.shp \
+
+build_b5_ne_50m_admin_0_tiny_countries: 50m_cultural/ne_50m_admin_0_tiny_countries_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_4_subunits.dbf
+	mapshaper -i 50m_cultural/ne_50m_admin_0_tiny_countries_scale_rank.shp \
+		-filter 'scalerank !== null' + \
+		-filter 'scalerank >= 0' + \
+		-each 'featurecla="Admin-0 Tiny Countries"' \
+		-join housekeeping/ne_admin_0_details_level_4_subunits.dbf encoding=utf8 keys=sr_su_a3,SU_A3 fields=* \
+		-drop fields=sr_sov_a3,sr_adm0_a3,sr_gu_a3,sr_su_a3,sr_subunit \
+		-o 50m_cultural/ne_50m_admin_0_tiny_countries.shp \
+
+build_b6_ne_50m_admin_1_all: 50m_cultural/ne_50m_admin_1_states_provinces_scale_rank.shp \
+	10m_cultural/ne_10m_admin_1_label_points_details.dbf \
+	intermediate/ne_50m_lakes_big.shp
+	mapshaper -i 50m_cultural/ne_50m_admin_1_states_provinces_scale_rank.shp \
+		-filter 'scalerank !== null' + \
+		-dissolve 'adm1_code' copy-fields=featurecla,scalerank \
+		-join 10m_cultural/ne_10m_admin_1_label_points_details.dbf encoding=utf8 keys=adm1_code,adm1_code fields=* \
+		-o 50m_cultural/ne_50m_admin_1_states_provinces.shp \
+		-erase intermediate/ne_50m_lakes_big.shp \
+		-o 50m_cultural/ne_50m_admin_1_states_provinces_lakes.shp \
+
+build_c1_ne_110m_admin_0_units: 110m_cultural/ne_110m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_3_map_units.dbf
+	mapshaper -i 110m_cultural/ne_110m_admin_0_scale_rank.shp \
+		-dissolve 'sr_gu_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 map unit"' \
+		-join housekeeping/ne_admin_0_details_level_3_map_units.dbf encoding=utf8 keys=sr_gu_a3,GU_A3 fields=* \
+		-each 'delete sr_gu_a3' \
+		-o 110m_cultural/ne_110m_admin_0_map_units.shp \
+
+intermediate/ne_110m_lakes_big.shp: 110m_physical/ne_110m_lakes.shp
+	mkdir -p intermediate
+	mapshaper -i 110m_physical/ne_110m_lakes.shp \
+		-filter 'admin == "admin-0"' + \
+		-o intermediate/ne_110m_lakes_big.shp \
+
+build_c2_ne_110m_admin_0_countries: 110m_cultural/ne_110m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_2_countries.dbf \
+	intermediate/ne_110m_lakes_big.shp
+	mkdir -p intermediate
+	mapshaper -i 110m_cultural/ne_110m_admin_0_scale_rank.shp \
+		-dissolve 'sr_adm0_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=sr_adm0_a3,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-o 110m_cultural/ne_110m_admin_0_countries.shp \
+		-erase intermediate/ne_110m_lakes_big.shp \
+		-o 110m_cultural/ne_110m_admin_0_countries_lakes.shp \
+
+build_c3_ne_110m_admin_0_sov: 110m_cultural/ne_110m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_1_sov.dbf
+	mapshaper -i 110m_cultural/ne_110m_admin_0_scale_rank.shp \
+		-dissolve 'sr_sov_a3' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 sovereignty"' \
+		-join housekeeping/ne_admin_0_details_level_1_sov.dbf encoding=utf8 keys=sr_sov_a3,SOV_A3 fields=* \
+		-each 'delete sr_sov_a3' \
+		-o 110m_cultural/ne_110m_admin_0_sovereignty.shp \
+
+build_c4_ne_110m_admin_1: 110m_cultural/ne_110m_admin_1_states_provinces_scale_rank.shp \
+	10m_cultural/ne_10m_admin_1_label_points_details.dbf \
+	intermediate/ne_110m_lakes_big.shp
+	mapshaper -i 110m_cultural/ne_110m_admin_1_states_provinces_scale_rank.shp \
+		-filter 'scalerank !== null' + \
+		-dissolve 'adm1_code' copy-fields=featurecla,scalerank \
+		-join 10m_cultural/ne_10m_admin_1_label_points_details.dbf encoding=utf8 keys=adm1_code,adm1_code fields=* \
+		-o 110m_cultural/ne_110m_admin_1_states_provinces.shp \
+		-erase intermediate/ne_110m_lakes_big.shp \
+		-o 110m_cultural/ne_110m_admin_1_states_provinces_lakes.shp \
+
+
+
 # POPULATED PLACES
 
 derived_populated_places: 10m_cultural/ne_10m_populated_places.shp \
@@ -299,7 +610,7 @@ derived_populated_places: 10m_cultural/ne_10m_populated_places.shp \
 
 #10m simple- populated places
 10m_cultural/ne_10m_populated_places_simple.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
-	ogr2ogr -overwrite -lco ENCODING=UTF-8 -sql "SELECT scalerank, natscale, labelrank, featurecla, name, namepar, namealt, diffascii, nameascii, adm0cap, capalt, capin, worldcity, megacity, sov0name, sov_a3, adm0name, adm0_a3, adm1name, iso_a2, note, latitude, longitude, changed, namediff, diffnote, pop_max, pop_min, pop_other, rank_max, rank_min, geonameid, meganame, ls_name, ls_match, checkme, min_zoom FROM ne_10m_populated_places ORDER BY natscale" $@ 10m_cultural/ne_10m_populated_places.shp
+	ogr2ogr -overwrite -lco ENCODING=UTF-8 -sql "SELECT scalerank, natscale, labelrank, featurecla, name, namepar, namealt, diffascii, nameascii, adm0cap, capalt, capin, worldcity, megacity, sov0name, sov_a3, adm0name, adm0_a3, adm1name, iso_a2, note, latitude, longitude, changed, namediff, diffnote, pop_max, pop_min, pop_other, rank_max, rank_min, geonameid, meganame, ls_name, ls_match, checkme, min_zoom, ne_id FROM ne_10m_populated_places ORDER BY natscale" $@ 10m_cultural/ne_10m_populated_places.shp
 
 #50m full - populated places
 50m_cultural/ne_50m_populated_places.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
@@ -308,7 +619,7 @@ derived_populated_places: 10m_cultural/ne_10m_populated_places.shp \
 
 50m_cultural/ne_50m_populated_places_simple.shp: 50m_cultural/ne_50m_populated_places.shp 50m_cultural/ne_50m_populated_places.dbf
 	#50m simple - populated places
-	ogr2ogr -overwrite -lco ENCODING=UTF-8 -sql "SELECT scalerank, natscale, labelrank, featurecla, name, namepar, namealt, diffascii, nameascii, adm0cap, capalt, capin, worldcity, megacity, sov0name, sov_a3, adm0name, adm0_a3, adm1name, iso_a2, note, latitude, longitude, changed, namediff, diffnote, pop_max, pop_min, pop_other, rank_max, rank_min, geonameid, meganame, ls_name, ls_match, checkme, min_zoom FROM ne_50m_populated_places ORDER BY natscale" $@ 50m_cultural/ne_50m_populated_places.shp
+	ogr2ogr -overwrite -lco ENCODING=UTF-8 -sql "SELECT scalerank, natscale, labelrank, featurecla, name, namepar, namealt, diffascii, nameascii, adm0cap, capalt, capin, worldcity, megacity, sov0name, sov_a3, adm0name, adm0_a3, adm1name, iso_a2, note, latitude, longitude, changed, namediff, diffnote, pop_max, pop_min, pop_other, rank_max, rank_min, geonameid, meganame, ls_name, ls_match, checkme, min_zoom, ne_id FROM ne_50m_populated_places ORDER BY natscale" $@ 50m_cultural/ne_50m_populated_places.shp
 
 #110m full - populated places
 110m_cultural/ne_110m_populated_places.shp: 10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf
@@ -317,7 +628,7 @@ derived_populated_places: 10m_cultural/ne_10m_populated_places.shp \
 
 110m_cultural/ne_110m_populated_places_simple.shp: 110m_cultural/ne_110m_populated_places.shp 110m_cultural/ne_110m_populated_places.dbf
 	#110m simple - populated places
-	ogr2ogr -overwrite -lco ENCODING=UTF-8 -sql "SELECT scalerank, natscale, labelrank, featurecla, name, namepar, namealt, diffascii, nameascii, adm0cap, capalt, capin, worldcity, megacity, sov0name, sov_a3, adm0name, adm0_a3, adm1name, iso_a2, note, latitude, longitude, changed, namediff, diffnote, pop_max, pop_min, pop_other, rank_max, rank_min, geonameid, meganame, ls_name, ls_match, checkme, min_zoom FROM ne_110m_populated_places ORDER BY natscale" $@ 110m_cultural/ne_110m_populated_places.shp
+	ogr2ogr -overwrite -lco ENCODING=UTF-8 -sql "SELECT scalerank, natscale, labelrank, featurecla, name, namepar, namealt, diffascii, nameascii, adm0cap, capalt, capin, worldcity, megacity, sov0name, sov_a3, adm0name, adm0_a3, adm1name, iso_a2, note, latitude, longitude, changed, namediff, diffnote, pop_max, pop_min, pop_other, rank_max, rank_min, geonameid, meganame, ls_name, ls_match, checkme, min_zoom, ne_id FROM ne_110m_populated_places ORDER BY natscale" $@ 110m_cultural/ne_110m_populated_places.shp
 
 # TINY COUNTRIES
 

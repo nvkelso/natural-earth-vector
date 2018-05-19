@@ -1,10 +1,10 @@
-#Everything here is public domain.
+# Everything here is public domain.
 
 [Full terms of service »](http://www.naturalearthdata.com/about/terms-of-use/)
 
 All versions of Natural Earth raster + vector map data found on this website are in the public domain. You may use the maps in any manner, including modifying the content and design, electronic dissemination, and offset printing. The primary authors, _Tom Patterson_ and _Nathaniel Vaughn Kelso_, and all other contributors renounce all financial claim to the maps and invites you to use them for personal, educational, and commercial purposes.
 
-#Credits
+# Credits
 
 No permission is needed to use Natural Earth. Crediting the authors is unnecessary.
 
@@ -32,13 +32,13 @@ Three logo options:
 [Download Large Transparent PNG](http://www.naturalearthdata.com/wp-content/uploads/2009/08/NEV-Logo-White.png)
 [Download EPS](http://www.naturalearthdata.com/wp-content/uploads/2009/08/NEV%20Logo%20White.zip)
 
-#Your due diligence
+# Your due diligence
 
 All users of Natural Earth are highly encouraged to read about data sources and manipulation in the [Data Creation](http://www.naturalearthdata.com/about/data-creation/) section.
 
 The authors provide Natural Earth as a public service and are not responsible for any problems relating to accuracy, content, design, and how it is used. If you find an error or omission, please [report it](http://www.naturalearthdata.com/corrections/index.php?a=add) for future updates.
 
-#Releases
+# Releases
 
 The authors used data from The Washington Post, here is their release:
 
