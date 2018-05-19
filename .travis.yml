@@ -9,7 +9,9 @@ matrix:
     include:
         - os: osx
           language: generic
-          env: PY=3.6
+          env: 
+            - PY=3.6
+            - nedocker=NO
           before_install:
                 - brew uninstall python mercurial postgis sfcgal cgal gdal
                 - brew update
@@ -33,9 +35,14 @@ matrix:
                 - conda install --yes -c conda-forge sparqlwrapper
                 - conda install --yes -c conda-forge requests
                 - pip install csvtomd
+          script:
+            - run_all.sh
+
 
         - os: linux
-          env: PY=3.6
+          env: 
+            - PY=3.6
+            - nedocker=NO
           sudo: required          
           before_install:
                 - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
@@ -56,10 +63,17 @@ matrix:
                 - conda install --yes -c conda-forge sparqlwrapper
                 - conda install --yes -c conda-forge requests
                 - pip install csvtomd
+          script:
+            - run_all.sh
+
+
+
 
         - language: python
           python: 3.6
           os: linux
+          env:
+             - nedocker=NO           
           sudo: required          
           before_install:
                 - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
@@ -70,10 +84,17 @@ matrix:
                 - python -c "import fiona"                
                 - pip3 install -U csvtomd
                 - pip3 install -U requests
+          script:
+            - run_all.sh
+
+
+
 
         - language: python
           python: 3.5
           os: linux
+          env:
+             - nedocker=NO              
           sudo: required          
           before_install:
                 - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
@@ -84,12 +105,18 @@ matrix:
                 - python -c "import fiona"                
                 - pip3 install -U csvtomd
                 - pip3 install -U requests
+          script:
+            - run_all.sh
 
-script:
-  - python3 ./tools/wikidata/platform_debug_info.py
-  - time ./tools/wikidata/update.sh fetch
-  - time ./tools/wikidata/update.sh write
-  - cat   x_tempshape/update.md
-  - cp -r x_tempshape/10m_cultural/*    10m_cultural/
-  - cp -r x_tempshape/10m_physical/*    10m_physical/
-  - make clean all
+
+
+
+        - services: docker
+          os: linux
+          env:
+             - nedocker=YES              
+          sudo: required             
+          before_install:
+                - docker build -t ne_py3wikdata .
+          script:      
+                - docker run -it -v $(pwd):/ne   ne_py3wikdata  bash run_all.sh
