@@ -1,4 +1,5 @@
-
+#!/bin/bash
+set -Eeuo pipefail
 
 python3 ./tools/wikidata/platform_debug_info.py
 time ./tools/wikidata/update.sh fetch

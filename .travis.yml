@@ -112,6 +112,8 @@ matrix:
              - nedocker=YES              
           sudo: required             
           before_install:
-                - docker build -t ne_py3wikdata .
+                - docker version
+                - docker build -t ne_py3wikidata .
+                - docker images
           script:      
-                - docker run -it -v $(pwd):/ne   ne_py3wikdata  bash run_all.sh
+                - docker run -it -v $(pwd):/ne   ne_py3wikidata  bash run_all.sh
