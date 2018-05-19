@@ -95,7 +95,4 @@ script:
   - cat   x_tempshape/update.md
   - cp -r x_tempshape/10m_cultural/*    10m_cultural/
   - cp -r x_tempshape/10m_physical/*    10m_physical/
-
-# fix  make: *** No rule to make target `housekeeping/ne_admin_0_details.xls', needed by `zips/packages/natural_earth_vector.zip'.  Stop.
-  - touch housekeeping/ne_admin_0_details.xls
   - make clean all
