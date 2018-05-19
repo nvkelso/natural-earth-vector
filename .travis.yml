@@ -36,37 +36,35 @@ matrix:
                 - conda install --yes -c conda-forge requests
                 - pip install csvtomd
           script:
-            - run_all.sh
+            - ./run_all.sh
 
 
-        - os: linux
-          env: 
-            - PY=3.6
-            - nedocker=NO
-          sudo: required          
-          before_install:
-                - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
-                - sudo apt-get --yes --force-yes update -qq
-                - sudo apt-get install --yes gdal-bin jq
-                - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh  -O miniconda.sh
-                - bash miniconda.sh -b -p $HOME/miniconda
-                - export PATH="$HOME/miniconda/bin:$PATH"
-                - hash -r
-                - conda update --yes conda
-                - conda info -a
-                - conda config --add channels conda-forge
-                - conda create --yes -n test-natural-earth python=$PY
-                - source activate test-natural-earth
-                - echo $(python --version)
-                - conda install --yes -c conda-forge fiona
-                - python -c "import fiona"
-                - conda install --yes -c conda-forge sparqlwrapper
-                - conda install --yes -c conda-forge requests
-                - pip install csvtomd
-          script:
-            - run_all.sh
-
-
+#        - os: linux
+#          env: 
+#            - PY=3.6
+#            - nedocker=NO
+#          sudo: required          
+#          before_install:
+#                - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
+#                - sudo apt-get --yes --force-yes update -qq
+#                - sudo apt-get install --yes gdal-bin jq
+#                - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh  -O miniconda.sh
+#                - bash miniconda.sh -b -p $HOME/miniconda
+#                - export PATH="$HOME/miniconda/bin:$PATH"
+#                - hash -r
+#                - conda update --yes conda
+#                - conda info -a
+#                - conda config --add channels conda-forge
+#                - conda create --yes -n test-natural-earth python=$PY
+#                - source activate test-natural-earth
+#                - echo $(python --version)
+#                - conda install --yes -c conda-forge fiona
+#                - python -c "import fiona"
+#                - conda install --yes -c conda-forge sparqlwrapper
+#                - conda install --yes -c conda-forge requests
+#                - pip install csvtomd
+#          script:
+#            - ./run_all.sh
 
 
         - language: python
@@ -85,30 +83,27 @@ matrix:
                 - pip3 install -U csvtomd
                 - pip3 install -U requests
           script:
-            - run_all.sh
+            - ./run_all.sh
 
 
 
-
-        - language: python
-          python: 3.5
-          os: linux
-          env:
-             - nedocker=NO              
-          sudo: required          
-          before_install:
-                - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
-                - sudo apt-get --yes --force-yes update -qq
-                - sudo apt-get install --yes gdal-bin jq
-                - pip3 install -U SPARQLWrapper
-                - pip3 install -U fiona
-                - python -c "import fiona"                
-                - pip3 install -U csvtomd
-                - pip3 install -U requests
-          script:
-            - run_all.sh
-
-
+#        - language: python
+#          python: 3.5
+#          os: linux
+#          env:
+#             - nedocker=NO              
+#          sudo: required          
+#          before_install:
+#                - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
+#                - sudo apt-get --yes --force-yes update -qq
+#                - sudo apt-get install --yes gdal-bin jq
+#                - pip3 install -U SPARQLWrapper
+#                - pip3 install -U fiona
+#                - python -c "import fiona"                
+#                - pip3 install -U csvtomd
+#                - pip3 install -U requests
+#          script:
+#            - ./run_all.sh
 
 
         - services: docker
