@@ -26,7 +26,7 @@ zips/packages/natural_earth_vector.zip: \
 	zips/110m_cultural/110m_cultural.zip \
 	zips/110m_physical/110m_physical.zip \
 	zips/packages/natural_earth_vector.sqlite.zip \
-	housekeeping/ne_admin_0_details.xls
+	housekeeping/ne_admin_0_details.ods
 
 	zip -r $@ 10m_cultural 10m_physical 50m_cultural 50m_physical 110m_cultural 110m_physical housekeeping tools VERSION README.md CHANGELOG
 	#Bake off a version'd iteration of that file, too
@@ -72,13 +72,13 @@ zips/housekeeping: \
 
 
 zips/housekeeping/ne_admin_0_details.zip:
-	zip -r $@ housekeeping/ne_admin_0_details.xls VERSION README.md CHANGELOG
+	zip -r $@ housekeeping/ne_admin_0_details.ods VERSION README.md CHANGELOG
 
 zips/housekeeping/ne_admin_0_full_attributes.zip:
-	zip -r $@ housekeeping/ne_admin_0_full_attributes.xls VERSION README.md CHANGELOG
+	zip -r $@ housekeeping/ne_admin_0_full_attributes.ods VERSION README.md CHANGELOG
 
 zips/housekeeping/ne_themes_versions.zip:
-	zip -r $@ housekeeping/ne_themes_versions.xls VERSION README.md CHANGELOG
+	zip -r $@ housekeeping/ne_themes_versions.ods VERSION README.md CHANGELOG
 
 
 
