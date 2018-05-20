@@ -17,30 +17,78 @@ cat VERSION
 # Show some debug info
 python3 ./tools/wikidata/platform_debug_info.py
 
-# Fetch latest wikidata labels
-#   ---  output:    x_tempshape/*/*.new_names.csv  files 
-time ./tools/wikidata/update.sh fetch
 
-# Write wikidata labels to the shape files
-#   ---  output:    x_tempshape/*/*.shp  files and some audit logs
-time ./tools/wikidata/update.sh write
+# Summary Log file
+logmd=x_tempshape/update.md
+rm -f $logmd
+
+# --------------------------------------------------------------------------------------------------------------------
+#  mode =  fetch | write | fetch_write | copy | all
+#  LetterCase = uppercase  --> variable names [WIKIDATAID, NAME_AR, NAME_BN, NAME_DE, NAME_EN, NAME_ES, ... ]
+#  LetterCase = lowercase  --> variable names [wikidataid, name_ar, name_bn, name_de, name_en, name_es, ... ]
+# --------------------------------------------------------------------------------------------------------------------
+#                          |mode |LetterCase| shape_path  |  shape filename
+# == 10m ================= |==== |==========| ============| ================================================
+./tools/wikidata/update.sh  all   uppercase   10m_cultural  ne_10m_admin_0_countries_lakes
+./tools/wikidata/update.sh  all   uppercase   10m_cultural  ne_10m_admin_0_countries
+./tools/wikidata/update.sh  all   uppercase   10m_cultural  ne_10m_admin_0_disputed_areas
+./tools/wikidata/update.sh  all   uppercase   10m_cultural  ne_10m_admin_0_map_subunits
+./tools/wikidata/update.sh  all   uppercase   10m_cultural  ne_10m_admin_0_map_units
+./tools/wikidata/update.sh  all   uppercase   10m_cultural  ne_10m_admin_0_sovereignty
+./tools/wikidata/update.sh  all   lowercase   10m_cultural  ne_10m_admin_1_states_provinces_lakes
+./tools/wikidata/update.sh  all   lowercase   10m_cultural  ne_10m_admin_1_states_provinces
+./tools/wikidata/update.sh  all   lowercase   10m_cultural  ne_10m_airports
+./tools/wikidata/update.sh  all   lowercase   10m_cultural  ne_10m_populated_places
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_geographic_lines
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_geography_marine_polys
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_geography_regions_elevation_points
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_geography_regions_points
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_geography_regions_polys
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_lakes_europe
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_lakes_historic
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_lakes_north_america
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_lakes
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_playas
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_rivers_europe
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_rivers_lake_centerlines_scale_rank
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_rivers_lake_centerlines
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_rivers_north_america
+./tools/wikidata/update.sh  all   lowercase   10m_cultural  ne_10m_admin_1_label_points_details
+# == 50m ================= |==== |==========| ============| ================================================
+./tools/wikidata/update.sh  all   uppercase   50m_cultural  ne_50m_admin_0_sovereignty
+./tools/wikidata/update.sh  all   uppercase   50m_cultural  ne_50m_admin_0_countries
+./tools/wikidata/update.sh  all   uppercase   50m_cultural  ne_50m_admin_0_countries_lakes
+./tools/wikidata/update.sh  all   uppercase   50m_cultural  ne_50m_admin_0_map_units
+./tools/wikidata/update.sh  all   uppercase   50m_cultural  ne_50m_admin_0_map_subunits
+./tools/wikidata/update.sh  all   uppercase   50m_cultural  ne_50m_admin_0_tiny_countries
+#./tools/wikidata/update.sh all   uppercase   50m_cultural  ne_50m_admin_0_breakaway_disputed_areas             # KeyError: 'WIKIDATAID'  
+#./tools/wikidata/update.sh all   uppercase   50m_cultural  ne_50m_admin_0_breakaway_disputed_areas_scale_rank  # KeyError: 'WIKIDATAID'  
+./tools/wikidata/update.sh  all   lowercase   50m_cultural  ne_50m_admin_1_states_provinces
+./tools/wikidata/update.sh  all   lowercase   50m_cultural  ne_50m_admin_1_states_provinces_lakes
+./tools/wikidata/update.sh  all   lowercase   50m_physical  ne_50m_lakes
+./tools/wikidata/update.sh  all   lowercase   50m_physical  ne_50m_lakes_historic
+./tools/wikidata/update.sh  all   lowercase   50m_physical  ne_50m_playas
+./tools/wikidata/update.sh  all   lowercase   50m_physical  ne_50m_rivers_lake_centerlines
+./tools/wikidata/update.sh  all   lowercase   50m_physical  ne_50m_rivers_lake_centerlines_scale_rank
+# ==110m ================= |==== |==========| ============| ================================================
+./tools/wikidata/update.sh  all   uppercase   110m_cultural ne_110m_admin_0_sovereignty
+./tools/wikidata/update.sh  all   uppercase   110m_cultural ne_110m_admin_0_countries
+./tools/wikidata/update.sh  all   uppercase   110m_cultural ne_110m_admin_0_countries_lakes
+./tools/wikidata/update.sh  all   uppercase   110m_cultural ne_110m_admin_0_map_units
+./tools/wikidata/update.sh  all   lowercase   110m_cultural ne_110m_admin_1_states_provinces
+./tools/wikidata/update.sh  all   lowercase   110m_cultural ne_110m_admin_1_states_provinces_lakes
+./tools/wikidata/update.sh  all   lowercase   110m_physical ne_110m_lakes
+./tools/wikidata/update.sh  all   lowercase   110m_physical ne_110m_rivers_lake_centerlines
+# ======================== |==== |==========| ============| ================================================
 
 # show summary
 cat   x_tempshape/update.md
 
 # list new files
-ls -la   x_tempshape/*/*
-
-# Update shape files
-cp -r x_tempshape/10m_cultural/*    10m_cultural/
-cp -r x_tempshape/10m_physical/*    10m_physical/
-cp -r x_tempshape/50m_cultural/*    50m_cultural/
-cp -r x_tempshape/50m_physical/*    50m_physical/
-cp -r x_tempshape/110m_cultural/*  110m_cultural/
-cp -r x_tempshape/110m_physical/*  110m_physical/
+ls -Gga   x_tempshape/*/*
 
 # Run the final update process
 make clean all
 
 echo " ---- end of run_all.sh ------ "
-ls -la $log_file
+ls -Gga $log_file

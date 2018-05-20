@@ -7,84 +7,60 @@
    pip3 install -U csvtomd
    pip3 install -U requests
 
-#run from the project root ( expected 10-20 minutes )
-   time ./tools/wikidata/update.sh fetch   # download new names from wikidata as a csvfile
-   time ./tools/wikidata/update.sh write   # update shape files with the csv files
-   cat ./temp_shape/update.md
+#run from the project root ( expected 30-40 minutes )
+# be careful this is running  'make all'
+  ./run_all.sh    
 
-#  See the changes:  temp_shape/*
-#  Check the logs & shape files
-#  if everything is ok, move the shape files to the correct folder
+# Check the log file
+cat x_tempshape/run_all.log
+
+# Check the summary ..
+x_tempshape/update.md
+
+# Check the individula changes - every tables - in the temp_shape/*
+# Check the logs & shape files
+# if everything is ok, move the shape files to the correct folder
+
+```
+
+
+
+
+# Run individual process ( updating "10m_physical/ne_10m_lakes_north_america.shp" )
+
+```bash
+#                          |mode |LetterCase| shape_path  |  shape filename
+# == 10m ================= |==== |==========| ============| ================================================
+./tools/wikidata/update.sh  all   lowercase   10m_physical  ne_10m_lakes_north_america
+```
+
+mode =  
+* fetch  = fetch Wikidata Labels(names) via SPARQL - and create a csv file
+* write  = create a new temp Shape file with the new wikidata names
+* fetch_write =   fetch and write
+* copy   =  copy the temp Shape + audit files to the original place
+* all    =  fetch + write + copy
+
+
+step by step
+```bash
+#                          |mode        |LetterCase| shape_path  |  shape filename
+# ======================== |=========== |==========| ============| ================================================
+# fetch Wikidata Labels(names) via SPARQL - and create a csv file
+./tools/wikidata/update.sh  fetch         lowercase   10m_physical  ne_10m_lakes_north_america
+
+# create a new temp Shape file with the new wikidata names
+./tools/wikidata/update.sh  write         lowercase   10m_physical  ne_10m_lakes_north_america
+
+# copy the temp Shape + audit files to the original place
+./tools/wikidata/update.sh  copy          lowercase   10m_physical  ne_10m_lakes_north_america
 
 ```
 
 
-
-
-# Fetch all wikidata labels(names):
-
-command:
-`./tools/wikidata/update.sh fetch`
-
-output - lot of csv files:
-```
-$ find ./temp_shape/*/*.csv
-./temp_shape/10m_cultural/ne_10m_admin_0_countries_lakes.shp.new_names.csv
-./temp_shape/10m_cultural/ne_10m_admin_0_countries.shp.new_names.csv
-./temp_shape/10m_cultural/ne_10m_admin_0_disputed_areas.shp.new_names.csv
-./temp_shape/10m_cultural/ne_10m_admin_0_map_subunits.shp.new_names.csv
-./temp_shape/10m_cultural/ne_10m_admin_0_map_units.shp.new_names.csv
-./temp_shape/10m_cultural/ne_10m_admin_0_sovereignty.shp.new_names.csv
-./temp_shape/10m_cultural/ne_10m_admin_1_label_points_details.shp.new_names.csv
-./temp_shape/10m_cultural/ne_10m_admin_1_states_provinces_lakes.shp.new_names.csv
-./temp_shape/10m_cultural/ne_10m_admin_1_states_provinces.shp.new_names.csv
-./temp_shape/10m_cultural/ne_10m_airports.shp.new_names.csv
-./temp_shape/10m_cultural/ne_10m_populated_places.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_geographic_lines.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_geography_marine_polys.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_geography_regions_elevation_points.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_geography_regions_points.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_geography_regions_polys.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_lakes_europe.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_lakes_historic.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_lakes_north_america.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_lakes.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_playas.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_rivers_europe.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_rivers_lake_centerlines.shp.new_names.csv
-./temp_shape/10m_physical/ne_10m_rivers_north_america.shp.new_names.csv
-
 ```
 
-# Write all wikidata labels(names):
-
-
-command:
-`./tools/wikidata/update.sh write`
-
-Output - updated shape files and audit logs about the changes ...
-
-summary of the changes: ./temp_shape/update.md
-
-example:
-
-```
-$ find ./temp_shape/10m_physical/ne_10m_lakes_north_america*
-./temp_shape/10m_physical/ne_10m_lakes_north_america.cpg
-./temp_shape/10m_physical/ne_10m_lakes_north_america.dbf
-./temp_shape/10m_physical/ne_10m_lakes_north_america.prj
-./temp_shape/10m_physical/ne_10m_lakes_north_america.shp
-./temp_shape/10m_physical/ne_10m_lakes_north_america.shp.changes_log.csv            # Column changes  - csv format
-./temp_shape/10m_physical/ne_10m_lakes_north_america.shp.changes_log.csv.md         # Column changes  - markdown
-./temp_shape/10m_physical/ne_10m_lakes_north_america.shp.new_names.csv              # input csv
-./temp_shape/10m_physical/ne_10m_lakes_north_america.shp.summary_log.csv            # Summary of the changes - csv
-./temp_shape/10m_physical/ne_10m_lakes_north_america.shp.summary_log.csv.md         # Summary of the changes - markdown
-./temp_shape/10m_physical/ne_10m_lakes_north_america.shx
-```
-
-
-### /temp_shape/10m_physical/ne_10m_lakes_north_america.shp.changes_log.csv            # Column changes  - csv format
+### /temp_shape/10m_physical/ne_10m_lakes_north_america.changes_log.csv  # Column changes  - csv format
 
 ```
 "wd_id","status","variable","value_old","value_new"
@@ -101,7 +77,7 @@ $ find ./temp_shape/10m_physical/ne_10m_lakes_north_america*
 "Q1800890","NEWvalue","name_sv","","Chemong Lake"
 ```
 
-### ./temp_shape/10m_physical/ne_10m_lakes_north_america.shp.changes_log.csv.md         # Column changes  - markdown
+### ./temp_shape/10m_physical/ne_10m_lakes_north_america.changes_log.csv.md         # Column changes  - markdown
 
 wd_id      |  status    |  variable    |  value_old        |  value_new
 -----------|------------|--------------|-------------------|-----------------------------------
@@ -118,10 +94,10 @@ Q1800890   |  MODvalue  |  name_en     |  Lake Chemong     |  Chemong Lake
 Q1800890   |  NEWvalue  |  name_sv     |                   |  Chemong Lake
 
 
-### ./temp_shape/10m_physical/ne_10m_lakes_north_america.shp.new_names.csv              # input csv
+### ./temp_shape/10m_physical/ne_10m_lakes_north_america.new_names.csv              # input csv
 
 ```bash
-$ cat ./temp_shape/10m_physical/ne_10m_lakes_north_america.shp.new_names.csv | head
+$ cat ./temp_shape/10m_physical/ne_10m_lakes_north_america.new_names.csv | head
 "wd_id","wd_id_new","population","name_ar","name_bn","name_de","name_en","name_es","name_fr","name_el","name_hi","name_hu","name_id","name_it","name_ja","name_ko","name_nl","name_pl","name_pt","name_ru","name_sv","name_tr","name_vi","name_zh"
 "Q1426999","","","","","Theodore Roosevelt Lake","Theodore Roosevelt Lake","","","","","","","","","","","","","Рузвельт","","","",""
 "Q4397897","","","","","","Ross Barnett Reservoir","","","","","","","","","","","","","Росс Барнетт","","","",""
@@ -135,7 +111,7 @@ $ cat ./temp_shape/10m_physical/ne_10m_lakes_north_america.shp.new_names.csv | h
 ...
 ```
 
-### ./temp_shape/10m_physical/ne_10m_lakes_north_america.shp.summary_log.csv            # Summary of the changes - csv
+### ./temp_shape/10m_physical/ne_10m_lakes_north_america.summary_log.csv            # Summary of the changes - csv
 
 ```csv
 "shapefilename","var","value"
@@ -170,16 +146,11 @@ shapefilename                                |  var                     |  value
 
 # My best practice ...
 
-
-* First iteration
-    `./tools/wikidata/update.sh fetch`
-    `./tools/wikidata/update.sh write`
-
-* check the audit csv files ( Open by Libreoffice , filter , check the wikidata history )
+* Run step by step  ( line by line) : `./run_all.sh`   in  `fetch_write` mode
+* check the audit csv files ( Open by Libreoffice , filter )
 * find & fix the 'fake' wikidata changes  :(
 * iterate or modify input csv and write shape files
 * check shape files and move the shape files to the correct folders
-
 
 # known problems
 
@@ -230,7 +201,7 @@ lettercase = lowercase variable names [wikidataid, name_ar, name_bn, name_de, na
 * 110m_cultural/...
 * 110m_physical/... 
 
-see the _latest_  information in the `update.sh`
+see the _latest_  information in the `./run_all.sh`
 
 
 ### supported languages ( now: 21)
@@ -259,9 +230,3 @@ variable name | language     | language wikipedia link
  NAME_VI 	  | Vietnamese   | https://en.wikipedia.org/wiki/Vietnamese_language
  NAME_ZH 	  | Chinese      | https://en.wikipedia.org/wiki/Chinese_language
 
-
-### program files
-
-* fetch_wikidata.py : 
-* write_wikidata.py : 
-* update.sh         :
