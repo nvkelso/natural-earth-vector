@@ -47,7 +47,7 @@ args = parser.parse_args()
 #lakeclean_regex  = re.compile(r'\b('+'Lake'+r')\b', flags=re.IGNORECASE)
 riverclean_regex = re.compile(r'\b('+'River'+r')\b',
                               flags=re.IGNORECASE)
-placeclean_regex = re.compile(r'\b('+'Municipality of|Municipality|City|First Nation'+r')\b',
+placeclean_regex = re.compile(r'\b('+'Municipality of|Municipality|First Nation'+r')\b',
                               flags=re.IGNORECASE)
 
 
