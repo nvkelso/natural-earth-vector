@@ -135,8 +135,8 @@ function update_names {
 logmd=x_tempshape/update.md
 rm -f $logmd
 
-#  lettercase = uppercase variable names [WIKIDATAID, NAME_AR, NAME_BN, NAME_DE, NAME_EN, NAME_ES, ... ]
-#  lettercase = lowercase variable names [wikidataid, name_ar, name_bn, name_de, name_en, name_es ]
+#  lettercase = uppercase  --> variable names [WIKIDATAID, NAME_AR, NAME_BN, NAME_DE, NAME_EN, NAME_ES, ... ]
+#  lettercase = lowercase  --> variable names [wikidataid, name_ar, name_bn, name_de, name_en, name_es, ... ]
 
 #            lettercase | input folder | output folder | shape_path   |  shape filename
 # ----------------------| ------------ | ------------- | -------------| ---------------------------------------
@@ -171,8 +171,33 @@ update_names lowercase    .              x_tempshape     10m_cultural   ne_10m_a
 
 
 
-#cp -r x_tempshape/10m_cultural/*    10m_cultural/
-#cp -r x_tempshape/10m_physical/*    10m_physical/
+update_names uppercase    .              x_tempshape     50m_cultural   ne_50m_admin_0_sovereignty.shp
+update_names uppercase    .              x_tempshape     50m_cultural   ne_50m_admin_0_countries.shp
+update_names uppercase    .              x_tempshape     50m_cultural   ne_50m_admin_0_countries_lakes.shp
+update_names uppercase    .              x_tempshape     50m_cultural   ne_50m_admin_0_map_units.shp
+update_names uppercase    .              x_tempshape     50m_cultural   ne_50m_admin_0_map_subunits.shp
+update_names uppercase    .              x_tempshape     50m_cultural   ne_50m_admin_0_tiny_countries.shp
+
+# missing / KeyError: 'WIKIDATAID'
+#update_names uppercase    .              x_tempshape     50m_cultural   ne_50m_admin_0_breakaway_disputed_areas.shp
+#update_names uppercase    .              x_tempshape     50m_cultural   ne_50m_admin_0_breakaway_disputed_areas_scale_rank.shp
+
+update_names lowercase    .              x_tempshape     50m_cultural   ne_50m_admin_1_states_provinces.shp
+update_names lowercase    .              x_tempshape     50m_cultural   ne_50m_admin_1_states_provinces_lakes.shp
+update_names lowercase    .              x_tempshape     50m_physical   ne_50m_lakes.shp
+update_names lowercase    .              x_tempshape     50m_physical   ne_50m_lakes_historic.shp
+update_names lowercase    .              x_tempshape     50m_physical   ne_50m_playas.shp
+update_names lowercase    .              x_tempshape     50m_physical   ne_50m_rivers_lake_centerlines.shp
+update_names lowercase    .              x_tempshape     50m_physical   ne_50m_rivers_lake_centerlines_scale_rank.shp
+
+update_names uppercase    .              x_tempshape     110m_cultural  ne_110m_admin_0_sovereignty.shp
+update_names uppercase    .              x_tempshape     110m_cultural  ne_110m_admin_0_countries.shp
+update_names uppercase    .              x_tempshape     110m_cultural  ne_110m_admin_0_countries_lakes.shp
+update_names uppercase    .              x_tempshape     110m_cultural  ne_110m_admin_0_map_units.shp
+update_names lowercase    .              x_tempshape     110m_cultural  ne_110m_admin_1_states_provinces.shp
+update_names lowercase    .              x_tempshape     110m_cultural  ne_110m_admin_1_states_provinces_lakes.shp
+update_names lowercase    .              x_tempshape     110m_physical  ne_110m_lakes.shp
+update_names lowercase    .              x_tempshape     110m_physical  ne_110m_rivers_lake_centerlines.shp
 
 
 #known problems:
