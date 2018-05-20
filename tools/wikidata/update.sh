@@ -41,8 +41,8 @@ function fetch_names {
     python3 tools/wikidata/fetch_wikidata.py -input_shape_name            ${nei_path}/${ne_shapepath}/${ne_shapefile}.shp \
                                              -input_lettercase            ${nei_letter_case} \
                                              -output_csv_name             ${neo_path}/${ne_shapepath}/${ne_shapefile}.new_names.csv
-    echo " created : ${neo_path}/${ne_shapepath}/${ne_shapefile}.new_names.csv "      
-    echo " "                                    
+    echo " created : ${neo_path}/${ne_shapepath}/${ne_shapefile}.new_names.csv "
+    echo " "
 }
 
 
@@ -80,7 +80,7 @@ function write_names {
     csvtomd    ${neo_path}/${ne_shapepath}/${ne_shapefile}.summary_log.csv >  ${neo_path}/${ne_shapepath}/${ne_shapefile}.summary_log.csv.md
 
     echo " "
-    echo "name_en/NAME_EN changes  ${neo_path}/${ne_shapepath}/${ne_shapefile}) "
+    echo "show only name_en/NAME_EN changes : ${neo_path}/${ne_shapepath}/${ne_shapefile} "
     echo "---------------------"
     cat ${neo_path}/${ne_shapepath}/${ne_shapefile}.changes_log.csv.md | grep MODvalue  |  grep name_en || true
     cat ${neo_path}/${ne_shapepath}/${ne_shapefile}.changes_log.csv.md | grep MODvalue  |  grep NAME_EN || true
@@ -89,8 +89,8 @@ function write_names {
     cat ${neo_path}/${ne_shapepath}/${ne_shapefile}.summary_log.csv.md
     echo " "
 
-    echo " (write) created :"     
-    echo " -------------------" 
+    echo " (write) created shape and audit files:"
+    echo " -------------------"
     ls -Gga  ${neo_path}/${ne_shapepath}/${ne_shapefile}*
     echo ""
 }
@@ -106,30 +106,30 @@ function copy_names {
 if   [[ "$mode" == "fetch" ]]
 then
     #echo "fetch"
-    fetch_names    
+    fetch_names
 elif [[ "$mode" == "write" ]]
 then
     #echo "write"
-    write_names    
-elif [[ "$mode" == "fetch_write" ]] 
-then       
+    write_names
+elif [[ "$mode" == "fetch_write" ]]
+then
     #echo "fetch_write "
-    fetch_names           
-    write_names    
+    fetch_names
+    write_names
 elif [[ "$mode" == "copy" ]]
 then
     #echo "copy files"
-    copy_names        
-elif [[ "$mode" == "all" ]] 
-then       
+    copy_names
+elif [[ "$mode" == "all" ]]
+then
     #echo "fetch + write + copy"
-    fetch_names           
+    fetch_names
     write_names
-    copy_names            
-else      
+    copy_names
+else
     echo "Unknown mode!   the first parameter should be:[fetch/write/fetch_write/copy/all]"
-    exit 1        
-fi  
+    exit 1
+fi
 
 
 exit
