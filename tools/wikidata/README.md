@@ -202,7 +202,8 @@ lettercase = uppercase variable names [WIKIDATAID, NAME_AR, NAME_BN, NAME_DE, NA
 * 10m_cultural/ne_10m_admin_0_map_subunits.shp
 * 10m_cultural/ne_10m_admin_0_map_units.shp
 * 10m_cultural/ne_10m_admin_0_sovereignty.shp
-
+* 50m_cultural/....
+* 110m_cultural/....
 
 lettercase = lowercase variable names [wikidataid, name_ar, name_bn, name_de, name_en, name_es, ... ]
 * 10m_cultural/ne_10m_admin_1_states_provinces_lakes.shp
@@ -222,11 +223,15 @@ lettercase = lowercase variable names [wikidataid, name_ar, name_bn, name_de, na
 * 10m_physical/ne_10m_rivers_europe.shp
 * 10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.shp
 * 10m_physical/ne_10m_rivers_lake_centerlines.shp
-* 10m_physical/ne_10m_rivers_lake_centerlines.shp
 * 10m_physical/ne_10m_rivers_north_america.shp
 * 10m_cultural/ne_10m_admin_1_label_points_details.shp
+* 50m_cultural/...
+* 50m_physical/...
+* 110m_cultural/...
+* 110m_physical/... 
 
-see the latest information in the `update.sh`
+see the _latest_  information in the `update.sh`
+
 
 ### supported languages ( now: 21)
 

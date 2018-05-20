@@ -164,7 +164,6 @@ update_names lowercase    .              x_tempshape     10m_physical   ne_10m_p
 update_names lowercase    .              x_tempshape     10m_physical   ne_10m_rivers_europe.shp
 update_names lowercase    .              x_tempshape     10m_physical   ne_10m_rivers_lake_centerlines_scale_rank.shp
 update_names lowercase    .              x_tempshape     10m_physical   ne_10m_rivers_lake_centerlines.shp
-update_names lowercase    .              x_tempshape     10m_physical   ne_10m_rivers_lake_centerlines.shp
 update_names lowercase    .              x_tempshape     10m_physical   ne_10m_rivers_north_america.shp
 
 update_names lowercase    .              x_tempshape     10m_cultural   ne_10m_admin_1_label_points_details.shp
