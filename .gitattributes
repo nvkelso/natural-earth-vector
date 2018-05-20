@@ -1,0 +1,6 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Unix, Linux and OS X use LF
+# Declare files that will always have LF line endings on checkout.
+*.sh text eol=lf
