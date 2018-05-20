@@ -41,3 +41,6 @@ archive/*
 intermediate/*
 backup/*
 x_tempshape/*
+
+# editor temp files : visual studio code
+.vscode/*
