@@ -3,6 +3,8 @@ set -Eeuo pipefail
 
 STARTDATE=$(date +"%Y-%m-%dT%H:%M%z")
 
+runmode=${1-all}
+
 # clean and recreate x_tempshape directory
 rm   -rf x_tempshape
 mkdir -p x_tempshape
@@ -12,6 +14,7 @@ exec &> >(tee -a "$log_file")
 
 # Don't forget update the VERSION file!
 echo "-----------------------------------"
+echo "Runmode : $runmode"
 echo "Version $(cat VERSION)"
 echo "Start: $STARTDATE "
 
@@ -29,6 +32,7 @@ rm -f $logmd
 # --------------------------------------------------------------------------------------------------------------------
 #                          | mode       |LetterCase| shape_path  |  shape filename
 # == 10m ================= |=========== |==========| ============| ================================================
+function run10m {
 ./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_0_countries_lakes
 ./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_0_countries
 ./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_0_disputed_areas
@@ -54,6 +58,9 @@ rm -f $logmd
 ./tools/wikidata/update.sh  fetch_write  lowercase   10m_physical  ne_10m_rivers_lake_centerlines
 ./tools/wikidata/update.sh  fetch_write  lowercase   10m_physical  ne_10m_rivers_north_america
 ./tools/wikidata/update.sh  fetch_write  lowercase   10m_cultural  ne_10m_admin_1_label_points_details
+}
+
+function run50m {
 # == 50m ================= |=========== |==========| ============| ================================================
 ./tools/wikidata/update.sh  fetch_write  uppercase   50m_cultural  ne_50m_admin_0_sovereignty
 ./tools/wikidata/update.sh  fetch_write  uppercase   50m_cultural  ne_50m_admin_0_countries
@@ -70,6 +77,9 @@ rm -f $logmd
 ./tools/wikidata/update.sh  fetch_write  lowercase   50m_physical  ne_50m_playas
 ./tools/wikidata/update.sh  fetch_write  lowercase   50m_physical  ne_50m_rivers_lake_centerlines
 ./tools/wikidata/update.sh  fetch_write  lowercase   50m_physical  ne_50m_rivers_lake_centerlines_scale_rank
+}
+
+function run110m {
 # ==110m ================= |=========== |==========| ============| ================================================
 ./tools/wikidata/update.sh  fetch_write  uppercase   110m_cultural ne_110m_admin_0_sovereignty
 ./tools/wikidata/update.sh  fetch_write  uppercase   110m_cultural ne_110m_admin_0_countries
@@ -79,24 +89,61 @@ rm -f $logmd
 ./tools/wikidata/update.sh  fetch_write  lowercase   110m_cultural ne_110m_admin_1_states_provinces_lakes
 ./tools/wikidata/update.sh  fetch_write  lowercase   110m_physical ne_110m_lakes
 ./tools/wikidata/update.sh  fetch_write  lowercase   110m_physical ne_110m_rivers_lake_centerlines
+}
+
 # ======================== |=========== |==========| ============| ================================================
 
-# show summary
-cat   x_tempshape/update.md
 
-# list new files
-ls -Gga   x_tempshape/*/*
 
-# Update shape files  ( if everything is OK!  )
-cp -r x_tempshape/10m_cultural/*    10m_cultural/
-cp -r x_tempshape/10m_physical/*    10m_physical/
-cp -r x_tempshape/50m_cultural/*    50m_cultural/
-cp -r x_tempshape/50m_physical/*    50m_physical/
-cp -r x_tempshape/110m_cultural/*  110m_cultural/
-cp -r x_tempshape/110m_physical/*  110m_physical/
+if   [[ "$runmode" == "all" ]]
+then
+    # =========================================================
+    #                  run all steps !
+    # =========================================================   
+    run10m 
+    run50m
+    run110m
 
-# test copy mode ( write again .. )
-./tools/wikidata/update.sh  copy  uppercase   10m_cultural  ne_10m_admin_0_countries
+    # show summary
+    cat   x_tempshape/update.md
+
+    # list new files
+    ls -Gga   x_tempshape/*/*
+
+    # Update shape files  ( if everything is OK!  )
+    cp -r x_tempshape/10m_cultural/*    10m_cultural/
+    cp -r x_tempshape/10m_physical/*    10m_physical/
+    cp -r x_tempshape/50m_cultural/*    50m_cultural/
+    cp -r x_tempshape/50m_physical/*    50m_physical/
+    cp -r x_tempshape/110m_cultural/*  110m_cultural/
+    cp -r x_tempshape/110m_physical/*  110m_physical/
+
+    # test copy mode ( write again .. )
+    ./tools/wikidata/update.sh  copy  uppercase   10m_cultural  ne_10m_admin_0_countries
+
+else
+    # =========================================================
+    #                  fast test  !
+    # =========================================================  
+    # travis osx hack - run a minimal test
+    run110m
+    # show summary
+    cat   x_tempshape/update.md
+    # list new files
+    ls -Gga   x_tempshape/*/*
+    # Update shape files  ( if everything is OK!  )
+    cp -r x_tempshape/110m_cultural/*  110m_cultural/
+    cp -r x_tempshape/110m_physical/*  110m_physical/
+
+    # test copy mode ( write again .. )
+    ./tools/wikidata/update.sh  copy  lowercase   110m_physical ne_110m_rivers_lake_centerlines
+
+fi
+
+
+
+
+
 
 
 

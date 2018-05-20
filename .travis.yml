@@ -36,7 +36,7 @@ matrix:
                 - conda install --yes -c conda-forge requests
                 - pip install csvtomd
           script:
-            - ./run_all.sh
+            - ./run_all.sh fast
 
 
 #        - os: linux
