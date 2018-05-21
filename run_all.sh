@@ -147,6 +147,9 @@ fi
 
 
 # Run the final update process
+# (2018-05-20 nvkelso) NOTE: This works because the MapShaper build is manual
+# if it were during all target we'd have a condition where the localized names would be
+# reverted for some themes (mostly admin-0 and admin-1)
 make clean all
 
 echo " "
