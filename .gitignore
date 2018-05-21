@@ -40,3 +40,7 @@ archive/10m_cultural_1.4.0.zip
 archive/*
 intermediate/*
 backup/*
+x_tempshape/*
+
+# editor temp files : visual studio code
+.vscode/*

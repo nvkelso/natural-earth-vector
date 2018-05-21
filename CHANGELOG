@@ -1,7 +1,7 @@
 2018-05-20: 4.1.0
 
 - Many thanks to @imresamu for name translations and Wikidata concordances, @mattbloch
-  for MapShaper feature development, and hat tips to @planemad for Wikipedia concordances
+  for MapShaper feature development, and hat tips to @planemad for Wikidata concordances
   and @thisisaaronland for ne_id work with Brooklyn Integers. Also to @randymeech and
   @bcamper at Mapzen (RIP) for sponsoring this work as a parting gift to the geo family.
 
@@ -16,11 +16,13 @@ GENERAL
    name_hi*, name_hu*, name_id*, name_it*, name_ja*, name_ko*, name_nl*, name_pl*,
    name_pt, name_ru, name_sv*, name_tr*, name_vi*, and name_zh. (Names with * indicate
    new language in v4.1 series.) A 2-character language code decoder ring is here:
-   https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes.
+   https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes. Props to Wikidata for their
+   CC0 license: https://www.wikidata.org/wiki/Wikidata:Introduction.
 2) Fixes admin-0 polygons for for Bosnia & Herzegovina to restore the
    Republic Srpska and the Brcko District condominium.
-3) Fixes physical label polygons to restore full geometries.
-4) Switches to MapShaper for topology building and joining of attributes for all
+3) Renames admin-0 Swaziland features to eSwatini to keep up with current events.
+4) Fixes physical label polygons to restore full geometries.
+5) Switches to MapShaper for topology building and joining of attributes for all
    administrative themes and 10m land and ocean themes. Some shapes were adjusted to
    fit new snapping tolerances.
 
@@ -77,6 +79,7 @@ TOOLS
               Brcko District condominium.
               Fixes: #239 and #104. Thanks @systemcatch, @tombor, @lcapel, @raybellwaves,
               and @brookeeharding.
+            - Updates names of admin-0 Swaziland features to eSwatini.
             - Adds localized names in 21 languages, Wikidata ID concordances, and ne_id.
 			  Fixes #224 and #212, continuation of #214. Huge thanks @imresamu!
             - Topology building fixes at 1:1,000 scale to make MapShaper software not cry.
@@ -170,22 +173,18 @@ TOOLS
 - UPDATED:  ne_50m_admin_0_tiny_countries
             - Add localized names, wikidataid, and ne_id
             - New data join build process with MapShaper
-- UPDATED:  ne_50m_admin_0_disputed_areas ** this is the consistent name with 10m theme
-			ne_50m_admin_0_breakaway_disputed_areas
+- UPDATED:  ne_50m_admin_0_breakaway_disputed_areas
 			ne_50m_admin_0_breakaway_disputed_areas_scale_rank
+            - Restore attribute table that went missing in v4.0
+			  Fixes #257. Thanks @nvkelso.
             - Add localized names, wikidataid, and ne_id
             - New build process with MapShaper
-
-            50m breakaway polygons missing attributes
-			#257 by nvkelso was closed 2 days ago
-
 - UPDATED:  ne_50m_admin_1_states_provinces
 			ne_50m_admin_1_states_provinces_lakes
             - Add localized names, wikidataid, and ne_id
             - New build process with MapShaper
 - UPDATED:  ne_50m_populated_places
-            - Same changes as ne_10m_populated_places.
-- UPDATED:  ne_50m_populated_places_simple
+            ne_50m_populated_places_simple
             - Same changes as ne_10m_populated_places_simple.
 - UPDATED:  ne_50m_airports
             - Same changes as ne_10m_airports.
@@ -230,8 +229,7 @@ TOOLS
             - Add localized names, wikidataid, and ne_id
             - New build process with MapShaper
 - UPDATED:  ne_110m_populated_places
-            - Same changes as ne_10m_populated_places.
-- UPDATED:  ne_110m_populated_places_simple
+            ne_110m_populated_places_simple
             - Same changes as ne_10m_populated_places.
 
 110M_PHYSICAL

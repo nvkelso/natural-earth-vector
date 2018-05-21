@@ -1,0 +1,17 @@
+.PHONY: all
+
+all: clean fetch write
+
+install:
+	pip3 install -U SPARQLWrapper
+	pip3 install -U fiona
+	pip3 install -U csvtomd
+
+clean:
+	cd ../.. && rm -rf temp_shape/*
+
+fetch:
+	cd ../.. && ./tools/wikidata/update.sh fetch && cd ./.
+
+write:
+	cd ../.. && ./tools/wikidata/update.sh write && cd ./.
