@@ -19,8 +19,9 @@ GENERAL
    https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes.
 2) Fixes admin-0 polygons for for Bosnia & Herzegovina to restore the
    Republic Srpska and the Brcko District condominium.
-3) Fixes physical label polygons to restore full geometries.
-4) Switches to MapShaper for topology building and joining of attributes for all
+3) Renames admin-0 Swaziland features to eSwatini to keep up with current events.
+4) Fixes physical label polygons to restore full geometries.
+5) Switches to MapShaper for topology building and joining of attributes for all
    administrative themes and 10m land and ocean themes. Some shapes were adjusted to
    fit new snapping tolerances.
 
@@ -77,6 +78,7 @@ TOOLS
               Brcko District condominium.
               Fixes: #239 and #104. Thanks @systemcatch, @tombor, @lcapel, @raybellwaves,
               and @brookeeharding.
+            - Updates names of admin-0 Swaziland features to eSwatini.
             - Adds localized names in 21 languages, Wikidata ID concordances, and ne_id.
 			  Fixes #224 and #212, continuation of #214. Huge thanks @imresamu!
             - Topology building fixes at 1:1,000 scale to make MapShaper software not cry.
