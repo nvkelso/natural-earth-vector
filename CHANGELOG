@@ -172,15 +172,12 @@ TOOLS
 - UPDATED:  ne_50m_admin_0_tiny_countries
             - Add localized names, wikidataid, and ne_id
             - New data join build process with MapShaper
-- UPDATED:  ne_50m_admin_0_disputed_areas ** this is the consistent name with 10m theme
-			ne_50m_admin_0_breakaway_disputed_areas
+- UPDATED:  ne_50m_admin_0_breakaway_disputed_areas
 			ne_50m_admin_0_breakaway_disputed_areas_scale_rank
+            - Restore attribute table that went missing in v4.0
+			  Fixes #257. Thanks @nvkelso.
             - Add localized names, wikidataid, and ne_id
             - New build process with MapShaper
-
-            50m breakaway polygons missing attributes
-			#257 by nvkelso was closed 2 days ago
-
 - UPDATED:  ne_50m_admin_1_states_provinces
 			ne_50m_admin_1_states_provinces_lakes
             - Add localized names, wikidataid, and ne_id
