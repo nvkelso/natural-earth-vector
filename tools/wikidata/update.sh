@@ -100,7 +100,7 @@ function copy_names {
     echo " "
     echo " Copy shape + audit files  "
     echo " =============================== "
-    cp -v ${neo_path}/${ne_shapepath}/${ne_shapefile}*.*   ${ne_shapepath}/
+    cp -v ${neo_path}/${ne_shapepath}/${ne_shapefile}*.{shp,dbf,shx,prj,cpg}   ${ne_shapepath}/
 }
 
 if   [[ "$mode" == "fetch" ]]
