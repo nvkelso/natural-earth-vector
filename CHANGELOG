@@ -1,8 +1,9 @@
 2018-05-20: 4.1.0
 
 - Many thanks to @imresamu for name translations and Wikidata concordances, @mattbloch
-  for MapShaper feature development, and hat tips to @planemad for Wikidata concordances
-  and @thisisaaronland for ne_id work with Brooklyn Integers. Also to @randymeech and
+  for MapShaper feature development, and hat tips to @planemad for Wikidata concordances,
+  Mapbox generally for leading the way with Wikidata name translations, and
+  @thisisaaronland for ne_id work with Brooklyn Integers. Also to @randymeech and
   @bcamper at Mapzen (RIP) for sponsoring this work as a parting gift to the geo family.
 
 GENERAL
