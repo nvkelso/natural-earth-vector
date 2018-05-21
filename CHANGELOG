@@ -1,7 +1,7 @@
 2018-05-20: 4.1.0
 
 - Many thanks to @imresamu for name translations and Wikidata concordances, @mattbloch
-  for MapShaper feature development, and hat tips to @planemad for Wikipedia concordances
+  for MapShaper feature development, and hat tips to @planemad for Wikidata concordances
   and @thisisaaronland for ne_id work with Brooklyn Integers. Also to @randymeech and
   @bcamper at Mapzen (RIP) for sponsoring this work as a parting gift to the geo family.
 
@@ -16,7 +16,8 @@ GENERAL
    name_hi*, name_hu*, name_id*, name_it*, name_ja*, name_ko*, name_nl*, name_pl*,
    name_pt, name_ru, name_sv*, name_tr*, name_vi*, and name_zh. (Names with * indicate
    new language in v4.1 series.) A 2-character language code decoder ring is here:
-   https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes.
+   https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes. Props to Wikidata for their
+   CC0 license: https://www.wikidata.org/wiki/Wikidata:Introduction.
 2) Fixes admin-0 polygons for for Bosnia & Herzegovina to restore the
    Republic Srpska and the Brcko District condominium.
 3) Renames admin-0 Swaziland features to eSwatini to keep up with current events.
