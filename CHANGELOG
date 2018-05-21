@@ -183,8 +183,7 @@ TOOLS
             - Add localized names, wikidataid, and ne_id
             - New build process with MapShaper
 - UPDATED:  ne_50m_populated_places
-            - Same changes as ne_10m_populated_places.
-- UPDATED:  ne_50m_populated_places_simple
+            ne_50m_populated_places_simple
             - Same changes as ne_10m_populated_places_simple.
 - UPDATED:  ne_50m_airports
             - Same changes as ne_10m_airports.
@@ -229,8 +228,7 @@ TOOLS
             - Add localized names, wikidataid, and ne_id
             - New build process with MapShaper
 - UPDATED:  ne_110m_populated_places
-            - Same changes as ne_10m_populated_places.
-- UPDATED:  ne_110m_populated_places_simple
+            ne_110m_populated_places_simple
             - Same changes as ne_10m_populated_places.
 
 110M_PHYSICAL
