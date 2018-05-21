@@ -110,12 +110,13 @@ then
     ls -Gga   x_tempshape/*/*
 
     # Update shape files  ( if everything is OK!  )
-    cp -r x_tempshape/10m_cultural/*    10m_cultural/
-    cp -r x_tempshape/10m_physical/*    10m_physical/
-    cp -r x_tempshape/50m_cultural/*    50m_cultural/
-    cp -r x_tempshape/50m_physical/*    50m_physical/
-    cp -r x_tempshape/110m_cultural/*  110m_cultural/
-    cp -r x_tempshape/110m_physical/*  110m_physical/
+    # Don't copy over the change logs, though (limit file extension expansion listing)
+    cp -r x_tempshape/10m_cultural/*.{shp,dbf,shx,prj,cpg}    10m_cultural/
+    cp -r x_tempshape/10m_physical/*.{shp,dbf,shx,prj,cpg}    10m_physical/
+    cp -r x_tempshape/50m_cultural/*.{shp,dbf,shx,prj,cpg}    50m_cultural/
+    cp -r x_tempshape/50m_physical/*.{shp,dbf,shx,prj,cpg}    50m_physical/
+    cp -r x_tempshape/110m_cultural/*.{shp,dbf,shx,prj,cpg}  110m_cultural/
+    cp -r x_tempshape/110m_physical/*.{shp,dbf,shx,prj,cpg}  110m_physical/
 
     # test copy mode ( write again .. )
     ./tools/wikidata/update.sh  copy  uppercase   10m_cultural  ne_10m_admin_0_countries
@@ -131,8 +132,9 @@ else
     # list new files
     ls -Gga   x_tempshape/*/*
     # Update shape files  ( if everything is OK!  )
-    cp -r x_tempshape/110m_cultural/*  110m_cultural/
-    cp -r x_tempshape/110m_physical/*  110m_physical/
+    # Don't copy over the change logs, though (limit file extension expansion listing)
+    cp -r x_tempshape/110m_cultural/*.{shp,dbf,shx,prj,cpg}  110m_cultural/
+    cp -r x_tempshape/110m_physical/*.{shp,dbf,shx,prj,cpg}  110m_physical/
 
     # test copy mode ( write again .. )
     ./tools/wikidata/update.sh  copy  lowercase   110m_physical ne_110m_rivers_lake_centerlines
