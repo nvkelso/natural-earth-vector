@@ -44,11 +44,24 @@ zips/packages/natural_earth_vector.sqlite.zip:
 
 	cp $@ archive/natural_earth_vector.sqlite_$(VERSION).zip
 
+zips/packages/natural_earth_vector.gpkg.zip:
+	#GeoPackage
+	rm -f packages/natural_earth_vector.gpkg
+	for shp in 10m_cultural/*.shp 10m_physical/*.shp 50m_cultural/*.shp 50m_physical/*.shp 110m_cultural/*.shp 110m_physical/*.shp; \
+	do \
+		ogr2ogr -f GPKG -append packages/natural_earth_vector.gpkg $$shp; \
+	done
+	zip $@ packages/natural_earth_vector.gpkg VERSION README.md CHANGELOG
+
+	cp $@ archive/natural_earth_vector.gpkg_$(VERSION).zip
+
 
 zips/packages/Natural_Earth_quick_start.zip: \
 	packages/Natural_Earth_quick_start/10m_cultural/status.txt \
 	packages/Natural_Earth_quick_start/10m_physical/status.txt \
 	packages/Natural_Earth_quick_start/50m_raster/status.txt \
+	packages/Natural_Earth_quick_start/50m_cultural/status.txt \
+	packages/Natural_Earth_quick_start/50m_physical/status.txt \
 	packages/Natural_Earth_quick_start/110m_cultural/status.txt \
 	packages/Natural_Earth_quick_start/110m_physical/status.txt \
 	packages/Natural_Earth_quick_start/Natural_Earth_quick_start_for_ArcMap.mxd \
@@ -2133,56 +2146,98 @@ packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
 	10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.dbf \
 	10m_cultural/ne_10m_admin_0_boundary_lines_land.shp 10m_cultural/ne_10m_admin_0_boundary_lines_land.dbf \
 	10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.shp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.dbf \
+	10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp 10m_cultural/ne_10m_admin_0_boundary_lines_map_units.dbf \
+	10m_cultural/ne_10m_admin_0_countries.shp 10m_cultural/ne_10m_admin_0_countries.dbf \
 	10m_cultural/ne_10m_admin_0_disputed_areas.shp 10m_cultural/ne_10m_admin_0_disputed_areas.dbf \
 	10m_cultural/ne_10m_admin_0_map_subunits.shp 10m_cultural/ne_10m_admin_0_map_subunits.dbf \
 	10m_cultural/ne_10m_admin_0_map_units.shp 10m_cultural/ne_10m_admin_0_map_units.dbf \
 	10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.dbf \
 	10m_cultural/ne_10m_admin_1_states_provinces_lines.shp 10m_cultural/ne_10m_admin_1_states_provinces_lines.dbf \
 	10m_cultural/ne_10m_admin_1_states_provinces.shp 10m_cultural/ne_10m_admin_1_states_provinces.dbf \
+	10m_cultural/ne_10m_admin_1_states_provinces_lakes.shp 10m_cultural/ne_10m_admin_1_states_provinces_lakes.dbf \
 	10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf \
-	10m_cultural/ne_10m_urban_areas.shp 10m_cultural/ne_10m_urban_areas.dbf
+	10m_cultural/ne_10m_urban_areas.shp 10m_cultural/ne_10m_urban_areas.dbf \
+	10m_cultural/ne_10m_parks_and_protected_lands_area.shp 10m_cultural/ne_10m_parks_and_protected_lands_area.dbf \
+	10m_cultural/ne_10m_parks_and_protected_lands_line.shp 10m_cultural/ne_10m_parks_and_protected_lands_line.dbf \
+	10m_cultural/ne_10m_parks_and_protected_lands_point.shp 10m_cultural/ne_10m_parks_and_protected_lands_point.dbf \
+	10m_cultural/ne_10m_roads.shp 10m_cultural/ne_10m_roads.dbf
 
 	mkdir -p packages/Natural_Earth_quick_start/10m_cultural
 
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_land.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_admin_0_boundary_lines_map_units.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_admin_0_countries.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_disputed_areas.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_map_subunits.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_map_units.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_1_states_provinces_lines.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_1_states_provinces.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_admin_1_states_provinces_lakes.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_populated_places.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_urban_areas.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_parks_and_protected_lands_area.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_parks_and_protected_lands_line.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_parks_and_protected_lands_point.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_roads.* packages/Natural_Earth_quick_start/10m_cultural/
 
 	touch $@
 
 # copy the master assets into position for 10m_physical:
 packages/Natural_Earth_quick_start/10m_physical/status.txt: \
 	10m_physical/ne_10m_coastline.shp 10m_physical/ne_10m_coastline.dbf \
+	10m_physical/ne_10m_antarctic_ice_shelves_lines.shp 10m_physical/ne_10m_antarctic_ice_shelves_lines.dbf \
+	10m_physical/ne_10m_antarctic_ice_shelves_polys.shp 10m_physical/ne_10m_antarctic_ice_shelves_polys.dbf \
 	10m_physical/ne_10m_geography_marine_polys.shp 10m_physical/ne_10m_geography_marine_polys.dbf \
 	10m_physical/ne_10m_geography_regions_elevation_points.shp 10m_physical/ne_10m_geography_regions_elevation_points.dbf \
 	10m_physical/ne_10m_geography_regions_points.shp 10m_physical/ne_10m_geography_regions_points.dbf \
 	10m_physical/ne_10m_geography_regions_polys.shp 10m_physical/ne_10m_geography_regions_polys.dbf \
+	10m_physical/ne_10m_geographic_lines.shp 10m_physical/ne_10m_geographic_lines.dbf \
+	10m_physical/ne_10m_glaciated_areas.shp 10m_physical/ne_10m_glaciated_areas.dbf \
 	10m_physical/ne_10m_lakes.shp 10m_physical/ne_10m_lakes.dbf \
-	10m_physical/ne_10m_minor_islands.shp 10m_physical/ne_10m_minor_islands.dbf \
+	10m_physical/ne_10m_lakes_europe.shp 10m_physical/ne_10m_lakes_europe.dbf \
+	10m_physical/ne_10m_lakes_historic.shp 10m_physical/ne_10m_lakes_historic.dbf \
+	10m_physical/ne_10m_lakes_north_america.shp 10m_physical/ne_10m_lakes_north_america.dbf \
 	10m_physical/ne_10m_ocean.shp 10m_physical/ne_10m_ocean.dbf \
+	10m_physical/ne_10m_ocean_scale_rank.shp 10m_physical/ne_10m_ocean_scale_rank.dbf \
+	10m_physical/ne_10m_minor_islands.shp 10m_physical/ne_10m_minor_islands.dbf \
+	10m_physical/ne_10m_minor_islands_coastline.shp 10m_physical/ne_10m_minor_islands_coastline.dbf \
+	10m_physical/ne_10m_land_scale_rank.shp 10m_physical/ne_10m_land_scale_rank.dbf \
 	10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.shp 10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.dbf \
-	10m_physical/ne_10m_rivers_lake_centerlines.shp 10m_physical/ne_10m_rivers_lake_centerlines.dbf
+	10m_physical/ne_10m_rivers_lake_centerlines.shp 10m_physical/ne_10m_rivers_lake_centerlines.dbf \
+	10m_physical/ne_10m_rivers_europe.shp 10m_physical/ne_10m_rivers_europe.dbf \
+	10m_physical/ne_10m_rivers_north_america.shp 10m_physical/ne_10m_rivers_north_america.dbf \
+	10m_physical/ne_10m_playas.shp 10m_physical/ne_10m_playas.dbf \
+	10m_physical/ne_10m_reefs.shp 10m_physical/ne_10m_reefs.dbf \
 
 	mkdir -p packages/Natural_Earth_quick_start/10m_physical
 
 	cp 10m_physical/ne_10m_coastline.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_antarctic_ice_shelves_lines.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_antarctic_ice_shelves_polys.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_geography_marine_polys.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_geography_regions_elevation_points.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_geography_regions_points.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_geography_regions_polys.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_geographic_lines.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_glaciated_areas.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_lakes.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_lakes_europe.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_lakes_historic.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_lakes_north_america.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_minor_islands.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_minor_islands_coastline.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_ocean.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_ocean_scale_rank.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_land_scale_rank.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_rivers_lake_centerlines.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_rivers_europe.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_rivers_north_america.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_playas.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_reefs.* packages/Natural_Earth_quick_start/10m_physical/
 
 	touch $@
 
@@ -2197,6 +2252,68 @@ packages/Natural_Earth_quick_start/50m_raster/status.txt:
 
 	touch $@
 
+# copy the master assets into position for 50m_cultural:
+packages/Natural_Earth_quick_start/50m_cultural/status.txt: \
+	50m_cultural/ne_50m_admin_0_boundary_lines_land.shp 50m_cultural/ne_50m_admin_0_boundary_lines_land.dbf \
+	50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.shp 50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.dbf \
+	50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.shp 50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.dbf \
+	50m_cultural/ne_50m_admin_0_boundary_map_units.shp 50m_cultural/ne_50m_admin_0_boundary_map_units.dbf \
+	50m_cultural/ne_50m_admin_0_countries.shp 50m_cultural/ne_50m_admin_0_countries.dbf \
+	50m_cultural/ne_50m_admin_0_map_subunits.shp 50m_cultural/ne_50m_admin_0_map_subunits.dbf \
+	50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.shp 50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.dbf \
+	50m_cultural/ne_50m_admin_1_states_provinces_lakes.shp 50m_cultural/ne_50m_admin_1_states_provinces_lakes.dbf \
+	50m_cultural/ne_50m_admin_1_states_provinces_lines.shp 50m_cultural/ne_50m_admin_1_states_provinces_lines.dbf \
+	50m_cultural/ne_50m_populated_places.shp 50m_cultural/ne_50m_populated_places.dbf \
+	50m_cultural/ne_50m_urban_areas.shp 50m_cultural/ne_50m_urban_areas.dbf
+
+	mkdir -p packages/Natural_Earth_quick_start/50m_cultural
+
+	cp 50m_cultural/ne_50m_admin_0_boundary_lines_land.* packages/Natural_Earth_quick_start/50m_cultural/
+	cp 50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.* packages/Natural_Earth_quick_start/50m_cultural/
+	cp 50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.* packages/Natural_Earth_quick_start/50m_cultural/
+	cp 50m_cultural/ne_50m_admin_0_boundary_map_units.* packages/Natural_Earth_quick_start/50m_cultural/
+	cp 50m_cultural/ne_50m_admin_0_countries.* packages/Natural_Earth_quick_start/50m_cultural/
+	cp 50m_cultural/ne_50m_admin_0_map_subunits.* packages/Natural_Earth_quick_start/50m_cultural/
+	cp 50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.* packages/Natural_Earth_quick_start/50m_cultural/
+	cp 50m_cultural/ne_50m_admin_1_states_provinces_lakes.* packages/Natural_Earth_quick_start/50m_cultural/
+	cp 50m_cultural/ne_50m_admin_1_states_provinces_lines.* packages/Natural_Earth_quick_start/50m_cultural/
+	cp 50m_cultural/ne_50m_urban_areas.* packages/Natural_Earth_quick_start/50m_cultural/
+	cp 50m_cultural/ne_50m_populated_places.* packages/Natural_Earth_quick_start/50m_cultural/
+
+	touch $@
+
+# copy the master assets into position for 50m_physical:
+packages/Natural_Earth_quick_start/50m_physical/status.txt: \
+	50m_physical/ne_50m_coastline.shp 50m_physical/ne_50m_coastline.dbf \
+	50m_physical/ne_50m_glaciated_areas.shp 50m_physical/ne_50m_glaciated_areas.dbf \
+	50m_physical/ne_50m_antarctic_ice_shelves_lines.shp 50m_physical/ne_50m_antarctic_ice_shelves_lines.dbf \
+	50m_physical/ne_50m_antarctic_ice_shelves_polys.shp 50m_physical/ne_50m_antarctic_ice_shelves_polys.dbf \
+	50m_physical/ne_50m_geographic_lines.shp 50m_physical/ne_50m_geographic_lines.dbf \
+	50m_physical/ne_50m_geography_marine_polys.shp 50m_physical/ne_50m_geography_marine_polys.dbf \
+	50m_physical/ne_50m_geography_regions_elevation_points.shp 50m_physical/ne_50m_geography_regions_elevation_points.dbf \
+	50m_physical/ne_50m_geography_regions_polys.shp 50m_physical/ne_50m_geography_regions_polys.dbf \
+	50m_physical/ne_50m_lakes.shp 50m_physical/ne_50m_lakes.dbf \
+	50m_physical/ne_50m_land.shp 50m_physical/ne_50m_land.dbf \
+	50m_physical/ne_50m_ocean.shp 50m_physical/ne_50m_ocean.dbf \
+	50m_physical/ne_50m_rivers_lake_centerlines_scale_rank.shp 50m_physical/ne_50m_rivers_lake_centerlines_scale_rank.dbf \
+
+	mkdir -p packages/Natural_Earth_quick_start/50m_physical
+
+	cp 50m_physical/ne_50m_coastline.* packages/Natural_Earth_quick_start/50m_physical/
+	cp 50m_physical/ne_50m_glaciated_areas.* packages/Natural_Earth_quick_start/50m_physical/
+	cp 50m_physical/ne_50m_antarctic_ice_shelves_lines.* packages/Natural_Earth_quick_start/50m_physical/
+	cp 50m_physical/ne_50m_antarctic_ice_shelves_polys.* packages/Natural_Earth_quick_start/50m_physical/
+	cp 50m_physical/ne_50m_geographic_lines.* packages/Natural_Earth_quick_start/50m_physical/
+	cp 50m_physical/ne_50m_geography_marine_polys.* packages/Natural_Earth_quick_start/50m_physical/
+	cp 50m_physical/ne_50m_geography_regions_elevation_points.* packages/Natural_Earth_quick_start/50m_physical/
+	cp 50m_physical/ne_50m_geography_regions_polys.* packages/Natural_Earth_quick_start/50m_physical/
+	cp 50m_physical/ne_50m_lakes.* packages/Natural_Earth_quick_start/50m_physical/
+	cp 50m_physical/ne_50m_land.* packages/Natural_Earth_quick_start/50m_physical/
+	cp 50m_physical/ne_50m_ocean.* packages/Natural_Earth_quick_start/50m_physical/
+	cp 50m_physical/ne_50m_rivers_lake_centerlines_scale_rank.* packages/Natural_Earth_quick_start/50m_physical/
+
+	touch $@
+
 # copy the master assets into position for 110m_cultural:
 packages/Natural_Earth_quick_start/110m_cultural/status.txt: \
 	110m_cultural/ne_110m_admin_0_boundary_lines_land.shp 110m_cultural/ne_110m_admin_0_boundary_lines_land.dbf \
@@ -2204,6 +2321,7 @@ packages/Natural_Earth_quick_start/110m_cultural/status.txt: \
 	110m_cultural/ne_110m_admin_0_pacific_groupings.shp 110m_cultural/ne_110m_admin_0_pacific_groupings.dbf \
 	110m_cultural/ne_110m_admin_0_tiny_countries.shp 110m_cultural/ne_110m_admin_0_tiny_countries.dbf \
 	110m_cultural/ne_110m_admin_1_states_provinces.shp 110m_cultural/ne_110m_admin_1_states_provinces.dbf \
+	110m_cultural/ne_110m_admin_1_states_provinces_lines.shp 110m_cultural/ne_110m_admin_1_states_provinces_lines.dbf \
 	110m_cultural/ne_110m_populated_places.shp 110m_cultural/ne_110m_populated_places.dbf
 
 	mkdir -p packages/Natural_Earth_quick_start/110m_cultural
@@ -2213,6 +2331,7 @@ packages/Natural_Earth_quick_start/110m_cultural/status.txt: \
 	cp 110m_cultural/ne_110m_admin_0_pacific_groupings.* packages/Natural_Earth_quick_start/110m_cultural/
 	cp 110m_cultural/ne_110m_admin_0_tiny_countries.* packages/Natural_Earth_quick_start/110m_cultural/
 	cp 110m_cultural/ne_110m_admin_1_states_provinces.* packages/Natural_Earth_quick_start/110m_cultural/
+	cp 110m_cultural/ne_110m_admin_1_states_provinces_lines.* packages/Natural_Earth_quick_start/110m_cultural/
 	cp 110m_cultural/ne_110m_populated_places.* packages/Natural_Earth_quick_start/110m_cultural/
 
 	touch $@
@@ -2224,7 +2343,10 @@ packages/Natural_Earth_quick_start/110m_physical/status.txt: \
 	110m_physical/ne_110m_geography_regions_points.shp 110m_physical/ne_110m_geography_regions_points.dbf \
 	110m_physical/ne_110m_geography_regions_polys.shp 110m_physical/ne_110m_geography_regions_polys.dbf \
 	110m_physical/ne_110m_lakes.shp 110m_physical/ne_110m_lakes.dbf \
-	110m_physical/ne_110m_ocean.shp 110m_physical/ne_110m_ocean.dbf
+	110m_physical/ne_110m_ocean.shp 110m_physical/ne_110m_ocean.dbf \
+	110m_physical/ne_110m_land.shp 110m_physical/ne_110m_land.dbf \
+	110m_physical/ne_110m_rivers_lake_centerlines.shp 110m_physical/ne_110m_rivers_lake_centerlines.dbf \
+	110m_physical/ne_110m_glaciated_areas.shp 110m_physical/ne_110m_glaciated_areas.dbf
 
 	mkdir -p packages/Natural_Earth_quick_start/110m_physical
 
@@ -2234,6 +2356,9 @@ packages/Natural_Earth_quick_start/110m_physical/status.txt: \
 	cp 110m_physical/ne_110m_geography_regions_polys.* packages/Natural_Earth_quick_start/110m_physical/
 	cp 110m_physical/ne_110m_lakes.* packages/Natural_Earth_quick_start/110m_physical/
 	cp 110m_physical/ne_110m_ocean.* packages/Natural_Earth_quick_start/110m_physical/
+	cp 110m_physical/ne_110m_land.* packages/Natural_Earth_quick_start/110m_physical/
+	cp 110m_physical/ne_110m_rivers_lake_centerlines.* packages/Natural_Earth_quick_start/110m_physical/
+	cp 110m_physical/ne_110m_glaciated_areas.* packages/Natural_Earth_quick_start/110m_physical/
 
 	touch $@
 
