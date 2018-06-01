@@ -1,3 +1,25 @@
+2018-05-31: 4.1.1
+
+PACKAGES
+
+- UPDATED:  NATURAL_EARTH_QUICK_START
+- UPDATED:  SQLite
+- NEW:      GeoPackage
+
+NATURAL_EARTH_QUICK_START
+
+- UPDATED:  Include required new themes in ZIP with relative paths.
+
+SQLite
+
+- UPDATED:  Include all new v4 series updates.
+
+GeoPackage
+
+- NEW:      Added new package distribution per user request.
+
+
+
 2018-05-21: 4.1.0
 
 - Many thanks to @imresamu for name translations and Wikidata concordances, @mattbloch
