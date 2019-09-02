@@ -40,31 +40,31 @@ parser.add_argument('-output_csv_name',
 args = parser.parse_args()
 
 
-def get_sparql_value(sresult, variable_id):
+def get_sparql_value(key, sresult, variable_id):
     """
     Get SPARQL value from the sresult
     """
     val = ''
-    if variable_id in sresult:
-        val = sresult[variable_id]['value']
+    if variable_id == key:
+        val = sresult['value']
     return val
 
-def get_sparql_label(sresult, variable_id):
+def get_sparql_label(key, sresult, variable_id):
     """
     Get SPARQL label from the sresult
     """
     val = ''
-    if variable_id in sresult:
-        val = sresult[variable_id]['value'].split('#')[0].split('(')[0].split(',')[0]
+    if variable_id == key:
+        val = sresult['value'].split('#')[0].split('(')[0].split(',')[0]
     return val.strip()
 
-def get_sparql_numvalue(sresult, variable_id):
+def get_sparql_numvalue(key, sresult, variable_id):
     """
     Get SPARQL numeric value from the sresult
     """
     val = -1
-    if variable_id in sresult:
-        val = float(sresult[variable_id]['value'])
+    if variable_id == key:
+        val = float(sresult['value'])
     return val
 
 
@@ -72,8 +72,12 @@ def fetchwikidata(a_wid):
     """
     Fetch wikidata with SPARQL
     """
-    sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
-    query_template = """
+    sparql = SPARQLWrapper("https://query.wikidata.org/sparql", agent='natural_earth_name_localizer v1.1.0 (github.com/nvkelso/natural-earth-vector)')
+
+    # Adding additional languages yielded:
+    # HTTP Error 431: Request Header Fields Too Large
+    # Splitting the query into 2 parts solves that
+    query_template_part_a = """
          PREFIX geo: <http://www.opengis.net/ont/geosparql#>
             SELECT
                 ?e ?i ?r
@@ -84,6 +88,7 @@ def fetchwikidata(a_wid):
                 (group_concat(distinct ?name_es;separator="#") as ?name_es)
                 (group_concat(distinct ?name_fr;separator="#") as ?name_fr)
                 (group_concat(distinct ?name_el;separator="#") as ?name_el)
+                (group_concat(distinct ?name_he;separator="#") as ?name_he)
                 (group_concat(distinct ?name_hi;separator="#") as ?name_hi)
                 (group_concat(distinct ?name_hu;separator="#") as ?name_hu)
                 (group_concat(distinct ?name_id;separator="#") as ?name_id)
@@ -96,8 +101,6 @@ def fetchwikidata(a_wid):
                 (group_concat(distinct ?name_ru;separator="#") as ?name_ru)
                 (group_concat(distinct ?name_sv;separator="#") as ?name_sv)
                 (group_concat(distinct ?name_tr;separator="#") as ?name_tr)
-                (group_concat(distinct ?name_vi;separator="#") as ?name_vi)
-                (group_concat(distinct ?name_zh;separator="#") as ?name_zh)
                 (group_concat(distinct ?disambiguation; separator = "#") as ?disambiguation)
                 (SAMPLE(?population) as ?population)
                 #(SAMPLE(?elev) as ?elevation)
@@ -120,6 +123,7 @@ def fetchwikidata(a_wid):
                 OPTIONAL{?e rdfs:label ?name_es FILTER((LANG(?name_es))="es").}
                 OPTIONAL{?e rdfs:label ?name_fr FILTER((LANG(?name_fr))="fr").}
                 OPTIONAL{?e rdfs:label ?name_el FILTER((LANG(?name_el))="el").}
+                OPTIONAL{?e rdfs:label ?name_he FILTER((LANG(?name_he))="he").}
                 OPTIONAL{?e rdfs:label ?name_hi FILTER((LANG(?name_hi))="hi").}
                 OPTIONAL{?e rdfs:label ?name_hu FILTER((LANG(?name_hu))="hu").}
                 OPTIONAL{?e rdfs:label ?name_id FILTER((LANG(?name_id))="id").}
@@ -132,6 +136,32 @@ def fetchwikidata(a_wid):
                 OPTIONAL{?e rdfs:label ?name_ru FILTER((LANG(?name_ru))="ru").}
                 OPTIONAL{?e rdfs:label ?name_sv FILTER((LANG(?name_sv))="sv").}
                 OPTIONAL{?e rdfs:label ?name_tr FILTER((LANG(?name_tr))="tr").}
+            }
+            GROUP BY ?e ?i ?r
+    """
+    query_template_part_b = """
+         PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+            SELECT
+                ?e ?i ?r
+                (group_concat(distinct ?name_uk;separator="#") as ?name_uk)
+                (group_concat(distinct ?name_ur;separator="#") as ?name_ur)
+                (group_concat(distinct ?name_vi;separator="#") as ?name_vi)
+                (group_concat(distinct ?name_zh;separator="#") as ?name_zh)
+                (group_concat(distinct ?disambiguation; separator = "#") as ?disambiguation)
+                (SAMPLE(?population) as ?population)
+                #(SAMPLE(?elev) as ?elevation)
+            WHERE {
+                {
+                    SELECT DISTINCT  ?e ?i ?r
+                    WHERE{
+                        VALUES ?i { wd:Q2102493 wd:Q1781 }
+                        OPTIONAL{ ?i owl:sameAs ?r. }
+                        BIND(COALESCE(?r, ?i) AS ?e).
+                    }
+                }
+                SERVICE wikibase:label {bd:serviceParam wikibase:language "en".}
+                OPTIONAL{?e rdfs:label ?name_uk FILTER((LANG(?name_uk))="uk").}
+                OPTIONAL{?e rdfs:label ?name_ur FILTER((LANG(?name_ur))="ur").}
                 OPTIONAL{?e rdfs:label ?name_vi FILTER((LANG(?name_vi))="vi").}
                 OPTIONAL{?e rdfs:label ?name_zh FILTER((LANG(?name_zh))="zh").}
             }
@@ -143,21 +173,45 @@ def fetchwikidata(a_wid):
         wikidata_sparql_ids += " wd:"+wid
 
     print("fetch: ", wikidata_sparql_ids.split()[1], "... ", wikidata_sparql_ids.split()[-1])
-    ne_query = query_template.replace('wd:Q2102493 wd:Q1781', wikidata_sparql_ids)
+    ne_query_part_a = query_template_part_a.replace('wd:Q2102493 wd:Q1781', wikidata_sparql_ids)
+    ne_query_part_b = query_template_part_b.replace('wd:Q2102493 wd:Q1781', wikidata_sparql_ids)
 
     # compress the Query -  removing the extra spaces
-    while '  ' in ne_query:
-        ne_query = ne_query.replace('  ', ' ')
+    while '  ' in ne_query_part_a:
+        ne_query_part_a = ne_query_part_a.replace('  ', ' ')
+
+    while '  ' in ne_query_part_b:
+        ne_query_part_b = ne_query_part_b.replace('  ', ' ')
 
     results = None
     retries = 0
     while results is None and retries < 8:
         try:
             results = None
-            sparql.setQuery(ne_query)
+            results_part_a = None
+            results_part_b = None
+
+            sparql.setQuery(ne_query_part_a)
             sparql.setTimeout(1000)
             sparql.setReturnFormat(JSON)
-            results = sparql.query().convert()
+            results_part_a = sparql.query().convert()
+
+            sparql.setQuery(ne_query_part_b)
+            sparql.setTimeout(1000)
+            sparql.setReturnFormat(JSON)
+            results_part_b = sparql.query().convert()
+
+            results_part_a = results_part_a['results']['bindings']
+
+            # Loop ove the wd_id and merge the name translations into one dict
+            for result_a in results_part_a:
+                # e has the value of the wikidata_id
+                for result_b in results_part_b['results']['bindings']:
+                    if result_a['e']['value'] == result_b['e']['value']:
+                        for key in result_b:
+                            result_a[key] = result_b[key]
+
+            return results_part_a
 
         except SPARQLExceptions.EndPointNotFound:
             print('ERRwikidata-SPARQLExceptions-EndPointNotFound:  Retrying in 30 seconds.')
@@ -187,7 +241,7 @@ def fetchwikidata(a_wid):
 
         except:
             print("ERRwikidata: other error. Retrying in 3 seconds.")
-            print('error: %s ' % sys.exc_info()[0])
+            print('error: %s %s %s %s' % sys.exc_info()[0].code)
             time.sleep(3)
             retries += 1
             continue
@@ -196,7 +250,6 @@ def fetchwikidata(a_wid):
         print("Wikidata request failed ; system stopped! ")
         sys.exit(1)
 
-
     return results
 
 print('- Start fetching Natural-Earth wikidata labels via SPARQL query - ')
@@ -204,6 +257,7 @@ print('- Start fetching Natural-Earth wikidata labels via SPARQL query - ')
 with open(args.output_csv_name, "w", encoding='utf-8') as f:
     writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
     writer.writerow((
+        "ne_id",
         "wd_id",
         "wd_id_new",
         "population",
@@ -215,6 +269,7 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
         "name_es",
         "name_fr",
         "name_el",
+        "name_he",
         "name_hi",
         "name_hu",
         "name_id",
@@ -227,6 +282,8 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
         "name_ru",
         "name_sv",
         "name_tr",
+        "name_uk",
+        "name_ur",
         "name_vi",
         "name_zh"
     ))
@@ -248,6 +305,14 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
 
             ne_fid = pt['id']
 
+            # TODO: wire ne_id thru wikidata_id return
+            ne_id = -1
+
+            #if args.input_lettercase == "lowercase":
+            #    ne_id = pt['properties']['ne_id']
+            #else:
+            #    ne_id = pt['PROPERTIES']['NE_ID']
+
             if ne_wikidataid:
                 if ne_wikidataid[0] == 'Q':
                     wikidata_chunk.append(ne_wikidataid)
@@ -259,40 +324,50 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                 sparql_results = fetchwikidata(wikidata_chunk)
                 wikidata_chunk = []
 
-                for result in sparql_results["results"]["bindings"]:
-                    #print(result)
-                    wd_id_label = get_sparql_value(result, 'e').split('/')[4]
-                    wd_id = get_sparql_value(result, 'i').split('/')[4]
-                    wd_id_new = get_sparql_value(result, 'r')
-                    if wd_id_new:
+                #print(sparql_results)
+
+                for result in sparql_results:
+                    wd_id_label = result.get('e', {}).get('value', '')
+                    if wd_id_label != '':
+                        wd_id_label = wd_id_label.split('/')[4]
+                    wd_id = result.get('i', {}).get('value', '')
+                    if wd_id != '':
+                        wd_id = wd_id.split('/')[4]
+                    wd_id_new = result.get('r', {}).get('value', '')
+                    if wd_id_new != '':
                         wd_id_new = wd_id_new.split('/')[4]
                         print('Redirected:', wd_id, wd_id_new)
-                    population = get_sparql_value(result, 'population')
-                    #elevation =get_sparql_value(result, 'elevation')
 
-                    name_ar = get_sparql_label(result, 'name_ar')
-                    name_bn = get_sparql_label(result, 'name_bn')
-                    name_de = get_sparql_label(result, 'name_de')
-                    name_en = get_sparql_label(result, 'name_en')
-                    name_es = get_sparql_label(result, 'name_es')
-                    name_fr = get_sparql_label(result, 'name_fr')
-                    name_el = get_sparql_label(result, 'name_el')
-                    name_hi = get_sparql_label(result, 'name_hi')
-                    name_hu = get_sparql_label(result, 'name_hu')
-                    name_id = get_sparql_label(result, 'name_id')
-                    name_it = get_sparql_label(result, 'name_it')
-                    name_ja = get_sparql_label(result, 'name_ja')
-                    name_ko = get_sparql_label(result, 'name_ko')
-                    name_nl = get_sparql_label(result, 'name_nl')
-                    name_pl = get_sparql_label(result, 'name_pl')
-                    name_pt = get_sparql_label(result, 'name_pt')
-                    name_ru = get_sparql_label(result, 'name_ru')
-                    name_sv = get_sparql_label(result, 'name_sv')
-                    name_tr = get_sparql_label(result, 'name_tr')
-                    name_vi = get_sparql_label(result, 'name_vi')
-                    name_zh = get_sparql_label(result, 'name_zh')
+                    population = result.get('population', {}).get('value', -1)
+                    #elevation = result.get('elevation', -9999)
+
+                    name_ar = result.get('name_ar', {}).get('value', '')
+                    name_bn = result.get('name_bn', {}).get('value', '')
+                    name_de = result.get('name_de', {}).get('value', '')
+                    name_en = result.get('name_en', {}).get('value', '')
+                    name_es = result.get('name_es', {}).get('value', '')
+                    name_fr = result.get('name_fr', {}).get('value', '')
+                    name_el = result.get('name_el', {}).get('value', '')
+                    name_he = result.get('name_he', {}).get('value', '')
+                    name_hi = result.get('name_hi', {}).get('value', '')
+                    name_hu = result.get('name_hu', {}).get('value', '')
+                    name_id = result.get('name_id', {}).get('value', '')
+                    name_it = result.get('name_it', {}).get('value', '')
+                    name_ja = result.get('name_ja', {}).get('value', '')
+                    name_ko = result.get('name_ko', {}).get('value', '')
+                    name_nl = result.get('name_nl', {}).get('value', '')
+                    name_pl = result.get('name_pl', {}).get('value', '')
+                    name_pt = result.get('name_pt', {}).get('value', '')
+                    name_ru = result.get('name_ru', {}).get('value', '')
+                    name_sv = result.get('name_sv', {}).get('value', '')
+                    name_tr = result.get('name_tr', {}).get('value', '')
+                    name_uk = result.get('name_uk', {}).get('value', '')
+                    name_ur = result.get('name_ur', {}).get('value', '')
+                    name_vi = result.get('name_vi', {}).get('value', '')
+                    name_zh = result.get('name_zh', {}).get('value', '')
 
                     writer.writerow((
+                        ne_id,
                         wd_id,
                         wd_id_new,
                         population,
@@ -304,6 +379,7 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                         name_es,
                         name_fr,
                         name_el,
+                        name_he,
                         name_hi,
                         name_hu,
                         name_id,
@@ -316,6 +392,8 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                         name_ru,
                         name_sv,
                         name_tr,
+                        name_uk,
+                        name_ur,
                         name_vi,
                         name_zh
                         ))
