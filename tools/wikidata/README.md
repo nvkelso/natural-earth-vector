@@ -357,18 +357,19 @@ lettercase = lowercase variable names [wikidataid, name_ar, name_bn, name_de, na
 see the _latest_  information in the `./run_all.sh`
 
 
-### supported languages ( now: 21)
+### supported languages ( now: 24)
 
 variable name | language     | language wikipedia link
 --------------|--------------|----------------------------------------------------
- NAME_AR 	  | Arabic       | https://en.wikipedia.org/wiki/Arabic_language
+ NAME_AR 	  | Arabic       | https://en.wikipedia.org/wiki/Arabic
  NAME_BN 	  | Bengali      | https://en.wikipedia.org/wiki/Bengali_language
  NAME_DE 	  | German       | https://en.wikipedia.org/wiki/German_language
  NAME_EN 	  | English      | https://en.wikipedia.org/wiki/English_language
  NAME_ES 	  | Spanish      | https://en.wikipedia.org/wiki/Spanish_language
  NAME_FR 	  | French       | https://en.wikipedia.org/wiki/French_language
- NAME_EL 	  | Modern Greek | https://en.wikipedia.org/wiki/Modern_Greek_language
- NAME_HI 	  | Hindi     	 | https://en.wikipedia.org/wiki/Hindi_language
+ NAME_EL 	  | Modern Greek | https://en.wikipedia.org/wiki/Modern_Greek
+ NAME_HE 	  | Hebrew     	 | https://en.wikipedia.org/wiki/Hebrew_language
+ NAME_HI 	  | Hindi     	 | https://en.wikipedia.org/wiki/Hindi
  NAME_HU 	  | Hungarian 	 | https://en.wikipedia.org/wiki/Hungarian_language
  NAME_ID 	  | Indonesian   | https://en.wikipedia.org/wiki/Indonesian_language
  NAME_IT 	  | Italian      | https://en.wikipedia.org/wiki/Italian_language
@@ -380,6 +381,8 @@ variable name | language     | language wikipedia link
  NAME_RU 	  | Russian      | https://en.wikipedia.org/wiki/Russian_language
  NAME_SV 	  | Swedish      | https://en.wikipedia.org/wiki/Swedish_language
  NAME_TR 	  | Turkish      | https://en.wikipedia.org/wiki/Turkish_language
+ NAME_UK 	  | Ukrainian    | https://en.wikipedia.org/wiki/Ukrainian_language
+ NAME_UR 	  | Urdu         | https://en.wikipedia.org/wiki/Urdu
  NAME_VI 	  | Vietnamese   | https://en.wikipedia.org/wiki/Vietnamese_language
  NAME_ZH 	  | Chinese      | https://en.wikipedia.org/wiki/Chinese_language
 
@@ -390,7 +393,7 @@ minimal regexp implementation, hard coded in the `write_wikidata.py`
 TODO :  need better implementation.
 
 
-### remove `river` 
+### remove `river`
 if  the shape file name contain trigger word  ('river') - run regexp.
 
 ```python
@@ -428,7 +431,7 @@ placeclean_regex = re.compile(r'\b('+'Municipality of|Municipality|First Nation'
     if args.input_shape.lower().find('place') > 0:
         wddic[qid][d] = placeclean_regex.sub('', wddic[qid][d])
 
-        ... remove 市(city) 
+        ... remove 市(city)
 ```
 
 example changes:

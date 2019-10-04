@@ -44,10 +44,21 @@ parser.add_argument('-output_csvsumlog',
 
 args = parser.parse_args()
 
-#lakeclean_regex  = re.compile(r'\b('+'Lake'+r')\b', flags=re.IGNORECASE)
-riverclean_regex = re.compile(r'\b('+'River'+r')\b',
+riverclean_regex = re.compile(r'\b('+'River|rivière de la |rivière à la|rivière des|Rivière De|Rivière du|Rivière aux|Rivière|rivier|Rio dos|Rio|Río La|Río de los|Río de las|Río dos|Río|sông|-folyó|folyó|canale di|canale|Nehri|Jiang'+r')\b',
                               flags=re.IGNORECASE)
-placeclean_regex = re.compile(r'\b('+'Municipality of|Municipality|First Nation'+r')\b',
+# Some of these are proper names (Lake of the Ozark's, Clear Lake Reservoir) and
+# shouldn't be stripped, but in the meantime, strip aggressively
+lakeclean_regex = re.compile(r'\b('+'Lake of the|Grand Lake o\' the|Lake Reservoir|Grand Lake|Grant Lake|Lake of|Lake|Lago degli|Lago del|Lago de|lago di|Lago la|Lago do|Lago |lago d\'||Lago|Lac de la|lac d\'|lac des|Lac des|lac de|Lac de|Lac au|lac di|lac la|Lac La|Lac à l’|lac à la|Lac|lac|-See|See|Laguna de|Laguna|Lake Reservoir|Reservoir|réservoir de la|réservoir de|Reservatório de|réservoir|Réservoir|Represa de|Represa|baie de|Bahía de|öböl|Gölü|järv|Embalse de|Embalse|Bacino di|bacino di|Bacino|bacino|Sông|Lough|Hồ'+r')\b',
+                              flags=re.IGNORECASE)
+#geolabels_regex = re.compile(r'\b('+'(wyspa)'+r')\b',
+#                              flags=re.IGNORECASE)
+placeclean_regex = re.compile(r'\b('+'Municipality of|Municipality|First Nation|Urban District|urban area|Distretto di|District de|District|Heroica Ciudad de|Município|Contea di|Barra do|City of'+r')\b',
+                              flags=re.IGNORECASE)
+geo_region_regex = re.compile(r'\b('+'Região Autónoma dos'+r')\b',
+                              flags=re.IGNORECASE)
+admin1_regex = re.compile(r'\b('+'canton of |Canton of|Department|District Council|distretto di contea di|contea di|District de|distretto di|Distretto della|Distrik|distretto del|district|Constitutional Province|Province of |Provincia del|provincia delle|provincia della|provincia di|Provincia Constitucional del|Província Constitucional de|provincia de|Província de|Província do|Provincia de|Préfecture de|Provincia|Comunidad De|Autonome Provinz|Provincia Autónoma de|Provinz|Província|Departamento de|Departamento do|Autonomous Province of|Autonomous Province|Province de la|province de|Province du|Province|Provinsi|Municipality of |Municipality|Município de|Special Region of |Región Metropolitana de|Special Region|Autonomous Region|Capital Region of|Region of|-Region|Region|Governorate|Gouvernorat|Gubernatorstwo|Gobernación de|governatorato di|Capital  of|Capital of|City Council|City and Borough of|City of|Città di|City|Región Metropolitana de|Metropolitan Region|Metropolitan Borough of|Metropolitan Borough|Borough Metropolitano de|London Borough of|district londonien|district londonien d\'|borough royal de|Royal Borough of|County Borough|Borough of|Borough Council|Metropoliten Borough|londonien de|district royal de|County|Old Royal Capital|(distrikt)|Distrik|(borough)|Cantão central de|cantone della|(cantão)|(departamento)|(departement)|Región del|Región de|Región|gouvernorat de|Gouvernorat|kormányzóság|regione di|Regione del|Prefectura de|prefettura di|Autonome Oblast|Oblast Autônomo|Autonomous Oblast|Oblast\' dell\'|Obwód Autonomiczny|Kraï de|Kraï|Oblast de|Óblast de|Oblast\' di|Oblast\'|oblast|distrito de|Distrito do|Distrito|métropolitain de|Voivodia da|cantone di|cantone dell\'|Munisipalitas\' di|Munisipalitas|Emirato di|Emirato|cantón del|cantón de|canton du|cantón|Καντόνι του|Καντόνι της|Ζουπανία του|Επαρχία του|Δήμος|Κυβερνείο του|distretto|Région autonome du|région de|Governamento de|Kegubernuran|comté de|parrocchia di|obwód|, London|, Londra|, Nya Zeeland|Daerah Istimewa|Autónoma del|Parish of|Parish|, Barbados|Circondario autonomo dei|Circondario autonomo|circondario autonomo degli|Okręg Autonomiczny|Dystrykt|-Distrikt|Distrikt|distriktet|, प्रांत|, पैराग्वे|, Zambia|, Kenya|, Καμερούν|, Τζαμάικα|, Barbados|, Londra|, Bahama|kommun|Ciudad de|, Gambia|, Botswana|tartomány|körzet|Munizip|division|Conselho do Borough de|Rejon|Raionul|Kotar|megye|Żupania|comune distrettuale di|comune distrettuale|Comune di|comune|Condado de|Condado|Kotamadya|Região Autónoma dos|Região Autónoma|Região|Guvernementet|Gobernación del|Gobernación'+r')\b',
+                              flags=re.IGNORECASE)
+admin0_regex = re.compile(r'\b('+'(district)|(địa hạt)'+r')\b',
                               flags=re.IGNORECASE)
 
 
@@ -74,13 +85,51 @@ with open(args.input_csv, newline='') as csvfile:
 
                     # Clean names ...
 
+                    # where input_shape evaluates the name of the shapefile
+                    # as proxy for featureclass
+
                     # Rivers ...
                     if args.input_shape.lower().find('river') > 0:
                         wddic[qid][d] = riverclean_regex.sub('', wddic[qid][d])
 
+                        # Comma ...
+                        if wddic[qid][d].find(',') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find(',')]
+
+                        # Parenthetical ...
+                        if wddic[qid][d].find('(') > 0:
+                            # RTL languages and LTR figure each other out in python 3
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('(')]
+
                     # Lakes ...
-                    # if args.input_shape.lower().find('lake') > 0:
-                    #    wddic[qid][d]=lakeclean_regex.sub('', wddic[qid][d] )
+                    if args.input_shape.lower().find('lake') > 0:
+                        #if d == 'name_en' and wddic[qid]['name_en'] != 'Lake of the Woods':
+                        wddic[qid][d]=lakeclean_regex.sub('', wddic[qid][d] )
+
+                        # Comma ...
+                        if wddic[qid][d].find(',') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find(',')]
+
+                        # Parenthetical ...
+                        if wddic[qid][d].find('(') > 0:
+                            # RTL languages and LTR figure each other out in python 3
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('(')]
+
+                    # Physical Geography label polys and points ...
+                    if args.input_shape.lower().find('_geography_') > 0:
+                        wddic[qid][d]=geo_region_regex.sub('', wddic[qid][d] )
+
+                        # Comma ...
+                        if wddic[qid][d].find(',') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find(',')]
+
+                        # Parenthetical ...
+                        if wddic[qid][d].find('(') > 0:
+                            # RTL languages and LTR figure each other out in python 3
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('(')]
 
                     # Places ...
                     if args.input_shape.lower().find('place') > 0:
@@ -89,7 +138,45 @@ with open(args.input_csv, newline='') as csvfile:
                         if d == 'name_zh' and wddic[qid]['name_zh'] and wddic[qid]['name_zh'][-1] == "市":
                             wddic[qid]['name_zh'] = wddic[qid]['name_zh'][:-1]
 
-                    wddic[qid][d] = wddic[qid][d].strip()
+                        # Comma ...
+                        if wddic[qid][d].find(',') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find(',')]
+
+                        # Parenthetical ...
+                        if wddic[qid][d].find('(') > 0:
+                            # RTL languages and LTR figure each other out in python 3
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('(')]
+
+                    # Admin 1 states, provinces ...
+                    if args.input_shape.lower().find('admin_1') > 0:
+                        wddic[qid][d] = admin1_regex.sub('', wddic[qid][d])
+
+                        # Parenthetical ...
+                        if wddic[qid][d].find('(') > 0:
+                            # RTL languages and LTR figure each other out in python 3
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('(')]
+
+                        #name_ko:  remove last "주""State" character
+                        if d == 'name_ko' and wddic[qid]['name_ko'] and wddic[qid]['name_ko'][-1] == "주":
+                            wddic[qid]['name_ko'] = wddic[qid]['name_ko'][:-1]
+
+                        # That's the city name, we're only interested in the region name
+                        if wddic[qid][d] == 'Washington, D.C.':
+                            wddic[qid][d] = 'D.C.'
+
+                    # Admin 0 countries, map units, etc
+                    if args.input_shape.lower().find('admin_0') > 0:
+                        wddic[qid][d] = admin0_regex.sub('', wddic[qid][d])
+
+                        # Parenthetical ...
+                        if wddic[qid][d].find('(') > 0:
+                            # RTL languages and LTR figure each other out in python 3
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('(')]
+
+                    # sometimes the RegEx strips words mid string and leaves double spaces
+                    # we also want to strip leading or trailing whitespace
+                    wddic[qid][d] = wddic[qid][d].replace('  ', ' ').strip()
 
                     if wddic[qid][d] != row[d].strip():
                         print(qid, d, ' name cleaning : ', row[d].strip(), ' -->  ', wddic[qid][d])
@@ -111,6 +198,9 @@ with open(args.output_csvlog, "w", encoding='utf-8') as f:
         # **source.meta is a shortcut to get the crs, driver, and schema
         # keyword arguments from the source Collection.
         with fiona.open(args.output_shape, 'w', encoding='utf-8', **source.meta) as sink:
+
+            warn_no_dbf_field_for_new_property = 1
+            new_properties = {}
 
             stat_equal = 0
             stat_empty = 0
@@ -152,10 +242,15 @@ with open(args.output_csvlog, "w", encoding='utf-8') as f:
 
                             for updatefield in wddic[qid]:
 
-                                if not f['properties'][updatefield]:
-                                    f['properties'][updatefield] = ''
-                                else:
-                                    f['properties'][updatefield] = f['properties'][updatefield].strip()
+                                try:
+                                    if not f['properties'][updatefield]:
+                                        f['properties'][updatefield] = ''
+                                    else:
+                                        f['properties'][updatefield] = f['properties'][updatefield].strip()
+                                except:
+                                    # visual logging is handled in the next section
+                                    # see warn_no_dbf_field_for_new_property
+                                    pass
 
 
                                 if not wddic[qid][updatefield]:
@@ -187,8 +282,10 @@ with open(args.output_csvlog, "w", encoding='utf-8') as f:
                                         else:
                                             stat_empty += 1
                                 else:
-                                    print("...ERROR.. updatefield is missing", updatefield)
-                                    sys.exit(1)
+                                    if warn_no_dbf_field_for_new_property:
+                                        print("...ERROR.. updatefield is missing", updatefield)
+                                        warn_no_dbf_field_for_new_property = 0
+                                        #sys.exit(1)
 
 
 

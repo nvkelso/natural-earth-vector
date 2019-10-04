@@ -317,7 +317,7 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                 if ne_wikidataid[0] == 'Q':
                     wikidata_chunk.append(ne_wikidataid)
                 else:
-                    print("ERROR: Bad formatted wikidataid , skip", ne_wikidataid)
+                    print("ERROR: Bad formatted or missing wikidataid, skip", ne_wikidataid)
 
             if (len(wikidata_chunk) >= 200) or (i >= REC_IN_SHAPE):
 
