@@ -383,6 +383,427 @@ build_a1_ne_10m_admin_0_scale_rank: 10m_cultural/ne_10m_admin_0_boundary_lines_l
 		-o 10m_cultural/ne_10m_admin_0_scale_rank.shp \
 #calc='join_count = count()'
 
+build_a1_ne_10m_admin_0_countries: \
+	build_a1_ne_10m_admin_0_countries_arg \
+	build_a1_ne_10m_admin_0_countries_bdg \
+	build_a1_ne_10m_admin_0_countries_bra \
+	build_a1_ne_10m_admin_0_countries_chn \
+	build_a1_ne_10m_admin_0_countries_deu \
+	build_a1_ne_10m_admin_0_countries_egy \
+	build_a1_ne_10m_admin_0_countries_esp \
+	build_a1_ne_10m_admin_0_countries_fra \
+	build_a1_ne_10m_admin_0_countries_gbr \
+	build_a1_ne_10m_admin_0_countries_grc \
+	build_a1_ne_10m_admin_0_countries_idn \
+	build_a1_ne_10m_admin_0_countries_ind \
+	build_a1_ne_10m_admin_0_countries_isl \
+	build_a1_ne_10m_admin_0_countries_ita \
+	build_a1_ne_10m_admin_0_countries_jpn \
+	build_a1_ne_10m_admin_0_countries_kor \
+	build_a1_ne_10m_admin_0_countries_mar \
+	build_a1_ne_10m_admin_0_countries_nep \
+	build_a1_ne_10m_admin_0_countries_nld \
+	build_a1_ne_10m_admin_0_countries_pak \
+	build_a1_ne_10m_admin_0_countries_pol \
+	build_a1_ne_10m_admin_0_countries_prt \
+	build_a1_ne_10m_admin_0_countries_pse \
+	build_a1_ne_10m_admin_0_countries_rus \
+	build_a1_ne_10m_admin_0_countries_sau \
+	build_a1_ne_10m_admin_0_countries_swe \
+	build_a1_ne_10m_admin_0_countries_tur \
+	build_a1_ne_10m_admin_0_countries_twn \
+	build_a1_ne_10m_admin_0_countries_ukr \
+	build_a1_ne_10m_admin_0_countries_usa \
+	build_a1_ne_10m_admin_0_countries_vnm
+
+
+build_a1_ne_10m_admin_0_countries_usa: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_US \
+		-dissolve 'ADM0_A3_US' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_US,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_US' \
+		-o 10m_cultural/ne_10m_admin_0_countries_usa.shp \
+
+build_a1_ne_10m_admin_0_countries_ukr: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_UA \
+		-dissolve 'ADM0_A3_UA' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_UA,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_UA' \
+		-o 10m_cultural/ne_10m_admin_0_countries_ukr.shp \
+
+build_a1_ne_10m_admin_0_countries_fra: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_FR \
+		-dissolve 'ADM0_A3_FR' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_FR,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_FR' \
+		-o 10m_cultural/ne_10m_admin_0_countries_fra.shp \
+
+build_a1_ne_10m_admin_0_countries_rus: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_RU \
+		-dissolve 'ADM0_A3_RU' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_RU,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_RU' \
+		-o 10m_cultural/ne_10m_admin_0_countries_rus.shp \
+
+build_a1_ne_10m_admin_0_countries_esp: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_ES \
+		-dissolve 'ADM0_A3_ES' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_ES,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_ES' \
+		-o 10m_cultural/ne_10m_admin_0_countries_esp.shp \
+
+build_a1_ne_10m_admin_0_countries_chn: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_CN \
+		-dissolve 'ADM0_A3_CN' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_CN,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_CN' \
+		-o 10m_cultural/ne_10m_admin_0_countries_chn.shp \
+
+build_a1_ne_10m_admin_0_countries_twn: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_TW \
+		-dissolve 'ADM0_A3_TW' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_TW,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_TW' \
+		-o 10m_cultural/ne_10m_admin_0_countries_twn.shp \
+
+build_a1_ne_10m_admin_0_countries_ind: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_IN \
+		-dissolve 'ADM0_A3_IN' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_IN,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_IN' \
+		-o 10m_cultural/ne_10m_admin_0_countries_ind.shp \
+
+build_a1_ne_10m_admin_0_countries_nep: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_NP \
+		-dissolve 'ADM0_A3_NP' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_NP,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_NP' \
+		-o 10m_cultural/ne_10m_admin_0_countries_nep.shp \
+
+build_a1_ne_10m_admin_0_countries_pak: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_PK \
+		-dissolve 'ADM0_A3_PK' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_PK,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_PK' \
+		-o 10m_cultural/ne_10m_admin_0_countries_pak.shp \
+
+build_a1_ne_10m_admin_0_countries_deu: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_DE \
+		-dissolve 'ADM0_A3_DE' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_DE,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_DE' \
+		-o 10m_cultural/ne_10m_admin_0_countries_deu.shp \
+
+build_a1_ne_10m_admin_0_countries_gbr: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_GB \
+		-dissolve 'ADM0_A3_GB' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_GB,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_GB' \
+		-o 10m_cultural/ne_10m_admin_0_countries_gbr.shp \
+
+build_a1_ne_10m_admin_0_countries_bra: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_BR \
+		-dissolve 'ADM0_A3_BR' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_BR,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_BR' \
+		-o 10m_cultural/ne_10m_admin_0_countries_bra.shp \
+
+build_a1_ne_10m_admin_0_countries_isl: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_IL \
+		-dissolve 'ADM0_A3_IL' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_IL,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_IL' \
+		-o 10m_cultural/ne_10m_admin_0_countries_isl.shp \
+
+build_a1_ne_10m_admin_0_countries_pse: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_PS \
+		-dissolve 'ADM0_A3_PS' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_PS,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_PS' \
+		-o 10m_cultural/ne_10m_admin_0_countries_pse.shp \
+
+build_a1_ne_10m_admin_0_countries_sau: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_SA \
+		-dissolve 'ADM0_A3_SA' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_SA,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_SA' \
+		-o 10m_cultural/ne_10m_admin_0_countries_sau.shp \
+
+build_a1_ne_10m_admin_0_countries_egy: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_EG \
+		-dissolve 'ADM0_A3_EG' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_EG,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_EG' \
+		-o 10m_cultural/ne_10m_admin_0_countries_egy.shp \
+
+build_a1_ne_10m_admin_0_countries_mar: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_MA \
+		-dissolve 'ADM0_A3_MA' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_MA,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_MA' \
+		-o 10m_cultural/ne_10m_admin_0_countries_mar.shp \
+
+build_a1_ne_10m_admin_0_countries_prt: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_PT \
+		-dissolve 'ADM0_A3_PT' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_PT,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_PT' \
+		-o 10m_cultural/ne_10m_admin_0_countries_prt.shp \
+
+build_a1_ne_10m_admin_0_countries_arg: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_AR \
+		-dissolve 'ADM0_A3_AR' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_AR,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_AR' \
+		-o 10m_cultural/ne_10m_admin_0_countries_arg.shp \
+
+build_a1_ne_10m_admin_0_countries_jpn: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_JP \
+		-dissolve 'ADM0_A3_JP' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_JP,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_JP' \
+		-o 10m_cultural/ne_10m_admin_0_countries_jpn.shp \
+
+build_a1_ne_10m_admin_0_countries_kor: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_KO \
+		-dissolve 'ADM0_A3_KO' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_KO,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_KO' \
+		-o 10m_cultural/ne_10m_admin_0_countries_kor.shp \
+
+build_a1_ne_10m_admin_0_countries_vnm: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_VN \
+		-dissolve 'ADM0_A3_VN' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_VN,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_VN' \
+		-o 10m_cultural/ne_10m_admin_0_countries_vnm.shp \
+
+build_a1_ne_10m_admin_0_countries_tur: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_TR \
+		-dissolve 'ADM0_A3_TR' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_TR,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_TR' \
+		-o 10m_cultural/ne_10m_admin_0_countries_tur.shp \
+
+build_a1_ne_10m_admin_0_countries_idn: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_ID \
+		-dissolve 'ADM0_A3_ID' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_ID,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_ID' \
+		-o 10m_cultural/ne_10m_admin_0_countries_idn.shp \
+
+build_a1_ne_10m_admin_0_countries_pol: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_PL \
+		-dissolve 'ADM0_A3_PL' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_PL,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_PL' \
+		-o 10m_cultural/ne_10m_admin_0_countries_pol.shp \
+
+build_a1_ne_10m_admin_0_countries_grc: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_GR \
+		-dissolve 'ADM0_A3_GR' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_GR,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_GR' \
+		-o 10m_cultural/ne_10m_admin_0_countries_grc.shp \
+
+build_a1_ne_10m_admin_0_countries_grc: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_GR \
+		-dissolve 'ADM0_A3_GR' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_GR,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_GR' \
+		-o 10m_cultural/ne_10m_admin_0_countries_grc.shp \
+
+build_a1_ne_10m_admin_0_countries_ita: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_IT \
+		-dissolve 'ADM0_A3_IT' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_IT,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_IT' \
+		-o 10m_cultural/ne_10m_admin_0_countries_ita.shp \
+
+build_a1_ne_10m_admin_0_countries_nld: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_NL \
+		-dissolve 'ADM0_A3_NL' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_NL,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_NL' \
+		-o 10m_cultural/ne_10m_admin_0_countries_nld.shp \
+
+build_a1_ne_10m_admin_0_countries_swe: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_SE \
+		-dissolve 'ADM0_A3_SE' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_SE,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_SE' \
+		-o 10m_cultural/ne_10m_admin_0_countries_swe.shp \
+
+build_a1_ne_10m_admin_0_countries_bdg: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_A3_BD \
+		-dissolve 'ADM0_A3_BD' copy-fields=featurecla,scalerank \
+		-filter 'scalerank !== null' + \
+		-each 'featurecla="Admin-0 country"' \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_BD,ADM0_A3 fields=* \
+		-each 'delete sr_adm0_a3' \
+		-each 'delete ADM0_A3_BD' \
+		-o 10m_cultural/ne_10m_admin_0_countries_bdg.shp \
+
+
+
+
 build_a2_ne_10m_admin_0_disputed: 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
 	housekeeping/ne_admin_0_details_level_5_disputed.dbf
 	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
