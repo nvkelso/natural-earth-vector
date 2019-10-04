@@ -1,3 +1,238 @@
+2019-10-08: 5.0.0
+
+- Many thanks to @zerebubuth for help with disputed boundaries prototyping in Tilezen.
+
+GENERAL
+
+1)	Adds support for alternate points of view in admin 1 related themes with fclass_*
+	properties (like fclass_iso). The following country and international organizations
+	worldviews are supported: Argentina (ar), Bangladesh (bd), Brazil (br), China (cn),
+	Egypt (eg), France (fr), Germany (de), Greece (gr), India (in), Indonesia (id),
+	Israel (il), Italy (it), Japan (jp), Morocco (ma), Nepal (np), Netherlands (nl),
+	Pakistan (pk), Palestine (ps), Poland (pl), Portugal (pt), Russia (ru),
+	Saudi Arabia (sa), South Korea (ko), Spain (es), Sweden (se), Taiwan (tw),
+	Turkey (tr), United Kingdom (gb), United States (us), Vietnam (vn), ISO (iso)
+	Fixes #301
+2)	Provides easy alternate download of ne_10m_admin_0_countries themes preassembled for
+	the 31 different viewpoints, like "ne_10m_admin_0_countries_arg" for Argentina.
+	Full list of countries: Argentina (arg), Bangladesh (bdg), Brazil (bra), China (chn),
+	Germany (deu), Egypt (egy), Spain (esp), France (fra), United Kingdom (gbr),
+	Greece (grc), Indonesia (idn), India (ind), Israel (isl), Italy (ita), Japan (jpn),
+	South Korea (kor), Morocco (mar), Nepal (nep), Netherlands (nld), Pakistan (pak),
+	Poland (pol), Portugal (prt), Palestine (pse), Russia (rus), Saudi Arabia (sau),
+	Sweden (swe), Turkey (tur), Taiwan (twn), Ukraine (ukr),
+	United States of America (usa), and Vietname (vnm).
+	Fixes #301
+2)	Expands the name localization added in v4.1 to 24 languages (up from 21) by adding
+	Hebrew (he), Ukranian (uk), and Urdu (ur). Localized names in the original 21
+	languages have also been updated.
+	Fixes #302
+3)	Renames admin-0 Macedonia features to North Macedonia to keep up with current events.
+	Fixes #290.
+
+PACKAGES
+
+- UPDATED:  NATURAL_EARTH_QUICK_START
+- UPDATED:  10M_CULTURAL
+- UPDATED:  10M_PHYSICAL
+- UPDATED:  50M_CULTURAL
+- UPDATED:  50M_PHYSICAL
+- UPDATED:  110M_CULTURAL
+- UPDATED:  110M_PHYSICAL
+- UPDATED:  ALL SHP
+- UPDATED:  SQLite
+- UPDATED:  GeoJSON
+- UPDATED:  GeoPackage
+
+NATURAL_EARTH_QUICK_START
+
+- UPDATED:  Natural Earth quick start kit v3 provides a QGIS3 config with project
+            variables that enable preferred and fallback labels for all map features
+            at zooms 0 thru zoom 8, with theme content compiled per zoom.
+            - project_language (eg: name_en) as that was confusing some people.
+
+HOUSEKEEPING
+
+- UPDATED:  NE_ADMIN_0_DETAILS - Spreadsheet tracks admin-0 countries and other levels.
+            Update localized names in 24 languages (adding Hebrew, Ukranian, and Urdu).
+
+TOOLS
+
+- UPDATED:	Scripts for polling Wikidata and Wikipedia for names localizations to allow
+			3 more languages (he, ud, uk). Added RegEx to strip junk from river, lake,
+			country, region, and populated place names.
+
+10M_CULTURAL
+
+- UPDATED:  ne_10m_admin-0 themes, including:
+			ne_10m_admin_0_sovereignty
+			ne_10m_admin_0_countries
+			ne_10m_admin_0_countries_lakes
+			ne_10m_admin_0_map_units
+			ne_10m_admin_0_map_subunits
+			ne_10m_admin_0_scale_rank
+			ne_10m_admin_0_scale_rank_minor_islands
+			ne_10m_admin_0_boundary_lines_land
+            ne_10m_admin_0_boundary_lines_disputed_areas
+			ne_10m_admin_0_disputed_areas
+			ne_10m_admin_0_disputed_areas_scale_rank_minor_islands
+			ne_10m_admin_0_label_points
+            - Support disputed boundary point-of-view. Adjusts some min_zoom to the
+              minimum for the claimants to have coherent boundaries.
+            - Add more localized names
+            - "Holy See" is misspelled in SOV0NAME
+              Fixes #261, thanks @ericfischer!
+- UPDATED:  ne_10m_admin-1 themes, including:
+			ne_10m_admin_1_states_provinces
+			ne_10m_admin_1_states_provinces_lakes
+			ne_10m_admin_1_states_provinces_scale_rank
+			ne_10m_admin_1_states_provinces_scale_rank_minor_islands
+			ne_10m_admin_1_states_provinces_lines
+			ne_10m_admin_1_label_points
+			ne_10m_admin_1_label_points_details
+            - Support disputed boundary point-of-view
+            - Add more localized names
+            - Update France admin-1 regions
+			  Fixes #288
+			- Part of Virginia Missing, admin_1_states_provinces_lakes
+			  Fixes #269, thanks @DylanMoriarty!
+			- Lost minor Russian island in Admin-1 layer
+			  Fixes #286, thanks @strezen!
+			- Langkawi mistakenly included in Perlis (should be Kedah), Malaysia
+			  Fixes #277, thanks @MichaelChirico!
+- UPDATED:  ne_10m_airports
+            - Add more localized names
+- UPDATED:  ne_10m_populated_places
+            - Add more localized names.
+            - Rename Capital City for Kazakhstan
+              Fixes #292, thanks @justinelliotmeyers!
+			- Burundi Capital City Update
+			  Fixes #291, thanks @justinelliotmeyers!
+			- Update Palau Capital City
+			  Fixes #295, thanks @justinelliotmeyers!
+			- Clean up name for Granada
+			  Fixes #294, thanks @justinelliotmeyers!
+			- Add Arta, the 4th largest city in Djibouti
+			  Fixes #296, thanks @justinelliotmeyers!
+- UPDATED:  ne_10m_populated_places_simple
+            - Same changes as ne_10m_populated_places.
+
+10M_PHYSICAL
+
+- UPDATED:  ne_10m_geographic_lines
+            - Add more localized names
+- UPDATED:  ne_10m_geography_marine_polys
+            - Add more localized names
+- UPDATED:  ne_10m_geography_regions_elevation_points
+            - Add more localized names
+- UPDATED:  ne_10m_geography_regions_points
+            - Add more localized names
+- UPDATED:  ne_10m_geography_regions_polys
+            - Add more localized names
+- UPDATED:  ne_10m_lakes
+            - Add more localized names
+- UPDATED:  ne_10m_lakes_europe
+            - Add more localized names
+- UPDATED:  ne_10m_lakes_historic
+            - Add more localized names
+- UPDATED:  ne_10m_lakes_north_america
+            - Add more localized names
+- UPDATED:  ne_10m_playas
+            - Add more localized names
+- UPDATED:  ne_10m_rivers_europe
+            - Add more localized names
+- UPDATED:  ne_10m_rivers_lake_centerlines
+            - Add more localized names
+- UPDATED:  ne_10m_rivers_lake_centerlines_scale_rank
+            - Add more localized names
+- UPDATED:  ne_10m_rivers_north_america
+            - Add more localized names
+
+50M_CULTURAL
+
+- UPDATED:  ne_50m_admin-0 related themes, including:
+			ne_50m_admin_0_sovereignty
+			ne_50m_admin_0_countries
+			ne_50m_admin_0_countries_lakes
+			ne_50m_admin_0_map_units
+			ne_50m_admin_0_map_subunits
+            - Support disputed boundary point-of-view
+            - Add more localized names
+- UPDATED:  ne_50m_admin_0_tiny_countries
+            - Add more localized names
+- UPDATED:  ne_50m_admin_0_breakaway_disputed_areas
+			ne_50m_admin_0_breakaway_disputed_areas_scale_rank
+            - Support disputed boundary point-of-view
+            - Add more localized names
+- UPDATED:  ne_50m_admin_1_states_provinces
+			ne_50m_admin_1_states_provinces_lakes
+            - Add more localized names
+- UPDATED:  ne_50m_populated_places
+            ne_50m_populated_places_simple
+            - Same changes as ne_10m_populated_places.
+- UPDATED:  ne_50m_airports
+            - Same changes as ne_10m_airports.
+
+50M_PHYSICAL
+
+- UPDATED:  ne_50m_geographic_lines
+            - Same changes as ne_10m_geographic_lines.
+- UPDATED:  ne_50m_geography_marine_polys
+            - Same changes as ne_10m_geography_marine_polys.
+- UPDATED:  ne_50m_geography_regions_elevation_points
+            - Same changes as ne_10m_geography_regions_elevation_points.
+- UPDATED:  ne_50m_geography_regions_points
+            - Same changes as ne_10m_geography_regions_points.
+- UPDATED:  ne_50m_geography_regions_polys
+            - Same changes as ne_10m_geography_regions_polys.
+- UPDATED:  ne_50m_lakes
+            - Add more localized names
+- UPDATED:  ne_50m_lakes_historic
+            - Add more localized names
+- UPDATED:  ne_50m_playas
+            - Add more localized names
+- UPDATED:  ne_50m_rivers_lake_centerlines
+            - Add more localized names
+- UPDATED:  ne_50m_rivers_lake_centerlines_scale_rank
+            - Add more localized names
+
+110M_CULTURAL
+
+- UPDATED:  ne_110m_admin-0 related themes, including:
+			ne_110m_admin_0_sovereignty
+			ne_110m_admin_0_countries
+			ne_110m_admin_0_countries_lakes
+			ne_110m_admin_0_map_units
+            - Support disputed boundary point-of-view
+            - Add more localized names
+- UPDATED:  ne_110m_admin-1 related themes, including:
+			ne_110m_admin_1_states_provinces
+			ne_110m_admin_1_states_provinces_lakes
+            - Support disputed boundary point-of-view
+            - Add more localized names
+- UPDATED:  ne_110m_populated_places
+            ne_110m_populated_places_simple
+            - Add more localized names
+
+110M_PHYSICAL
+
+- UPDATED:  ne_110m_geographic_lines
+            - Same changes as ne_10m_geographic_lines.
+- UPDATED:  ne_110m_geography_marine_polys
+            - Same changes as ne_10m_geography_marine_polys.
+- UPDATED:  ne_110m_geography_regions_elevation_points
+            - Same changes as ne_10m_geography_regions_elevation_points.
+- UPDATED:  ne_110m_geography_regions_points
+            - Same changes as ne_10m_geography_regions_points.
+- UPDATED:  ne_110m_geography_regions_polys
+            - Same changes as ne_10m_geography_regions_polys.
+- UPDATED:  ne_110m_lakes
+            - Add more localized names
+- UPDATED:  ne_110m_rivers_lake_centerlines
+            - Add more localized names
+
+
+
 2018-05-31: 4.1.1
 
 PACKAGES
@@ -32,7 +267,7 @@ GENERAL
 
 1) Expands the name localization added in v4.0 to 21 languages (up from 7) and several
    dozen themes expanding from populated places to include all admin-0, admin-1,
-   rivers, lakes, playas, geographic lines, physical labels, parks, airports, ports, and
+   rivers, lakes, playas, geographic lines, physical labels, parks, airports, and
    more. As part of this work a new unique and stable "ne_id" has been added for any
    feature with a name translation &/or a Wikidata ID concordance. The full list of
    languages is: name_ar*, name_bn*, name_de, name_en, name_es, name_fr, name_el*,
