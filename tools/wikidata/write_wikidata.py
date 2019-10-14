@@ -73,6 +73,11 @@ def isNotEmpty(s):
 # read csv data
 wddic = defaultdict(dict)
 wdredirects = defaultdict(dict)
+
+name_field_prefix = 'name_'
+languages = ['ar','bn','de','en','es','fr','el','he','hi','hu','id','it','ja','ko','nl','pl','pt','ru','sv','tr','uk','ur','vi','zh']
+new_properties = []
+
 with open(args.input_csv, newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
@@ -195,16 +200,41 @@ with open(args.output_csvlog, "w", encoding='utf-8') as f:
     writer.writerow(("wd_id", "status", "variable", "value_old", "value_new"))
 
     with fiona.open(args.input_shape, 'r', encoding='utf-8', driver="ESRI Shapefile") as source:
+
+        out_schema = source.schema
+
+        for locale in languages:
+            name_locale = name_field_prefix + locale
+            if args.input_lettercase != "lowercase":
+                name_locale = name_locale.upper()
+
+            if name_locale not in out_schema['properties']:
+                print("...NOTE.. adding locale to schema", name_locale)
+                out_schema['properties'][name_locale] = 'str'
+                new_properties.append(name_locale)
+
+        #print(out_schema)
+
         # **source.meta is a shortcut to get the crs, driver, and schema
+        #with fiona.open(args.output_shape, 'w', encoding='utf-8', **source.meta) as sink:
+        # But since we're overwriting the schema, we take the long way
         # keyword arguments from the source Collection.
-        with fiona.open(args.output_shape, 'w', encoding='utf-8', **source.meta) as sink:
+        with fiona.open(
+            args.output_shape, 'w',
+            driver=source.driver,
+            crs=source.crs,
+            encoding='utf-8',
+            schema=out_schema,
+            ) as sink:
+
+            #print(sink.schema)
 
             warn_no_dbf_field_for_new_property = 1
-            new_properties = {}
 
             stat_equal = 0
             stat_empty = 0
             stat_new = 0
+            stat_new_value_new_lang = 0
             stat_del = 0
             stat_mod = 0
 
@@ -217,6 +247,9 @@ with open(args.output_csvlog, "w", encoding='utf-8') as f:
             for f in source:
 
                 try:
+                    # get in format at least
+                    for new_prop in new_properties:
+                        f['properties'][new_prop] = ''
 
                     if args.input_lettercase == "lowercase":
                         qid = f['properties']['wikidataid']
@@ -258,14 +291,17 @@ with open(args.output_csvlog, "w", encoding='utf-8') as f:
                                 else:
                                     wddic[qid][updatefield] = wddic[qid][updatefield].strip()
 
-
                                 if updatefield in f['properties']:
 
                                     if f['properties'][updatefield] != wddic[qid][updatefield]:
 
                                         if f['properties'][updatefield] == '':
-                                            status = 'NEWvalue'
-                                            stat_new += 1
+                                            if updatefield in new_properties:
+                                                status = 'NEWvalue_NEW_LANG'
+                                                stat_new_value_new_lang += 1
+                                            else:
+                                                status = 'NEWvalue'
+                                                stat_new += 1
                                         elif  wddic[qid][updatefield] == '':
                                             status = 'DELvalue'
                                             stat_del += 1
@@ -287,14 +323,20 @@ with open(args.output_csvlog, "w", encoding='utf-8') as f:
                                         warn_no_dbf_field_for_new_property = 0
                                         #sys.exit(1)
 
+                                    status = 'NEWvalue_NEW_LANG'
+                                    stat_new_value_new_lang += 1
 
+                                    writer.writerow((qid, status, updatefield, '', wddic[qid][updatefield]))
+                                    f['properties'][updatefield] = wddic[qid][updatefield]
+                                    #f['properties'].update(updatefield=wddic[qid][updatefield])
+
+                                    #print(f['properties'])
 
                         else:
-                            print("WARNIMG: Notfound wikidataid - please check :", qid)
+                            print("WARNING: Not found wikidataid - please check :", qid)
                             stat_wikidataid_notfound += 1
 
                     else:
-
                         if qid == '':
                             stat_wikidataid_null += 1
                         else:
@@ -315,6 +357,7 @@ with open(args.output_csvlog, "w", encoding='utf-8') as f:
                 sumWriter.writerow(("shapefilename", "var", "value"))
 
                 sumWriter.writerow((args.input_shape, 'New_name', stat_new))
+                sumWriter.writerow((args.input_shape, 'New_name_new_language', stat_new_value_new_lang))
                 sumWriter.writerow((args.input_shape, 'Deleted_name', stat_del))
                 sumWriter.writerow((args.input_shape, 'Modified_name', stat_mod))
                 sumWriter.writerow((args.input_shape, 'Empty_name', stat_empty))
