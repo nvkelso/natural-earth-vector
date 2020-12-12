@@ -1,10 +1,10 @@
-2019-10-08: 5.0.0
+2019-11-11: 5.0.0
 
 - Many thanks to @zerebubuth for help with disputed boundaries prototyping in Tilezen.
 
 GENERAL
 
-1)	Adds support for alternate points of view in admin 1 related themes with fclass_*
+1)	Adds support for alternate points of view in admin-0 related themes with fclass_*
 	properties (like fclass_iso). The following country and international organizations
 	worldviews are supported: Argentina (ar), Bangladesh (bd), Brazil (br), China (cn),
 	Egypt (eg), France (fr), Germany (de), Greece (gr), India (in), Indonesia (id),
@@ -55,12 +55,13 @@ HOUSEKEEPING
 
 - UPDATED:  NE_ADMIN_0_DETAILS - Spreadsheet tracks admin-0 countries and other levels.
             Update localized names in 24 languages (adding Hebrew, Ukranian, and Urdu).
+            Add fclass_* for alternate points of view.
 
 TOOLS
 
 - UPDATED:	Scripts for polling Wikidata and Wikipedia for names localizations to allow
-			3 more languages (he, ud, uk). Added RegEx to strip junk from river, lake,
-			country, region, and populated place names.
+			3 more languages (he, ud, uk) and updated API access. Added RegEx to strip
+			junk from river, lake, country, region, and populated place names.
 
 10M_CULTURAL
 
@@ -77,8 +78,9 @@ TOOLS
 			ne_10m_admin_0_disputed_areas
 			ne_10m_admin_0_disputed_areas_scale_rank_minor_islands
 			ne_10m_admin_0_label_points
-            - Support disputed boundary point-of-view. Adjusts some min_zoom to the
-              minimum for the claimants to have coherent boundaries.
+            - Support disputed boundary point-of-view by adding fclass_* properties.
+            - Adjusts some min_zoom to the minimum for the claimants to have
+              coherent boundaries.
             - Add more localized names
             - "Holy See" is misspelled in SOV0NAME
               Fixes #261, thanks @ericfischer!
