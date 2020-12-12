@@ -428,10 +428,8 @@ build_a1_ne_10m_admin_0_countries_usa: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_US,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_US' \
 		-o 10m_cultural/ne_10m_admin_0_countries_usa.shp \
 
 build_a1_ne_10m_admin_0_countries_ukr: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -445,10 +443,8 @@ build_a1_ne_10m_admin_0_countries_ukr: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_UA,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_UA' \
 		-o 10m_cultural/ne_10m_admin_0_countries_ukr.shp \
 
 build_a1_ne_10m_admin_0_countries_fra: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -462,10 +458,8 @@ build_a1_ne_10m_admin_0_countries_fra: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_FR,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_FR' \
 		-o 10m_cultural/ne_10m_admin_0_countries_fra.shp \
 
 build_a1_ne_10m_admin_0_countries_rus: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -478,10 +472,8 @@ build_a1_ne_10m_admin_0_countries_rus: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-each 'featurecla="Admin-0 country"' \
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_RU,ADM0_A3 fields=* \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_RU' \
 		-o 10m_cultural/ne_10m_admin_0_countries_rus.shp \
 
 build_a1_ne_10m_admin_0_countries_esp: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -495,10 +487,8 @@ build_a1_ne_10m_admin_0_countries_esp: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_ES,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_ES' \
 		-o 10m_cultural/ne_10m_admin_0_countries_esp.shp \
 
 build_a1_ne_10m_admin_0_countries_chn: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -512,10 +502,8 @@ build_a1_ne_10m_admin_0_countries_chn: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_CN,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_CN' \
 		-o 10m_cultural/ne_10m_admin_0_countries_chn.shp \
 
 build_a1_ne_10m_admin_0_countries_twn: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -529,10 +517,8 @@ build_a1_ne_10m_admin_0_countries_twn: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_TW,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_TW' \
 		-o 10m_cultural/ne_10m_admin_0_countries_twn.shp \
 
 build_a1_ne_10m_admin_0_countries_ind: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -546,10 +532,8 @@ build_a1_ne_10m_admin_0_countries_ind: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_IN,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_IN' \
 		-o 10m_cultural/ne_10m_admin_0_countries_ind.shp \
 
 build_a1_ne_10m_admin_0_countries_nep: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -563,10 +547,8 @@ build_a1_ne_10m_admin_0_countries_nep: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_NP,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_NP' \
 		-o 10m_cultural/ne_10m_admin_0_countries_nep.shp \
 
 build_a1_ne_10m_admin_0_countries_pak: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -580,10 +562,8 @@ build_a1_ne_10m_admin_0_countries_pak: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_PK,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_PK' \
 		-o 10m_cultural/ne_10m_admin_0_countries_pak.shp \
 
 build_a1_ne_10m_admin_0_countries_deu: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -597,10 +577,8 @@ build_a1_ne_10m_admin_0_countries_deu: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_DE,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_DE' \
 		-o 10m_cultural/ne_10m_admin_0_countries_deu.shp \
 
 build_a1_ne_10m_admin_0_countries_gbr: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -614,10 +592,8 @@ build_a1_ne_10m_admin_0_countries_gbr: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_GB,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_GB' \
 		-o 10m_cultural/ne_10m_admin_0_countries_gbr.shp \
 
 build_a1_ne_10m_admin_0_countries_bra: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -631,10 +607,8 @@ build_a1_ne_10m_admin_0_countries_bra: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_BR,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_BR' \
 		-o 10m_cultural/ne_10m_admin_0_countries_bra.shp \
 
 build_a1_ne_10m_admin_0_countries_isr: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -648,10 +622,8 @@ build_a1_ne_10m_admin_0_countries_isr: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_IL,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_IL' \
 		-o 10m_cultural/ne_10m_admin_0_countries_isr.shp \
 
 build_a1_ne_10m_admin_0_countries_pse: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -663,12 +635,9 @@ build_a1_ne_10m_admin_0_countries_pse: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-filter 'scalerank <= 6' + \
 		-each 'featurecla="Admin-0 country"' \
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_PS,ADM0_A3 fields=* \
-		-filter 'ADM0_A3 !== null' + \
-		-each 'delete sr_adm0_a3' \
 		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_PS' \
 		-o 10m_cultural/ne_10m_admin_0_countries_pse.shp \
 
 build_a1_ne_10m_admin_0_countries_sau: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -682,10 +651,8 @@ build_a1_ne_10m_admin_0_countries_sau: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_SA,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_SA' \
 		-o 10m_cultural/ne_10m_admin_0_countries_sau.shp \
 
 build_a1_ne_10m_admin_0_countries_egy: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -699,10 +666,8 @@ build_a1_ne_10m_admin_0_countries_egy: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_EG,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_EG' \
 		-o 10m_cultural/ne_10m_admin_0_countries_egy.shp \
 
 build_a1_ne_10m_admin_0_countries_mar: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -716,10 +681,8 @@ build_a1_ne_10m_admin_0_countries_mar: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_MA,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_MA' \
 		-o 10m_cultural/ne_10m_admin_0_countries_mar.shp \
 
 build_a1_ne_10m_admin_0_countries_prt: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -733,10 +696,8 @@ build_a1_ne_10m_admin_0_countries_prt: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_PT,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_PT' \
 		-o 10m_cultural/ne_10m_admin_0_countries_prt.shp \
 
 build_a1_ne_10m_admin_0_countries_arg: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -750,10 +711,8 @@ build_a1_ne_10m_admin_0_countries_arg: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_AR,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_AR' \
 		-o 10m_cultural/ne_10m_admin_0_countries_arg.shp \
 
 build_a1_ne_10m_admin_0_countries_jpn: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -767,10 +726,8 @@ build_a1_ne_10m_admin_0_countries_jpn: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_JP,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_JP' \
 		-o 10m_cultural/ne_10m_admin_0_countries_jpn.shp \
 
 build_a1_ne_10m_admin_0_countries_kor: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -784,10 +741,8 @@ build_a1_ne_10m_admin_0_countries_kor: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_KO,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_KO' \
 		-o 10m_cultural/ne_10m_admin_0_countries_kor.shp \
 
 build_a1_ne_10m_admin_0_countries_vnm: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -801,10 +756,8 @@ build_a1_ne_10m_admin_0_countries_vnm: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_VN,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_VN' \
 		-o 10m_cultural/ne_10m_admin_0_countries_vnm.shp \
 
 build_a1_ne_10m_admin_0_countries_tur: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -818,10 +771,8 @@ build_a1_ne_10m_admin_0_countries_tur: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_TR,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_TR' \
 		-o 10m_cultural/ne_10m_admin_0_countries_tur.shp \
 
 build_a1_ne_10m_admin_0_countries_idn: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -835,10 +786,8 @@ build_a1_ne_10m_admin_0_countries_idn: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_ID,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_ID' \
 		-o 10m_cultural/ne_10m_admin_0_countries_idn.shp \
 
 build_a1_ne_10m_admin_0_countries_pol: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -852,10 +801,8 @@ build_a1_ne_10m_admin_0_countries_pol: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_PL,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_PL' \
 		-o 10m_cultural/ne_10m_admin_0_countries_pol.shp \
 
 build_a1_ne_10m_admin_0_countries_grc: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -869,10 +816,8 @@ build_a1_ne_10m_admin_0_countries_grc: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_GR,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_GR' \
 		-o 10m_cultural/ne_10m_admin_0_countries_grc.shp \
 
 build_a1_ne_10m_admin_0_countries_grc: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -886,10 +831,8 @@ build_a1_ne_10m_admin_0_countries_grc: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_GR,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_GR' \
 		-o 10m_cultural/ne_10m_admin_0_countries_grc.shp \
 
 build_a1_ne_10m_admin_0_countries_ita: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -903,10 +846,8 @@ build_a1_ne_10m_admin_0_countries_ita: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_IT,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_IT' \
 		-o 10m_cultural/ne_10m_admin_0_countries_ita.shp \
 
 build_a1_ne_10m_admin_0_countries_nld: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -920,10 +861,8 @@ build_a1_ne_10m_admin_0_countries_nld: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_NL,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_NL' \
 		-o 10m_cultural/ne_10m_admin_0_countries_nld.shp \
 
 build_a1_ne_10m_admin_0_countries_swe: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -937,10 +876,8 @@ build_a1_ne_10m_admin_0_countries_swe: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_SE,ADM0_A3 fields=* \
 		-filter 'ADM0_A3 !== null' + \
 		-each 'delete sr_adm0_a3' \
-		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_SE' \
 		-o 10m_cultural/ne_10m_admin_0_countries_swe.shp \
 
 build_a1_ne_10m_admin_0_countries_bdg: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -951,13 +888,11 @@ build_a1_ne_10m_admin_0_countries_bdg: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-filter 'scalerank !== null' + \
 		-filter 'scalerank <= 6' + \
 		-each 'featurecla="Admin-0 country"' \
-		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_BD,ADM0_A3 fields=* \
+		-join housekeeping/ne_admin_0_details_level_2_countries.dbf encoding=utf8 keys=ADM0_A3_BD,ADM0_A3 fields=* unjoined \
 		-filter 'ADM0_A3 !== null' + \
-		-each 'delete sr_adm0_a3' \
 		-each 'delete sr_adm0_a3' \
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
-		-each 'delete ADM0_A3_BD' \
 		-o 10m_cultural/ne_10m_admin_0_countries_bdg.shp \
 
 
