@@ -29,9 +29,12 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   #411 Jinxi -> Huludao
   rows_update(by = "ne_id", tibble(ne_id = 1159149137,
                                    wikidataid = 'Q75379')) %>%
-  #408 Bose -> Baise
+  #406 Bose -> Baise
   rows_update(by = "ne_id", tibble(ne_id = 1159149783,
-                                   wikidataid = 'Q571949'))
+                                   wikidataid = 'Q571949')) %>%
+  #339 Gar -> Shiquanhe
+  rows_update(by = "ne_id", tibble(ne_id = 1159140703,
+                                   wikidataid = 'Q2279283'))
 
 diff <- anti_join(ne_10m_populated_places_original_metadata, 
                   ne_10m_populated_places_modified_metadata)
