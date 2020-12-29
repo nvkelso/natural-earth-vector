@@ -28,7 +28,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    wikidataid = 'Q139229')) %>%
   #411 Jinxi -> Huludao
   rows_update(by = "ne_id", tibble(ne_id = 1159149137,
-                                   wikidataid = 'Q75379'))
+                                   wikidataid = 'Q75379')) %>%
+  #408 Bose -> Baise
+  rows_update(by = "ne_id", tibble(ne_id = 1159149783,
+                                   wikidataid = 'Q571949'))
 
 diff <- anti_join(ne_10m_populated_places_original_metadata, 
                   ne_10m_populated_places_modified_metadata)
