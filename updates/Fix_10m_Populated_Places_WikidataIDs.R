@@ -23,6 +23,9 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   #449 Sakarya
   rows_update(by = "ne_id", tibble(ne_id = 1159113425, 
                                    wikidataid = 'Q3945164')) %>%
+  #419 Saguenay
+  rows_update(by = "ne_id", tibble(ne_id = 1159148923,
+                                   wikidataid = 'Q139229')) %>%
   #411 Jinxi -> Huludao
   rows_update(by = "ne_id", tibble(ne_id = 1159149137,
                                    wikidataid = 'Q75379'))
