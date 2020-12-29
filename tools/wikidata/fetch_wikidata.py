@@ -83,6 +83,7 @@ def fetchwikidata(a_wid):
             ?name_el
             ?name_en
             ?name_es
+            ?name_fa
             ?name_fr
             ?name_he
             ?name_hi
@@ -118,6 +119,7 @@ def fetchwikidata(a_wid):
             OPTIONAL{?e rdfs:label ?name_el FILTER((LANG(?name_el))="el").}
             OPTIONAL{?e rdfs:label ?name_en FILTER((LANG(?name_en))="en").}
             OPTIONAL{?e rdfs:label ?name_es FILTER((LANG(?name_es))="es").}
+            OPTIONAL{?e rdfs:label ?name_fa FILTER((LANG(?name_fr))="fa").}
             OPTIONAL{?e rdfs:label ?name_fr FILTER((LANG(?name_fr))="fr").}
             OPTIONAL{?e rdfs:label ?name_he FILTER((LANG(?name_he))="he").}
             OPTIONAL{?e rdfs:label ?name_hi FILTER((LANG(?name_hi))="hi").}
@@ -217,6 +219,7 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
         "name_el",
         "name_en",
         "name_es",
+        "name_fa",
         "name_fr",
         "name_he",
         "name_hi",
@@ -282,6 +285,7 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                     name_el = get_sparql_label(result, 'name_el')
                     name_en = get_sparql_label(result, 'name_en')
                     name_es = get_sparql_label(result, 'name_es')
+                    name_fr = get_sparql_label(result, 'name_fa')
                     name_fr = get_sparql_label(result, 'name_fr')
                     name_he = get_sparql_label(result, 'name_he')
                     name_hi = get_sparql_label(result, 'name_hi')
@@ -312,6 +316,7 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                         name_el,
                         name_en,
                         name_es,
+                        name_fa,
                         name_fr,
                         name_he,
                         name_hi,
