@@ -60,7 +60,18 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    wikidataid = 'Q2279283')) %>%
   #334 Bol'sheretsk -> Ust-Bolsheretsk 
   rows_update(by = "ne_id", tibble(ne_id = 1159139297,
-                                   wikidataid = 'Q2502620'))
+                                   wikidataid = 'Q2502620')) %>%
+  #330 Add Belushya Guba, Russia
+  rows_insert(by = "ne_id", tibble(ne_id = 1159151751,
+                                   wikidataid = 'Q26324',
+                                   FEATURECLA = 'Populated place',
+                                   SOV0NAME = 'Russia',
+                                   ADM0_A3 = 'RUS',
+                                   ADM1NAME = 'Arkhangelsk',
+                                   ISO_A2 = 'RU',
+                                   TIMEZONE = 'Europe/Moscow',
+                                   LATITUDE = 71.545556,
+                                   LONGITUDE = 52.320278))
 
 #write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
 
