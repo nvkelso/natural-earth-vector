@@ -43,6 +43,8 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   #406 Bose -> Baise
   rows_update(by = "ne_id", tibble(ne_id = 1159149783,
                                    wikidataid = 'Q571949')) %>%
+  #405 Remove North Shore, NZ
+  rows_delete(by = "ne_id", tibble(ne_id = 1159149783)) %>%
   #339 Gar -> Shiquanhe
   rows_update(by = "ne_id", tibble(ne_id = 1159140703,
                                    wikidataid = 'Q2279283'))
@@ -51,6 +53,7 @@ diff <- anti_join(ne_10m_populated_places_original_metadata,
                   ne_10m_populated_places_modified_metadata)
 
 write.csv(diff, "Fix_10m_Populated_Places_WikidataIDs.csv", na = "")
+write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
 
 # Requires a bit more tweaking to ensure DBF encoding and data types aren't messed up in the transformation.
 #ne_10m_populated_places_modified <- st_set_geometry(ne_10m_populated_places_modified_metadata, 
