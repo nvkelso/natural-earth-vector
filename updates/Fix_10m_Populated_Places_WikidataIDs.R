@@ -87,7 +87,7 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    LATITUDE = 59.4166459,
                                    LONGITUDE = 10.4838599))
 
-#write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
+write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
 
 # Requires a bit more tweaking to ensure DBF encoding and data types aren't messed up in the transformation.
 #ne_10m_populated_places_modified <- st_set_geometry(ne_10m_populated_places_modified_metadata, 
