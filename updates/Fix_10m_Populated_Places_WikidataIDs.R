@@ -47,6 +47,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   rows_delete(by = "ne_id", tibble(ne_id = 1159149783)) %>%
   #373 Remove Vila Velha (Amapá, Brazil)
   rows_delete(by = "ne_id", tibble(ne_id = 1159148899)) %>%
+  #365 Remove duplicate Bandar Lampung (Sumatra, Indonesia)
+  rows_delete(by = "ne_id", tibble(ne_id = 1159139819)) %>%
+  rows_update(by = "ne_id", tibble(ne_id = 1159149817,
+                                   FEATURECLA = 'Admin-1 capital')) %>%
   #339 Gar -> Shiquanhe
   rows_update(by = "ne_id", tibble(ne_id = 1159140703,
                                    wikidataid = 'Q2279283'))
