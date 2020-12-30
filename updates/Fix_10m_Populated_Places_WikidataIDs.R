@@ -74,7 +74,18 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    LONGITUDE = 52.320278)) %>%
   #323 El Cayo -> San Ignacio 
   rows_update(by = "ne_id", tibble(ne_id = 1159122697,
-                                   wikidataid = 'Q724815'))
+                                   wikidataid = 'Q724815')) %>%
+  #318 Add Horten, Norway
+  rows_insert(by = "ne_id", tibble(ne_id = 1159151752,
+                                   wikidataid = 'Q109048',
+                                   FEATURECLA = 'Populated place',
+                                   SOV0NAME = 'Norway',
+                                   ADM0_A3 = 'NOR',
+                                   ADM1NAME = 'Vestfold',
+                                   ISO_A2 = 'NO',
+                                   TIMEZONE = 'Europe/Oslo',
+                                   LATITUDE = 59.4166459,
+                                   LONGITUDE = 10.4838599))
 
 #write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
 
