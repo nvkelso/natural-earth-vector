@@ -71,7 +71,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    ISO_A2 = 'RU',
                                    TIMEZONE = 'Europe/Moscow',
                                    LATITUDE = 71.545556,
-                                   LONGITUDE = 52.320278))
+                                   LONGITUDE = 52.320278)) %>%
+  #323 El Cayo -> San Ignacio 
+  rows_update(by = "ne_id", tibble(ne_id = 1159122697,
+                                   wikidataid = 'Q724815'))
 
 #write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
 
