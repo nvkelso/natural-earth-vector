@@ -127,7 +127,12 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    ISO_A2 = 'NO',
                                    TIMEZONE = 'Europe/Oslo',
                                    LATITUDE = 59.4166459,
-                                   LONGITUDE = 10.4838599))
+                                   LONGITUDE = 10.4838599)) %>%
+  #310 Chinhoyi should be Admin-1 capital, Kariba should not
+  rows_update(by = "ne_id", tibble(ne_id = 1159134845,
+                                   FEATURECLA = 'Admin-1 capital')) %>%
+  rows_update(by = "ne_id", tibble(ne_id = 1159134851,
+                                   FEATURECLA = 'Populated place'))
 
 write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
 
