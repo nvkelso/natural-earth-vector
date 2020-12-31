@@ -90,6 +90,9 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   #364 Johannesburg should be Admin-1 capital
   rows_update(by = "ne_id", tibble(ne_id = 1159151515,
                                    FEATURECLA = 'Admin-1 capital')) %>%
+  #362 Xian should be Admin-1 capital
+  rows_update(by = "ne_id", tibble(ne_id = 1159151363,
+                                   FEATURECLA = 'Admin-1 capital')) %>%
   #358 Remove Natal in Amazonas, Brazil
   rows_delete(by = "ne_id", tibble(ne_id = 1159148743)) %>%
   #356 Remove Noginsk in the Moscow region
