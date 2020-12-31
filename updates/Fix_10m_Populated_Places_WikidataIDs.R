@@ -71,6 +71,12 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    FEATURECLA = 'Admin-1 capital')) %>%
   #373 Remove Vila Velha (Amapá, Brazil)
   rows_delete(by = "ne_id", tibble(ne_id = 1159148899)) %>%
+  #371 Macau should be Admin-1 capital
+  rows_update(by = "ne_id", tibble(ne_id = 1159149085,
+                                   FEATURECLA = 'Admin-1 capital')) %>%
+  #371 Hong Kong should be Admin-1 capital
+  rows_update(by = "ne_id", tibble(ne_id = 1159151629,
+                                   FEATURECLA = 'Admin-1 capital')) %>%
   #365 Remove duplicate Bandar Lampung (Sumatra, Indonesia)
   rows_delete(by = "ne_id", tibble(ne_id = 1159139819)) %>%
   rows_update(by = "ne_id", tibble(ne_id = 1159149817,
