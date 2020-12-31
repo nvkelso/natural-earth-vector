@@ -54,6 +54,9 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   #387 Tomakomai should be Populated
   rows_update(by = "ne_id", tibble(ne_id = 1159141281,
                                    FEATURECLA = 'Populated place')) %>%
+  #385 Lagos should be Admin-1 capital
+  rows_update(by = "ne_id", tibble(ne_id = 1159151591,
+                                   FEATURECLA = 'Admin-1 capital')) %>%
   #373 Remove Vila Velha (Amapá, Brazil)
   rows_delete(by = "ne_id", tibble(ne_id = 1159148899)) %>%
   #365 Remove duplicate Bandar Lampung (Sumatra, Indonesia)
