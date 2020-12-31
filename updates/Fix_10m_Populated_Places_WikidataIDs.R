@@ -63,6 +63,9 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   #383 Shijiazhuang should be Admin-1 capital
   rows_update(by = "ne_id", tibble(ne_id = 1159149907,
                                    FEATURECLA = 'Admin-1 capital')) %>%
+  #381 Yangon should be Admin-1 capital
+  rows_update(by = "ne_id", tibble(ne_id = 1159151477,
+                                   FEATURECLA = 'Admin-1 capital')) %>%
   #373 Remove Vila Velha (Amapá, Brazil)
   rows_delete(by = "ne_id", tibble(ne_id = 1159148899)) %>%
   #365 Remove duplicate Bandar Lampung (Sumatra, Indonesia)
