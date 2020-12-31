@@ -132,7 +132,42 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   rows_update(by = "ne_id", tibble(ne_id = 1159134845,
                                    FEATURECLA = 'Admin-1 capital')) %>%
   rows_update(by = "ne_id", tibble(ne_id = 1159134851,
-                                   FEATURECLA = 'Populated place'))
+                                   FEATURECLA = 'Populated place')) %>%
+  #293 Add Chad Admin-1 capitals: Fada, Pala, Massenya, Goz Beïda, Koumra
+  rows_update(by = "ne_id", tibble(ne_id = 1159148415,
+                                   FEATURECLA = 'Admin-1 capital')) %>%
+  rows_update(by = "ne_id", tibble(ne_id = 1159140345,
+                                   FEATURECLA = 'Admin-1 capital')) %>%
+  rows_insert(by = "ne_id", tibble(ne_id = 1159151753,
+                                   wikidataid = 'Q764968',
+                                   FEATURECLA = 'Admin-1 capital',
+                                   SOV0NAME = 'Chad',
+                                   ADM0_A3 = 'TCD',
+                                   ADM1NAME = 'Baguirmi',
+                                   ISO_A2 = 'TD',
+                                   TIMEZONE = 'Africa/Ndjamena',
+                                   LATITUDE = 11.398333,
+                                   LONGITUDE = 16.1675)) %>%
+  rows_insert(by = "ne_id", tibble(ne_id = 1159151754,
+                                   wikidataid = 'Q3112862',
+                                   FEATURECLA = 'Admin-1 capital',
+                                   SOV0NAME = 'Chad',
+                                   ADM0_A3 = 'TCD',
+                                   ADM1NAME = 'Sila',
+                                   ISO_A2 = 'TD',
+                                   TIMEZONE = 'Africa/Ndjamena',
+                                   LATITUDE = 12.223611,
+                                   LONGITUDE = 21.414444)) %>%
+  rows_insert(by = "ne_id", tibble(ne_id = 1159151755,
+                                   wikidataid = 'Q1070175',
+                                   FEATURECLA = 'Admin-1 capital',
+                                   SOV0NAME = 'Chad',
+                                   ADM0_A3 = 'TCD',
+                                   ADM1NAME = 'Mandoul',
+                                   ISO_A2 = 'TD',
+                                   TIMEZONE = 'Africa/Ndjamena',
+                                   LATITUDE = 8.9,
+                                   LONGITUDE = 17.55))
 
 write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
 
