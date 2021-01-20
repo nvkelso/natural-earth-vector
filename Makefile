@@ -102,6 +102,7 @@ zips/housekeeping/ne_themes_versions.zip:
 
 zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.zip \
+	zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas_chn.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_land.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_map_units.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.zip \
@@ -362,6 +363,7 @@ build_a8_ne_10m_physical_land: intermediate/ne_10m_physical_building_blocks.shp
 build_a1_ne_10m_admin_0_scale_rank: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
 	10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp \
 	10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp \
+	10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas_chn.shp \
 	10m_cultural/ne_10m_admin_0_seams.shp \
 	10m_physical/ne_10m_coastline.shp \
 	10m_physical/ne_10m_minor_islands_coastline.shp \
@@ -370,6 +372,7 @@ build_a1_ne_10m_admin_0_scale_rank: 10m_cultural/ne_10m_admin_0_boundary_lines_l
 		10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
 		10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp \
 		10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp \
+		10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas_chn.shp \
 		10m_cultural/ne_10m_admin_0_seams.shp \
 		10m_physical/ne_10m_coastline.shp \
 		10m_physical/ne_10m_minor_islands_coastline.shp \
@@ -1285,6 +1288,14 @@ zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.zip: 10m_cultural
 	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
 		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
 
+zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas_chn.zip: 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas_chn.shp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas_chn.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-breakaway-disputed-areas/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_boundary_lines_disputed_areas_chn$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
 zips/10m_cultural/ne_10m_admin_0_disputed_areas.zip: 10m_cultural/ne_10m_admin_0_disputed_areas.shp 10m_cultural/ne_10m_admin_0_disputed_areas.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-breakaway-disputed-areas/ > $(subst zips/, ,$(basename $@)).README.html
@@ -1523,12 +1534,13 @@ zips/10m_cultural/ne_10m_cultural_building_blocks_all.zip: \
 	zips/10m_cultural/ne_10m_admin_1_label_points.zip \
 	zips/10m_cultural/ne_10m_admin_1_seams.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.zip \
+	zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas_chn.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_land.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_map_units.zip \
 	zips/10m_physical/ne_10m_coastline.zip \
 	zips/10m_physical/ne_10m_minor_islands_coastline.zip
 
-	zip -j -r $@ 10m_cultural/ne_10m_admin_0_label_points.* 10m_cultural/ne_10m_admin_0_seams.* 10m_cultural/ne_10m_admin_1_label_points.* 10m_cultural/ne_10m_admin_1_seams.* 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.* 10m_cultural/ne_10m_admin_0_boundary_lines_land.* 10m_cultural/ne_10m_admin_0_boundary_lines_map_units.* 10m_physical/ne_10m_coastline.* 10m_physical/ne_10m_minor_islands_coastline.*
+	zip -j -r $@ 10m_cultural/ne_10m_admin_0_label_points.* 10m_cultural/ne_10m_admin_0_seams.* 10m_cultural/ne_10m_admin_1_label_points.* 10m_cultural/ne_10m_admin_1_seams.* 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.* 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas_chn.* 10m_cultural/ne_10m_admin_0_boundary_lines_land.* 10m_cultural/ne_10m_admin_0_boundary_lines_map_units.* 10m_physical/ne_10m_coastline.* 10m_physical/ne_10m_minor_islands_coastline.*
 	cp $@ archive/ne_10m_cultural_building_blocks_all$(VERSION_PREFIXED).zip
 
 
@@ -2661,6 +2673,7 @@ zips/110m_physical/ne_110m_wgs84_bounding_box.zip: 110m_physical/ne_110m_graticu
 # copy the master assets into position for 10m_cultural:
 packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
 	10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.shp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.dbf \
+	10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas_chn.shp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas_chn.dbf \
 	10m_cultural/ne_10m_admin_0_boundary_lines_land.shp 10m_cultural/ne_10m_admin_0_boundary_lines_land.dbf \
 	10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.shp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.dbf \
 	10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp 10m_cultural/ne_10m_admin_0_boundary_lines_map_units.dbf \
@@ -2682,6 +2695,7 @@ packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
 	mkdir -p packages/Natural_Earth_quick_start/10m_cultural
 
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas_chn.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_land.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_map_units.* packages/Natural_Earth_quick_start/10m_cultural/
