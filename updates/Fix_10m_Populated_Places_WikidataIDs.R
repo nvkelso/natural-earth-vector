@@ -164,7 +164,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    RANK_MIN = 3)) %>%
   #323 El Cayo -> San Ignacio 
   rows_update(by = "ne_id", tibble(ne_id = 1159122697,
-                                   wikidataid = 'Q724815')) %>%
+                                   wikidataid = 'Q724815',
+                                   NAME = "San Ignacio",
+                                   NAMEALT = "El Cayo",
+                                   NAMEASCII = "San Ignacio")) %>%
   #318 Add Horten, Norway
   rows_insert(by = "ne_id", tibble(ne_id = 1159151752,
                                    wikidataid = 'Q109048',
