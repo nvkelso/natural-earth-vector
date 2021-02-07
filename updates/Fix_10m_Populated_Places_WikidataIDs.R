@@ -108,9 +108,6 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    RANK_MIN = 4,
                                    RANK_MAX = 4,
                                    min_zoom = 7.0)) %>%
-  #371 Hong Kong should be Admin-1 capital
-  rows_update(by = "ne_id", tibble(ne_id = 1159151629,
-                                   FEATURECLA = 'Admin-1 capital')) %>%
   #368 Patra should be Admin-1 capital
   rows_update(by = "ne_id", tibble(ne_id = 1159147263,
                                    FEATURECLA = 'Admin-1 capital')) %>%
