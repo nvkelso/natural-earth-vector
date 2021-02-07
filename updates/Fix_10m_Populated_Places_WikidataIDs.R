@@ -40,7 +40,12 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    RANK_MAX = 9)) %>%
   #411 Jinxi -> Huludao
   rows_update(by = "ne_id", tibble(ne_id = 1159149137,
-                                   wikidataid = 'Q75379')) %>%
+                                   wikidataid = 'Q75379',
+                                   NAME = "Huludao",
+                                   NAMEALT = "Jinxi",
+                                   NAMEASCII = "Huludao"
+                                   POP_MAX = 724800,
+                                   RANK_MAX = 11)) %>%
   #407 Add Nnewi, Nigeria
   rows_insert(by = "ne_id", tibble(ne_id = 1159151750,
                                    wikidataid = 'Q2750772',
