@@ -67,6 +67,7 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAMEASCII = "Baise")) %>%
   #405 Remove North Shore, NZ
   rows_delete(by = "ne_id", tibble(ne_id = 1159149783)) %>%
+  
   #389 Dar es Salaam should be Admin-1 capital
   rows_update(by = "ne_id", tibble(ne_id = 1159151305,
                                    FEATURECLA = 'Admin-1 capital')) %>%
