@@ -73,9 +73,9 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    FEATURECLA = 'Admin-0 capital alt')) %>%
   rows_update(by = "ne_id", tibble(ne_id = 1159149731,
                                    FEATURECLA = 'Admin-0 capital')) %>%
-  #388 Kyoto should be Admin-1 capital
+  #388 Kyoto should be Admin-0 capital alt
   rows_update(by = "ne_id", tibble(ne_id = 1159149967,
-                                   FEATURECLA = 'Admin-1 capital')) %>%
+                                   FEATURECLA = 'Admin-0 capital alt')) %>%
   #387 Tomakomai should be Populated
   rows_update(by = "ne_id", tibble(ne_id = 1159141281,
                                    FEATURECLA = 'Populated place')) %>%
