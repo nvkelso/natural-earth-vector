@@ -134,7 +134,11 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    RANK_MIN = 0)) %>%
   #339 Gar -> Shiquanhe
   rows_update(by = "ne_id", tibble(ne_id = 1159140703,
-                                   wikidataid = 'Q2279283')) %>%
+                                   wikidataid = 'Q2279283',
+                                   NAME = "Shiquanhe",
+                                   NAMEPAR = "Gar",
+                                   NAMEALT = "Ger, Sênggêkanbab, Sênggêzangbo, Sengge Zangbo, Senge Zangbo, Senge Zangbu, Sengghe Tsangpo",
+                                   NAMEASCII = "Shiquanhe")) %>%
   #334 Bol'sheretsk -> Ust-Bolsheretsk 
   rows_update(by = "ne_id", tibble(ne_id = 1159139297,
                                    wikidataid = 'Q2502620')) %>%
