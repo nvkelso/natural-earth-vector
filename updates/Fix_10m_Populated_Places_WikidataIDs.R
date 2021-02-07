@@ -61,7 +61,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    RANK_MAX = 10)) %>%
   #406 Bose -> Baise
   rows_update(by = "ne_id", tibble(ne_id = 1159149783,
-                                   wikidataid = 'Q571949')) %>%
+                                   wikidataid = 'Q571949',
+                                   NAME = "Baise",
+                                   NAMEALT = "Bose",
+                                   NAMEASCII = "Baise")) %>%
   #405 Remove North Shore, NZ
   rows_delete(by = "ne_id", tibble(ne_id = 1159149783)) %>%
   #389 Dar es Salaam should be Admin-1 capital
