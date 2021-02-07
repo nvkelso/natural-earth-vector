@@ -223,7 +223,26 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    ISO_A2 = 'TD',
                                    TIMEZONE = 'Africa/Ndjamena',
                                    LATITUDE = 8.9,
-                                   LONGITUDE = 17.55))
+                                   LONGITUDE = 17.55)) %>%
+  #413 Astana -> Nur-Sultan
+  rows_update(by = "ne_id", tibble(ne_id = 1159150965,
+                                   NAME = "Nur-Sultan",
+                                   NAMEPAR = "Astana",
+                                   NAMEASCII = "Nur-Sultan")) %>%
+  #374 Amundsen-Scott South Pole Station
+  rows_update(by = "ne_id", tibble(ne_id = 1159146123,
+                                   NAME = "Amundsen-Scott South Pole Station",
+                                   NAMEASCII = "Amundsen-Scott South Pole Station")) %>%
+  #380 Sevastapol -> Sevastopol
+  rows_update(by = "ne_id", tibble(ne_id = 1159150561,
+                                   NAME = "Sevastopol",
+                                   NAMEASCII = "Sevastopol")) %>%
+  #333 Lansdowne House -> Neskantaga
+  rows_update(by = "ne_id", tibble(ne_id = 1159148901,
+                                   NAME = "Neskantaga",
+                                   NAMEASCII = "Neskantaga",
+                                   NAMEPAR = "Lansdowne House",
+                                   wikidataid = 'Q14875338'))
 
 write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
 
