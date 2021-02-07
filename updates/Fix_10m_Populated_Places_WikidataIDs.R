@@ -68,9 +68,11 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   #405 Remove North Shore, NZ
   rows_delete(by = "ne_id", tibble(ne_id = 1159149783)) %>%
   
-  #389 Dar es Salaam should be Admin-1 capital
+  #389 Dar es Salaam should be Admin-0 capital alt, Dodoma should be Admin-0 capital
   rows_update(by = "ne_id", tibble(ne_id = 1159151305,
-                                   FEATURECLA = 'Admin-1 capital')) %>%
+                                   FEATURECLA = 'Admin-0 capital alt')) %>%
+  rows_update(by = "ne_id", tibble(ne_id = 1159149731,
+                                   FEATURECLA = 'Admin-0 capital')) %>%
   #388 Kyoto should be Admin-1 capital
   rows_update(by = "ne_id", tibble(ne_id = 1159149967,
                                    FEATURECLA = 'Admin-1 capital')) %>%
