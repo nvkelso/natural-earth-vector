@@ -43,11 +43,11 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    wikidataid = 'Q75379',
                                    NAME = "Huludao",
                                    NAMEALT = "Jinxi",
-                                   NAMEASCII = "Huludao"
+                                   NAMEASCII = "Huludao",
                                    POP_MAX = 724800,
                                    RANK_MAX = 11)) %>%
   #407 Add Nnewi, Nigeria
-  rows_insert(by = "ne_id", tibble(ne_id = 1159151750,
+  rows_insert(by = "ne_id", tibble(ne_id = 1729764357,
                                    wikidataid = 'Q2750772',
                                    FEATURECLA = 'Populated place',
                                    SOV0NAME = 'Nigeria',
@@ -56,7 +56,9 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    ISO_A2 = 'NG',
                                    TIMEZONE = 'Africa/Lagos',
                                    LATITUDE = 6.0195310,
-                                   LONGITUDE = 6.9171810)) %>%
+                                   LONGITUDE = 6.9171810,
+                                   POP_MAX = 391227,
+                                   RANK_MAX = 10)) %>%
   #406 Bose -> Baise
   rows_update(by = "ne_id", tibble(ne_id = 1159149783,
                                    wikidataid = 'Q571949')) %>%
