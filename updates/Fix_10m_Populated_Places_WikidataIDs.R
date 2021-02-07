@@ -141,7 +141,11 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAMEASCII = "Shiquanhe")) %>%
   #334 Bol'sheretsk -> Ust-Bolsheretsk 
   rows_update(by = "ne_id", tibble(ne_id = 1159139297,
-                                   wikidataid = 'Q2502620')) %>%
+                                   wikidataid = 'Q2502620',
+                                   NAME = "Ust-Bolsheretsk",
+                                   NAMEASCII = "Ust-Bolsheretsk",
+                                   LATITUDE = 52.825,
+                                   LONGITUDE = 156.285)) %>%
   #330 Add Belushya Guba, Russia
   rows_insert(by = "ne_id", tibble(ne_id = 1159151751,
                                    wikidataid = 'Q26324',
