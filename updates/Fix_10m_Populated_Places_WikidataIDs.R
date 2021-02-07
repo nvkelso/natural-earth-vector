@@ -115,9 +115,9 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   rows_delete(by = "ne_id", tibble(ne_id = 1159139819)) %>%
   rows_update(by = "ne_id", tibble(ne_id = 1159149817,
                                    FEATURECLA = 'Admin-1 capital')) %>%
-  #364 Johannesburg should be Admin-1 capital
+  #364 Johannesburg should be Admin-0 capital alt
   rows_update(by = "ne_id", tibble(ne_id = 1159151515,
-                                   FEATURECLA = 'Admin-1 capital')) %>%
+                                   FEATURECLA = 'Admin-0 capital alt')) %>%
   #362 Xian should be Admin-1 capital
   rows_update(by = "ne_id", tibble(ne_id = 1159151363,
                                    FEATURECLA = 'Admin-1 capital')) %>%
