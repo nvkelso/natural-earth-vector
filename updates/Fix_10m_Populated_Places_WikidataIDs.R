@@ -32,7 +32,12 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   rows_delete(by = "ne_id", tibble(ne_id = 1159113425)) %>%
   #419 Saguenay
   rows_update(by = "ne_id", tibble(ne_id = 1159148923,
-                                   wikidataid = 'Q139229')) %>%
+                                   wikidataid = 'Q139229',
+                                   NAME = "Saguenay",
+                                   NAMEALT = "Chicoutimi",
+                                   NAMEASCII = "Saguenay",
+                                   POP_MAX = 144746,
+                                   RANK_MAX = 9)) %>%
   #411 Jinxi -> Huludao
   rows_update(by = "ne_id", tibble(ne_id = 1159149137,
                                    wikidataid = 'Q75379')) %>%
