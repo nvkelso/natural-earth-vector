@@ -178,8 +178,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    FEATURECLA = 'Admin-1 capital')) %>%
   rows_update(by = "ne_id", tibble(ne_id = 1159140345,
                                    FEATURECLA = 'Admin-1 capital')) %>%
-  rows_insert(by = "ne_id", tibble(ne_id = 1159151753,
+  rows_insert(by = "ne_id", tibble(ne_id = 1729769927,
                                    wikidataid = 'Q764968',
+                                   NAME = "Massenya",
+                                   NAMEASCII = "Massenya",
                                    FEATURECLA = 'Admin-1 capital',
                                    SOV0NAME = 'Chad',
                                    ADM0_A3 = 'TCD',
@@ -188,8 +190,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    TIMEZONE = 'Africa/Ndjamena',
                                    LATITUDE = 11.398333,
                                    LONGITUDE = 16.1675)) %>%
-  rows_insert(by = "ne_id", tibble(ne_id = 1159151754,
+  rows_insert(by = "ne_id", tibble(ne_id = 1729769929,
                                    wikidataid = 'Q3112862',
+                                   NAME = "Goz Beïda",
+                                   NAMEASCII = "Goz Beida",
                                    FEATURECLA = 'Admin-1 capital',
                                    SOV0NAME = 'Chad',
                                    ADM0_A3 = 'TCD',
@@ -198,8 +202,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    TIMEZONE = 'Africa/Ndjamena',
                                    LATITUDE = 12.223611,
                                    LONGITUDE = 21.414444)) %>%
-  rows_insert(by = "ne_id", tibble(ne_id = 1159151755,
+  rows_insert(by = "ne_id", tibble(ne_id = 1729769933,
                                    wikidataid = 'Q1070175',
+                                   NAME = "Koumra",
+                                   NAMEASCII = "Koumra",
                                    FEATURECLA = 'Admin-1 capital',
                                    SOV0NAME = 'Chad',
                                    ADM0_A3 = 'TCD',
