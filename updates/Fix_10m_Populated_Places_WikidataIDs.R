@@ -24,9 +24,12 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAMEALT = "Rida",
                                    NAMEASCII = "Radaa",
                                    GEONAMEID = 71491)) %>%
+  #449 Adapazarı
+  rows_update(by = "ne_id", tibble(ne_id = 1159146375, 
+                                   FEATURECLA = 'Admin-1 capital',
+                                   NAMEALT = "Sakarya")) %>%
   #449 Sakarya
-  rows_update(by = "ne_id", tibble(ne_id = 1159113425, 
-                                   wikidataid = 'Q3945164')) %>%
+  rows_delete(by = "ne_id", tibble(ne_id = 1159113425)) %>%
   #419 Saguenay
   rows_update(by = "ne_id", tibble(ne_id = 1159148923,
                                    wikidataid = 'Q139229')) %>%
@@ -176,16 +179,16 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
 write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
 
 # Requires a bit more tweaking to ensure DBF encoding and data types aren't messed up in the transformation.
-#ne_10m_populated_places_modified <- st_set_geometry(ne_10m_populated_places_modified_metadata, 
-#                                                    ne_10m_populated_places$geometry)
-#st_write(ne_10m_populated_places_modified, 'ne_10m_populated_places_wikidataid_update.shp', overwrite = TRUE)
-
-# add_modify <- anti_join(ne_10m_populated_places_original_metadata, 
-#                         ne_10m_populated_places_modified_metadata)
+# #ne_10m_populated_places_modified <- st_set_geometry(ne_10m_populated_places_modified_metadata, 
+# #                                                    ne_10m_populated_places$geometry)
+# #st_write(ne_10m_populated_places_modified, 'ne_10m_populated_places_wikidataid_update.shp', overwrite = TRUE)
 # 
-# remove <- semi_join(ne_10m_populated_places_original_metadata, 
-#                     ne_10m_populated_places_modified_metadata)
-# 
-# 
-# write.csv(add_modify, "Add_Modify_10m_Populated_Places_WikidataIDs.csv", na = "")
-# write.csv(remove, "Remove_10m_Populated_Places_WikidataIDs.csv", na = "")
+# # add_modify <- anti_join(ne_10m_populated_places_original_metadata, 
+# #                         ne_10m_populated_places_modified_metadata)
+# # 
+# # remove <- semi_join(ne_10m_populated_places_original_metadata, 
+# #                     ne_10m_populated_places_modified_metadata)
+# # 
+# # 
+# # write.csv(add_modify, "Add_Modify_10m_Populated_Places_WikidataIDs.csv", na = "")
+# # write.csv(remove, "Remove_10m_Populated_Places_WikidataIDs.csv", na = "")
