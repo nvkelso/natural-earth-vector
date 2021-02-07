@@ -100,8 +100,14 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   #377 Makkah (Saudi Arabia) should be Admin-1 capital
   rows_update(by = "ne_id", tibble(ne_id = 1159151279,
                                    FEATURECLA = 'Admin-1 capital')) %>%
-  #373 Remove Vila Velha (Amapá, Brazil)
-  rows_delete(by = "ne_id", tibble(ne_id = 1159148899)) %>%
+  #373 Update Vila Velha (Amapá, Brazil)
+  rows_update(by = "ne_id", tibble(ne_id = 1159148899,
+                                   wikidataid = "Q18471012",
+                                   POP_MIN = 2723,
+                                   POP_MAX = 2723,
+                                   RANK_MIN = 4,
+                                   RANK_MAX = 4,
+                                   min_zoom = 7.0)) %>%
   #371 Macau should be Admin-1 capital
   rows_update(by = "ne_id", tibble(ne_id = 1159149085,
                                    FEATURECLA = 'Admin-1 capital')) %>%
