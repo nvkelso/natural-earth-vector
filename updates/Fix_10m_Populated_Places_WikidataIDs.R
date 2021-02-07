@@ -97,7 +97,7 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAME = "Yangon",
                                    NAMEALT = "Rangoon",
                                    NAMEASCII = "Yangon")) %>%
-  #377 Yangon should be Admin-1 capital
+  #377 Makkah (Saudi Arabia) should be Admin-1 capital
   rows_update(by = "ne_id", tibble(ne_id = 1159151279,
                                    FEATURECLA = 'Admin-1 capital')) %>%
   #373 Remove Vila Velha (Amapá, Brazil)
