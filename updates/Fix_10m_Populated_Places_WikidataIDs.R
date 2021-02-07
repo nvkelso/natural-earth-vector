@@ -147,7 +147,7 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    LATITUDE = 52.825,
                                    LONGITUDE = 156.285)) %>%
   #330 Add Belushya Guba, Russia
-  rows_insert(by = "ne_id", tibble(ne_id = 1159151751,
+  rows_insert(by = "ne_id", tibble(ne_id = 1729769925,
                                    wikidataid = 'Q26324',
                                    FEATURECLA = 'Populated place',
                                    SOV0NAME = 'Russia',
@@ -156,7 +156,12 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    ISO_A2 = 'RU',
                                    TIMEZONE = 'Europe/Moscow',
                                    LATITUDE = 71.545556,
-                                   LONGITUDE = 52.320278)) %>%
+                                   LONGITUDE = 52.320278,
+                                   POP_MAX = 1972,
+                                   POP_MIN = 1972,
+                                   POP_OTHER = 1972,
+                                   RANK_MAX = 3,
+                                   RANK_MIN = 3)) %>%
   #323 El Cayo -> San Ignacio 
   rows_update(by = "ne_id", tibble(ne_id = 1159122697,
                                    wikidataid = 'Q724815')) %>%
