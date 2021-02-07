@@ -37,7 +37,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAMEALT = "Chicoutimi",
                                    NAMEASCII = "Saguenay",
                                    POP_MAX = 144746,
-                                   RANK_MAX = 9)) %>%
+                                   POP_MIN = 144746,
+                                   POP_OTHER = 144746,
+                                   RANK_MAX = 9,
+                                   RANK_MIN = 9)) %>%
   #411 Jinxi -> Huludao
   rows_update(by = "ne_id", tibble(ne_id = 1159149137,
                                    wikidataid = 'Q75379',
@@ -45,7 +48,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAMEALT = "Jinxi",
                                    NAMEASCII = "Huludao",
                                    POP_MAX = 724800,
-                                   RANK_MAX = 11)) %>%
+                                   POP_MIN = 724800,
+                                   POP_OTHER = 724800,
+                                   RANK_MAX = 11,
+                                   RANK_MIN = 11)) %>%
   #407 Add Nnewi, Nigeria
   rows_insert(by = "ne_id", tibble(ne_id = 1729764357,
                                    wikidataid = 'Q2750772',
@@ -58,7 +64,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    LATITUDE = 6.0195310,
                                    LONGITUDE = 6.9171810,
                                    POP_MAX = 391227,
-                                   RANK_MAX = 10)) %>%
+                                   POP_MIN = 391227,
+                                   POP_OTHER = 391227,
+                                   RANK_MAX = 10,
+                                   RANK_MIN = 10)) %>%
   #406 Bose -> Baise
   rows_update(by = "ne_id", tibble(ne_id = 1159149783,
                                    wikidataid = 'Q571949',
@@ -76,7 +85,7 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   #388 Kyoto should be Admin-0 capital alt
   rows_update(by = "ne_id", tibble(ne_id = 1159149967,
                                    FEATURECLA = 'Admin-0 capital alt')) %>%
-  #387 Tomakomai should be Populated
+  #387 Tomakomai should be Populated place
   rows_update(by = "ne_id", tibble(ne_id = 1159141281,
                                    FEATURECLA = 'Populated place')) %>%
   #385 Lagos should be Admin-1 capital
@@ -105,6 +114,7 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    wikidataid = "Q18471012",
                                    POP_MIN = 2723,
                                    POP_MAX = 2723,
+                                   POP_OTHER = 2723,
                                    RANK_MIN = 4,
                                    RANK_MAX = 4,
                                    min_zoom = 7.0)) %>%
