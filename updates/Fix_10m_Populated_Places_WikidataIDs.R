@@ -19,7 +19,11 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   mutate(across(where(is.factor), as.character)) %>%
   #453 Rida -> Rada'a
   rows_update(by = "ne_id", tibble(ne_id = 1159134263,
-                                   wikidataid = 'Q2125362')) %>%
+                                   wikidataid = 'Q2125362',
+                                   NAME = "Rada'a",
+                                   NAMEALT = "Rida",
+                                   NAMEASCII = "Radaa",
+                                   GEONAMEID = 71491)) %>%
   #449 Sakarya
   rows_update(by = "ne_id", tibble(ne_id = 1159113425, 
                                    wikidataid = 'Q3945164')) %>%
