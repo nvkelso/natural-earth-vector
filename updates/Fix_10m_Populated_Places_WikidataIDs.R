@@ -7,7 +7,11 @@ setwd("~/Repos/natural-earth-vector/10m_cultural/")
 ## IMPORT NE DATA
 
 # Read in ne_10m_populated_places shapefile
-ne_10m_populated_places <- st_read('ne_10m_populated_places.shp')
+ne_10m_populated_places <- st_read('ne_10m_populated_places.shp',
+                                   drivers = 'ESRI Shapefile',
+                                   as_tibble = TRUE)
+
+# [] resolve issue where integers are being treated as double, false precision introduced
 
 # Preserve metadata to diff changes
 ne_10m_populated_places_original_metadata <- ne_10m_populated_places %>% st_drop_geometry()
@@ -237,17 +241,14 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
 
 write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
 
-# Requires a bit more tweaking to ensure DBF encoding and data types aren't messed up in the transformation.
-# #ne_10m_populated_places_modified <- st_set_geometry(ne_10m_populated_places_modified_metadata, 
-# #                                                    ne_10m_populated_places$geometry)
-# #st_write(ne_10m_populated_places_modified, 'ne_10m_populated_places_wikidataid_update.shp', overwrite = TRUE)
-# 
-# # add_modify <- anti_join(ne_10m_populated_places_original_metadata, 
-# #                         ne_10m_populated_places_modified_metadata)
-# # 
-# # remove <- semi_join(ne_10m_populated_places_original_metadata, 
-# #                     ne_10m_populated_places_modified_metadata)
-# # 
-# # 
-# # write.csv(add_modify, "Add_Modify_10m_Populated_Places_WikidataIDs.csv", na = "")
-# # write.csv(remove, "Remove_10m_Populated_Places_WikidataIDs.csv", na = "")
+# Recreating all geometries from LATITUDE and LONGITUDE;
+# should verify this doesn't introduce regressions.
+# If not, it's the most straightforward strategy.
+ne_10m_populated_places_modified <- st_as_sf(ne_10m_populated_places_modified_metadata,
+                                             coords = c("LONGITUDE","LATITUDE"), remove = FALSE,
+                                             crs = 4326, agr = "constant")
+# [] verify no null geometries
+# [] verify no unintentional changes to geometries
+
+st_write(ne_10m_populated_places_modified, "ne_10m_populated_places_modified.shp",
+         factorsAsCharacter = TRUE, overwrite = TRUE, append = FALSE)
