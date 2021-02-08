@@ -247,7 +247,10 @@ write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_mo
 ne_10m_populated_places_modified <- st_as_sf(ne_10m_populated_places_modified_metadata,
                                              coords = c("LONGITUDE","LATITUDE"), remove = FALSE,
                                              crs = 4326, agr = "constant")
-# [] verify no null geometries
+# [x] verify no null geometries
+# if no null geometries, this should yield an empty result.
+# ne_10m_populated_places_modified %>% filter(st_is_empty(.))
+
 # [] verify no unintentional changes to geometries
 
 st_write(ne_10m_populated_places_modified, "ne_10m_populated_places_modified.shp",
