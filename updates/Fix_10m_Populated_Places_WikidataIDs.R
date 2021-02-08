@@ -91,7 +91,7 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAME = "Shijiazhuang",
                                    NAMEALT = "Shimen, Shihkiachwang",
                                    NAMEASCII = "Shijiazhuang")) %>%
-  #381 Yangon should be Admin-1 capital alt
+  #381 Yangon should be Admin-0 capital alt
   rows_update(by = "ne_id", tibble(ne_id = 1159151477,
                                    FEATURECLA = 'Admin-0 capital alt',
                                    NAME = "Yangon",
