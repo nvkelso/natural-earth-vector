@@ -11,11 +11,8 @@ ne_10m_populated_places <- st_read('ne_10m_populated_places.shp',
                                    drivers = 'ESRI Shapefile',
                                    as_tibble = TRUE)
 
-# [] resolve issue where integers are being treated as double, false precision introduced
-
 # Preserve metadata to diff changes
 ne_10m_populated_places_original_metadata <- ne_10m_populated_places %>% st_drop_geometry()
-
 
 # Add new wikidataids
 ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>% 
@@ -247,11 +244,22 @@ write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_mo
 ne_10m_populated_places_modified <- st_as_sf(ne_10m_populated_places_modified_metadata,
                                              coords = c("LONGITUDE","LATITUDE"), remove = FALSE,
                                              crs = 4326, agr = "constant")
-# [x] verify no null geometries
-# if no null geometries, this should yield an empty result.
-# ne_10m_populated_places_modified %>% filter(st_is_empty(.))
 
-# [] verify no unintentional changes to geometries
+count.int <- function(x) sum(floor(x) == x, na.rm = TRUE)
+
+counts.int <- ne_10m_populated_places_modified %>% 
+  st_drop_geometry %>%
+  summarise(across(where(is.numeric), count.int)) %>%
+  pivot_longer(everything(), names_to = "fields", values_to = "integer_values") %>%
+  filter(integer_values > 7000)
+
+ne_10m_populated_places_modified <- ne_10m_populated_places_modified %>%
+  mutate(across(all_of(counts.int$fields), as.integer, na.rm = TRUE))
+
 
 st_write(ne_10m_populated_places_modified, "ne_10m_populated_places_modified.shp",
-         factorsAsCharacter = TRUE, overwrite = TRUE, append = FALSE)
+         layer_options = "ENCODING=UTF-8",
+         overwrite = TRUE, append = FALSE)
+
+# [] verify no unintentional changes to geometries
+# [] make sure NULL, 0 etc. values are encoded correctly
