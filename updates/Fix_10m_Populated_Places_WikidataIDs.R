@@ -234,7 +234,14 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAME = "Neskantaga",
                                    NAMEASCII = "Neskantaga",
                                    NAMEPAR = "Lansdowne House",
-                                   wikidataid = 'Q14875338'))
+                                   wikidataid = 'Q14875338')) %>%
+  #471 Banghazi -> Benghazi
+  rows_update(by = "ne_id", tibble(ne_id = 1159150953,
+                                   NAME = "Benghazi",
+                                   NAMEASCII = "Benghazi",
+                                   NAMEALT = "Banġāzī",
+                                   MEGANAME = "Benghazi",
+                                   LS_NAME = "Benghazi"))
 
 write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
 
@@ -261,5 +268,3 @@ st_write(ne_10m_populated_places_modified, "ne_10m_populated_places_modified.shp
          layer_options = "ENCODING=UTF-8",
          overwrite = TRUE, append = FALSE)
 
-# [] verify no unintentional changes to geometries
-# [] make sure NULL, 0 etc. values are encoded correctly
