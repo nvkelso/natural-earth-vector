@@ -16,6 +16,20 @@ ne_10m_populated_places <- st_read('ne_10m_populated_places.shp',
 # Preserve metadata to diff changes
 ne_10m_populated_places_original_metadata <- ne_10m_populated_places %>% st_drop_geometry()
 
+# Copy the geometry to LATITUDE and LONGITUDE fields
+coords <- as.data.frame(round(st_coordinates(ne_10m_populated_places),7))
+coords <- cbind(coords,ne_10m_populated_places[,c("ne_id","LONGITUDE","LATITUDE")])
+
+# Does this change any LATITUDE, LONGITUDE values?
+# 2 - different enough to be noticable, 1 - different, but probably just precision
+coord.diff <- function(d1,d2) { ifelse(abs(d1-d2) > 0.01, 2, ifelse(abs(d1-d2) > 0.001, 1, 0)) }
+coords$lon_diff <- coord.diff(coords$X, ne_10m_populated_places$LONGITUDE)
+coords$lat_diff <- coord.diff(coords$Y, ne_10m_populated_places$LATITUDE)
+coords.to.check <- coords %>% filter(lat_diff > 0 | lon_diff > 0)
+
+ne_10m_populated_places$LATITUDE <- coords$Y
+ne_10m_populated_places$LONGITUDE <- coords$X
+
 # Add new wikidataids
 ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>% 
   st_drop_geometry() %>%
@@ -249,6 +263,7 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
 setwd(write_to)
 
 write.csv(ne_10m_populated_places_modified_metadata, "ne_10m_populated_places_modified_metadata.csv", na = "")
+write.csv(coords.to.check, "coords.to.check.csv")
 
 # Recreating all geometries from LATITUDE and LONGITUDE;
 # should verify this doesn't introduce regressions.
