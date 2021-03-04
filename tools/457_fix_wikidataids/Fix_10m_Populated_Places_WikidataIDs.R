@@ -272,13 +272,18 @@ ne_10m_populated_places_modified <- st_as_sf(ne_10m_populated_places_modified_me
                                              coords = c("LONGITUDE","LATITUDE"), remove = FALSE,
                                              crs = 4326, agr = "constant")
 
-count.int <- function(x) sum(floor(x) == x, na.rm = TRUE)
 
+# Convert fields that should be integers to integers
+
+# Total values in each column that are integers or no value
+count.int <- function(x) sum(floor(x) == x, na.rm = TRUE) + sum(is.na(x))
+
+# A column should contain almost exclusively integer values
 counts.int <- ne_10m_populated_places_modified %>% 
   st_drop_geometry %>%
   summarise(across(where(is.numeric), count.int)) %>%
   pivot_longer(everything(), names_to = "fields", values_to = "integer_values") %>%
-  filter(integer_values > 7000)
+  filter(integer_values == nrow(ne_10m_populated_places_modified))
 
 ne_10m_populated_places_modified <- ne_10m_populated_places_modified %>%
   mutate(across(all_of(counts.int$fields), as.integer, na.rm = TRUE))
