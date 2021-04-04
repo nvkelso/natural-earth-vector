@@ -54,7 +54,11 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   rows_update(by = "NE_ID", tibble(NE_ID = 1159148085,
                                    POP_MAX = 38126,
                                    POP_MIN = 35654,
-                                   POP_OTHER = 0))
+                                   POP_OTHER = 0)) %>%
+  # 10m places: misspelling of Akureyri (Iceland) #366
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159147673,
+                                   NAME = "Akureyri",
+                                   NAMEASCII = "Akureyri"))
 # WRITE OUTPUT
 setwd(write_to)
 
