@@ -69,7 +69,20 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAME = "Makassar",
                                    NAMEASCII = "Makassar",
                                    NAMEALT = "Kota Makassar|Ujung Pandang",
-                                   FEATURECLA = 'Admin-1 capital',)) 
+                                   FEATURECLA = 'Admin-1 capital')) %>%
+  # 10m populated places: request for location adjustments #409
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159120991,
+                                   LATITUDE = 36.7117101,
+                                   LONGITUDE = 4.0461444)) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159121009,
+                                   LATITUDE = 36.0777088,
+                                   LONGITUDE = 4.7646624)) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159121163,
+                                   LATITUDE = 27.4293704,
+                                   LONGITUDE =  89.4167773)) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159121181,
+                                   LATITUDE = 27.5841540,
+                                   LONGITUDE =  89.8641347))
   
 # WRITE OUTPUT
 setwd(write_to)
