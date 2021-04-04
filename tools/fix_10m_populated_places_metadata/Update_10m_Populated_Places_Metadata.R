@@ -49,7 +49,12 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAME = "Barishal",
                                    NAMEASCII = "Barishal",
                                    NAMEPAR = "Barisal",
-                                   NAMEALT = ""))
+                                   NAMEALT = "")) %>%
+  # Kandalaksha, Murmansk, Russia, has too high maxpop #359
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159148085,
+                                   POP_MAX = 38126,
+                                   POP_MIN = 35654,
+                                   POP_OTHER = 0))
 # WRITE OUTPUT
 setwd(write_to)
 
