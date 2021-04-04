@@ -63,7 +63,14 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   # 10m places: misspelling of Liupanshui, Guizhou, China #369
   rows_update(by = "NE_ID", tibble(NE_ID = 1159149787,
                                    NAME = "Liupanshui",
-                                   NAMEASCII = "Liupanshui"))
+                                   NAMEASCII = "Liupanshui")) %>%
+  # Places: Ujungpandang, Indonesia, is now Makassar #398
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159150843,
+                                   NAME = "Makassar",
+                                   NAMEASCII = "Makassar",
+                                   NAMEALT = "Kota Makassar|Ujung Pandang",
+                                   FEATURECLA = 'Admin-1 capital',)) 
+  
 # WRITE OUTPUT
 setwd(write_to)
 
