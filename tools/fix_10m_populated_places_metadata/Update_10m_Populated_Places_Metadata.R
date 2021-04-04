@@ -93,7 +93,18 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   # Lookup result: 1159146767 Savetskaya Gavan Khabarovsk Russia
   rows_update(by = "NE_ID", tibble(NE_ID = 1159146767,
                                    NAME = "Sovetskaya Gavan",
-                                   NAMEASCII = "Sovetskaya Gavan"))
+                                   NAMEASCII = "Sovetskaya Gavan")) %>%
+  # Populated_Places: Wrong Chinese names #430
+  # Lookup result: 1159149907 Shijianzhuang Hebei    China
+  # Lookup result: 1159148459 Xiangfan    Hubei       China
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159149907,
+                                   NAME = "Shijiazhuang",
+                                   NAMEASCII = "Shijiazhuang",
+                                   NAMEALT = "Shijianzhuang")) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159148459,
+                                   NAME = "Xiangyang",
+                                   NAMEASCII = "Xiangyang",
+                                   NAMEALT = "Xiangfan"))
   
 # WRITE OUTPUT
 setwd(write_to)
