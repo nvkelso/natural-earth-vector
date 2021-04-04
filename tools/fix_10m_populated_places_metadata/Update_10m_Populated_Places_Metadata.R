@@ -1,6 +1,7 @@
 library(sf)
 library(WikidataR)
 library(tidyverse)
+library(kableExtra)
 
 read_from <- "~/Repos/natural-earth-vector/10m_cultural/"
 write_to <- "~/Repos/natural-earth-vector/tools/fix_10m_populated_places_metadata/"
@@ -58,7 +59,11 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   # 10m places: misspelling of Akureyri (Iceland) #366
   rows_update(by = "NE_ID", tibble(NE_ID = 1159147673,
                                    NAME = "Akureyri",
-                                   NAMEASCII = "Akureyri"))
+                                   NAMEASCII = "Akureyri")) %>%
+  # 10m places: misspelling of Liupanshui, Guizhou, China #369
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159149787,
+                                   NAME = "Liupanshui",
+                                   NAMEASCII = "Liupanshui"))
 # WRITE OUTPUT
 setwd(write_to)
 
