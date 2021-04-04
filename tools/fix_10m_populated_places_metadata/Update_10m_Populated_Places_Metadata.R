@@ -82,7 +82,13 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    LONGITUDE =  89.4167773)) %>%
   rows_update(by = "NE_ID", tibble(NE_ID = 1159121181,
                                    LATITUDE = 27.5841540,
-                                   LONGITUDE =  89.8641347))
+                                   LONGITUDE =  89.8641347)) %>%
+  # 10m places: Max_pop of Newcastle, Australia, is too high #414
+  # 1159151163 Newcastle        New South Wales    Australia  
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159151163,
+                                   POP_MAX = 540796,
+                                   POP_MIN = 322278,
+                                   POP_OTHER = 0))
   
 # WRITE OUTPUT
 setwd(write_to)
