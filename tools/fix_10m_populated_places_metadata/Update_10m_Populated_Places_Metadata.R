@@ -84,11 +84,16 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    LATITUDE = 27.5841540,
                                    LONGITUDE =  89.8641347)) %>%
   # 10m places: Max_pop of Newcastle, Australia, is too high #414
-  # 1159151163 Newcastle        New South Wales    Australia  
+  # Lookup result: 1159151163 Newcastle        New South Wales    Australia
   rows_update(by = "NE_ID", tibble(NE_ID = 1159151163,
                                    POP_MAX = 540796,
                                    POP_MIN = 322278,
-                                   POP_OTHER = 0))
+                                   POP_OTHER = 0)) %>%
+  # Sovetskaya Gavan misspelled #428
+  # Lookup result: 1159146767 Savetskaya Gavan Khabarovsk Russia
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159146767,
+                                   NAME = "Sovetskaya Gavan",
+                                   NAMEASCII = "Sovetskaya Gavan"))
   
 # WRITE OUTPUT
 setwd(write_to)
