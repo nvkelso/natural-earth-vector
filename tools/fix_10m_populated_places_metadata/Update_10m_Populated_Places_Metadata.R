@@ -104,7 +104,68 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   rows_update(by = "NE_ID", tibble(NE_ID = 1159148459,
                                    NAME = "Xiangyang",
                                    NAMEASCII = "Xiangyang",
-                                   NAMEALT = "Xiangfan"))
+                                   NAMEALT = "Xiangfan")) %>%
+  # 10m Populated Places: State-Wide Name Updates in Karnataka, India #448
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159151543,
+                                   NAME = "Bengaluru",
+                                   NAMEASCII = "Bengaluru",
+                                   NAMEPAR = "Bangalore",
+                                   NAMEALT = "")) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159150015,
+                                   NAME = "Mangaluru",
+                                   NAMEASCII = "Mangaluru",
+                                   NAMEPAR = "Mangalore",
+                                   NAMEALT = "")) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159150015,
+                                   NAME = "Ballari",
+                                   NAMEASCII = "Ballari",
+                                   NAMEPAR = "Bellary",
+                                   NAMEALT = "")) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159150015,
+                                   NAME = "Ballari",
+                                   NAMEASCII = "Ballari",
+                                   NAMEPAR = "Bellary",
+                                   NAMEALT = "")) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159147195,
+                                   NAME = "Vijayapura",
+                                   NAMEASCII = "Vijayapura",
+                                   NAMEPAR = "Bijapur",
+                                   NAMEALT = "")) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159147195,
+                                   NAME = "Vijayapura",
+                                   NAMEASCII = "Vijayapura",
+                                   NAMEPAR = "Bijapur",
+                                   NAMEALT = "")) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159148531,
+                                   NAME = "Belagavi",
+                                   NAMEASCII = "Belagavi",
+                                   NAMEPAR = "Belgaum",
+                                   NAMEALT = "")) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159150019,
+                                   NAME = "Kalaburagi",
+                                   NAMEASCII = "Kalaburagi",
+                                   NAMEPAR = "Gulbarga",
+                                   NAMEALT = "")) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159150017,
+                                   NAME = "Mysuru",
+                                   NAMEASCII = "Mysuru",
+                                   NAMEPAR = "Mysore",
+                                   NAMEALT = "")) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159141837,
+                                   NAME = "Hosapete",
+                                   NAMEASCII = "Hosapete",
+                                   NAMEPAR = "Hospet",
+                                   NAMEALT = "")) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159141827,
+                                   NAME = "Hubballi",
+                                   NAMEASCII = "Hubballi",
+                                   NAMEPAR = "Hospet",
+                                   NAMEALT = "")) %>%
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159148523,
+                                   NAME = "Tumakuru",
+                                   NAMEASCII = "Tumakuru",
+                                   NAMEPAR = "Tumkur",
+                                   NAMEALT = ""))
   
 # WRITE OUTPUT
 setwd(write_to)
