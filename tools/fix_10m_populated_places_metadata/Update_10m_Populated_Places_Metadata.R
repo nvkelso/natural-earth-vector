@@ -166,12 +166,19 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   rows_update(by = "NE_ID", tibble(NE_ID = 1159146401,
                                    LATITUDE = 67.2764346,
                                    LONGITUDE =  14.4292849)) %>%
-  # 0m Populated Places: Ammochostos/Famagusta, Nicosia #452
+  # 10m Populated Places: Ammochostos/Famagusta, Nicosia #452
   # Lookup result: 1159132353 Ammochostos Northern Cyprus
   rows_update(by = "NE_ID", tibble(NE_ID = 1159132353,
                                    NAME = "Famagusta",
                                    NAMEASCII = "Famagusta",
-                                   NAMEALT = "Ammochostos"))
+                                   NAMEALT = "Ammochostos")) %>%
+  # 10m Populated Place: Puducherry, India #454
+  # Lookup result: 1159150163 Pondicherry India    Puducherry
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159150163,
+                                   NAME = "Puducherry",
+                                   NAMEASCII = "Puducherry",
+                                   NAMEPAR = "Pondicherry",
+                                   NAMEALT = ""))
   
 # WRITE OUTPUT
 setwd(write_to)
