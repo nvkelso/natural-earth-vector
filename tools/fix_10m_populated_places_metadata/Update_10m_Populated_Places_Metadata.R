@@ -160,7 +160,12 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAME = "Tumakuru",
                                    NAMEASCII = "Tumakuru",
                                    NAMEPAR = "Tumkur",
-                                   NAMEALT = ""))
+                                   NAMEALT = "")) %>%
+  # 10m Populated Places: Location of Bodø, Norway #450
+  # Lookup result: 1159146401 Bodø  Nordland Norway
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159146401,
+                                   LATITUDE = 67.2764346,
+                                   LONGITUDE =  14.4292849))
   
 # WRITE OUTPUT
 setwd(write_to)
