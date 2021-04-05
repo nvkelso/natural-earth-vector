@@ -183,13 +183,7 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   # Lookup result: 1159147661 Windsor Canada   Ontario
   rows_update(by = "NE_ID", tibble(NE_ID = 1159147661,
                                    LATITUDE = 42.3154570,
-                                   LONGITUDE =  -83.0368525)) %>%
-  # 10m populated places: Request to update name for Kuwait City #483
-  # Lookup result: 1159151361 Kuwait Kuwait   Al Kuwayt
-  rows_update(by = "NE_ID", tibble(NE_ID = 1159150163,
-                                   NAME = "Kuwait City",
-                                   NAMEASCII = "Kuwait City",
-                                   NAMEALT = "Al Kuwayt"))
+                                   LONGITUDE =  -83.0368525))
   
 # WRITE OUTPUT
 setwd(write_to)
