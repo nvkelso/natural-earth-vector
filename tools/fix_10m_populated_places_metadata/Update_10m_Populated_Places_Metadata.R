@@ -178,7 +178,12 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAME = "Puducherry",
                                    NAMEASCII = "Puducherry",
                                    NAMEPAR = "Pondicherry",
-                                   NAMEALT = ""))
+                                   NAMEALT = "")) %>%
+  # 10m populated places: location precision for Windsor, Ontario #468
+  # Lookup result: 1159147661 Windsor Canada   Ontario
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159147661,
+                                   LATITUDE = 42.3154570,
+                                   LONGITUDE =  -83.0368525))
   
 # WRITE OUTPUT
 setwd(write_to)
