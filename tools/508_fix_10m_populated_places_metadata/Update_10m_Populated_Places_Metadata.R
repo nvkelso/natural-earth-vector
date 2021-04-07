@@ -211,8 +211,25 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   rows_update(by = "NE_ID", tibble(NE_ID = 1159151361,
                                    NAME = "Kuwait City",
                                    NAMEASCII = "Kuwait City",
-                                   NAMEALT = "Al Kuwayt|Kuwait"))
-  
+                                   NAMEALT = "Al Kuwayt|Kuwait")) %>%
+  # 10m populated places: Request for location changes #338
+  # Jacundá
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159143267,
+                                   LATITUDE = -4.4394588,
+                                   LONGITUDE = -49.1156930)) %>%
+  # Peter I Island
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159146109,
+                                   LATITUDE = -68.7951614,
+                                   LONGITUDE = -90.5842030)) %>%
+  # Dawwah -> Hilf
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159132343,
+                                   LATITUDE = 20.6561533,
+                                   LONGITUDE = 58.8767621,
+                                   NAME = "Hilf",
+                                   NAMEASCII = "Hilf",
+                                   NAMEALT = "Dawwah",
+                                   POP_MAX = 8500))
+
 # WRITE OUTPUT
 setwd(write_to)
 
