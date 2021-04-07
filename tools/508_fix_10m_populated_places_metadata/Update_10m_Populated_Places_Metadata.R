@@ -284,7 +284,35 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    WIKIDATAID = 'Q1202314')) %>%
   # Alxa Zuoqi
   rows_update(by = "NE_ID", tibble(NE_ID = 1159141109,
-                                   WIKIDATAID = 'Q1367222'))
+                                   WIKIDATAID = 'Q1367222')) %>%
+  # Wikidata | Populated_Places | China | County -> City replacement #458
+  # Qinggang
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159130307,
+                                   WIKIDATAID = 'Q8836938')) %>%
+  # Suileng
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159130333,
+                                   WIKIDATAID = 'Q13992688')) %>%
+  # Wenshan
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159140833,
+                                   WIKIDATAID = 'Q1201048')) %>%
+  # Liuhe
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159141055,
+                                   WIKIDATAID = 'Q11109923')) %>%
+  # Wangqing
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159141079,
+                                   WIKIDATAID = 'Q13897219')) %>%
+  # Tailai
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159141183,
+                                   WIKIDATAID = 'Q11145142')) %>%
+  # Gannan
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159141193,
+                                   WIKIDATAID = 'Q1493582')) %>%
+  # Lanxi
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159141223,
+                                   WIKIDATAID = 'Q10893722')) %>%
+  # Nancha
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159141231,
+                                   WIKIDATAID = 'Q2043360'))
 
 # WRITE OUTPUT
 setwd(write_to)
