@@ -228,7 +228,47 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAME = "Hilf",
                                    NAMEASCII = "Hilf",
                                    NAMEALT = "Dawwah",
-                                   POP_MAX = 8500))
+                                   POP_MAX = 8500)) %>%
+  # 10m places: Adjust max population of Korla, China to 770,000 #412
+  # Aksu
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159146973,
+                                    POP_MAX = 695000)) %>%
+  # Hami
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159150881,
+                                    POP_MAX = 580000)) %>%
+  # Hotan
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159150883,
+                                    POP_MAX = 408894)) %>%
+  # Karamay
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159146971,
+                                    POP_MAX = 261445)) %>%
+  # Kashgar
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159150885,
+                                    POP_MAX = 506640)) %>%
+  # Korla
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159146961,
+                                    POP_MAX = 613000)) %>%
+  # Kuqa
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159146965,
+                                    POP_MAX = 470600)) %>%
+  # Quiemo
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159140711,
+                                    POP_MAX = 65572)) %>%
+  # Shache
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159149875,
+                                    POP_MAX = 851374)) %>%
+  # Shihezi
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159146969,
+                                    POP_MAX = 640000)) %>%
+  # Turpan
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159140707,
+                                    POP_MAX = 651853)) %>%
+  # Urumqi
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159151531,
+                                    POP_MAX = 3575000)) %>%
+  # Yining
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159149877,
+                                    POP_MAX = 542507))
 
 # WRITE OUTPUT
 setwd(write_to)
