@@ -4,7 +4,7 @@ library(tidyverse)
 library(kableExtra)
 
 read_from <- "~/Repos/natural-earth-vector/10m_cultural/"
-write_to <- "~/Repos/natural-earth-vector/tools/fix_10m_populated_places_metadata/"
+write_to <- "~/Repos/natural-earth-vector/tools/508_fix_10m_populated_places_metadata/"
 
 ## IMPORT NE DATA
 setwd(read_from)
