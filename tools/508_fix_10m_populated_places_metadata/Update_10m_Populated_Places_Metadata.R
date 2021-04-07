@@ -105,7 +105,8 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   # Savetskaya Gavan -> Sovetskaya Gavan
   rows_update(by = "NE_ID", tibble(NE_ID = 1159146767,
                                    NAME = "Sovetskaya Gavan",
-                                   NAMEASCII = "Savetskaya Gavan")) %>%
+                                   NAMEASCII = "Sovetskaya Gavan",
+                                   NAMEALT = "Savetskaya Gavan")) %>%
   # Populated_Places: Wrong Chinese names #430
   # Shijianzhuang -> Shijianzhuang
   rows_update(by = "NE_ID", tibble(NE_ID = 1159149907,
