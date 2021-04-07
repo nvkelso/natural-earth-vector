@@ -268,7 +268,23 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                     POP_MAX = 3575000)) %>%
   # Yining
   rows_update(by = "NE_ID", tibble(NE_ID = 1159149877,
-                                    POP_MAX = 542507))
+                                    POP_MAX = 542507)) %>%
+  # 10m Populated Places: Wikidata for Banners in Inner Mongolia #455
+  # Genhe -> Ergun Zuoqi
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159130275,
+                                   NAME = "Genhe",
+                                   NAMEASCII = "Genhe",
+                                   NAMEPAR = "Ergun Zuoqi",
+                                   WIKIDATAID = 'Q1354108')) %>%
+  # Bairin Zuoqi
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159141123,
+                                   WIKIDATAID = 'Q1329235')) %>%
+  # Hanggin Houqi
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159130301,
+                                   WIKIDATAID = 'Q1202314')) %>%
+  # Alxa Zuoqi
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159141109,
+                                   WIKIDATAID = 'Q1367222'))
 
 # WRITE OUTPUT
 setwd(write_to)
