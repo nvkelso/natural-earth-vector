@@ -312,7 +312,87 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    WIKIDATAID = 'Q10893722')) %>%
   # Nancha
   rows_update(by = "NE_ID", tibble(NE_ID = 1159141231,
-                                   WIKIDATAID = 'Q2043360'))
+                                   WIKIDATAID = 'Q2043360')) %>%
+  # wikidata | 10m populated_places | replace #459
+  # Peace River
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159150235,
+                                   WIKIDATAID = 'Q1743985')) %>%
+  # Tarawa
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159149079,
+                                   WIKIDATAID = 'Q131233')) %>%
+  # Chapleau
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159143805,
+                                   WIKIDATAID = 'Q2957549')) %>%
+  # Chilca
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159136041,
+                                   WIKIDATAID = 'Q16890238')) %>%
+  # Oymyakon
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159132375,
+                                   WIKIDATAID = 'Q192098')) %>%
+  # Chuquicamata
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159130545,
+                                   WIKIDATAID = 'Q55342984',
+                                   POP_MAX = 0,
+                                   POP_MIN = 0,
+                                   POP_OTHER = 0)) %>%
+  # Hua Hin
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159134475,
+                                   WIKIDATAID = 'Q667576')) %>%
+  # Samut Prakan
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159134483,
+                                   WIKIDATAID = 'Q13139252')) %>%
+  # Thung Song
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159134373,
+                                   WIKIDATAID = 'Q15199303')) %>%
+  # Miaoli
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159146177,
+                                   WIKIDATAID = 'Q701651')) %>%
+  # Warangal
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159147191,
+                                   WIKIDATAID = 'Q25563103 ')) %>%
+  # Makale
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159139891,
+                                   WIKIDATAID = 'Q57079173')) %>%
+  # Gorakhpur
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159147325,
+                                   WIKIDATAID = 'Q5584396')) %>%
+  # Vitória da Conquista
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159150217,
+                                   WIKIDATAID = 'Q22062839')) %>%
+  # Ras al Khaymah
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159134277,
+                                   WIKIDATAID = 'Q2126436')) %>%
+  # Antioch -> Antakya
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159113499,
+                                   WIKIDATAID = 'Q80561',
+                                   NAME = "Antakya",
+                                   NAMEASCII = "Antakya",
+                                   NAMEALT = "Antioch")) %>%
+  # Hatay - province, so delete
+  rows_delete(by = "NE_ID", tibble(NE_ID = 1159135187)) %>%
+  # Villa Ahumada
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159138309,
+                                   WIKIDATAID = 'Q20148488')) %>%
+  # Ciudad Camargo
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159138313,
+                                   WIKIDATAID = 'Q2528602')) %>%
+  # Sonbong
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159139183,
+                                   WIKIDATAID = 'Q221734',
+                                   NAME = "Rason",
+                                   NAMEASCII = "Rason",
+                                   NAMEALT = "Sonbong")) %>%
+  # Hungnam
+  rows_delete(by = "NE_ID", tibble(NE_ID = 1159139193)) %>%
+  # Ali Bayramli -> Shirvan
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159144565,
+                                   WIKIDATAID = 'Q241116',
+                                   NAME = "Shirvan",
+                                   NAMEASCII = "Shirvan",
+                                   NAMEALT = "Ali Bayramli")) %>%
+  # Xigaze
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159149873,
+                                   WIKIDATAID = 'Q1211183'))
 
 # WRITE OUTPUT
 setwd(write_to)
