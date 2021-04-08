@@ -392,7 +392,77 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAMEALT = "Ali Bayramli")) %>%
   # Xigaze
   rows_update(by = "NE_ID", tibble(NE_ID = 1159149873,
-                                   WIKIDATAID = 'Q1211183'))
+                                   WIKIDATAID = 'Q1211183')) %>%
+  # Xiangkhoang -> Phonsavan
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159139143,
+                                   # this town is no longer the admin-1 capital
+                                   FEATURECLA = "Populated Place",
+                                   # feature should be moved to 19.451895771215643, 103.19599722986072
+                                   LATITUDE = 19.4518958,
+                                   LONGITUDE = 103.1959972,
+                                   # name changed to Phonsavan
+                                   NAME = "Phonsavan",
+                                   NAMEASCII = "Phonsavan",
+                                   NAMEALT = "Xiangkhoang",
+                                   # population changed to 37507
+                                   POP_MAX = 37507,
+                                   POP_MIN = 37507,
+                                   # WD changed to Q1011711
+                                   WIKIDATAID = 'Q1011711')) %>%
+  # Zhijiang
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159140801,
+                                   WIKIDATAID = 'Q14297991')) %>%
+  # Mohembo
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159145189,
+                                   WIKIDATAID = 'Q171089')) %>%
+  # El Kharga
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159148437,
+                                   WIKIDATAID = 'Q4063326')) %>%
+  # Umm al Qaywayn
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159126925,
+                                   WIKIDATAID = 'Q2788830')) %>%
+  # Escudero Base
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159146095,
+                                   WIKIDATAID = 'Q2714138')) %>%
+  # Oktyabrskiy
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159146863,
+                                   WIKIDATAID = 'Q1691320',
+                                   # change population to 1534
+                                   POP_MAX = 1534,
+                                   POP_MIN = 1534)) %>%
+  # Mato Grosso -> Vila Bela da Santíssima Trindade
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159148779,
+                                   WIKIDATAID = 'Q732088',
+                                   # change name to "Vila Bela da Santíssima Trindade"
+                                   NAME = "Vila Bela da Santíssima Trindade",
+                                   NAMEASCII = "Vila Bela da Santissima Trindade",
+                                   NAMEALT = "Mato Grosso",
+                                   # change population to 16271
+                                   POP_MAX = 16271,
+                                   POP_MIN = 16271)) %>%
+  # Pakhachi
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159129673,
+                                   WIKIDATAID = 'Q4347325')) %>%
+  # Aqadyr
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159129551,
+                                   WIKIDATAID = 'Q4056543')) %>%
+  # Omchak
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159129085,
+                                   WIKIDATAID = 'Q14545882')) %>%
+  # Zvezdnyy -> Zvëzdnyj
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159128511,
+                                   WIKIDATAID = 'Q2305684',
+                                   # change name to Zvëzdnyj
+                                   NAME = "Zvëzdnyj",
+                                   NAMEASCII = "Zvezdnyj",
+                                   NAMEALT = "Zvezdnyy")) %>%
+  # Gyzlarbat -> Serdar
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159126955,
+                                   WIKIDATAID = 'Q1015618',
+                                   # change name to Serdar
+                                   NAME = "Serdar",
+                                   NAMEASCII = "Serdar",
+                                   NAMEALT = "Gyzlarbat"))
 
 # WRITE OUTPUT
 setwd(write_to)
