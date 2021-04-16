@@ -384,15 +384,16 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAMEALT = "Sonbong")) %>%
   # Hungnam
   rows_delete(by = "NE_ID", tibble(NE_ID = 1159139193)) %>%
-  # Ali Bayramli -> Shirvan
+  # Ali Bayramli -> Şirvan
   rows_update(by = "NE_ID", tibble(NE_ID = 1159144565,
                                    WIKIDATAID = 'Q241116',
-                                   NAME = "Shirvan",
+                                   NAME = "Şirvan",
                                    NAMEASCII = "Shirvan",
                                    NAMEALT = "Ali Bayramli")) %>%
   # Xigaze
   rows_update(by = "NE_ID", tibble(NE_ID = 1159149873,
                                    WIKIDATAID = 'Q1211183')) %>%
+  # wikidata | 10m populated_places | other proposals ... #461
   # Xiangkhoang -> Phonsavan
   rows_update(by = "NE_ID", tibble(NE_ID = 1159139143,
                                    # this town is no longer the admin-1 capital
@@ -433,10 +434,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   # Mato Grosso -> Vila Bela da Santíssima Trindade
   rows_update(by = "NE_ID", tibble(NE_ID = 1159148779,
                                    WIKIDATAID = 'Q732088',
-                                   # change name to "Vila Bela da Santíssima Trindade"
-                                   NAME = "Vila Bela da Santíssima Trindade",
-                                   NAMEASCII = "Vila Bela da Santissima Trindade",
-                                   NAMEALT = "Mato Grosso",
+                                   # change name to Santissima Trindade
+                                   NAME = "Santissima Trindade",
+                                   NAMEASCII = "Santissima Trindade",
+                                   NAMEALT = "Vila Bela da Santissima Trindade|Mato Grosso",
                                    # change population to 16271
                                    POP_MAX = 16271,
                                    POP_MIN = 16271)) %>%
