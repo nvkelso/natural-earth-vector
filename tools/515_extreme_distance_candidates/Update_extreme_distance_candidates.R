@@ -78,7 +78,6 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   # Kotabumi
   rows_update(by = "NE_ID", tibble(NE_ID = 1159148383,
                                    WIKIDATAID = "Q14635420")) %>%
-  rows_update(by = "NE_ID", tibble(NE_ID = 1159142075)) %>%	#Lagunas	Lagunas	https://www.wikidata.org/wiki/Q1800551	300-400km	cannot verify - no action
   rows_update(by = "NE_ID", tibble(NE_ID = 1159139779)) %>%	#Pati	Pati	https://www.wikidata.org/wiki/Q4554019	200-250km	better WD -> Q4135102
   rows_update(by = "NE_ID", tibble(NE_ID = 1159135963)) %>%	#Sechura	Sechura	https://www.wikidata.org/wiki/Q3236446	250-300km	appears to be a phantom feature, actual Sechura is far away (https://www.openstreetmap.org/node/2505711675) and no nearby populated places - rec
   rows_update(by = "NE_ID", tibble(NE_ID = 1159130281)) %>%	#Shangdu	Shangdu	https://www.wikidata.org/wiki/Q10868289	250-300km	This feature appears to generalize a county - best match for county would be Q1305772
