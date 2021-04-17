@@ -3,14 +3,14 @@ library(WikidataR)
 library(tidyverse)
 library(kableExtra)
 
-read_from <- "~/Repos/natural-earth-vector/10m_cultural/"
+read_from <- "~/Repos/natural-earth-vector/tools/508_fix_10m_populated_places_metadata/"
 write_to <- "~/Repos/natural-earth-vector/tools/510_swap_wikidataids/"
 
 ## IMPORT NE DATA
 setwd(read_from)
 
 # Read in ne_10m_populated_places shapefile
-ne_10m_populated_places <- st_read('ne_10m_populated_places.shp',
+ne_10m_populated_places <- st_read('ne_10m_populated_places_modified.shp',
                                    drivers = 'ESRI Shapefile',
                                    as_tibble = TRUE)
 
