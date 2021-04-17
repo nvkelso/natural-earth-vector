@@ -88,9 +88,15 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   # Shangdu
   rows_update(by = "NE_ID", tibble(NE_ID = 1159130281,
                                    WIKIDATAID = "Q10868289")) %>%
-  rows_update(by = "NE_ID", tibble(NE_ID = 1159130147)) %>%	#Shashi	Shashi	https://www.wikidata.org/wiki/Q11139987	250-300km	Feature represents a district of prefecture-level city Jingzhou - name should change to Jingzhou, better WD -> Q71247, (see:https://www.openstreetma
-  rows_update(by = "NE_ID", tibble(NE_ID = 1159137527))	#Yamburg	Yamburg	https://www.wikidata.org/wiki/Q1679866	250-300km	move geometry to 67.92211738288061, 74.92531301724216, add WD (confirmed with google and OSM, see:https://www.openstreetmap.org/node/1349074061)
-  
+  # Shashi
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159130147,
+                                   WIKIDATAID = "Q11139987")) %>%
+  # Yamburg
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159137527,
+                                   WIKIDATAID = "Q1679866",
+                                   # move geometry to 67.92211738288061, 74.92531301724216
+                                   LATITUDE = 67.92211738288061,
+                                   LONGITUDE = 74.92531301724216))
 
 # WRITE OUTPUT
 setwd(write_to)
