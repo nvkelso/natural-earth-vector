@@ -75,7 +75,9 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    LATITUDE = 24.695252134251945,
                                    LONGITUDE = 108.08299950401414,
                                    WIKIDATAID = "Q572089")) %>%
-  rows_update(by = "NE_ID", tibble(NE_ID = 1159148383)) %>%	#Kotabumi	Kotabumi	https://www.wikidata.org/wiki/Q14635420	100-150km	better WD -> Q10372500
+  # Kotabumi
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159148383,
+                                   WIKIDATAID = "Q14635420")) %>%
   rows_update(by = "NE_ID", tibble(NE_ID = 1159142075)) %>%	#Lagunas	Lagunas	https://www.wikidata.org/wiki/Q1800551	300-400km	cannot verify - no action
   rows_update(by = "NE_ID", tibble(NE_ID = 1159139779)) %>%	#Pati	Pati	https://www.wikidata.org/wiki/Q4554019	200-250km	better WD -> Q4135102
   rows_update(by = "NE_ID", tibble(NE_ID = 1159135963)) %>%	#Sechura	Sechura	https://www.wikidata.org/wiki/Q3236446	250-300km	appears to be a phantom feature, actual Sechura is far away (https://www.openstreetmap.org/node/2505711675) and no nearby populated places - rec
