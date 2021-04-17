@@ -81,7 +81,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   # Pati
   rows_update(by = "NE_ID", tibble(NE_ID = 1159139779,
                                    WIKIDATAID = "Q4554019")) %>%
-  rows_update(by = "NE_ID", tibble(NE_ID = 1159135963)) %>%	#Sechura	Sechura	https://www.wikidata.org/wiki/Q3236446	250-300km	appears to be a phantom feature, actual Sechura is far away (https://www.openstreetmap.org/node/2505711675) and no nearby populated places - rec
+  # Sechura appears to be a phantom feature, actual Sechura is far away 
+  # (https://www.openstreetmap.org/node/2505711675) and no nearby populated places -
+  # recommend deletion/deprecation
+  rows_delete(by = "NE_ID", tibble(NE_ID = 1159135963)) %>%
   rows_update(by = "NE_ID", tibble(NE_ID = 1159130281)) %>%	#Shangdu	Shangdu	https://www.wikidata.org/wiki/Q10868289	250-300km	This feature appears to generalize a county - best match for county would be Q1305772
   rows_update(by = "NE_ID", tibble(NE_ID = 1159130147)) %>%	#Shashi	Shashi	https://www.wikidata.org/wiki/Q11139987	250-300km	Feature represents a district of prefecture-level city Jingzhou - name should change to Jingzhou, better WD -> Q71247, (see:https://www.openstreetma
   rows_update(by = "NE_ID", tibble(NE_ID = 1159137527))	#Yamburg	Yamburg	https://www.wikidata.org/wiki/Q1679866	250-300km	move geometry to 67.92211738288061, 74.92531301724216, add WD (confirmed with google and OSM, see:https://www.openstreetmap.org/node/1349074061)
