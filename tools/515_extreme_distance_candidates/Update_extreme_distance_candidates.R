@@ -63,7 +63,12 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    LATITUDE = -26.34810,
                                    LONGITUDE = -70.62147,
                                    WIKIDATAID = "Q3763")) %>%
-  rows_update(by = "NE_ID", tibble(NE_ID = 1159141037)) %>%	#Fuyu	Fuyu	https://www.wikidata.org/wiki/Q185940	100-150km	Fuyu is a county-level city under the administration of prefecture-level city Songyuan. Geometry right now is located at Songyuan. Recommend changin
+  # Fuyu -> Songyuan
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159141037,
+                                   NAME = "Songyuan",
+                                   NAMEASCII = "Songyuan",
+                                   NAMEALT = "Fuyu",
+                                   WIKIDATAID = "Q185940")) %>%
   rows_update(by = "NE_ID", tibble(NE_ID = 1159139657)) %>%	#Hechi	Hechi	https://www.wikidata.org/wiki/Q572089	250-300km	move geometry to 24.695252134251945, 108.08299950401414, add WD (confirmed with google & OSM, see https://www.openstreetmap.org/node/5729719789)
   rows_update(by = "NE_ID", tibble(NE_ID = 1159148383)) %>%	#Kotabumi	Kotabumi	https://www.wikidata.org/wiki/Q14635420	100-150km	better WD -> Q10372500
   rows_update(by = "NE_ID", tibble(NE_ID = 1159142075)) %>%	#Lagunas	Lagunas	https://www.wikidata.org/wiki/Q1800551	300-400km	cannot verify - no action
