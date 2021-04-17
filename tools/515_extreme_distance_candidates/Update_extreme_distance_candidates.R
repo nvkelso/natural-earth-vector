@@ -48,7 +48,12 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
   # Cacolo
   rows_update(by = "NE_ID", tibble(NE_ID = 1159144693,
                                    WIKIDATAID = "Q1620901")) %>%
-  rows_update(by = "NE_ID", tibble(NE_ID = 1159133655)) %>%	#Chaguaramas	Chaguaramas	https://www.wikidata.org/wiki/Q1058829	100-150km	move geometry to 9.33597,-66.25448, add WD (confirmed with google and OSM, see: https://www.openstreetmap.org/node/3846781260#map=17/9.3
+  # Chaguaramas
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159133655,
+                                   WIKIDATAID = "Q1058829",
+                                   # Move geometry to -10.17666,-59.44387
+                                   LATITUDE = 9.33597,
+                                   LONGITUDE = -66.25448 )) %>%
   rows_update(by = "NE_ID", tibble(NE_ID = 1159148559)) %>%	#Chanaral	Chañaral	https://www.wikidata.org/wiki/Q3763	300-400km	move geometry to -26.34810,-70.62147, add WD, (confirmed with google and OSM, see:https://www.openstreetmap.org/node/214189440#map=18/-26.34810/
   rows_update(by = "NE_ID", tibble(NE_ID = 1159141037)) %>%	#Fuyu	Fuyu	https://www.wikidata.org/wiki/Q185940	100-150km	Fuyu is a county-level city under the administration of prefecture-level city Songyuan. Geometry right now is located at Songyuan. Recommend changin
   rows_update(by = "NE_ID", tibble(NE_ID = 1159139657)) %>%	#Hechi	Hechi	https://www.wikidata.org/wiki/Q572089	250-300km	move geometry to 24.695252134251945, 108.08299950401414, add WD (confirmed with google & OSM, see https://www.openstreetmap.org/node/5729719789)
