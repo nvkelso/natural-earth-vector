@@ -35,7 +35,16 @@ ne_10m_populated_places$LONGITUDE <- coords$X
 ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>% 
   st_drop_geometry() %>%
   mutate(across(where(is.factor), as.character)) %>%
-  rows_update(by = "NE_ID", tibble(NE_ID = 1159148783)) %>%	#Aripuana	Aripuanã	https://www.wikidata.org/wiki/Q1805412	150-200km	move geometry to -10.17666,-59.44387, add WD (confirmed with google & OSM, see https://www.openstreetmap.org/node/343588838#map=17/-10.17666
+  #Aripuana -> Aripuanã
+  rows_update(by = "NE_ID", tibble(NE_ID = 1159148783,
+                                   NAME = "Aripuanã",
+                                   NAMEALT = "Aripuana",
+                                   NAMEASCII = "Aripuana",
+                                   # Move geometry to -10.17666,-59.44387
+                                   LATITUDE = -10.17666,
+                                   LONGITUDE = -59.44387,
+                                   # add WD (confirmed with google & OSM
+                                   WIKIDATAID = "Q1805412")) %>%
   rows_update(by = "NE_ID", tibble(NE_ID = 1159144693)) %>%	#Cacolo	Cacolo	https://www.wikidata.org/wiki/Q1620901	300-400km	add WD - first WD location is incorrect, second is correct, distance is calculated on first location
   rows_update(by = "NE_ID", tibble(NE_ID = 1159133655)) %>%	#Chaguaramas	Chaguaramas	https://www.wikidata.org/wiki/Q1058829	100-150km	move geometry to 9.33597,-66.25448, add WD (confirmed with google and OSM, see: https://www.openstreetmap.org/node/3846781260#map=17/9.3
   rows_update(by = "NE_ID", tibble(NE_ID = 1159148559)) %>%	#Chanaral	Chañaral	https://www.wikidata.org/wiki/Q3763	300-400km	move geometry to -26.34810,-70.62147, add WD, (confirmed with google and OSM, see:https://www.openstreetmap.org/node/214189440#map=18/-26.34810/
