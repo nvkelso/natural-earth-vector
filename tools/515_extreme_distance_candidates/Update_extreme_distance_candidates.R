@@ -68,7 +68,10 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    NAME = "Songyuan",
                                    NAMEASCII = "Songyuan",
                                    NAMEALT = "Fuyu",
-                                   WIKIDATAID = "Q185940")) %>%
+                                   POP_MAX = 495900,
+                                   POP_MIN = 495900,
+                                   POP_OTHER = 0,
+                                   WIKIDATAID = "Q92364")) %>%
   # Hechi
   rows_update(by = "NE_ID", tibble(NE_ID = 1159139657,
                                    # move geometry to 24.695252134251945, 108.08299950401414
@@ -77,20 +80,23 @@ ne_10m_populated_places_modified_metadata <- ne_10m_populated_places %>%
                                    WIKIDATAID = "Q572089")) %>%
   # Kotabumi
   rows_update(by = "NE_ID", tibble(NE_ID = 1159148383,
-                                   WIKIDATAID = "Q14635420")) %>%
+                                   WIKIDATAID = "Q10372500")) %>%
   # Pati
   rows_update(by = "NE_ID", tibble(NE_ID = 1159139779,
-                                   WIKIDATAID = "Q4554019")) %>%
+                                   WIKIDATAID = "Q4135102")) %>%
   # Sechura appears to be a phantom feature, actual Sechura is far away 
   # (https://www.openstreetmap.org/node/2505711675) and no nearby populated places -
   # recommend deletion/deprecation
   rows_delete(by = "NE_ID", tibble(NE_ID = 1159135963)) %>%
   # Shangdu
   rows_update(by = "NE_ID", tibble(NE_ID = 1159130281,
-                                   WIKIDATAID = "Q10868289")) %>%
-  # Shashi
+                                   WIKIDATAID = "Q1305772")) %>%
+  # Shashi -> Jingzhou
   rows_update(by = "NE_ID", tibble(NE_ID = 1159130147,
-                                   WIKIDATAID = "Q11139987")) %>%
+                                   NAME = "Jingzhou",
+                                   NAMEASCII = "Jingzhou",
+                                   NAMEALT = "Shashi",
+                                   WIKIDATAID = "Q71247")) %>%
   # Yamburg
   rows_update(by = "NE_ID", tibble(NE_ID = 1159137527,
                                    WIKIDATAID = "Q1679866",
