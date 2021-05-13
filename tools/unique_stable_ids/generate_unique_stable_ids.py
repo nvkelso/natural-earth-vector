@@ -67,9 +67,7 @@ with fiona.open( args.input, 'r', encoding='utf-8' ) as source:
 
                 # when a feature's ne_id property is null or 0 then request a new Brooklyn Int and store that to the feature's ne_id property
                 if not hasattr( sink_schema['properties'], 'ne_id'):
-
-                    # Add the signed area of the polygon and a timestamp
-                    # to the feature properties map.
+                    # generate a Brooklyn int and assign to feature new ne_id property
                     feature['properties'].update(
                         ne_id = generate_id() )
 
@@ -77,9 +75,7 @@ with fiona.open( args.input, 'r', encoding='utf-8' ) as source:
 
                 else:
                     if feature['properties']['ne_id'] is null or feature['properties']['ne_id'] == 0:
-
-                        # Add the signed area of the polygon and a timestamp
-                        # to the feature properties map.
+                        # generate a Brooklyn int and assign to feature existing ne_id property with empty values
                         feature['properties'].update(
                             ne_id = generate_id() )
 
