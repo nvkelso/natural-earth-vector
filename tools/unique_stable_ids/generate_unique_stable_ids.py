@@ -4,6 +4,7 @@ from shapely.geometry import shape, mapping
 import requests
 import logging
 import json
+import sys
 
 import argparse
 
@@ -14,7 +15,7 @@ args = parser.parse_args()
 
 def generate_id():
 
-    url = 'http://api.brooklynintegers.com/rest/'
+    url = 'https://api.brooklynintegers.com/rest/'
     params = {'method':'brooklyn.integers.create'}
 
     try :
@@ -40,7 +41,7 @@ with fiona.open( args.input, 'r', encoding='utf-8' ) as source:
 
     # add ne_id property if not present in the schema add it
     if not hasattr( sink_schema['properties'], 'ne_id'):
-    	sink_schema['properties']['ne_id'] = 'int'
+        sink_schema['properties']['ne_id'] = 'int'
 
     # Create a sink for processed features with the same format and
     # coordinate reference system as the source.
@@ -52,31 +53,42 @@ with fiona.open( args.input, 'r', encoding='utf-8' ) as source:
             schema=sink_schema,
             ) as sink:
 
+        # setup counter to track which feature we're on
+        f_counter = 1
+        total_features = len(list(source))
+                
         for feature in source:
+            # report which feature we're processing
+            sys.stdout.write("\r  " + str(f_counter) + " of " + str(total_features))
+            # but don't spam with new lines
+            sys.stdout.flush()
 
             try:
 
-			    # when a feature's ne_id property is null or 0 then request a new Brooklyn Int and store that to the feature's ne_id property
-				if not hasattr( sink_schema['properties'], 'ne_id'):
+                # when a feature's ne_id property is null or 0 then request a new Brooklyn Int and store that to the feature's ne_id property
+                if not hasattr( sink_schema['properties'], 'ne_id'):
 
-					# Add the signed area of the polygon and a timestamp
-					# to the feature properties map.
-					feature['properties'].update(
-						ne_id = generate_id() )
+                    # Add the signed area of the polygon and a timestamp
+                    # to the feature properties map.
+                    feature['properties'].update(
+                        ne_id = generate_id() )
 
-					sink.write(feature)
+                    sink.write(feature)
 
-				else:
-					if feature['properties']['ne_id'] is null or feature['properties']['ne_id'] == 0:
+                else:
+                    if feature['properties']['ne_id'] is null or feature['properties']['ne_id'] == 0:
 
-						# Add the signed area of the polygon and a timestamp
-						# to the feature properties map.
-						feature['properties'].update(
-							ne_id = generate_id() )
+                        # Add the signed area of the polygon and a timestamp
+                        # to the feature properties map.
+                        feature['properties'].update(
+                            ne_id = generate_id() )
 
-						sink.write(feature)
+                        sink.write(feature)
 
             except Exception, e:
                 logging.exception("Error processing feature %s:", feature['id'])
+            
+            # increment counter
+            f_counter += 1
 
         # The sink file is written to disk and closed when its block ends.
