@@ -464,6 +464,38 @@ build_a7_ne_10m_admin_1_all: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp
 		-o 10m_cultural/ne_10m_admin_1_states_provinces_lakes.shp \
 #  calc='join_count = count()'
 
+build_a8_ne_10m_admin_2_all: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
+	10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp \
+	10m_physical/ne_10m_coastline.shp \
+	10m_physical/ne_10m_minor_islands_coastline.shp \
+	10m_cultural/ne_10m_admin_1_states_provinces_lines.shp \
+	10m_cultural/ne_10m_admin_2_counties_lines.shp \
+	10m_cultural/ne_10m_admin_2_label_points.shp \
+	10m_cultural/ne_10m_admin_2_label_points_details.dbf \
+	intermediate/ne_10m_lakes_big.shp \
+	10m_physical/ne_10m_lakes.shp
+	mapshaper -i combine-files snap \
+		10m_cultural/ne_10m_admin_0_boundary_lines_land.shp \
+		10m_cultural/ne_10m_admin_0_boundary_lines_map_units.shp \
+		10m_physical/ne_10m_coastline.shp \
+		10m_physical/ne_10m_minor_islands_coastline.shp \
+		10m_cultural/ne_10m_admin_1_states_provinces_lines.shp \
+		10m_cultural/ne_10m_admin_2_counties_lines.shp \
+		-filter-fields \
+		-merge-layers \
+		-polygons gap-tolerance=1e-4 \
+		-join 10m_cultural/ne_10m_admin_2_label_points.shp \
+		-filter 'ADM0_SR !== null' + \
+		-o 10m_cultural/ne_10m_admin_2_counties_scale_rank_minor_islands.shp \
+		-filter 'ADM0_SR <= 6' + \
+		-o 10m_cultural/ne_10m_admin_2_counties_scale_rank.shp \
+		-dissolve 'ADM2_CODE' copy-fields=FEATURECLA,SCALERANK \
+		-join 10m_cultural/ne_10m_admin_2_label_points_details.dbf encoding=utf8 keys=ADM2_CODE,ADM2_CODE fields=* \
+		-o 10m_cultural/ne_10m_admin_2_counties.shp \
+		-erase intermediate/ne_10m_lakes_big.shp \
+		-o 10m_cultural/ne_10m_admin_2_counties_lakes.shp \
+#  calc='join_count = count()'
+
 build_b0_ne_50m_admin_0_disputed: 50m_cultural/ne_50m_admin_0_breakaway_disputed_areas_scale_rank.shp \
 	housekeeping/ne_admin_0_details_level_5_disputed.dbf
 	mapshaper -i 50m_cultural/ne_50m_admin_0_breakaway_disputed_areas_scale_rank.shp \
