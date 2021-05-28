@@ -1039,6 +1039,7 @@ build_b0_ne_50m_admin_0_disputed: 50m_cultural/ne_50m_admin_0_breakaway_disputed
 		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=* \
 		-each 'delete sr_brk_a3' \
 		-o 50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.shp \
+#calc='join_count = count()' \
 
 build_b1_ne_50m_admin_0_subunits: 50m_cultural/ne_50m_admin_0_scale_rank.shp \
 	housekeeping/ne_admin_0_details_level_4_subunits.dbf
