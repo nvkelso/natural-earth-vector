@@ -1018,7 +1018,7 @@ build_a8_ne_10m_admin_2_all: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp
 		-filter-fields \
 		-merge-layers \
 		-polygons gap-tolerance=1e-4 \
-		-join 10m_cultural/ne_10m_admin_2_label_points.shp \
+		-join 10m_cultural/ne_10m_admin_2_label_points.shp encoding=utf8 \
 		-filter 'ADM0_SR !== null' + \
 		-o 10m_cultural/ne_10m_admin_2_counties_scale_rank_minor_islands.shp \
 		-filter 'ADM0_SR <= 6' + \
