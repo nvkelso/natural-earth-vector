@@ -13,5 +13,8 @@ clean:
 fetch:
 	cd ../.. && ./tools/wikidata/update.sh fetch && cd ./.
 
+fetch_write:
+	cd ../.. && ./tools/wikidata/update.sh fetch_write && cd ./.
+
 write:
 	cd ../.. && ./tools/wikidata/update.sh write && cd ./.

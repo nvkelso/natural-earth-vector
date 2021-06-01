@@ -4,6 +4,7 @@ housekeeping/.~lock.ne_admin_0_details.xls#
 housekeeping/.~lock.ne_admin_0_details.ods#
 housekeeping/src/*
 packages/natural_earth_vector.sqlite
+packages/natural_earth_vector.gpkg
 packages/Natural_Earth_quick_start/50m_raster/NE1_50M_SR_W/NE1_50M_SR_W.tif
 packages/Natural_Earth_quick_start/Natural_Earth_quick_start_for_QGIS_v3.qgs~
 geojson/ne_10m_roads_north_america.geojson
