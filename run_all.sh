@@ -33,14 +33,18 @@ rm -f $logmd
 #                          | mode       |LetterCase| shape_path  |  shape filename
 # == 10m ================= |=========== |==========| ============| ================================================
 function run10m {
-./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_0_sovereignty
-./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_0_countries
+./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_0_sovereignty                        # this and other admin_0 run, but Mapshaper overwrites them
+./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_0_countries                          # instead results are copied into housekeeping file's lookup table
 ./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_0_countries_lakes
 ./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_0_map_units
 ./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_0_map_subunits
 ./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_0_disputed_areas
-./tools/wikidata/update.sh  fetch_write  lowercase   10m_cultural  ne_10m_admin_1_states_provinces
+./tools/wikidata/update.sh  fetch_write  lowercase   10m_cultural  ne_10m_admin_1_states_provinces                   # this and other admin_1 run, but Mapshaper overwrites them
 ./tools/wikidata/update.sh  fetch_write  lowercase   10m_cultural  ne_10m_admin_1_states_provinces_lakes
+./tools/wikidata/update.sh  fetch_write  lowercase   10m_cultural  ne_10m_admin_1_label_points_details               # Mapshaper uses this to generate admin_1 polys
+./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_2_label_points_details               # Mapshaper uses this to generate admin_2 polys
+./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_2_counties                           # this and other admin_2 run, but Mapshaper overwrites them
+./tools/wikidata/update.sh  fetch_write  uppercase   10m_cultural  ne_10m_admin_2_counties_lakes
 ./tools/wikidata/update.sh  fetch_write  lowercase   10m_cultural  ne_10m_airports
 ./tools/wikidata/update.sh  fetch_write  lowercase   10m_cultural  ne_10m_populated_places                           # this should be build before derived Makefile themes run
 ./tools/wikidata/update.sh  fetch_write  lowercase   10m_physical  ne_10m_geographic_lines                           # this should be build before derived Makefile themes run
@@ -57,7 +61,6 @@ function run10m {
 ./tools/wikidata/update.sh  fetch_write  lowercase   10m_physical  ne_10m_rivers_lake_centerlines_scale_rank
 ./tools/wikidata/update.sh  fetch_write  lowercase   10m_physical  ne_10m_rivers_europe
 ./tools/wikidata/update.sh  fetch_write  lowercase   10m_physical  ne_10m_rivers_north_america
-#./tools/wikidata/update.sh  fetch_write  lowercase   10m_cultural  ne_10m_admin_1_label_points_details                # geometry errors
 }
 
 function run50m {

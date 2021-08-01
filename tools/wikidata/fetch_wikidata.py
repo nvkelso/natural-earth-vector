@@ -2,6 +2,7 @@
 
 #--  pip3 install -U SPARQLWrapper
 #--  pip3 install -U fiona
+#--  pip3 install -U hanzidentifier
 
 """
 Fetch Wikidata Labels
@@ -20,6 +21,7 @@ import argparse
 import csv
 import sys
 import time
+import hanzidentifier
 #import requests
 
 from SPARQLWrapper import SPARQLWrapper, JSON, SPARQLExceptions
@@ -31,7 +33,7 @@ parser.add_argument('-input_shape_name',
                     default='../../10m_cultural/ne_10m_populated_places.shp',
                     help='input natural-earth shape file - with wikidataid columns')
 parser.add_argument('-input_lettercase',
-                    default='lowercase',
+                    default='uppercase',
                     help='variables in thes hape file - lowercase or uppercase')
 parser.add_argument('-output_csv_name',
                     default='ne_10m_populated_places.csv',
@@ -67,13 +69,75 @@ def get_sparql_numvalue(sresult, variable_id):
         val = float(sresult[variable_id]['value'])
     return val
 
+def post_process_wd_zh(properties):
+    """ First check whether name_zh (Simplified) and name_zht(Traditional)
+    are set already, if not we use the name_zh-default to backfill them.
+    During the backfill, if there is no Simplified Chinese, Traditional
+    Chinese will be used to further backfill, and vice versa
+    It also deletes the intermediate property `zh-default`
+    """
+
+    name_en_default = properties['name_en'] if 'name_en' in \
+                                                properties else u''
+    zh_Hans_fallback = properties['name_zh_hans'] if 'name_zh_hans' in \
+                                                properties else u''
+    zh_Hant_fallback = properties['name_zh_hant'] if 'name_zh_hant' in \
+                                                 properties else u''
+
+    # sometimes the default Chinese name has several values in a list
+    if 'name_zh_default' in properties:
+        names = properties['name_zh_default'].split('/')
+        for name in names:
+            if hanzidentifier.is_simplified(name) and \
+                    len(zh_Hans_fallback) == 0:
+                zh_Hans_fallback = name
+                #print('found simplified name')
+            if hanzidentifier.is_traditional(name) and \
+                    len(zh_Hant_fallback) == 0:
+                zh_Hant_fallback = name
+                #print('found traditional name')
+
+    # make sure we don't shove English values into Chinese namespace
+    if (zh_Hans_fallback == name_en_default) and len(name_en_default) > 0:
+        zh_Hans_fallback = u''
+
+    if (zh_Hant_fallback == name_en_default) and len(name_en_default) > 0:
+        zh_Hant_fallback = u''
+
+    # now make traditional and simplified Chinese name assignments
+    if 'name_zhs' not in properties:
+        if len(zh_Hans_fallback) != 0:
+            properties['name_zhs'] = zh_Hans_fallback
+        elif len(zh_Hant_fallback) != 0:
+            properties['name_zhs'] = zh_Hant_fallback
+        else:
+            properties['name_zhs'] = u''
+
+    if 'name_zht' not in properties:
+        if len(zh_Hant_fallback) != 0:
+            properties['name_zht'] = zh_Hant_fallback
+        elif len(zh_Hans_fallback) != 0:
+            properties['name_zht'] = zh_Hans_fallback
+        else:
+            properties['name_zht'] = u''
+
+    # only select one of the options if the field is separated by "/"
+    # for example if the field is "旧金山市县/三藩市市縣/舊金山市郡" only the first
+    # one 旧金山市县 will be preserved
+    if len(properties['name_zh']) != 0:
+        properties['name_zh'] = properties['name_zh'].split('/')[0].strip()
+    if len(properties['name_zht']) != 0:
+        properties['name_zht'] = properties['name_zht'].split('/')[0].strip()
+
+    return properties
+
 
 def fetchwikidata(a_wid):
     """
     Fetch wikidata with SPARQL
     """
 
-    sparql = SPARQLWrapper("https://query.wikidata.org/sparql", 'natural_earth_name_localizer v1.1.0 (github.com/nvkelso/natural-earth-vector)')
+    sparql = SPARQLWrapper("https://query.wikidata.org/sparql", 'natural_earth_name_localizer v1.1.1 (github.com/nvkelso/natural-earth-vector)')
     query_template = """
         SELECT
             ?e ?i ?r ?population
@@ -102,6 +166,8 @@ def fetchwikidata(a_wid):
             ?name_ur
             ?name_vi
             ?name_zh
+            ?name_zh_hans
+            ?name_zh_hant
         WHERE {
             {
                 SELECT DISTINCT  ?e ?i ?r
@@ -119,7 +185,7 @@ def fetchwikidata(a_wid):
             OPTIONAL{?e rdfs:label ?name_el FILTER((LANG(?name_el))="el").}
             OPTIONAL{?e rdfs:label ?name_en FILTER((LANG(?name_en))="en").}
             OPTIONAL{?e rdfs:label ?name_es FILTER((LANG(?name_es))="es").}
-            OPTIONAL{?e rdfs:label ?name_fa FILTER((LANG(?name_fr))="fa").}
+            OPTIONAL{?e rdfs:label ?name_fa FILTER((LANG(?name_fa))="fa").}
             OPTIONAL{?e rdfs:label ?name_fr FILTER((LANG(?name_fr))="fr").}
             OPTIONAL{?e rdfs:label ?name_he FILTER((LANG(?name_he))="he").}
             OPTIONAL{?e rdfs:label ?name_hi FILTER((LANG(?name_hi))="hi").}
@@ -138,6 +204,8 @@ def fetchwikidata(a_wid):
             OPTIONAL{?e rdfs:label ?name_ur FILTER((LANG(?name_ur))="ur").}
             OPTIONAL{?e rdfs:label ?name_vi FILTER((LANG(?name_vi))="vi").}
             OPTIONAL{?e rdfs:label ?name_zh FILTER((LANG(?name_zh))="zh").}
+            OPTIONAL{?e rdfs:label ?name_zh_hans FILTER((LANG(?name_zh_hans))="zh-hans").}
+            OPTIONAL{?e rdfs:label ?name_zh_hant FILTER((LANG(?name_zh_hant))="zh-hant").}
         }
 
     """
@@ -237,7 +305,8 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
         "name_uk",
         "name_ur",
         "name_vi",
-        "name_zh"
+        "name_zh",
+        "name_zht"
     ))
 
 
@@ -285,12 +354,13 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                     name_el = get_sparql_label(result, 'name_el')
                     name_en = get_sparql_label(result, 'name_en')
                     name_es = get_sparql_label(result, 'name_es')
-                    name_fr = get_sparql_label(result, 'name_fa')
+                    name_fa = get_sparql_label(result, 'name_fa')
                     name_fr = get_sparql_label(result, 'name_fr')
                     name_he = get_sparql_label(result, 'name_he')
                     name_hi = get_sparql_label(result, 'name_hi')
                     name_hu = get_sparql_label(result, 'name_hu')
                     name_id = get_sparql_label(result, 'name_id')
+                    name_it = get_sparql_label(result, 'name_it')
                     name_ja = get_sparql_label(result, 'name_ja')
                     name_ko = get_sparql_label(result, 'name_ko')
                     name_lt = get_sparql_label(result, 'name_lt')
@@ -303,7 +373,44 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                     name_uk = get_sparql_label(result, 'name_uk')
                     name_ur = get_sparql_label(result, 'name_ur')
                     name_vi = get_sparql_label(result, 'name_vi')
-                    name_zh = get_sparql_label(result, 'name_zh')
+
+                    # not all Wikidata places have all name (label) translations
+                    try:
+                        name_en = get_sparql_label(result, 'name_en')
+                    except:
+                        name_en = u''
+
+                    try:
+                        name_zh_default = get_sparql_label(result, 'name_zh')
+                    except:
+                        name_zh_default = u''
+
+                    try:
+                        name_zh_hans = get_sparql_label(result, 'name_zh_hans')
+                    except:
+                        name_zh_hans = u''
+
+                    try:
+                        name_zh_hant = get_sparql_label(result, 'name_zh_hant')
+                    except:
+                        name_zh_hant = u''
+
+                    chinese_names = { 'name_en'         : name_en,
+                                      'name_zh_default' : name_zh_default,
+                                      'name_zh_hans'    : name_zh_hans,
+                                      'name_zh_hant'    : name_zh_hant
+                                    }
+
+                    processed_chinese_names = post_process_wd_zh( chinese_names )
+
+                    try:
+                        name_zh  = processed_chinese_names['name_zhs']
+                    except:
+                        name_zh  = u''
+                    try:
+                        name_zht = processed_chinese_names['name_zht']
+                    except:
+                        name_zht  = u''
 
                     writer.writerow((
                         wd_id,
@@ -334,7 +441,8 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                         name_uk,
                         name_ur,
                         name_vi,
-                        name_zh
+                        name_zh,
+                        name_zht
                         ))
 
 print(' - JOB end -')

@@ -6,6 +6,7 @@ install:
 	pip3 install -U SPARQLWrapper
 	pip3 install -U fiona
 	pip3 install -U csvtomd
+	pip3 install -U hanzidentifier
 
 clean:
 	cd ../.. && rm -rf temp_shape/*
