@@ -31,15 +31,15 @@ The following Natural Earth property names can be used to specify the labeling l
 | Arabic | اَلْعَرَبِيَّةُ | `name_ar` | ara | ar |
 | Bengali | বাংলা | `name_bn` | ben | bn |
 | German | Deutsch | `name_de` | deu | de |
-| English | `name_en` | eng | en |
+| English | English | `name_en` | eng | en |
 | Spanish | español | `name_es` | spa | es |
 | Farsi | فارسی | `name_fa` | fas | fa |
 | French | français | `name_fr` | fra | fr |
-| Greek Νέα Ελληνικά | `name_el` | ell | el |
+| Greek | Νέα Ελληνικά | `name_el` | ell | el |
 | Hebrew | עברית | `name_he` | heb | he |
 | Hindi | हिन्दी | `name_hi` | hin | hi |
 | Hungarian	| magyar | `name_hu` | hun | hu |
-| Indonesian bahasa Indonesia | `name_id` | ind | id |
+| Indonesian | bahasa Indonesia | `name_id` | ind | id |
 | Italian | italiano | `name_it` | ita | it |
 | Japanese | 日本語 | `name_ja` | jpn | ja |
 | Korean | 한국어 | `name_ko` | kor | ko |
