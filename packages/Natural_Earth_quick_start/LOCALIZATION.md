@@ -22,7 +22,7 @@ physical labels, parks, and airports (since version 4).
 The QGIS project includes the following variables:
 
 - `project_language` (default: `name_en`)
-- `project_language_fallback` (default: `name_en`)
+- `project_language_fallback` (default: `name`)
 
 The following Natural Earth property names can be used to specify the labeling language:
 
@@ -77,7 +77,7 @@ map units, state and provinces, and disputed boundaries (since version 5).
 The QGIS project includes the following variables:
 
 - `project_pov` (default: `fclass`)
-- `project_pov_fallback` (default: `fclass_us`)
+- `project_pov_fallback` (default: `fclass`)
 
 The following country and international organizations worldviews are supported:
 
