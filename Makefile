@@ -1078,6 +1078,29 @@ build_b6_ne_50m_admin_1_all: 50m_cultural/ne_50m_admin_1_states_provinces_scale_
 		-erase intermediate/ne_50m_lakes_big.shp \
 		-o 50m_cultural/ne_50m_admin_1_states_provinces_lakes.shp \
 
+# new in v5 but not manual construction for now until proper 50m label points available and gap tolerence smaller
+# currently just: AUS,BRA,CAN,CHN,IDN,IND,RUS,USA,ZAF
+build_b6_ne_50m_admin_1_all_raw: 50m_cultural/ne_50m_admin_0_boundary_lines_land.shp \
+	50m_physical/ne_50m_coastline.shp \
+	50m_cultural/ne_50m_admin_1_states_provinces_lines.shp \
+	50m_cultural/ne_50m_admin_1_seams.shp
+	mapshaper -i combine-files snap \
+		50m_cultural/ne_50m_admin_0_boundary_lines_land.shp \
+		50m_physical/ne_50m_coastline.shp \
+		50m_cultural/ne_50m_admin_1_states_provinces_lines.shp \
+		50m_cultural/ne_50m_admin_1_seams.shp \
+		-filter-fields \
+		-merge-layers \
+		-polygons gap-tolerance=1e-2 \
+		-join 10m_cultural/ne_10m_admin_1_label_points.shp \
+		-filter 'adm0_sr !== null' + \
+		-o 50m_cultural/ne_50m_admin_1_states_provinces_scale_rank.shp \
+		-dissolve 'adm1_code' copy-fields=featurecla,scalerank \
+		-join 10m_cultural/ne_10m_admin_1_label_points_details.dbf encoding=utf8 keys=adm1_code,adm1_code fields=* \
+		-o 50m_cultural/ne_50m_admin_1_states_provinces.shp
+		-erase intermediate/ne_50m_lakes_big.shp \
+		-o 50m_cultural/ne_50m_admin_1_states_provinces_lakes.shp \
+
 build_c1_ne_110m_admin_0_units: 110m_cultural/ne_110m_admin_0_scale_rank.shp \
 	housekeeping/ne_admin_0_details_level_3_map_units.dbf
 	mapshaper -i 110m_cultural/ne_110m_admin_0_scale_rank.shp \
