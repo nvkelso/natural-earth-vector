@@ -2719,9 +2719,9 @@ packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
 	mkdir -p packages/Natural_Earth_quick_start/10m_cultural
 
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.* packages/Natural_Earth_quick_start/10m_cultural/
-	cp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_land.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_boundary_lines_map_units.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_countries.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_0_disputed_areas.* packages/Natural_Earth_quick_start/10m_cultural/
