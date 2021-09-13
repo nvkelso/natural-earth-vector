@@ -25,9 +25,10 @@ GENERAL
 	Sweden (swe), Turkey (tur), Taiwan (twn), Ukraine (ukr),
 	United States of America (usa), and Vietname (vnm).
 	Fixes #301
-2)	Expands the name localization added in v4.1 to 25 languages (up from 21) by adding
-	Farsi (fa), Hebrew (he), Ukrainian (uk), and Urdu (ur). Localized names in the
-	original 21 languages have also been updated.
+2)	Expands the name localization added in v4.1 to 26 languages (up from 21) by adding
+	Farsi (fa), Hebrew (he), Ukrainian (uk), Urdu (ur); and distinguishing between
+	original Simplified Chinese (zh) and new Traditional Chinese (zht). Localized names
+	in the original 21 languages have also been updated.
 	Fixes #302
 3)	Renames admin-0 Macedonia features to North Macedonia to keep up with current events.
 	Fixes #290.
