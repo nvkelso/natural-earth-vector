@@ -3,6 +3,8 @@
 - Many thanks to @zerebubuth for help with disputed boundaries prototyping in Tilezen.
 - Many thanks to @elliotap, @jwva, and @mizmay for research and editing of populated
   places and other themes.
+- Many thanks to @imresamu who continues to help with localization and Wikidata IDs.
+- Many thanks to Mapdiva for contributing new admin-2 counties for United States.
 
 GENERAL
 
@@ -87,6 +89,9 @@ TOOLS
             - Add more localized names
             - "Holy See" is misspelled in SOV0NAME
               Fixes #261, thanks @ericfischer!
+            - The scalerank for Philippines, New Zeland, Indonesia, Malaysia, and
+              Indonesia restored to 0 and for Cyprus to 1 to match v4.0 value.
+              Fixes #282, thanks @jirik!
 - UPDATED:  ne_10m_admin-1 themes, including:
 			ne_10m_admin_1_states_provinces
 			ne_10m_admin_1_states_provinces_lakes
@@ -105,6 +110,22 @@ TOOLS
 			  Fixes #286, thanks @strezen!
 			- Langkawi mistakenly included in Perlis (should be Kedah), Malaysia
 			  Fixes #277, thanks @MichaelChirico!
+			- Update South Africa admin-1 for recent constitutional changes
+			  Fixes #347, thanks @mtb-za and @MrGawsome
+			- India admin-1 including Telangana, Dadra and Nagar Haveli, Daman and Diu,
+			  Jammu and Kashmir, and Ladakh
+			  Fixes #234 and #393, thanks @justinelliotmeyers, @systemcatch, @elliotap,
+			  and @Nate-Wessel
+- NEW:      ne_10m_admin-2 themes, including:
+			ne_10m_admin_2_counties
+			ne_10m_admin_2_counties_lakes
+			ne_10m_admin_2_counties_scale_rank
+			ne_10m_admin_2_counties_scale_rank_minor_islands
+			ne_10m_admin_2_label_points_details
+			ne_10m_admin_2_label_points
+			- Add new counties themes in USA only via an external contribution from
+			  Mapdiva, makers of Ortelius cartography software for macOS.
+              Fixes #175
 - UPDATED:  ne_10m_airports
             - Add more localized names
 - UPDATED:  ne_10m_populated_places
@@ -119,6 +140,11 @@ TOOLS
 			  Fixes #294, thanks @justinelliotmeyers!
 			- Add Arta, the 4th largest city in Djibouti
 			  Fixes #296, thanks @justinelliotmeyers!
+			- Added new admin-1 capital of Amaravati for Andhra Pradesh in India
+			  and adjust Hyderabad to be in the new Telangana state.
+			  Fixes #234, thanks @justinelliotmeyers and @elliotap
+			- Added new admin-1 capital of Leh for Ladakh in India
+			  Fixes #393, thanks @justinelliotmeyers and @Nate-Wessel
 - UPDATED:  ne_10m_populated_places_simple
             - Same changes as ne_10m_populated_places.
 
@@ -128,14 +154,26 @@ TOOLS
             - Add more localized names
 - UPDATED:  ne_10m_geography_marine_polys
             - Add more localized names
+            - Adjusted min_zoom of Salish Sea to show earlier.
+              Fixes #41, thanks @MrGawsome and @almccon
 - UPDATED:  ne_10m_geography_regions_elevation_points
             - Add more localized names
 - UPDATED:  ne_10m_geography_regions_points
             - Add more localized names
 - UPDATED:  ne_10m_geography_regions_polys
             - Add more localized names
+            - Around 200 features had the same ne_id in error (1159104649), each feature
+              now has it's own unique ID.
+              Fixes #527, thanks @MrGawsome
 - UPDATED:  ne_10m_lakes
             - Add more localized names
+            - Split Lynx Lake and Whitefish Lake into two separate features in Canada
+              Fixes #425, thanks @elliotap
+            - Rename Napaktulik Lake (from Takijuq Lake) and update Wikidat ID
+              Fixes #426, thanks @elliotap and @MrGawsome
+            - Updated Aral Sea geometry to smaller North Aral Sea, South Aral Sea
+              and Barsakelmes Lake, and Aralkum Desert Playa.
+              Fixes #337, thanks @elliotap and @MrGawsome
 - UPDATED:  ne_10m_lakes_europe
             - Add more localized names
 - UPDATED:  ne_10m_lakes_historic
@@ -144,14 +182,21 @@ TOOLS
             - Add more localized names
 - UPDATED:  ne_10m_playas
             - Add more localized names
+            - Updated Aral Sea geometry to smaller North Aral Sea, South Aral Sea
+              and Barsakelmes Lake, and Aralkum Desert Playa.
+              Fixes #337, thanks @elliotap and @MrGawsome
 - UPDATED:  ne_10m_rivers_europe
             - Add more localized names
 - UPDATED:  ne_10m_rivers_lake_centerlines
             - Add more localized names
+            - Broken river in Alaska
+              Fixes #308, thanks @pinakographos and @MrGawsome
 - UPDATED:  ne_10m_rivers_lake_centerlines_scale_rank
             - Add more localized names
 - UPDATED:  ne_10m_rivers_north_america
             - Add more localized names
+            - Update linework for split Lynx Lake and Whitefish Lake in Canada
+              Fixes #425, thanks @elliotap
 
 50M_CULTURAL
 
@@ -172,6 +217,8 @@ TOOLS
 - UPDATED:  ne_50m_admin_1_states_provinces
 			ne_50m_admin_1_states_provinces_lakes
             - Add more localized names
+            - Add coverage for additional countries
+              Fixes #...tk tk tks
 - UPDATED:  ne_50m_populated_places
             ne_50m_populated_places_simple
             - Same changes as ne_10m_populated_places.
@@ -192,6 +239,17 @@ TOOLS
             - Same changes as ne_10m_geography_regions_polys.
 - UPDATED:  ne_50m_lakes
             - Add more localized names
+            - All the Great Lakes in North America now have scalerank 0, making them
+              consistent with the 10m and 110m themes.
+              Fixes #499, thanks @pinakographos
+            - Restored 136 lakes that went missing in v4, including Lakes Tanganyika
+              and Balkash
+              Fixes #422, thanks @Anton21bis, @gzauhar, @vladgp, and @MrGawsome
+            - Add Wikidata IDs and name translations for same 136 lakes
+              Fixes #498, thanks @MrGawsome and @ImreSamu
+            - Updated Aral Sea geometry to smaller North Aral Sea, South Aral Sea
+              and Barsakelmes Lake, and Aralkum Desert Playa.
+              Fixes #337, thanks @elliotap and @MrGawsome
 - UPDATED:  ne_50m_lakes_historic
             - Add more localized names
 - UPDATED:  ne_50m_playas
@@ -233,6 +291,11 @@ TOOLS
             - Same changes as ne_10m_geography_regions_polys.
 - UPDATED:  ne_110m_lakes
             - Add more localized names
+            - Correct Great Salt Lake name from Lake Onega
+              Fixes #472, thanks @Drumstick42 and @MrGawsome
+            - Updated Aral Sea geometry to smaller North Aral Sea, South Aral Sea
+              and Barsakelmes Lake, and Aralkum Desert Playa.
+              Fixes #337, thanks @elliotap and @MrGawsome
 - UPDATED:  ne_110m_rivers_lake_centerlines
             - Add more localized names
 
