@@ -1,4 +1,4 @@
-2021-02-02: 5.0.0
+2021-10-15: 5.0.0
 
 - Many thanks to @zerebubuth for help with disputed boundaries prototyping in Tilezen.
 - Many thanks to @elliotap, @jwva, and @mizmay for research and editing of populated
@@ -21,7 +21,7 @@ GENERAL
 	the 31 different viewpoints, like "ne_10m_admin_0_countries_arg" for Argentina.
 	Full list of countries: Argentina (arg), Bangladesh (bdg), Brazil (bra), China (chn),
 	Germany (deu), Egypt (egy), Spain (esp), France (fra), United Kingdom (gbr),
-	Greece (grc), Indonesia (idn), India (ind), Israel (isl), Italy (ita), Japan (jpn),
+	Greece (grc), Indonesia (idn), India (ind), Israel (isr), Italy (ita), Japan (jpn),
 	South Korea (kor), Morocco (mar), Nepal (nep), Netherlands (nld), Pakistan (pak),
 	Poland (pol), Portugal (prt), Palestine (pse), Russia (rus), Saudi Arabia (sau),
 	Sweden (swe), Turkey (tur), Taiwan (twn), Ukraine (ukr),
@@ -352,7 +352,7 @@ TOOLS
             - Add more localized names
             - Adjusted min_zoom of Salish Sea to show earlier.
               Fixes #41, thanks @MrGawsome and @almccon
-            - Merged polygons for Mediteranian Sea and for Ross Sea
+            - Merged polygons for Mediterranean Sea and for Ross Sea
               Fixes #319, thanks @jbusecke and @MrGawsome
             - Changed default name of New Schawbenland to New Swabia
               Fixes #236, thanks @Maxszik and @MrGawsome
