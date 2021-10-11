@@ -77,12 +77,20 @@ def post_process_wd_zh(properties):
     It also deletes the intermediate property `zh-default`
     """
 
-    name_en_default = properties['name_en'] if 'name_en' in \
-                                                properties else u''
-    zh_Hans_fallback = properties['name_zh_hans'] if 'name_zh_hans' in \
-                                                properties else u''
-    zh_Hant_fallback = properties['name_zh_hant'] if 'name_zh_hant' in \
-                                                 properties else u''
+    if args.input_lettercase == "lowercase":
+        name_en_default = properties['name_en'] if 'name_en' in \
+                                                    properties else u''
+        zh_Hans_fallback = properties['name_zh_hans'] if 'name_zh_hans' in \
+                                                    properties else u''
+        zh_Hant_fallback = properties['name_zh_hant'] if 'name_zh_hant' in \
+                                                     properties else u''
+    else:
+        name_en_default = properties['NAME_EN'] if 'NAME_EN' in \
+                                                    properties else u''
+        zh_Hans_fallback = properties['NAME_ZH_HANS'] if 'NAME_ZH_HANS' in \
+                                                    properties else u''
+        zh_Hant_fallback = properties['NAME_ZH_HANT'] if 'NAME_ZH_HANT' in \
+                                                     properties else u''
 
     # sometimes the default Chinese name has several values in a list
     if 'name_zh_default' in properties:
@@ -124,10 +132,18 @@ def post_process_wd_zh(properties):
     # only select one of the options if the field is separated by "/"
     # for example if the field is "旧金山市县/三藩市市縣/舊金山市郡" only the first
     # one 旧金山市县 will be preserved
-    if len(properties['name_zh']) != 0:
-        properties['name_zh'] = properties['name_zh'].split('/')[0].strip()
-    if len(properties['name_zht']) != 0:
-        properties['name_zht'] = properties['name_zht'].split('/')[0].strip()
+    if 'name_zh' in properties:
+        if len(properties['name_zh']) > 0:
+            properties['name_zh'] = properties['name_zh'].split('/')[0].strip()
+    if 'name_zht' in properties:
+        if len(properties['name_zht']) > 0:
+            properties['name_zht'] = properties['name_zht'].split('/')[0].strip()
+    if 'NAME_ZH' in properties:
+        if len(properties['NAME_ZH']) > 0:
+            properties['NAME_ZH'] = properties['NAME_ZH'].split('/')[0].strip()
+    if 'NAME_ZHT' in properties:
+        if len(properties['NAME_ZHT']) > 0:
+            properties['NAME_ZHT'] = properties['NAME_ZHT'].split('/')[0].strip()
 
     return properties
 
