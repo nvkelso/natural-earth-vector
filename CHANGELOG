@@ -394,6 +394,11 @@ TOOLS
               Fixes #342, thanks @elliotap, @kevinventullo, @MrGawsome
             - Lake Wielkie Jeziora Mazurskie has poor tracing
               #488, thanks @matkoniecz
+            - Fix Smallwood Reservoir, Canada poor tracing, thanks Tom Patterson
+            - Fix Presa Miguel Alemán, Mexico poor tracing, thanks Tom Patterson
+            - Fix Lago Gatum, Panama poor tracing, thanks Tom Patterson
+            - Fix Lake Gordon, Australia poor tracing, thanks Tom Patterson
+            - Fix Lake Pedder, Australia poor tracing, thanks Tom Patterson
 - NEW:      ne_10m_lakes_australia
             - Add Australia supplemental hydro (lakes, rivers, default lakes, default rivers)
               #475, thanks Tom Patterson
