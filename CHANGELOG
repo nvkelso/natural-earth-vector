@@ -23,8 +23,8 @@ GENERAL
 	Greece (grc), Indonesia (idn), India (ind), Israel (isl), Italy (ita), Japan (jpn),
 	South Korea (kor), Morocco (mar), Nepal (nep), Netherlands (nld), Pakistan (pak),
 	Poland (pol), Portugal (prt), Palestine (pse), Russia (rus), Saudi Arabia (sau),
-	Sweden (swe), Turkey (tur), Taiwan (twn), Ukraine (ukr),
-	United States of America (usa), and Vietname (vnm). Does not include ISO.
+	Sweden (swe), Turkey (tur), Taiwan (twn), Ukraine (ukr), United States (usa),
+	and Vietname (vnm). Does not include ISO.
 	Fixes #301
 2)	Expands the name localization added in v4.1 to 25 languages (up from 21) by adding
 	Farsi (fa), Hebrew (he), Ukrainian (uk), and Urdu (ur). Localized names in the
