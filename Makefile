@@ -1153,6 +1153,18 @@ build_c4_ne_110m_admin_1: 110m_cultural/ne_110m_admin_1_states_provinces_scale_r
 		-o 110m_cultural/ne_110m_admin_1_states_provinces_lakes.shp \
 
 
+# River centerlines from scale rank (stroke weight)
+intermediate/ne_10m_rivers_lake_centerlines.shp: 10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.shp 10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.dbf
+	mapshaper -i 10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.shp \
+		-dissolve dissolve copy-fields=dissolve,scalerank,featurecla,name,name_alt,rivernum,note,min_zoom,name_en,min_label,ne_id,label,wikidataid,name_ar,name_bn,name_de,name_es,name_fr,name_el,name_hi,name_hu,name_id,name_it,name_ja,name_ko,name_nl,name_pl,name_pt,name_ru,name_sv,name_tr,name_vi,name_zh,name_fa,name_he,name_uk,name_ur,name_zht\
+		-o intermediate/ne_10m_rivers_lake_centerlines.shp \
+
+# If the intermediate files look good, then copy them over
+# existing files... but beware of edits and names that may have only
+# been made to the ne_10m_rivers_lake_centerlines shapefile
+10m_physical/ne_10m_rivers_lake_centerlines.shp: intermediate/ne_10m_rivers_lake_centerlines.shp intermediate/ne_10m_rivers_lake_centerlines.dbf
+	mapshaper -i intermediate/ne_10m_rivers_lake_centerlines.shp \
+		-o force 10m_physical/ne_10m_rivers_lake_centerlines.shp \
 
 # POPULATED PLACES
 
