@@ -2812,6 +2812,7 @@ packages/Natural_Earth_quick_start/50m_cultural/status.txt: \
 	50m_cultural/ne_50m_admin_0_boundary_lines_land.shp 50m_cultural/ne_50m_admin_0_boundary_lines_land.dbf \
 	50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.shp 50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.dbf \
 	50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.shp 50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.dbf \
+	50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator_chn.shp 50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator_chn.dbf \
 	50m_cultural/ne_50m_admin_0_boundary_map_units.shp 50m_cultural/ne_50m_admin_0_boundary_map_units.dbf \
 	50m_cultural/ne_50m_admin_0_countries.shp 50m_cultural/ne_50m_admin_0_countries.dbf \
 	50m_cultural/ne_50m_admin_0_map_subunits.shp 50m_cultural/ne_50m_admin_0_map_subunits.dbf \
@@ -2826,6 +2827,7 @@ packages/Natural_Earth_quick_start/50m_cultural/status.txt: \
 	cp 50m_cultural/ne_50m_admin_0_boundary_lines_land.* packages/Natural_Earth_quick_start/50m_cultural/
 	cp 50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.* packages/Natural_Earth_quick_start/50m_cultural/
 	cp 50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.* packages/Natural_Earth_quick_start/50m_cultural/
+	cp 50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator_chn.* packages/Natural_Earth_quick_start/50m_cultural/
 	cp 50m_cultural/ne_50m_admin_0_boundary_map_units.* packages/Natural_Earth_quick_start/50m_cultural/
 	cp 50m_cultural/ne_50m_admin_0_countries.* packages/Natural_Earth_quick_start/50m_cultural/
 	cp 50m_cultural/ne_50m_admin_0_map_subunits.* packages/Natural_Earth_quick_start/50m_cultural/

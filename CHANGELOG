@@ -1,4 +1,4 @@
-2021-02-02: 5.0.0
+2021-11-02: 5.0.0
 
 - Many thanks to @zerebubuth for help with disputed boundaries prototyping in Tilezen.
 - Many thanks to @elliotap, @jwva, and @mizmay for research and editing of populated
@@ -10,10 +10,11 @@ GENERAL
 	properties (like fclass_iso). The following country and international organizations
 	worldviews are supported: Argentina (ar), Bangladesh (bd), Brazil (br), China (cn),
 	Egypt (eg), France (fr), Germany (de), Greece (gr), India (in), Indonesia (id),
-	Israel (il), Italy (it), Japan (jp), Morocco (ma), Nepal (np), Netherlands (nl),
-	Pakistan (pk), Palestine (ps), Poland (pl), Portugal (pt), Russia (ru),
-	Saudi Arabia (sa), South Korea (ko), Spain (es), Sweden (se), Taiwan (tw),
-	Turkey (tr), United Kingdom (gb), United States (us), Vietnam (vn), ISO (iso)
+	Israel (il), Italy (it), Japan (jp), Korea (ko), Morocco (ma), Nepal (np),
+	Netherlands (nl), Pakistan (pk), Palestine (ps), Poland (pl), Portugal (pt),
+	Russia (ru), Saudi Arabia (sa), South Korea (ko), Spain (es), Sweden (se),
+	Taiwan (tw), Turkey (tr), United Kingdom (gb), United States (us), Vietnam (vn),
+	and ISO (iso).
 	Fixes #301
 2)	Provides easy alternate download of ne_10m_admin_0_countries themes preassembled for
 	the 31 different viewpoints, like "ne_10m_admin_0_countries_arg" for Argentina.
@@ -22,15 +23,15 @@ GENERAL
 	Greece (grc), Indonesia (idn), India (ind), Israel (isl), Italy (ita), Japan (jpn),
 	South Korea (kor), Morocco (mar), Nepal (nep), Netherlands (nld), Pakistan (pak),
 	Poland (pol), Portugal (prt), Palestine (pse), Russia (rus), Saudi Arabia (sau),
-	Sweden (swe), Turkey (tur), Taiwan (twn), Ukraine (ukr),
-	United States of America (usa), and Vietname (vnm).
+	Sweden (swe), Turkey (tur), Taiwan (twn), Ukraine (ukr), United States (usa),
+	and Vietname (vnm). Does not include ISO.
 	Fixes #301
 2)	Expands the name localization added in v4.1 to 25 languages (up from 21) by adding
 	Farsi (fa), Hebrew (he), Ukrainian (uk), and Urdu (ur). Localized names in the
 	original 21 languages have also been updated.
 	Fixes #302
 3)	Renames admin-0 Macedonia features to North Macedonia to keep up with current events.
-	Fixes #290.
+	Fixes #290
 
 PACKAGES
 
@@ -84,8 +85,12 @@ TOOLS
             - Adjusts some min_zoom to the minimum for the claimants to have
               coherent boundaries.
             - Add more localized names
+            - Add additional disputed areas
             - "Holy See" is misspelled in SOV0NAME
               Fixes #261, thanks @ericfischer!
+- NEW:      ne_10m_admin_0_boundary_lines_maritime_indicator_chn
+            - Support disputed boundary point-of-view by adding fclass_* properties
+              for this new theme showing China's 9-dash line.
 - UPDATED:  ne_10m_admin-1 themes, including:
 			ne_10m_admin_1_states_provinces
 			ne_10m_admin_1_states_provinces_lakes
@@ -167,7 +172,11 @@ TOOLS
 - UPDATED:  ne_50m_admin_0_breakaway_disputed_areas
 			ne_50m_admin_0_breakaway_disputed_areas_scale_rank
             - Support disputed boundary point-of-view
+            - Add additional disputed areas
             - Add more localized names
+- NEW:      ne_50m_admin_0_boundary_lines_maritime_indicator_chn
+            - Support disputed boundary point-of-view by adding fclass_* properties
+              for this new theme showing China's 9-dash line.
 - UPDATED:  ne_50m_admin_1_states_provinces
 			ne_50m_admin_1_states_provinces_lakes
             - Add more localized names
