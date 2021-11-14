@@ -31,7 +31,7 @@ GENERAL
 	original 21 languages have also been updated.
 	Fixes #302
 3)	Renames admin-0 Macedonia features to North Macedonia to keep up with current events.
-	Fixes #290.
+	Fixes #290
 
 PACKAGES
 
@@ -85,8 +85,12 @@ TOOLS
             - Adjusts some min_zoom to the minimum for the claimants to have
               coherent boundaries.
             - Add more localized names
+            - Add additional disputed areas
             - "Holy See" is misspelled in SOV0NAME
               Fixes #261, thanks @ericfischer!
+- NEW:      ne_10m_admin_0_boundary_lines_maritime_indicator_chn
+            - Support disputed boundary point-of-view by adding fclass_* properties
+              for this new theme showing China's 9-dash line.
 - UPDATED:  ne_10m_admin-1 themes, including:
 			ne_10m_admin_1_states_provinces
 			ne_10m_admin_1_states_provinces_lakes
@@ -169,6 +173,9 @@ TOOLS
 			ne_50m_admin_0_breakaway_disputed_areas_scale_rank
             - Support disputed boundary point-of-view
             - Add more localized names
+- NEW:      ne_50m_admin_0_boundary_lines_maritime_indicator_chn
+            - Support disputed boundary point-of-view by adding fclass_* properties
+              for this new theme showing China's 9-dash line.
 - UPDATED:  ne_50m_admin_1_states_provinces
 			ne_50m_admin_1_states_provinces_lakes
             - Add more localized names
