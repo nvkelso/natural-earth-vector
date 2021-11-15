@@ -1,4 +1,4 @@
-2021-11-02: 5.0.0
+2021-11-14: 5.0.0
 
 - Many thanks to @zerebubuth for help with disputed boundaries prototyping in Tilezen.
 - Many thanks to @elliotap, @jwva, and @mizmay for research and editing of populated
@@ -28,12 +28,15 @@ GENERAL
 	Sweden (swe), Turkey (tur), Taiwan (twn), Ukraine (ukr), United States (usa),
 	and Vietname (vnm). Does not include ISO.
 	Fixes #301
-2)	Expands the name localization added in v4.1 to 25 languages (up from 21) by adding
-	Farsi (fa), Hebrew (he), Ukrainian (uk), and Urdu (ur). Localized names in the
-	original 21 languages have also been updated.
-	Fixes #302
-3)	Renames admin-0 Macedonia features to North Macedonia to keep up with current events.
-	Fixes #290
+3)	Expands the name localization added in v4.1 to 26 languages (up from 21) by adding
+	Farsi (fa), Hebrew (he), Persian (fa), Ukrainian (uk), Urdu (ur); and distinguishing
+	between original Simplified Chinese (zh) and new Traditional Chinese (zht). Localized
+	names in the original 21 languages have also been updated.
+	Fixes #302, #303, #399, #451, #533
+4)	Renames admin-0 Macedonia features to North Macedonia to keep up with current events.
+	Fixes #290.
+5)	Renames admin-0 Macedonia features to North Macedonia to keep up with current events.
+	Fixes #290.
 
 PACKAGES
 
@@ -93,7 +96,46 @@ TOOLS
             - Add more localized names
             - Add additional disputed areas
             - "Holy See" is misspelled in SOV0NAME
-              Fixes #261, thanks @ericfischer!
+              Fixes #261, thanks @e-n-f (ericfischer)!
+            - Rename Macedonia to North Macedonia
+              Fixes #290
+            - Swaziland has changed there country name to - Eswatini
+              #410, thanks @michaeldssnts
+            - The scalerank for Philippines, New Zeland, Indonesia, Malaysia, and
+              Indonesia restored to 0 and for Cyprus to 1 to match v4.0 value.
+              Fixes #282, thanks @jirik!
+            - add disputed areas between Israel and Palestine (West Bank)
+              #17
+            - Taiwan and China POV
+              #331, kind regards @ghost
+            - Incorrect coding of Kazakhstan in sovereignty dataset adm0
+              #313, #354, thanks @atlight, @josh26turner
+            - Support points of view (worldview) for admin0 disputed areas areas adm0 disputed_area
+              #301
+            - Add more "eh" support for ISO_A2 and ISO_A3 and ISO_N3 (France, Norway)
+              #252, #284, #268, #348, thanks @nickpeihl, @s-fleck, @Fil, @MrGranddy
+            - Bir Tawil and Halaib unclaimed territories not present adm0 disputed_area
+              #255, thanks @tehandyb
+            - Adjust USA and Canada boundary between Campobello Island and Deer Island
+              #221, thanks @MattBlissett
+            - Fix incorrect UN features codes and regions adm0
+              #195, thanks @Toshakins
+            - Add disputed area Brasileira I. between Brazil and Uruguay adm0 disputed_area
+              #24
+            - add disputes between Slovenia and Croatia adm0 disputed_area
+              #20
+            - Crimea location bug adm0 disputed_area
+              #489, thanks @gerasimvol
+            - Add POV to maritime boundary indicators
+              #541
+            - Use either Czechia or Czech Republic
+              #569, thanks @technetium
+            - Update population and GDP estimates for admin-0 (Papua New Guinea)
+              #79, #481, thanks @kiwibrew
+            - Territory of Azerbaijan adm0 disputed_area
+              #442, thanks @elvintarverdiyev
+            - Improper map of Ukraine adm0
+              #390, #391, #401, kind regards @rshopa, @followtheblackrabbit, @Lukpawlik
 - NEW:      ne_10m_admin_0_boundary_lines_maritime_indicator_chn
             - Support disputed boundary point-of-view by adding fclass_* properties
               for this new theme showing China's 9-dash line.
