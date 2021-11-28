@@ -93,7 +93,7 @@ TOOLS
             - Support disputed boundary point-of-view by adding fclass_* properties.
             - Adjusts some min_zoom to the minimum for the claimants to have
               coherent boundaries.
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Add additional disputed areas
             - "Holy See" is misspelled in SOV0NAME
               Fixes #261, thanks @e-n-f (ericfischer)!
@@ -148,7 +148,7 @@ TOOLS
 			ne_10m_admin_1_label_points
 			ne_10m_admin_1_label_points_details
             - Support disputed boundary point-of-view
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Update France admin-1 regions, circa 2016
 			  Fixes #288, #429, thanks @KennethSui, @elliotap
 			- Missing Virginia part of Delmarva (Eastern Shore)
@@ -186,6 +186,7 @@ TOOLS
 			- Add new counties themes in USA only via an external contribution from
 			  Mapdiva, makers of Ortelius cartography software for macOS.
               Fixes #175 and #427, thanks @adiku
+            - Includes localized names
 - UPDATED:  ne_10m_airports
             - Add more localized names
             - Update name of Seattle-Tacoma Int'l airport
@@ -200,7 +201,7 @@ TOOLS
             - Add ne_id column to 10m_ports
               #462, thanks @ImreSamu
 - UPDATED:  ne_10m_populated_places
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Document common populated places properties
               #494
             - Revise column formats and delete a few column, including: DIFFASCII,
@@ -354,7 +355,7 @@ TOOLS
 - UPDATED:  ne_10m_geographic_lines
             - Add more localized names
 - UPDATED:  ne_10m_geography_marine_polys
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Adjusted min_zoom of Salish Sea to show earlier.
               Fixes #41, thanks @MrGawsome and @almccon
             - Merged polygons for Mediterranean Sea and for Ross Sea
@@ -362,7 +363,7 @@ TOOLS
             - Changed default name of New Schawbenland to New Swabia
               Fixes #236, thanks @Maxszik and @MrGawsome
 - UPDATED:  ne_10m_geography_regions_elevation_points
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Harney Peak to Black Elk Peak, South Dakota, USA
               Fixes #438, thanks @almccon, @elliotap
             - Bring consistency to Mount vs Mt. and Peak vs Pk.
@@ -370,11 +371,11 @@ TOOLS
             - Correct spelling of Pico Cristóbal Colón, Colombia
               Fixes #382, thanks @jwva, @elliotap
 - UPDATED:  ne_10m_geography_regions_points
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Correct spelling of Cabo de Sao Vicente, Portugal
               Fixes #376, thanks @jwva, @elliotap
 - UPDATED:  ne_10m_geography_regions_polys
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Around 200 features had the same ne_id in error (1159104649), each feature
               now has it's own unique ID.
               Fixes #527, thanks @MrGawsome
@@ -383,7 +384,7 @@ TOOLS
             - Make Haida Gwaii physical label names consistent (Queen Charlotte Islands)
               Fixes #260, thanks @pinakographos, @elliotap
 - UPDATED:  ne_10m_lakes
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Split Lynx Lake and Whitefish Lake into two separate features in Canada
               Fixes #425, thanks @elliotap
             - Rename Napaktulik Lake (from Takijuq Lake) and update Wikidat ID
@@ -418,14 +419,14 @@ TOOLS
             - Update North American supplemental hydro (lakes, rivers, default lakes, default rivers)
               #474, thanks Tom Patterson
 - UPDATED:  ne_10m_playas
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Updated Aral Sea geometry to smaller North Aral Sea, South Aral Sea
               and Barsakelmes Lake, and Aralkum Desert Playa.
               Fixes #337, thanks @elliotap and @MrGawsome
             - Move Lop Nur to historic lakes, and extend it's modern playa
               Fixes #341, thanks @elliotap and @MrGawsome
 - UPDATED:  ne_10m_rivers_lake_centerlines
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Broken river in Alaska
               Fixes #308, thanks @pinakographos and @MrGawsome
             - Unified Deep Water System of European Russia
@@ -437,7 +438,7 @@ TOOLS
             - Extend Huang to Bo Hai, and Luan and Nakdon rivers
               Fixes #375, thanks @jwva and @MrGawsome
 - UPDATED:  ne_10m_rivers_lake_centerlines_scale_rank
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
 - NEW:      ne_10m_rivers_australia
             - Add Australia supplemental hydro (lakes, rivers, default lakes, default rivers)
               #475, thanks Tom Patterson
@@ -457,7 +458,7 @@ TOOLS
 			ne_50m_admin_0_map_units
 			ne_50m_admin_0_map_subunits
             - Support disputed boundary point-of-view
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Add Tuvalu polygon to 50M dataset adm0
               #511, thanks @Bonurbe
 - UPDATED:  ne_50m_admin_0_tiny_countries
@@ -473,7 +474,8 @@ TOOLS
 - UPDATED:  ne_50m_admin_1_states_provinces
 			ne_50m_admin_1_states_provinces_lakes
             - Add more localized names
-            - Add features in China, India, Indonesia, Russia, and South Africa, joining Australia, Canada, Brazil, and United States
+            - Add features in China, India, Indonesia, Russia, and South Africa,
+              joining Australia, Canada, Brazil, and United States
               #479, thanks @anandtiwary
 - UPDATED:  ne_50m_populated_places
             ne_50m_populated_places_simple
