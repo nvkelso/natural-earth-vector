@@ -473,7 +473,7 @@ TOOLS
               for this new theme showing China's 9-dash line.
 - UPDATED:  ne_50m_admin_1_states_provinces
 			ne_50m_admin_1_states_provinces_lakes
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Add features in China, India, Indonesia, Russia, and South Africa,
               joining Australia, Canada, Brazil, and United States
               #479, thanks @anandtiwary
@@ -496,7 +496,7 @@ TOOLS
 - UPDATED:  ne_50m_geography_regions_polys
             - Same changes as ne_10m_geography_regions_polys.
 - UPDATED:  ne_50m_lakes
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - All the Great Lakes in North America now have scalerank 0, making them
               consistent with the 10m and 110m themes.
               Fixes #499, thanks @pinakographos
@@ -513,9 +513,9 @@ TOOLS
 - UPDATED:  ne_50m_lakes_historic
             - Add more localized names
 - UPDATED:  ne_50m_playas
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
 - UPDATED:  ne_50m_rivers_lake_centerlines
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Unified Deep Water System of European Russia
               Fixes #500, thanks @MrGawsome
             - Kama needs a more important scale rank
@@ -531,15 +531,15 @@ TOOLS
 			ne_110m_admin_0_countries_lakes
 			ne_110m_admin_0_map_units
             - Support disputed boundary point-of-view
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
 - UPDATED:  ne_110m_admin-1 related themes, including:
 			ne_110m_admin_1_states_provinces
 			ne_110m_admin_1_states_provinces_lakes
             - Support disputed boundary point-of-view
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
 - UPDATED:  ne_110m_populated_places
             ne_110m_populated_places_simple
-            - Add more localized names
+            - Same changes as ne_10m_populated_places
 
 110M_PHYSICAL
 
@@ -554,14 +554,14 @@ TOOLS
 - UPDATED:  ne_110m_geography_regions_polys
             - Same changes as ne_10m_geography_regions_polys.
 - UPDATED:  ne_110m_lakes
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
             - Correct Great Salt Lake name from Lake Onega
               Fixes #472, thanks @Drumstick42 and @MrGawsome
             - Updated Aral Sea geometry to smaller North Aral Sea, South Aral Sea
               and Barsakelmes Lake, and Aralkum Desert Playa.
               Fixes #337, thanks @elliotap and @MrGawsome
 - UPDATED:  ne_110m_rivers_lake_centerlines
-            - Add more localized names
+            - Add more localized names, from Wikipedia and another contribution
 
 
 
