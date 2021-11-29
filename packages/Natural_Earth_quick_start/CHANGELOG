@@ -1,8 +1,10 @@
-2021-02-02: 5.0.0
+2021-11-14: 5.0.0
 
 - Many thanks to @zerebubuth for help with disputed boundaries prototyping in Tilezen.
 - Many thanks to @elliotap, @jwva, and @mizmay for research and editing of populated
   places and other themes.
+- Many thanks to @imresamu who continues to help with localization and Wikidata IDs.
+- Many thanks to Mapdiva for contributing new admin-2 counties for United States.
 
 GENERAL
 
@@ -10,26 +12,30 @@ GENERAL
 	properties (like fclass_iso). The following country and international organizations
 	worldviews are supported: Argentina (ar), Bangladesh (bd), Brazil (br), China (cn),
 	Egypt (eg), France (fr), Germany (de), Greece (gr), India (in), Indonesia (id),
-	Israel (il), Italy (it), Japan (jp), Morocco (ma), Nepal (np), Netherlands (nl),
-	Pakistan (pk), Palestine (ps), Poland (pl), Portugal (pt), Russia (ru),
-	Saudi Arabia (sa), South Korea (ko), Spain (es), Sweden (se), Taiwan (tw),
-	Turkey (tr), United Kingdom (gb), United States (us), Vietnam (vn), ISO (iso)
+	Israel (il), Italy (it), Japan (jp), Korea (ko), Morocco (ma), Nepal (np),
+	Netherlands (nl), Pakistan (pk), Palestine (ps), Poland (pl), Portugal (pt),
+	Russia (ru), Saudi Arabia (sa), South Korea (ko), Spain (es), Sweden (se),
+	Taiwan (tw), Turkey (tr), United Kingdom (gb), United States (us), Vietnam (vn),
+	and ISO (iso).
 	Fixes #301
 2)	Provides easy alternate download of ne_10m_admin_0_countries themes preassembled for
 	the 31 different viewpoints, like "ne_10m_admin_0_countries_arg" for Argentina.
 	Full list of countries: Argentina (arg), Bangladesh (bdg), Brazil (bra), China (chn),
 	Germany (deu), Egypt (egy), Spain (esp), France (fra), United Kingdom (gbr),
-	Greece (grc), Indonesia (idn), India (ind), Israel (isl), Italy (ita), Japan (jpn),
+	Greece (grc), Indonesia (idn), India (ind), Israel (isr), Italy (ita), Japan (jpn),
 	South Korea (kor), Morocco (mar), Nepal (nep), Netherlands (nld), Pakistan (pak),
 	Poland (pol), Portugal (prt), Palestine (pse), Russia (rus), Saudi Arabia (sau),
-	Sweden (swe), Turkey (tur), Taiwan (twn), Ukraine (ukr),
-	United States of America (usa), and Vietname (vnm).
+	Sweden (swe), Turkey (tur), Taiwan (twn), Ukraine (ukr), United States (usa),
+	and Vietname (vnm). Does not include ISO.
 	Fixes #301
-2)	Expands the name localization added in v4.1 to 25 languages (up from 21) by adding
-	Farsi (fa), Hebrew (he), Ukrainian (uk), and Urdu (ur). Localized names in the
-	original 21 languages have also been updated.
-	Fixes #302
-3)	Renames admin-0 Macedonia features to North Macedonia to keep up with current events.
+3)	Expands the name localization added in v4.1 to 26 languages (up from 21) by adding
+	Farsi (fa), Hebrew (he), Persian (fa), Ukrainian (uk), Urdu (ur); and distinguishing
+	between original Simplified Chinese (zh) and new Traditional Chinese (zht). Localized
+	names in the original 21 languages have also been updated.
+	Fixes #302, #303, #399, #451, #533
+4)	Renames admin-0 Macedonia features to North Macedonia to keep up with current events.
+	Fixes #290.
+5)	Renames admin-0 Macedonia features to North Macedonia to keep up with current events.
 	Fixes #290.
 
 PACKAGES
@@ -52,12 +58,16 @@ NATURAL_EARTH_QUICK_START
             variables that enable preferred and fallback labels for all map features
             at zooms 0 thru zoom 8, with theme content compiled per zoom.
             - project_language (eg: name_en) as that was confusing some people.
+	        - Add documentation to explain how to change the language of the names in QGIS
+	          #484, thanks @mayeulk
 
 HOUSEKEEPING
 
 - UPDATED:  NE_ADMIN_0_DETAILS - Spreadsheet tracks admin-0 countries and other levels.
             Update localized names in 24 languages (adding Hebrew, Ukranian, and Urdu).
             Add fclass_* for alternate points of view.
+- UPDATED   Move file hosting to S3 via AWS public dataset packaging
+            #445, #581
 
 TOOLS
 
@@ -84,8 +94,51 @@ TOOLS
             - Adjusts some min_zoom to the minimum for the claimants to have
               coherent boundaries.
             - Add more localized names
+            - Add additional disputed areas
             - "Holy See" is misspelled in SOV0NAME
-              Fixes #261, thanks @ericfischer!
+              Fixes #261, thanks @e-n-f (ericfischer)!
+            - Rename Macedonia to North Macedonia
+              Fixes #290
+            - Swaziland has changed there country name to - Eswatini
+              #410, thanks @michaeldssnts
+            - The scalerank for Philippines, New Zeland, Indonesia, Malaysia, and
+              Indonesia restored to 0 and for Cyprus to 1 to match v4.0 value.
+              Fixes #282, thanks @jirik!
+            - add disputed areas between Israel and Palestine (West Bank)
+              #17
+            - Taiwan and China POV
+              #331, kind regards @ghost
+            - Incorrect coding of Kazakhstan in sovereignty dataset adm0
+              #313, #354, thanks @atlight, @josh26turner
+            - Support points of view (worldview) for admin0 disputed areas areas adm0 disputed_area
+              #301
+            - Add more "eh" support for ISO_A2 and ISO_A3 and ISO_N3 (France, Norway)
+              #252, #284, #268, #348, thanks @nickpeihl, @s-fleck, @Fil, @MrGranddy
+            - Bir Tawil and Halaib unclaimed territories not present adm0 disputed_area
+              #255, thanks @tehandyb
+            - Adjust USA and Canada boundary between Campobello Island and Deer Island
+              #221, thanks @MattBlissett
+            - Fix incorrect UN features codes and regions adm0
+              #195, thanks @Toshakins
+            - Add disputed area Brasileira I. between Brazil and Uruguay adm0 disputed_area
+              #24
+            - add disputes between Slovenia and Croatia adm0 disputed_area
+              #20
+            - Crimea location bug adm0 disputed_area
+              #489, thanks @gerasimvol
+            - Add POV to maritime boundary indicators
+              #541
+            - Use either Czechia or Czech Republic
+              #569, thanks @technetium
+            - Update population and GDP estimates for admin-0 (Papua New Guinea)
+              #79, #481, thanks @kiwibrew
+            - Territory of Azerbaijan adm0 disputed_area
+              #442, thanks @elvintarverdiyev
+            - Improper map of Ukraine adm0
+              #390, #391, #401, kind regards @rshopa, @followtheblackrabbit, @Lukpawlik
+- NEW:      ne_10m_admin_0_boundary_lines_maritime_indicator_chn
+            - Support disputed boundary point-of-view by adding fclass_* properties
+              for this new theme showing China's 9-dash line.
 - UPDATED:  ne_10m_admin-1 themes, including:
 			ne_10m_admin_1_states_provinces
 			ne_10m_admin_1_states_provinces_lakes
@@ -96,18 +149,67 @@ TOOLS
 			ne_10m_admin_1_label_points_details
             - Support disputed boundary point-of-view
             - Add more localized names
-            - Update France admin-1 regions
-			  Fixes #288
-			- Part of Virginia Missing, admin_1_states_provinces_lakes
-			  Fixes #269, thanks @DylanMoriarty!
+            - Update France admin-1 regions, circa 2016
+			  Fixes #288, #429, thanks @KennethSui, @elliotap
+			- Missing Virginia part of Delmarva (Eastern Shore)
+			  Fixes #269, #355, #423, thanks @DylanMoriarty, @creosotemaps,
+			  @tmcgilligan-IAU!
 			- Lost minor Russian island in Admin-1 layer
 			  Fixes #286, thanks @strezen!
-			- Langkawi mistakenly included in Perlis (should be Kedah), Malaysia
-			  Fixes #277, thanks @MichaelChirico!
+			- Update South Africa admin-1 for recent constitutional changes
+			  Fixes #347, thanks @mtb-za and @MrGawsome
+			- India admin-1 including Telangana, Dadra and Nagar Haveli, Daman and Diu,
+			  Jammu and Kashmir, Ladakh, Odisha, and Uttarakhand
+			  Fixes #234, #393, #394, #395, #396, #441; thanks @justinelliotmeyers,
+			  @systemcatch, @Nate-Wessel, @vishv-jeet, and @elliotap
+			- Langkawi island in Malaysia moved to region Kedah from Perlis
+			  Fixes #277, thanks @MichaelChirico, @MrGawsome, and @elliotap
+            - Adjust New Zealand admin-1 boundary lines
+              Fixes #352, thanks @justinelliotmeyers
+            - Update name Terengganu, Malaysia
+              Fixes #278, thanks @MichaelChirico
+            - Add Ñuble Region, Chile
+              Fixes #346, thanks @SpockFan02
+            - Update name Moskovsskaya, Russia
+              Fixes #363, thanks @jwva
+            - Update China ISO 3166-2 codes
+              #326, thanks @nickpeihl
+            - Update Albania ISO 3166-2 codes
+              #327, thanks @nickpeihl
+- NEW:      ne_10m_admin-2 themes, including:
+			ne_10m_admin_2_counties
+			ne_10m_admin_2_counties_lakes
+			ne_10m_admin_2_counties_scale_rank
+			ne_10m_admin_2_counties_scale_rank_minor_islands
+			ne_10m_admin_2_label_points_details
+			ne_10m_admin_2_label_points
+			- Add new counties themes in USA only via an external contribution from
+			  Mapdiva, makers of Ortelius cartography software for macOS.
+              Fixes #175 and #427, thanks @adiku
 - UPDATED:  ne_10m_airports
             - Add more localized names
+            - Update name of Seattle-Tacoma Int'l airport
+              Fixes #115, thanks @almccon
+            - Add Haneda Airport and Suvarnabhumi Airport
+              Fixes #386, thanks @jingkai02, @elliotap
+            - Add wikidataid and name translations to airports
+              Fixes #463, thanks @ImreSamu, @elliotap
+            - Airports: Rename gps_code column name to icao_code
+              #235, thanks @planemad
+- UPDATED:  ne_10m_ports
+            - Add ne_id column to 10m_ports
+              #462, thanks @ImreSamu
 - UPDATED:  ne_10m_populated_places
-            - Add more localized names.
+            - Add more localized names
+            - Document common populated places properties
+              #494
+            - Revise column formats and delete a few column, including: DIFFASCII,
+              CHANGED, NAMEDIFF, DIFFNOTE, LS_MATCH, CHECKME, COMPARE, GN_ASCII,
+              FEATURE_CL, FEATURE_CO, ADMIN1_COD, GN_POP, ELEVATION, GTOPO30, UN_ADM0,
+              UN_LAT, UN_LONG, CITYALT, and wdid_score.
+              Fixes #5
+            - Many changes to default names and populations
+              Thanks to @mizmay, @elliotap for the edits
             - Rename Capital City for Kazakhstan
               Fixes #292, thanks @justinelliotmeyers!
 			- Burundi Capital City Update
@@ -118,8 +220,134 @@ TOOLS
 			  Fixes #294, thanks @justinelliotmeyers!
 			- Add Arta, the 4th largest city in Djibouti
 			  Fixes #296, thanks @justinelliotmeyers!
+			- Added new admin-1 capital of Amaravati for Andhra Pradesh in India
+			  and adjust Hyderabad to be in the new Telangana state.
+			  Fixes #234, thanks @justinelliotmeyers and @elliotap
+			- Added new admin-1 capital of Leh for Ladakh in India
+			  Fixes #393, thanks @justinelliotmeyers and @Nate-Wessel
+            - Update name for Kuwait City
+              Fixes #483, thanks @elliotap
+            - Move Windsor, Ontario into Canada
+              Fixes #468, thanks @elliotap
+            - Add wikidataid to several dozen cities
+              Fixes #455, #458, #459, #460, #461, thanks @ImreSamu and @elliotap
+            - Add modern and conventional names for Puducherry, India
+              Fixes #454, thanks @elliotap
+            - Add modern and conventional names for Famagusta, Cyrpus
+              Fixes #452, thanks @elliotap
+            - Correct location of Bodø, Norway
+              Fixes #450, thanks @elliotap
+            - State-Wide Name Updates in Karnataka, India
+              Fixes #448, @elliotap
+            - Update Who's On First (WOF) concordances
+              Fixes #447, thanks @stepps00
+            - Correct names for Shijiazhuang and Xiangyang, China
+              Fixes #430, thanks @KennethSui
+            - Correct name of Sovetskaya Gavan, Russia
+              Fixes #428, thanks @Maxszik
+            - Adjust max_pop of Newcastle, Australia
+              Fixes #414, thanks @jwva
+            - Adjust max population of Korla, China
+              Fixes #412, thanks @jwva
+            - Adjust location for 2 cities in Algeria and 2 in Bhutan
+              Fixes #409, thanks @elliotap
+            - Rename Ujungpandang to Makassar, Indonesia
+              Fixes #398, thanks @jwva
+            - Correct name of Liupanshui, China
+              Fixes #369, thanks @jwva
+            - Correct spelling of Akureyri, Iceland
+              Fixes #366, thanks @jwva
+            - Adjust population of Kandalaksha, Murmansk, Russia
+              Fixes #359, thanks @jwva
+            - Adjust location of Jacunda, Brazil; Peter I Island; Dawwah, Oman
+              Fixes #338, thanks @elliotap
+            - Adjust spellings for major cities in Bangladesh
+              Fixes #329, thanks @elliotap
+            - Add Nnewi, Nigeria
+              #407, thanks @elliotap
+            - Phnom Tbeng Meanchey, Cambodian
+              #408, thanks @elliotap
+            - Set Johannesburg, South Africa as Admin-0 capital alt
+              #364, thanks @jwva
+            - Set Patra, Greece as Admin-1 capital
+              #368, thanks @jwva
+            - Spelling of Amundsen-Scott South Pole Station
+              #374, thanks @jwva
+            - Spelling of Sevastopol, Crimea
+              #380, thanks @jwva
+            - Rename Astana to Nur-Sultan, Kazakhstan
+              #292, #413, thanks @jwva, @justinelliotmeyers
+            - Rename Lansdowne House to Neskantaga, Canada
+              #333, thanks @elliotap
+            - Banghazi should be Benghazi
+              #471, thanks @almccon, @ImreSamu
+            - Update Chad admin 1 capitals
+              #293, thanks @justinelliotmeyers
+            - Update Chinhoyi, Zimbabwe to be Admin-1 capital
+              #310, thanks @justinelliotmeyers
+            - Update Xian, China to Admin-1 capital
+              #362, thanks @jwva
+            - Update Novi Sad, Serbia to Admin-1 capital
+              #367, thanks @jwva
+            - Update Makkah, Saudi Arabia to Admin-1 capital
+              #377, thanks @jwva
+            - Update Yangon (Rangoon), Myanmar to Admin-0 capital alt
+              #381, thanks @jwva
+            - Update Shijiazhuang, China to Admin-1 capital
+              #383, thanks @jwva
+            - Update Zhengzhou, China to Admin-1 capital
+              #384, thanks @jwva
+            - Update Lagos, Nigeria to Admin-1 capital
+              #385, thanks @jwva
+            - Tomakomai, Japan is not an Admin-1 capital
+              #387, thanks @jwva
+            - Kyoto, Japan to Admin-0 capital alt, but POV to be Amin-1 capital
+              #388, thanks @jwva
+            - Dar es Salaam, Tanzania to Admin-0 capital alt
+              #389, thanks @jwva
+            - Rename El Cayo to San Ignacio, Belize
+              #323, thanks @stefanfis
+            - Add Belushya Guba, Russia
+              #330, thanks @elliotap
+            - Rename Ust-Bolsheretsk, Russia
+              #334, thanks @elliotap
+            - Update Noginsk, Russia to Historic place
+              #356, thanks @elliotap
+            - Remove Natal, Brazil as it was "here be dragons"
+              #358, thanks @jwva, @Andrettin
+            - Remove duplicate Bandar Lampung, Indonesia
+              #365, #336, thanks @jwva
+            - Downsize the rural Vila Velha, Brazil
+              #373, thanks @jwva, @Andrettin
+            - North Shore City was amalgamated into Auckland in 2010
+              #405, thanks @elliotap
+            - Update Shiquanhe (Gar), Tibet, China
+              #339, thanks @elliotap
+            - Fix Bose, China wikidataid
+              #406, thanks @elliotap
+            - Renmae Jinxi (Huludao), China
+              #411, thanks @jwva
+            - Duplicate features for Adapazarı, Turkey
+              #449, thanks @elliotap
+            - Rename Rada'a (Rida), Yemen
+              #453, thanks @elliotap
+            - Rename Saguenay (Chicoutimi), China
+              #419, thanks @jwva
+            - Add Arta, Djibouti
+              #296, thanks @justinelliotmeyers
+            - Renamed capital Ngerulmud (was Melekeok), Palau
+              #295, thanks @justinelliotmeyers
+            - Remove non-printing character from Granada's name
+              #294, thanks @justinelliotmeyers
+            - Burundi capital is now Gitega, not Bujumbura
+              #291, thanks @justinelliotmeyers
 - UPDATED:  ne_10m_populated_places_simple
             - Same changes as ne_10m_populated_places.
+- UPDATED:  ne_10m_roads
+            - Fix attributes on part of I-94 in North Dakota, USA
+              Fixes #482, thanks @almccon, @elliotap
+            - Updated Ferry lines in Cancún, Mexico; Chile; Sumatra-Java, Indonesia
+              Fixes #357, #360, #378, thanks @jwva, @elliotap
 
 10M_PHYSICAL
 
@@ -127,30 +355,98 @@ TOOLS
             - Add more localized names
 - UPDATED:  ne_10m_geography_marine_polys
             - Add more localized names
+            - Adjusted min_zoom of Salish Sea to show earlier.
+              Fixes #41, thanks @MrGawsome and @almccon
+            - Merged polygons for Mediterranean Sea and for Ross Sea
+              Fixes #319, thanks @jbusecke and @MrGawsome
+            - Changed default name of New Schawbenland to New Swabia
+              Fixes #236, thanks @Maxszik and @MrGawsome
 - UPDATED:  ne_10m_geography_regions_elevation_points
             - Add more localized names
+            - Harney Peak to Black Elk Peak, South Dakota, USA
+              Fixes #438, thanks @almccon, @elliotap
+            - Bring consistency to Mount vs Mt. and Peak vs Pk.
+              Fixes #439, thanks @almccon, @elliotap
+            - Correct spelling of Pico Cristóbal Colón, Colombia
+              Fixes #382, thanks @jwva, @elliotap
 - UPDATED:  ne_10m_geography_regions_points
             - Add more localized names
+            - Correct spelling of Cabo de Sao Vicente, Portugal
+              Fixes #376, thanks @jwva, @elliotap
 - UPDATED:  ne_10m_geography_regions_polys
             - Add more localized names
+            - Around 200 features had the same ne_id in error (1159104649), each feature
+              now has it's own unique ID.
+              Fixes #527, thanks @MrGawsome
+            - Update name for "Ryükyü Islands" island polygon in physical label areas
+              Fixes #397, thanks @jwva, @elliotap
+            - Make Haida Gwaii physical label names consistent (Queen Charlotte Islands)
+              Fixes #260, thanks @pinakographos, @elliotap
 - UPDATED:  ne_10m_lakes
             - Add more localized names
+            - Split Lynx Lake and Whitefish Lake into two separate features in Canada
+              Fixes #425, thanks @elliotap
+            - Rename Napaktulik Lake (from Takijuq Lake) and update Wikidat ID
+              Fixes #426, thanks @elliotap and @MrGawsome
+            - Updated Aral Sea geometry to smaller North Aral Sea, South Aral Sea
+              and Barsakelmes Lake, and Aralkum Desert Playa.
+              Fixes #337, thanks @elliotap and @MrGawsome
+            - Changed default name of Pskoyskoye Ozero to Lake Pskov
+              Fixes #236, thanks @Maxszik and @MrGawsome
+            - Move Lop Nur to historic lakes, and extend it's modern playa
+              Fixes #341, thanks @elliotap and @MrGawsome
+            - Remove Kabalebo reservoirs as they were never built
+              Fixes #342, thanks @elliotap, @kevinventullo, @MrGawsome
+            - Lake Wielkie Jeziora Mazurskie has poor tracing
+              #488, thanks @matkoniecz
+            - Fix Smallwood Reservoir, Canada poor tracing, thanks Tom Patterson
+            - Fix Presa Miguel Alemán, Mexico poor tracing, thanks Tom Patterson
+            - Fix Lago Gatum, Panama poor tracing, thanks Tom Patterson
+            - Fix Lake Gordon, Australia poor tracing, thanks Tom Patterson
+            - Fix Lake Pedder, Australia poor tracing, thanks Tom Patterson
+- NEW:      ne_10m_lakes_australia
+            - Add Australia supplemental hydro (lakes, rivers, default lakes, default rivers)
+              #475, thanks Tom Patterson
 - UPDATED:  ne_10m_lakes_europe
             - Add more localized names
 - UPDATED:  ne_10m_lakes_historic
             - Add more localized names
+            - Move Lop Nur to historic lakes, and extend it's modern playa
+              Fixes #341, thanks @elliotap and @MrGawsome
 - UPDATED:  ne_10m_lakes_north_america
             - Add more localized names
+            - Update North American supplemental hydro (lakes, rivers, default lakes, default rivers)
+              #474, thanks Tom Patterson
 - UPDATED:  ne_10m_playas
             - Add more localized names
-- UPDATED:  ne_10m_rivers_europe
-            - Add more localized names
+            - Updated Aral Sea geometry to smaller North Aral Sea, South Aral Sea
+              and Barsakelmes Lake, and Aralkum Desert Playa.
+              Fixes #337, thanks @elliotap and @MrGawsome
+            - Move Lop Nur to historic lakes, and extend it's modern playa
+              Fixes #341, thanks @elliotap and @MrGawsome
 - UPDATED:  ne_10m_rivers_lake_centerlines
             - Add more localized names
+            - Broken river in Alaska
+              Fixes #308, thanks @pinakographos and @MrGawsome
+            - Unified Deep Water System of European Russia
+              Fixes #500, thanks @MrGawsome and @Maxszik
+            - Kama needs a more important scale rank
+			  Fixes #14, thanks @MrGawsome and MaxS
+            - Sheksna hydro min_zoom fixes
+              Fixes #340 by @elliotap and @Maxszik
+            - Extend Huang to Bo Hai, and Luan and Nakdon rivers
+              Fixes #375, thanks @jwva and @MrGawsome
 - UPDATED:  ne_10m_rivers_lake_centerlines_scale_rank
+            - Add more localized names
+- NEW:      ne_10m_rivers_australia
+            - Add Australia supplemental hydro (lakes, rivers, default lakes, default rivers)
+              #475, thanks Tom Patterson
+- UPDATED:  ne_10m_rivers_europe
             - Add more localized names
 - UPDATED:  ne_10m_rivers_north_america
             - Add more localized names
+            - Update linework for split Lynx Lake and Whitefish Lake in Canada
+              Fixes #425, thanks @elliotap
 
 50M_CULTURAL
 
@@ -162,15 +458,23 @@ TOOLS
 			ne_50m_admin_0_map_subunits
             - Support disputed boundary point-of-view
             - Add more localized names
+            - Add Tuvalu polygon to 50M dataset adm0
+              #511, thanks @Bonurbe
 - UPDATED:  ne_50m_admin_0_tiny_countries
             - Add more localized names
 - UPDATED:  ne_50m_admin_0_breakaway_disputed_areas
 			ne_50m_admin_0_breakaway_disputed_areas_scale_rank
             - Support disputed boundary point-of-view
+            - Add additional disputed areas
             - Add more localized names
+- NEW:      ne_50m_admin_0_boundary_lines_maritime_indicator_chn
+            - Support disputed boundary point-of-view by adding fclass_* properties
+              for this new theme showing China's 9-dash line.
 - UPDATED:  ne_50m_admin_1_states_provinces
 			ne_50m_admin_1_states_provinces_lakes
             - Add more localized names
+            - Add features in China, India, Indonesia, Russia, and South Africa, joining Australia, Canada, Brazil, and United States
+              #479, thanks @anandtiwary
 - UPDATED:  ne_50m_populated_places
             ne_50m_populated_places_simple
             - Same changes as ne_10m_populated_places.
@@ -191,14 +495,31 @@ TOOLS
             - Same changes as ne_10m_geography_regions_polys.
 - UPDATED:  ne_50m_lakes
             - Add more localized names
+            - All the Great Lakes in North America now have scalerank 0, making them
+              consistent with the 10m and 110m themes.
+              Fixes #499, thanks @pinakographos
+            - Restored 136 lakes that went missing in v4, including Lakes Tanganyika
+              and Balkash
+              Fixes #422, thanks @Anton21bis, @gzauhar, @vladgp, and @MrGawsome
+            - Add Wikidata IDs and name translations for same 136 lakes
+              Fixes #498, thanks @MrGawsome and @ImreSamu
+            - Updated Aral Sea geometry to smaller North Aral Sea, South Aral Sea
+              and Barsakelmes Lake, and Aralkum Desert Playa.
+              Fixes #337, thanks @elliotap and @MrGawsome
+            - Changed default name of Pskoyskoye Ozero to Lake Pskov
+              Fixes #236, thanks @Maxszik and @MrGawsome
 - UPDATED:  ne_50m_lakes_historic
             - Add more localized names
 - UPDATED:  ne_50m_playas
             - Add more localized names
 - UPDATED:  ne_50m_rivers_lake_centerlines
             - Add more localized names
+            - Unified Deep Water System of European Russia
+              Fixes #500, thanks @MrGawsome
+            - Kama needs a more important scale rank
+			  Fixes #14, thanks @MrGawsome
 - UPDATED:  ne_50m_rivers_lake_centerlines_scale_rank
-            - Add more localized names
+            - Same as ne_50m_rivers_lake_centerlines
 
 110M_CULTURAL
 
@@ -232,6 +553,11 @@ TOOLS
             - Same changes as ne_10m_geography_regions_polys.
 - UPDATED:  ne_110m_lakes
             - Add more localized names
+            - Correct Great Salt Lake name from Lake Onega
+              Fixes #472, thanks @Drumstick42 and @MrGawsome
+            - Updated Aral Sea geometry to smaller North Aral Sea, South Aral Sea
+              and Barsakelmes Lake, and Aralkum Desert Playa.
+              Fixes #337, thanks @elliotap and @MrGawsome
 - UPDATED:  ne_110m_rivers_lake_centerlines
             - Add more localized names
 

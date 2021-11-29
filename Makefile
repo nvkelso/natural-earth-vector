@@ -1153,6 +1153,18 @@ build_c4_ne_110m_admin_1: 110m_cultural/ne_110m_admin_1_states_provinces_scale_r
 		-o 110m_cultural/ne_110m_admin_1_states_provinces_lakes.shp \
 
 
+# River centerlines from scale rank (stroke weight)
+intermediate/ne_10m_rivers_lake_centerlines.shp: 10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.shp 10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.dbf
+	mapshaper -i 10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.shp \
+		-dissolve dissolve copy-fields=dissolve,scalerank,featurecla,name,name_alt,rivernum,note,min_zoom,name_en,min_label,ne_id,label,wikidataid,name_ar,name_bn,name_de,name_es,name_fr,name_el,name_hi,name_hu,name_id,name_it,name_ja,name_ko,name_nl,name_pl,name_pt,name_ru,name_sv,name_tr,name_vi,name_zh,name_fa,name_he,name_uk,name_ur,name_zht\
+		-o intermediate/ne_10m_rivers_lake_centerlines.shp \
+
+# If the intermediate files look good, then copy them over
+# existing files... but beware of edits and names that may have only
+# been made to the ne_10m_rivers_lake_centerlines shapefile
+10m_physical/ne_10m_rivers_lake_centerlines.shp: intermediate/ne_10m_rivers_lake_centerlines.shp intermediate/ne_10m_rivers_lake_centerlines.dbf
+	mapshaper -i intermediate/ne_10m_rivers_lake_centerlines.shp \
+		-o force 10m_physical/ne_10m_rivers_lake_centerlines.shp \
 
 # POPULATED PLACES
 
@@ -2709,6 +2721,8 @@ packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
 	10m_cultural/ne_10m_admin_1_states_provinces_lines.shp 10m_cultural/ne_10m_admin_1_states_provinces_lines.dbf \
 	10m_cultural/ne_10m_admin_1_states_provinces.shp 10m_cultural/ne_10m_admin_1_states_provinces.dbf \
 	10m_cultural/ne_10m_admin_1_states_provinces_lakes.shp 10m_cultural/ne_10m_admin_1_states_provinces_lakes.dbf \
+	10m_cultural/ne_10m_admin_2_counties_lines.shp 10m_cultural/ne_10m_admin_2_counties_lines.dbf \
+	10m_cultural/ne_10m_admin_2_counties_lakes.shp 10m_cultural/ne_10m_admin_2_counties_lakes.dbf \
 	10m_cultural/ne_10m_populated_places.shp 10m_cultural/ne_10m_populated_places.dbf \
 	10m_cultural/ne_10m_urban_areas.shp 10m_cultural/ne_10m_urban_areas.dbf \
 	10m_cultural/ne_10m_parks_and_protected_lands_area.shp 10m_cultural/ne_10m_parks_and_protected_lands_area.dbf \
@@ -2731,6 +2745,8 @@ packages/Natural_Earth_quick_start/10m_cultural/status.txt: \
 	cp 10m_cultural/ne_10m_admin_1_states_provinces_lines.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_1_states_provinces.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_admin_1_states_provinces_lakes.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_admin_2_counties_lines.* packages/Natural_Earth_quick_start/10m_cultural/
+	cp 10m_cultural/ne_10m_admin_2_counties_lakes.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_populated_places.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_urban_areas.* packages/Natural_Earth_quick_start/10m_cultural/
 	cp 10m_cultural/ne_10m_parks_and_protected_lands_area.* packages/Natural_Earth_quick_start/10m_cultural/
@@ -2755,6 +2771,7 @@ packages/Natural_Earth_quick_start/10m_physical/status.txt: \
 	10m_physical/ne_10m_lakes_europe.shp 10m_physical/ne_10m_lakes_europe.dbf \
 	10m_physical/ne_10m_lakes_historic.shp 10m_physical/ne_10m_lakes_historic.dbf \
 	10m_physical/ne_10m_lakes_north_america.shp 10m_physical/ne_10m_lakes_north_america.dbf \
+	10m_physical/ne_10m_lakes_australia.shp 10m_physical/ne_10m_lakes_australia.dbf \
 	10m_physical/ne_10m_ocean.shp 10m_physical/ne_10m_ocean.dbf \
 	10m_physical/ne_10m_ocean_scale_rank.shp 10m_physical/ne_10m_ocean_scale_rank.dbf \
 	10m_physical/ne_10m_minor_islands.shp 10m_physical/ne_10m_minor_islands.dbf \
@@ -2764,6 +2781,7 @@ packages/Natural_Earth_quick_start/10m_physical/status.txt: \
 	10m_physical/ne_10m_rivers_lake_centerlines.shp 10m_physical/ne_10m_rivers_lake_centerlines.dbf \
 	10m_physical/ne_10m_rivers_europe.shp 10m_physical/ne_10m_rivers_europe.dbf \
 	10m_physical/ne_10m_rivers_north_america.shp 10m_physical/ne_10m_rivers_north_america.dbf \
+	10m_physical/ne_10m_rivers_australia.shp 10m_physical/ne_10m_rivers_australia.dbf \
 	10m_physical/ne_10m_playas.shp 10m_physical/ne_10m_playas.dbf \
 	10m_physical/ne_10m_reefs.shp 10m_physical/ne_10m_reefs.dbf \
 
@@ -2782,6 +2800,7 @@ packages/Natural_Earth_quick_start/10m_physical/status.txt: \
 	cp 10m_physical/ne_10m_lakes_europe.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_lakes_historic.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_lakes_north_america.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_lakes_australia.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_minor_islands.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_minor_islands_coastline.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_ocean.* packages/Natural_Earth_quick_start/10m_physical/
@@ -2791,6 +2810,7 @@ packages/Natural_Earth_quick_start/10m_physical/status.txt: \
 	cp 10m_physical/ne_10m_rivers_lake_centerlines.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_rivers_europe.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_rivers_north_america.* packages/Natural_Earth_quick_start/10m_physical/
+	cp 10m_physical/ne_10m_rivers_australia.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_playas.* packages/Natural_Earth_quick_start/10m_physical/
 	cp 10m_physical/ne_10m_reefs.* packages/Natural_Earth_quick_start/10m_physical/
 
