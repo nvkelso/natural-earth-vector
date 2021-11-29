@@ -102,13 +102,44 @@ zips/housekeeping/ne_themes_versions.zip:
 
 zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.zip \
-	zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_land.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_map_units.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.zip \
+	zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.zip \
 	zips/10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.zip \
 	zips/10m_cultural/ne_10m_admin_0_disputed_areas.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_arg.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_bdg.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_bra.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_chn.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_deu.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_egy.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_esp.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_fra.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_gbr.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_grc.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_idn.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_ind.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_isr.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_ita.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_jpn.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_kor.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_mar.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_nep.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_nld.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_pak.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_pol.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_prt.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_pse.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_rus.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_sau.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_swe.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_tur.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_twn.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_ukr.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_usa.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_vnm.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries_lakes.zip \
 	zips/10m_cultural/ne_10m_admin_0_map_subunits.zip \
 	zips/10m_cultural/ne_10m_admin_0_map_units.zip \
@@ -126,6 +157,12 @@ zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip \
 	zips/10m_cultural/ne_10m_admin_1_label_points.zip \
 	zips/10m_cultural/ne_10m_admin_1_seams.zip \
+	zips/10m_cultural/ne_10m_admin_2_counties.zip \
+	zips/10m_cultural/ne_10m_admin_2_counties_lakes.zip \
+	zips/10m_cultural/ne_10m_admin_2_counties_scale_rank.zip \
+	zips/10m_cultural/ne_10m_admin_2_counties_scale_rank_minor_islands.zip \
+	zips/10m_cultural/ne_10m_admin_2_label_points_details.zip \
+	zips/10m_cultural/ne_10m_admin_2_label_points.zip \
 	zips/10m_cultural/ne_10m_populated_places_simple.zip \
 	zips/10m_cultural/ne_10m_populated_places.zip \
 	zips/10m_cultural/ne_10m_railroads.zip \
@@ -153,6 +190,7 @@ zips/10m_physical/10m_physical.zip: \
 	zips/10m_physical/ne_10m_geography_regions_points.zip \
 	zips/10m_physical/ne_10m_geography_regions_polys.zip \
 	zips/10m_physical/ne_10m_glaciated_areas.zip \
+	zips/10m_physical/ne_10m_lakes_australia.zip \
 	zips/10m_physical/ne_10m_lakes_europe.zip \
 	zips/10m_physical/ne_10m_lakes_historic.zip \
 	zips/10m_physical/ne_10m_lakes_north_america.zip \
@@ -166,6 +204,7 @@ zips/10m_physical/10m_physical.zip: \
 	zips/10m_physical/ne_10m_ocean_scale_rank.zip \
 	zips/10m_physical/ne_10m_playas.zip \
 	zips/10m_physical/ne_10m_reefs.zip \
+	zips/10m_physical/ne_10m_rivers_australia.zip \
 	zips/10m_physical/ne_10m_rivers_europe.zip \
 	zips/10m_physical/ne_10m_rivers_lake_centerlines_scale_rank.zip \
 	zips/10m_physical/ne_10m_rivers_lake_centerlines.zip \
@@ -203,6 +242,7 @@ zips/50m_cultural/50m_cultural.zip: \
 	zips/50m_cultural/ne_50m_admin_0_boundary_lines_disputed_areas.zip \
 	zips/50m_cultural/ne_50m_admin_0_boundary_lines_land.zip \
 	zips/50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.zip \
+	zips/50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator_chn.zip \
 	zips/50m_cultural/ne_50m_admin_0_boundary_map_units.zip \
 	zips/50m_cultural/ne_50m_admin_0_breakaway_disputed_areas.zip \
 	zips/50m_cultural/ne_50m_admin_0_countries.zip \
@@ -1308,6 +1348,14 @@ zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator.zip: 10m_cult
 	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
 		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
 
+zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.zip: 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.shp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-boundary-lines/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_boundary_lines_maritime_indicator_chn$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
 zips/10m_cultural/ne_10m_admin_0_pacific_groupings.zip: 10m_cultural/ne_10m_admin_0_pacific_groupings.shp 10m_cultural/ne_10m_admin_0_pacific_groupings.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-boundary-lines/ > $(subst zips/, ,$(basename $@)).README.html
@@ -1321,14 +1369,6 @@ zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.zip: 10m_cultural
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-breakaway-disputed-areas/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_boundary_lines_disputed_areas$(VERSION_PREFIXED).zip
-	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
-		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
-
-zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.zip: 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.shp 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.dbf
-	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
-	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-boundary-lines/ > $(subst zips/, ,$(basename $@)).README.html
-	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
-	cp $@ archive/ne_10m_admin_0_boundary_lines_maritime_indicator_chn$(VERSION_PREFIXED).zip
 	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
 		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
 
@@ -1355,6 +1395,258 @@ zips/10m_cultural/ne_10m_admin_0_countries.zip: 10m_cultural/ne_10m_admin_0_coun
 	cp $@ archive/ne_10m_admin_0_countries$(VERSION_PREFIXED).zip
 	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
 		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+
+
+zips/10m_cultural/ne_10m_admin_0_countries_arg.zip: 10m_cultural/ne_10m_admin_0_countries_arg.shp 10m_cultural/ne_10m_admin_0_countries_arg.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_arg$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_bdg.zip: 10m_cultural/ne_10m_admin_0_countries_bdg.shp 10m_cultural/ne_10m_admin_0_countries_bdg.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_bdg$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_bra.zip: 10m_cultural/ne_10m_admin_0_countries_bra.shp 10m_cultural/ne_10m_admin_0_countries_bra.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_bra$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_chn.zip: 10m_cultural/ne_10m_admin_0_countries_chn.shp 10m_cultural/ne_10m_admin_0_countries_chn.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_chn$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_deu.zip: 10m_cultural/ne_10m_admin_0_countries_deu.shp 10m_cultural/ne_10m_admin_0_countries_deu.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_deu$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_egy.zip: 10m_cultural/ne_10m_admin_0_countries_egy.shp 10m_cultural/ne_10m_admin_0_countries_egy.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_egy$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_esp.zip: 10m_cultural/ne_10m_admin_0_countries_esp.shp 10m_cultural/ne_10m_admin_0_countries_esp.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_esp$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_fra.zip: 10m_cultural/ne_10m_admin_0_countries_fra.shp 10m_cultural/ne_10m_admin_0_countries_fra.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_fra$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_gbr.zip: 10m_cultural/ne_10m_admin_0_countries_gbr.shp 10m_cultural/ne_10m_admin_0_countries_gbr.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_gbr$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_grc.zip: 10m_cultural/ne_10m_admin_0_countries_grc.shp 10m_cultural/ne_10m_admin_0_countries_grc.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_grc$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_idn.zip: 10m_cultural/ne_10m_admin_0_countries_idn.shp 10m_cultural/ne_10m_admin_0_countries_idn.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_idn$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_ind.zip: 10m_cultural/ne_10m_admin_0_countries_ind.shp 10m_cultural/ne_10m_admin_0_countries_ind.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_ind$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_isr.zip: 10m_cultural/ne_10m_admin_0_countries_isr.shp 10m_cultural/ne_10m_admin_0_countries_isr.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_isr$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_ita.zip: 10m_cultural/ne_10m_admin_0_countries_ita.shp 10m_cultural/ne_10m_admin_0_countries_ita.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_ita$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_jpn.zip: 10m_cultural/ne_10m_admin_0_countries_jpn.shp 10m_cultural/ne_10m_admin_0_countries_jpn.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_jpn$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_kor.zip: 10m_cultural/ne_10m_admin_0_countries_kor.shp 10m_cultural/ne_10m_admin_0_countries_kor.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_kor$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_mar.zip: 10m_cultural/ne_10m_admin_0_countries_mar.shp 10m_cultural/ne_10m_admin_0_countries_mar.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_mar$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_nep.zip: 10m_cultural/ne_10m_admin_0_countries_nep.shp 10m_cultural/ne_10m_admin_0_countries_nep.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_nep$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_nld.zip: 10m_cultural/ne_10m_admin_0_countries_nld.shp 10m_cultural/ne_10m_admin_0_countries_nld.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_nld$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_pak.zip: 10m_cultural/ne_10m_admin_0_countries_pak.shp 10m_cultural/ne_10m_admin_0_countries_pak.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_pak$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_pol.zip: 10m_cultural/ne_10m_admin_0_countries_pol.shp 10m_cultural/ne_10m_admin_0_countries_pol.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_pol$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_prt.zip: 10m_cultural/ne_10m_admin_0_countries_prt.shp 10m_cultural/ne_10m_admin_0_countries_prt.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_prt$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_pse.zip: 10m_cultural/ne_10m_admin_0_countries_pse.shp 10m_cultural/ne_10m_admin_0_countries_pse.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_pse$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_rus.zip: 10m_cultural/ne_10m_admin_0_countries_rus.shp 10m_cultural/ne_10m_admin_0_countries_rus.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_rus$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_sau.zip: 10m_cultural/ne_10m_admin_0_countries_sau.shp 10m_cultural/ne_10m_admin_0_countries_sau.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_sau$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_swe.zip: 10m_cultural/ne_10m_admin_0_countries_swe.shp 10m_cultural/ne_10m_admin_0_countries_swe.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_swe$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_tur.zip: 10m_cultural/ne_10m_admin_0_countries_tur.shp 10m_cultural/ne_10m_admin_0_countries_tur.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_tur$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_twn.zip: 10m_cultural/ne_10m_admin_0_countries_twn.shp 10m_cultural/ne_10m_admin_0_countries_twn.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_twn$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_ukr.zip: 10m_cultural/ne_10m_admin_0_countries_ukr.shp 10m_cultural/ne_10m_admin_0_countries_ukr.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_ukr$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_usa.zip: 10m_cultural/ne_10m_admin_0_countries_usa.shp 10m_cultural/ne_10m_admin_0_countries_usa.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_usa$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_vnm.zip: 10m_cultural/ne_10m_admin_0_countries_vnm.shp 10m_cultural/ne_10m_admin_0_countries_vnm.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_vnm$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+
 
 zips/10m_cultural/ne_10m_admin_0_countries_lakes.zip: 10m_cultural/ne_10m_admin_0_countries_lakes.shp 10m_cultural/ne_10m_admin_0_countries_lakes.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
@@ -1476,6 +1768,54 @@ zips/10m_cultural/ne_10m_admin_1_seams.zip: 10m_cultural/ne_10m_admin_1_seams.sh
 	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
 		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
 
+zips/10m_cultural/ne_10m_admin_2_counties.zip: 10m_cultural/ne_10m_admin_2_counties.shp 10m_cultural/ne_10m_admin_2_counties.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-2-counties/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_2_counties$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_2_counties_lakes.zip: 10m_cultural/ne_10m_admin_2_counties_lakes.shp 10m_cultural/ne_10m_admin_2_counties_lakes.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-2-counties/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_2_counties_lakes$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_2_counties_scale_rank.zip: 10m_cultural/ne_10m_admin_2_counties_scale_rank.shp 10m_cultural/ne_10m_admin_2_counties_scale_rank.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-2-counties/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_2_counties_scale_rank$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_2_counties_scale_rank_minor_islands.zip: 10m_cultural/ne_10m_admin_2_counties_scale_rank_minor_islands.shp 10m_cultural/ne_10m_admin_2_counties_scale_rank_minor_islands.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-2-counties/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_2_counties_scale_rank_minor_islands$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_2_label_points_details.zip: 10m_cultural/ne_10m_admin_2_label_points_details.shp 10m_cultural/ne_10m_admin_2_label_points_details.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-2-counties/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_2_label_points_details$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_2_label_points.zip: 10m_cultural/ne_10m_admin_2_label_points.shp 10m_cultural/ne_10m_admin_2_label_points.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-2-counties/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_2_label_points$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
 zips/10m_cultural/ne_10m_populated_places_simple.zip: 10m_cultural/ne_10m_populated_places_simple.shp 10m_cultural/ne_10m_populated_places_simple.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/ > $(subst zips/, ,$(basename $@)).README.html
@@ -1568,7 +1908,10 @@ zips/10m_cultural/ne_10m_cultural_building_blocks_all.zip: \
 	zips/10m_cultural/ne_10m_admin_0_label_points.zip \
 	zips/10m_cultural/ne_10m_admin_0_seams.zip \
 	zips/10m_cultural/ne_10m_admin_1_label_points.zip \
+	zips/10m_cultural/ne_10m_admin_1_label_points_details.zip \
 	zips/10m_cultural/ne_10m_admin_1_seams.zip \
+	zips/10m_cultural/ne_10m_admin_2_label_points.zip \
+	zips/10m_cultural/ne_10m_admin_2_label_points_details.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.zip \
 	zips/10m_cultural/ne_10m_admin_0_boundary_lines_land.zip \
@@ -1576,9 +1919,8 @@ zips/10m_cultural/ne_10m_cultural_building_blocks_all.zip: \
 	zips/10m_physical/ne_10m_coastline.zip \
 	zips/10m_physical/ne_10m_minor_islands_coastline.zip
 
-	zip -j -r $@ 10m_cultural/ne_10m_admin_0_label_points.* 10m_cultural/ne_10m_admin_0_seams.* 10m_cultural/ne_10m_admin_1_label_points.* 10m_cultural/ne_10m_admin_1_seams.* 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.* 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.* 10m_cultural/ne_10m_admin_0_boundary_lines_land.* 10m_cultural/ne_10m_admin_0_boundary_lines_map_units.* 10m_physical/ne_10m_coastline.* 10m_physical/ne_10m_minor_islands_coastline.*
+	zip -j -r $@ 10m_cultural/ne_10m_admin_0_label_points.* 10m_cultural/ne_10m_admin_0_seams.* 10m_cultural/ne_10m_admin_1_label_points.* 10m_cultural/ne_10m_admin_1_label_points_details.* 10m_cultural/ne_10m_admin_2_label_points.* 10m_cultural/ne_10m_admin_2_label_points_details.* 10m_cultural/ne_10m_admin_1_seams.* 10m_cultural/ne_10m_admin_0_boundary_lines_disputed_areas.* 10m_cultural/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.* 10m_cultural/ne_10m_admin_0_boundary_lines_land.* 10m_cultural/ne_10m_admin_0_boundary_lines_map_units.* 10m_physical/ne_10m_coastline.* 10m_physical/ne_10m_minor_islands_coastline.*
 	cp $@ archive/ne_10m_cultural_building_blocks_all$(VERSION_PREFIXED).zip
-
 
 
 # folders for theme groups or geodb special items
@@ -1587,6 +1929,14 @@ zips/10m_cultural/ne_10m_admin_1_label_points.zip: 10m_cultural/ne_10m_admin_1_l
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-cultural-building-blocks/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_1_label_points$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_1_label_points_details.zip: 10m_cultural/ne_10m_admin_1_label_points_details.shp 10m_cultural/ne_10m_admin_1_label_points_details.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-cultural-building-blocks/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_1_label_points_details$(VERSION_PREFIXED).zip
 	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
 		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
 
@@ -1691,6 +2041,14 @@ zips/10m_physical/ne_10m_glaciated_areas.zip: 10m_physical/ne_10m_glaciated_area
 	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
 		| jq -c . > geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
 
+zips/10m_physical/ne_10m_lakes_australia.zip: 10m_physical/ne_10m_lakes_australia.shp 10m_physical/ne_10m_lakes_australia.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-lakes/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_lakes_australia$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
+
 zips/10m_physical/ne_10m_lakes_europe.zip: 10m_physical/ne_10m_lakes_europe.shp 10m_physical/ne_10m_lakes_europe.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-lakes/ > $(subst zips/, ,$(basename $@)).README.html
@@ -1792,6 +2150,14 @@ zips/10m_physical/ne_10m_reefs.zip: 10m_physical/ne_10m_reefs.shp 10m_physical/n
 	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-reefs/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_reefs$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
+
+zips/10m_physical/ne_10m_rivers_australia.zip: 10m_physical/ne_10m_rivers_australia.shp 10m_physical/ne_10m_rivers_australia.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-rivers-lake-centerlines/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_rivers_australia$(VERSION_PREFIXED).zip
 	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
 		| jq -c . > geojson/$(subst zips/10m_physical/,,$(basename $@)).geojson
 
@@ -2075,6 +2441,14 @@ zips/50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator.zip: 50m_cult
 	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-boundary-lines-2/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_50m_admin_0_boundary_lines_maritime_indicator$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
+
+zips/50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator_chn.zip: 50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator_chn.shp 50m_cultural/ne_50m_admin_0_boundary_lines_maritime_indicator_chn.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-boundary-lines-2/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_50m_admin_0_boundary_lines_maritime_indicator_chn$(VERSION_PREFIXED).zip
 	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
 		| jq -c . > geojson/$(subst zips/50m_cultural/,,$(basename $@)).geojson
 
