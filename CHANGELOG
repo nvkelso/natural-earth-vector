@@ -1,4 +1,4 @@
-2021-11-14: 5.0.0
+2021-12-07: 5.0.0
 
 - Many thanks to @zerebubuth for help with disputed boundaries prototyping in Tilezen.
 - Many thanks to @elliotap, @jwva, and @mizmay for research and editing of populated
@@ -35,8 +35,8 @@ GENERAL
 	Fixes #302, #303, #399, #451, #533
 4)	Renames admin-0 Macedonia features to North Macedonia to keep up with current events.
 	Fixes #290.
-5)	Renames admin-0 Macedonia features to North Macedonia to keep up with current events.
-	Fixes #290.
+5)	Renames admin-0 Swaziland features to Eswatini to keep up with current events.
+	Fixes #410.
 
 PACKAGES
 
