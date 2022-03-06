@@ -915,9 +915,9 @@ build_a2_ne_10m_admin_0_disputed: 10m_cultural/ne_10m_admin_0_scale_rank_minor_i
 	housekeeping/ne_admin_0_details_level_5_disputed.dbf
 	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
 		-filter '"Admin-0 breakaway and disputed,Admin-0 claim area,Admin-0 indeterminant,Admin-0 overlay,Admin-0 lease".indexOf(featurecla) > -1' \
+		-filter 'scalerank !== null' + \
 		-o 10m_cultural/ne_10m_admin_0_disputed_areas_scale_rank_minor_islands.shp \
 		-dissolve 'sr_brk_a3' copy-fields=featurecla,scalerank \
-		-filter 'scalerank !== null' + \
 		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=* \
 		-each 'delete sr_brk_a3' \
 		-o 10m_cultural/ne_10m_admin_0_disputed_areas.shp \
