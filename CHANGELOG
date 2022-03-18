@@ -1,3 +1,141 @@
+2022-03-17: 5.0.1
+
+- Many thanks to @jeffdefacto for help with disputed boundaries research
+
+GENERAL
+
+1)	Bug fix polish for alternate points-of-view (POV) added in v5.0.0 release.
+
+- UPDATED:  NATURAL_EARTH_QUICK_START
+- UPDATED:  10M_CULTURAL
+- UPDATED:  50M_CULTURAL
+- UPDATED:  110M_CULTURAL
+- UPDATED:  SQLite
+- UPDATED:  GeoJSON
+- UPDATED:  GeoPackage
+
+NATURAL_EARTH_QUICK_START
+
+- UPDATED:  - Set fallback project POV to featurecla, and default to fclass_us
+	        - Add POV for admin-1 region labels
+	        - Render line of control boundary more like disputed boundary
+	        - Render indefinite boundary more like solid country boundary
+
+HOUSEKEEPING
+
+- UPDATED:  NE_ADMIN_0_DETAILS
+            - Split Donbass into component states, which are recognized by Russia
+            - Added name translations for new disputed areas
+            - Ilemi Triangle note should say South Sudan not Sudan
+              Fixes #649
+            - Adds Siachen Glacier as a disputed area for most POVs
+              Fixes #686
+            - Corrected a several #N/A values in POV and name_* columns
+            - Other point-of-view polish and consistency checks
+
+10M_CULTURAL
+
+- UPDATED:  ne_10m_admin-0 themes, including:
+			ne_10m_admin_0_sovereignty
+			ne_10m_admin_0_countries
+			ne_10m_admin_0_countries_* (all point-of-views)
+			ne_10m_admin_0_countries_lakes
+			ne_10m_admin_0_map_units
+			ne_10m_admin_0_map_subunits
+			ne_10m_admin_0_scale_rank
+			ne_10m_admin_0_scale_rank_minor_islands
+			ne_10m_admin_0_boundary_lines_land
+            ne_10m_admin_0_boundary_lines_disputed_areas
+			ne_10m_admin_0_disputed_areas
+			ne_10m_admin_0_disputed_areas_scale_rank_minor_islands
+			ne_10m_admin_0_label_points
+            - Ukraine's boundary POV updated for current events, leaving only Morocco
+              and Sweden showing two ambiguous boundaries, and all others but Russia
+              matching Ukraine's view of itself. Default boundary values remains same.
+              Fixes #698
+            - Ukraine's disputed Donbass split in two, recognized as countries by Russia.
+              Fixes #698
+            - Adjust Israel admin-0 line POVs for USA government policy changes in 2019
+              Fixes #687
+            - Kosovo is not recognized by India POV, and for India and Russia POVs
+              should instead be shown as map unit (and China as unrecognized)
+              Fixes #686
+            - Pakistan's claim into India around Junagadh and Manavadar isn't
+              recognized by most countries
+              Fixes #699
+            - Adds Siachen Glacier between India and Pakistan as disputed for most POVs
+              Fixes #686
+            - The 2020 ceasefire line in Azerbaijan for Artsakh (Nagorno-Karabakh)
+              had an inconsistent POV
+              Fixes #700
+            - Caspian Sea is no longer included as null props polygon in disputed themes
+              Fixes #690
+            - Increase point-of-view consistency between disputed lines and areas
+- UPDATED:  ne_10m_admin-1 themes, including:
+			ne_10m_admin_1_states_provinces
+			ne_10m_admin_1_states_provinces_lakes
+			ne_10m_admin_1_states_provinces_scale_rank
+			ne_10m_admin_1_states_provinces_scale_rank_minor_islands
+			ne_10m_admin_1_states_provinces_lines
+			ne_10m_admin_1_label_points
+			ne_10m_admin_1_label_points_details
+            - Disable Morocco admin-1 lines in Western Sahara for most POVs
+              Fixes #688
+            - Add Morocco admin-1 claim lines in Western Sahara
+              (perpetuating out of data alignments for the regions, sorry)
+              Fixes #688
+            - Kosovo admin-1 aren't recognized by India, Russia, or China POVs
+              Fixes #686
+            - Fix scalerank for Kashmir admin-1 line, and update polygon POVs
+              Fixes #686
+            - Disable Israel admin-1 lines for PS, PK, SA, BD, and ID POVs
+              Fixes #687
+- UPDATED:  ne_10m_populated_places
+            - Update POV for admin-0 and admin-1 capitals to match above
+- UPDATED:  ne_10m_populated_places_simple
+            - Same changes as ne_10m_populated_places
+
+50M_CULTURAL
+
+- UPDATED:  ne_50m_admin-0 related themes, including:
+			ne_50m_admin_0_sovereignty
+			ne_50m_admin_0_countries
+			ne_50m_admin_0_countries_lakes
+			ne_50m_admin_0_tiny_countries
+			ne_50m_admin_0_map_units
+			ne_50m_admin_0_map_subunits
+			ne_50m_admin_0_breakaway_disputed_areas
+			- Same changes as 10m cultural themes
+            - Adjust Israel admin-0 line in Golan Heights west to actual line of control
+              Fixes #687
+ - UPDATED: ne_50m_admin-1 related themes, including:
+			ne_50m_admin_1_states_provinces
+			ne_50m_admin_1_states_provinces_lakes
+			- Same changes as 10m cultural themes data table edits
+- UPDATED:  ne_50m_populated_places
+            - Same changes as ne_10m_populated_places
+- UPDATED:  ne_50m_populated_places_simple
+            - Same changes as ne_10m_populated_places
+
+110M_CULTURAL
+
+- UPDATED:  ne_10m_admin-0 related themes, including:
+			ne_110m_admin_0_countries
+			ne_110m_admin_0_countries_lakes
+			ne_110m_admin_0_sovereignty
+			ne_110m_admin_0_tiny_countries
+			- Same changes as 10m cultural themes data table edits
+ - UPDATED: ne_110m_admin-1 related themes, including:
+			ne_110m_admin_1_states_provinces
+			ne_110m_admin_1_states_provinces_lakes
+			- Same changes as 10m cultural themes data table edits (n/a)
+- UPDATED:  ne_110m_populated_places
+            - Same changes as ne_10m_populated_places
+- UPDATED:  ne_110m_populated_places_simple
+            - Same changes as ne_10m_populated_places
+
+
+
 2021-12-07: 5.0.0
 
 - Many thanks to @zerebubuth for help with disputed boundaries prototyping in Tilezen.
