@@ -13,7 +13,9 @@ DOCROOT_FREAC=ftp.freac.fsu.edu:nacis_ftp/web-download
 all: zip
 
 zip: zips/packages/natural_earth_vector.zip \
-	zips/packages/Natural_Earth_quick_start.zip
+	zips/packages/Natural_Earth_quick_start.zip \
+	zips/packages/natural_earth_vector.sqlite.zip \
+	zips/packages/natural_earth_vector.gpkg.zip
 	#Made zips...
 
 	touch $@
@@ -33,7 +35,15 @@ zips/packages/natural_earth_vector.zip: \
 	cp $@ archive/natural_earth_vector_$(VERSION).zip
 
 
-zips/packages/natural_earth_vector.sqlite.zip:
+zips/packages/natural_earth_vector.sqlite.zip: \
+	zips/10m_cultural/10m_cultural.zip \
+	zips/10m_physical/10m_physical.zip \
+	zips/50m_cultural/50m_cultural.zip \
+	zips/50m_physical/50m_physical.zip \
+	zips/110m_cultural/110m_cultural.zip \
+	zips/110m_physical/110m_physical.zip \
+	housekeeping/ne_admin_0_details.ods
+
 	#SQL-Lite
 	rm -f packages/natural_earth_vector.sqlite
 	for shp in 10m_cultural/*.shp 10m_physical/*.shp 50m_cultural/*.shp 50m_physical/*.shp 110m_cultural/*.shp 110m_physical/*.shp; \
@@ -44,7 +54,15 @@ zips/packages/natural_earth_vector.sqlite.zip:
 
 	cp $@ archive/natural_earth_vector.sqlite_$(VERSION).zip
 
-zips/packages/natural_earth_vector.gpkg.zip:
+zips/packages/natural_earth_vector.gpkg.zip: \
+	zips/10m_cultural/10m_cultural.zip \
+	zips/10m_physical/10m_physical.zip \
+	zips/50m_cultural/50m_cultural.zip \
+	zips/50m_physical/50m_physical.zip \
+	zips/110m_cultural/110m_cultural.zip \
+	zips/110m_physical/110m_physical.zip \
+	housekeeping/ne_admin_0_details.ods
+
 	#GeoPackage
 	rm -f packages/natural_earth_vector.gpkg
 	for shp in 10m_cultural/*.shp 10m_physical/*.shp 50m_cultural/*.shp 50m_physical/*.shp 110m_cultural/*.shp 110m_physical/*.shp; \
