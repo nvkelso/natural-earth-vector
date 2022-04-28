@@ -403,6 +403,7 @@ build_a5_ne_10m_admin_0_countries_pov: \
 	build_a5_ne_10m_admin_0_countries_idn \
 	build_a5_ne_10m_admin_0_countries_ind \
 	build_a5_ne_10m_admin_0_countries_isr \
+	build_a5_ne_10m_admin_0_countries_iso \
 	build_a5_ne_10m_admin_0_countries_ita \
 	build_a5_ne_10m_admin_0_countries_jpn \
 	build_a5_ne_10m_admin_0_countries_kor \
@@ -416,6 +417,7 @@ build_a5_ne_10m_admin_0_countries_pov: \
 	build_a5_ne_10m_admin_0_countries_rus \
 	build_a5_ne_10m_admin_0_countries_sau \
 	build_a5_ne_10m_admin_0_countries_swe \
+	build_a5_ne_10m_admin_0_countries_tlc \
 	build_a5_ne_10m_admin_0_countries_tur \
 	build_a5_ne_10m_admin_0_countries_twn \
 	build_a5_ne_10m_admin_0_countries_ukr \
@@ -675,6 +677,21 @@ build_a5_ne_10m_admin_0_countries_isr: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-each 'NAME_LONG=BRK_NAME' \
 		-o 10m_cultural/ne_10m_admin_0_countries_isr.shp \
 
+build_a5_ne_10m_admin_0_countries_iso: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_iso_countries.dbf \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_ISO \
+		-dissolve 'ADM0_ISO' calc='featurecla="Admin-0 country", scalerank = min(scalerank)' \
+		-filter 'scalerank !== null' + \
+		-filter 'scalerank <= 6' + \
+		-join housekeeping/ne_admin_0_details_iso_countries.dbf encoding=utf8 keys=ADM0_ISO,ADM0_ISO fields=* \
+		-filter 'ADM0_ISO !== "-99"' + \
+		-each 'delete sr_adm0_a3' \
+		-each 'NAME=BRK_NAME' \
+		-each 'NAME_LONG=BRK_NAME' \
+		-o 10m_cultural/ne_10m_admin_0_countries_iso.shp \
+
 build_a5_ne_10m_admin_0_countries_pse: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
 	housekeeping/ne_admin_0_details_level_5_disputed.dbf
 	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -912,6 +929,22 @@ build_a5_ne_10m_admin_0_countries_swe: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-each 'NAME_LONG=BRK_NAME' \
 		-o 10m_cultural/ne_10m_admin_0_countries_swe.shp \
 
+build_a5_ne_10m_admin_0_countries_tlc: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_top_level_countries.dbf \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_TLC \
+		-dissolve 'ADM0_TLC' calc='featurecla="Admin-0 country", scalerank = min(scalerank)' \
+		-filter 'scalerank !== null' + \
+		-filter 'scalerank <= 6 || scalerank == 100' + \
+		-join housekeeping/ne_admin_0_details_top_level_countries.dbf encoding=utf8 keys=ADM0_TLC,ADM0_TLC fields=* \
+		-filter 'ADM0_TLC !== "-99"' + \
+		-each 'delete sr_adm0_a3' \
+		-each 'NAME=BRK_NAME' \
+		-each 'NAME_LONG=BRK_NAME' \
+		-o 10m_cultural/ne_10m_admin_0_countries_tlc.shp \
+
+
 build_a5_ne_10m_admin_0_countries_bdg: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
 	housekeeping/ne_admin_0_details_level_5_disputed.dbf
 	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -925,8 +958,6 @@ build_a5_ne_10m_admin_0_countries_bdg: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
 		-o 10m_cultural/ne_10m_admin_0_countries_bdg.shp \
-
-
 
 
 build_a2_ne_10m_admin_0_disputed: 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
@@ -1013,13 +1044,17 @@ build_a7_ne_10m_admin_1_all: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp
 		-polygons gap-tolerance=1e-4 \
 		-join 10m_cultural/ne_10m_admin_1_label_points.shp \
 		-filter 'adm0_sr !== null' + \
+		-each 'featurecla="Admin-1 states provinces minor islands"' \
 		-o 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank_minor_islands.shp \
 		-filter 'adm0_sr <= 6' + \
+		-each 'featurecla="Admin-1 states provinces scale rank"' \
 		-o 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank.shp \
 		-dissolve 'adm1_code' copy-fields=featurecla,scalerank \
 		-join 10m_cultural/ne_10m_admin_1_label_points_details.dbf encoding=utf8 keys=adm1_code,adm1_code fields=* \
+		-each 'featurecla="Admin-1 states provinces"' \
 		-o 10m_cultural/ne_10m_admin_1_states_provinces.shp \
 		-erase intermediate/ne_10m_lakes_big.shp \
+		-each 'featurecla="Admin-1 states provinces lakes"' \
 		-o 10m_cultural/ne_10m_admin_1_states_provinces_lakes.shp \
 #  calc='join_count = count()'
 
