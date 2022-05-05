@@ -28,7 +28,7 @@ zips/packages/natural_earth_vector.zip: \
 	zips/110m_cultural/110m_cultural.zip \
 	zips/110m_physical/110m_physical.zip \
 	zips/packages/natural_earth_vector.sqlite.zip \
-	housekeeping/ne_admin_0_details.ods
+	zips/housekeeping/ne_admin_0_details.zip
 
 	zip -r $@ 10m_cultural 10m_physical 50m_cultural 50m_physical 110m_cultural 110m_physical housekeeping tools VERSION README.md CHANGELOG
 	#Bake off a version'd iteration of that file, too
@@ -103,8 +103,15 @@ zips/housekeeping: \
 	touch $@
 
 
-zips/housekeeping/ne_admin_0_details.zip:
-	zip -r $@ housekeeping/ne_admin_0_details.ods VERSION README.md CHANGELOG
+zips/housekeeping/ne_admin_0_details.zip: housekeeping/ne_admin_0_details.ods \
+	housekeeping/ne_admin_0_details_iso_countries.dbf \
+	housekeeping/ne_admin_0_details_level_1_sov.dbf \
+	housekeeping/ne_admin_0_details_level_2_countries.dbf \
+	housekeeping/ne_admin_0_details_level_3_map_units.dbf \
+	housekeeping/ne_admin_0_details_level_4_subunits.dbf \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf \
+	housekeeping/ne_admin_0_details_top_level_countries.dbf
+	zip -r $@ housekeeping/ne_admin_0_details.ods VERSION README.md CHANGELOG housekeeping/ne_admin_0_details_*.dbf
 
 zips/housekeeping/ne_admin_0_full_attributes.zip:
 	zip -r $@ housekeeping/ne_admin_0_full_attributes.ods VERSION README.md CHANGELOG
@@ -140,6 +147,7 @@ zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_admin_0_countries_idn.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries_ind.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries_isr.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_iso.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries_ita.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries_jpn.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries_kor.zip \
@@ -153,6 +161,7 @@ zips/10m_cultural/10m_cultural.zip: \
 	zips/10m_cultural/ne_10m_admin_0_countries_rus.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries_sau.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries_swe.zip \
+	zips/10m_cultural/ne_10m_admin_0_countries_tlc.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries_tur.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries_twn.zip \
 	zips/10m_cultural/ne_10m_admin_0_countries_ukr.zip \
@@ -403,6 +412,7 @@ build_a5_ne_10m_admin_0_countries_pov: \
 	build_a5_ne_10m_admin_0_countries_idn \
 	build_a5_ne_10m_admin_0_countries_ind \
 	build_a5_ne_10m_admin_0_countries_isr \
+	build_a5_ne_10m_admin_0_countries_iso \
 	build_a5_ne_10m_admin_0_countries_ita \
 	build_a5_ne_10m_admin_0_countries_jpn \
 	build_a5_ne_10m_admin_0_countries_kor \
@@ -416,6 +426,7 @@ build_a5_ne_10m_admin_0_countries_pov: \
 	build_a5_ne_10m_admin_0_countries_rus \
 	build_a5_ne_10m_admin_0_countries_sau \
 	build_a5_ne_10m_admin_0_countries_swe \
+	build_a5_ne_10m_admin_0_countries_tlc \
 	build_a5_ne_10m_admin_0_countries_tur \
 	build_a5_ne_10m_admin_0_countries_twn \
 	build_a5_ne_10m_admin_0_countries_ukr \
@@ -675,6 +686,21 @@ build_a5_ne_10m_admin_0_countries_isr: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-each 'NAME_LONG=BRK_NAME' \
 		-o 10m_cultural/ne_10m_admin_0_countries_isr.shp \
 
+build_a5_ne_10m_admin_0_countries_iso: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_iso_countries.dbf \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_ISO \
+		-dissolve 'ADM0_ISO' calc='featurecla="Admin-0 country", scalerank = min(scalerank)' \
+		-filter 'scalerank !== null' + \
+		-filter 'scalerank <= 6' + \
+		-join housekeeping/ne_admin_0_details_iso_countries.dbf encoding=utf8 keys=ADM0_ISO,ADM0_ISO fields=* \
+		-filter 'ADM0_ISO !== "-99"' + \
+		-each 'delete sr_adm0_a3' \
+		-each 'NAME=BRK_NAME' \
+		-each 'NAME_LONG=BRK_NAME' \
+		-o 10m_cultural/ne_10m_admin_0_countries_iso.shp \
+
 build_a5_ne_10m_admin_0_countries_pse: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
 	housekeeping/ne_admin_0_details_level_5_disputed.dbf
 	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -912,6 +938,22 @@ build_a5_ne_10m_admin_0_countries_swe: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-each 'NAME_LONG=BRK_NAME' \
 		-o 10m_cultural/ne_10m_admin_0_countries_swe.shp \
 
+build_a5_ne_10m_admin_0_countries_tlc: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+	housekeeping/ne_admin_0_details_top_level_countries.dbf \
+	housekeeping/ne_admin_0_details_level_5_disputed.dbf
+	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank.shp \
+		-join housekeeping/ne_admin_0_details_level_5_disputed.dbf encoding=utf8 keys=sr_brk_a3,BRK_A3 fields=ADM0_TLC \
+		-dissolve 'ADM0_TLC' calc='featurecla="Admin-0 country", scalerank = min(scalerank)' \
+		-filter 'scalerank !== null' + \
+		-filter 'scalerank <= 6 || scalerank == 100' + \
+		-join housekeeping/ne_admin_0_details_top_level_countries.dbf encoding=utf8 keys=ADM0_TLC,ADM0_TLC fields=* \
+		-filter 'ADM0_TLC !== "-99"' + \
+		-each 'delete sr_adm0_a3' \
+		-each 'NAME=BRK_NAME' \
+		-each 'NAME_LONG=BRK_NAME' \
+		-o 10m_cultural/ne_10m_admin_0_countries_tlc.shp \
+
+
 build_a5_ne_10m_admin_0_countries_bdg: 10m_cultural/ne_10m_admin_0_scale_rank.shp \
 	housekeeping/ne_admin_0_details_level_5_disputed.dbf
 	mapshaper -i 10m_cultural/ne_10m_admin_0_scale_rank.shp \
@@ -925,8 +967,6 @@ build_a5_ne_10m_admin_0_countries_bdg: 10m_cultural/ne_10m_admin_0_scale_rank.sh
 		-each 'NAME=BRK_NAME' \
 		-each 'NAME_LONG=BRK_NAME' \
 		-o 10m_cultural/ne_10m_admin_0_countries_bdg.shp \
-
-
 
 
 build_a2_ne_10m_admin_0_disputed: 10m_cultural/ne_10m_admin_0_scale_rank_minor_islands.shp \
@@ -1013,13 +1053,17 @@ build_a7_ne_10m_admin_1_all: 10m_cultural/ne_10m_admin_0_boundary_lines_land.shp
 		-polygons gap-tolerance=1e-4 \
 		-join 10m_cultural/ne_10m_admin_1_label_points.shp \
 		-filter 'adm0_sr !== null' + \
+		-each 'featurecla="Admin-1 states provinces minor islands"' \
 		-o 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank_minor_islands.shp \
 		-filter 'adm0_sr <= 6' + \
+		-each 'featurecla="Admin-1 states provinces scale rank"' \
 		-o 10m_cultural/ne_10m_admin_1_states_provinces_scale_rank.shp \
 		-dissolve 'adm1_code' copy-fields=featurecla,scalerank \
 		-join 10m_cultural/ne_10m_admin_1_label_points_details.dbf encoding=utf8 keys=adm1_code,adm1_code fields=* \
+		-each 'featurecla="Admin-1 states provinces"' \
 		-o 10m_cultural/ne_10m_admin_1_states_provinces.shp \
 		-erase intermediate/ne_10m_lakes_big.shp \
+		-each 'featurecla="Admin-1 states provinces lakes"' \
 		-o 10m_cultural/ne_10m_admin_1_states_provinces_lakes.shp \
 #  calc='join_count = count()'
 
@@ -1520,6 +1564,14 @@ zips/10m_cultural/ne_10m_admin_0_countries_isr.zip: 10m_cultural/ne_10m_admin_0_
 	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
 		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
 
+zips/10m_cultural/ne_10m_admin_0_countries_iso.zip: 10m_cultural/ne_10m_admin_0_countries_iso.shp 10m_cultural/ne_10m_admin_0_countries_iso.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_iso$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
 zips/10m_cultural/ne_10m_admin_0_countries_ita.zip: 10m_cultural/ne_10m_admin_0_countries_ita.shp 10m_cultural/ne_10m_admin_0_countries_ita.dbf
 	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
@@ -1621,6 +1673,14 @@ zips/10m_cultural/ne_10m_admin_0_countries_swe.zip: 10m_cultural/ne_10m_admin_0_
 	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
 	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
 	cp $@ archive/ne_10m_admin_0_countries_swe$(VERSION_PREFIXED).zip
+	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
+		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
+
+zips/10m_cultural/ne_10m_admin_0_countries_tlc.zip: 10m_cultural/ne_10m_admin_0_countries_tlc.shp 10m_cultural/ne_10m_admin_0_countries_tlc.dbf
+	cp VERSION $(subst zips/, ,$(basename $@)).VERSION.txt
+	curl http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ > $(subst zips/, ,$(basename $@)).README.html
+	zip -j -r $@ $(subst zips/, ,$(basename $@)).*
+	cp $@ archive/ne_10m_admin_0_countries_tlc$(VERSION_PREFIXED).zip
 	ogr2ogr -f GeoJSON -lco COORDINATE_PRECISION=6 -lco WRITE_BBOX=YES /dev/stdout $(subst zips/, ,$(basename $@)).shp \
 		| jq -c . > geojson/$(subst zips/10m_cultural/,,$(basename $@)).geojson
 

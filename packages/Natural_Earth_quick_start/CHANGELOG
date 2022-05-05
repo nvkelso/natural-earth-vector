@@ -1,3 +1,198 @@
+2022-05-04: 5.1.0
+
+- Many thanks to @jeffdefacto for help with disputed boundaries research
+
+GENERAL
+
+1)	Add top-level-country (TLC) point-of-view (POV) with shapefile, cleanup the existing
+    ISO POV, add shapefile export for ISO point-of-view, and bug fix polish for alternate
+    points-of-view added in v5.0.0 and v5.0.1.
+
+- UPDATED:  NATURAL_EARTH_QUICK_START
+- UPDATED:  10M_CULTURAL
+- UPDATED:  50M_CULTURAL
+- UPDATED:  110M_CULTURAL
+- UPDATED:  SQLite
+- UPDATED:  GeoJSON
+- UPDATED:  GeoPackage
+
+HOUSEKEEPING
+
+- UPDATED:  NE_ADMIN_0_DETAILS
+            - Add TLC point-of-view for 347 top-level-countries needing "tender loving
+              care" – for any place that might possibly be labeled as a "country" or
+              "dependency" in any POV, or otherwise not contiguous with it's home
+              territory so needs an explanatory label. See adm0_tlc and fclass_tlc
+              columns, and should be paired with note_adm0 or note_brk columns to give
+              context to the feature's sovereignty. FCLASS_TLC values include:
+              Admin-0 country (eg United States), Admin-0 dependency (eg Puerto Rico),
+              Admin-1 region (eg England, Scotland, Wales, and Norther Ireland constituant
+              countries of the United Kingdom), Admin-1 states provinces (eg Martinique
+              with France or Alaska with United States which are both non-contiguous with
+              their home or "metropolitan" territory), Admin-0 lease (eg Baykonur
+              Cosmodrome leased to Russia), Admin-0 breakaway and disputed (eg Golan
+              Heights between Israel and Syria), Admin-0 claim area (eg Crimea between
+              Ukraine and Russia), Admin-0 indeterminant (eg Spratly Islands which is
+              contested and administered by many countries), Island group (eg Midway
+              Islands which is part of the United States Minor Outlying Islands
+              dependency), and Island (eg Antigua which is a component of the country
+              Antigua and Barbuda, or Jan Mayen which is part of the Svalbard and Jan
+              Mayen dependency).
+            - Refine ISO point-of-view properties for 249 countries, dependencies, and
+              "it's complicated" admin-1 (eg Taiwan and overseas French regions).
+              Rename adm0_a3_iso to adm0_iso as it was getting clipped to adm0_a3_is
+              which is a reserved 2-char country code. FCLASS_ISO values include:
+              Admin-0 country (eg United States), Admin-0 dependency (eg Puerto Rico),
+              Admin-1 states provinces (eg Taiwan), and Unrecognized (eg England).
+            - Add TLC (superset of ISO) and TLC_DIFF boolean columns to support the above
+            - Add label_x and label_y columns to support stand alone point-based labeling
+            - Mark Kosovo as recognized by fewer countries and by TLC (but not ISO)
+            - Mark Somaliland as recognized by Taiwan and TLC
+              (but not ISO or any other country)
+            - Mark Northern Cyprus as recognized by Turkey and TLC
+              (but not ISO or any other country)
+            - Mark Taiwan as recognized by itself and TLC
+              (but as an admin-1 by ISO)
+            - Adjust all existing POV with Admin-0 map unit to more fine grained values
+            - Add Sir Creek dispute between Pakistan and India
+            - Add North Boreno dispute between Malaysia and Philippines
+            - Provide optional grouping of separate Andaman Islands and Nicobar Islands
+              which form a single Admin-1 for India, needed for TLC POV
+            - Cleanup BRK_GROUP, NOTE_ADM0, and NOTE_BRK columns
+
+10M_CULTURAL
+
+- UPDATED:  ne_10m_admin-0 themes, including:
+			ne_10m_admin_0_sovereignty
+			ne_10m_admin_0_countries
+			ne_10m_admin_0_countries_* (all point-of-views)
+			ne_10m_admin_0_countries_lakes
+			ne_10m_admin_0_map_units
+			ne_10m_admin_0_map_subunits
+			ne_10m_admin_0_scale_rank
+			ne_10m_admin_0_scale_rank_minor_islands
+			ne_10m_admin_0_boundary_lines_land
+			ne_10m_admin_0_boundary_lines_maritime_indicator
+			ne_10m_admin_0_boundary_lines_maritime_indicator_chn
+			ne_10m_admin_0_boundary_lines_map_units
+            ne_10m_admin_0_boundary_lines_disputed_areas
+			ne_10m_admin_0_disputed_areas
+			ne_10m_admin_0_disputed_areas_scale_rank_minor_islands
+			ne_10m_admin_0_label_points
+            - Add TLC point-of-view for features needing "tender loving care"
+              Fixes #722
+            - Export a POV shapefile for new TLC point-of-view
+              Fixes #721
+            - Refine ISO point-of-view properties
+            - Export a POV shapefile for updated ISO point-of-view
+            - Show more country labels earlier
+              Fixes #714
+            - Push Somalia map unit line for Puntland to min_zoom 7, same as admin-1
+              lines (generally the admin-1 here need updates)
+            - See housekeeping section above for more details
+
+- UPDATED:  ne_10m_admin-1 themes, including:
+			ne_10m_admin_1_states_provinces
+			ne_10m_admin_1_states_provinces_lakes
+			ne_10m_admin_1_states_provinces_scale_rank
+			ne_10m_admin_1_states_provinces_scale_rank_minor_islands
+			ne_10m_admin_1_states_provinces_lines
+			ne_10m_admin_1_label_points
+			ne_10m_admin_1_label_points_details
+            - Add TLC point-of-view for features needing "tender loving care"
+            - Refine ISO point-of-view properties
+            - See housekeeping section above for more details
+
+- UPDATED:  ne_10m_populated_places
+            - Add TLC point-of-view for features needing "tender loving care"
+            - Update POV for admin-0 and admin-1 capitals to match above
+            - Several thousand localization for Arabic, Urdu, Persian, and Chinese city
+              names include their region or country in error (with a non-ascii comma)
+              Fixes #701
+            - Fix Laayoune, Morocco spelling in name_en
+            - Shorten Frankfurt, Germany for many localizations
+            - Add hyphen to Wilkes-Barre
+              Fixes #707
+            - Rename Puerto Cabezas to Bilwi (Nic
+              Fixes #633
+            - Add H to Plattsburgh, New York
+              Fixes #572
+            - Wanganui New Zealand spelling
+              Fixes #544
+            - Add language-specific names for Kailua-Kona, Hawaii
+              Fixes #335
+            - Move Juina, Brazil 50 miles
+              Fixes #683
+            - Move Karlskrona, Sweden
+              Fixes #670
+            - Move Hasselt, Belgium over (it's an Admin 1 Capital)
+              Fixes #646
+            - Move Lisburn, Northern Ireland closer to Belfast
+            - Move couple hundred other cities to urban center (manual review)
+- UPDATED:  ne_10m_populated_places_simple
+            - Same changes as ne_10m_populated_places
+
+10M_PHYSICAL
+
+- UPDATED:  ne_10m_geography_marine_polys
+            - Correct the extent of Korean Straight
+              Fixes #712
+            - Correct Japanese Inner Sea name localizations, and Wikidata ID Marine
+              areas: Seto Inland Sea (Japan) labeled as Scottish Inner Seas
+              Fixes #665
+
+50M_CULTURAL
+
+- UPDATED:  ne_50m_admin-0 related themes, including:
+			ne_50m_admin_0_sovereignty
+			ne_50m_admin_0_countries
+			ne_50m_admin_0_countries_lakes
+			ne_50m_admin_0_tiny_countries
+			ne_50m_admin_0_map_units
+			ne_50m_admin_0_map_subunits
+			ne_50m_admin_0_boundary_lines_land
+			ne_50m_admin_0_boundary_map_units
+			ne_50m_admin_0_breakaway_disputed_areas
+			- Same changes as 10m cultural themes
+ - UPDATED: ne_50m_admin-1 related themes, including:
+			ne_50m_admin_1_states_provinces
+			ne_50m_admin_1_states_provinces_lakes
+			- Same changes as 10m cultural themes data table edits
+- UPDATED:  ne_50m_populated_places
+            - Same changes as ne_10m_populated_places
+- UPDATED:  ne_50m_populated_places_simple
+            - Same changes as ne_10m_populated_places
+
+50M_PHYSICAL
+
+- UPDATED:  ne_50m_geography_marine_polys
+            - Same changes as ne_10m_geography_marine_polys
+
+110M_CULTURAL
+
+- UPDATED:  ne_10m_admin-0 related themes, including:
+			ne_110m_admin_0_countries
+			ne_110m_admin_0_countries_lakes
+			ne_110m_admin_0_sovereignty
+			ne_110m_admin_0_tiny_countries
+			ne_110m_admin_0_boundary_lines_land
+			- Same changes as 10m cultural themes data table edits
+ - UPDATED: ne_110m_admin-1 related themes, including:
+			ne_110m_admin_1_states_provinces
+			ne_110m_admin_1_states_provinces_lakes
+			- Same changes as 10m cultural themes data table edits
+- UPDATED:  ne_110m_populated_places
+            - Same changes as ne_10m_populated_places
+- UPDATED:  ne_110m_populated_places_simple
+            - Same changes as ne_10m_populated_places
+
+110M_PHYSICAL
+
+- UPDATED:  ne_110m_geography_marine_polys
+            - Same changes as ne_10m_geography_marine_polys
+
+
+
 2022-03-17: 5.0.1
 
 - Many thanks to @jeffdefacto for help with disputed boundaries research
