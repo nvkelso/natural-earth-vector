@@ -1,4 +1,40 @@
-2022-05-08: 5.1.1
+2022-05-13: 5.1.2
+
+GENERAL
+
+1) Add missing TLC point-of-view to ne_50m_admin_0_boundary_lines_disputed_areas theme.
+2) Spelling of Londonderry/Derry populated place.
+
+- UPDATED:  NATURAL_EARTH_QUICK_START
+- UPDATED:  10M_CULTURAL
+- UPDATED:  50M_CULTURAL
+- UPDATED:  110M_CULTURAL
+- UPDATED:  SQLite
+- UPDATED:  GeoJSON
+- UPDATED:  GeoPackage
+
+10M_CULTURAL
+
+- UPDATED:  ne_10m_populated_places
+            - Add Londonderry/Derry name spelling and localizations
+
+50M_CULTURAL
+
+- UPDATED:  ne_50m_admin_0_boundary_lines_disputed_areas
+            - Add TLC point-of-view for features needing "tender loving care"
+              Fixes #722
+
+- UPDATED:  ne_50m_populated_places
+            - Same changes as ne_10m_populated_places
+
+110M_CULTURAL
+
+- UPDATED:  ne_110m_populated_places
+            - Same changes as ne_10m_populated_places
+
+
+
+2022-05-12: 5.1.1
 
 - Many thanks to @mbloch for help with debugging Mapshaper <> PostGIS compatibility
 
@@ -6,9 +42,10 @@ GENERAL
 
 1)	Ensure "empty" text fields have minimum length of 1 char for PostGIS compatibility.
     As the housekeeping DBFs are joined with the Mapshaper cracked features, the
-    5.1.0 series would produce zero length text fields, which are valid but are
+    5.y.z series would produce zero length text fields, which are valid but are
     incompatible with PostGIS. A new version of Mapshaper, used here, now produces
     a minimum of 1 char text length fields even if all column values are empty.
+    - Fixes #674
 
 - UPDATED:  NATURAL_EARTH_QUICK_START
 - UPDATED:  10M_CULTURAL
@@ -38,6 +75,7 @@ HOUSEKEEPING
 			ne_10m_admin_0_disputed_areas
 			ne_10m_admin_0_disputed_areas_scale_rank_minor_islands
             - Ensure non-zero length text fields (fclass_*)
+            - Fixes #674
 
 - UPDATED:  ne_10m_admin-1 themes, including:
 			ne_10m_admin_1_states_provinces
@@ -45,6 +83,7 @@ HOUSEKEEPING
 			ne_10m_admin_1_states_provinces_scale_rank
 			ne_10m_admin_1_states_provinces_scale_rank_minor_islands
             - Ensure non-zero length text fields (fclass_*)
+            - Fixes #674
 
 - UPDATED:  ne_10m_admin-2 themes, including:
 			ne_10m_admin_2_counties
@@ -52,17 +91,22 @@ HOUSEKEEPING
 			ne_10m_admin_2_counties_scale_rank
 			ne_10m_admin_2_counties_scale_rank_minor_islands
             - Ensure non-zero length text fields (fclass_*)
+            - Fixes #674
 
 10M_PHYSICAL
 
 - UPDATED:  ne_10m_land
             - Ensure non-zero length text fields
+            - Fixes #674
 - UPDATED:  ne_10m_land_scale_rank
             - Ensure non-zero length text fields
+            - Fixes #674
 - UPDATED:  ne_10m_ocean
             - Ensure non-zero length text fields
+            - Fixes #674
 - UPDATED:  ne_10m_ocean_scale_rank
             - Ensure non-zero length text fields
+            - Fixes #674
 
 50M_CULTURAL
 
@@ -75,11 +119,13 @@ HOUSEKEEPING
             ne_50m_admin_0_map_subunits
             ne_50m_admin_0_tiny_countries
             - Ensure non-zero length text fields (fclass_*)
+            - Fixes #674
 
 - UPDATED:  ne_50m_admin-1 themes, including:
             ne_50m_admin_1_states_provinces
             ne_50m_admin_1_states_provinces_lakes
             - Ensure non-zero length text fields (fclass_*)
+            - Fixes #674
 
 110M_CULTURAL
 
@@ -89,12 +135,13 @@ HOUSEKEEPING
 			ne_110m_admin_0_countries_lakes
 			ne_110m_admin_0_map_units
             - Ensure non-zero length text fields (fclass_*)
+            - Fixes #674
 
 - UPDATED:  ne_110m_admin-1 themes, including:
             ne_110m_admin_1_states_provinces
             ne_110m_admin_1_states_provinces_lakes
             - Ensure non-zero length text fields (fclass_*)
-
+            - Fixes #674
 
 
 2022-05-04: 5.1.0
