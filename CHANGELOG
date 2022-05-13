@@ -1,3 +1,39 @@
+2022-05-13: 5.1.2
+
+GENERAL
+
+1) Add missing TLC point-of-view to ne_50m_admin_0_boundary_lines_disputed_areas theme.
+2) Spelling of Londonderry/Derry populated place.
+
+- UPDATED:  NATURAL_EARTH_QUICK_START
+- UPDATED:  10M_CULTURAL
+- UPDATED:  50M_CULTURAL
+- UPDATED:  110M_CULTURAL
+- UPDATED:  SQLite
+- UPDATED:  GeoJSON
+- UPDATED:  GeoPackage
+
+10M_CULTURAL
+
+- UPDATED:  ne_10m_populated_places
+            - Add Londonderry/Derry name spelling and localizations
+
+50M_CULTURAL
+
+- UPDATED:  ne_50m_admin_0_boundary_lines_disputed_areas
+            - Add TLC point-of-view for features needing "tender loving care"
+              Fixes #722
+
+- UPDATED:  ne_50m_populated_places
+            - Same changes as ne_10m_populated_places
+
+110M_CULTURAL
+
+- UPDATED:  ne_110m_populated_places
+            - Same changes as ne_10m_populated_places
+
+
+
 2022-05-12: 5.1.1
 
 - Many thanks to @mbloch for help with debugging Mapshaper <> PostGIS compatibility
