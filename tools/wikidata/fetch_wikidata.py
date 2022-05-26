@@ -184,6 +184,14 @@ def fetchwikidata(a_wid):
             ?name_zh
             ?name_zh_hans
             ?name_zh_hant
+            ?name_gu
+            ?name_kn
+            ?name_ml
+            ?name_mr
+            ?name_pa
+            ?name_ta
+            ?name_te
+            ?name_th
         WHERE {
             {
                 SELECT DISTINCT  ?e ?i ?r
@@ -222,6 +230,15 @@ def fetchwikidata(a_wid):
             OPTIONAL{?e rdfs:label ?name_zh FILTER((LANG(?name_zh))="zh").}
             OPTIONAL{?e rdfs:label ?name_zh_hans FILTER((LANG(?name_zh_hans))="zh-hans").}
             OPTIONAL{?e rdfs:label ?name_zh_hant FILTER((LANG(?name_zh_hant))="zh-hant").}
+            OPTIONAL{?e rdfs:label ?name_gu FILTER((LANG(?name_gu))="gu").}
+            OPTIONAL{?e rdfs:label ?name_kn FILTER((LANG(?name_kn))="kn").}
+            OPTIONAL{?e rdfs:label ?name_ml FILTER((LANG(?name_ml))="ml").}
+            OPTIONAL{?e rdfs:label ?name_mr FILTER((LANG(?name_mr))="mr").}
+            OPTIONAL{?e rdfs:label ?name_pa FILTER((LANG(?name_pa))="pa").}
+            OPTIONAL{?e rdfs:label ?name_ta FILTER((LANG(?name_ta))="ta").}
+            OPTIONAL{?e rdfs:label ?name_te FILTER((LANG(?name_te))="te").}
+            OPTIONAL{?e rdfs:label ?name_th FILTER((LANG(?name_th))="th").}
+
         }
 
     """
@@ -322,7 +339,16 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
         "name_ur",
         "name_vi",
         "name_zh",
-        "name_zht"
+        "name_zht",
+        "name_gu",
+        "name_kn",
+        "name_ml",
+        "name_mr",
+        "name_pa",
+        "name_ta",
+        "name_te",
+        "name_th"
+
     ))
 
 
@@ -389,6 +415,14 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                     name_uk = get_sparql_label(result, 'name_uk')
                     name_ur = get_sparql_label(result, 'name_ur')
                     name_vi = get_sparql_label(result, 'name_vi')
+                    name_gu = get_sparql_label(result, 'name_gu')
+                    name_kn = get_sparql_label(result, 'name_kn')
+                    name_ml = get_sparql_label(result, 'name_ml')
+                    name_mr = get_sparql_label(result, 'name_mr')
+                    name_pa = get_sparql_label(result, 'name_pa')
+                    name_ta = get_sparql_label(result, 'name_ta')
+                    name_te = get_sparql_label(result, 'name_te')
+                    name_th = get_sparql_label(result, 'name_th')
 
                     # not all Wikidata places have all name (label) translations
                     try:
@@ -458,7 +492,16 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                         name_ur,
                         name_vi,
                         name_zh,
-                        name_zht
+                        name_zht,
+                        name_gu,
+                        name_kn,
+                        name_ml,
+                        name_mr,
+                        name_pa,
+                        name_ta,
+                        name_te,
+                        name_th
+
                         ))
 
 print(' - JOB end -')
