@@ -34,7 +34,7 @@ parser.add_argument('-input_shape_name',
                     help='input natural-earth shape file - with wikidataid columns')
 parser.add_argument('-input_lettercase',
                     default='uppercase',
-                    help='variables in thes hape file - lowercase or uppercase')
+                    help='variables in the shape file - lowercase or uppercase')
 parser.add_argument('-output_csv_name',
                     default='ne_10m_populated_places.csv',
                     help='output csv file with wikidata labels')
@@ -165,18 +165,26 @@ def fetchwikidata(a_wid):
             ?name_es
             ?name_fa
             ?name_fr
+            ?name_gu
             ?name_he
             ?name_hi
             ?name_hu
             ?name_id
             ?name_it
             ?name_ja
+            ?name_kn
             ?name_ko
+            ?name_ml
+            ?name_mr
             ?name_nl
+            ?name_pa
             ?name_pl
             ?name_pt
             ?name_ru
             ?name_sv
+            ?name_ta
+            ?name_te
+            ?name_th
             ?name_tr
             ?name_uk
             ?name_ur
@@ -184,14 +192,6 @@ def fetchwikidata(a_wid):
             ?name_zh
             ?name_zh_hans
             ?name_zh_hant
-            ?name_gu
-            ?name_kn
-            ?name_ml
-            ?name_mr
-            ?name_pa
-            ?name_ta
-            ?name_te
-            ?name_th
         WHERE {
             {
                 SELECT DISTINCT  ?e ?i ?r
@@ -211,18 +211,26 @@ def fetchwikidata(a_wid):
             OPTIONAL{?e rdfs:label ?name_es FILTER((LANG(?name_es))="es").}
             OPTIONAL{?e rdfs:label ?name_fa FILTER((LANG(?name_fa))="fa").}
             OPTIONAL{?e rdfs:label ?name_fr FILTER((LANG(?name_fr))="fr").}
+            OPTIONAL{?e rdfs:label ?name_gu FILTER((LANG(?name_gu))="gu").}
             OPTIONAL{?e rdfs:label ?name_he FILTER((LANG(?name_he))="he").}
             OPTIONAL{?e rdfs:label ?name_hi FILTER((LANG(?name_hi))="hi").}
             OPTIONAL{?e rdfs:label ?name_hu FILTER((LANG(?name_hu))="hu").}
             OPTIONAL{?e rdfs:label ?name_id FILTER((LANG(?name_id))="id").}
             OPTIONAL{?e rdfs:label ?name_it FILTER((LANG(?name_it))="it").}
             OPTIONAL{?e rdfs:label ?name_ja FILTER((LANG(?name_ja))="ja").}
+            OPTIONAL{?e rdfs:label ?name_kn FILTER((LANG(?name_kn))="kn").}
             OPTIONAL{?e rdfs:label ?name_ko FILTER((LANG(?name_ko))="ko").}
+            OPTIONAL{?e rdfs:label ?name_ml FILTER((LANG(?name_ml))="ml").}
+            OPTIONAL{?e rdfs:label ?name_mr FILTER((LANG(?name_mr))="mr").}
             OPTIONAL{?e rdfs:label ?name_nl FILTER((LANG(?name_nl))="nl").}
+            OPTIONAL{?e rdfs:label ?name_pa FILTER((LANG(?name_pa))="pa").}
             OPTIONAL{?e rdfs:label ?name_pl FILTER((LANG(?name_pl))="pl").}
             OPTIONAL{?e rdfs:label ?name_pt FILTER((LANG(?name_pt))="pt").}
             OPTIONAL{?e rdfs:label ?name_ru FILTER((LANG(?name_ru))="ru").}
             OPTIONAL{?e rdfs:label ?name_sv FILTER((LANG(?name_sv))="sv").}
+            OPTIONAL{?e rdfs:label ?name_ta FILTER((LANG(?name_ta))="ta").}
+            OPTIONAL{?e rdfs:label ?name_te FILTER((LANG(?name_te))="te").}
+            OPTIONAL{?e rdfs:label ?name_th FILTER((LANG(?name_th))="th").}
             OPTIONAL{?e rdfs:label ?name_tr FILTER((LANG(?name_tr))="tr").}
             OPTIONAL{?e rdfs:label ?name_uk FILTER((LANG(?name_uk))="uk").}
             OPTIONAL{?e rdfs:label ?name_ur FILTER((LANG(?name_ur))="ur").}
@@ -230,15 +238,6 @@ def fetchwikidata(a_wid):
             OPTIONAL{?e rdfs:label ?name_zh FILTER((LANG(?name_zh))="zh").}
             OPTIONAL{?e rdfs:label ?name_zh_hans FILTER((LANG(?name_zh_hans))="zh-hans").}
             OPTIONAL{?e rdfs:label ?name_zh_hant FILTER((LANG(?name_zh_hant))="zh-hant").}
-            OPTIONAL{?e rdfs:label ?name_gu FILTER((LANG(?name_gu))="gu").}
-            OPTIONAL{?e rdfs:label ?name_kn FILTER((LANG(?name_kn))="kn").}
-            OPTIONAL{?e rdfs:label ?name_ml FILTER((LANG(?name_ml))="ml").}
-            OPTIONAL{?e rdfs:label ?name_mr FILTER((LANG(?name_mr))="mr").}
-            OPTIONAL{?e rdfs:label ?name_pa FILTER((LANG(?name_pa))="pa").}
-            OPTIONAL{?e rdfs:label ?name_ta FILTER((LANG(?name_ta))="ta").}
-            OPTIONAL{?e rdfs:label ?name_te FILTER((LANG(?name_te))="te").}
-            OPTIONAL{?e rdfs:label ?name_th FILTER((LANG(?name_th))="th").}
-
         }
 
     """
@@ -322,33 +321,32 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
         "name_es",
         "name_fa",
         "name_fr",
+        "name_gu",
         "name_he",
         "name_hi",
         "name_hu",
         "name_id",
         "name_it",
         "name_ja",
+        "name_kn",
         "name_ko",
+        "name_ml",
+        "name_mr",
         "name_nl",
+        "name_pa",
         "name_pl",
         "name_pt",
         "name_ru",
         "name_sv",
+        "name_ta",
+        "name_te",
+        "name_th",
         "name_tr",
         "name_uk",
         "name_ur",
         "name_vi",
         "name_zh",
-        "name_zht",
-        "name_gu",
-        "name_kn",
-        "name_ml",
-        "name_mr",
-        "name_pa",
-        "name_ta",
-        "name_te",
-        "name_th"
-
+        "name_zht"
     ))
 
 
@@ -398,31 +396,31 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                     name_es = get_sparql_label(result, 'name_es')
                     name_fa = get_sparql_label(result, 'name_fa')
                     name_fr = get_sparql_label(result, 'name_fr')
+                    name_gu = get_sparql_label(result, 'name_gu')
                     name_he = get_sparql_label(result, 'name_he')
                     name_hi = get_sparql_label(result, 'name_hi')
                     name_hu = get_sparql_label(result, 'name_hu')
                     name_id = get_sparql_label(result, 'name_id')
                     name_it = get_sparql_label(result, 'name_it')
                     name_ja = get_sparql_label(result, 'name_ja')
+                    name_kn = get_sparql_label(result, 'name_kn')
                     name_ko = get_sparql_label(result, 'name_ko')
                     name_lt = get_sparql_label(result, 'name_lt')
+                    name_ml = get_sparql_label(result, 'name_ml')
+                    name_mr = get_sparql_label(result, 'name_mr')
                     name_nl = get_sparql_label(result, 'name_nl')
+                    name_pa = get_sparql_label(result, 'name_pa')
                     name_pl = get_sparql_label(result, 'name_pl')
                     name_pt = get_sparql_label(result, 'name_pt')
                     name_ru = get_sparql_label(result, 'name_ru')
                     name_sv = get_sparql_label(result, 'name_sv')
+                    name_ta = get_sparql_label(result, 'name_ta')
+                    name_te = get_sparql_label(result, 'name_te')
+                    name_th = get_sparql_label(result, 'name_th')
                     name_tr = get_sparql_label(result, 'name_tr')
                     name_uk = get_sparql_label(result, 'name_uk')
                     name_ur = get_sparql_label(result, 'name_ur')
                     name_vi = get_sparql_label(result, 'name_vi')
-                    name_gu = get_sparql_label(result, 'name_gu')
-                    name_kn = get_sparql_label(result, 'name_kn')
-                    name_ml = get_sparql_label(result, 'name_ml')
-                    name_mr = get_sparql_label(result, 'name_mr')
-                    name_pa = get_sparql_label(result, 'name_pa')
-                    name_ta = get_sparql_label(result, 'name_ta')
-                    name_te = get_sparql_label(result, 'name_te')
-                    name_th = get_sparql_label(result, 'name_th')
 
                     # not all Wikidata places have all name (label) translations
                     try:
@@ -475,33 +473,32 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                         name_es,
                         name_fa,
                         name_fr,
+                        name_gu,
                         name_he,
                         name_hi,
                         name_hu,
                         name_id,
                         name_it,
                         name_ja,
+                        name_kn,
                         name_ko,
+                        name_ml,
+                        name_mr,
                         name_nl,
+                        name_pa,
                         name_pl,
                         name_pt,
                         name_ru,
                         name_sv,
+                        name_ta,
+                        name_te,
+                        name_th,
                         name_tr,
                         name_uk,
                         name_ur,
                         name_vi,
                         name_zh,
-                        name_zht,
-                        name_gu,
-                        name_kn,
-                        name_ml,
-                        name_mr,
-                        name_pa,
-                        name_ta,
-                        name_te,
-                        name_th
-
+                        name_zht
                         ))
 
 print(' - JOB end -')

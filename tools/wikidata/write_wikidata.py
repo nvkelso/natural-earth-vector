@@ -77,7 +77,7 @@ wddic = defaultdict(dict)
 wdredirects = defaultdict(dict)
 
 name_field_prefix = 'name_'
-languages = ['ar','bn','de','el','en','es','fa','fr','he','hi','hu','id','it','ja','ko','nl','pl','pt','ru','sv','tr','uk','ur','vi','zh','zht']
+languages = ['ar','bn','de','el','en','es','fa','fr','gu','he','hi','hu','id','it','ja','kn','ko','ml','mr','nl','pa','pl','pt','ru','sv','ta','te','th','tr','uk','ur','vi','zh','zht']
 new_properties = []
 
 with open(args.input_csv, newline='') as csvfile:
@@ -104,6 +104,16 @@ with open(args.input_csv, newline='') as csvfile:
                             # RTL languages
                             wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find(',')]
 
+                        # Arabic Comma ...
+                        if wddic[qid][d].find('،') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('،')]
+
+                        # Chinese/Japanese Comma ...
+                        if wddic[qid][d].find('，') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('，')]
+
                         # Parenthetical ...
                         if wddic[qid][d].find('(') > 0:
                             # RTL languages and LTR figure each other out in python 3
@@ -119,6 +129,16 @@ with open(args.input_csv, newline='') as csvfile:
                             # RTL languages
                             wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find(',')]
 
+                        # Arabic Comma ...
+                        if wddic[qid][d].find('،') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('،')]
+
+                        # Chinese/Japanese Comma ...
+                        if wddic[qid][d].find('，') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('，')]
+
                         # Parenthetical ...
                         if wddic[qid][d].find('(') > 0:
                             # RTL languages and LTR figure each other out in python 3
@@ -132,6 +152,16 @@ with open(args.input_csv, newline='') as csvfile:
                         if wddic[qid][d].find(',') > 0:
                             # RTL languages
                             wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find(',')]
+
+                        # Arabic Comma ...
+                        if wddic[qid][d].find('،') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('،')]
+
+                        # Chinese/Japanese Comma ...
+                        if wddic[qid][d].find('，') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('，')]
 
                         # Parenthetical ...
                         if wddic[qid][d].find('(') > 0:
@@ -149,6 +179,16 @@ with open(args.input_csv, newline='') as csvfile:
                         if wddic[qid][d].find(',') > 0:
                             # RTL languages
                             wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find(',')]
+
+                        # Arabic Comma ...
+                        if wddic[qid][d].find('،') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('،')]
+
+                        # Chinese/Japanese Comma ...
+                        if wddic[qid][d].find('，') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('，')]
 
                         # Parenthetical ...
                         if wddic[qid][d].find('(') > 0:
