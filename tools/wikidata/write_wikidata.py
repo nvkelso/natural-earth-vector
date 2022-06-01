@@ -109,7 +109,12 @@ with open(args.input_csv, newline='') as csvfile:
                             # RTL languages
                             wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('،')]
 
-                        # Chinese/Japanese Comma ...
+                        # Ideographic Comma ...
+                        if wddic[qid][d].find('、') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('、')]
+
+                        # Full Width Comma ...
                         if wddic[qid][d].find('，') > 0:
                             # RTL languages
                             wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('，')]
@@ -134,7 +139,12 @@ with open(args.input_csv, newline='') as csvfile:
                             # RTL languages
                             wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('،')]
 
-                        # Chinese/Japanese Comma ...
+                        # Ideographic Comma ...
+                        if wddic[qid][d].find('、') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('、')]
+
+                        # Full Width Comma ...
                         if wddic[qid][d].find('，') > 0:
                             # RTL languages
                             wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('，')]
@@ -158,7 +168,12 @@ with open(args.input_csv, newline='') as csvfile:
                             # RTL languages
                             wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('،')]
 
-                        # Chinese/Japanese Comma ...
+                        # Ideographic Comma ...
+                        if wddic[qid][d].find('、') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('、')]
+
+                        # Full Width Comma ...
                         if wddic[qid][d].find('，') > 0:
                             # RTL languages
                             wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('，')]
@@ -185,7 +200,12 @@ with open(args.input_csv, newline='') as csvfile:
                             # RTL languages
                             wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('،')]
 
-                        # Chinese/Japanese Comma ...
+                        # Ideographic Comma ...
+                        if wddic[qid][d].find('、') > 0:
+                            # RTL languages
+                            wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('、')]
+
+                        # Full Width Comma ...
                         if wddic[qid][d].find('，') > 0:
                             # RTL languages
                             wddic[qid][d] = wddic[qid][d][0:wddic[qid][d].find('，')]
