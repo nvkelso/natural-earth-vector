@@ -1,3 +1,41 @@
+2022-06-02: 5.2.0
+
+GENERAL
+
+1) Remaster the marine polygon geographic label areas, restoring missing features, and
+   adding additional detail based on 2002 IHO draft proposal.
+
+- UPDATED:  NATURAL_EARTH_QUICK_START
+- UPDATED:  10M_PHYSICAL
+- UPDATED:  50M_PHYSICAL
+- UPDATED:  110M_PHYSICAL
+- UPDATED:  SQLite
+- UPDATED:  GeoJSON
+- UPDATED:  GeoPackage
+
+10M_PHYSICAL
+
+- UPDATED:  ne_10m_geography_marine_polys
+            - Over 175 row changes to polygon geometry and attributes.
+            - Restored or remastered missing features, including: Bab el Mandeb, Baia d
+              Maputo, Bering Strait, Denmark Strait, Drake Passage, Great Barrier
+              Reef (again), Karskiye Strait, Korea Strait, Luzon Strait, Makassar Strait,
+              Puget Sound (again), Ross Sea (again), Scotia Sea, Sea of Japan (again),
+              St. Helena Bay, Strait of Dover, Strait of Florida (again), Strait of
+              Georgia (again), Strait of Gibraltar, Strait of Hormuz, Strait of Juan
+              de Fuca (again), and Yucatan Channel.
+            - Added new features primarily in Europe, South East Asia, and Southern Ocean,
+              including Aru Sea, Bay of Kiel, Bothnia Bay, Bothnian Sea, Celtic Sea,
+              Ceram Sea, Cooperation Sea, Cosmonauts Sea, D'Urville Sea, Fehmarnbelt,
+              Iceland Sea, Lazarev Sea, Liaodong Wan, Malacca Strait, Mawson Sea, Natuna
+              Sea, Riiser-Larsen Sea, Selat Sumba, Selat Sunda, Somov Sea, Sound Sea,
+              Storebælt, Strait of Sicily, Teluk Berau, and Teluk Bone.
+            - Mediterranean Sea was reworked back to two separate polygons, one each
+              for east and west basins, with separate ne_id and min_label values.
+            - Added oceanbasin and subbasin columns.
+            - See also: https://legacy.iho.int/mtg_docs/com_wg/S-23WG/S-23WG_Misc/Draft_2002/Draft_2002.htm
+            - Fixes #735
+
 2022-05-13: 5.1.2
 
 GENERAL
@@ -22,7 +60,7 @@ GENERAL
 
 - UPDATED:  ne_50m_admin_0_boundary_lines_disputed_areas
             - Add TLC point-of-view for features needing "tender loving care"
-              Fixes #722
+            - Fixes #722
 
 - UPDATED:  ne_50m_populated_places
             - Same changes as ne_10m_populated_places
