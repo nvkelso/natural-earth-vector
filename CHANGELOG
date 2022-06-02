@@ -34,7 +34,7 @@ GENERAL
               for east and west basins, with separate ne_id and min_label values.
             - Added oceanbasin and subbasin columns.
             - See also: https://legacy.iho.int/mtg_docs/com_wg/S-23WG/S-23WG_Misc/Draft_2002/Draft_2002.htm
-            - Fixes #735
+            - Fixes #697 and #735
 
 50M_PHYSICAL
 
