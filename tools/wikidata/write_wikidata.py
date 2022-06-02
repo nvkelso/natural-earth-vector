@@ -41,6 +41,10 @@ parser.add_argument('-output_csvlog',
 parser.add_argument('-output_csvsumlog',
                     default='ne_10m_populated_places_latest.sumlog.csv',
                     help='audit sum log about the changes')
+parser.add_argument('-overwrite_values',
+                    default=False,
+                    action='store_true',
+                    help='allow overwriting existing data in shapefile')
 
 args = parser.parse_args()
 
@@ -312,6 +316,7 @@ with open(args.output_csvlog, "w", encoding='utf-8') as f:
             stat_new_value_new_lang = 0
             stat_del = 0
             stat_mod = 0
+            stat_exists = 0
 
             stat_wikidataid_redirect = 0
             stat_wikidataid_notfound = 0
@@ -370,22 +375,38 @@ with open(args.output_csvlog, "w", encoding='utf-8') as f:
 
                                     if f['properties'][updatefield] != wddic[qid][updatefield]:
 
-                                        if f['properties'][updatefield] == '':
-                                            if updatefield in new_properties:
-                                                status = 'NEWvalue_NEW_LANG'
-                                                stat_new_value_new_lang += 1
+                                        if args.overwrite_values:
+                                            if f['properties'][updatefield] == '':
+                                                if updatefield in new_properties:
+                                                    status = 'NEWvalue_NEW_LANG'
+                                                    stat_new_value_new_lang += 1
+                                                else:
+                                                    status = 'NEWvalue'
+                                                    stat_new += 1
+                                            elif wddic[qid][updatefield] == '':
+                                                status = 'DELvalue'
+                                                stat_del += 1
                                             else:
-                                                status = 'NEWvalue'
-                                                stat_new += 1
-                                        elif  wddic[qid][updatefield] == '':
-                                            status = 'DELvalue'
-                                            stat_del += 1
-                                        else:
-                                            status = 'MODvalue'
-                                            stat_mod += 1
+                                                status = 'MODvalue'
+                                                stat_mod += 1
 
-                                        writer.writerow((qid, status, updatefield, f['properties'][updatefield], wddic[qid][updatefield]))
-                                        f['properties'][updatefield] = wddic[qid][updatefield]
+                                            writer.writerow((qid, status, updatefield, f['properties'][updatefield], wddic[qid][updatefield]))
+                                            f['properties'][updatefield] = wddic[qid][updatefield]
+
+                                        else:
+                                            if f['properties'][updatefield] == '':
+                                                if updatefield in new_properties:
+                                                    status = 'NEWvalue_NEW_LANG'
+                                                    stat_new_value_new_lang += 1
+                                                else:
+                                                    status = 'NEWvalue'
+                                                    stat_new += 1
+
+                                                writer.writerow((qid, status, updatefield, f['properties'][updatefield], wddic[qid][updatefield]))
+                                                f['properties'][updatefield] = wddic[qid][updatefield]
+                                            else:
+                                                status = 'EXIvalue'
+                                                stat_exists += 1
 
                                     else:
                                         if isNotEmpty(f['properties'][updatefield]):
@@ -437,6 +458,7 @@ with open(args.output_csvlog, "w", encoding='utf-8') as f:
                 sumWriter.writerow((args.input_shape, 'Modified_name', stat_mod))
                 sumWriter.writerow((args.input_shape, 'Empty_name', stat_empty))
                 sumWriter.writerow((args.input_shape, 'Same_name', stat_equal))
+                sumWriter.writerow((args.input_shape, 'Name_exists_row_unmodified', stat_exists))
                 sumWriter.writerow((args.input_shape, 'Wikidataid_redirected', stat_wikidataid_redirect))
                 sumWriter.writerow((args.input_shape, 'Wikidataid_notfound', stat_wikidataid_notfound))
                 sumWriter.writerow((args.input_shape, 'Wikidataid_null', stat_wikidataid_null))
