@@ -36,6 +36,17 @@ GENERAL
             - See also: https://legacy.iho.int/mtg_docs/com_wg/S-23WG/S-23WG_Misc/Draft_2002/Draft_2002.htm
             - Fixes #735
 
+50M_PHYSICAL
+
+- UPDATED:  ne_50m_geography_marine_polys
+            - Same changes as ne_10m_geography_marine_polys
+
+110M_PHYSICAL
+
+- UPDATED:  ne_110m_geography_marine_polys
+            - Same changes as ne_10m_geography_marine_polys
+
+
 2022-05-13: 5.1.2
 
 GENERAL
