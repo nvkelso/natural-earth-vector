@@ -43,6 +43,7 @@ archive/*
 intermediate/*
 backup/*
 x_tempshape/*
+*.~lock*
 
 # editor temp files : visual studio code
 .vscode/*
