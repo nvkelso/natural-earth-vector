@@ -156,7 +156,7 @@ def fetchwikidata(a_wid):
     sparql = SPARQLWrapper("https://query.wikidata.org/sparql", 'natural_earth_name_localizer v1.1.1 (github.com/nvkelso/natural-earth-vector)')
     query_template = """
         SELECT
-            ?e ?i ?r ?population
+            ?e ?i ?r ?population ?area_sqkm
             ?name_ar
             ?name_bn
             ?name_de
@@ -195,6 +195,11 @@ def fetchwikidata(a_wid):
             }
             SERVICE wikibase:label {bd:serviceParam wikibase:language "en".}
             OPTIONAL{?e wdt:P1082 ?population .}
+            OPTIONAL {
+                ?i p:P2046 [a wikibase:BestRank; 
+                            psn:P2046/wikibase:quantityAmount ?area_norm].
+                BIND( ROUND(?area_norm/10000)/100 as ?area_sqkm)
+            }
             OPTIONAL{?e rdfs:label ?name_ar FILTER((LANG(?name_ar))="ar").}
             OPTIONAL{?e rdfs:label ?name_bn FILTER((LANG(?name_bn))="bn").}
             OPTIONAL{?e rdfs:label ?name_de FILTER((LANG(?name_de))="de").}
@@ -297,6 +302,7 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
         "wd_id_new",
         "population",
         #"elevation",
+        "area_sqkm",
         "name_ar",
         "name_bn",
         "name_de",
@@ -362,6 +368,7 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                         wd_id_new = wd_id_new.split('/')[4]
                         print('Redirected:', wd_id, wd_id_new)
                     population = get_sparql_value(result, 'population')
+                    area_sqkm = get_sparql_value(result, 'area_sqkm')
                     #elevation =get_sparql_value(result, 'elevation')
 
                     name_ar = get_sparql_label(result, 'name_ar')
@@ -433,6 +440,7 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                         wd_id_new,
                         population,
                         #elevation,
+                        area_sqkm,
                         name_ar,
                         name_bn,
                         name_de,
