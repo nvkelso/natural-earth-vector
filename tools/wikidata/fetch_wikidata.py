@@ -230,7 +230,14 @@ def fetchwikidata(a_wid):
     for wid in a_wid:
         wikidata_sparql_ids += " wd:"+wid
 
-    print("fetch: ", wikidata_sparql_ids.split()[1], "... ", wikidata_sparql_ids.split()[-1])
+    if len(a_wid) == 1:
+        print("fetch single wikidataid: ", wikidata_sparql_ids)
+    elif len(a_wid) > 1:
+        print("fetch ", len(a_wid), " wikidataids: ", wikidata_sparql_ids.split()[1], "... ", wikidata_sparql_ids.split()[-1])
+    else:
+        print("ERROR: No wikidataid found in the shape file")
+        return "error"
+
     ne_query = query_template.replace('wd:Q2102493 wd:Q1781', wikidata_sparql_ids)
 
     # compress the Query -  removing the extra spaces
@@ -336,9 +343,15 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
             i = i+1
 
             if args.input_lettercase == "lowercase":
-                ne_wikidataid = pt['properties']['wikidataid']
+                try:
+                    ne_wikidataid = pt['properties']['wikidataid']
+                except:
+                    ne_wikidataid = False
             else:
-                ne_wikidataid = pt['properties']['WIKIDATAID']
+                try:
+                    ne_wikidataid = pt['properties']['WIKIDATAID']
+                except:
+                    ne_wikidataid = False
 
             ne_fid = pt['id']
 
@@ -348,7 +361,7 @@ with open(args.output_csv_name, "w", encoding='utf-8') as f:
                 else:
                     print("ERROR: Bad formatted wikidataid , skip", ne_wikidataid)
 
-            if (len(wikidata_chunk) >= 200) or (i >= REC_IN_SHAPE):
+            if (((len(wikidata_chunk) >= 200) or (i >= REC_IN_SHAPE)) and len(wikidata_chunk) > 0):
 
                 sparql_results = fetchwikidata(wikidata_chunk)
                 wikidata_chunk = []

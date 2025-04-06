@@ -267,9 +267,17 @@ with open(args.output_csvlog, "w", encoding='utf-8') as f:
                         f['properties'][new_prop] = ''
 
                     if args.input_lettercase == "lowercase":
-                        qid = f['properties']['wikidataid']
+                        try:
+                            qid = f['properties']['wikidataid']
+                        except:
+                            print("WARNING: No wikidataid field in shapefile, please check ", args.input_shape)
+                            qid = ''
                     else:
-                        qid = f['properties']['WIKIDATAID']
+                        try:
+                            qid = f['properties']['WIKIDATAID']
+                        except:
+                            print("WARNING: No wikidataid field in shapefile, please check ", args.input_shape)
+                            qid = ''
 
                     if not qid:
                         qid = ''
