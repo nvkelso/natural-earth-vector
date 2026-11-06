@@ -1,3 +1,70 @@
+Unreleased: Chile international boundary fixes
+
+10M_CULTURAL
+
+- UPDATED:  ne_10m_admin_0_boundary_lines_land
+            - Chile-Argentina boundary realigned along its full length (ne_id 1746705313,
+              1746707817, 1746708697, 1746708571, 1746707825, 1746705289). It ran about
+              1-2 km west of the agreed line along most of the Andes.
+            - Laguna del Desierto and Alto Palena / Rio Encuentro sections follow the
+              arbitral awards of 1994 and 1966.
+            - Southern Patagonian Ice Field (Section B of the 1998 agreement): "Indefinite"
+              lines 1746709091 (Chilean claim) and 1746708703 (Argentine claim) redrawn;
+              the Argentine claim runs west from point B along its parallel.
+            - Chile-Peru (1746705311): straight along its parallel to the sea.
+            - Chile-Bolivia (1746705309) and Argentina-Bolivia (1746706839) realigned.
+            - Chile-Peru-Bolivia tripoint moved to the Hito Tripartito; Peru-Bolivia
+              (1746707811) adjusted next to it.
+            - Strait of Magellan and Beagle Channel ends per the 1984 Treaty of Peace and
+              Friendship (Hito Ex-Baliza Dungeness, Hito I Cabo del Espiritu Santo).
+- UPDATED:  ne_10m_admin_0_boundary_lines_maritime_indicator
+            - Added Chile-Peru maritime boundary (ICJ judgment of 27 January 2014).
+- UPDATED:  ne_10m_admin_1_states_provinces_lines
+            - Rebuilt the Chilean regional boundaries from the SUBDERE / IGM DPA
+              V0702 dataset, using only lines classified as REGIONAL. Extended
+              the two Aysen boundaries to open water, with Guafo on the Los Lagos
+              side. Removed 7 Chilean stubs.
+            - Replaced the western end of the Mendoza–San Juan line in Argentina.
+- UPDATED:  ne_10m_admin_1_states_provinces and states_provinces_lakes
+            - Aligned the 16 Chilean regions and Mendoza–San Juan with the revised
+              regional lines, including Guafo in Los Lagos.
+- UPDATED:  ne_10m_admin_0_countries (and the 31 point-of-view variants _arg ... _vnm),
+            countries_lakes, sovereignty, map_units, map_subunits, scale_rank,
+            scale_rank_minor_islands, disputed_areas, disputed_areas_scale_rank_minor_islands
+            - CHL, ARG, PER and BOL polygons follow the new boundary lines.
+            - Southern Patagonian Ice Field claim area (SPI) reshaped to the new claim lines.
+            - Punta Dungeness completed to Hito Ex-Baliza; Isla Hornos and Diego Ramirez
+              added to Chile. The Diego Ramirez northern group was added and
+              Bartolome and Gonzalo were repositioned.
+
+50M_CULTURAL
+
+- UPDATED:  ne_50m_admin_0_boundary_lines_land
+            - Same realignment as 10m, generalized to 50m; the Southern Patagonian Ice
+              Field is drawn inside Chile (single line along the Chilean claim).
+- UPDATED:  ne_50m_admin_0_countries, countries_lakes, sovereignty, map_units,
+            map_subunits, scale_rank, breakaway_disputed_areas_scale_rank
+            - Polygons follow the new boundary; Picton, Nueva, Lennox and Hornos islands
+              added to Chile. Filled the gap at Punta Dungeness on the Argentine
+              side and repaired the Bolivia polygon rings.
+
+110M_CULTURAL
+
+- UPDATED:  ne_110m_admin_0_boundary_lines_land
+            - Same realignment as 10m, generalized to 110m; the line runs through the
+              Beagle Channel and ends at Punta Dungeness.
+- UPDATED:  ne_110m_admin_0_countries, countries_lakes, sovereignty, map_units, scale_rank
+            - Polygons follow the new boundary; islands south of the Beagle Channel and the
+              Dungeness point simplified for this scale. Closed the gap between
+              the Cape Horn group and the islands to its west.
+
+Sources: DIFROL (https://www.difrol.cl/descargar_limite/), U.S. Department of State
+LSIB v11.4 (https://data.geodata.state.gov/LSIB.zip).
+Regional boundaries: SUBDERE and Instituto Geográfico Militar, Digital Line of Internal
+Administrative Boundaries (DPA V0702):
+https://geoportal.cl/geoportal/catalog/35410/linea-digital-de-los-limites-interiores-de-la-division-politico-administrativa.
+See also Chile, DFL 1/18.715: https://www.bcn.cl/leychile/navegar?idNorma=3438.
+
 2022-06-02: 5.2.0
 
 GENERAL
